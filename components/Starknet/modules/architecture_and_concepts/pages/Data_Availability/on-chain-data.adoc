@@ -53,7 +53,7 @@ For each storage update:
 
 Next, we have information about newly declared classes:
 
-* The # of (Cairo 1.0) classes that were declared in the block
+* The # of Cairo classes that were declared in the block
 * For each class we have:
 ** The class hash
 ** xref:starknet_versions:upcoming_versions.adoc[The compiled class hash]

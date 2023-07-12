@@ -60,7 +60,7 @@ Where:
 [id="classes_tree"]
 === The classes tree
 
-The classes tree encodes the information about the existing xref:../Contracts/contract-classes.adoc#[classes] in the state of Starknet. It maps (Cairo 1.0) xref:../Contracts/class-hash.adoc#cairo1_class[class hashes] to their
+The classes tree encodes the information about the existing xref:../Contracts/contract-classes.adoc#[classes] in the state of Starknet. It maps Cairo xref:../Contracts/class-hash.adoc#cairo1_class[class hashes] to their
 compiled class hashes. The value of a leaf at a path corresponding to some class hash is given by:
 
 [stem]
@@ -76,7 +76,7 @@ Where:
 
 [NOTE]
 ====
-Cairo 1.0 classes that are part of the commitment are defined with Sierra, an intermediate representation between Cairo 1.0 and Cairo assembly (see xref:architecture_and_concepts:Contracts/system-calls-cairo1.adoc[here] for more information).
+Cairo classes that are part of the commitment are defined with Sierra, an intermediate representation between Cairo and Cairo assembly (see xref:architecture_and_concepts:Contracts/system-calls-cairo1.adoc[here] for more information).
 
 However, the prover only deals with Cairo assembly.
 This means that unless we want the compilation from Sierra to Casm to be part of every block in which the class is used, the commitment must have some information about the associated Cairo assembly.
