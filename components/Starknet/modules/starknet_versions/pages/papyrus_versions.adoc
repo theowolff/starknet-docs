@@ -1,0 +1,13 @@
+[id="papyrus"]
+= Papyrus release notes
+# Juno
+
+image::papyrus-logo-square.png[width=250]
+
+Papyrus is a StarkNet full node written in Rust.
+
+See the official https://github.com/starkware-libs/papyrus[Papyrus GitHub repository] for more details.
+
+==
+
+=== 🌟 Added
