@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Adding a token to StarkGate :: Starknet documentation</title>
-    <link rel="canonical" href="https://docs.starknet.io/documentation/tools/starkgate-adding_a_token/">
-    <link rel="prev" href="../starkgate-automated_actions_with_bridging/">
-    <link rel="next" href="../starkgate-cancelling%20a%20deposit/">
+    <title>Starknet architecture: Overview :: Starknet documentation</title>
+    <link rel="canonical" href="https://docs.starknet.io/documentation/architecture_and_concepts/Network_Architecture/starknet_architecture_overview/">
+    <link rel="prev" href="../../../starknet_versions/deprecated/">
+    <link rel="next" href="../header/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -26,15 +26,15 @@
     <meta property="twitter:url" content="https://docs.starknet.io/">
     <meta property="twitter:title" content="Starknet Documentation">
     <meta property="twitter:description" content="Reference documentation for developers building on Starknet.">
-    <meta property="twitter:image" content="https://www.starknet.io/starknet-docs-card.png">  <link rel="stylesheet" href="../../../_/css/vendor/tabs.css">
-  <link id="theme" rel="stylesheet" title="Default" href="../../../_/css/site.css?new">
-  <link rel="stylesheet" title="Dark" href="../../../_/css/dark-site.css?new">
-  <link rel="stylesheet" href="../../../_/css/vendor/tabs.css">
-  <link rel="stylesheet" href="../../../_/css/home.css">
+    <meta property="twitter:image" content="https://www.starknet.io/starknet-docs-card.png">  <link rel="stylesheet" href="../../../../_/css/vendor/tabs.css">
+  <link id="theme" rel="stylesheet" title="Default" href="../../../../_/css/site.css?new">
+  <link rel="stylesheet" title="Dark" href="../../../../_/css/dark-site.css?new">
+  <link rel="stylesheet" href="../../../../_/css/vendor/tabs.css">
+  <link rel="stylesheet" href="../../../../_/css/home.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WY42TERK5P"></script>
     <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','G-WY42TERK5P')</script>
-    <script>var uiRootPath = '../../../_'</script>
-    <script src="../../../_/js/vendor/medium-zoom.js?new"></script>
+    <script>var uiRootPath = '../../../../_'</script>
+    <script src="../../../../_/js/vendor/medium-zoom.js?new"></script>
     <script type="text/javascript" id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="e4db29b5-cd94-4bcf-87e4-04f4ca564240" data-blockingmode="manual"></script>
     <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
@@ -48,27 +48,27 @@
         a.appendChild(r);
         })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
-<link rel="icon" href="../../../_/img/favicon/favicon.ico" type="image/x-icon">
+<link rel="icon" href="../../../../_/img/favicon/favicon.ico" type="image/x-icon">
 
 <!-- For all browsers -->
-<link rel="icon" type="image/png" sizes="32x32" href="../../../_/img/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../../../_/img/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../_/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../_/img/favicon-16x16.png">
 
 <!-- For Google and Chrome -->
-<link rel="icon" type="image/png" sizes="192x192" href="../../../_/img/favicon/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../../../../_/img/favicon/android-chrome-192x192.png">
 
 <!-- For iPad -->
-<link rel="apple-touch-icon" type="image/png" sizes="167x167" href="../../../_/img/favicon/apple-touch-icon.png">
+<link rel="apple-touch-icon" type="image/png" sizes="167x167" href="../../../../_/img/favicon/apple-touch-icon.png">
 <!-- For iPhone -->
-<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../../../_/img/favicon/apple-touch-icon.png">  </head>
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../../../../_/img/favicon/apple-touch-icon.png">  </head>
   <body class="article">
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
       <div class="top-logo">
-        <a href="../../.." class="starknet-logo"></a>
+        <a href="../../../.." class="starknet-logo"></a>
         <div class="vertical-divider desktop-only"></div>
-        <a href="../../.." class="docs-logo desktop-only">Docs</a>
+        <a href="../../../.." class="docs-logo desktop-only">Docs</a>
       </div>
       <!--<a class="navbar-item" href="https://docs.starknet.io">Starknet documentation</a>-->
       <div id="autocomplete" class="autocomplete-root"></div>
@@ -103,19 +103,17 @@
   </div>
   <span></span>
   <span></span>
-  <a href="../../" class="home-link mask-svg-center"></a>
+  <a href="../../../" class="home-link mask-svg-center"></a>
   <div id="mobile-autocomplete" class="mobile-only"></div>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../../">Starknet</a></li>
-    <li>Developer tools and resources</li>
-    <li>StarkGate bridge guide</li>
-    <li>Procedures</li>
-    <li><a href="./">Adding a token</a></li>
+    <li><a href="../../../">Starknet</a></li>
+    <li>Architecture</li>
+    <li><a href="./">Overview</a></li>
   </ul>
 </nav>
   <div class="edit-this-page">
-    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/tools/pages/starkgate-adding_a_token.adoc"><img class="pencil">Edit this Page</a>
+    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/architecture_and_concepts/pages/Network_Architecture/starknet_architecture_overview.adoc"><img class="pencil">Edit this Page</a>
   </div>
 </div>
 <div class="body">
@@ -124,14 +122,14 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../../">Starknet</a></h3>
+    <h3 class="title"><a href="../../../">Starknet</a></h3>
 <ul class="nav-list">
   <li class="nav-item parent" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="../../">Overview</a>
+     href="../../../">Overview</a>
   </li>
 </ul>
   </li>
@@ -146,23 +144,23 @@
         <span>
     <a 
        class="nav-link nav-link-with-toggle"
-     href="../../quick_start/environment_setup/">Setting up your environment</a>
+     href="../../../quick_start/environment_setup/">Setting up your environment</a>
         </span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../quick_start/environment_setup/#installing_starkli">Installing Starkli</a>
+     href="../../../quick_start/environment_setup/#installing_starkli">Installing Starkli</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../quick_start/environment_setup/#setting_environment_variables_for_starkli">Environment variables</a>
+     href="../../../quick_start/environment_setup/#setting_environment_variables_for_starkli">Environment variables</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../quick_start/environment_setup/#installing_scarb">Installing Scarb</a>
+     href="../../../quick_start/environment_setup/#installing_scarb">Installing Scarb</a>
   </li>
 </ul>
   </li>
@@ -171,35 +169,35 @@
         <span>
     <a 
        class="nav-link nav-link-with-toggle"
-     href="../../quick_start/set_up_an_account/">Setting up an account</a>
+     href="../../../quick_start/set_up_an_account/">Setting up an account</a>
         </span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../quick_start/set_up_an_account/#creating_an_account">Creating an account</a>
+     href="../../../quick_start/set_up_an_account/#creating_an_account">Creating an account</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../quick_start/set_up_an_account/#deploying_an_account">Deploying an account</a>
+     href="../../../quick_start/set_up_an_account/#deploying_an_account">Deploying an account</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../quick_start/declare_a_smart_contract/">Declaring a smart contract</a>
+     href="../../../quick_start/declare_a_smart_contract/">Declaring a smart contract</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../quick_start/deploy_a_smart_contract/">Deploying a smart contract</a>
+     href="../../../quick_start/deploy_a_smart_contract/">Deploying a smart contract</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../quick_start/interact_with_a_smart_contract/">Interacting with a smart contract</a>
+     href="../../../quick_start/interact_with_a_smart_contract/">Interacting with a smart contract</a>
   </li>
 </ul>
   </li>
@@ -214,12 +212,12 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../starknet_versions/version_notes/">Release notes</a>
+     href="../../../starknet_versions/version_notes/">Release notes</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../starknet_versions/deprecated/">Deprecated, unsupported, and removed features</a>
+     href="../../../starknet_versions/deprecated/">Deprecated, unsupported, and removed features</a>
   </li>
 </ul>
   </li>
@@ -231,30 +229,30 @@
     <button class="nav-item-toggle mask-svg-center"></button>
     <span class="nav-text">Architecture</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Network_Architecture/starknet_architecture_overview/">Overview</a>
+     href="./">Overview</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Network_Architecture/header/">Block structure</a>
+     href="../header/">Block structure</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Network_Architecture/transaction-life-cycle/">Transaction lifecycle</a>
+     href="../transaction-life-cycle/">Transaction lifecycle</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Network_Architecture/transactions/">Transaction types</a>
+     href="../transactions/">Transaction types</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Network_Architecture/fee-mechanism/">Gas and transaction fees</a>
+     href="../fee-mechanism/">Gas and transaction fees</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
@@ -263,12 +261,12 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Network_Architecture/starknet-state/">Starknet state</a>
+     href="../starknet-state/">Starknet state</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Network_Architecture/on-chain-data/">Data availability</a>
+     href="../on-chain-data/">Data availability</a>
   </li>
 </ul>
   </li>
@@ -279,12 +277,12 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Network_Architecture/messaging-mechanism/">Messaging mechanism</a>
+     href="../messaging-mechanism/">Messaging mechanism</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Network_Architecture/messaging_reference/">Messaging reference</a>
+     href="../messaging_reference/">Messaging reference</a>
   </li>
 </ul>
   </li>
@@ -295,32 +293,32 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Accounts/introduction/">What is an account?</a>
+     href="../../Accounts/introduction/">What is an account?</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Accounts/approach/">Starknet&#8217;s account interface</a>
+     href="../../Accounts/approach/">Starknet&#8217;s account interface</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Accounts/account_functions/">Account interface function reference</a>
+     href="../../Accounts/account_functions/">Account interface function reference</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Accounts/deploying_new_accounts/">Deploying new accounts</a>
+     href="../../Accounts/deploying_new_accounts/">Deploying new accounts</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Accounts/universal-deployer/">Universal Deployer Contract</a>
+     href="../../Accounts/universal-deployer/">Universal Deployer Contract</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Accounts/simplified_transaction_flow/">Simplified transaction flow</a>
+     href="../../Accounts/simplified_transaction_flow/">Simplified transaction flow</a>
   </li>
 </ul>
   </li>
@@ -331,57 +329,57 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Smart_Contracts/contract-classes/">Contract classes and instances</a>
+     href="../../Smart_Contracts/contract-classes/">Contract classes and instances</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Smart_Contracts/class-hash/">Class hash</a>
+     href="../../Smart_Contracts/class-hash/">Class hash</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Smart_Contracts/contract-address/">Contract address</a>
+     href="../../Smart_Contracts/contract-address/">Contract address</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Smart_Contracts/contract-storage/">Contract storage</a>
+     href="../../Smart_Contracts/contract-storage/">Contract storage</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Smart_Contracts/contract-abi/">Contract ABI</a>
+     href="../../Smart_Contracts/contract-abi/">Contract ABI</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Smart_Contracts/starknet-events/">Events</a>
+     href="../../Smart_Contracts/starknet-events/">Events</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Smart_Contracts/contract-syntax/">Migrating a contract from Cairo v1 to Cairo v2</a>
+     href="../../Smart_Contracts/contract-syntax/">Migrating a contract from Cairo v1 to Cairo v2</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Smart_Contracts/cairo-and-sierra/">Cairo and Sierra</a>
+     href="../../Smart_Contracts/cairo-and-sierra/">Cairo and Sierra</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Smart_Contracts/serialization_of_Cairo_types/">Serialization of Cairo types</a>
+     href="../../Smart_Contracts/serialization_of_Cairo_types/">Serialization of Cairo types</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Smart_Contracts/system-calls-cairo1/">System calls</a>
+     href="../../Smart_Contracts/system-calls-cairo1/">System calls</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Smart_Contracts/execution_info/">Execution information for the current block</a>
+     href="../../Smart_Contracts/execution_info/">Execution information for the current block</a>
   </li>
 </ul>
   </li>
@@ -392,17 +390,17 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Cryptography/p-value/">The STARK field</a>
+     href="../../Cryptography/p-value/">The STARK field</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Cryptography/stark-curve/">The STARK curve</a>
+     href="../../Cryptography/stark-curve/">The STARK curve</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Cryptography/hash-functions/">Hash functions</a>
+     href="../../Cryptography/hash-functions/">Hash functions</a>
   </li>
 </ul>
   </li>
@@ -411,7 +409,7 @@
   <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Economics-of-Starknet/">The Economics of Starknet</a>
+     href="../../Economics-of-Starknet/">The Economics of Starknet</a>
   </li>
 </ul>
   </li>
@@ -424,12 +422,12 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../starknet-book/">The Starknet Book</a>
+     href="../../../tools/starknet-book/">The Starknet Book</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../devtools/">Developer tools</a>
+     href="../../../tools/devtools/">Developer tools</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
@@ -438,12 +436,12 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../cli/starkli/">Legacy Starknet CLI reference</a>
+     href="../../../cli/starkli/">Legacy Starknet CLI reference</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../cli/starknet-compiler-options/">Legacy compiler CLI reference</a>
+     href="../../../cli/starknet-compiler-options/">Legacy compiler CLI reference</a>
   </li>
 </ul>
   </li>
@@ -454,29 +452,29 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../api-services/">Full nodes and API services</a>
+     href="../../../tools/api-services/">Full nodes and API services</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../starknet_versions/juno_versions/">Juno release notes</a>
+     href="../../../starknet_versions/juno_versions/">Juno release notes</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../starknet_versions/pathfinder_versions/">Pathfinder release notes</a>
+     href="../../../starknet_versions/pathfinder_versions/">Pathfinder release notes</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../ref_block_explorers/">Block explorers</a>
+     href="../../../tools/ref_block_explorers/">Block explorers</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../audit/">Audit providers</a>
+     href="../../../tools/audit/">Audit providers</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
@@ -485,12 +483,12 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../starkgate-bridge/">Overview</a>
+     href="../../../tools/starkgate-bridge/">Overview</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../starkgate_architecture/">StarkGate architecture</a>
+     href="../../../tools/starkgate_architecture/">StarkGate architecture</a>
   </li>
   <li class="nav-item parent" data-depth="3">
     <button class="nav-item-toggle mask-svg-center"></button>
@@ -499,34 +497,34 @@
   <li class="nav-item" data-depth="4">
     <a 
        class="nav-link"
-     href="../starkgate-automated_actions_with_bridging/">Performing a Smart Deposit</a>
-  </li>
-  <li class="nav-item is-current-page" data-depth="4">
-    <a 
-       class="nav-link"
-     href="./">Adding a token</a>
+     href="../../../tools/starkgate-automated_actions_with_bridging/">Performing a Smart Deposit</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a 
        class="nav-link"
-     href="../starkgate-cancelling%20a%20deposit/">Cancelling a deposit</a>
+     href="../../../tools/starkgate-adding_a_token/">Adding a token</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a 
        class="nav-link"
-     href="../starkgate-estimating_fees/">Estimating StarkGate fees</a>
+     href="../../../tools/starkgate-cancelling%20a%20deposit/">Cancelling a deposit</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a 
        class="nav-link"
-     href="../dai_token_migration/">Migrating DAI v0 to DAI</a>
+     href="../../../tools/starkgate-estimating_fees/">Estimating StarkGate fees</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a 
+       class="nav-link"
+     href="../../../tools/dai_token_migration/">Migrating DAI v0 to DAI</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../starkgate_function_reference/">StarkGate function and event reference</a>
+     href="../../../tools/starkgate_function_reference/">StarkGate function and event reference</a>
   </li>
 </ul>
   </li>
@@ -539,19 +537,19 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../important_addresses/">Starknet contracts and sequencer addresses</a>
+     href="../../../tools/important_addresses/">Starknet contracts and sequencer addresses</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../bridged_tokens/">Bridged tokens</a>
+     href="../../../tools/bridged_tokens/">Bridged tokens</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="../limits_and_triggers/">Current limits</a>
+     href="../../../tools/limits_and_triggers/">Current limits</a>
   </li>
 </ul>
   </li>
@@ -560,7 +558,7 @@
   <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="../../glossary/">Glossary</a>
+     href="../../../glossary/">Glossary</a>
   </li>
 </ul>
   </li>
@@ -587,92 +585,317 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Adding a token to StarkGate</h1>
+<h1 class="page">Starknet architecture: Overview</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>StarkGate supports permissionless bridging.</p>
+<p>Starknet is a coordinated system, with each component—sequencers,
+provers, and nodes—playing a specific yet interconnected role. Although
+Starknet is not yet fully decentralized, it’s actively moving toward
+that goal. This description of the system&#8217;s roles and how they interact should
+help you better grasp the intricacies of the Starknet ecosystem.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="transaction_flow"><a class="anchor" href="#transaction_flow"></a>Transaction flow</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Starknet’s operation begins when a transaction is received by a gateway,
+which serves as the Mempool. This stage could also be managed by the
+sequencer. The transaction is initially marked as <code>RECEIVED</code>. The
+sequencer then incorporates the transaction into the network state and
+tags it as <code>ACCEPTED_ON_L2</code>. The final step involves the prover, which
+executes the operating system on the new block, calculates its proof,
+and submits it to Layer 1 (L1) for verification.</p>
 </div>
 <div class="paragraph">
-<p>To permissionlessly add support for an ERC-20 token, use the <code>enrollTokenBridge</code> function. You can access this function using a block explorer or a CLI.</p>
+<p>For more information on the transaction flow, see <a href="../transaction-life-cycle/" class="xref page">Transaction lifecycle</a>.</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Enrolling a new bridge does not add it to the StarkGate GUI. You can use a block explorer to use the newly created bridge.</p>
+<div class="imageblock">
+<div class="content">
+<img src="../../_images/transaction-flow.png" alt="transaction flow">
 </div>
-</td>
-</tr>
-</table>
 </div>
 <div class="paragraph">
-<p>When you enroll a new ERC-20 token, StarkGate does the following:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Adds bridge functionality for that token on L1 using the <code>StarknetTokenBridge.sol</code> contract.</p>
-</li>
-<li>
-<p>Adds bridge functionality for that token on L2 using the <code>token_bridge.cairo</code> class.</p>
-</li>
-<li>
-<p>Creates a new ERC-20 token contract on L2 based on a standard ERC-20 contract class. Each new contract uses the class hash of this contract class to identify its inheritance.</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>When the code of <code>token_bridge.cairo</code> is updated, its class hash changes. However,any existing contract continues to refer to the previous class hash. Any new contracts use the new class hash.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Be aware of the following:</p>
+<p>In essence, Starknet’s architecture involves multiple components:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The L2 ERC-20 contract is a standard contract, so it is not recommended to add tokens with non-standard behavior, such as inflationary tokens.</p>
+<p>The <em>sequencer</em> receives transactions, orders
+them, and produces blocks. It operates similarly to validators in
+Ethereum or Bitcoin.</p>
 </li>
 <li>
-<p>Adding a token that requires a customized bridging mechanism or a non-standard ERC-20 contract on L2 is currently not permissionless, and can be done only by the StarkWare team. Please contact StarkWare at <a href="mailto:support@starknetcommunity.io">support@starknetcommunity.io</a>.</p>
+<p>The <em>prover</em> generates proofs for the created blocks
+and transactions. It uses the Cairo Virtual Machine (Cairo VM) to run provable
+programs, thereby creating execution traces necessary for generating
+STARK proofs.</p>
+</li>
+<li>
+<p>L1, in this case, Ethereum, hosts a smart contract capable
+of verifying these STARK proofs. If the proofs are valid, Starknet’s
+state root on L1 is updated.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="additional_resources"><a class="anchor" href="#additional_resources"></a>Additional resources</h2>
+<h2 id="starknets_state"><a class="anchor" href="#starknets_state"></a>Starknet&#8217;s state</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
+<div class="paragraph">
+<p>Starknet’s state is a comprehensive snapshot maintained through Merkle
+trees, much like in Ethereum. This establishes the architecture of the
+validity roll-up and the roles of each component.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sequencers"><a class="anchor" href="#sequencers"></a>Sequencers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Sequencers are the backbone of the Starknet network, similar to Ethereum’s
+validators. They usher transactions into the system.</p>
+</div>
+<div class="paragraph">
+<p>Validity Rollups, also known as ZK-Rollups,  excel at offloading some network chores, like bundling
+and processing transactions, to specialized players. This setup is
+similar to how Ethereum and Bitcoin delegate security to miners.
+Sequencing, like mining, demands hefty resources.</p>
+</div>
+<div class="paragraph">
+<p>Validity Rollups like Starknet outsource transaction processing to specialized
+entities and then verify their work. These specialized entities, in the
+context of Validity Rollups, are known as <em>sequencers</em>.</p>
+</div>
+<div class="paragraph">
+<p>Instead of providing security, as miners do, sequencers provide
+transaction capacity. They order, that is, sequence, multiple transactions into a
+single batch, execute them, and produce a block that is later
+proved by the prover and submitted to the Layer 1 network as a single,
+compact proof, known as a <em>rollup</em>. Just as validators
+in Ethereum and miners in Bitcoin are specialized actors securing the
+network, sequencers in Validity Rollup-based networks are specialized
+actors that provide transaction capacity.</p>
+</div>
+<div class="paragraph">
+<p>This mechanism enables Validity Rollups to handle a higher volume
+of transactions while maintaining the security of the underlying
+Ethereum network, enhancing scalability without compromising on
+security.</p>
+</div>
+<div class="paragraph">
+<p>Sequencers follow a systematic method for processing transactions:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p><a href="../starkgate_function_reference/#enrollTokenBridge" class="xref page"><code>enrollTokenBridge</code></a> in the <em>StarkGate function reference</em></p>
+<p>Sequencing: They collect transactions from users and order them.</p>
 </li>
 <li>
-<p><a href="../starkgate_architecture/" class="xref page">StarkGate architecture</a></p>
+<p>Executing: Sequencers then process these transactions.</p>
 </li>
-</ul>
+<li>
+<p>Batching: Transactions are grouped together in batches for
+efficiency.</p>
+</li>
+<li>
+<p>Block Production: Sequencers produce blocks that contain batches of
+processed transactions.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Sequencers must be reliable and highly available, as their role is
+critical to the network’s smooth functioning. They need powerful and
+well-connected machines to perform their role effectively, as they must process transactions rapidly and continuously.</p>
+</div>
+<div class="paragraph">
+<p>The current roadmap for Starknet includes decentralizing the sequencer
+role. This shift towards decentralization will enable more participants
+to become sequencers, contributing to the robustness of the network.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="provers"><a class="anchor" href="#provers"></a>Provers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Provers serve as the second line of verification in the Starknet
+network. Their main task is to validate the work of the sequencers, when
+they receive the block produced by the sequencer, and to generate proofs
+that these processes were correctly performed.</p>
+</div>
+<div class="paragraph">
+<p>A prover does the following:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Receives blocks:</strong> Provers receive blocks of processed transactions
+from sequencers.</p>
+</li>
+<li>
+<p><strong>Processes blocks:</strong> Provers process these blocks a second time, ensuring
+that all transactions within the block have been correctly handled.</p>
+</li>
+<li>
+<p><strong>Generates a proof:</strong> After processing, provers generate a proof of
+correct transaction processing.</p>
+</li>
+<li>
+<p><strong>Sends the proof to Ethereum:</strong> Finally, the proof is sent to the
+Ethereum network for validation. If the proof is correct, the
+Ethereum network accepts the block of transactions.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Provers need even more computational power than sequencers because they
+have to calculate and generate proofs, a process that is computationally
+heavy. However, the work of provers can be split into multiple parts,
+allowing for parallelism and efficient proof generation. The proof
+generation process is asynchronous, meaning it doesn’t have to occur
+immediately or in real-time. This flexibility allows for the workload to
+be distributed among multiple provers. Each prover can work on a
+different block, allowing for parallelism and efficient proof
+generation.</p>
+</div>
+<div class="paragraph">
+<p>The design of Starknet relies on these two types of actors—sequencers
+and provers—working in tandem to ensure efficient processing and
+secure verification of transactions.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="optimizing_sequencers_and_provers_debunking_common_misconceptions"><a class="anchor" href="#optimizing_sequencers_and_provers_debunking_common_misconceptions"></a>Optimizing sequencers and provers: Debunking common misconceptions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The relationship between sequencers and provers in blockchain technology
+often sparks debate. A common misunderstanding suggests that either the
+prover or the sequencer is the main bottleneck. To set the record
+straight, let’s discuss the optimization of both components.</p>
+</div>
+<div class="paragraph">
+<p>Starknet, which uses the Cairo programming language, currently supports
+only sequential transactions. Plans are in place to introduce parallel
+transactions in the future. However, as of now, the sequencer operates
+one transaction at a time, making it the bottleneck in the system.</p>
+</div>
+<div class="paragraph">
+<p>In contrast, provers operate asynchronously and can execute multiple
+tasks in parallel. The use of proof recursion allows for task
+distribution across multiple machines, making scalability less of an
+issue for provers.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="nodes"><a class="anchor" href="#nodes"></a>Nodes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When it comes to defining what nodes do in Bitcoin or Ethereum, people
+often misinterpret their role as keeping track of every transaction
+within the network. This, however, is not entirely accurate.</p>
+</div>
+<div class="paragraph">
+<p>Nodes serve as auditors of the network, maintaining the state of the
+network, such as how much Bitcoin each participant owns or the current
+state of a specific smart contract. They maintain network state by processing
+transactions and preserving a record of all transactions, but that is a
+means to an end, not the end itself.</p>
+</div>
+<div class="paragraph">
+<p>In Validity Rollups and specifically within Starknet, this concept is
+somewhat reversed. Nodes don’t necessarily have to process transactions
+to get the state. In contrast to Ethereum or Bitcoin, Starknet nodes
+aren’t required to process all transactions to maintain the state of the
+network.</p>
+</div>
+<div class="paragraph">
+<p>You can access network state data by using the Starknet API, which uses the JSON RPC protocol, to communicate with a node. Previously, Starknet&#8217;s Gateway and Feeder Gateway APIs enabled querying the sequencer, but as the network has matured, the JSON RPC has become the standard.
+Operating your own node is typically faster than using a shared architecture, like the
+gateway.</p>
+</div>
+<div class="paragraph">
+<p>It’s worth noting that more people running nodes increases
+the resilience of the network and prevents server flooding, which has
+been an issue in other L2 networks.</p>
+</div>
+<div class="paragraph">
+<p>Currently, there are primarily three methods for a node to keep track of
+the network’s state and nodes can implement any of these
+methods:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Replaying Old Transactions</strong>: Like Ethereum or Bitcoin, a node can
+take all the transactions and re-execute them. Although this approach is
+accurate, it isn’t scalable unless you have a powerful machine that’s
+capable of handling the load. If you can replay all transactions, you
+can become a sequencer.</p>
+</li>
+<li>
+<p><strong>Relying on L2 Consensus</strong>: Nodes can trust the sequencer to
+execute the network correctly. When the sequencer updates the state and
+adds a new block, nodes accept the update as accurate.</p>
+</li>
+<li>
+<p><strong>Checking Proof Validation on L1</strong>: Nodes can monitor the state of
+the network by observing L1 and ensuring that every time a proof is
+sent, they receive the updated state. This way, they don’t have to trust
+anyone and only need to keep track of the latest valid transaction for
+Starknet.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Each type of node setup comes with its own set of hardware requirements
+and trust assumptions.</p>
+</div>
+<div class="sect2">
+<h3 id="nodes_that_replay_transactions"><a class="anchor" href="#nodes_that_replay_transactions"></a>Nodes that replay transactions</h3>
+<div class="paragraph">
+<p>Nodes that replay transactions require powerful machines to track and
+execute all transactions. These nodes don’t have trust assumptions; they
+rely solely on the transactions they execute, guaranteeing that the
+state at any given point is valid.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="nodes_that_rely_on_l2_consensus"><a class="anchor" href="#nodes_that_rely_on_l2_consensus"></a>Nodes that rely on L2 consensus</h3>
+<div class="paragraph">
+<p>Nodes that rely on L2 consensus require less computational power. They
+need sufficient storage to keep the state but don’t need to process a
+lot of transactions. The tradeoff here is a trust assumption.
+Currently, Starknet revolves around one sequencer, so these nodes
+trust StarkWare not to disrupt the network. However, once a consensus
+mechanism and leader election amongst sequencers are in place, these
+nodes will only need to trust that a sequencer who staked their stake to
+produce a block is not willing to lose it.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="nodes_that_check_proof_validation_on_l1"><a class="anchor" href="#nodes_that_check_proof_validation_on_l1"></a>Nodes that check proof validation on L1</h3>
+<div class="paragraph">
+<p>Nodes that only update their state based on proof validation on L1
+require the least hardware. They have the same requirements as an
+Ethereum node, and once Ethereum light nodes become a reality,
+maintaining such a node could be as simple as using a smartphone. The
+only tradeoff is higher latency. Proofs are sent to Ethereum intermittently, not for every block, resulting in delayed state updates. Plans are in
+place to produce proofs more frequently, even if they are not sent to
+Ethereum immediately, lowering node latency.</p>
+</div>
 </div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../starkgate-automated_actions_with_bridging/">Performing a Smart Deposit</a></span>
-  <span class="next"><a href="../starkgate-cancelling%20a%20deposit/">Cancelling a deposit</a></span>
+  <span class="prev"><a href="../../../starknet_versions/deprecated/">Deprecated, unsupported, and removed features</a></span>
+  <span class="next"><a href="../header/">Block structure</a></span>
 </nav>
 </article>
   </div>
@@ -705,13 +928,13 @@
     </div>
   </div>
 </footer>
-<script src="../../../_/js/site.js?new"></script>
-<script async src="../../../_/js/vendor/highlight.js?new"></script>
-<script async src="../../../_/js/vendor/tabs-block-behaviour.js?new"></script>
-<script async src="../../../_/js/vendor/swagger-ui.js?new"></script>
-<script async src="../../../_/js/vendor/component-versions.js?new"></script>
-<script src="../../../_/js/vendor/custom.js?new"></script>
-<script async src="../../../_/js/vendor/tabs.js"></script>
+<script src="../../../../_/js/site.js?new"></script>
+<script async src="../../../../_/js/vendor/highlight.js?new"></script>
+<script async src="../../../../_/js/vendor/tabs-block-behaviour.js?new"></script>
+<script async src="../../../../_/js/vendor/swagger-ui.js?new"></script>
+<script async src="../../../../_/js/vendor/component-versions.js?new"></script>
+<script src="../../../../_/js/vendor/custom.js?new"></script>
+<script async src="../../../../_/js/vendor/tabs.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script>
 <script

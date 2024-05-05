@@ -36,7 +36,7 @@
     <script>var uiRootPath = '../../../_'</script>
     <script src="../../../_/js/vendor/medium-zoom.js?new"></script>
     <script type="text/javascript" id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="e4db29b5-cd94-4bcf-87e4-04f4ca564240" data-blockingmode="manual"></script>
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     <script>
         (function(h,o,t,j,a,r){
@@ -207,12 +207,12 @@
 <ul class="nav-list">
   <li class="nav-item parent" data-depth="1">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Versions</span>
+    <span class="nav-text">Release information</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../starknet_versions/version_notes/">Starknet release notes</a>
+     href="../../starknet_versions/version_notes/">Release notes</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
@@ -229,67 +229,60 @@
     <button class="nav-item-toggle mask-svg-center"></button>
     <span class="nav-text">Architecture</span>
 <ul class="nav-list">
-  <li class="nav-item parent" data-depth="2">
-    <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Blockchain architecture</span>
-<ul class="nav-list">
-  <li class="nav-item parent" data-depth="3">
-    <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Blocks and transactions</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../architecture_and_concepts/Network_Architecture/starknet_architecture_overview/">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../../architecture_and_concepts/Network_Architecture/header/">Block structure</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../../architecture_and_concepts/Network_Architecture/transaction-life-cycle/">Transaction lifecycle</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../../architecture_and_concepts/Network_Architecture/transactions/">Transaction types</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../../architecture_and_concepts/Network_Architecture/fee-mechanism/">Gas and transaction fees</a>
   </li>
-</ul>
-  </li>
-  <li class="nav-item parent" data-depth="3">
+  <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
     <span class="nav-text">State</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
      href="../../architecture_and_concepts/Network_Architecture/starknet-state/">Starknet state</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
      href="../../architecture_and_concepts/Network_Architecture/on-chain-data/">Data availability</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item parent" data-depth="3">
+  <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
     <span class="nav-text">L1-L2 messaging</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
      href="../../architecture_and_concepts/Network_Architecture/messaging-mechanism/">Messaging mechanism</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
      href="../../architecture_and_concepts/Network_Architecture/messaging_reference/">Messaging reference</a>
-  </li>
-</ul>
   </li>
 </ul>
   </li>
@@ -305,17 +298,22 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Accounts/approach/">Starknet account interface</a>
+     href="../../architecture_and_concepts/Accounts/approach/">Starknet&#8217;s account interface</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Accounts/validate_and_execute/">Validate and execute</a>
+     href="../../architecture_and_concepts/Accounts/account_functions/">Account interface function reference</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
      href="../../architecture_and_concepts/Accounts/deploying_new_accounts/">Deploying new accounts</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../architecture_and_concepts/Accounts/universal-deployer/">Universal Deployer Contract</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
@@ -371,7 +369,7 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Smart_Contracts/universal-deployer/">Universal Deployer Contract</a>
+     href="../../architecture_and_concepts/Smart_Contracts/serialization_of_Cairo_types/">Serialization of Cairo types</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
@@ -381,7 +379,7 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Smart_Contracts/serialization_of_Cairo_types/">Serialization of Cairo types</a>
+     href="../../architecture_and_concepts/Smart_Contracts/execution_info/">Execution information for the current block</a>
   </li>
 </ul>
   </li>
@@ -516,6 +514,11 @@
        class="nav-link"
      href="../starkgate-estimating_fees/">Estimating StarkGate fees</a>
   </li>
+  <li class="nav-item" data-depth="4">
+    <a 
+       class="nav-link"
+     href="../dai_token_migration/">Migrating DAI v0 to DAI</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="3">
@@ -550,6 +553,15 @@
   </li>
 </ul>
   </li>
+  <li class="nav-item parent" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a 
+       class="nav-link"
+     href="../../glossary/">Glossary</a>
+  </li>
+</ul>
+  </li>
 </ul>
     <div class="navbar-end mobile-only">
       <div class="hr-divider"></div>
@@ -577,10 +589,10 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>While Starknet is a blockchain, it is different from blockchains built on the model of the Ethereum virtual machine (EVM), and so it requires many of its own developer tools. The tools discussed here are being developed in coordination with StarkWare, and in some cases have received grants from StarkWare or the Starknet Foundation in order to make the development process as friendly as possible, with improvements happening all the time.</p>
+<p>While Starknet is a blockchain, it is different from blockchains built on the model of the Ethereum virtual machine (EVM), and so it requires many of its own developer tools. The tools discussed here are being developed in coordination with StarkWare and, in some cases, have received grants from StarkWare or the Starknet Foundation to make the development process as friendly as possible, with improvements happening constantly.</p>
 </div>
 <div class="paragraph">
-<p>While originally the stack of Starknet development tools was based mostly on Python, tool developers are moving towards building with Rust.</p>
+<p>While the stack of Starknet development tools was originally based mostly on Python, tool developers are moving towards building with Rust.</p>
 </div>
 <div class="paragraph">
 <p>See <a href="#tools_per_stage_of_development">Tools for each stage of development</a> below to understand where each tool fits in the development process.</p>
@@ -728,7 +740,7 @@
 <p>JavaScript, TypeScript</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dapps, Wallets</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Shardlabs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SpaceShard</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/0xs34n/starknet.js">starknet.js Github repository</a></p></td>
 </tr>
 <tr>
@@ -757,28 +769,25 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="starknet-devnet"><a class="anchor" href="#starknet-devnet"></a>starknet-devnet, starknet-devnet-rs</h2>
+<h2 id="starknet-devnet-rs"><a class="anchor" href="#starknet-devnet-rs"></a>starknet-devnet-rs</h2>
 <div class="sectionbody">
 <h3 id="what_is_it_2" class="discrete">What is it?</h3>
 <div class="paragraph">
-<p>A devnet is a Starknet instance that you run as a local node, which enables much quicker development than is possible using testnet, as well as providing privacy prior to launching on testnet.</p>
+<p>A devnet is a Starknet instance that you run as a local node. A devnet enables much quicker development than is possible using testnet, as well as providing privacy prior to launching on testnet.</p>
 </div>
 <div class="paragraph">
-<p>Shardlabs originally wrote starknet-devnet in Python, but they are now actively developing a version in Rust, starknet-devnet-rs. For now, the Python-based version is more feature-rich, with the most notable feature being the ability to fork the network at a given block, so if that’s important to you, then you need to use the Python-based version. However, starknet-devnet-rs runs more quickly, and the developers are working to bring it to feature parity with the Python-based starknet-devnet.</p>
-</div>
-<div class="paragraph">
-<p>starknet-devnet-rs is the only version that is receiving new features.</p>
+<p>starknet-devnet-rs can, among other features, fork the network at a given block, dump the current devnet state, and load it in a subsequent run. starknet-devnet-rs runs more quickly than the previous, Python-based starknet-devnet.</p>
 </div>
 <h3 id="who_maintains_it_2" class="discrete">Who maintains it?</h3>
 <div class="paragraph">
-<p>Shardlabs</p>
+<p>SpaceShard</p>
 </div>
 <h3 id="why_should_you_care_2" class="discrete">Why should you care?</h3>
 <div class="paragraph">
-<p>starknet-devnet and starknet-devnet-rs include some accounts that are already funded with an ERC-20 token that can be used to pay fees. The ERC-20 contract that defines this token is also included.</p>
+<p>starknet-devnet-rs includes some accounts that are already funded with an ERC-20 token that can be used to pay fees. The ERC-20 contract that defines this token is also included.</p>
 </div>
 <div class="paragraph">
-<p>With starknet-devnet and starknet-devnet-rs You can do the following:</p>
+<p>With starknet-devnet-rs, you can do the following:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -800,15 +809,8 @@
 </ul>
 </div>
 <h3 id="where_do_you_get_it_2" class="discrete">Where do you get it?</h3>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/Shard-Labs/starknet-devnet">The starknet-devnet Gitbhub repository</a></p>
-</li>
-<li>
+<div class="paragraph">
 <p><a href="https://github.com/0xSpaceShard/starknet-devnet-rs">The starknet-devnet-rs Github repository</a></p>
-</li>
-</ul>
 </div>
 </div>
 </div>
@@ -927,7 +929,7 @@
 </div>
 <h3 id="who_maintains_it_5" class="discrete">Who maintains it?</h3>
 <div class="paragraph">
-<p>Shardlabs</p>
+<p>SpaceShard</p>
 </div>
 <h3 id="why_should_you_care_5" class="discrete">Why should you care?</h3>
 <div class="paragraph">
@@ -1057,7 +1059,8 @@
     <div class="footer-left">
       <p>Built with ✨ by the Starknet community</p>
     </div>
-    <strong>Mainnet: 0.13.0 | Sepolia testnet: 0.13.0 | Goerli testnet: 0.13.0</strong>
+    <div class="footer-network-info"><strong>Mainnet: 0.13.1.1 | Sepolia: 0.13.1.1</strong>
+</div>
     <!-- <div class="community-section">
       <p class="community-section__text">Follow Lisk on: </p>
       <div class="community-section__icons"> -->
@@ -1085,7 +1088,7 @@
 <script async src="../../../_/js/vendor/component-versions.js?new"></script>
 <script src="../../../_/js/vendor/custom.js?new"></script>
 <script async src="../../../_/js/vendor/tabs.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script>
 <script
     src="https://cdn.jsdelivr.net/npm/algoliasearch@4.14.3/dist/algoliasearch-lite.umd.js"
@@ -1278,7 +1281,7 @@
                 searchClient,
                 queries: [
                   {
-                    indexName: "starknet-docs-master",
+                    indexName: "starknet-docs-main",
                     query,
                     params: {
                       attributesToSnippet: ["title:8", "content:10"],

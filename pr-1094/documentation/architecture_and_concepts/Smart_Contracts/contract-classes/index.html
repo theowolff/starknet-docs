@@ -36,7 +36,7 @@
     <script>var uiRootPath = '../../../../_'</script>
     <script src="../../../../_/js/vendor/medium-zoom.js?new"></script>
     <script type="text/javascript" id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="e4db29b5-cd94-4bcf-87e4-04f4ca564240" data-blockingmode="manual"></script>
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     <script>
         (function(h,o,t,j,a,r){
@@ -208,12 +208,12 @@
 <ul class="nav-list">
   <li class="nav-item parent" data-depth="1">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Versions</span>
+    <span class="nav-text">Release information</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../../starknet_versions/version_notes/">Starknet release notes</a>
+     href="../../../starknet_versions/version_notes/">Release notes</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
@@ -230,67 +230,60 @@
     <button class="nav-item-toggle mask-svg-center"></button>
     <span class="nav-text">Architecture</span>
 <ul class="nav-list">
-  <li class="nav-item parent" data-depth="2">
-    <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Blockchain architecture</span>
-<ul class="nav-list">
-  <li class="nav-item parent" data-depth="3">
-    <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Blocks and transactions</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../Network_Architecture/starknet_architecture_overview/">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../../Network_Architecture/header/">Block structure</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../../Network_Architecture/transaction-life-cycle/">Transaction lifecycle</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../../Network_Architecture/transactions/">Transaction types</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../../Network_Architecture/fee-mechanism/">Gas and transaction fees</a>
   </li>
-</ul>
-  </li>
-  <li class="nav-item parent" data-depth="3">
+  <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
     <span class="nav-text">State</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
      href="../../Network_Architecture/starknet-state/">Starknet state</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
      href="../../Network_Architecture/on-chain-data/">Data availability</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item parent" data-depth="3">
+  <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
     <span class="nav-text">L1-L2 messaging</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
      href="../../Network_Architecture/messaging-mechanism/">Messaging mechanism</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
      href="../../Network_Architecture/messaging_reference/">Messaging reference</a>
-  </li>
-</ul>
   </li>
 </ul>
   </li>
@@ -306,17 +299,22 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../Accounts/approach/">Starknet account interface</a>
+     href="../../Accounts/approach/">Starknet&#8217;s account interface</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../Accounts/validate_and_execute/">Validate and execute</a>
+     href="../../Accounts/account_functions/">Account interface function reference</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
      href="../../Accounts/deploying_new_accounts/">Deploying new accounts</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../Accounts/universal-deployer/">Universal Deployer Contract</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
@@ -372,7 +370,7 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../universal-deployer/">Universal Deployer Contract</a>
+     href="../serialization_of_Cairo_types/">Serialization of Cairo types</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
@@ -382,7 +380,7 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../serialization_of_Cairo_types/">Serialization of Cairo types</a>
+     href="../execution_info/">Execution information for the current block</a>
   </li>
 </ul>
   </li>
@@ -517,6 +515,11 @@
        class="nav-link"
      href="../../../tools/starkgate-estimating_fees/">Estimating StarkGate fees</a>
   </li>
+  <li class="nav-item" data-depth="4">
+    <a 
+       class="nav-link"
+     href="../../../tools/dai_token_migration/">Migrating DAI v0 to DAI</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="3">
@@ -548,6 +551,15 @@
     <a 
        class="nav-link"
      href="../../../tools/limits_and_triggers/">Current limits</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item parent" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a 
+       class="nav-link"
+     href="../../../glossary/">Glossary</a>
   </li>
 </ul>
   </li>
@@ -692,7 +704,8 @@ Using class functionality
     <div class="footer-left">
       <p>Built with ✨ by the Starknet community</p>
     </div>
-    <strong>Mainnet: 0.13.0 | Sepolia testnet: 0.13.0 | Goerli testnet: 0.13.0</strong>
+    <div class="footer-network-info"><strong>Mainnet: 0.13.1.1 | Sepolia: 0.13.1.1</strong>
+</div>
     <!-- <div class="community-section">
       <p class="community-section__text">Follow Lisk on: </p>
       <div class="community-section__icons"> -->
@@ -720,7 +733,7 @@ Using class functionality
 <script async src="../../../../_/js/vendor/component-versions.js?new"></script>
 <script src="../../../../_/js/vendor/custom.js?new"></script>
 <script async src="../../../../_/js/vendor/tabs.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script>
 <script
     src="https://cdn.jsdelivr.net/npm/algoliasearch@4.14.3/dist/algoliasearch-lite.umd.js"
@@ -913,7 +926,7 @@ Using class functionality
                 searchClient,
                 queries: [
                   {
-                    indexName: "starknet-docs-master",
+                    indexName: "starknet-docs-main",
                     query,
                     params: {
                       attributesToSnippet: ["title:8", "content:10"],

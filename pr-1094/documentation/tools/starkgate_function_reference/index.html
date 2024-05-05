@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>StarkGate function and event reference :: Starknet documentation</title>
     <link rel="canonical" href="https://docs.starknet.io/documentation/tools/starkgate_function_reference/">
-    <link rel="prev" href="../starkgate-estimating_fees/">
+    <link rel="prev" href="../dai_token_migration/">
     <link rel="next" href="../important_addresses/">
     <meta name="description" content="Comprehensive function and event reference for StarkGate.">
     <meta name="generator" content="Antora 3.1.1">
@@ -37,7 +37,7 @@
     <script>var uiRootPath = '../../../_'</script>
     <script src="../../../_/js/vendor/medium-zoom.js?new"></script>
     <script type="text/javascript" id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="e4db29b5-cd94-4bcf-87e4-04f4ca564240" data-blockingmode="manual"></script>
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     <script>
         (function(h,o,t,j,a,r){
@@ -209,12 +209,12 @@
 <ul class="nav-list">
   <li class="nav-item parent" data-depth="1">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Versions</span>
+    <span class="nav-text">Release information</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../starknet_versions/version_notes/">Starknet release notes</a>
+     href="../../starknet_versions/version_notes/">Release notes</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
@@ -231,67 +231,60 @@
     <button class="nav-item-toggle mask-svg-center"></button>
     <span class="nav-text">Architecture</span>
 <ul class="nav-list">
-  <li class="nav-item parent" data-depth="2">
-    <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Blockchain architecture</span>
-<ul class="nav-list">
-  <li class="nav-item parent" data-depth="3">
-    <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Blocks and transactions</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../architecture_and_concepts/Network_Architecture/starknet_architecture_overview/">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../../architecture_and_concepts/Network_Architecture/header/">Block structure</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../../architecture_and_concepts/Network_Architecture/transaction-life-cycle/">Transaction lifecycle</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../../architecture_and_concepts/Network_Architecture/transactions/">Transaction types</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../../architecture_and_concepts/Network_Architecture/fee-mechanism/">Gas and transaction fees</a>
   </li>
-</ul>
-  </li>
-  <li class="nav-item parent" data-depth="3">
+  <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
     <span class="nav-text">State</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
      href="../../architecture_and_concepts/Network_Architecture/starknet-state/">Starknet state</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
      href="../../architecture_and_concepts/Network_Architecture/on-chain-data/">Data availability</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item parent" data-depth="3">
+  <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
     <span class="nav-text">L1-L2 messaging</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
      href="../../architecture_and_concepts/Network_Architecture/messaging-mechanism/">Messaging mechanism</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
      href="../../architecture_and_concepts/Network_Architecture/messaging_reference/">Messaging reference</a>
-  </li>
-</ul>
   </li>
 </ul>
   </li>
@@ -307,17 +300,22 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Accounts/approach/">Starknet account interface</a>
+     href="../../architecture_and_concepts/Accounts/approach/">Starknet&#8217;s account interface</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Accounts/validate_and_execute/">Validate and execute</a>
+     href="../../architecture_and_concepts/Accounts/account_functions/">Account interface function reference</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
      href="../../architecture_and_concepts/Accounts/deploying_new_accounts/">Deploying new accounts</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../architecture_and_concepts/Accounts/universal-deployer/">Universal Deployer Contract</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
@@ -373,7 +371,7 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Smart_Contracts/universal-deployer/">Universal Deployer Contract</a>
+     href="../../architecture_and_concepts/Smart_Contracts/serialization_of_Cairo_types/">Serialization of Cairo types</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
@@ -383,7 +381,7 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture_and_concepts/Smart_Contracts/serialization_of_Cairo_types/">Serialization of Cairo types</a>
+     href="../../architecture_and_concepts/Smart_Contracts/execution_info/">Execution information for the current block</a>
   </li>
 </ul>
   </li>
@@ -518,6 +516,11 @@
        class="nav-link"
      href="../starkgate-estimating_fees/">Estimating StarkGate fees</a>
   </li>
+  <li class="nav-item" data-depth="4">
+    <a 
+       class="nav-link"
+     href="../dai_token_migration/">Migrating DAI v0 to DAI</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item is-current-page" data-depth="3">
@@ -549,6 +552,15 @@
     <a 
        class="nav-link"
      href="../limits_and_triggers/">Current limits</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item parent" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a 
+       class="nav-link"
+     href="../../glossary/">Glossary</a>
   </li>
 </ul>
   </li>
@@ -619,10 +631,10 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/solidity/StarkgateManager.sol"><code>StarkgateManager.sol</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/StarkgateManager.sol"><code>StarkgateManager.sol</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The StarkGate Manager.</p>
 <p class="tableblock">Use the Manager to enroll a new token.</p>
-<p class="tableblock">An interface is available through <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/solidity/IStarkgateManager.sol"><code>IStarkgateManager.sol</code></a>.</p></td>
+<p class="tableblock">An interface is available through <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/IStarkgateManager.sol"><code>IStarkgateManager.sol</code></a>.</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -632,7 +644,7 @@
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/solidity/StarkgateRegistry.sol"><code>StarkgateRegistry.sol</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/StarkgateRegistry.sol"><code>StarkgateRegistry.sol</code></a></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The StarkGate Registry.</p>
 </div>
@@ -640,7 +652,7 @@
 <p>Use the Registry to view the addresses of existing bridges and to stop servicing a specific token.</p>
 </div>
 <div class="paragraph">
-<p>An interface is available through <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/solidity/IStarkgateRegistry.sol"><code>IStarkgateRegistry.sol</code></a>.</p>
+<p>An interface is available through <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/IStarkgateRegistry.sol"><code>IStarkgateRegistry.sol</code></a>.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -654,7 +666,7 @@
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/solidity/StarknetTokenBridge.sol"><code>StarknetTokenBridge.sol</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/StarknetTokenBridge.sol"><code>StarknetTokenBridge.sol</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The primary StarkGate bridge contract. The functions and events in this reference that provide the main user bridge functionality are defined in this contract.</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -686,7 +698,7 @@
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/solidity/IStarkgateService.sol"><code>IStarkgateService.sol</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/IStarkgateService.sol"><code>IStarkgateService.sol</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">An interface to check if a contract is servicing a token.</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -716,9 +728,9 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/cairo/token_bridge.cairo"><code>token_bridge.cairo</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/cairo/token_bridge.cairo"><code>token_bridge.cairo</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The StarkGate bridge implementation on L2. This contract includes the standard functions for a token bridge.</p>
-<p class="tableblock">An interface is available through <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/cairo/token_bridge_interface.cairo"><code>token_bridge_interface.cairo</code></a>.</p></td>
+<p class="tableblock">An interface is available through <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/cairo/token_bridge_interface.cairo"><code>token_bridge_interface.cairo</code></a>.</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -887,15 +899,15 @@ The L2 address of the recipient.</p>
 </div>
 <h4 id="function_and_event_definitions" class="discrete">Function and event definitions</h4>
 <div class="paragraph">
-<p>Contract: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/solidity/StarknetTokenBridge.sol"><code>StarknetTokenBridge.sol</code></a></p>
+<p>Contract: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/StarknetTokenBridge.sol"><code>StarknetTokenBridge.sol</code></a></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Function: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/solidity/StarknetTokenBridge.sol#L284"><code>deposit</code></a></p>
+<p>Function: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/StarknetTokenBridge.sol#L284"><code>deposit</code></a></p>
 </li>
 <li>
-<p>Event: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/solidity/StarknetTokenBridge.sol#L65"><code>Deposit</code></a></p>
+<p>Event: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/StarknetTokenBridge.sol#L65"><code>Deposit</code></a></p>
 </li>
 </ul>
 </div>
@@ -1025,15 +1037,15 @@ The L2 address of the recipient.</p>
 </div>
 <h4 id="function_and_event_definitions_2" class="discrete">Function and event definitions</h4>
 <div class="paragraph">
-<p>Contract: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/solidity/StarknetTokenBridge.sol"><code>StarknetTokenBridge.sol</code></a></p>
+<p>Contract: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/StarknetTokenBridge.sol"><code>StarknetTokenBridge.sol</code></a></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Function: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/solidity/StarknetTokenBridge.sol#L515"><code>depositCancelRequest</code></a></p>
+<p>Function: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/StarknetTokenBridge.sol#L515"><code>depositCancelRequest</code></a></p>
 </li>
 <li>
-<p>Event: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/solidity/StarknetTokenBridge.sol#L73"><code>DepositCancelRequest</code></a></p>
+<p>Event: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/StarknetTokenBridge.sol#L73"><code>DepositCancelRequest</code></a></p>
 </li>
 </ul>
 </div>
@@ -1159,10 +1171,10 @@ The L2 address of the recipient.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Function: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/solidity/StarknetTokenBridge.sol#L588"><code>depositReclaim</code></a></p>
+<p>Function: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/StarknetTokenBridge.sol#L588"><code>depositReclaim</code></a></p>
 </li>
 <li>
-<p>Event: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/solidity/StarknetTokenBridge.sol#L80"><code>DepositReclaimed</code></a></p>
+<p>Event: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/StarknetTokenBridge.sol#L80"><code>DepositReclaimed</code></a></p>
 </li>
 </ul>
 </div>
@@ -1312,15 +1324,15 @@ The L2 address of the recipient.</p>
 </div>
 <h4 id="function_and_event_definitions_4" class="discrete">Function and event definitions</h4>
 <div class="paragraph">
-<p>Contract: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/solidity/StarknetTokenBridge.sol">StarknetTokenBridge.sol</a></p>
+<p>Contract: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/StarknetTokenBridge.sol">StarknetTokenBridge.sol</a></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Function: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/solidity/StarknetTokenBridge.sol#L255"><code>depositWithMessage</code></a></p>
+<p>Function: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/StarknetTokenBridge.sol#L255"><code>depositWithMessage</code></a></p>
 </li>
 <li>
-<p>Event: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/solidity/StarknetTokenBridge.sol#L37"><code>DepositWithMessage</code></a></p>
+<p>Event: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/StarknetTokenBridge.sol#L37"><code>DepositWithMessage</code></a></p>
 </li>
 </ul>
 </div>
@@ -1456,15 +1468,15 @@ The L2 address of the recipient.</p>
 </div>
 <h4 id="function_and_event_definitions_5" class="discrete">Function and event definitions</h4>
 <div class="paragraph">
-<p>Contract: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/solidity/StarknetTokenBridge.sol">StarknetTokenBridge.sol</a></p>
+<p>Contract: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/StarknetTokenBridge.sol">StarknetTokenBridge.sol</a></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Function: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/solidity/StarknetTokenBridge.sol#L534"><code>depositWithMessageCancelRequest</code></a></p>
+<p>Function: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/StarknetTokenBridge.sol#L534"><code>depositWithMessageCancelRequest</code></a></p>
 </li>
 <li>
-<p>Event: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/solidity/StarknetTokenBridge.sol#L46"><code>DepositWithMessageCancelRequest</code></a></p>
+<p>Event: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/StarknetTokenBridge.sol#L46"><code>DepositWithMessageCancelRequest</code></a></p>
 </li>
 </ul>
 </div>
@@ -1606,15 +1618,15 @@ The L2 address of the recipient.</p>
 </div>
 <h4 id="function_and_event_definitions_6" class="discrete">Function and event definitions</h4>
 <div class="paragraph">
-<p>Contract: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/solidity/StarknetTokenBridge.sol">StarknetTokenBridge.sol</a></p>
+<p>Contract: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/StarknetTokenBridge.sol">StarknetTokenBridge.sol</a></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Function: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/solidity/StarknetTokenBridge.sol#L564"><code>depositWithMessageReclaim</code></a></p>
+<p>Function: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/StarknetTokenBridge.sol#L564"><code>depositWithMessageReclaim</code></a></p>
 </li>
 <li>
-<p>Event: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/solidity/StarknetTokenBridge.sol#L54"><code>DepositWithMessageReclaimed</code></a></p>
+<p>Event: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/StarknetTokenBridge.sol#L54"><code>DepositWithMessageReclaimed</code></a></p>
 </li>
 </ul>
 </div>
@@ -1700,10 +1712,10 @@ The L2 address of the recipient.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Function: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/solidity/StarkgateManager.sol#L132"><code>enrollTokenBridge</code></a> in <code>StarkgateManager.sol</code></p>
+<p>Function: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/StarkgateManager.sol#L132"><code>enrollTokenBridge</code></a> in <code>StarkgateManager.sol</code></p>
 </li>
 <li>
-<p>Event: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/solidity/StarknetTokenBridge.sol#L34"><code>TokenEnrollmentInitiated</code></a> in <code>StarknetTokenBridge.sol</code></p>
+<p>Event: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/StarknetTokenBridge.sol#L34"><code>TokenEnrollmentInitiated</code></a> in <code>StarknetTokenBridge.sol</code></p>
 </li>
 </ul>
 </div>
@@ -1750,7 +1762,7 @@ The L2 address of the recipient.</p>
 </div>
 <h4 id="function_definition" class="discrete">Function definition</h4>
 <div class="paragraph">
-<p><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/solidity/StarknetTokenBridge.sol#L142C28-L142C28"><code>estimateDepositFeeWei</code></a> in <code>StarknetTokenBridge.sol</code></p>
+<p><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/StarknetTokenBridge.sol#L142C28-L142C28"><code>estimateDepositFeeWei</code></a> in <code>StarknetTokenBridge.sol</code></p>
 </div>
 <h4 id="additional_resources" class="discrete">Additional resources</h4>
 <div class="ulist">
@@ -1806,7 +1818,7 @@ The L2 address of the recipient.</p>
 </div>
 <h4 id="function_definition_2" class="discrete">Function definition</h4>
 <div class="paragraph">
-<p><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/solidity/StarknetTokenBridge.sol#L146"><code>estimateEnrollmentFeeWei</code></a> in <code>StarknetTokenBridge.sol</code></p>
+<p><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/StarknetTokenBridge.sol#L146"><code>estimateEnrollmentFeeWei</code></a> in <code>StarknetTokenBridge.sol</code></p>
 </div>
 <h4 id="additional_resource" class="discrete">Additional resource</h4>
 <div class="ulist">
@@ -1888,7 +1900,7 @@ The L2 address of the recipient.</p>
 </div>
 <h4 id="function_definition_3" class="discrete">Function definition</h4>
 <div class="paragraph">
-<p><a href="https://github.com/starkware-libs/starkgate/blob/ce53961e124c3f8a5e73e9ec2a7f4dcbc1ab6ab9/src/solidity/IStarkgateRegistry.sol#L8"><code>getBridge</code></a> in <code>IStarkgateRegistry.sol</code></p>
+<p><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/IStarkgateRegistry.sol#L8"><code>getBridge</code></a> in <code>IStarkgateRegistry.sol</code></p>
 </div>
 <hr>
 </div>
@@ -1936,7 +1948,7 @@ The L2 address of the recipient.</p>
 </div>
 <h4 id="function_definition_4" class="discrete">Function definition</h4>
 <div class="paragraph">
-<p><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/solidity/StarkgateManager.sol#L24"><code>getRegistry</code></a> in <code>StarkgateManager.sol</code></p>
+<p><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/StarkgateManager.sol#L24"><code>getRegistry</code></a> in <code>StarkgateManager.sol</code></p>
 </div>
 <hr>
 </div>
@@ -2033,7 +2045,7 @@ The L2 address of the recipient.</p>
 </div>
 <h4 id="function_definition_5" class="discrete">Function definition</h4>
 <div class="paragraph">
-<p><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/solidity/StarknetTokenBridge.sol#L198C23-L198C23"><code>getStatus</code></a> in <code>StarknetTokenBridge.sol</code></p>
+<p><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/StarknetTokenBridge.sol#L198C23-L198C23"><code>getStatus</code></a> in <code>StarknetTokenBridge.sol</code></p>
 </div>
 <hr>
 </div>
@@ -2097,7 +2109,7 @@ The L2 address of the recipient.</p>
 </div>
 <h4 id="function_definition_6" class="discrete">Function definition</h4>
 <div class="paragraph">
-<p><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/solidity/StarkgateRegistry.sol#L110"><code>getWithdrawalBridges</code></a> in <code>StarkgateRegistry.sol</code>.</p>
+<p><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/StarkgateRegistry.sol#L110"><code>getWithdrawalBridges</code></a> in <code>StarkgateRegistry.sol</code>.</p>
 </div>
 <hr>
 </div>
@@ -2142,7 +2154,7 @@ The L2 address of the recipient.</p>
 </div>
 <h4 id="function_definition_7" class="discrete">Function definition</h4>
 <div class="paragraph">
-<p><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/solidity/StarknetTokenBridge.sol#L92"><code>identify</code></a> in <code>StarknetTokenBridge.sol</code></p>
+<p><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/StarknetTokenBridge.sol#L92"><code>identify</code></a> in <code>StarknetTokenBridge.sol</code></p>
 </div>
 <hr>
 </div>
@@ -2208,7 +2220,7 @@ The L2 address of the recipient.</p>
 </div>
 <h4 id="function_definition_8" class="discrete">Function definition</h4>
 <div class="paragraph">
-<p><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/solidity/IStarkgateService.sol#L9C14-L9C30"><code>isServicingToken</code></a> in <code>IStarkgateService.sol</code>.</p>
+<p><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/IStarkgateService.sol#L9C14-L9C30"><code>isServicingToken</code></a> in <code>IStarkgateService.sol</code>.</p>
 </div>
 <hr>
 </div>
@@ -2299,15 +2311,15 @@ If you don&#8217;t specify this parameter, the withdraw function uses the sender
 </div>
 <h4 id="function_and_event_definition_2" class="discrete">Function and event definition</h4>
 <div class="paragraph">
-<p>Contract: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/solidity/StarknetTokenBridge.sol"><code>StarknetTokenBridge.sol</code></a></p>
+<p>Contract: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/StarknetTokenBridge.sol"><code>StarknetTokenBridge.sol</code></a></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Function: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/solidity/StarknetTokenBridge.sol#L481"><code>withdraw</code></a></p>
+<p>Function: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/StarknetTokenBridge.sol#L481"><code>withdraw</code></a></p>
 </li>
 <li>
-<p>Event: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/solidity/StarknetTokenBridge.sol#L62"><code>Withdrawal</code></a></p>
+<p>Event: <a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/solidity/StarknetTokenBridge.sol#L62"><code>Withdrawal</code></a></p>
 </li>
 </ul>
 </div>
@@ -2364,7 +2376,7 @@ If you don&#8217;t specify this parameter, the withdraw function uses the sender
 </div>
 <h4 id="function_definition_9" class="discrete">Function definition</h4>
 <div class="paragraph">
-<p><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/cairo/token_bridge.cairo#L376-L378"><code>get_erc20_class_hash</code></a> in <code>token_bridge.cairo</code>.</p>
+<p><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/cairo/token_bridge.cairo#L376-L378"><code>get_erc20_class_hash</code></a> in <code>token_bridge.cairo</code>.</p>
 </div>
 <hr>
 </div>
@@ -2397,7 +2409,7 @@ If you don&#8217;t specify this parameter, the withdraw function uses the sender
 </div>
 <h4 id="function_definition_10" class="discrete">Function definition</h4>
 <div class="paragraph">
-<p><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/cairo/token_bridge_interface.cairo#L8"><code>get_identity</code></a> in <code>token_bridge_interface.cairo</code>.</p>
+<p><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/cairo/token_bridge_interface.cairo#L8"><code>get_identity</code></a> in <code>token_bridge_interface.cairo</code>.</p>
 </div>
 <hr>
 </div>
@@ -2451,7 +2463,7 @@ If you don&#8217;t specify this parameter, the withdraw function uses the sender
 </div>
 <h4 id="function_definition_11" class="discrete">Function definition</h4>
 <div class="paragraph">
-<p><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/cairo/token_bridge_interface.cairo#L9"><code>get_l1_token</code></a> in <code>token_bridge_interface.cairo</code>.</p>
+<p><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/cairo/token_bridge_interface.cairo#L9"><code>get_l1_token</code></a> in <code>token_bridge_interface.cairo</code>.</p>
 </div>
 <hr>
 </div>
@@ -2508,7 +2520,7 @@ If you don&#8217;t specify this parameter, the withdraw function uses the sender
 </div>
 <h4 id="function_definition_12" class="discrete">Function definition</h4>
 <div class="paragraph">
-<p><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/cairo/token_bridge_interface.cairo#L10"><code>get_l2_token</code></a> in <code>token_bridge_interface.cairo</code>.</p>
+<p><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/cairo/token_bridge_interface.cairo#L10"><code>get_l2_token</code></a> in <code>token_bridge_interface.cairo</code>.</p>
 </div>
 <hr>
 </div>
@@ -2554,7 +2566,7 @@ If you don&#8217;t specify this parameter, the withdraw function uses the sender
 </div>
 <h4 id="function_definition_13" class="discrete">Function definition</h4>
 <div class="paragraph">
-<p><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/cairo/token_bridge_interface.cairo#L11"><code>get_remaining_withdrawal_quota</code></a> in <code>token_bridge_interface.cairo</code></p>
+<p><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/cairo/token_bridge_interface.cairo#L11"><code>get_remaining_withdrawal_quota</code></a> in <code>token_bridge_interface.cairo</code></p>
 </div>
 <hr>
 </div>
@@ -2587,7 +2599,7 @@ If you don&#8217;t specify this parameter, the withdraw function uses the sender
 </div>
 <h4 id="function_definition_14" class="discrete">Function definition</h4>
 <div class="paragraph">
-<p><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/cairo/token_bridge_interface.cairo#L7"><code>get_version</code></a> in <code>token_bridge_interface.cairo</code>.</p>
+<p><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/cairo/token_bridge_interface.cairo#L7"><code>get_version</code></a> in <code>token_bridge_interface.cairo</code>.</p>
 </div>
 <hr>
 </div>
@@ -2646,7 +2658,7 @@ If you don&#8217;t specify this parameter, the withdraw function uses the sender
 </div>
 <h4 id="function_definition_15" class="discrete">Function definition</h4>
 <div class="paragraph">
-<p><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/cairo/token_bridge_interface.cairo#L12"><code>initiate_withdraw</code></a> in <code>token_bridge_interface.cairo</code>.</p>
+<p><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/cairo/token_bridge_interface.cairo#L12"><code>initiate_withdraw</code></a> in <code>token_bridge_interface.cairo</code>.</p>
 </div>
 <hr>
 </div>
@@ -2741,13 +2753,13 @@ No value
 </div>
 <h4 id="function_definition_16" class="discrete">Function definition</h4>
 <div class="paragraph">
-<p><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0/src/cairo/receiver_interface.cairo#L6"><code>on_receive</code></a> in <code>receiver_interface.cairo</code>.</p>
+<p><a href="https://github.com/starknet-io/starkgate-contracts/tree/v2.0.1/src/cairo/receiver_interface.cairo#L6"><code>on_receive</code></a> in <code>receiver_interface.cairo</code>.</p>
 </div>
 </div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../starkgate-estimating_fees/">Estimating StarkGate fees</a></span>
+  <span class="prev"><a href="../dai_token_migration/">Migrating DAI v0 to DAI</a></span>
   <span class="next"><a href="../important_addresses/">Starknet contracts and sequencer addresses</a></span>
 </nav>
 </article>
@@ -2759,7 +2771,8 @@ No value
     <div class="footer-left">
       <p>Built with ✨ by the Starknet community</p>
     </div>
-    <strong>Mainnet: 0.13.0 | Sepolia testnet: 0.13.0 | Goerli testnet: 0.13.0</strong>
+    <div class="footer-network-info"><strong>Mainnet: 0.13.1.1 | Sepolia: 0.13.1.1</strong>
+</div>
     <!-- <div class="community-section">
       <p class="community-section__text">Follow Lisk on: </p>
       <div class="community-section__icons"> -->
@@ -2787,7 +2800,7 @@ No value
 <script async src="../../../_/js/vendor/component-versions.js?new"></script>
 <script src="../../../_/js/vendor/custom.js?new"></script>
 <script async src="../../../_/js/vendor/tabs.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script>
 <script
     src="https://cdn.jsdelivr.net/npm/algoliasearch@4.14.3/dist/algoliasearch-lite.umd.js"
@@ -2980,7 +2993,7 @@ No value
                 searchClient,
                 queries: [
                   {
-                    indexName: "starknet-docs-master",
+                    indexName: "starknet-docs-main",
                     query,
                     params: {
                       attributesToSnippet: ["title:8", "content:10"],

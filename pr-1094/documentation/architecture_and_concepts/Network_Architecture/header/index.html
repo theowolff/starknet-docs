@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Block structure :: Starknet documentation</title>
     <link rel="canonical" href="https://docs.starknet.io/documentation/architecture_and_concepts/Network_Architecture/header/">
-    <link rel="prev" href="../../../starknet_versions/deprecated/">
+    <link rel="prev" href="../starknet_architecture_overview/">
     <link rel="next" href="../transaction-life-cycle/">
     <meta name="generator" content="Antora 3.1.1">
 
@@ -36,7 +36,7 @@
     <script>var uiRootPath = '../../../../_'</script>
     <script src="../../../../_/js/vendor/medium-zoom.js?new"></script>
     <script type="text/javascript" id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="e4db29b5-cd94-4bcf-87e4-04f4ca564240" data-blockingmode="manual"></script>
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     <script>
         (function(h,o,t,j,a,r){
@@ -109,8 +109,6 @@
   <ul>
     <li><a href="../../../">Starknet</a></li>
     <li>Architecture</li>
-    <li>Blockchain architecture</li>
-    <li>Blocks and transactions</li>
     <li><a href="./">Block structure</a></li>
   </ul>
 </nav>
@@ -209,12 +207,12 @@
 <ul class="nav-list">
   <li class="nav-item parent" data-depth="1">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Versions</span>
+    <span class="nav-text">Release information</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../../starknet_versions/version_notes/">Starknet release notes</a>
+     href="../../../starknet_versions/version_notes/">Release notes</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
@@ -231,67 +229,60 @@
     <button class="nav-item-toggle mask-svg-center"></button>
     <span class="nav-text">Architecture</span>
 <ul class="nav-list">
-  <li class="nav-item parent" data-depth="2">
-    <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Blockchain architecture</span>
-<ul class="nav-list">
-  <li class="nav-item parent" data-depth="3">
-    <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Blocks and transactions</span>
-<ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="4">
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../starknet_architecture_overview/">Overview</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
     <a 
        class="nav-link"
      href="./">Block structure</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../transaction-life-cycle/">Transaction lifecycle</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../transactions/">Transaction types</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../fee-mechanism/">Gas and transaction fees</a>
   </li>
-</ul>
-  </li>
-  <li class="nav-item parent" data-depth="3">
+  <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
     <span class="nav-text">State</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
      href="../starknet-state/">Starknet state</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
      href="../on-chain-data/">Data availability</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item parent" data-depth="3">
+  <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
     <span class="nav-text">L1-L2 messaging</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
      href="../messaging-mechanism/">Messaging mechanism</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
      href="../messaging_reference/">Messaging reference</a>
-  </li>
-</ul>
   </li>
 </ul>
   </li>
@@ -307,17 +298,22 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../Accounts/approach/">Starknet account interface</a>
+     href="../../Accounts/approach/">Starknet&#8217;s account interface</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../Accounts/validate_and_execute/">Validate and execute</a>
+     href="../../Accounts/account_functions/">Account interface function reference</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
      href="../../Accounts/deploying_new_accounts/">Deploying new accounts</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../Accounts/universal-deployer/">Universal Deployer Contract</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
@@ -373,7 +369,7 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../Smart_Contracts/universal-deployer/">Universal Deployer Contract</a>
+     href="../../Smart_Contracts/serialization_of_Cairo_types/">Serialization of Cairo types</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
@@ -383,7 +379,7 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../Smart_Contracts/serialization_of_Cairo_types/">Serialization of Cairo types</a>
+     href="../../Smart_Contracts/execution_info/">Execution information for the current block</a>
   </li>
 </ul>
   </li>
@@ -518,6 +514,11 @@
        class="nav-link"
      href="../../../tools/starkgate-estimating_fees/">Estimating StarkGate fees</a>
   </li>
+  <li class="nav-item" data-depth="4">
+    <a 
+       class="nav-link"
+     href="../../../tools/dai_token_migration/">Migrating DAI v0 to DAI</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="3">
@@ -552,6 +553,15 @@
   </li>
 </ul>
   </li>
+  <li class="nav-item parent" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a 
+       class="nav-link"
+     href="../../../glossary/">Glossary</a>
+  </li>
+</ul>
+  </li>
 </ul>
     <div class="navbar-end mobile-only">
       <div class="hr-divider"></div>
@@ -579,11 +589,10 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>In Starknet, a block is a list of transactions, and a block header that contains the following fields:</p>
+<p>A Starknet block is a list of transactions and a block header that contains the following fields:</p>
 </div>
 <table class="tableblock frame-all grid-all fit-content">
 <colgroup>
-<col>
 <col>
 <col>
 <col>
@@ -593,105 +602,80 @@
 <th class="tableblock halign-left valign-top">Name</th>
 <th class="tableblock halign-left valign-top">Type</th>
 <th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Implemented</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>parent_block_hash</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>FieldElement</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The hash of this block&#8217;s parent</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#10003;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The hash of the block&#8217;s parent.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>block_number</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Integer</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The number (height) of this block</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#10003;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number, that is, the height, of this block.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>global_state_root</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>FieldElement</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The state <a href="../starknet-state/#state_commitment" class="xref page">commitment</a> after this block</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#10003;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <a href="../starknet-state/#state_commitment" class="xref page">state commitment</a> after the block.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>sequencer_address</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>FieldElement</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The Starknet address of the sequencer who created this block</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#10003;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ContractAddress</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Starknet address of the sequencer that created the block.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>block_timestamp</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Timestamp</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The time the sequencer created this block before executing transactions</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#10003;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The time at which the sequencer began building the block, in seconds since the Unix epoch.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>transaction_count</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Integer</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The number of transactions in a block</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#10003;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of transactions in the block.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>transaction_commitment</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>FieldElement</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A commitment to the transactions included in the block</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#10003;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A commitment to the transactions included in the block.</p>
+<p class="tableblock">The root of a height-64 binary Merkle Patricia trie. The leaf at index \(i\) corresponds to \({h(\text{transaction_hash}, \text{signature})}\).</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>event_count</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Integer</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The number of events</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#10003;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of events in the block.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>event_commitment</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>FieldElement</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A commitment to the events produced in this block</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#10003;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A commitment to the events produced in the block.</p>
+<p class="tableblock">The root of a height-64 binary Merkle Patricia trie. The leaf at index \(i\) corresponds to the hash of the \(i'th\) event.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>l1_gas_price</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>(Integer, Integer)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The price of L1 gas that was used while constructing the block. L1 gas prices apply to storage updates and L1&#8594;L2 messages. As of March 2023, computation is also priced in terms of L1 gas, but this will change in the future.</p>
+<p class="tableblock">The first <code>Integer</code> value is the price in wei. The second is the price in fri.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>l1_data_gas_price</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>(Integer, Integer)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The price of L1 blob gas that was used while constructing the block. If the <code>l1_DA_MODE</code> of the block is set to <code>BLOB</code>, L1 blob gas prices determines the storage update cost.</p>
+<p class="tableblock">The first <code>Integer</code> value is the price in wei. The second is the price in fri.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>l1_da_mode</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CALLDATA</code> or <code>BLOB</code>, depending on how Starknet state diffs are sent to L1.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>protocol_version</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Integer</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The version of the Starknet protocol used when creating this block</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>extra data</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>FieldElement</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Extraneous data that might be useful for running transactions</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The version of the Starknet protocol used when creating the block.</p></td>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>Where:</p>
-</div>
-<div class="hdlist">
-<table>
-<colgroup>
-<col style="width: 30%;">
-<col>
-</colgroup>
-<tr>
-<td class="hdlist1">
-<code>event_commitment</code>
-</td>
-<td class="hdlist2">
-<p>is the root of a 64-bit high binary Merkle Patricia tree. The leaf at index \(i\) corresponds to the hash of the \(i'th\) event.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<code>transaction_commitment</code>
-</td>
-<td class="hdlist2">
-<p>is the root of a 64-bit high binary Merkle Patricia tree. The leaf at index \(i\) corresponds to \({h(transaction \space hash, signature)}\) if the \(i'th\) transaction is an <code>invoke</code> transaction and \(h(0,0)\) otherwise.</p>
-</td>
-</tr>
-</table>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -734,10 +718,24 @@
 </tr>
 </table>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Several properties of the block header, such as <code>l1_gas_price</code> and <code>l1_da_mode</code>, are not yet included in the block hash. This will change in a future Starknet version.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../../../starknet_versions/deprecated/">Deprecated, unsupported, and removed features</a></span>
+  <span class="prev"><a href="../starknet_architecture_overview/">Overview</a></span>
   <span class="next"><a href="../transaction-life-cycle/">Transaction lifecycle</a></span>
 </nav>
 </article>
@@ -749,7 +747,8 @@
     <div class="footer-left">
       <p>Built with ✨ by the Starknet community</p>
     </div>
-    <strong>Mainnet: 0.13.0 | Sepolia testnet: 0.13.0 | Goerli testnet: 0.13.0</strong>
+    <div class="footer-network-info"><strong>Mainnet: 0.13.1.1 | Sepolia: 0.13.1.1</strong>
+</div>
     <!-- <div class="community-section">
       <p class="community-section__text">Follow Lisk on: </p>
       <div class="community-section__icons"> -->
@@ -777,7 +776,7 @@
 <script async src="../../../../_/js/vendor/component-versions.js?new"></script>
 <script src="../../../../_/js/vendor/custom.js?new"></script>
 <script async src="../../../../_/js/vendor/tabs.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script>
 <script
     src="https://cdn.jsdelivr.net/npm/algoliasearch@4.14.3/dist/algoliasearch-lite.umd.js"
@@ -970,7 +969,7 @@
                 searchClient,
                 queries: [
                   {
-                    indexName: "starknet-docs-master",
+                    indexName: "starknet-docs-main",
                     query,
                     params: {
                       attributesToSnippet: ["title:8", "content:10"],

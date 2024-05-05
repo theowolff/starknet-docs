@@ -36,7 +36,7 @@
     <script>var uiRootPath = '../../../../_'</script>
     <script src="../../../../_/js/vendor/medium-zoom.js?new"></script>
     <script type="text/javascript" id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="e4db29b5-cd94-4bcf-87e4-04f4ca564240" data-blockingmode="manual"></script>
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     <script>
         (function(h,o,t,j,a,r){
@@ -109,8 +109,6 @@
   <ul>
     <li><a href="../../../">Starknet</a></li>
     <li>Architecture</li>
-    <li>Blockchain architecture</li>
-    <li>Blocks and transactions</li>
     <li><a href="./">Transaction types</a></li>
   </ul>
 </nav>
@@ -209,12 +207,12 @@
 <ul class="nav-list">
   <li class="nav-item parent" data-depth="1">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Versions</span>
+    <span class="nav-text">Release information</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../../starknet_versions/version_notes/">Starknet release notes</a>
+     href="../../../starknet_versions/version_notes/">Release notes</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
@@ -231,67 +229,60 @@
     <button class="nav-item-toggle mask-svg-center"></button>
     <span class="nav-text">Architecture</span>
 <ul class="nav-list">
-  <li class="nav-item parent" data-depth="2">
-    <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Blockchain architecture</span>
-<ul class="nav-list">
-  <li class="nav-item parent" data-depth="3">
-    <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Blocks and transactions</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../starknet_architecture_overview/">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../header/">Block structure</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../transaction-life-cycle/">Transaction lifecycle</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="4">
+  <li class="nav-item is-current-page" data-depth="2">
     <a 
        class="nav-link"
      href="./">Transaction types</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../fee-mechanism/">Gas and transaction fees</a>
   </li>
-</ul>
-  </li>
-  <li class="nav-item parent" data-depth="3">
+  <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
     <span class="nav-text">State</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
      href="../starknet-state/">Starknet state</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
      href="../on-chain-data/">Data availability</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item parent" data-depth="3">
+  <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
     <span class="nav-text">L1-L2 messaging</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
      href="../messaging-mechanism/">Messaging mechanism</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
      href="../messaging_reference/">Messaging reference</a>
-  </li>
-</ul>
   </li>
 </ul>
   </li>
@@ -307,17 +298,22 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../Accounts/approach/">Starknet account interface</a>
+     href="../../Accounts/approach/">Starknet&#8217;s account interface</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../Accounts/validate_and_execute/">Validate and execute</a>
+     href="../../Accounts/account_functions/">Account interface function reference</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
      href="../../Accounts/deploying_new_accounts/">Deploying new accounts</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../Accounts/universal-deployer/">Universal Deployer Contract</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
@@ -373,7 +369,7 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../Smart_Contracts/universal-deployer/">Universal Deployer Contract</a>
+     href="../../Smart_Contracts/serialization_of_Cairo_types/">Serialization of Cairo types</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
@@ -383,7 +379,7 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../Smart_Contracts/serialization_of_Cairo_types/">Serialization of Cairo types</a>
+     href="../../Smart_Contracts/execution_info/">Execution information for the current block</a>
   </li>
 </ul>
   </li>
@@ -518,6 +514,11 @@
        class="nav-link"
      href="../../../tools/starkgate-estimating_fees/">Estimating StarkGate fees</a>
   </li>
+  <li class="nav-item" data-depth="4">
+    <a 
+       class="nav-link"
+     href="../../../tools/dai_token_migration/">Migrating DAI v0 to DAI</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="3">
@@ -549,6 +550,15 @@
     <a 
        class="nav-link"
      href="../../../tools/limits_and_triggers/">Current limits</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item parent" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a 
+       class="nav-link"
+     href="../../../glossary/">Glossary</a>
   </li>
 </ul>
   </li>
@@ -1529,7 +1539,7 @@ for deploying account contracts.</p>
 transaction fee. You can then send the <code>DEPLOY_ACCOUNT</code> transaction.</p>
 </div>
 <div class="paragraph">
-<p>For more information, see <a href="../../Accounts/deploying_new_accounts/" class="xref page">Deploying new accounts</a>.</p>
+<p>For more information, see <a href="../../Accounts/deploying_new_accounts/" class="xref page">Deploying a new account</a>.</p>
 </div>
 <div class="sect2">
 <h3 id="v3_transaction_fields_3"><a class="anchor" href="#v3_transaction_fields_3"></a>v3 transaction fields</h3>
@@ -1919,9 +1929,6 @@ and <code>nonce_data_availability_mode</code>, as follows:</p>
 <p><code>SN_MAIN</code> for Starknet&#8217;s main network.</p>
 </li>
 <li>
-<p><code>SN_GOERLI</code> for Starknet&#8217;s public testnet on Goerli (Deprecated).</p>
-</li>
-<li>
 <p><code>SN_SEPOLIA</code> for Starknet&#8217;s public testnet on Sepolia.</p>
 </li>
 </ul>
@@ -1934,7 +1941,13 @@ and <code>nonce_data_availability_mode</code>, as follows:</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Goerli testnet 2 is removed. Use Goerli testnet.</p>
+<p>Sepolia testnet replaces Goerli testnet.</p>
+</div>
+<div class="paragraph">
+<p>Goerli testnet support is now removed.</p>
+</div>
+<div class="paragraph">
+<p>For more information, including bridge support for Sepolia, see <a href="http://eepurl.com/iK0YTE">Starknet Goerli Deprecation</a> in the Starknet Dev News newsletter.</p>
 </div>
 </td>
 </tr>
@@ -1955,7 +1968,8 @@ and <code>nonce_data_availability_mode</code>, as follows:</p>
     <div class="footer-left">
       <p>Built with ✨ by the Starknet community</p>
     </div>
-    <strong>Mainnet: 0.13.0 | Sepolia testnet: 0.13.0 | Goerli testnet: 0.13.0</strong>
+    <div class="footer-network-info"><strong>Mainnet: 0.13.1.1 | Sepolia: 0.13.1.1</strong>
+</div>
     <!-- <div class="community-section">
       <p class="community-section__text">Follow Lisk on: </p>
       <div class="community-section__icons"> -->
@@ -1983,7 +1997,7 @@ and <code>nonce_data_availability_mode</code>, as follows:</p>
 <script async src="../../../../_/js/vendor/component-versions.js?new"></script>
 <script src="../../../../_/js/vendor/custom.js?new"></script>
 <script async src="../../../../_/js/vendor/tabs.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script>
 <script
     src="https://cdn.jsdelivr.net/npm/algoliasearch@4.14.3/dist/algoliasearch-lite.umd.js"
@@ -2176,7 +2190,7 @@ and <code>nonce_data_availability_mode</code>, as follows:</p>
                 searchClient,
                 queries: [
                   {
-                    indexName: "starknet-docs-master",
+                    indexName: "starknet-docs-main",
                     query,
                     params: {
                       attributesToSnippet: ["title:8", "content:10"],

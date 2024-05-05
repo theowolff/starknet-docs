@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Universal Deployer Contract (UDC) :: Starknet documentation</title>
-    <link rel="canonical" href="https://docs.starknet.io/documentation/architecture_and_concepts/Smart_Contracts/universal-deployer/">
-    <link rel="prev" href="../cairo-and-sierra/">
-    <link rel="next" href="../system-calls-cairo1/">
+    <link rel="canonical" href="https://docs.starknet.io/documentation/architecture_and_concepts/Accounts/universal-deployer/">
+    <link rel="prev" href="../deploying_new_accounts/">
+    <link rel="next" href="../simplified_transaction_flow/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -36,7 +36,7 @@
     <script>var uiRootPath = '../../../../_'</script>
     <script src="../../../../_/js/vendor/medium-zoom.js?new"></script>
     <script type="text/javascript" id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="e4db29b5-cd94-4bcf-87e4-04f4ca564240" data-blockingmode="manual"></script>
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     <script>
         (function(h,o,t,j,a,r){
@@ -109,12 +109,12 @@
   <ul>
     <li><a href="../../../">Starknet</a></li>
     <li>Architecture</li>
-    <li>Contracts</li>
+    <li>Accounts</li>
     <li><a href="./">Universal Deployer Contract</a></li>
   </ul>
 </nav>
   <div class="edit-this-page">
-    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/architecture_and_concepts/pages/Smart_Contracts/universal-deployer.adoc"><img class="pencil">Edit this Page</a>
+    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/architecture_and_concepts/pages/Accounts/universal-deployer.adoc"><img class="pencil">Edit this Page</a>
   </div>
 </div>
 <div class="body">
@@ -208,12 +208,12 @@
 <ul class="nav-list">
   <li class="nav-item parent" data-depth="1">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Versions</span>
+    <span class="nav-text">Release information</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../../starknet_versions/version_notes/">Starknet release notes</a>
+     href="../../../starknet_versions/version_notes/">Release notes</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
@@ -230,67 +230,60 @@
     <button class="nav-item-toggle mask-svg-center"></button>
     <span class="nav-text">Architecture</span>
 <ul class="nav-list">
-  <li class="nav-item parent" data-depth="2">
-    <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Blockchain architecture</span>
-<ul class="nav-list">
-  <li class="nav-item parent" data-depth="3">
-    <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Blocks and transactions</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../Network_Architecture/starknet_architecture_overview/">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../../Network_Architecture/header/">Block structure</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../../Network_Architecture/transaction-life-cycle/">Transaction lifecycle</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../../Network_Architecture/transactions/">Transaction types</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../../Network_Architecture/fee-mechanism/">Gas and transaction fees</a>
   </li>
-</ul>
-  </li>
-  <li class="nav-item parent" data-depth="3">
+  <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
     <span class="nav-text">State</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
      href="../../Network_Architecture/starknet-state/">Starknet state</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
      href="../../Network_Architecture/on-chain-data/">Data availability</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item parent" data-depth="3">
+  <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
     <span class="nav-text">L1-L2 messaging</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
      href="../../Network_Architecture/messaging-mechanism/">Messaging mechanism</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
      href="../../Network_Architecture/messaging_reference/">Messaging reference</a>
-  </li>
-</ul>
   </li>
 </ul>
   </li>
@@ -301,27 +294,32 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../Accounts/introduction/">What is an account?</a>
+     href="../introduction/">What is an account?</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../Accounts/approach/">Starknet account interface</a>
+     href="../approach/">Starknet&#8217;s account interface</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../Accounts/validate_and_execute/">Validate and execute</a>
+     href="../account_functions/">Account interface function reference</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../Accounts/deploying_new_accounts/">Deploying new accounts</a>
+     href="../deploying_new_accounts/">Deploying new accounts</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a 
+       class="nav-link"
+     href="./">Universal Deployer Contract</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../Accounts/simplified_transaction_flow/">Simplified transaction flow</a>
+     href="../simplified_transaction_flow/">Simplified transaction flow</a>
   </li>
 </ul>
   </li>
@@ -332,57 +330,57 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../contract-classes/">Contract classes and instances</a>
+     href="../../Smart_Contracts/contract-classes/">Contract classes and instances</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../class-hash/">Class hash</a>
+     href="../../Smart_Contracts/class-hash/">Class hash</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../contract-address/">Contract address</a>
+     href="../../Smart_Contracts/contract-address/">Contract address</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../contract-storage/">Contract storage</a>
+     href="../../Smart_Contracts/contract-storage/">Contract storage</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../contract-abi/">Contract ABI</a>
+     href="../../Smart_Contracts/contract-abi/">Contract ABI</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../starknet-events/">Events</a>
+     href="../../Smart_Contracts/starknet-events/">Events</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../contract-syntax/">Migrating a contract from Cairo v1 to Cairo v2</a>
+     href="../../Smart_Contracts/contract-syntax/">Migrating a contract from Cairo v1 to Cairo v2</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../cairo-and-sierra/">Cairo and Sierra</a>
-  </li>
-  <li class="nav-item is-current-page" data-depth="3">
-    <a 
-       class="nav-link"
-     href="./">Universal Deployer Contract</a>
+     href="../../Smart_Contracts/cairo-and-sierra/">Cairo and Sierra</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../system-calls-cairo1/">System calls</a>
+     href="../../Smart_Contracts/serialization_of_Cairo_types/">Serialization of Cairo types</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../serialization_of_Cairo_types/">Serialization of Cairo types</a>
+     href="../../Smart_Contracts/system-calls-cairo1/">System calls</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../Smart_Contracts/execution_info/">Execution information for the current block</a>
   </li>
 </ul>
   </li>
@@ -517,6 +515,11 @@
        class="nav-link"
      href="../../../tools/starkgate-estimating_fees/">Estimating StarkGate fees</a>
   </li>
+  <li class="nav-item" data-depth="4">
+    <a 
+       class="nav-link"
+     href="../../../tools/dai_token_migration/">Migrating DAI v0 to DAI</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="3">
@@ -551,6 +554,15 @@
   </li>
 </ul>
   </li>
+  <li class="nav-item parent" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a 
+       class="nav-link"
+     href="../../../glossary/">Glossary</a>
+  </li>
+</ul>
+  </li>
 </ul>
     <div class="navbar-end mobile-only">
       <div class="hr-divider"></div>
@@ -578,7 +590,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Universal Deployer Contract (UDC) is a singleton smart contract that wraps the <a href="../system-calls-cairo1/#deploy" class="xref page">deploy syscall</a> to expose it to any contract that doesn’t implement it, such as account contracts. You can think of it as a standardized generic factory for Starknet contracts.</p>
+<p>The Universal Deployer Contract (UDC) is a singleton smart contract that wraps the <a href="../../Smart_Contracts/system-calls-cairo1/#deploy" class="xref page">deploy syscall</a> to expose it to any contract that doesn’t implement it, such as account contracts. You can think of it as a standardized generic factory for Starknet contracts.</p>
 </div>
 <div class="paragraph">
 <p>And since Starknet has no deployment transaction type, it offers a standardized way to deploy smart contracts by following the <a href="https://community.starknet.io/t/snip-deployer-contract-interface/2772">standard deployer interface</a> and emitting a <code>ContractDeployed</code> event.</p>
@@ -593,7 +605,7 @@ For details on the motivation and the decision making process, see the <a href="
 <h2 id="udc_address"><a class="anchor" href="#udc_address"></a>UDC address</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The UDC address is <code>0x041a78e741e5af2fec34b695679bc6891742439f7afb8484ecd7766661ad02bf</code> in Mainnet, Goerli testnet, Sepolia testnet, and starknet-devnet. This address might change in the future when it is migrated to a modern version of Cairo.</p>
+<p>The UDC address is <code>0x041a78e741e5af2fec34b695679bc6891742439f7afb8484ecd7766661ad02bf</code> in Mainnet, Sepolia testnet, and starknet-devnet. This address might change in the future when it is migrated to a modern version of Cairo.</p>
 </div>
 </div>
 </div>
@@ -739,7 +751,7 @@ To deploy a reproducible deployment, set <code>unique</code> to <code>false</cod
 <td class="content">
 <div class="paragraph">
 <p>The UDC has already been deployed on most networks and development environments.
-The standard requires the UDC to be deployed passing <code>deploy_from_zero=true</code> and <code>salt=0</code> as arguments to the <a href="../system-calls-cairo1/#deploy" class="xref page">deploy syscall</a>. This results in a deterministic and predictable address across all instances of Starknet, facilitating SDK integration and reproducibility of deployments.</p>
+The standard requires the UDC to be deployed passing <code>deploy_from_zero=true</code> and <code>salt=0</code> as arguments to the <a href="../../Smart_Contracts/system-calls-cairo1/#deploy" class="xref page">deploy syscall</a>. This results in a deterministic and predictable address across all instances of Starknet, facilitating SDK integration and reproducibility of deployments.</p>
 </div>
 </td>
 </tr>
@@ -788,8 +800,8 @@ struct ContractDeployed {
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../cairo-and-sierra/">Cairo and Sierra</a></span>
-  <span class="next"><a href="../system-calls-cairo1/">System calls</a></span>
+  <span class="prev"><a href="../deploying_new_accounts/">Deploying new accounts</a></span>
+  <span class="next"><a href="../simplified_transaction_flow/">Simplified transaction flow</a></span>
 </nav>
 </article>
   </div>
@@ -800,7 +812,8 @@ struct ContractDeployed {
     <div class="footer-left">
       <p>Built with ✨ by the Starknet community</p>
     </div>
-    <strong>Mainnet: 0.13.0 | Sepolia testnet: 0.13.0 | Goerli testnet: 0.13.0</strong>
+    <div class="footer-network-info"><strong>Mainnet: 0.13.1.1 | Sepolia: 0.13.1.1</strong>
+</div>
     <!-- <div class="community-section">
       <p class="community-section__text">Follow Lisk on: </p>
       <div class="community-section__icons"> -->
@@ -828,7 +841,7 @@ struct ContractDeployed {
 <script async src="../../../../_/js/vendor/component-versions.js?new"></script>
 <script src="../../../../_/js/vendor/custom.js?new"></script>
 <script async src="../../../../_/js/vendor/tabs.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script>
 <script
     src="https://cdn.jsdelivr.net/npm/algoliasearch@4.14.3/dist/algoliasearch-lite.umd.js"
@@ -1021,7 +1034,7 @@ struct ContractDeployed {
                 searchClient,
                 queries: [
                   {
-                    indexName: "starknet-docs-master",
+                    indexName: "starknet-docs-main",
                     query,
                     params: {
                       attributesToSnippet: ["title:8", "content:10"],
