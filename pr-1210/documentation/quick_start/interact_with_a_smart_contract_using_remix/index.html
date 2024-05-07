@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Interacting with a smart contract with Remix :: Starknet documentation</title>
+    <title>Deploying and interacting with a Starknet smart contract with Remix :: Starknet documentation</title>
     <link rel="canonical" href="https://docs.starknet.io/documentation/quick_start/interact_with_a_smart_contract_using_remix/">
     <link rel="prev" href="../interact_with_a_smart_contract/">
     <link rel="next" href="../../starknet_versions/version_notes/">
@@ -584,40 +584,37 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Interacting with a smart contract with Remix</h1>
+<h1 class="page">Deploying and interacting with a Starknet smart contract with Remix</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>To compile, deploy, and interact with our smart contract, use the Starknet Remix Plugin. This tool is essential for starting Starknet development without the need for any local installations on your machine.</p>
+<p>To compile, deploy, and interact with our smart contract, use the Starknet Remix plugin. This tool enables you to start to develop for Starknet without the need for any local installations on your machine.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="introduction"><a class="anchor" href="#introduction"></a>Introduction</h2>
+<h2 id="set_up_your_environment_in_remix"><a class="anchor" href="#set_up_your_environment_in_remix"></a>Set up your environment in Remix</h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Go to the <a href="https://remix.ethereum.org/#activate=Starknet&amp;lang=en&amp;optimize=false&amp;runs=200&amp;evmVersion=null&amp;version=soljson-v0.8.24+commit.e11b9ed9.js">Remix IDE</a> website with the Starknet plugin activated.</p>
+<p>Go to the <a href="https://remix.ethereum.org/#activate=Starknet&amp;lang=en&amp;optimize=false&amp;runs=200&amp;evmVersion=null&amp;version=soljson-v0.8.24+commit.e11b9ed9.js">Remix IDE website with the Starknet plugin activated</a>.</p>
 </li>
 <li>
-<p>Navigate to the <code>File Explorer</code> tab to review the details of the example project.</p>
+<p>Click the <strong>File Explorer</strong> (<span class="image unresolved"><img src="quick_start:remix_file_explorer.png" alt="remix file explorer"></span>) tab to review the details of the example project.</p>
 </li>
 <li>
-<p>Select the <code>Settings</code> option and choose the Cairo version, which is the latest version available in Remix.</p>
+<p>Click the Starknet (add Starknet image here) tab, and click the <strong>Settings</strong> tab. Select the latest version of Cairo available in Remix.</p>
 </li>
 <li>
-<p>In the file <code>Scarb.toml</code>, you can find the version of this example project specified.</p>
-</li>
-<li>
-<p>It is crucial to make sure that you match the version originally specified with the one found in our <code>Scarb.toml</code> file. Any inconsistencies should be corrected by configuration.</p>
+<p>Open the <code>Scarb.toml</code> file <mark>How?</mark> to verify the version of your project. Ensure it matches the version specified originally, and correct any discrepancies, if necessary.</p>
 </li>
 </ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="customizing_for_ownable_contract"><a class="anchor" href="#customizing_for_ownable_contract"></a>Customizing for Ownable Contract</h2>
+<h2 id="customizing_your_environment_for_the_ownable_contract"><a class="anchor" href="#customizing_your_environment_for_the_ownable_contract"></a>Customizing your environment for the <code>Ownable</code> contract</h2>
 <div class="sectionbody">
 <div class="admonitionblock note">
 <table>
@@ -627,7 +624,7 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>A default example project is provided for the purposes of this tutorial. To achieve this, certain files and directories will need to be modified or removed.</p>
+<p>For this tutorial, a default example project is provided. Modify or remove certain files and directories as needed.</p>
 </div>
 </td>
 </tr>
@@ -636,23 +633,23 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Rename the root directory as <code>ownable</code>. Within your <code>Scarb.toml</code>, under the [package] section, designate the name as <code>ownable</code>.</p>
+<p>Rename the root directory to <code>ownable</code>. In your <code>Scarb.toml</code>, under the <code>[package]</code> section, set the name to <code>ownable</code>.</p>
 </li>
 <li>
 <p>Delete the <code>balance.cairo</code> and <code>forty_two.cairo</code> files, if they exist.</p>
 </li>
 <li>
-<p>Open <code>lib.cairo</code> and remove all its contents, making it empty.</p>
+<p>Open <code>lib.cairo</code> and delete all its contents.</p>
 </li>
 </ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="introduction_to_starknet_smart_contracts"><a class="anchor" href="#introduction_to_starknet_smart_contracts"></a>Introduction to Starknet Smart Contracts</h2>
+<h2 id="introduction_to_starknet_smart_contracts"><a class="anchor" href="#introduction_to_starknet_smart_contracts"></a>Introduction to Starknet smart contracts</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Explore the foundational Ownable contract pattern crafted in Cairo for Starknet. It includes:</p>
+<p>Explore the <code>Ownable</code> contract pattern crafted in Cairo for Starknet. It includes:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -671,7 +668,7 @@
 </ul>
 </div>
 <div class="sect2">
-<h3 id="cairo_example_contract"><a class="anchor" href="#cairo_example_contract"></a>Cairo Example Contract</h3>
+<h3 id="example-cairo-contract"><a class="anchor" href="#example-cairo-contract"></a>Example Cairo contract</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">use starknet::ContractAddress;
@@ -740,9 +737,19 @@ mod Ownable {
 </div>
 </div>
 <div class="sect2">
-<h3 id="components_breakdown"><a class="anchor" href="#components_breakdown"></a>Components Breakdown</h3>
+<h3 id="contract_component_breakdown"><a class="anchor" href="#contract_component_breakdown"></a>Contract component breakdown</h3>
+<div class="hdlist stripes-odd">
+<table>
+<colgroup>
+<col style="width: 25%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+Dependencies and Interface
+</td>
+<td class="hdlist2">
 <div class="ulist">
-<div class="title">Dependencies and Interface:</div>
 <ul>
 <li>
 <p><code>starknet::ContractAddress</code>: Represents a Starknet contract address.</p>
@@ -752,125 +759,130 @@ mod Ownable {
 </li>
 </ul>
 </div>
-<div class="ulist">
-<div class="title">Events:</div>
-<ul>
-<li>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Events
+</td>
+<td class="hdlist2">
 <p><code>OwnershipTransferred</code>: Indicates changes in ownership, providing details about the previous and new owners.</p>
-</li>
-</ul>
-</div>
-<div class="ulist">
-<div class="title">Storage:</div>
-<ul>
-<li>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Storage
+</td>
+<td class="hdlist2">
 <p>Stores the contract&#8217;s state, including the address of the current owner.</p>
-</li>
-</ul>
-</div>
-<div class="ulist">
-<div class="title">Constructor:</div>
-<ul>
-<li>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Constructor
+</td>
+<td class="hdlist2">
 <p>Sets up the contract by assigning an initial owner.</p>
-</li>
-</ul>
-</div>
-<div class="ulist">
-<div class="title">External Functions:</div>
-<ul>
-<li>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+External Functions
+</td>
+<td class="hdlist2">
 <p>Contains functions for transferring ownership and fetching information about the current owner.</p>
-</li>
-</ul>
-</div>
-<div class="ulist">
-<div class="title">Private Methods:</div>
-<ul>
-<li>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Private Methods
+</td>
+<td class="hdlist2">
 <p><code>only_owner</code>: Validates if the caller is the current owner.</p>
-</li>
-</ul>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="compilation_process"><a class="anchor" href="#compilation_process"></a>Compilation Process</h2>
+<h2 id="compiling_the_contract"><a class="anchor" href="#compiling_the_contract"></a>Compiling the contract</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>To compile using Remix:</p>
 </div>
-<div class="ulist">
-<div class="title">File Creation</div>
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p>Go to the "File Explorer" tab in Remix&#8217;s interface.</p>
+<p>Click the <strong>File Explorer</strong> tab and open the <code>lib.cairo</code> file <mark>I don&#8217;t see this file</mark> and insert the code from <a href="#example-cairo-contract">Example Cairo contract</a>.</p>
 </li>
 <li>
-<p>Find the file named lib.cairo and insert the provided code into it.</p>
+<p>Click the <strong>Starknet</strong> tab, then click the <strong>Home</strong> tab.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Under <strong>1 Compile</strong>, select <code>compile a single file</code>.</p>
+</li>
+<li>
+<p>Grant the necessary permissions when prompted. Select <strong>Remember my choice</strong> for a smoother compilation process in the future.</p>
+</li>
+<li>
+<p>The compilation process creates an <code>artifacts</code> directory containing the compiled contract in two formats: a Sierra file, in JSON format, and a CASM file. For Starknet deployment, Remix  uses the Sierra file.</p>
+</li>
+<li>
+<p>Remix efficiently handles both compilation and deployment.</p>
 </li>
 </ul>
 </div>
-<div class="ulist">
-<div class="title">Compilation</div>
-<ul>
-<li>
-<p>Navigate to the <code>Starknet</code> tab within Remix, then click on <code>Home</code>.</p>
 </li>
-<li>
-<p>In the 1 Compile section, choose compile a single file.</p>
-</li>
-<li>
-<p>Grant the necessary permissions when prompted. Opt to Remember my choice for smoother processes in the future.</p>
-</li>
-<li>
-<p>After compilation, you&#8217;ll see an "artifacts" directory containing the compiled contract in two formats: Sierra (JSON file) and CASM. For Starknet deployment, Remix will use the Sierra file.</p>
-</li>
-<li>
-<p>More detailed explanations on this process will follow in subsequent chapters. For now, Remix efficiently handles both compilation and deployment.</p>
-</li>
-</ul>
+</ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="deployment_on_the_development_network"><a class="anchor" href="#deployment_on_the_development_network"></a>Deployment on the Development Network</h2>
+<h2 id="deploying_your_contract_on_the_development_network_devnet"><a class="anchor" href="#deploying_your_contract_on_the_development_network_devnet"></a>Deploying your contract on the development network (devnet)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To initiate the operational phase of your smart contract, you need to establish an initial owner, which is achieved through the Constructor function.</p>
+<p>Deploying a smart contract in Starknet requires two high-level steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Declare the class of your contract, that is, send your contract’s code to the network.</p>
+<div class="paragraph">
+<p>When you declare the contract class, you establish an initial owner by calling the class&#8217;s <code>constructor</code> function.</p>
+</div>
+</li>
+<li>
+<p>Deploy an instance of the contract class.</p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
-<p>Here&#8217;s a systematic approach to deploying your smart contract on the development network</p>
+<p>This tutorial uses a development network (devnet) to deploy your smart contract. A devnet is a Starknet instance that you run as a local node. A devnet enables much quicker development than is possible using testnet, as well as providing privacy prior to launching on testnet.</p>
 </div>
-<div class="ulist">
-<div class="title">Select the Network</div>
-<ul>
+<div class="olist arabic">
+<div class="title">Declaring the contract class</div>
+<ol class="arabic">
 <li>
-<p>Click on the "Remote Devnet" button in the Starknet tab.</p>
+<p>Select the network by clicking the <strong>Starknet</strong> tab, and then clicking the <strong>Remote Devnet</strong> menu.</p>
 </li>
-</ul>
+<li>
+<p>Under <strong>Devnet account selection</strong>, open the menu to view a list of accounts specific to the designated devnet.</p>
+</li>
+<li>
+<p>Select a devnet account from the list and note its address for later use.</p>
+</li>
+<li>
+<p>Click  <strong>Declare <code>lib.cairo</code></strong>.</p>
+<div class="paragraph">
+<p>Remix&#8217;s terminal provides various logs with important details such as:</p>
 </div>
+<div class="openblock">
+<div class="content">
 <div class="ulist">
-<div class="title">Choose a Devnet Account</div>
 <ul>
-<li>
-<p>In the "Devnet account selection" section, you&#8217;ll see a list of accounts specific to the designated devnet.</p>
-</li>
-<li>
-<p>Select an account from the list and note down its address for later use.</p>
-</li>
-</ul>
-</div>
-<div class="ulist">
-<div class="title">Declare</div>
-<ul>
-<li>
-<p>Click on "Declare lib.cairo".</p>
-</li>
-<li>
-<p>After declaration, Remix&#8217;s terminal will provide various logs with important details such as:</p>
-</li>
 <li>
 <p><code>transaction_hash</code>: This unique hash identifies the transaction and can be used to track its status.</p>
 </li>
@@ -879,7 +891,10 @@ mod Ownable {
 </li>
 </ul>
 </div>
+</div>
+</div>
 <div class="listingblock">
+<div class="title">Remix terminal output after declaring the <code>ownable_Ownable</code> contract</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">------------------------ Declaring contract: ownable_Ownable ------------------------
 {
@@ -889,19 +904,22 @@ mod Ownable {
 ---------------------- End Declaring contract: ownable_Ownable ----------------------</code></pre>
 </div>
 </div>
-<div class="ulist">
-<div class="title">To initiate deployment</div>
-<ul>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<div class="title">Deploying a contract instance</div>
+<ol class="arabic">
 <li>
-<p>Paste the copied address into the init_owner variable.</p>
+<p>Paste the copied address into the <code>init_owner</code> variable.</p>
 </li>
 <li>
-<p>Click on <strong>"Deploy"</strong>.</p>
+<p>Click <strong>Deploy</strong>.</p>
 </li>
-</ul>
+</ol>
 </div>
 <div class="paragraph">
-<p>After deployment, Remix&#8217;s terminal will display various logs containing important details:</p>
+<p>After deployment, Remix&#8217;s terminal displays various logs containing important details, such as:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -917,6 +935,7 @@ mod Ownable {
 </ul>
 </div>
 <div class="listingblock">
+<div class="title">Remix terminal output after deploying an instance of the <code>ownable_Ownable</code> class</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">{
   "transaction_hash": "0x624f5b9f57e53f6b5b62e588f0f949442172b3ad5d04f0827928b4d12c2fa58",
@@ -932,39 +951,33 @@ mod Ownable {
 }</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>To effectively deploy your smart contract on the development network, follow the procedure outlined above.</p>
-</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="interaction_with_the_contract"><a class="anchor" href="#interaction_with_the_contract"></a>Interaction with the Contract</h2>
+<h2 id="interacting_with_the_contract"><a class="anchor" href="#interacting_with_the_contract"></a>Interacting with the contract</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Now that the contract is operational on the development network, you can engage with it. Here&#8217;s a guide on how to interact with your contract on Starknet:</p>
+<p>Now that the contract is operational on the development network, you can initiate interacting with it as follows:</p>
 </div>
-<div class="ulist">
-<div class="title">Initiating Interaction</div>
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p>Open the "Starknet" plugin tab in your interface.</p>
+<p>Click the <strong>Starknet</strong> tab.</p>
 </li>
 <li>
-<p>Choose the "Interact" option to begin interaction.</p>
+<p>Click <strong>Interact</strong> to begin interaction.</p>
 </li>
-</ul>
+</ol>
 </div>
-<div class="ulist">
-<div class="title">Calling the <code>get_owner</code> Function</div>
-<ul>
+<div class="sect2">
+<h3 id="identifying_the_owner_of_the_contract_instance"><a class="anchor" href="#identifying_the_owner_of_the_contract_instance"></a>Identifying the owner of the contract instance</h3>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p>Select the get_owner function. Since it doesn&#8217;t require any arguments, the calldata field remains empty. (Since this function reads data, its invocation is called a "call").</p>
+<p>Select the <code>get_owner</code> function. It doesn&#8217;t require any arguments so the calldata field remains empty. This function reads data, so its invocation is referred to as a <em>call</em>.</p>
 </li>
 <li>
-<p>Execute the "Call" operation. The terminal will promptly display the outcome, revealing the owner&#8217;s address provided during the contract&#8217;s deployment within the calldata for the constructor:</p>
-</li>
-</ul>
-</div>
+<p>Execute the <code>call</code> operation. The terminal displays the output, showing the owner&#8217;s address, which you provided during the contract&#8217;s deployment within the calldata for the constructor:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
@@ -978,17 +991,22 @@ mod Ownable {
 }</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>This call doesn&#8217;t consume gas since the function doesn&#8217;t modify the contract&#8217;s state.</p>
+</li>
+</ol>
 </div>
+<div class="paragraph">
+<p>This call doesn&#8217;t consume gas because the function doesn&#8217;t modify the contract&#8217;s state.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="transferring_ownership_of_the_contract_instance"><a class="anchor" href="#transferring_ownership_of_the_contract_instance"></a>Transferring ownership of the contract instance</h3>
 <div class="ulist">
-<div class="title">Invoking the <code>transfer_ownership</code> Function</div>
 <ul>
 <li>
-<p>Choose the "Write" option in the interaction area, where functions that alter the contract&#8217;s state are listed.</p>
+<p>Click the <strong>Interact</strong> menu and select <strong>Write</strong>, where functions that alter the contract&#8217;s state are listed.</p>
 </li>
 <li>
-<p>Select the transfer_ownership function, which requires providing the new owner address as input.</p>
+<p>Select the <code>transfer_ownership</code> function, which requires providing the new owner address as input.</p>
 </li>
 <li>
 <p>Fill in the new_owner field with the relevant address. (Choose any address from the "Devnet account selection" listed in the Environment tab for this purpose.)</p>
@@ -1012,6 +1030,7 @@ mod Ownable {
   "contract": "lib.cairo",
   "function": "get_owner"
 }</code></pre>
+</div>
 </div>
 </div>
 </div>
