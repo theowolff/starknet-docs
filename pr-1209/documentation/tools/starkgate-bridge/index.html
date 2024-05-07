@@ -108,7 +108,6 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../../">Starknet</a></li>
-    <li>Developer tools and resources</li>
     <li>StarkGate bridge guide</li>
     <li><a href="./">Overview</a></li>
   </ul>
@@ -482,57 +481,57 @@
        class="nav-link"
      href="../audit/">Audit providers</a>
   </li>
-  <li class="nav-item parent" data-depth="2">
+</ul>
+  </li>
+  <li class="nav-item parent" data-depth="1">
     <button class="nav-item-toggle mask-svg-center"></button>
     <span class="nav-text">StarkGate bridge guide</span>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="3">
+  <li class="nav-item is-current-page" data-depth="2">
     <a 
        class="nav-link"
      href="./">Overview</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../starkgate_architecture/">StarkGate architecture</a>
   </li>
-  <li class="nav-item parent" data-depth="3">
+  <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
     <span class="nav-text">Procedures</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
      href="../starkgate-automated_actions_with_bridging/">Performing a Smart Deposit</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
      href="../starkgate-adding_a_token/">Adding a token</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
      href="../starkgate-cancelling%20a%20deposit/">Cancelling a deposit</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
      href="../starkgate-estimating_fees/">Estimating StarkGate fees</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
      href="../dai_token_migration/">Migrating DAI v0 to DAI</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../starkgate_function_reference/">StarkGate function and event reference</a>
-  </li>
-</ul>
   </li>
 </ul>
   </li>
@@ -626,16 +625,13 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="starkgate_supported_tokens"><a class="anchor" href="#starkgate_supported_tokens"></a>Supported tokens in StarkGate</h2>
+<h2 id="starkgate_supported_tokens"><a class="anchor" href="#starkgate_supported_tokens"></a>StarkGate addresses</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>StarkGate supports many tokens, including ETH, WBTC, USDC, DAI, and many more.</p>
-</div>
-<div class="paragraph">
-<p>For a comprehensive list of tokens that StarkGate supports, see the JSON files in the Starknet GitHub repository shown in the table <a href="#table_StarkGate_token_addresses">StarkGate bridged tokens</a>.</p>
+<p>L1 and L2 addresses for StarkGate bridges and supported tokens are listed in the JSON files in the Starknet GitHub repository shown in the table <a href="#table_StarkGate_token_addresses">StarkGate bridged tokens and their addresses</a>.</p>
 </div>
 <table id="table_StarkGate_token_addresses" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. StarkGate bridged tokens</caption>
+<caption class="title">Table 1. StarkGate bridged tokens and their addresses</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -657,6 +653,17 @@
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="starkgate_supported_tokens"><a class="anchor" href="#starkgate_supported_tokens"></a>Supported tokens in StarkGate</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>StarkGate supports many tokens, including ETH, WBTC, USDC, DAI, and many more.</p>
+</div>
+<div class="paragraph">
+<p>For a comprehensive list of tokens that StarkGate supports, including their L1 and L2 addresses, see the JSON files in the Starknet GitHub repository shown in the table <a href="#table_StarkGate_token_addresses">StarkGate bridged tokens and their addresses</a>.</p>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
