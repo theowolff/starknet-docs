@@ -622,7 +622,7 @@
 <p>During the execution of a transaction, a contract on Starknet sends a message from L2 to L1 by calling the <code>send_message_to_L1</code> syscall.</p>
 </li>
 <li>
-<p>The sequencer attaches the message parameters to the state update that includes the syscall invocation. The message parameters include the address of the recipient contract on L1 and the message data.</p>
+<p>The sequencer attaches the message parameters to the state update that includes the syscall invocation. The message parameters include the address of the sender on L2, the address of the recipient contract on L1, and the message data.</p>
 <div class="paragraph">
 <p>For example:</p>
 </div>
@@ -690,7 +690,7 @@ This function, which is part of the Starknet Core Contract, verifies the followi
 </colgroup>
 <tr>
 <td class="hdlist1">
-from_address (<code>felt252</code>)
+<code>from_address</code> (<code>felt252</code>)
 </td>
 <td class="hdlist2">
 <p>The address of the L2 contract sending the message.</p>
