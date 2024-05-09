@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Deploying a smart contract :: Starknet documentation</title>
-    <link rel="canonical" href="https://docs.starknet.io/documentation/quick_start/deploy_a_smart_contract/">
-    <link rel="prev" href="../declare_a_smart_contract/">
-    <link rel="next" href="../interact_with_a_smart_contract/">
+    <title>Depositing funds with StarkGate :: Starknet documentation</title>
+    <link rel="canonical" href="https://docs.starknet.io/documentation/tools/starkgate-depositing/">
+    <link rel="prev" href="../starkgate_architecture/">
+    <link rel="next" href="../starkgate-withdrawing/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -108,12 +108,13 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../../">Starknet</a></li>
-    <li>Quick start</li>
-    <li><a href="./">Deploying a smart contract</a></li>
+    <li>StarkGate bridge guide</li>
+    <li>Procedures</li>
+    <li><a href="./">Depositing funds</a></li>
   </ul>
 </nav>
   <div class="edit-this-page">
-    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/quick_start/pages/deploy_a_smart_contract.adoc"><img class="pencil">Edit this Page</a>
+    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/tools/pages/starkgate-depositing.adoc"><img class="pencil">Edit this Page</a>
   </div>
 </div>
 <div class="body">
@@ -149,23 +150,23 @@
         <span>
     <a 
        class="nav-link nav-link-with-toggle"
-     href="../environment_setup/">Setting up your environment</a>
+     href="../../quick_start/environment_setup/">Setting up your environment</a>
         </span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../environment_setup/#installing_starkli">Installing Starkli</a>
+     href="../../quick_start/environment_setup/#installing_starkli">Installing Starkli</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../environment_setup/#setting_environment_variables_for_starkli">Environment variables</a>
+     href="../../quick_start/environment_setup/#setting_environment_variables_for_starkli">Environment variables</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../environment_setup/#installing_scarb">Installing Scarb</a>
+     href="../../quick_start/environment_setup/#installing_scarb">Installing Scarb</a>
   </li>
 </ul>
   </li>
@@ -174,35 +175,35 @@
         <span>
     <a 
        class="nav-link nav-link-with-toggle"
-     href="../set_up_an_account/">Setting up an account</a>
+     href="../../quick_start/set_up_an_account/">Setting up an account</a>
         </span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../set_up_an_account/#creating_an_account">Creating an account</a>
+     href="../../quick_start/set_up_an_account/#creating_an_account">Creating an account</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../set_up_an_account/#deploying_an_account">Deploying an account</a>
+     href="../../quick_start/set_up_an_account/#deploying_an_account">Deploying an account</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../declare_a_smart_contract/">Declaring a smart contract</a>
-  </li>
-  <li class="nav-item is-current-page" data-depth="2">
-    <a 
-       class="nav-link"
-     href="./">Deploying a smart contract</a>
+     href="../../quick_start/declare_a_smart_contract/">Declaring a smart contract</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../interact_with_a_smart_contract/">Interacting with a smart contract</a>
+     href="../../quick_start/deploy_a_smart_contract/">Deploying a smart contract</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../quick_start/interact_with_a_smart_contract/">Interacting with a smart contract</a>
   </li>
 </ul>
   </li>
@@ -421,12 +422,12 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../tools/starknet-book/">The Starknet Book</a>
+     href="../starknet-book/">The Starknet Book</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../tools/devtools/">Developer tools</a>
+     href="../devtools/">Developer tools</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
@@ -451,7 +452,7 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../tools/api-services/">Full nodes and API services</a>
+     href="../api-services/">Full nodes and API services</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
@@ -468,12 +469,12 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../tools/ref_block_explorers/">Block explorers</a>
+     href="../ref_block_explorers/">Block explorers</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../tools/audit/">Audit providers</a>
+     href="../audit/">Audit providers</a>
   </li>
 </ul>
   </li>
@@ -484,58 +485,58 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../tools/starkgate-bridge/">Overview</a>
+     href="../starkgate-bridge/">Overview</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../tools/starkgate_architecture/">StarkGate architecture</a>
+     href="../starkgate_architecture/">StarkGate architecture</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
     <span class="nav-text">Procedures</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item is-current-page" data-depth="3">
     <a 
        class="nav-link"
-     href="../../tools/starkgate-depositing/">Depositing funds</a>
+     href="./">Depositing funds</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../tools/starkgate-withdrawing/">Withdrawing funds</a>
+     href="../starkgate-withdrawing/">Withdrawing funds</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../tools/starkgate-automated_actions_with_bridging/">Performing a Smart Deposit</a>
+     href="../starkgate-automated_actions_with_bridging/">Performing a Smart Deposit</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../tools/starkgate-adding_a_token/">Adding a token</a>
+     href="../starkgate-adding_a_token/">Adding a token</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../tools/starkgate-cancelling%20a%20deposit/">Cancelling a deposit</a>
+     href="../starkgate-cancelling%20a%20deposit/">Cancelling a deposit</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../tools/starkgate-estimating_fees/">Estimating StarkGate fees</a>
+     href="../starkgate-estimating_fees/">Estimating StarkGate fees</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../tools/dai_token_migration/">Migrating DAI v0 to DAI</a>
+     href="../dai_token_migration/">Migrating DAI v0 to DAI</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../tools/starkgate_function_reference/">StarkGate function and event reference</a>
+     href="../starkgate_function_reference/">StarkGate function and event reference</a>
   </li>
 </ul>
   </li>
@@ -546,19 +547,19 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../tools/important_addresses/">Starknet contracts and sequencer addresses</a>
+     href="../important_addresses/">Starknet contracts and sequencer addresses</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../tools/bridged_tokens/">Bridged tokens</a>
+     href="../bridged_tokens/">Bridged tokens</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="../../tools/limits_and_triggers/">Current limits</a>
+     href="../limits_and_triggers/">Current limits</a>
   </li>
 </ul>
   </li>
@@ -594,97 +595,79 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Deploying a smart contract</h1>
-<div class="sect1">
-<h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="ensure_starkli_and_scarb_are_installed_correctly"><a class="anchor" href="#ensure_starkli_and_scarb_are_installed_correctly"></a>Ensure Starkli and Scarb are installed correctly</h3>
+<h1 class="page">Depositing funds with StarkGate</h1>
 <div class="paragraph">
-<p>Ensure that the below commands are working properly on your system.</p>
+<p>Using StarkGate to deposit L1 funds into the L2 Starknet requires StarkGate&#8217;s <code>deposit</code> function. The <code>deposit</code> function does the following:</p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">starkli --version
-scarb --version</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>If either of the above commands fail, please visit <a href="../environment_setup/" class="xref page">Setting up your environment</a>.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="introduction"><a class="anchor" href="#introduction"></a>Introduction</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Deploying a smart contract in Starknet requires two steps:</p>
-</div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p><a href="../declare_a_smart_contract/" class="xref page">Declaring</a> the class of your contract, i.e. sending your contract’s code to the network.</p>
+<p>Transfers the funds from the user&#8217;s Ethereum account to the StarkGate L1 contract.</p>
 </li>
 <li>
-<p>Deploying a contract, i.e. creating an instance of the code you previously declared.</p>
+<p>Emits a <code>Deposit</code> event that includes the L1 and L2 addresses of the user, and the amount deposited.</p>
+</li>
+<li>
+<p>Sends a message to the corresponding L2 bridge with the amount deposited, and the recipient&#8217;s address.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Subsequently, the funds should be transferred to Starknet so that you can begin using them.</p>
+</div>
+<div class="paragraph">
+<p>For more information on what happens during the transfer process, see <a href="../starkgate-bridge/#l1l2_transfer_deposit" class="xref page">L1&#8594;L2 transfer (deposit)</a>.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>An Ethereum block explorer, such as <a href="https://etherscan.io">Etherscan</a>.</p>
+</li>
+<li>
+<p>Funds to transfer from L1 to L2, including enough to pay the fees required for the transfer.</p>
+</li>
+<li>
+<p>The L1 address of the StarkGate bridge for the token you want to deposit. To view the token addresses for tokens on Mainnet or Sepolia testnet, see <a href="../bridged_tokens/" class="xref page">Bridged tokens and addresses</a>.</p>
 </li>
 </ul>
 </div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Using an Ethereum block explorer, go to the StarkGate contract and click <strong>Write as Proxy</strong>. For example, using Etherscan, go to <a href="https://etherscan.io/address/0xae0ee0a63a2ce6baeeffe56e7714fb4efe48d419#writeProxyContract">0xae0ee0a63a2ce6baeeffe56e7714fb4efe48d419</a></p>
+</li>
+<li>
+<p>Click the StarkGate 2.0 <code>deposit</code> function (0x0efe6a8b).</p>
+</li>
+<li>
+<p>Enter the following:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In <strong><code>payableAmount</code></strong>, enter the maximum amount of ETH that you&#8217;re willing to pay for the <code>deposit</code> transaction fee.</p>
+</li>
+<li>
+<p>In <strong><code>token (address)</code></strong>, enter the address of the L1 contract for the token that you want to deposit to L2.</p>
+</li>
+<li>
+<p>In <strong><code>amount (uint256)</code></strong>, enter an integer for the amount of the token that you want to deposit to L2.</p>
+</li>
+<li>
+<p>In <strong><code>l2Recipient (uint256)</code></strong>, enter the address of the recipient on L2.</p>
+</li>
+</ul>
 </div>
-</div>
-<div class="sect1">
-<h2 id="deploying_a_smart_contract"><a class="anchor" href="#deploying_a_smart_contract"></a>Deploying a smart contract</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Deploying a smart contract involves instantiating it on Starknet. The deployment command requires the class hash of the smart contract and any arguments expected by the constructor.</p>
-</div>
-<div class="paragraph">
-<p>For our example, the constructor expects an address to assign as the owner:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">starkli deploy \
-    &lt;CLASS_HASH&gt; \
-    &lt;CONSTRUCTOR_INPUTS&gt; \
-    --network=sepolia</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>With the class hash and constructor inputs, the command looks like this:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">starkli deploy \
-    0x00e68b4b07aeecc72f768b1c086d9b0aadce131a40a1067ffb92d0b480cf325d \
-    0x02cdAb749380950e7a7c0deFf5ea8eDD716fEb3a2952aDd4E5659655077B8510 \
-    --network=sepolia</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="expected_result"><a class="anchor" href="#expected_result"></a>Expected result</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>After running the command and adding your password, you will see an output similar to this:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">Deploying class 0x00e68b4b07aeecc72f768b1c086d9b0aadce131a40a1067ffb92d0b480cf325d with salt 0x04bc3fc2284c8e41fb3d2a37bb0354fd0506131cc77a8c91e4e67ce3aed1d19e...
-The contract will be deployed at address 0x014825acb37c36563d3b96c450afe363d2fdfa3cfbd618b323f95b68b55ebf7e
-Contract deployment transaction: 0x0086972e7463d5673d8b553ae521ec2df974a97c2ce6aafc1d1c20d22c6b96c6
-Contract deployed: 0x014825acb37c36563d3b96c450afe363d2fdfa3cfbd618b323f95b68b55ebf7e</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The smart contract has now been deployed to Starknet.</p>
-</div>
-</div>
+</li>
+<li>
+<p>Click <strong>Write</strong>. The <code>deposit</code> function initiates a deposit.</p>
+</li>
+</ol>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../declare_a_smart_contract/">Declaring a smart contract</a></span>
-  <span class="next"><a href="../interact_with_a_smart_contract/">Interacting with a smart contract</a></span>
+  <span class="prev"><a href="../starkgate_architecture/">StarkGate architecture</a></span>
+  <span class="next"><a href="../starkgate-withdrawing/">Withdrawing funds</a></span>
 </nav>
 </article>
   </div>
