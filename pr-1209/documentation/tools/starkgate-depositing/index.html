@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Performing a Smart Deposit :: Starknet documentation</title>
-    <link rel="canonical" href="https://docs.starknet.io/documentation/tools/starkgate-automated_actions_with_bridging/">
-    <link rel="prev" href="../starkgate-withdrawing/">
-    <link rel="next" href="../starkgate-adding_a_token/">
+    <title>Depositing funds with StarkGate :: Starknet documentation</title>
+    <link rel="canonical" href="https://docs.starknet.io/documentation/tools/starkgate-depositing/">
+    <link rel="prev" href="../starkgate_architecture/">
+    <link rel="next" href="../starkgate-withdrawing/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -110,11 +110,11 @@
     <li><a href="../../">Starknet</a></li>
     <li>StarkGate bridge guide</li>
     <li>Procedures</li>
-    <li><a href="./">Performing a Smart Deposit</a></li>
+    <li><a href="./">Depositing funds</a></li>
   </ul>
 </nav>
   <div class="edit-this-page">
-    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/tools/pages/starkgate-automated_actions_with_bridging.adoc"><img class="pencil">Edit this Page</a>
+    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/tools/pages/starkgate-depositing.adoc"><img class="pencil">Edit this Page</a>
   </div>
 </div>
 <div class="body">
@@ -502,20 +502,20 @@
     <button class="nav-item-toggle mask-svg-center"></button>
     <span class="nav-text">Procedures</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item is-current-page" data-depth="3">
     <a 
        class="nav-link"
-     href="../starkgate-depositing/">Depositing funds</a>
+     href="./">Depositing funds</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
      href="../starkgate-withdrawing/">Withdrawing funds</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="3">
+  <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="./">Performing a Smart Deposit</a>
+     href="../starkgate-automated_actions_with_bridging/">Performing a Smart Deposit</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
@@ -601,50 +601,79 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Performing a Smart Deposit</h1>
+<h1 class="page">Depositing funds with StarkGate</h1>
 <div class="paragraph">
-<p>A <em>Smart Deposit</em> is a deposit that moves funds from L1 to L2 and then triggers subsequent actions. For example, a user can deposit funds and transfer those funds to another recipient, such as an exchange.</p>
-</div>
-<div class="paragraph">
-<p>The <code>depositWithMessage</code> function enables a Smart Deposit. <code>depositWithMessage</code> is similar to the <code>deposit</code> function, with an additional 256-bit message, which can contain instructions for executing additional actions.</p>
-</div>
-<div class="paragraph">
-<p>Upon completion, the <code>depositWithMessage</code> function triggers a call to a callback function, named <code>on_receive</code>, on the L2 contract that receives the deposit. The <code>on_receive</code> function receives the deposit message as input.</p>
-</div>
-<div class="paragraph">
-<p><code>on_receive</code> must return <code>true</code> for the deposit to succeed. If <code>on_receive</code> returns <code>false</code>, or if the recipient contract does not include the <code>on_receive</code> function, the <code>depositWithMessage</code> function&#8217;s L1 handler fails. The user can recover their funds using the <code>depositWithMessageCancelRequest</code> function.</p>
+<p>Using StarkGate to deposit L1 funds into the L2 Starknet requires StarkGate&#8217;s <code>deposit</code> function. The <code>deposit</code> function does the following:</p>
 </div>
 <div class="olist arabic">
-<div class="title">To enable Smart Deposits in your application:</div>
 <ol class="arabic">
 <li>
-<p>Implement the <code>on_receive</code> function in the L2 contract that should receive deposits.</p>
+<p>Transfers the funds from the user&#8217;s Ethereum account to the StarkGate L1 contract.</p>
 </li>
 <li>
-<p>Use the <code>depositWithMessage</code> function to transfer funds from L1 to L2.</p>
+<p>Emits a <code>Deposit</code> event that includes the L1 and L2 addresses of the user, and the amount deposited.</p>
+</li>
+<li>
+<p>Sends a message to the corresponding L2 bridge with the amount deposited, and the recipient&#8217;s address.</p>
 </li>
 </ol>
 </div>
-<h2 id="additional_resources" class="discrete">Additional resources</h2>
+<div class="paragraph">
+<p>Subsequently, the funds should be transferred to Starknet so that you can begin using them.</p>
+</div>
+<div class="paragraph">
+<p>For more information on what happens during the transfer process, see <a href="../starkgate-bridge/#l1l2_transfer_deposit" class="xref page">L1&#8594;L2 transfer (deposit)</a>.</p>
+</div>
 <div class="ulist">
+<div class="title">Prerequisites</div>
 <ul>
 <li>
-<p><a href="../starkgate_function_reference/#depositWithMessageCancelRequest" class="xref page"><code>depositWithMessageCancelRequest</code></a></p>
+<p>An Ethereum block explorer, such as <a href="https://etherscan.io">Etherscan</a>.</p>
 </li>
 <li>
-<p><a href="../starkgate_function_reference/#depositWithMessage" class="xref page"><code>depositWithMessage</code></a></p>
+<p>Funds to transfer from L1 to L2, including enough to pay the fees required for the transfer.</p>
 </li>
 <li>
-<p><a href="../starkgate_function_reference/#depositWithMessageReclaim" class="xref page"><code>depositWithMessageReclaim</code></a></p>
-</li>
-<li>
-<p><a href="../../architecture_and_concepts/Network_Architecture/messaging-mechanism/#l1-l2-messages" class="xref page">L1 handler</a></p>
+<p>The L1 address of the StarkGate bridge for the token you want to deposit. To view the token addresses for tokens on Mainnet or Sepolia testnet, see <a href="../bridged_tokens/" class="xref page">Bridged tokens and addresses</a>.</p>
 </li>
 </ul>
 </div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Using an Ethereum block explorer, go to the StarkGate contract and click <strong>Write as Proxy</strong>. For example, using Etherscan, go to <a href="https://etherscan.io/address/0xae0ee0a63a2ce6baeeffe56e7714fb4efe48d419#writeProxyContract">0xae0ee0a63a2ce6baeeffe56e7714fb4efe48d419</a></p>
+</li>
+<li>
+<p>Click the StarkGate 2.0 <code>deposit</code> function (0x0efe6a8b).</p>
+</li>
+<li>
+<p>Enter the following:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In <strong><code>payableAmount</code></strong>, enter the maximum amount of ETH that you&#8217;re willing to pay for the <code>deposit</code> transaction fee.</p>
+</li>
+<li>
+<p>In <strong><code>token (address)</code></strong>, enter the address of the L1 contract for the token that you want to deposit to L2.</p>
+</li>
+<li>
+<p>In <strong><code>amount (uint256)</code></strong>, enter an integer for the amount of the token that you want to deposit to L2.</p>
+</li>
+<li>
+<p>In <strong><code>l2Recipient (uint256)</code></strong>, enter the address of the recipient on L2.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Write</strong>. The <code>deposit</code> function initiates a deposit.</p>
+</li>
+</ol>
+</div>
 <nav class="pagination">
-  <span class="prev"><a href="../starkgate-withdrawing/">Withdrawing funds</a></span>
-  <span class="next"><a href="../starkgate-adding_a_token/">Adding a token</a></span>
+  <span class="prev"><a href="../starkgate_architecture/">StarkGate architecture</a></span>
+  <span class="next"><a href="../starkgate-withdrawing/">Withdrawing funds</a></span>
 </nav>
 </article>
   </div>
