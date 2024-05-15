@@ -632,21 +632,18 @@
 <p>Used when instantiating and comparing the various integer types.</p>
 </div>
 <div class="paragraph">
-<p>All arithmetic comparisons use the range check builtin.
-Computes the keccak-f[1600] permutation. For more information see <a href="https://keccak.team/keccak.html"><em>Keccak</em></a> page on the <em>Keccak Team</em> site.</p>
-</div>
-<div class="paragraph">
-<p>For high level Cairo keccak functions that use this builtin under the hood, see <code>keccak.cairo</code> in the corelib at <a href="https://github.com/starkware-libs/cairo/blob/455788e543f890b2135d8d6bf789b0219aa81724/corelib/src/keccak.cairo#L62" class="bare">https://github.com/starkware-libs/cairo/blob/455788e543f890b2135d8d6bf789b0219aa81724/corelib/src/keccak.cairo#L62</a>.</p>
+<p>All arithmetic comparisons use the range check builtin.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ECDSA</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Verifies the validity of an ECDSA signature over the STARK curve.</p>
-<p class="tableblock">Only used in CairoZero due to its tendency to fail on invalid signatures. In Cairo ECDSA verification is performed with high-level code, applying the <code>EC_OP</code> builtin twice.</p></td>
+<p class="tableblock">This is used in CairoZero, but is not used in Cairo because it always fails on invalid signatures. In Cairo ECDSA verification is performed with high-level code, applying the <code>EC_OP</code> builtin twice.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Keccak</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Computes the keccak-f[1600] permutation. For more information see <a href="https://keccak.team/keccak.html"><em>Keccak</em></a> page on the <em>Keccak Team</em> site.</p>
+<p class="tableblock">For high level Cairo keccak functions that use this builtin under the hood, see <code>keccak.cairo</code> in the corelib at <a href="https://github.com/starkware-libs/cairo/blob/455788e543f890b2135d8d6bf789b0219aa81724/corelib/src/keccak.cairo#L62" class="bare">https://github.com/starkware-libs/cairo/blob/455788e543f890b2135d8d6bf789b0219aa81724/corelib/src/keccak.cairo#L62</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Bitwise</p></td>
