@@ -638,7 +638,7 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ECDSA</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Verifies the validity of an ECDSA signature over the STARK curve.</p>
-<p class="tableblock">This is used in CairoZero, but is not used in Cairo because it always fails on invalid signatures. In Cairo ECDSA verification is performed with high-level code, applying the <code>EC_OP</code> builtin twice.</p></td>
+<p class="tableblock">This is used in CairoZero, but is not used in Cairo because it fails on invalid signatures. In Cairo ECDSA verification is performed with high-level code, applying the <code>EC_OP</code> builtin twice.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Keccak</p></td>
