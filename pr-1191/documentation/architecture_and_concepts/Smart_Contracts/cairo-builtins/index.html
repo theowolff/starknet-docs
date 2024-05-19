@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Events :: Starknet documentation</title>
-    <link rel="canonical" href="https://docs.starknet.io/documentation/architecture_and_concepts/Smart_Contracts/starknet-events/">
-    <link rel="prev" href="../contract-abi/">
-    <link rel="next" href="../contract-syntax/">
+    <title>Cairo builtins :: Starknet documentation</title>
+    <link rel="canonical" href="https://docs.starknet.io/documentation/architecture_and_concepts/Smart_Contracts/cairo-builtins/">
+    <link rel="prev" href="../cairo-and-sierra/">
+    <link rel="next" href="../serialization_of_Cairo_types/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -110,11 +110,11 @@
     <li><a href="../../../">Starknet</a></li>
     <li>Architecture</li>
     <li>Contracts</li>
-    <li><a href="./">Events</a></li>
+    <li><a href="./">Cairo builtins</a></li>
   </ul>
 </nav>
   <div class="edit-this-page">
-    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/architecture_and_concepts/pages/Smart_Contracts/starknet-events.adoc"><img class="pencil">Edit this Page</a>
+    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/architecture_and_concepts/pages/Smart_Contracts/cairo-builtins.adoc"><img class="pencil">Edit this Page</a>
   </div>
 </div>
 <div class="body">
@@ -351,10 +351,10 @@
        class="nav-link"
      href="../contract-abi/">Contract ABI</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="3">
+  <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="./">Events</a>
+     href="../starknet-events/">Events</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
@@ -366,10 +366,10 @@
        class="nav-link"
      href="../cairo-and-sierra/">Cairo and Sierra</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item is-current-page" data-depth="3">
     <a 
        class="nav-link"
-     href="../cairo-builtins/">Cairo builtins</a>
+     href="./">Cairo builtins</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
@@ -600,185 +600,70 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Events</h1>
-<div id="preamble">
-<div class="sectionbody">
+<h1 class="page">Cairo builtins</h1>
 <div class="paragraph">
-<p>A contract may emit events throughout its execution. Each event contains the following fields:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>from_address</code>: address of the contract emitting the events</p>
-</li>
-<li>
-<p><code>keys</code>: a list of field elements</p>
-</li>
-<li>
-<p><code>data</code>: a list of field elements</p>
-</li>
-</ul>
+<p><em>Builtins</em> in Cairo are predefined optimized low-level execution units that the Cairo VM refers to in order to perform predefined computations that are expensive to perform in standard Cairo. Builtins enhance the functionality of the Cairo VM, enabling you to perform certain tasks, such as using the Poseidon hash, range-checks, or ECDSA signature verifications, more efficiently, using fewer trace cells.</p>
 </div>
 <div class="paragraph">
-<p>The keys can be used for indexing the events, while the data may contain any information that we wish to log (note that we are dealing with two separate lists of possibly varying size, rather than a list of key-value pairs).</p>
+<p>In contrast to CairoZero, where you needed to consciously write code to take advantage of builtin optimizations, in Cairo, you simply write code without doing anything special, and when the Cairo VM executes the code, certain operations use builtins internally to optimize your program.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="emitting_events"><a class="anchor" href="#emitting_events"></a>Emitting events</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Events can be defined in a contract using the <code>@event</code> decorator. Once an event <code>E</code> has been defined, the compiler automatically adds the function <code>E.emit()</code>. The following example illustrates how an event is defined and emitted:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">#[event]
-fn Transfer(from: ContractAddress, to: ContractAddress, value: u256) {}</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">Transfer(12345, 12345, 1)</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The emit function emits an event with a single key, which is an identifier of the event, given by \(\text{sn_keccak}(event\_name)\), where \(event\_name\) is the ASCII encoding of the event&#8217;s name and \(\text{sn_keccak}\) is defined <a href="../../Cryptography/hash-functions/#starknet_keccak" class="xref page">here</a>.</p>
-</div>
-<div class="paragraph">
-<p>To emit custom keys, one should use the low level <code>emit_event</code> system call:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">use starknet::syscalls::emit_event_syscall;
-
-let keys = array!['key', 'deposit'];
-let values = array![1, 2, 3];
-emit_event_syscall(keys, values).unwrap_syscall();</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The above code emits an event with two keys, the <a href="https://www.cairo-lang.org/docs/how_cairo_works/consts.html#short-string-literals">strings</a> <code>key</code> and <code>deposit</code> (think of those as identifiers of the event that can be used for indexing) and three data elements 1, 2, 3.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
+<table id="list-of-cairo-builtins" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. List of Cairo builtins</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
 <tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>When using the higher level <code>emit</code> syntax, the event&#8217;s data may be of complex types, for example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">struct Point:
-    member x : felt
-    member y : felt
-end
-
-@event
-func message_received(arr_len : felt, arr: felt*, p: Point):
-end
-
-# ...
-
-let (data : felt*) = alloc()
-assert data[0] = 1
-assert data[1] = 2
-let p = Point(3,4)
-message_received.emit(2, data, p)</code></pre>
-</div>
-</div>
-</td>
+<th class="tableblock halign-left valign-top">Name of builtin</th>
+<th class="tableblock halign-left valign-top">Description</th>
 </tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pedersen</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Computes the Pedersen hash over two elements. Used internally in <code>pedersen.cairo</code>. For more information see <a href="../../Cryptography/hash-functions/" class="xref page">Hash functions</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Poseidon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Computes the Hades permutation on three field elements. Used internally in <code>poseidon.cairo</code>. For more information, see <a href="../../Cryptography/hash-functions/" class="xref page">Hash functions</a>. The Cairo corelib functions use this builtin internally. The Cairo corelib functions are defined in <a href="https://github.com/starkware-libs/cairo/blob/v2.6.0/corelib/src/starknet/info.cairo"><code>info.cairo</code></a> in the Cairo GitHub repository.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Range check</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Checks whether a field element is in the range [0,2<sup>128</sup>-1].</p>
+</div>
+<div class="paragraph">
+<p>Used when instantiating and comparing the various integer types.</p>
+</div>
+<div class="paragraph">
+<p>All arithmetic comparisons use the range check builtin.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ECDSA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Verifies the validity of an ECDSA signature over the STARK curve.</p>
+<p class="tableblock">This is used in CairoZero, but is not used in Cairo because it fails on invalid signatures. In Cairo ECDSA verification is performed with high-level code, applying the <code>EC_OP</code> builtin twice.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Keccak</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Computes the keccak-f[1600] permutation. For more information see <a href="https://keccak.team/keccak.html"><em>Keccak</em></a> page on the <em>Keccak Team</em> site.</p>
+<p class="tableblock">For high level Cairo keccak functions that use this builtin internally, see <code>keccak.cairo</code> in the corelib at <a href="https://github.com/starkware-libs/cairo/blob/main/corelib/src/keccak.cairo#L62" class="bare">https://github.com/starkware-libs/cairo/blob/main/corelib/src/keccak.cairo#L62</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bitwise</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Computes the bitwise operations <code>OR</code>, <code>AND</code>, and <code>XOR</code> of two felts.</p>
+<p class="tableblock">Used internally when performing bitwise operations using the `</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>, `&amp;</code> and <code>^</code> operators.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC_OP</p></td>
+</tr>
+</tbody>
 </table>
-</div>
-<div class="paragraph">
-<p>The emitted events are part of the transaction receipt. For more information, see <a href="../../Network_Architecture/transaction-life-cycle/#transaction-receipt" class="xref page">Transaction receipt</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="event_abi"><a class="anchor" href="#event_abi"></a>Event definition in the ABI</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The event definition appears in the contract&#8217;s ABI. It contains the list of data fields, with the name and type for each, and the list of the custom keys, that is, all keys except the event identifier discussed above. Below is an example of an event inside the ABI:</p>
-</div>
-<div id="example_of_an_event_in_the_abi" class="listingblock">
-<div class="title">Example of an event in the ABI</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
-  "type": "event",
-  "name": "Transfer",
-  "inputs": [
-    {
-      "name": "from",
-      "type": "core::starknet::contract_address::ContractAddress"
-    },
-    {
-      "name": "to",
-      "type": "core::starknet::contract_address::ContractAddress"
-    },
-    {
-      "name": "value",
-      "type": "core::integer::u256"
-    }
-  ]
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="event_hash"><a class="anchor" href="#event_hash"></a>Event hash</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The event hash is given by:</p>
-</div>
-<div class="stemblock">
-<div class="content">
-\[h(h(h(h(0,from\_address),keys\_hash),data\_hash),3)\]
-</div>
-</div>
-<div class="paragraph">
-<p>Where:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>\(keys\_hash\) and \(data\_hash\) are the hashes of the keys list and data list respectively. For more information, see <a href="../../Cryptography/hash-functions/#array_hashing" class="xref page">Array hashing</a>.</p>
-</li>
-<li>
-<p>\(h\) is the Pedersen hash function.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The event hashes are included in the <a href="../../Network_Architecture/header/" class="xref page"><code>event_commitment</code></a> field of a block.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="additional_resources"><a class="anchor" href="#additional_resources"></a>Additional resources</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="../../Cryptography/hash-functions/#array_hashing" class="xref page">architecture_and_concepts:Cryptography/hash-functions.adoc#array_hashing</a></p>
-</li>
-<li>
-<p><a href="../../Cryptography/hash-functions/#pedersen_hash" class="xref page">Pedersen hash function</a></p>
-</li>
-<li>
-<p>The <code>event_commitment</code> field in <a href="../../Network_Architecture/header/" class="xref page">Block structure</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
 <nav class="pagination">
-  <span class="prev"><a href="../contract-abi/">Contract ABI</a></span>
-  <span class="next"><a href="../contract-syntax/">Migrating a contract from Cairo v1 to Cairo v2</a></span>
+  <span class="prev"><a href="../cairo-and-sierra/">Cairo and Sierra</a></span>
+  <span class="next"><a href="../serialization_of_Cairo_types/">Serialization of Cairo types</a></span>
 </nav>
 </article>
   </div>
