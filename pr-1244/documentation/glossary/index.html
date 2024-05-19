@@ -361,6 +361,11 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
+     href="../architecture_and_concepts/Smart_Contracts/cairo-builtins/">Cairo builtins</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
      href="../architecture_and_concepts/Smart_Contracts/serialization_of_Cairo_types/">Serialization of Cairo types</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -488,6 +493,16 @@
     <button class="nav-item-toggle mask-svg-center"></button>
     <span class="nav-text">Procedures</span>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../tools/starkgate-depositing/">Depositing funds</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../tools/starkgate-withdrawing/">Withdrawing funds</a>
+  </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
@@ -885,6 +900,14 @@ block number
 <div class="sectionbody">
 <div class="paragraph">
 <p>The data describing the difference between two states. It contains information on every contract whose storage was updated and additional information on contract deployments.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="trace-cells"><a class="anchor" href="#trace-cells"></a>trace cell</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A unit of measurement of proving complexity. In the STARK protocol, a computation is translated into an execution trace that must satisfy a collection of constraints. Every Cairo step translates to ~50 trace cells.</p>
 </div>
 </div>
 </div>

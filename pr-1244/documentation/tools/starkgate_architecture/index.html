@@ -6,7 +6,7 @@
     <title>StarkGate architecture :: Starknet documentation</title>
     <link rel="canonical" href="https://docs.starknet.io/documentation/tools/starkgate_architecture/">
     <link rel="prev" href="../starkgate-bridge/">
-    <link rel="next" href="../starkgate-automated_actions_with_bridging/">
+    <link rel="next" href="../starkgate-depositing/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -363,6 +363,11 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
+     href="../../architecture_and_concepts/Smart_Contracts/cairo-builtins/">Cairo builtins</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
      href="../../architecture_and_concepts/Smart_Contracts/serialization_of_Cairo_types/">Serialization of Cairo types</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -490,6 +495,16 @@
     <button class="nav-item-toggle mask-svg-center"></button>
     <span class="nav-text">Procedures</span>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../starkgate-depositing/">Depositing funds</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../starkgate-withdrawing/">Withdrawing funds</a>
+  </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
@@ -699,7 +714,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>Consider the <code>Deposit</code> functions for the L1 bridge contract for USDC on Etherscan: <a href="https://etherscan.io/address/0xf6080d9fbeebcd44d89affbfd42f098cbff92816#writeProxyContract"><code>0xf6080d9fbeebcd44d89affbfd42f098cbff92816#writeProxyContract</code></a></p>
+<p>Consider the <code>deposit</code> functions for the L1 bridge contract for USDC on Etherscan: <a href="https://etherscan.io/address/0xf6080d9fbeebcd44d89affbfd42f098cbff92816#writeProxyContract"><code>0xf6080d9fbeebcd44d89affbfd42f098cbff92816#writeProxyContract</code></a></p>
 </div>
 <div class="paragraph">
 <p>This contract has the following two <code>deposit</code> functions: <code>deposit (0x0efe6a8b)</code> and <code>deposit (0xe2bbb158)</code>, which shows that the bridge includes support for the legacy functionality as well as the modern functionality:</p>
@@ -842,7 +857,7 @@
 </div>
 <nav class="pagination">
   <span class="prev"><a href="../starkgate-bridge/">Overview</a></span>
-  <span class="next"><a href="../starkgate-automated_actions_with_bridging/">Performing a Smart Deposit</a></span>
+  <span class="next"><a href="../starkgate-depositing/">Depositing funds</a></span>
 </nav>
 </article>
   </div>
