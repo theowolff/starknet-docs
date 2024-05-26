@@ -602,20 +602,6 @@
 <h1 class="page">Provers</h1>
 <div id="preamble">
 <div class="sectionbody">
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>This topic originally appeared in the Starknet Book.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
 <div class="paragraph">
 <p>SHARP is like public transportation for proofs on Starknet, aggregating multiple Cairo programs to save costs and boost efficiency. It uses recursive proofs, enabling parallelization and optimization, making it more affordable for all users. Critical services like the gateway, validator, and Prover work together with a stateless design for flexibility. SHARP’s adoption by StarkEx, Starknet, and external users (through the Cairo Playground) highlights its significance and potential for future optimization.</p>
 </div>
@@ -636,8 +622,19 @@
 <div class="paragraph">
 <p>Exponential amortization means that as the computational load of the proofs increases, the cost of verifying those proofs rises at a slower logarithmic rate than the computation increase. In other words, the computation itself grows slower than the verification cost. As a result, the cost of each transaction within the aggregated set is significantly reduced, making the overall process more cost-effective and accessible for users.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 <div class="paragraph">
 <p>In SHARP and Cairo context, <em>jobs</em> refer to the individual Cairo programs or tasks submitted by different users. These jobs contain specific logic or computations that must be executed on the Starknet network.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Additionally, SHARP enables smaller users with limited computation to benefit from joining other jobs and share the cost of generating the proofs. This collaborative approach is similar to using public transportation instead of a private car, where the cost is distributed among all participants, making it more affordable for everyone.</p>
@@ -701,11 +698,22 @@ STARK Verifier program (in Cairo)
 </li>
 </ol>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 <div class="paragraph">
 <p>Latency in Starknet encompasses the time taken for processing, confirming, and including transactions in a block. It is affected by factors like network congestion, transaction fees, and system efficiency. Minimizing latency ensures faster transaction processing and user feedback.</p>
 </div>
 <div class="paragraph">
 <p>Time to proof, however, specifically pertains to the duration required to generate and verify cryptographic proofs for transactions or operations.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
