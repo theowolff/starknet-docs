@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Solidity Verifier :: Starknet documentation</title>
     <link rel="canonical" href="https://docs.starknet.io/documentation/architecture_and_concepts/solidity-verifier/">
+    <link rel="prev" href="../Smart_Contracts/execution_info/">
+    <link rel="next" href="../Cryptography/p-value/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -106,7 +108,8 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../../">Starknet</a></li>
-    <li><a href="./">Solidity Verifier</a></li>
+    <li>Architecture</li>
+    <li><a href="./">Solidity verifier</a></li>
   </ul>
 </nav>
   <div class="edit-this-page">
@@ -379,10 +382,10 @@
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a 
        class="nav-link"
-     href="#solidity-verifiers.adoc">Solidity verifier</a>
+     href="./">Solidity verifier</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
@@ -599,8 +602,22 @@
 <h1 class="page">Solidity Verifier</h1>
 <div id="preamble">
 <div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 <div class="paragraph">
-<p>Before exploring this chapter, review the Starknet Architecture chapter for foundational knowledge. Familiarity with concepts such as Sequencers, Provers, SHARP, and Sharp Jobs is assumed.</p>
+<p>This topic previously appeared in the Starknet Book.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Before exploring this topic, review the <a href="../Network_Architecture/starknet_architecture_overview/" class="xref page">Starknet architecture: Overview</a> for foundational knowledge. Familiarity with concepts such as sequencers, provers, SHARP, and SHARP jobs is assumed.</p>
 </div>
 <div class="paragraph">
 <p>Starknet&#8217;s Solidity Verifier plays a pivotal role in the rollup landscape, ensuring the truth of transactions and smart contracts.</p>
@@ -608,7 +625,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="quick_overview_sharp_and_sharp_jobs"><a class="anchor" href="#quick_overview_sharp_and_sharp_jobs"></a>Quick Overview: SHARP and Sharp Jobs</h2>
+<h2 id="quick_review_sharp_and_sharp_jobs"><a class="anchor" href="#quick_review_sharp_and_sharp_jobs"></a>Quick review: SHARP and SHARP jobs</h2>
 <div class="sectionbody">
 <div class="admonitionblock note">
 <table>
@@ -618,18 +635,18 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>For a more detailed explanation of SHARP and Sharp Jobs, see <a href="#architecture_and_concepts:provers-overview.adoc" class="xref unresolved">Provers</a>. This is a brief review.</p>
+<p>For a more detailed explanation of SHARP and SHARP Jobs, see <a href="#architecture_and_concepts:provers-overview.adoc" class="xref unresolved">Provers</a>. This is a brief review.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>SHARP, or Shared Prover, in Starknet, aggregates various Cairo programs from distinct users. These programs, each with unique logic, run together, producing a common proof for all, optimizing cost and efficiency.</p>
+<p>In Starknet, the Shared Prover, SHARP, aggregates various Cairo programs from distinct users. These programs, each with unique logic, run together, producing a common proof for all, optimizing cost and efficiency.</p>
 </div>
 <div class="paragraph">
-<div class="title">Sharp Workflow</div>
-<p><span class="image unresolved"><img src="shared-prover.png" alt="Sharp workflow"></span></p>
+<div class="title">SHARP Workflow</div>
+<p><span class="image"><img src="../_images/shared-prover.png" alt="SHARP workflow"></span></p>
 </div>
 <div class="paragraph">
 <p>Furthermore, SHARP supports combining multiple proofs into one, enhancing its efficiency by allowing parallel proof processing and verification.</p>
@@ -641,7 +658,7 @@
 <p>To illustrate SHARP: Think of commuting by bus. The bus driver, the prover, transports passengers, the Cairo programs. The driver checks only the tickets of passengers alighting at the upcoming stop, much like SHARP. The prover forms a single proof for all Cairo programs in a batch, but verifies only the proofs of programs executing in the succeeding block.</p>
 </div>
 <div class="paragraph">
-<p><strong>Sharp Jobs</strong>. Known as Shared Prover Jobs, Sharp Jobs let multiple users present their Cairo programs for combined execution, distributing the proof generation cost. This shared approach makes Starknet more economical for users, enabling them to join ongoing jobs and leverage economies of scale.</p>
+<p><strong>SHARP Jobs</strong>. Known as Shared Prover Jobs, SHARP Jobs let multiple users present their Cairo programs for combined execution, distributing the proof generation cost. This shared approach makes Starknet more economical for users, enabling them to join ongoing jobs and leverage economies of scale.</p>
 </div>
 </div>
 </div>
@@ -658,7 +675,7 @@
 </div>
 <div class="paragraph">
 <div class="title">Previous Architecture</div>
-<p><span class="image unresolved"><img src="prehistoric-architecture.png" alt="Previous Architecture"></span></p>
+<p><span class="image"><img src="../_images/prehistoric-architecture.png" alt="Previous Architecture"></span></p>
 </div>
 <div class="paragraph">
 <p>However, this architecture faced several constraints:</p>
@@ -688,13 +705,13 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://etherscan.io/address/0x47312450b3ac8b5b8e247a6bb6d523e7605bdb60"><code>GpsStatementVerifier</code></a>: This is the primary contract of the Sharp verifier. It verifies a proof and then registers the related facts using <code>verifyProofAndRegister</code>. It acts as an umbrella for various layouts, each named <code>CpuFrilessVerifier</code>. Every layout has a unique combination of built-in resources.</p>
+<p><a href="https://etherscan.io/address/0x47312450b3ac8b5b8e247a6bb6d523e7605bdb60"><code>GpsStatementVerifier</code></a>: This is the primary contract of the SHARP verifier. It verifies a proof and then registers the related facts using <code>verifyProofAndRegister</code>. It acts as an umbrella for various layouts, each named <code>CpuFrilessVerifier</code>. Every layout has a unique combination of built-in resources.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
 <div class="title">Verifier Layouts</div>
-<p><span class="image unresolved"><img src="verifier-layouts.png" alt="Verifier Layouts"></span></p>
+<p><span class="image"><img src="../_images/verifier-layouts.png" alt="Verifier Layouts"></span></p>
 </div>
 <div class="paragraph">
 <p>The system routes each proof to its relevant layout.</p>
@@ -714,17 +731,17 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="sharp_verifier_contract_map"><a class="anchor" href="#sharp_verifier_contract_map"></a>Sharp Verifier Contract Map</h3>
+<h3 id="sharp_verifier_contract_map"><a class="anchor" href="#sharp_verifier_contract_map"></a>SHARP Verifier Contract Map</h3>
 <div class="paragraph">
-<p>The Sharp Verifier Contract Map contains roughly 40 contracts, detailing various components of the Solidity verifier. The images below display the contracts and their Ethereum Mainnet addresses.</p>
+<p>The SHARP Verifier Contract Map contains roughly 40 contracts, detailing various components of the Solidity verifier. The images below display the contracts and their Ethereum Mainnet addresses.</p>
 </div>
 <div class="paragraph">
-<div class="title">Sharp Verifier Contract Map</div>
-<p><span class="image unresolved"><img src="sharp-contract-map-1.png" alt="Sharp Verifier Contract Map"></span></p>
+<div class="title">SHARP Verifier Contract Map</div>
+<p><span class="image"><img src="../_images/sharp-contract-map-1.png" alt="SHARP Verifier Contract Map"></span></p>
 </div>
 <div class="paragraph">
-<div class="title">Sharp Verifier Contract Map (Continued)</div>
-<p><span class="image unresolved"><img src="sharp-contract-map-2.png" alt="Sharp Verifier Contract Map"></span></p>
+<div class="title">SHARP Verifier Contract Map (Continued)</div>
+<p><span class="image"><img src="../_images/sharp-contract-map-2.png" alt="SHARP Verifier Contract Map"></span></p>
 </div>
 <div class="paragraph">
 <p>These contracts function as follows:</p>
@@ -765,7 +782,7 @@
 </div>
 <div class="paragraph">
 <div class="title">Constructor Parameters</div>
-<p><span class="image unresolved"><img src="constructor-params.png" alt="Constructor Parameters"></span></p>
+<p><span class="image"><img src="../_images/constructor-params.png" alt="Constructor Parameters"></span></p>
 </div>
 <div class="sect3">
 <h4 id="cpufrilessverifier_constructor_parameters"><a class="anchor" href="#cpufrilessverifier_constructor_parameters"></a>CpuFrilessVerifier Constructor Parameters</h4>
@@ -852,18 +869,18 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="sharp_verification_flow"><a class="anchor" href="#sharp_verification_flow"></a>Sharp Verification Flow</h3>
+<h3 id="sharp_verification_flow"><a class="anchor" href="#sharp_verification_flow"></a>SHARP Verification Flow</h3>
 <div class="paragraph">
-<div class="title">Sharp Verification Flow</div>
-<p><span class="image unresolved"><img src="new-sharp-flow.png" alt="Sharp Verification Flow"></span></p>
+<div class="title">SHARP Verification Flow</div>
+<p><span class="image"><img src="../_images/new-sharp-flow.png" alt="SHARP Verification Flow"></span></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The Sharp dispatcher transmits all essential transactions for verification, including: a. <code>MemoryPages</code> (usually many). b. <code>MerkleStatements</code> (typically between 3 and 5). c. <code>FriStatements</code> (generally ranging from 5 to 15).</p>
+<p>The SHARP dispatcher transmits all essential transactions for verification, including: a. <code>MemoryPages</code> (usually many). b. <code>MerkleStatements</code> (typically between 3 and 5). c. <code>FriStatements</code> (generally ranging from 5 to 15).</p>
 </li>
 <li>
-<p>The Sharp dispatcher then forwards the proof using <code>verifyProofAndRegister</code>.</p>
+<p>The SHARP dispatcher then forwards the proof using <code>verifyProofAndRegister</code>.</p>
 </li>
 <li>
 <p>Applications, such as the Starknet monitor, validate the status. Once verification completes, they send an <code>updateState</code> transaction.</p>
@@ -881,6 +898,10 @@
 </div>
 </div>
 </div>
+<nav class="pagination">
+  <span class="prev"><a href="../Smart_Contracts/execution_info/">Execution information for the current block</a></span>
+  <span class="next"><a href="../Cryptography/p-value/">The STARK field</a></span>
+</nav>
 </article>
   </div>
 </main>
