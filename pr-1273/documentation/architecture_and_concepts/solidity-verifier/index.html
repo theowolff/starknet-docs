@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Solidity Verifier :: Starknet documentation</title>
+    <title>Solidity verifier :: Starknet documentation</title>
     <link rel="canonical" href="https://docs.starknet.io/documentation/architecture_and_concepts/solidity-verifier/">
     <link rel="prev" href="../Smart_Contracts/execution_info/">
     <link rel="next" href="../Cryptography/p-value/">
@@ -599,7 +599,7 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Solidity Verifier</h1>
+<h1 class="page">Solidity verifier</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="admonitionblock note">
@@ -620,7 +620,7 @@
 <p>Before exploring this topic, review the <a href="../Network_Architecture/starknet_architecture_overview/" class="xref page">Starknet architecture: Overview</a> for foundational knowledge. Familiarity with concepts such as sequencers, provers, SHARP, and SHARP jobs is assumed.</p>
 </div>
 <div class="paragraph">
-<p>Starknet&#8217;s Solidity Verifier plays a pivotal role in the rollup landscape, ensuring the truth of transactions and smart contracts.</p>
+<p>Starknet&#8217;s Solidity verifier plays a pivotal role in the rollup landscape, ensuring the truth of transactions and smart contracts.</p>
 </div>
 </div>
 </div>
@@ -671,7 +671,7 @@
 <div class="sect2">
 <h3 id="previous_architecture_monolithic_verifier"><a class="anchor" href="#previous_architecture_monolithic_verifier"></a>Previous architecture: Monolithic verifier</h3>
 <div class="paragraph">
-<p>Historically, the Solidity Verifier was a monolithic contract, both initiated and executed by the same contract. For illustration, the operator would invoke the <code>update state</code> function on the main contract, providing the state to be modified and confirming its validity. Subsequently, the main contract would present the proof to both the verifier and the validium committee. Once they validated the proof, the state would be updated in the main contract.</p>
+<p>Historically, the Solidity verifier was a monolithic contract, both initiated and executed by the same contract. For illustration, the operator would invoke the <code>update state</code> function on the main contract, providing the state to be modified and confirming its validity. Subsequently, the main contract would present the proof to both the verifier and the data availability committee. Once they validated the proof, the state would be updated in the main contract.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -685,7 +685,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Batching transactions frequently surpassed the original geth32kb transaction size limit (later adjusted to 128kb) due to accumulating excessive transactions.</p>
+<p>Batching transactions frequently surpassed the original Geth 32 KB transaction size limit, later adjusted to 128 KB, due to accumulating excessive transactions.</p>
 </li>
 <li>
 <p>The gas required often outstripped the block size (e.g., 8 Mgas), as the block couldn&#8217;t accommodate a complete batch of proof.</p>
@@ -699,7 +699,7 @@
 <div class="sect2">
 <h3 id="current_architecture_multiple_smart_contracts"><a class="anchor" href="#current_architecture_multiple_smart_contracts"></a>Current architecture: Multiple smart contracts</h3>
 <div class="paragraph">
-<p>The current verifier utilizes multiple smart contracts rather than being a singular, monolithic structure.</p>
+<p>The current verifier uses multiple smart contracts rather than being a singular, monolithic structure.</p>
 </div>
 <div class="paragraph">
 <p>Here are some key smart contracts associated with the verifier:</p>
@@ -708,25 +708,21 @@
 <ul>
 <li>
 <p><a href="https://etherscan.io/address/0x47312450b3ac8b5b8e247a6bb6d523e7605bdb60"><code>GpsStatementVerifier</code></a>: This is the primary contract of the SHARP verifier. It verifies a proof and then registers the related facts using <code>verifyProofAndRegister</code>. It acts as an umbrella for various layouts, each named <code>CpuFrilessVerifier</code>. Every layout has a unique combination of built-in resources.</p>
-</li>
-</ul>
-</div>
 <div class="imageblock">
 <div class="content">
 <img src="../_images/verifier-layouts.png" alt="Verifier layouts">
 </div>
-<div class="title">Figure 2. Verifier Layouts</div>
+<div class="title">Figure 2. Verifier layouts</div>
 </div>
 <div class="paragraph">
 <p>The system routes each proof to its relevant layout.</p>
 </div>
-<div class="ulist">
-<ul>
+</li>
 <li>
 <p><a href="https://etherscan.io/address/0xfd14567eaf9ba941cb8c8a94eec14831ca7fd1b4"><code>MemoryPageFactRegistry</code></a>: This registry maintains facts for memory pages, primarily used to register outputs for data availability in rollup mode. The Fact Registry is a separate smart contract ensuring the verification and validity of attestations or facts. The verifier function is separated from the main contract to ensure each segment works optimally within its limits. The main proof segment relies on other parts, but these parts operate independently.</p>
 </li>
 <li>
-<p><a href="https://etherscan.io/address/0x5899efea757e0dbd6d114b3375c23d7540f65fa4"><code>MerkleStatementContract</code></a>: This contract verifies merkle paths.</p>
+<p><a href="https://etherscan.io/address/0x5899efea757e0dbd6d114b3375c23d7540f65fa4"><code>MerkleStatementContract</code></a>: This contract verifies Merkle paths.</p>
 </li>
 <li>
 <p><a href="https://etherscan.io/address/0x3e6118da317f7a433031f03bb71ab870d87dd2dd"><code>FriStatementContract</code></a>: It focuses on verifying the FRI layers.</p>
@@ -737,19 +733,150 @@
 <div class="sect2">
 <h3 id="sharp_verifier_contract_map"><a class="anchor" href="#sharp_verifier_contract_map"></a>SHARP verifier contract map</h3>
 <div class="paragraph">
-<p>The SHARP Verifier Contract Map contains roughly 40 contracts, detailing various components of the Solidity verifier. The images below display the contracts and their Ethereum Mainnet addresses.</p>
+<p>The SHARP verifier contract map contains roughly 40 contracts, detailing various components of the Solidity verifier. The images below display the contracts and their Ethereum Mainnet addresses.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/sharp-contract-map-1.png" alt="SHARP verifier contract map">
+<div class="paragraph">
+<div class="title">SHARP verifier contract map</div>
+<p>These are currently the entire stack of contracts that comprise the SHARP verifier, with their Ethereum Mainnet addresses.</p>
 </div>
-<div class="title">Figure 3. SHARP verifier contract map</div>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+Proxy
+</td>
+<td class="hdlist2">
+<p>0x47312450B3Ac8b5b8e247a6bB6d523e7605bDb60</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CallProxy
+</td>
+<td class="hdlist2">
+<p>0xD4C4044ACa68ebBcB81B13cC2699e1Bca2d3F458</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+GpsStatementVerifier
+</td>
+<td class="hdlist2">
+<p>0x47312450b3ac8b5b8e247a6bb6d523e7605bdb60</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+MemoryPageFactRegistry
+</td>
+<td class="hdlist2">
+<p>0xfd14567eaf9ba941cb8c8a94eec14831ca7fd1b4</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+MerkleStatementContract
+</td>
+<td class="hdlist2">
+<p>0x3e6118da317f7a433031f03bb71ab870d87dd2dd</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+FriStatementContract
+</td>
+<td class="hdlist2">
+<p>0x3e6118da317f7a433031f03bb71ab870d87dd2dd</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CairoBootloaderProgram
+</td>
+<td class="hdlist2">
+<p>0x5d07afFAfc8721Ef3dEe4D11A2D1484CBf6A9dDf</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+PedersenHashPointsXColumn
+<br>
+PedersenHashPointsYColumn
+<br>
+EcdsaHashPointsXColumn
+<br>
+EcdsaHashPointsYColumn
+<br>
+CpuFrilessVerifier0
+<br>
+CpuOods0
+<br>
+CpuConstraintPoly0
+<br>
+CpuFrilessVerifier1
+<br>
+CpuOods1
+<br>
+CpuConstraintPoly1
+<br>
+CpuFrilessVerifier2
+<br>
+CpuOods2
+<br>
+CpuConstraintPoly2
+<br>
+CpuFrilessVerifier3
+<br>
+CpuOods3
+<br>
+CpuConstraintPoly3
+<br>
+CpuFrilessVerifier4
+<br>
+CpuOods4
+<br>
+CpuConstraintPoly4
+<br>
+CpuFrilessVerifier5
+<br>
+CpuOods5
+<br>
+CpuConstraintPoly5
+<br>
+CpuFrilessVerifier6
+<br>
+CpuOods6
+<br>
+CpuConstraintPoly6
+<br>
+PoseidonPoseidonFullRoundKey0Column6
+<br>
+PoseidonPoseidonFullRoundKey1Column6
+<br>
+PoseidonPoseidonFullRoundKey2Column6
+<br>
+PoseidonPoseidonPartialRoundKey0Column6
+<br>
+ם9999999999999999999ן
+<br>
+CpuFrilessVerifier7
+<br>
+CpuOods7
+<br>
+CpuConstraintPoly7
+</td>
+<td class="hdlist2">
+<p>.SHARP verifier contract map
+image::sharp-contract-map-1.png[SHARP verifier contract map]</p>
+</td>
+</tr>
+</table>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../_images/sharp-contract-map-2.png" alt="SHARP verifier contract map">
 </div>
-<div class="title">Figure 4. SHARP verifier contract map (continued)</div>
+<div class="title">Figure 3. SHARP verifier contract map (continued)</div>
 </div>
 <div class="paragraph">
 <p>These contracts function as follows:</p>
@@ -792,7 +919,7 @@
 <div class="content">
 <img src="../_images/constructor-params.png" alt="Constructor Parameters">
 </div>
-<div class="title">Figure 5. Constructor Parameters</div>
+<div class="title">Figure 4. Constructor Parameters</div>
 </div>
 <div class="sect3">
 <h4 id="cpufrilessverifier_constructor_parameters"><a class="anchor" href="#cpufrilessverifier_constructor_parameters"></a>CpuFrilessVerifier constructor parameters</h4>
@@ -811,7 +938,7 @@
 <p><strong>Sampling and Memory:</strong> The contract uses <code>CpuOods</code> for out-of-domain sampling and <code>MemoryPageFactRegistry</code> for memory-related tasks.</p>
 </li>
 <li>
-<p><strong>Verification:</strong> It integrates with <code>MerkleStatementContract</code> for merkle verification and <code>FriStatementContract</code> for Fri-related tasks.</p>
+<p><strong>Verification:</strong> It integrates with <code>MerkleStatementContract</code> for Merkle verification and <code>FriStatementContract</code> for Fri-related tasks.</p>
 </li>
 <li>
 <p><strong>Security:</strong> The <code>num_security_bits</code> and <code>min_proof_of_work_bits</code> contracts ensure secure operation.</p>
@@ -884,7 +1011,7 @@
 <div class="content">
 <img src="../_images/new-sharp-flow.png" alt="SHARP verification flow">
 </div>
-<div class="title">Figure 6. SHARP Verification Flow</div>
+<div class="title">Figure 5. SHARP Verification Flow</div>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -906,7 +1033,7 @@
 <h2 id="conclusion"><a class="anchor" href="#conclusion"></a>Conclusion</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Starknet transformed the Solidity Verifier from a single unit to a flexible, multi-contract system, highlighting its focus on scalability and efficiency. Using SHARP and refining verification steps, Starknet makes sure the Solidity Verifier stays a strong cornerstone in its setup.</p>
+<p>Starknet transformed the Solidity verifier from a single unit to a flexible, multi-contract system, highlighting its focus on scalability and efficiency. Using SHARP and refining verification steps, Starknet makes sure the Solidity verifier stays a strong cornerstone in its setup.</p>
 </div>
 </div>
 </div>
