@@ -831,10 +831,10 @@ F  = gas\_price\cdot&amp;\Bigg(\max_k v_k w_k + \\
 <p>Every 60 seconds, Starknet samples the price of gas and data gas on L1 and bases the price it charges on the average of the last 60 samples.</p>
 </div>
 <div class="paragraph">
-<p>Each gas price sample is based on the base price of gas in the last block plus 1 gwei.</p>
+<p>Each gas price sample is based on the base price of gas in the last block plus 1 gwei as tip.</p>
 </div>
 <div class="paragraph">
-<p>For each data gas price sample, given excess blob gas, Starknet calculates the blob gas price based on the price of the most recent blob transaction. sampling as described in <a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-4844.md#helpers">EIP-4844</a>.</p>
+<p>Each data gas price sample is based on the value of <code>excess_blob_gas</code>. For more information, see <a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-4844.md">EIP-4844</a>.</p>
 </div>
 </div>
 <div class="sect2">
