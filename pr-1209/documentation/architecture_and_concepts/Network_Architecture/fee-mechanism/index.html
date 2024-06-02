@@ -850,6 +850,18 @@ F  = gas\_price\cdot&amp;\Bigg(\max_k v_k w_k + \\
 <h2 id="fee_calculation"><a class="anchor" href="#fee_calculation"></a>Fee calculation</h2>
 <div class="sectionbody">
 <div class="sect2">
+<h3 id="calculation_of_gas_costs"><a class="anchor" href="#calculation_of_gas_costs"></a>Calculation of gas prices</h3>
+<div class="paragraph">
+<p>Every 60 seconds, Starknet samples the base price of gas and data gas on L1.</p>
+</div>
+<div class="paragraph">
+<p>The price of gas on Starknet is set to the average of the last 60 gas price samples, plus 1 gwei.</p>
+</div>
+<div class="paragraph">
+<p>The price of data gas on Starknet is set to the average of the last 60 data gas price samples. The data gas price on Ethereum is derived from the value of <code>excess_blob_gas</code>. For more information, see <a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-4844.md">EIP-4844</a>.</p>
+</div>
+</div>
+<div class="sect2">
 <h3 id="computation_without_builtins"><a class="anchor" href="#computation_without_builtins"></a>Computation without builtins</h3>
 <div class="paragraph">
 <p>Let&#8217;s analyze the correct metric for measuring transaction complexity. For simplicity, we will ignore Cairo&#8217;s builtins, and address them later.</p>
