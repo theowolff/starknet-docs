@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>L1-L2 messaging :: Starknet documentation</title>
+    <title>L1-L2 messaging mechanism :: Starknet documentation</title>
     <link rel="canonical" href="https://docs.starknet.io/documentation/architecture_and_concepts/Network_Architecture/messaging-mechanism/">
     <link rel="prev" href="../on-chain-data/">
     <link rel="next" href="../../Accounts/introduction/">
@@ -109,7 +109,8 @@
   <ul>
     <li><a href="../../../">Starknet</a></li>
     <li>Architecture</li>
-    <li><a href="./">L1-L2 messaging</a></li>
+    <li>State</li>
+    <li><a href="./">L1-L2 messaging mechanism</a></li>
   </ul>
 </nav>
   <div class="edit-this-page">
@@ -291,12 +292,12 @@
        class="nav-link"
      href="../on-chain-data/">Data availability</a>
   </li>
-</ul>
-  </li>
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="3">
     <a 
        class="nav-link"
-     href="./">L1-L2 messaging</a>
+     href="./">L1-L2 messaging mechanism</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
@@ -612,22 +613,55 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">L1-L2 messaging</h1>
-<div class="sect1">
-<h2 id="l2-l1_messages"><a class="anchor" href="#l2-l1_messages"></a>L2 → L1 messages</h2>
+<h1 class="page">L1-L2 messaging mechanism</h1>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Contracts on L2 can interact asynchronously with contracts on L1 via the L2&#8594;L1 messaging protocol.</p>
+<p>Starknet&#8217;s ability to interact with L1 is crucial. <em>Messaging</em> is the mechanism that enables this interaction, enabling cross-chain transactions.</p>
 </div>
 <div class="paragraph">
-<p>During the execution of a Starknet transaction, a contract on Starknet sends an L2→L1 message by calling the <a href="https://github.com/starkware-libs/cairo-lang/blob/4e233516f52477ad158bc81a86ec2760471c1b65/src/starkware/starknet/common/messages.cairo#L4"><code>send_message_to_L1</code></a> syscall. The message parameters (which contain the recipient contract on L1 and the relevant data) are then attached to the relevant state update that includes this syscall invocation.</p>
+<p>For example, you can perform computations on L2 and use the result on L1.</p>
 </div>
+<div class="paragraph">
+<p>Bridges on Starknet use the L1-L2  messaging mechanism. Consider that you want to bridge tokens from Ethereum to Starknet. You deposit your tokens in the L1 bridge contract, which automatically triggers the minting of the same token on L2. Another good use case for L1-L2 messaging is Defi pooling. For more information, see <a href="https://starkware.co/resource/defi-pooling/">DeFi pooling</a> on StarkWare&#8217;s site and <a href="https://www.starknet.io/en/ecosystem/dapps">dApps</a> on <a href="https://www.starknet.io" class="bare">https://www.starknet.io</a>.</p>
+</div>
+<div class="paragraph">
+<p>Be aware that the messaging mechanism is <em>asynchronous</em> and <em>asymmetric</em>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Asynchronous</em>: Your contract code, whether Cairo or Solidity, cannot await the result of the message being sent on the other chain within your contract code&#8217;s execution.</p>
+</li>
+<li>
+<p><em>Asymmetric</em>: Sending a message from Ethereum to Starknet, L1&#8594;L2, is fully automated by the Starknet sequencer, so the message is automatically delivered to the target contract on L2. However, when sending a message from Starknet to Ethereum, L2&#8594;L1, the sequencer only sends the hash of the message. You must then consume the message manually using a transaction on L1.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="l2-l1_messages"><a class="anchor" href="#l2-l1_messages"></a>L2 &#8594; L1 messages</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Contracts on L2 can interact asynchronously with contracts on L1 using the L2&#8594;L1 messaging protocol.</p>
+</div>
+<div class="paragraph">
+<p>The protocol consists of the following stages:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>During the execution of a transaction, a contract on Starknet sends a message from L2 to L1 by calling the <code>send_message_to_L1</code> syscall.</p>
+</li>
+<li>
+<p>The sequencer attaches the message parameters to the block that includes the syscall invocation. The message parameters include the address of the sender on L2, the address of the recipient contract on L1, and the message data.</p>
 <div class="paragraph">
 <p>For example:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-rs hljs" data-lang="rs">let mut payload: Array&lt;felt252&gt; = ArrayTrait::new();
+<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">let mut payload: Array&lt;felt252&gt; = ArrayTrait::new();
 let to_address: EthAddress = 1_felt252.try_into().unwrap();
 payload.append(1);
 // potentially add more elements to payload (payload[1], payload[2],  etc.)
@@ -635,52 +669,89 @@ payload.append(1);
 send_message_to_l1_syscall(to_address: to_address.into(), payload: payload.span());</code></pre>
 </div>
 </div>
+</li>
+<li>
+<p>The prover proves the state update that includes this transaction.</p>
+</li>
+<li>
+<p>The sequencer updates the L1 state.</p>
+</li>
+<li>
+<p>The message is stored on L1 in the Starknet Core Contract and a counter on the Core Contract increases by one.<br></p>
+</li>
+<li>
+<p>The <code>processMessage</code> function, which is part of the Starknet Core Contract, emits the <code>LogMessageToL1</code> event, which contains the message parameters.</p>
+</li>
+<li>
+<p>The message recipient on L1 can access and consume the message by calling the <a href="https://github.com/starkware-libs/cairo-lang/blob/4e233516f52477ad158bc81a86ec2760471c1b65/src/starkware/starknet/eth/StarknetMessaging.sol#L119"><code>consumeMessageFromL2</code></a> function, which includes the message parameters within the transaction.
+This function, which is part of the Starknet Core Contract, verifies the following:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The hashes of the L2 sent message parameters, now stored on the Core Contract, and the L1 received message parameters, are the same.</p>
+</li>
+<li>
+<p>The entity calling the function is indeed the recipient on L1.</p>
 <div class="paragraph">
-<p>After the state update that included this transaction is proved and the L1 state is updated, the message is stored on L1 in the Starknet Core Contract (and the relevant counter is increased), and the <code>LogMessageToL1</code> event (which contains the message parameters) is emitted.</p>
+<p>In such a case, the counter corresponding to the message hash in the Starknet Core Contract decreases by one. For more information, see the <a href="https://github.com/starkware-libs/cairo-lang/blob/4e233516f52477ad158bc81a86ec2760471c1b65/src/starkware/starknet/eth/StarknetMessaging.sol#L130C7-L130C7#"><code>consumeMessageFromL2</code></a> function in <code>StarknetMessaging.sol</code>.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
 </div>
 <div class="paragraph">
-<p>Later, the recipient address on L1 can access and consume the message as part of an L1 transaction by re-supplying the message parameters.</p>
+<p><a href="#diagram_l2-l1_messaging_mechanism">L2&#8594;L1 Messaging mechanism</a> illustrates this flow:</p>
 </div>
-<div class="paragraph">
-<p>This is done by calling <a href="https://github.com/starkware-libs/cairo-lang/blob/4e233516f52477ad158bc81a86ec2760471c1b65/src/starkware/starknet/eth/StarknetMessaging.sol#L119"><code>consumeMessageFromL2</code></a> in the Starknet Core Contract, who verifies that the hash corresponds to a stored message and that the caller is indeed the recipient on L1. In such a case, the reference count of the message hash in the Starknet Core Contract decreases by 1.</p>
-</div>
-<div class="paragraph">
-<p>The above flow is illustrated in the following diagram:</p>
-</div>
-<div class="imageblock">
+<div id="diagram_l2-l1_messaging_mechanism" class="imageblock">
 <div class="content">
-<img src="../../_images/l2l1.png" alt="l2l1">
+<img src="../../_images/l2l1.png" alt="L2&#8594;L1 message mechanism">
+</div>
+<div class="title">Figure 1. L2&#8594;L1 Messaging mechanism</div>
+</div>
+<div class="sect2">
+<h3 id="l2_l1_message_structure"><a class="anchor" href="#l2_l1_message_structure"></a>L2 &#8594; L1 message structure</h3>
+<div class="paragraph">
+<p>The structure of an L2 &#8594; L1 message is described as follows under <code>MSG_TO_L1</code> in the <a href="https://github.com/starkware-libs/starknet-specs/blob/master/api/starknet_api_openrpc.json">Starknet API JSON RPC</a> specification:</p>
+</div>
+<div class="hdlist stripes-odd">
+<table>
+<colgroup>
+<col style="width: 30%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+<code>from_address</code> (<code>felt252</code>)
+</td>
+<td class="hdlist2">
+<p>The address of the L2 contract sending the message.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>to_address</code> (<code>EthAddress</code>)
+</td>
+<td class="hdlist2">
+<p>The target L1 address the message is sent to.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>payload</code> (<code>Array&lt;felt252&gt;</code>) 
+</td>
+<td class="hdlist2">
+<p>The payload of the message.</p>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
-<h3 id="structure_and_hashing_l2-l1"><a class="anchor" href="#structure_and_hashing_l2-l1"></a>L2 → L1 structure and hashing</h3>
+<h3 id="hashing_l2-l1"><a class="anchor" href="#hashing_l2-l1"></a>L2 &#8594; L1 message hashing</h3>
 <div class="paragraph">
-<p>As demonstrated above, the structure of an L2 → L1 message is given by:</p>
-</div>
-<table class="tableblock frame-all grid-all fit-content stretch">
-<caption class="title">Table 1. L2 → L1 Message</caption>
-<colgroup>
-<col>
-<col>
-<col>
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">FromAddress</th>
-<th class="tableblock halign-left valign-top">ToAddress</th>
-<th class="tableblock halign-left valign-top">Payload</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>FieldElement</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>EthereumAddress</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Payload</code></p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>The hash of an L2 → L1 message is computed on L1 as follows:</p>
+<p>The hash of an L2 &#8594; L1 message is computed on L1 as follows:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -701,7 +772,9 @@ send_message_to_l1_syscall(to_address: to_address.into(), payload: payload.span(
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-As the hash of the message being sent needs to be written to L1 storage (in the Starknet Core Contract) there is always a fixed 20k gas cost associated with sending an L2 to L1 message.
+<div class="paragraph">
+<p>Sending an L2 to L1 message always incurs a fixed cost of 20,000 gas, because the hash of the message being sent must be written to L1 storage in the Starknet Core Contract.</p>
+</div>
 </td>
 </tr>
 </table>
@@ -710,32 +783,31 @@ As the hash of the message being sent needs to be written to L1 storage (in the 
 </div>
 </div>
 <div class="sect1">
-<h2 id="l1-l2-messages"><a class="anchor" href="#l1-l2-messages"></a>L1 → L2 messages</h2>
+<h2 id="l1-l2-messages"><a class="anchor" href="#l1-l2-messages"></a>L1 &#8594; L2 messages</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Contracts on L1 can interact asynchronously with contracts on L2 via the L1→L2 messaging protocol. The protocol consists of the following stages:</p>
+<p>Contracts on L1 can interact asynchronously with contracts on L2 using the <em>L1&#8594;L2</em> messaging protocol.</p>
+</div>
+<div class="paragraph">
+<p>The protocol consists of the following stages:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>An L1 contract initiates a message to an L2 contract on Starknet. It does so by calling the <a href="https://github.com/starkware-libs/cairo-lang/blob/54d7e92a703b3b5a1e07e9389608178129946efc/src/starkware/starknet/solidity/IStarknetMessaging.sol#L13"><code>sendMessageToL2</code></a> function on the Starknet Core Contract with the message parameters.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>The Starknet Core Contract hashes the message parameters and updates the L1→L2 message mapping to indicate that a message with this hash was indeed sent. In fact, the L1 contract records the fee that the sender paid. For more information, see <a href="#l1-l2-message-fees">L1 → L2 message fees</a>.</p>
-</li>
-</ol>
+<p>An L1 contract induces a message to an L2 contract on Starknet by calling the <a href="https://github.com/starkware-libs/cairo-lang/blob/54d7e92a703b3b5a1e07e9389608178129946efc/src/starkware/starknet/solidity/IStarknetMessaging.sol#L13"><code>sendMessageToL2</code></a> function on the Starknet Core Contract with the message parameters.</p>
+<div class="paragraph">
+<p>The Starknet Core Contract hashes the message parameters and updates the L1&#8594;L2 message mapping to indicate that a message with this hash was indeed sent. The L1 contract records the fee that the sender paid. For more information, see <a href="#l1-l2-message-fees">L1 &#8594; L2 message fees</a>.</p>
 </div>
 </li>
 <li>
-<p>The message is then decoded into a Starknet transaction that invokes a function annotated with the <code>l1_handler</code> decorator on the target contract. Transactions like this on L2 are called <strong><em>L1 handler functions</em></strong>.</p>
+<p>The message is then decoded into a Starknet transaction that invokes a function annotated with the <code>l1_handler</code> decorator on the target contract. Transactions like this on L2 are called <strong><em>L1 handler transactions</em></strong>.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>The Starknet sequencer, upon seeing enough L1 confirmations for the transaction that sent the message, initiates the corresponding L2 transaction.</p>
+<p>The Starknet sequencer, upon receiving enough L1 confirmations for the transaction that sent the message, initiates the corresponding L2 transaction.</p>
 </li>
 <li>
-<p>The L2 transaction invokes the relevant <code>l1_handler</code>.</p>
+<p>The L2 transaction invokes the relevant <code>l1_handler</code> function.</p>
 </li>
 </ol>
 </div>
@@ -744,23 +816,36 @@ As the hash of the message being sent needs to be written to L1 storage (in the 
 <p>The L1 Handler transaction that was created in the previous step is added to a proof.</p>
 </li>
 <li>
-<p>The state update is received on the Core contract.</p>
+<p>The Core Contract receives the state update.</p>
 </li>
 <li>
-<p>the message is cleared from the Core contract&#8217;s storage. At this point, the message is handled.</p>
+<p>The message is cleared from the Core Contract&#8217;s storage to consume the message. Clearing the Core Contract&#8217;s storage does the following:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>incurs a fixed cost of 5,000 gas</p>
+</li>
+<li>
+<p>emits an L1 event logging the message consumption</p>
+</li>
+</ul>
+</div>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>An L1→L2 message consists of:</p>
+<p>At this point, the message is handled.</p>
+</div>
+<div class="paragraph">
+<p>An L1&#8594;L2 message consists of the following:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The L1 sender address</p>
+<p>L1 sender&#8217;s address</p>
 </li>
 <li>
-<p>The recipient contract address on Starknet</p>
+<p>L2 recipient&#8217;s contract address</p>
 </li>
 <li>
 <p>Function selector</p>
@@ -770,9 +855,6 @@ As the hash of the message being sent needs to be written to L1 storage (in the 
 </li>
 <li>
 <p>Message nonce</p>
-</li>
-</ul>
-</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -781,57 +863,80 @@ As the hash of the message being sent needs to be written to L1 storage (in the 
 </td>
 <td class="content">
 <div class="paragraph">
-<p><strong>Message nonce</strong></p>
+<p>The message nonce is maintained on the Starknet Core Contract on L1, and is incremented whenever a message is sent to L2. The nonce is used to avoid a hash collision between different L1 handler transactions that is caused by the same message being sent on L1 multiple times.</p>
 </div>
 <div class="paragraph">
-<p>The message nonce is maintained on the Starknet Core Contract on L1, and is bumped whenever a message is
-sent to L2. It is used to avoid hash collisions between different L1 handler transactions that are induced by the same message being sent on L1 multiple times (see <a href="#structure_and_hashing_l1-l2">below</a>).</p>
+<p>For more information, see <a href="#l1_l2_message_structure">L1&#8594;L2 structure</a>.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
-<div class="sect2">
-<h3 id="l2-l1_message_cancellation"><a class="anchor" href="#l2-l1_message_cancellation"></a>L1 → L2 message cancellation</h3>
-<div class="paragraph">
-<p>Imagine a scenario where a user transfers an asset from L1 to L2. The flow starts with the user sending the asset to a Starknet bridge and the corresponding L1→L2 message generation. Now, imagine that the L2 message consumption doesn&#8217;t function (this might happen due to a bug in the dApp&#8217;s Cairo contract). This could result in the user losing custody over their asset forever.</p>
-</div>
-<div class="paragraph">
-<p>To mitigate this risk, we allow the contract that initiated the L1→L2 message to cancel it after declaring the intent and waiting a suitable amount of time.</p>
-</div>
-<div class="paragraph">
-<p>The user starts by calling <a href="https://github.com/starkware-libs/cairo-lang/blob/4e233516f52477ad158bc81a86ec2760471c1b65/src/starkware/starknet/eth/StarknetMessaging.sol#L134"><code>startL1ToL2MessageCancellation</code></a> with the relevant message parameters in the Starknet Core Contract. Then, after a five days delay, the user can finalize the cancellation by calling <a href="https://github.com/starkware-libs/cairo-lang/blob/4e233516f52477ad158bc81a86ec2760471c1b65/src/starkware/starknet/eth/StarknetMessaging.sol#L147"><code>cancelL1ToL2Message</code></a>.</p>
-</div>
-<div class="paragraph">
-<p>The reason for the delay is to protect the sequencer from a DoS attack in the form of repeatedly sending and canceling a message before it is included in L1, rendering the L2 block which contains the activation of the corresponding L1 handler invalid.</p>
-</div>
-<div class="paragraph">
-<p>Note that this flow should only be used in edge cases such as bugs on the Layer 2 contract preventing message consumption.</p>
-</div>
+</li>
+</ul>
 </div>
 <div class="sect2">
-<h3 id="l1-l2-message-fees"><a class="anchor" href="#l1-l2-message-fees"></a>L1 → L2 message fees</h3>
+<h3 id="l2-l1_message_cancellation"><a class="anchor" href="#l2-l1_message_cancellation"></a>L1 &#8594; L2 message cancellation</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 <div class="paragraph">
-<p>An L1 → L2 message induces a transaction on L2, which, unlike regular transactions, is not sent by an account. This calls for a different mechanism for paying the transaction&#8217;s fee, for otherwise the sequencer has no incentive of including L1 handler transactions inside a block.</p>
+<p>The flow described here should only be used in edge cases such as bugs on the Layer 2 contract preventing message consumption.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>To avoid having to interact with both L1 and L2 when sending a message, L1 → L2 messages are payable on L1, by sending ETH with the call to the payable function <code>sendMessageToL2</code> on the Starknet Core Contract.</p>
+<p>Consider that Alice sends an L1 asset to a Starknet bridge to transfer it to L2, which generates the corresponding L1&#8594;L2 message. Now, consider that the L2 message consumption doesn&#8217;t function, which might happen due to a bug in the dApp&#8217;s Cairo contract. This bug could result in Alice losing custody of their asset forever.</p>
+</div>
+<div class="paragraph">
+<p>To mitigate this risk, the contract that initiated the L1&#8594;L2 message can cancel it by declaring the intent to cancel, waiting five days, and then completing the cancellation. This delay protects the sequencer from a DoS attack in the form of repeatedly sending and canceling a message before it is included in L1, rendering the L2 block which contains the activation of the corresponding L1 handler invalid.</p>
+</div>
+<div class="paragraph">
+<p>The steps in this flow are as follows:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user that initiated the L1&#8594;L2 message calls the <a href="https://github.com/starkware-libs/cairo-lang/blob/4e233516f52477ad158bc81a86ec2760471c1b65/src/starkware/starknet/eth/StarknetMessaging.sol#L134"><code>startL1ToL2MessageCancellation</code></a> function in the Starknet Core Contract.</p>
+</li>
+<li>
+<p>The user waits five days until she can finalize the cancellation.</p>
+</li>
+<li>
+<p>The user calls the <a href="https://github.com/starkware-libs/cairo-lang/blob/4e233516f52477ad158bc81a86ec2760471c1b65/src/starkware/starknet/eth/StarknetMessaging.sol#L147"><code>cancelL1ToL2Message</code></a> function.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="l1-l2-message-fees"><a class="anchor" href="#l1-l2-message-fees"></a>L1 &#8594; L2 message fees</h3>
+<div class="paragraph">
+<p>An L1 &#8594; L2 message induces a transaction on L2, which, unlike regular transactions, is not sent by an account. This calls for a different mechanism for paying the transaction&#8217;s fee, for otherwise the sequencer has no incentive of including L1 handler transactions inside a block.</p>
+</div>
+<div class="paragraph">
+<p>To avoid having to interact with both L1 and L2 when sending a message, L1 &#8594; L2 messages are payable on L1, by sending ETH with the call to the payable function <code>sendMessageToL2</code> on the Starknet Core Contract.</p>
 </div>
 <div class="paragraph">
 <p>The sequencer takes this fee in exchange for handling the message. The sequencer charges the fee in full upon updating the L1 state with the consumption of this message.</p>
 </div>
 <div class="paragraph">
 <p>The fee itself is calculated in the <a href="../fee-mechanism/#overall_fee" class="xref page">same manner</a> as
-"regular" L2 transactions. You can use the <a href="../../../cli/starkli/#starknet-estimate_fee" class="xref page">CLI</a> to get an estimate of an L1 → L2 message fee.</p>
+"regular" L2 transactions. You can use the <a href="../../../cli/starkli/#starknet-estimate_fee" class="xref page">CLI</a> to get an estimate of an L1 &#8594; L2 message fee.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="structure_and_hashing_l1-l2"><a class="anchor" href="#structure_and_hashing_l1-l2"></a>L1 → L2 structure and hashing</h3>
+<h3 id="l1_l2_message_structure"><a class="anchor" href="#l1_l2_message_structure"></a>L1 &#8594; L2 structure</h3>
 <div class="paragraph">
-<p>For completeness, we describe the precise structure of both the message as it appears on L1 and the induced transaction as it appears on L2.</p>
+<p>For completeness, <a href="#l1_l2_message_structure">L1 &#8594; L2 structure</a> describes the precise structure of both the message as it appears on L1 and the induced transaction as it appears on L2.</p>
 </div>
-<table class="tableblock frame-all grid-all fit-content stretch">
-<caption class="title">Table 2. L1 → L2 Message</caption>
+<table id="L1-L2_message_structure" class="tableblock frame-all grid-all fit-content stretch">
+<caption class="title">Table 1. L1 &#8594; L2 message structure</caption>
 <colgroup>
 <col>
 <col>
@@ -861,6 +966,9 @@ sent to L2. It is used to avoid hash collisions between different L1 handler tra
 </tr>
 </tbody>
 </table>
+</div>
+<div class="sect2">
+<h3 id="hashing_l1-l2"><a class="anchor" href="#hashing_l1-l2"></a>L1 &#8594; L2 hashing</h3>
 <div class="paragraph">
 <p>The hash of the message is computed on L1 as follows:</p>
 </div>
@@ -879,7 +987,7 @@ sent to L2. It is used to avoid hash collisions between different L1 handler tra
 </div>
 </div>
 <table class="tableblock frame-all grid-all fit-content stretch">
-<caption class="title">Table 3. L1 handler transaction</caption>
+<caption class="title">Table 2. L1 handler transaction</caption>
 <colgroup>
 <col>
 <col>
@@ -931,13 +1039,13 @@ sent to L2. It is used to avoid hash collisions between different L1 handler tra
 <div class="ulist">
 <ul>
 <li>
-<p>\(\text{l1_handler}\) is a constant prefix, encoded in bytes (ASCII), with big-endian.</p>
+<p><code>l1_handler</code> is a constant prefix, encoded in bytes (ASCII), as big-endian.</p>
 </li>
 <li>
-<p>\(\text{chain_id}\) is a constant value that specifies the network to which this transaction is sent.</p>
+<p><code>chain_id</code> is a constant value that specifies the network to which this transaction is sent.</p>
 </li>
 <li>
-<p>\(h\) is the <a href="../../Cryptography/hash-functions/#pedersen_hash" class="xref page">Pedersen</a> hash</p>
+<p><em>h</em> is the <a href="../../Cryptography/hash-functions/#pedersen_hash" class="xref page">Pedersen</a> hash</p>
 </li>
 </ul>
 </div>
@@ -955,6 +1063,24 @@ sent to L2. It is used to avoid hash collisions between different L1 handler tra
 </tr>
 </table>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="additional_resources"><a class="anchor" href="#additional_resources"></a>Additional resources</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../../Smart_Contracts/system-calls-cairo1/#send_message_to_L1" class="xref page"><code>send_message_to_L1</code></a> syscall</p>
+</li>
+<li>
+<p><a href="https://github.com/starkware-libs/cairo-lang/blob/54d7e92a703b3b5a1e07e9389608178129946efc/src/starkware/starknet/solidity/IStarknetMessaging.sol#L13"><code>sendMessageToL2</code></a> function on the Starknet Core Contract</p>
+</li>
+<li>
+<p>For more information on how messaging works within the Starknet Core Contract, including details on coding, see <a href="https://book.cairo-lang.org/ch16-04-L1-L2-messaging.html">L1-L2 Messaging</a> in <em>The Cairo Book: The Cairo Programming Language</em></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
