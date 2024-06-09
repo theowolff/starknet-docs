@@ -787,7 +787,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Starknet&#8217;s ability to interact with L1 is crucial. <em>Messaging</em> is the mechanism that enables this interaction, enabling cross-chain transactions.</p>
+<p>Starknet&#8217;s ability to interact with L1 is crucial. <em>Messaging</em> is the mechanism that enables this interaction.</p>
 </div>
 <div class="paragraph">
 <p>For example, you can perform computations on L2 and use the result on L1.</p>
@@ -801,7 +801,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p><em>Asynchronous</em>: Your contract code, whether Cairo or Solidity, cannot await the result of the message being sent on the other chain within your contract code&#8217;s execution.</p>
+<p><em>Asynchronous</em>: Your contract code, whether Cairo or Solidity, cannot await the result of the message being sent on the other layer within your contract code&#8217;s execution.</p>
 </li>
 <li>
 <p><em>Asymmetric</em>: Sending a message from Ethereum to Starknet, L1&#8594;L2, is fully automated by the Starknet sequencer, so the message is automatically delivered to the target contract on L2. However, when sending a message from Starknet to Ethereum, L2&#8594;L1, the sequencer only sends the hash of the message. You must then consume the message manually using a transaction on L1.</p>
