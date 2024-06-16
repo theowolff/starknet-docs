@@ -1930,10 +1930,10 @@ and <code>nonce_data_availability_mode</code>, as follows:</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="v3-fee-estimation"><a class="anchor" href="#v3-fee-estimation"></a>Transaction v3 Fee Estimation</h2>
+<h2 id="v3-fee-estimation"><a class="anchor" href="#v3-fee-estimation"></a>v3 transaction fee estimation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Estimating the fees of transactions v3 should be done with the <code>starknet_estimateFee</code> call of <a href="https://github.com/starkware-libs/starknet-specs/blob/v0.7.1/api/starknet_api_openrpc.json#L612">RPC v0.7</a> and above. See <a href="https://community.starknet.io/t/starknet-v0-13-1-pre-release-notes/113664#sdkswallets-how-to-use-the-new-fee-estimates-7">here</a> for the recommended way to translate the response fields of the call to the different fields of <code>resource_bounds</code>.</p>
+<p>Estimate the fees of transactions with the <code>starknet_estimateFee</code> API call, which is part of the of the Starknet JSON RPC v0.7 and above. For more information see the <a href="https://github.com/starkware-libs/starknet-specs/blob/v0.7.1/api/starknet_api_openrpc.json#L612">Starknet API JSON RPC specification</a>. For information on the recommended way to translate the response fields of the call to the fields in <code>resource_bounds</code>, see <a href="https://community.starknet.io/t/starknet-v0-13-1-pre-release-notes/113664#sdkswallets-how-to-use-the-new-fee-estimates-7">How to use the new fee estimates?</a> on the Starknet community forum.</p>
 </div>
 </div>
 </div>
