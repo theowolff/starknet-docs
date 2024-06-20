@@ -701,7 +701,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="attacks_that_validation_limitations_prevent"><a class="anchor" href="#attacks_that_validation_limitations_prevent"></a>Potential attacks</h2>
+<h2 id="attacks_that_validation_limitations_prevent"><a class="anchor" href="#attacks_that_validation_limitations_prevent"></a>Potential attacks on <code>__validate__</code></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The validation functions have limitations, described below, that are designed to prevent the following attacks:</p>
@@ -815,6 +815,36 @@
 </div>
 </div>
 <div class="sect1">
+<h2 id="attacks_that_execute_limitations_prevent"><a class="anchor" href="#attacks_that_execute_limitations_prevent"></a>Potential attacks on <code>__execute__</code></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Deprecated <code>INVOKE</code> v0 transactions can call the <code>__execute__</code> function of all contracts without going through `__validate__ first.</p>
+</li>
+<li>
+<p>The <code>__execute__</code> function can be called by any contract.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ways_to_mitigate_execute_attacks"><a class="anchor" href="#ways_to_mitigate_execute_attacks"></a>Ways to mitigate attacks on <code>__execute__</code></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Account contracts should explicitly assert in the <code>__execute__</code> function that the transaction version is 1 or above.</p>
+</li>
+<li>
+<p>Account contracts should explicitly assert in the <code>__execute__</code> function that the sender is 0 (i.e., the sequencer).</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="invalid_transactions"><a class="anchor" href="#invalid_transactions"></a>Invalid transactions</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -847,20 +877,6 @@
 </div>
 <div class="paragraph">
 <p>Initiates the execution stage in the sequencer. The sequencer calls this function upon receiving an <code>INVOKE</code> transaction, after the <code>__validate__</code> function successfully completes.</p>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Deprecated <code>INVOKE</code> v0 transactions can call the <code>__execute__</code> function of all contracts. To mitigate this risk, <code>__execute__</code> calls should explicitly assert that the transaction version is 1 or above.</p>
-</div>
-</td>
-</tr>
-</table>
 </div>
 <div class="paragraph">
 <p>In most implementations, <code>__execute__</code> initiates a sequence of calls from the account.</p>
