@@ -738,6 +738,22 @@ block number
 </div>
 </div>
 <div class="sect1">
+<h2 id="l1"><a class="anchor" href="#l1"></a>Layer 1, L1</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The base layer of a blockchain network, such as Ethereum, where transactions are directly recorded and validated. It includes the underlying protocol and consensus mechanism that establish the foundational rules for the blockchain.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="l2"><a class="anchor" href="#l2"></a>Layer 2, L2</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Exists on top of an L1 blockchain, such as Ethereum, in order to add value to the L1, by providing features such as massive computation scale without compromising on Ethereum’s composability and security.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="multicall"><a class="anchor" href="#multicall"></a>multicall</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -792,7 +808,7 @@ block number
 <h2 id="SHARP"><a class="anchor" href="#SHARP"></a>SHARP</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Shared Prover (SHARP), is a mechanism used in Starknet that aggregates multiple Cairo programs from different users, each containing different logic. These Cairo programs are then executed together, generating a single proof common to all the programs.</p>
+<p>The Shared Prover (SHARP) is a mechanism used in Starknet that aggregates multiple Cairo programs from different users, each containing different logic. These Cairo programs are then executed together, generating a single proof common to all the programs.</p>
 </div>
 </div>
 </div>
@@ -800,7 +816,7 @@ block number
 <h2 id="sierra"><a class="anchor" href="#sierra"></a>Sierra</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>An intermediate representation between Cairo and Casm. Sierra code is then compiled to a Casm program with the property that, for any input, the execution of the program is provable. In particular, it ensures that the execution of a transaction is provable regardless of whether the execution succeeded or was reverted due to an error.</p>
+<p>An intermediate representation between Cairo and Casm. Sierra code is then compiled into a Casm program with the property that, for any input, the program&#8217;s execution is provable. In particular, it ensures that the execution of a transaction is provable regardless of whether the execution succeeded or was reverted due to an error.</p>
 </div>
 <div class="ulist">
 <div class="title">Additional resources</div>
@@ -833,12 +849,12 @@ block number
 <p>The commitment to the L2 state.</p>
 </li>
 <li>
-<p>The Starknet OS program hash – effectively defining the version of Starknet the network is running.</p>
+<p>The Starknet OS program hash – effectively defines the version of Starknet the network is running.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>The committed state on the L1 Core Contract acts as the consensus mechanism of Starknet,that is, the system is secured by the L1 Ethereum consensus. In addition to maintaining the state, the Starknet L1 Core Contract is the main hub of operations for Starknet on L1. Specifically:</p>
+<p>The committed state on the L1 Core Contract acts as the consensus mechanism of Starknet, that is, the system is secured by the L1 Ethereum consensus. In addition to maintaining the state, the Starknet L1 Core Contract is the main hub of operations for Starknet on L1. Specifically:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -849,6 +865,17 @@ block number
 <p>It deals with cross-layer interaction between L1 and L2.</p>
 </li>
 </ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="starknet"><a class="anchor" href="#starknet"></a>Starknet</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A permissionless Validity-Rollup, also known as a zero-knowledge rollup (ZK rollup) for Ethereum. Starknet is a Layer 2 (L2) blockchain, enabling any dApp to achieve massive computation scale without compromising Ethereum’s composability and security.</p>
+</div>
+<div class="paragraph">
+<p>Starknet aims to achieve secure, low-cost transactions and high performance by using the STARK cryptographic proof system. Starknet contracts and the Starknet OS are written in Cairo, a custom-built and specialized programming language.</p>
 </div>
 </div>
 </div>
