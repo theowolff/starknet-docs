@@ -3,10 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Migrating a contract from Cairo v1 to Cairo v2 :: Starknet documentation</title>
-    <link rel="canonical" href="https://docs.starknet.io/architecture-and-concepts/smart-contracts/contract-syntax/">
-    <link rel="prev" href="../starknet-events/">
-    <link rel="next" href="../cairo-and-sierra/">
+    <title>Messaging function and event reference :: Starknet documentation</title>
+    <link rel="canonical" href="https://docs.starknet.io/architecture-and-concepts/network-architecture/messaging-reference/">
+    <link rel="prev" href="../messaging-mechanism/">
+    <link rel="next" href="../../accounts/introduction/">
+    <meta name="description" content="Comprehensive function and event reference for the `StarknetMessaging` smart contracts.">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -109,12 +110,12 @@
   <ul>
     <li><a href="../../../">Starknet</a></li>
     <li>Architecture</li>
-    <li>Contracts</li>
-    <li><a href="./">Migrating a contract from Cairo v1 to Cairo v2</a></li>
+    <li>L1-L2 messaging</li>
+    <li><a href="./">Messaging reference</a></li>
   </ul>
 </nav>
   <div class="edit-this-page">
-    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/architecture-and-concepts/pages/smart-contracts/contract-syntax.adoc"><img class="pencil">Edit this Page</a>
+    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/architecture-and-concepts/pages/network-architecture/messaging-reference.adoc"><img class="pencil">Edit this Page</a>
   </div>
 </div>
 <div class="background">
@@ -251,27 +252,27 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../network-architecture/starknet-architecture-overview/">Overview</a>
+     href="../starknet-architecture-overview/">Overview</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../network-architecture/block-structure/">Block structure</a>
+     href="../block-structure/">Block structure</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../network-architecture/transaction-life-cycle/">Transaction lifecycle</a>
+     href="../transaction-life-cycle/">Transaction lifecycle</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../network-architecture/transactions/">Transaction types</a>
+     href="../transactions/">Transaction types</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../network-architecture/fee-mechanism/">Gas and transaction fees</a>
+     href="../fee-mechanism/">Gas and transaction fees</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
@@ -280,12 +281,12 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../network-architecture/starknet-state/">Starknet state</a>
+     href="../starknet-state/">Starknet state</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../network-architecture/data-availability/">Data availability</a>
+     href="../data-availability/">Data availability</a>
   </li>
 </ul>
   </li>
@@ -296,12 +297,12 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../network-architecture/messaging-mechanism/">L1-L2 messaging mechanism</a>
+     href="../messaging-mechanism/">L1-L2 messaging mechanism</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item is-current-page" data-depth="3">
     <a 
        class="nav-link"
-     href="../../network-architecture/messaging-reference/">Messaging reference</a>
+     href="./">Messaging reference</a>
   </li>
 </ul>
   </li>
@@ -348,62 +349,62 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../contract-classes/">Contract classes and instances</a>
+     href="../../smart-contracts/contract-classes/">Contract classes and instances</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../class-hash/">Class hash</a>
+     href="../../smart-contracts/class-hash/">Class hash</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../contract-address/">Contract address</a>
+     href="../../smart-contracts/contract-address/">Contract address</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../contract-storage/">Contract storage</a>
+     href="../../smart-contracts/contract-storage/">Contract storage</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../contract-abi/">Contract ABI</a>
+     href="../../smart-contracts/contract-abi/">Contract ABI</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../starknet-events/">Events</a>
-  </li>
-  <li class="nav-item is-current-page" data-depth="3">
-    <a 
-       class="nav-link"
-     href="./">Migrating a contract from Cairo v1 to Cairo v2</a>
+     href="../../smart-contracts/starknet-events/">Events</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../cairo-and-sierra/">Cairo and Sierra</a>
+     href="../../smart-contracts/contract-syntax/">Migrating a contract from Cairo v1 to Cairo v2</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../cairo-builtins/">Cairo builtins</a>
+     href="../../smart-contracts/cairo-and-sierra/">Cairo and Sierra</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../serialization-of-cairo-types/">Serialization of Cairo types</a>
+     href="../../smart-contracts/cairo-builtins/">Cairo builtins</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../system-calls-cairo1/">System calls</a>
+     href="../../smart-contracts/serialization-of-cairo-types/">Serialization of Cairo types</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../execution-info/">Execution information for the current block</a>
+     href="../../smart-contracts/system-calls-cairo1/">System calls</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../smart-contracts/execution-info/">Execution information for the current block</a>
   </li>
 </ul>
   </li>
@@ -619,440 +620,1057 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Migrating a contract from Cairo v1 to Cairo v2</h1>
+<h1 class="page">Messaging function and event reference</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>With the <a href="https://github.com/starkware-libs/cairo/releases/tag/v2.0.0-rc0">v2.0.0 release</a> of the Cairo compiler, the Starknet contract syntax has evolved, affecting the organization of functions, storage, and events.</p>
+<p>The <code>StarknetMessaging</code> smart contracts include functions and events that are required when sending messages between L1 and L2.</p>
 </div>
 <div class="paragraph">
-<p>For more information on the latest syntax changes, see the Community Forum post <a href="https://community.starknet.io/t/cairo-1-contract-syntax-is-evolving/94794"><em>Cairo 1: Contract Syntax is Evolving</em></a>.</p>
+<p>For information on the messaging mechanism, see <a href="../messaging-mechanism/" class="xref page">Messaging mechanism</a>.</p>
+</div>
+<div class="paragraph">
+<p>The L1 functions, where available, are defined in the following smart contract:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Contract</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Functions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/StarknetMessaging.sol"><code>StarknetMessaging.sol</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The contract that implements messaging functions.</p>
+<p class="tableblock">Interfaces are available through <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/IStarknetMessaging.sol"><code>IStarknetMessaging.sol</code></a>.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="#cancelL1ToL2Message"><code>cancelL1ToL2Message</code></a></p>
+</li>
+<li>
+<p><a href="#consumeMessageFromL2"><code>consumeMessageFromL2</code></a></p>
+</li>
+<li>
+<p><a href="#getMaxL1MsgFee"><code>getMaxL1MsgFee</code></a></p>
+</li>
+<li>
+<p><a href="#l1ToL2MessageCancellations"><code>l1ToL2MessageCancellations</code></a></p>
+</li>
+<li>
+<p><a href="#l1ToL2MessageNonce"><code>l1ToL2MessageNonce</code></a></p>
+</li>
+<li>
+<p><a href="#l1ToL2Messages"><code>l1ToL2Messages</code></a></p>
+</li>
+<li>
+<p><a href="#l2ToL1Messages"><code>l2ToL1Messages</code></a></p>
+</li>
+<li>
+<p><a href="#messageCancellationDelay"><code>messageCancellationDelay</code></a></p>
+</li>
+<li>
+<p><a href="#sendMessageToL2"><code>sendMessageToL2</code></a></p>
+</li>
+<li>
+<p><a href="#startL1ToL2MessageCancellation"><code>startL1ToL2MessageCancellation</code></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The L1 events, where available, are defined in the following smart contract:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Contract</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Events</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/IStarknetMessagingEvents.sol"><code>IStarknetMessagingEvents.sol</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The contract that defines messaging events.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="#ConsumedMessageToL1"><code>ConsumedMessageToL1</code></a></p>
+</li>
+<li>
+<p><a href="#ConsumedMessageToL2"><code>ConsumedMessageToL2</code></a></p>
+</li>
+<li>
+<p><a href="#LogMessageToL1"><code>LogMessageToL1</code></a></p>
+</li>
+<li>
+<p><a href="#LogMessageToL2"><code>LogMessageToL2</code></a></p>
+</li>
+<li>
+<p><a href="#MessageToL2Canceled"><code>MessageToL2Canceled</code></a></p>
+</li>
+<li>
+<p><a href="#MessageToL2CancellationStarted"><code>MessageToL2CancellationStarted</code></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="l1_function_reference"><a class="anchor" href="#l1_function_reference"></a>L1 function reference</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Functions are listed in alphabetical order.</p>
+</div>
+<hr>
+<div class="sect2">
+<h3 id="cancelL1ToL2Message"><a class="anchor" href="#cancelL1ToL2Message"></a><code>cancelL1ToL2Message</code></h3>
+<h4 id="description" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Cancels an L1 to L2 message. Call this function after calling the <a href="#startL1ToL2MessageCancellation"><code>startL1ToL2MessageCancellation</code></a> function. The time between the calls to these two functions must be at least the number of seconds defined by the <a href="#messageCancellationDelay"><code>messageCancellationDelay</code></a> function.</p>
+</div>
+<div class="paragraph">
+<p>Only a sender can cancel a message.</p>
+</div>
+<div class="paragraph">
+<p>If the message is missing, the call reverts.</p>
+</div>
+<div class="paragraph">
+<p>Be aware that the message fee is not refunded.</p>
+</div>
+<h4 id="state_mutability" class="discrete">State Mutability</h4>
+<div class="paragraph">
+<p>None.</p>
+</div>
+<h4 id="parameters" class="discrete">Parameters</h4>
+<div class="hdlist stripes-odd">
+<table>
+<colgroup>
+<col style="width: 30%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+<code>uint256 <em>toAddress</em></code>
+</td>
+<td class="hdlist2">
+<p>The address of the L2 contract.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>uint256 <em>selector</em></code>
+</td>
+<td class="hdlist2">
+<p>The function, in the recipient L2 contract, that the message called.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>uint256[] calldata <em>payload</em></code>
+</td>
+<td class="hdlist2">
+<p>The payload of the message.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>uint256 <em>nonce</em></code>
+</td>
+<td class="hdlist2">
+<p>The nonce of the message.</p>
+</td>
+</tr>
+</table>
+</div>
+<h4 id="returns" class="discrete">Returns</h4>
+<div class="hdlist stripes-odd">
+<table>
+<colgroup>
+<col style="width: 30%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+<code>bytes32 <em>msgHash</em></code>
+</td>
+<td class="hdlist2">
+<p>The hash of the canceled message.</p>
+</td>
+</tr>
+</table>
+</div>
+<h4 id="emitted_event" class="discrete">Emitted event</h4>
+<div class="paragraph">
+<p><a href="#MessageToL2Canceled"><code>MessageToL2Canceled</code></a></p>
+</div>
+<h4 id="function_definition" class="discrete">Function definition</h4>
+<div class="paragraph">
+<p>Contract: <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/StarknetMessaging.sol"><code>StarknetMessaging.sol</code></a></p>
 </div>
 <div class="ulist">
-<div class="title">Prerequisites</div>
 <ul>
 <li>
-<p>A contract written with the Cairo compiler v1</p>
-</li>
-<li>
-<p>The most recent version of the Cairo compiler</p>
+<p>Function: <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/StarknetMessaging.sol#L161"><code>cancelL1ToL2Message</code></a></p>
 </li>
 </ul>
 </div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Change the contract annotation from <code>#[contract]</code> to <code>#[starknet::contract]</code>. For example::</p>
-<div id="tabs_1" class="openblock tabs is-loading">
-<div class="content">
-<div class="ulist tablist">
-<ul>
-<li id="tabs_1_cairo_v1" class="tab">
-<p>Cairo v1</p>
-</li>
-<li id="tabs_1_cairo_v2" class="tab">
-<p>Cairo v2</p>
-</li>
-</ul>
+<hr>
 </div>
-<div id="tabs_1_cairo_v1--panel" class="tabpanel" aria-labelledby="tabs_1_cairo_v1">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">#[contract]
-mod CounterContract {
-   ...
-}</code></pre>
+<div class="sect2">
+<h3 id="consumeMessageFromL2"><a class="anchor" href="#consumeMessageFromL2"></a><code>consumeMessageFromL2</code></h3>
+<h4 id="description_2" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Consumes a message that was sent from an L2 contract.</p>
 </div>
+<div class="paragraph">
+<p>Returns the hash of the message.</p>
 </div>
+<h4 id="state_mutability_2" class="discrete">State Mutability</h4>
+<div class="paragraph">
+<p>None.</p>
 </div>
-<div id="tabs_1_cairo_v2--panel" class="tabpanel" aria-labelledby="tabs_1_cairo_v2">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">#[starknet::contract]
-mod CounterContract {
-   ...
-}</code></pre>
+<h4 id="parameters_2" class="discrete">Parameters</h4>
+<div class="hdlist stripes-odd">
+<table>
+<colgroup>
+<col style="width: 30%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+<code>uint256 <em>fromAddress</em></code>
+</td>
+<td class="hdlist2">
+<p>The address of the L2 contract sending the message.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>uint256[] calldata <em>payload</em></code>
+</td>
+<td class="hdlist2">
+<p>The payload of the message.</p>
+</td>
+</tr>
+</table>
 </div>
+<h4 id="returns_2" class="discrete">Returns</h4>
+<div class="hdlist stripes-odd">
+<table>
+<colgroup>
+<col style="width: 30%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+<code>bytes32 <em>msgHash</em></code>
+</td>
+<td class="hdlist2">
+<p>The hash of the consumed message.</p>
+</td>
+</tr>
+</table>
 </div>
+<h4 id="emitted_event_2" class="discrete">Emitted event</h4>
+<div class="paragraph">
+<p><a href="#ConsumedMessageToL1"><code>ConsumedMessageToL1</code></a></p>
 </div>
+<h4 id="function_definition_2" class="discrete">Function definition</h4>
+<div class="paragraph">
+<p>Contract: <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/StarknetMessaging.sol"><code>StarknetMessaging.sol</code></a></p>
 </div>
-</div>
-</li>
-<li>
-<p>Annotate the <code>Storage</code> struct with the <code>#[storage]</code> attribute. For example:</p>
-<div id="tabs_2" class="openblock tabs is-loading">
-<div class="content">
-<div class="ulist tablist">
-<ul>
-<li id="tabs_2_cairo_v1" class="tab">
-<p>Cairo v1</p>
-</li>
-<li id="tabs_2_cairo_v2" class="tab">
-<p>Cairo v2</p>
-</li>
-</ul>
-</div>
-<div id="tabs_2_cairo_v1--panel" class="tabpanel" aria-labelledby="tabs_2_cairo_v1">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">struct Storage {
-    counter: u128,
-    other_contract: IOtherContractDispatcher
-}</code></pre>
-</div>
-</div>
-</div>
-<div id="tabs_2_cairo_v2--panel" class="tabpanel" aria-labelledby="tabs_2_cairo_v2">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">#[storage]
-struct Storage {
-    counter: u128,
-    other_contract: IOtherContractDispatcher
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-</li>
-<li>
-<p>Gather your contract’s <code>external</code> and <code>view</code> function signatures under a trait annotated with
-<code>#[starknet::interface]</code> as follows:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Add a generic parameter to the trait. In the following example, the name <code>TContractState</code>
-represents the state of your contract.</p>
+<p>Function: <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/StarknetMessaging.sol#L132"><code>consumeMessageFromL2</code></a></p>
 </li>
-<li>
-<p>For view functions, add the <code>self: @TContractState</code> argument.</p>
-</li>
-<li>
-<p>For external functions, add the <code>ref self: TContractState</code> argument.</p>
-</li>
-<li>
-<p>Static functions that do not touch storage or emit events do not require an additional argument.</p>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="getMaxL1MsgFee"><a class="anchor" href="#getMaxL1MsgFee"></a><code>getMaxL1MsgFee</code></h3>
+<h4 id="description_3" class="discrete">Description</h4>
 <div class="paragraph">
-<p>For example:</p>
+<p>Returns the maximum fee, in Wei, that Starknet accepts for a single message. If the fee passed is higher than this value, the transaction is not accepted.</p>
 </div>
-<div id="tabs_3" class="openblock tabs is-loading">
-<div class="content">
-<div class="ulist tablist">
-<ul>
-<li id="tabs_3_cairo_v1" class="tab">
-<p>Cairo v1</p>
-</li>
-<li id="tabs_3_cairo_v2" class="tab">
-<p>Cairo v2</p>
-</li>
-</ul>
-</div>
-<div id="tabs_3_cairo_v1--panel" class="tabpanel" aria-labelledby="tabs_3_cairo_v1">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">#[contract]
-mod CounterContract {
-   #[external]
-   fn increase_counter(amount: u128) { ... }
-   #[external]
-   fn decrease_counter(amount: u128) { ... }
-   #[view]
-   fn get_counter() -&gt; u128 { ... }
-}</code></pre>
-</div>
-</div>
-</div>
-<div id="tabs_3_cairo_v2--panel" class="tabpanel" aria-labelledby="tabs_3_cairo_v2">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">#[starknet::interface]
-trait ICounterContract&lt;TContractState&gt; {
-   fn increase_counter(ref self: TContractState, amount: u128);
-   fn decrease_counter(ref self: TContractState, amount: u128);
-   fn get_counter(self: @TContractState) -&gt; u128;
-}
-#[starknet::contract]
-mod CounterContract {
-   ...
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Add the external and view function bodies under an <code>impl</code> of the interface trait, and mark the
-<code>impl</code> with the <code>[external(v0)]</code> attribute, which generates the type of dispatcher that is used to call the contract.</p>
+<h4 id="state_mutability_3" class="discrete">State Mutability</h4>
 <div class="paragraph">
-<p>For example:</p>
+<p><code>pure</code></p>
 </div>
-<div id="tabs_4" class="openblock tabs is-loading">
-<div class="content">
-<div class="ulist tablist">
-<ul>
-<li id="tabs_4_cairo_v1" class="tab">
-<p>Cairo v1</p>
-</li>
-<li id="tabs_4_cairo_v2" class="tab">
-<p>Cairo v2</p>
-</li>
-</ul>
+<h4 id="parameters_3" class="discrete">Parameters</h4>
+<div class="paragraph">
+<p>None.</p>
 </div>
-<div id="tabs_4_cairo_v1--panel" class="tabpanel" aria-labelledby="tabs_4_cairo_v1">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">#[contract]
-mod CounterContract {
-   #[external]
-   fn increase_counter(amount: u128) { ... }
-   #[external]
-   fn decrease_counter(amount: u128) { ... }
-   #[view]
-   fn get_counter() -&gt; u128 { ... }
-}</code></pre>
-</div>
-</div>
-</div>
-<div id="tabs_4_cairo_v2--panel" class="tabpanel" aria-labelledby="tabs_4_cairo_v2">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">#[starknet::interface]
-trait ICounterContract&lt;TContractState&gt; {
-   fn increase_counter(ref self: TContractState, amount: u128);
-   fn decrease_counter(ref self: TContractState, amount: u128);
-   fn get_counter(self: @TContractState) -&gt; u128;
-}
-#[starknet::contract]
-mod CounterContract {
-   #[external(v0)]
-   impl CounterContract of super::ICounterContract&lt;ContractState&gt; {
-      fn increase_counter(ref self: ContractState, amount: u128) { ... }
-      fn decrease_counter(ref self: ContractState, amount: u128) { ... }
-      fn get_counter(self: @ContractState) -&gt; u128 { ... }
-   }
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-</li>
-<li>
-<p>Replace the <code>#[abi]</code> attribute with <code>#[starknet::interface]</code>.</p>
-<div class="admonitionblock tip">
+<h4 id="returns_3" class="discrete">Returns</h4>
+<div class="hdlist stripes-odd">
 <table>
+<colgroup>
+<col style="width: 30%;">
+<col>
+</colgroup>
 <tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
+<td class="hdlist1">
+<code>uint256 <em>MAX_L1_MSG_FEE</em></code>
 </td>
-<td class="content">
-<div class="paragraph">
-<p>While it doesn&#8217;t affect the generated code, adding to the trait a generic parameter <code>T</code> representing the contract&#8217;s state,
-and adding the <code>ref self: T</code> argument to external functions and <code>self: @T</code> argument for view
-functions makes the implementation more complete.</p>
+<td class="hdlist2">
+<p>The maximum fee, in Wei, that Starknet accepts for a single message.</p>
+</td>
+</tr>
+</table>
 </div>
+<h4 id="function_definition_3" class="discrete">Function definition</h4>
+<div class="paragraph">
+<p>Contract: <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/StarknetMessaging.sol"><code>StarknetMessaging.sol</code></a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Function: <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/StarknetMessaging.sol#L31"><code>getMaxL1MsgFee</code></a></p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="l1ToL2MessageCancellations"><a class="anchor" href="#l1ToL2MessageCancellations"></a><code>l1ToL2MessageCancellations</code></h3>
+<h4 id="description_4" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Returns the timestamp of the cancellation request.</p>
+</div>
+<h4 id="state_mutability_4" class="discrete">State Mutability</h4>
+<div class="paragraph">
+<p><code>view</code></p>
+</div>
+<h4 id="parameters_4" class="discrete">Parameters</h4>
+<div class="hdlist stripes-odd">
+<table>
+<colgroup>
+<col style="width: 30%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+<code>bytes32 <em>msgHash</em></code>
+</td>
+<td class="hdlist2">
+<p>The message hash.</p>
+</td>
+</tr>
+</table>
+</div>
+<h4 id="returns_4" class="discrete">Returns</h4>
+<div class="hdlist stripes-odd">
+<table>
+<colgroup>
+<col style="width: 30%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+<code>uint256 <em>result</em></code>
+</td>
+<td class="hdlist2">
+<p>The Ethereum block timestamp.</p>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>For example:</p>
+<p>Returns <code>0</code> if <code>cancelL1ToL2Message</code> was not called with the message hash <code><em>msgHash</em></code>.</p>
 </div>
-<div id="tabs_5" class="openblock tabs is-loading">
-<div class="content">
-<div class="ulist tablist">
+<h4 id="function_definition_4" class="discrete">Function definition</h4>
+<div class="paragraph">
+<p>Contract: <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/StarknetMessaging.sol"><code>StarknetMessaging.sol</code></a></p>
+</div>
+<div class="ulist">
 <ul>
-<li id="tabs_5_cairo_v1" class="tab">
-<p>Cairo v1</p>
-</li>
-<li id="tabs_5_cairo_v2" class="tab">
-<p>Cairo v2</p>
+<li>
+<p>Function: <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/StarknetMessaging.sol#L73"><code>l1ToL2MessageCancellations</code></a></p>
 </li>
 </ul>
 </div>
-<div id="tabs_5_cairo_v1--panel" class="tabpanel" aria-labelledby="tabs_5_cairo_v1">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">#[abi]
-trait IOtherContract {
-    fn decrease_allowed() -&gt; bool;
-}</code></pre>
+<hr>
 </div>
-</div>
-</div>
-<div id="tabs_5_cairo_v2--panel" class="tabpanel" aria-labelledby="tabs_5_cairo_v2">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">#[starknet::interface]
-trait IOtherContract&lt;TContractState&gt; {
-    fn decrease_allowed(self: @TContractState) -&gt; bool;
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-</li>
-<li>
-<p>Modify storage accesses to happen through <code>ContractState</code> or <code>@ContractState</code>.</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
+<div class="sect2">
+<h3 id="l1ToL2MessageNonce"><a class="anchor" href="#l1ToL2MessageNonce"></a><code>l1ToL2MessageNonce</code></h3>
+<h4 id="description_5" class="discrete">Description</h4>
 <div class="paragraph">
-<p>No external functions in the contract that access storage also need to get it as an argument.</p>
+<p>Returns the nonce of the next message sent to the L2 contract. So if If <code><em>n</em></code> messages have been sent to Starknet, this function returns <code><em>n</em> + 1</code>.</p>
 </div>
+<h4 id="state_mutability_5" class="discrete">State Mutability</h4>
+<div class="paragraph">
+<p><code>view</code></p>
+</div>
+<h4 id="parameters_5" class="discrete">Parameters</h4>
+<div class="paragraph">
+<p>None.</p>
+</div>
+<h4 id="returns_5" class="discrete">Returns</h4>
+<div class="hdlist stripes-odd">
+<table>
+<colgroup>
+<col style="width: 30%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+<code>uint256 <em>nonce</em></code>
+</td>
+<td class="hdlist2">
+<p>The nonce of the next message sending to L2 contract.</p>
 </td>
 </tr>
 </table>
 </div>
+<h4 id="function_definition_5" class="discrete">Function definition</h4>
 <div class="paragraph">
-<p>For example:</p>
+<p>Contract: <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/StarknetMessaging.sol"><code>StarknetMessaging.sol</code></a></p>
 </div>
-<div id="tabs_6" class="openblock tabs is-loading">
-<div class="content">
-<div class="ulist tablist">
+<div class="ulist">
 <ul>
-<li id="tabs_6_cairo_v1" class="tab">
-<p>Cairo v1</p>
-</li>
-<li id="tabs_6_cairo_v2" class="tab">
-<p>Cairo v2</p>
+<li>
+<p>Function: <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/StarknetMessaging.sol#L55"><code>l1ToL2MessageNonce</code></a></p>
 </li>
 </ul>
 </div>
-<div id="tabs_6_cairo_v1--panel" class="tabpanel" aria-labelledby="tabs_6_cairo_v1">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">let current = counter::read();</code></pre>
+<hr>
 </div>
-</div>
-</div>
-<div id="tabs_6_cairo_v2--panel" class="tabpanel" aria-labelledby="tabs_6_cairo_v2">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">let current = self.counter.read();</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-</li>
-<li>
-<p>Unify all the contract&#8217;s events under the <code>Event</code> enum, and add a corresponding struct for every
-variant.</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
+<div class="sect2">
+<h3 id="l1ToL2Messages"><a class="anchor" href="#l1ToL2Messages"></a><code>l1ToL2Messages</code></h3>
+<h4 id="description_6" class="discrete">Description</h4>
 <div class="paragraph">
-<p>All the structs must derive the <code>Event</code> trait,
-and each member type must implement the <code>Serde</code> trait.</p>
+<p>Indicates if a pending message is associated with a given message hash.</p>
 </div>
+<h4 id="state_mutability_6" class="discrete">State Mutability</h4>
+<div class="paragraph">
+<p><code>view</code></p>
+</div>
+<h4 id="parameters_6" class="discrete">Parameters</h4>
+<div class="hdlist stripes-odd">
+<table>
+<colgroup>
+<col style="width: 30%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+<code>bytes32 <em>msgHash</em></code>
+</td>
+<td class="hdlist2">
+<p>The message hash.</p>
 </td>
 </tr>
 </table>
 </div>
+<h4 id="returns_6" class="discrete">Returns</h4>
 <div class="paragraph">
-<p>For example:</p>
+<p>Returns <code>uint256 <em>result</em></code>, where <code><em>result</em></code> is one of the following:</p>
 </div>
-<div id="tabs_7" class="openblock tabs is-loading">
-<div class="content">
-<div class="ulist tablist">
+<div class="hdlist stripes-odd">
+<table>
+<colgroup>
+<col style="width: 5%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+<code>message_fee + 1</code>
+</td>
+<td class="hdlist2">
+<p>A pending message is associated with the <code><em>msgHash</em></code> parameter.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>0</code>
+</td>
+<td class="hdlist2">
+<p>No pending message is associated with the <code><em>msgHash</em></code> parameter.</p>
+</td>
+</tr>
+</table>
+</div>
+<h4 id="function_definition_6" class="discrete">Function definition</h4>
+<div class="paragraph">
+<p>Contract: <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/StarknetMessaging.sol"><code>StarknetMessaging.sol</code></a></p>
+</div>
+<div class="ulist">
 <ul>
-<li id="tabs_7_cairo_v1" class="tab">
-<p>Cairo v1</p>
-</li>
-<li id="tabs_7_cairo_v2" class="tab">
-<p>Cairo v2</p>
+<li>
+<p>Function: <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/StarknetMessaging.sol#L39"><code>l1ToL2Messages</code></a></p>
 </li>
 </ul>
 </div>
-<div id="tabs_7_cairo_v1--panel" class="tabpanel" aria-labelledby="tabs_7_cairo_v1">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">#[event]
-fn counter_increased(amount: u128) {}
-#[event]
-fn counter_decreased(amount: u128) {}</code></pre>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="l2ToL1Messages"><a class="anchor" href="#l2ToL1Messages"></a><code>l2ToL1Messages</code></h3>
+<h4 id="description_7" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Indicates if a pending message is associated with a given message hash.</p>
+</div>
+<h4 id="state_mutability_7" class="discrete">State Mutability</h4>
+<div class="paragraph">
+<p><code>view</code></p>
+</div>
+<h4 id="parameters_7" class="discrete">Parameters</h4>
+<div class="hdlist stripes-odd">
+<table>
+<colgroup>
+<col style="width: 30%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+<code>bytes32 <em>msgHash</em></code>
+</td>
+<td class="hdlist2">
+<p>The message hash.</p>
+</td>
+</tr>
+</table>
+</div>
+<h4 id="returns_7" class="discrete">Returns</h4>
+<div class="paragraph">
+<p>Returns <code>uint256 <em>result</em></code>, where <code><em>result</em></code> is one of the following:</p>
+</div>
+<div class="hdlist stripes-odd">
+<table>
+<colgroup>
+<col style="width: 30%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+<code>1</code>
+</td>
+<td class="hdlist2">
+<p>A pending message is associated with the <code><em>msgHash</em></code> parameter.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>0</code>
+</td>
+<td class="hdlist2">
+<p>No pending message is associated with the <code><em>msgHash</em></code> parameter.</p>
+</td>
+</tr>
+</table>
+</div>
+<h4 id="function_definition_7" class="discrete">Function definition</h4>
+<div class="paragraph">
+<p>Contract: <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/StarknetMessaging.sol"><code>StarknetMessaging.sol</code></a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Function: <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/StarknetMessaging.sol#L43"><code>l2ToL1Messages</code></a></p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="messageCancellationDelay"><a class="anchor" href="#messageCancellationDelay"></a><code>messageCancellationDelay</code></h3>
+<h4 id="description_8" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Returns the time interval, in seconds, after which you can cancel a message starting from the moment of calling the <a href="#startL1ToL2MessageCancellation"><code>startL1ToL2MessageCancellation</code></a> function. You can get the real value by calling the <a href="https://etherscan.io/address/0xc662c410c0ecf747543f5ba90660f6abebd9c8c4#readProxyContract#F11"><code>messageCancellationDelay</code></a> function on a block explorer, such as Etherscan.</p>
+</div>
+<h4 id="state_mutability_8" class="discrete">State Mutability</h4>
+<div class="paragraph">
+<p><code>view</code></p>
+</div>
+<h4 id="parameters_8" class="discrete">Parameters</h4>
+<div class="paragraph">
+<p>None.</p>
+</div>
+<h4 id="returns_8" class="discrete">Returns</h4>
+<div class="hdlist stripes-odd">
+<table>
+<colgroup>
+<col style="width: 30%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+<code>uint256 <em>result</em></code>
+</td>
+<td class="hdlist2">
+<p>The time interval.</p>
+</td>
+</tr>
+</table>
+</div>
+<h4 id="function_definition_8" class="discrete">Function definition</h4>
+<div class="paragraph">
+<p>Contract: <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/StarknetMessaging.sol"><code>StarknetMessaging.sol</code></a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Function: <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/StarknetMessaging.sol#L59"><code>messageCancellationDelay</code></a></p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="sendMessageToL2"><a class="anchor" href="#sendMessageToL2"></a><code>sendMessageToL2</code></h3>
+<h4 id="description_9" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Sends a message to an L2 contract. The message fee is the cost of executing this function.</p>
+</div>
+<h4 id="state_mutability_9" class="discrete">State Mutability</h4>
+<div class="paragraph">
+<p><code>payable</code></p>
+</div>
+<h4 id="parameters_9" class="discrete">Parameters</h4>
+<div class="hdlist stripes-odd">
+<table>
+<colgroup>
+<col style="width: 30%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+<code>uint256 <em>toAddress</em></code>
+</td>
+<td class="hdlist2">
+<p>The address of the L2 contract.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>uint256 <em>selector</em></code>
+</td>
+<td class="hdlist2">
+<p>The function, in the recipient L2 contract, that the message called.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>uint256[] calldata <em>payload</em></code>
+</td>
+<td class="hdlist2">
+<p>The payload of the message.</p>
+</td>
+</tr>
+</table>
+</div>
+<h4 id="returns_9" class="discrete">Returns</h4>
+<div class="hdlist stripes-odd">
+<table>
+<colgroup>
+<col style="width: 30%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+<code>bytes32 <em>msgHash</em></code>
+</td>
+<td class="hdlist2">
+<p>The hash of the message.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>uint256 <em>nonce</em></code>
+</td>
+<td class="hdlist2">
+<p>The nonce of the message.</p>
+</td>
+</tr>
+</table>
+</div>
+<h4 id="emitted_event_3" class="discrete">Emitted event</h4>
+<div class="paragraph">
+<p><a href="#LogMessageToL2"><code>LogMessageToL2</code></a></p>
+</div>
+<h4 id="function_definition_9" class="discrete">Function definition</h4>
+<div class="paragraph">
+<p>Contract: <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/StarknetMessaging.sol"><code>StarknetMessaging.sol</code></a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Function: <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/StarknetMessaging.sol#L110"><code>sendMessageToL2</code></a></p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="startL1ToL2MessageCancellation"><a class="anchor" href="#startL1ToL2MessageCancellation"></a><code>startL1ToL2MessageCancellation</code></h3>
+<h4 id="description_10" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Starts the cancellation of a message from L1 to L2.</p>
+</div>
+<div class="paragraph">
+<p>You can cancel a message after a predefined about of time from the moment this function is called. The amount of time is set by the <a href="#messageCancellationDelay"><code>messageCancellationDelay</code></a> function.</p>
+</div>
+<div class="paragraph">
+<p>You can only call this function for a message that is currently pending, and the caller must be the sender of that message.</p>
+</div>
+<h4 id="state_mutability_10" class="discrete">State Mutability</h4>
+<div class="paragraph">
+<p>None.</p>
+</div>
+<h4 id="parameters_10" class="discrete">Parameters</h4>
+<div class="hdlist stripes-odd">
+<table>
+<colgroup>
+<col style="width: 30%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+<code>uint256 <em>toAddress</em></code>
+</td>
+<td class="hdlist2">
+<p>The address of the L2 contract.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>uint256 <em>selector</em></code>
+</td>
+<td class="hdlist2">
+<p>The function, in the recipient L2 contract, that the message called.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>uint256[] calldata <em>payload</em></code>
+</td>
+<td class="hdlist2">
+<p>The payload of the message.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>uint256 <em>nonce</em></code>
+</td>
+<td class="hdlist2">
+<p>The nonce of the message.</p>
+</td>
+</tr>
+</table>
+</div>
+<h4 id="returns_10" class="discrete">Returns</h4>
+<div class="hdlist stripes-odd">
+<table>
+<colgroup>
+<col style="width: 30%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+<code>bytes32 <em>msgHash</em></code>
+</td>
+<td class="hdlist2">
+<p>The hash of the cancellation message.</p>
+</td>
+</tr>
+</table>
+</div>
+<h4 id="emitted_event_4" class="discrete">Emitted event</h4>
+<div class="paragraph">
+<p><a href="#MessageToL2CancellationStarted"><code>MessageToL2CancellationStarted</code></a></p>
+</div>
+<h4 id="function_definition_10" class="discrete">Function definition</h4>
+<div class="paragraph">
+<p>Contract: <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/StarknetMessaging.sol"><code>StarknetMessaging.sol</code></a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Function: <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/StarknetMessaging.sol#L147"><code>startL1ToL2MessageCancellation</code></a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
-<div id="tabs_7_cairo_v2--panel" class="tabpanel" aria-labelledby="tabs_7_cairo_v2">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">#[event]
-#[derive(Drop, starknet::Event)]
-enum Event {
-    CounterIncreased: CounterIncreased,
-    CounterDecreased: CounterDecreased
-}
-#[derive(Drop, starknet::Event)]
-struct CounterIncreased {
-    amount: u128
-}
-#[derive(Drop, starknet::Event)]
-struct CounterDecreased {
-    amount: u128
-}</code></pre>
 </div>
+<div class="sect1">
+<h2 id="l1_event_reference"><a class="anchor" href="#l1_event_reference"></a>L1 event reference</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Events are listed in alphabetical order.</p>
 </div>
+<hr>
+<div class="sect2">
+<h3 id="ConsumedMessageToL1"><a class="anchor" href="#ConsumedMessageToL1"></a><code>ConsumedMessageToL1</code></h3>
+<h4 id="description_11" class="discrete">Description</h4>
+<div class="paragraph">
+<p>This event is emitted when a message from L2 to L1 is consumed by the <a href="#consumeMessageFromL2"><code>consumeMessageFromL2</code></a> function.</p>
 </div>
+<h4 id="event_attributes" class="discrete">Event attributes</h4>
+<div class="hdlist stripes-odd">
+<table>
+<tr>
+<td class="hdlist1">
+<code>uint256 indexed <em>fromAddress</em></code>
+</td>
+<td class="hdlist2">
+<p>The address of the sender on L2.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>address indexed <em>toAddress</em></code>
+</td>
+<td class="hdlist2">
+<p>The address of the receiver on L1.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>uint256[] <em>payload</em></code>
+</td>
+<td class="hdlist2">
+<p>The payload of the consumed message.</p>
+</td>
+</tr>
+</table>
 </div>
-</div>
+<h4 id="event_definition" class="discrete">Event definition</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Contract: <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/IStarknetMessagingEvents.sol"><code>IStarknetMessagingEvents</code></a></p>
 </li>
 <li>
-<p>Emit events via the <code>ContractState</code> type. For example:</p>
-<div id="tabs_8" class="openblock tabs is-loading">
-<div class="content">
-<div class="ulist tablist">
-<ul>
-<li id="tabs_8_cairo_v1" class="tab">
-<p>Cairo v1</p>
-</li>
-<li id="tabs_8_cairo_v2" class="tab">
-<p>Cairo v2</p>
+<p>Event: <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/IStarknetMessagingEvents.sol#L19"><code>ConsumedMessageToL1</code></a></p>
 </li>
 </ul>
 </div>
-<div id="tabs_8_cairo_v1--panel" class="tabpanel" aria-labelledby="tabs_8_cairo_v1">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">fn increase_counter(amount: u128) {
-    ...
-    counter_increased(amount);
-}</code></pre>
+<hr>
 </div>
+<div class="sect2">
+<h3 id="LogMessageToL2"><a class="anchor" href="#LogMessageToL2"></a><code>LogMessageToL2</code></h3>
+<h4 id="description_12" class="discrete">Description</h4>
+<div class="paragraph">
+<p>This event is emitted when a message is sent from L1 to L2 by the <a href="#sendMessageToL2"><code>sendMessageToL2</code></a> function.</p>
 </div>
+<h4 id="event_attributes_2" class="discrete">Event attributes</h4>
+<div class="hdlist stripes-odd">
+<table>
+<tr>
+<td class="hdlist1">
+<code>address indexed <em>fromAddress</em></code>
+</td>
+<td class="hdlist2">
+<p>The address of the sender on L1.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>uint256 indexed <em>toAddress</em></code>
+</td>
+<td class="hdlist2">
+<p>The address of the receiver on L2.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>uint256 indexed <em>selector</em></code>
+</td>
+<td class="hdlist2">
+<p>The function, in the recipient L2 contract, that the message called.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>uint256[] <em>payload</em></code>
+</td>
+<td class="hdlist2">
+<p>The payload of the message.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>uint256 <em>nonce</em></code>
+</td>
+<td class="hdlist2">
+<p>The nonce of the message.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>uint256 <em>fee</em></code>
+</td>
+<td class="hdlist2">
+<p>The fee associated with the message.</p>
+</td>
+</tr>
+</table>
 </div>
-<div id="tabs_8_cairo_v2--panel" class="tabpanel" aria-labelledby="tabs_8_cairo_v2">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">fn increase_counter(ref self: ContractState, amount: u128) {
-    ...
-    self.emit(Event::CounterIncreased(CounterIncreased { amount }));
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
+<h4 id="event_definition_2" class="discrete">Event definition</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Contract: <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/IStarknetMessagingEvents.sol"><code>IStarknetMessagingEvents</code></a></p>
 </li>
-</ol>
+<li>
+<p>Event: <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/IStarknetMessagingEvents.sol#L9"><code>LogMessageToL2</code></a></p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="MessageToL2Canceled"><a class="anchor" href="#MessageToL2Canceled"></a><code>MessageToL2Canceled</code></h3>
+<h4 id="description_13" class="discrete">Description</h4>
+<div class="paragraph">
+<p>This event is emitted when an L1 to L2 message is canceled by the <a href="#cancelL1ToL2Message"><code>cancelL1ToL2Message</code></a> function.</p>
+</div>
+<h4 id="event_attributes_3" class="discrete">Event attributes</h4>
+<div class="hdlist stripes-odd">
+<table>
+<tr>
+<td class="hdlist1">
+<code>address indexed <em>fromAddress</em></code>
+</td>
+<td class="hdlist2">
+<p>The address of the sender on L1.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>uint256 indexed <em>toAddress</em></code>
+</td>
+<td class="hdlist2">
+<p>The address of the receiver on L2.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>uint256 indexed <em>selector</em></code>
+</td>
+<td class="hdlist2">
+<p>The function, in the recipient L2 contract, that the message called.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>uint256[] <em>payload</em></code>
+</td>
+<td class="hdlist2">
+<p>The payload of the canceled message.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>uint256 <em>nonce</em></code>
+</td>
+<td class="hdlist2">
+<p>The nonce of the canceled message.</p>
+</td>
+</tr>
+</table>
+</div>
+<h4 id="event_definition_3" class="discrete">Event definition</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Contract: <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/IStarknetMessagingEvents.sol"><code>IStarknetMessagingEvents</code></a></p>
+</li>
+<li>
+<p>Event: <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/IStarknetMessagingEvents.sol#L44"><code>MessageToL2Canceled</code></a></p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="MessageToL2CancellationStarted"><a class="anchor" href="#MessageToL2CancellationStarted"></a><code>MessageToL2CancellationStarted</code></h3>
+<h4 id="description_14" class="discrete">Description</h4>
+<div class="paragraph">
+<p>This event is emitted when the cancellation of an L1 to L2 message is started by the <a href="#startL1ToL2MessageCancellation"><code>startL1ToL2MessageCancellation</code></a> function.</p>
+</div>
+<h4 id="event_attributes_4" class="discrete">Event attributes</h4>
+<div class="hdlist stripes-odd">
+<table>
+<tr>
+<td class="hdlist1">
+<code>address indexed <em>fromAddress</em></code>
+</td>
+<td class="hdlist2">
+<p>The address of the sender on L1.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>uint256 indexed <em>toAddress</em></code>
+</td>
+<td class="hdlist2">
+<p>The address of the receiver on L2.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>uint256 indexed <em>selector</em></code>
+</td>
+<td class="hdlist2">
+<p>The function, in the recipient L2 contract, that the message called.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>uint256[] <em>payload</em></code>
+</td>
+<td class="hdlist2">
+<p>The payload of the message to be canceled.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>uint256 <em>nonce</em></code>
+</td>
+<td class="hdlist2">
+<p>The nonce of the message to be canceled.</p>
+</td>
+</tr>
+</table>
+</div>
+<h4 id="event_definition_4" class="discrete">Event definition</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Contract: <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/IStarknetMessagingEvents.sol"><code>IStarknetMessagingEvents</code></a></p>
+</li>
+<li>
+<p>Event: <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/IStarknetMessagingEvents.sol#L35"><code>MessageToL2CancellationStarted</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../starknet-events/">Events</a></span>
-  <span class="next"><a href="../cairo-and-sierra/">Cairo and Sierra</a></span>
+  <span class="prev"><a href="../messaging-mechanism/">L1-L2 messaging mechanism</a></span>
+  <span class="next"><a href="../../accounts/introduction/">What is an account?</a></span>
 </nav>
 </article>
   </div>
