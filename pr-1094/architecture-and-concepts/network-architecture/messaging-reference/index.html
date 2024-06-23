@@ -1468,124 +1468,12 @@
 <hr>
 </div>
 <div class="sect2">
-<h3 id="ConsumedMessageToL2"><a class="anchor" href="#ConsumedMessageToL2"></a><code>ConsumedMessageToL2</code></h3>
-<h4 id="description_12" class="discrete">Description</h4>
-<div class="paragraph">
-<p>This event is emitted when a message from L1 to L2 is consumed by the <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/Output.sol#L76"><code>processMessages</code></a> function.</p>
-</div>
-<h4 id="event_attributes_2" class="discrete">Event attributes</h4>
-<div class="hdlist stripes-odd">
-<table>
-<tr>
-<td class="hdlist1">
-<code>address indexed <em>fromAddress</em></code>
-</td>
-<td class="hdlist2">
-<p>The address of the sender on L1.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<code>uint256 indexed <em>toAddress</em></code>
-</td>
-<td class="hdlist2">
-<p>The address of the receiver on L2.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<code>uint256 indexed <em>selector</em></code>
-</td>
-<td class="hdlist2">
-<p>The function, in the recipient L2 contract, that the message called.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<code>uint256[] <em>payload</em></code>
-</td>
-<td class="hdlist2">
-<p>The payload of the consumed message.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<code>uint256 <em>nonce</em></code>
-</td>
-<td class="hdlist2">
-<p>The nonce of the consumed message.</p>
-</td>
-</tr>
-</table>
-</div>
-<h4 id="event_definition_2" class="discrete">Event definition</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Contract: <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/IStarknetMessagingEvents.sol"><code>IStarknetMessagingEvents</code></a></p>
-</li>
-<li>
-<p>Event: <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/IStarknetMessagingEvents.sol#L26"><code>ConsumedMessageToL2</code></a></p>
-</li>
-</ul>
-</div>
-<hr>
-</div>
-<div class="sect2">
-<h3 id="LogMessageToL1"><a class="anchor" href="#LogMessageToL1"></a><code>LogMessageToL1</code></h3>
-<h4 id="description_13" class="discrete">Description</h4>
-<div class="paragraph">
-<p>This event is emitted when a message is sent from L2 to L1 by the <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/Output.sol#L76"><code>processMessages</code></a> function.</p>
-</div>
-<h4 id="event_attributes_3" class="discrete">Event attributes</h4>
-<div class="hdlist stripes-odd">
-<table>
-<tr>
-<td class="hdlist1">
-<code>uint256 indexed <em>fromAddress</em></code>
-</td>
-<td class="hdlist2">
-<p>The address of the sender on L2.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<code>address indexed <em>toAddress</em></code>
-</td>
-<td class="hdlist2">
-<p>The address of the receiver on L1.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<code>uint256[] <em>payload</em></code>
-</td>
-<td class="hdlist2">
-<p>The payload of the message.</p>
-</td>
-</tr>
-</table>
-</div>
-<h4 id="event_definition_3" class="discrete">Event definition</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Contract: <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/IStarknetMessagingEvents.sol"><code>IStarknetMessagingEvents</code></a></p>
-</li>
-<li>
-<p>Event: <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/solidity/IStarknetMessagingEvents.sol#L6"><code>LogMessageToL1</code></a></p>
-</li>
-</ul>
-</div>
-<hr>
-</div>
-<div class="sect2">
 <h3 id="LogMessageToL2"><a class="anchor" href="#LogMessageToL2"></a><code>LogMessageToL2</code></h3>
-<h4 id="description_14" class="discrete">Description</h4>
+<h4 id="description_12" class="discrete">Description</h4>
 <div class="paragraph">
 <p>This event is emitted when a message is sent from L1 to L2 by the <a href="#sendMessageToL2"><code>sendMessageToL2</code></a> function.</p>
 </div>
-<h4 id="event_attributes_4" class="discrete">Event attributes</h4>
+<h4 id="event_attributes_2" class="discrete">Event attributes</h4>
 <div class="hdlist stripes-odd">
 <table>
 <tr>
@@ -1638,7 +1526,7 @@
 </tr>
 </table>
 </div>
-<h4 id="event_definition_4" class="discrete">Event definition</h4>
+<h4 id="event_definition_2" class="discrete">Event definition</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1653,11 +1541,11 @@
 </div>
 <div class="sect2">
 <h3 id="MessageToL2Canceled"><a class="anchor" href="#MessageToL2Canceled"></a><code>MessageToL2Canceled</code></h3>
-<h4 id="description_15" class="discrete">Description</h4>
+<h4 id="description_13" class="discrete">Description</h4>
 <div class="paragraph">
 <p>This event is emitted when an L1 to L2 message is canceled by the <a href="#cancelL1ToL2Message"><code>cancelL1ToL2Message</code></a> function.</p>
 </div>
-<h4 id="event_attributes_5" class="discrete">Event attributes</h4>
+<h4 id="event_attributes_3" class="discrete">Event attributes</h4>
 <div class="hdlist stripes-odd">
 <table>
 <tr>
@@ -1702,7 +1590,7 @@
 </tr>
 </table>
 </div>
-<h4 id="event_definition_5" class="discrete">Event definition</h4>
+<h4 id="event_definition_3" class="discrete">Event definition</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1717,11 +1605,11 @@
 </div>
 <div class="sect2">
 <h3 id="MessageToL2CancellationStarted"><a class="anchor" href="#MessageToL2CancellationStarted"></a><code>MessageToL2CancellationStarted</code></h3>
-<h4 id="description_16" class="discrete">Description</h4>
+<h4 id="description_14" class="discrete">Description</h4>
 <div class="paragraph">
 <p>This event is emitted when the cancellation of an L1 to L2 message is started by the <a href="#startL1ToL2MessageCancellation"><code>startL1ToL2MessageCancellation</code></a> function.</p>
 </div>
-<h4 id="event_attributes_6" class="discrete">Event attributes</h4>
+<h4 id="event_attributes_4" class="discrete">Event attributes</h4>
 <div class="hdlist stripes-odd">
 <table>
 <tr>
@@ -1766,7 +1654,7 @@
 </tr>
 </table>
 </div>
-<h4 id="event_definition_6" class="discrete">Event definition</h4>
+<h4 id="event_definition_4" class="discrete">Event definition</h4>
 <div class="ulist">
 <ul>
 <li>
