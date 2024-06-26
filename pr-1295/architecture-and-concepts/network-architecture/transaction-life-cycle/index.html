@@ -745,7 +745,7 @@ The mempool performs a preliminary validation on the transaction, such as ensuri
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Since only <code>INVOKE</code> transactions have an execution phase, <code>DEPLOY_ACCOUNT</code> and <code>DECLARE</code> transactions cannot be reverted. They can be rejected if the <code>__VALIDATE_DEPLOY__</code> or <code>__VALIDATE_DECLARE__</code> function, respectively, fails when run in the sequencer.</p>
+<p>Since only <code>INVOKE</code> transactions have an execution phase, <code>DEPLOY_ACCOUNT</code> and <code>DECLARE</code> transactions cannot be reverted. If the <code>__VALIDATE_DEPLOY__</code> or <code>__VALIDATE_DECLARE__</code> function, respectively, fail when run in the sequencer, then the transaction will be rejected.</p>
 </div>
 </td>
 </tr>
