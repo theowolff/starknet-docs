@@ -3,7 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Page Not Found :: Starknet documentation</title>
+    <title>Depositing funds with StarkGate :: Starknet documentation</title>
+    <link rel="canonical" href="https://docs.starknet.io/starkgate/depositing/">
+    <link rel="prev" href="../architecture/">
+    <link rel="next" href="../withdrawing/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -23,15 +26,15 @@
     <meta property="twitter:url" content="https://docs.starknet.io/">
     <meta property="twitter:title" content="Starknet Documentation">
     <meta property="twitter:description" content="Reference documentation for developers building on Starknet.">
-    <meta property="twitter:image" content="https://www.starknet.io/starknet-docs-card.png">  <link rel="stylesheet" href="/_/css/vendor/tabs.css">
-  <link id="theme" rel="stylesheet" title="Default" href="/_/css/site.css?new">
-  <link rel="stylesheet" title="Dark" href="/_/css/dark-site.css?new">
-  <link rel="stylesheet" href="/_/css/vendor/tabs.css">
-  <link rel="stylesheet" href="/_/css/home.css">
+    <meta property="twitter:image" content="https://www.starknet.io/starknet-docs-card.png">  <link rel="stylesheet" href="../../_/css/vendor/tabs.css">
+  <link id="theme" rel="stylesheet" title="Default" href="../../_/css/site.css?new">
+  <link rel="stylesheet" title="Dark" href="../../_/css/dark-site.css?new">
+  <link rel="stylesheet" href="../../_/css/vendor/tabs.css">
+  <link rel="stylesheet" href="../../_/css/home.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WY42TERK5P"></script>
     <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','G-WY42TERK5P')</script>
-    <script>var uiRootPath = '/_'</script>
-    <script src="/_/js/vendor/medium-zoom.js?new"></script>
+    <script>var uiRootPath = '../../_'</script>
+    <script src="../../_/js/vendor/medium-zoom.js?new"></script>
     <script type="text/javascript" id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="e4db29b5-cd94-4bcf-87e4-04f4ca564240" data-blockingmode="manual"></script>
     <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
@@ -45,27 +48,27 @@
         a.appendChild(r);
         })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
-<link rel="icon" href="/_/img/favicon/favicon.ico" type="image/x-icon">
+<link rel="icon" href="../../_/img/favicon/favicon.ico" type="image/x-icon">
 
 <!-- For all browsers -->
-<link rel="icon" type="image/png" sizes="32x32" href="/_/img/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/_/img/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../_/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../_/img/favicon-16x16.png">
 
 <!-- For Google and Chrome -->
-<link rel="icon" type="image/png" sizes="192x192" href="/_/img/favicon/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../../_/img/favicon/android-chrome-192x192.png">
 
 <!-- For iPad -->
-<link rel="apple-touch-icon" type="image/png" sizes="167x167" href="/_/img/favicon/apple-touch-icon.png">
+<link rel="apple-touch-icon" type="image/png" sizes="167x167" href="../../_/img/favicon/apple-touch-icon.png">
 <!-- For iPhone -->
-<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/_/img/favicon/apple-touch-icon.png">  </head>
-  <body class="status-404">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../../_/img/favicon/apple-touch-icon.png">  </head>
+  <body class="article">
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
       <div class="top-logo">
-        <a href="https://docs.starknet.io" class="starknet-logo"></a>
+        <a href="../.." class="starknet-logo"></a>
         <div class="vertical-divider desktop-only"></div>
-        <a href="https://docs.starknet.io" class="docs-logo desktop-only">Docs</a>
+        <a href="../.." class="docs-logo desktop-only">Docs</a>
       </div>
       <!--<a class="navbar-item" href="https://docs.starknet.io">Starknet documentation</a>-->
       <div id="autocomplete" class="autocomplete-root"></div>
@@ -100,32 +103,583 @@
   </div>
   <span></span>
   <span></span>
-  <a href="/" class="home-link mask-svg-center"></a>
+  <a href="../../" class="home-link mask-svg-center"></a>
   <div id="mobile-autocomplete" class="mobile-only"></div>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../">Starknet</a></li>
+    <li>StarkGate bridge guide</li>
+    <li>Procedures</li>
+    <li><a href="./">Depositing funds</a></li>
+  </ul>
 </nav>
   <div class="edit-this-page">
-    <a href=""><img class="pencil">Edit this Page</a>
+    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/starkgate/pages/depositing.adoc"><img class="pencil">Edit this Page</a>
   </div>
 </div>
 <div class="body">
-<div class="nav-container">
+<div class="nav-container" data-component="ROOT" data-version="">
   <aside class="nav">
     <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../">Starknet</a></h3>
+<ul class="nav-list">
+  <li class="nav-item parent" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a 
+       class="nav-link"
+     href="../../">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a 
+       class="nav-link"
+     href="../../notational-conventions/">Notational conventions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item parent" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item parent" data-depth="1">
+    <button class="nav-item-toggle mask-svg-center"></button>
+    <span class="nav-text">Quick start</span>
+<ul class="nav-list">
+  <li class="nav-item parent" data-depth="2">
+    <button class="nav-item-toggle mask-svg-center"></button>
+        <span>
+    <a 
+       class="nav-link nav-link-with-toggle"
+     href="../../quick-start/environment-setup/">Setting up your environment</a>
+        </span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../quick-start/environment-setup/#installing_starkli">Installing Starkli</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../quick-start/environment-setup/#setting_environment_variables_for_starkli">Environment variables</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../quick-start/environment-setup/#installing_scarb">Installing Scarb</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item parent" data-depth="2">
+    <button class="nav-item-toggle mask-svg-center"></button>
+        <span>
+    <a 
+       class="nav-link nav-link-with-toggle"
+     href="../../quick-start/set-up-an-account/">Setting up an account</a>
+        </span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../quick-start/set-up-an-account/#creating_an_account">Creating an account</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../quick-start/set-up-an-account/#deploying_an_account">Deploying an account</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../quick-start/declare-a-smart-contract/">Declaring a smart contract</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../quick-start/deploy-a-smart-contract/">Deploying a smart contract</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../quick-start/interact-with-a-smart-contract/">Interacting with a smart contract</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item parent" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item parent" data-depth="1">
+    <button class="nav-item-toggle mask-svg-center"></button>
+    <span class="nav-text">Release information</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../starknet-versions/version-notes/">Release notes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../starknet-versions/deprecated/">Deprecated, unsupported, and removed features</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item parent" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item parent" data-depth="1">
+    <button class="nav-item-toggle mask-svg-center"></button>
+    <span class="nav-text">Architecture</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/network-architecture/starknet-architecture-overview/">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/network-architecture/block-structure/">Block structure</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/network-architecture/transaction-life-cycle/">Transaction lifecycle</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/network-architecture/transactions/">Transaction types</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/network-architecture/fee-mechanism/">Gas and transaction fees</a>
+  </li>
+  <li class="nav-item parent" data-depth="2">
+    <button class="nav-item-toggle mask-svg-center"></button>
+    <span class="nav-text">State</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/network-architecture/starknet-state/">Starknet state</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/network-architecture/data-availability/">Data availability</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item parent" data-depth="2">
+    <button class="nav-item-toggle mask-svg-center"></button>
+    <span class="nav-text">L1-L2 messaging</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/network-architecture/messaging-mechanism/">L1-L2 messaging mechanism</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/network-architecture/messaging-reference/">Messaging reference</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item parent" data-depth="2">
+    <button class="nav-item-toggle mask-svg-center"></button>
+    <span class="nav-text">Accounts</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/accounts/introduction/">What is an account?</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/accounts/approach/">Starknet&#8217;s account interface</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/accounts/account-functions/">Account interface function reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/accounts/deploying-new-accounts/">Deploying new accounts</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/accounts/universal-deployer/">Universal Deployer Contract</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/accounts/simplified-transaction-flow/">Simplified transaction flow</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item parent" data-depth="2">
+    <button class="nav-item-toggle mask-svg-center"></button>
+    <span class="nav-text">Contracts</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/smart-contracts/contract-classes/">Contract classes and instances</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/smart-contracts/class-hash/">Class hash</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/smart-contracts/contract-address/">Contract address</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/smart-contracts/contract-storage/">Contract storage</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/smart-contracts/contract-abi/">Contract ABI</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/smart-contracts/starknet-events/">Events</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/smart-contracts/contract-syntax/">Migrating a contract from Cairo v1 to Cairo v2</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/smart-contracts/cairo-and-sierra/">Cairo and Sierra</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/smart-contracts/cairo-builtins/">Cairo builtins</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/smart-contracts/serialization-of-cairo-types/">Serialization of Cairo types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/smart-contracts/system-calls-cairo1/">System calls</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/smart-contracts/execution-info/">Execution information for the current block</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item parent" data-depth="2">
+    <button class="nav-item-toggle mask-svg-center"></button>
+    <span class="nav-text">Cryptography</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/cryptography/p-value/">The STARK field</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/cryptography/stark-curve/">The STARK curve</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/cryptography/hash-functions/">Hash functions</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/economics-of-starknet/">The Economics of Starknet</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item parent" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item parent" data-depth="1">
+    <button class="nav-item-toggle mask-svg-center"></button>
+    <span class="nav-text">Developer tools and resources</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../tools/starknet-book/">The Starknet Book</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../tools/devtools/">Developer tools</a>
+  </li>
+  <li class="nav-item parent" data-depth="2">
+    <button class="nav-item-toggle mask-svg-center"></button>
+    <span class="nav-text">Cairo 0 tools</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../cli/starkli/">Legacy Starknet CLI reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../cli/starknet-compiler-options/">Legacy compiler CLI reference</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item parent" data-depth="2">
+    <button class="nav-item-toggle mask-svg-center"></button>
+    <span class="nav-text">Full nodes and API services</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../tools/api-services/">Full nodes and API services</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../starknet-versions/juno-versions/">Juno release notes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../starknet-versions/pathfinder-versions/">Pathfinder release notes</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../tools/ref-block-explorers/">Block explorers</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../tools/audit/">Audit providers</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item parent" data-depth="1">
+    <button class="nav-item-toggle mask-svg-center"></button>
+    <span class="nav-text">StarkGate bridge guide</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../overview/">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../architecture/">StarkGate architecture</a>
+  </li>
+  <li class="nav-item parent" data-depth="2">
+    <button class="nav-item-toggle mask-svg-center"></button>
+    <span class="nav-text">Procedures</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="3">
+    <a 
+       class="nav-link"
+     href="./">Depositing funds</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../withdrawing/">Withdrawing funds</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../automated-actions-with-bridging/">Performing a Smart Deposit</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../adding-a-token/">Adding a token</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../cancelling-a-deposit/">Cancelling a deposit</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../estimating-fees/">Estimating StarkGate fees</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../tools/dai-token-migration/">Migrating DAI v0 to DAI</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../function-reference/">StarkGate function and event reference</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item parent" data-depth="1">
+    <button class="nav-item-toggle mask-svg-center"></button>
+    <span class="nav-text">Important addresses</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../tools/important-addresses/">Starknet contracts and sequencer addresses</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../tools/bridged-tokens/">Bridged tokens</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a 
+       class="nav-link"
+     href="../../tools/limits-and-triggers/">Current limits</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item parent" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a 
+       class="nav-link"
+     href="../../glossary/">Glossary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+    <div class="navbar-end mobile-only">
+      <div class="hr-divider"></div>
+      <div class="navbar-item-flex">
+        <a class="navbar-link" href="https://starknet.io/" target="_blank">Starknet Home</a>
+        <a class="link-icon" href="https://starknet.io/" target="_blank"></a>
+      </div>
+      <div class="navbar-item-flex">
+        <a class="navbar-link" href="https://starknet.io/building-on-starknet/tutorials/" target="_blank">Tutorials</a>
+        <a class="link-icon" href="https://starknet.io/building-on-starknet/tutorials/" target="_blank"></a>
+      </div>
+    </div>
+  </nav>
+</div>
     </div>
   </aside>
 </div>
 <main class="article">
   <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
 <article class="doc">
-<h1 class="page">Page Not Found</h1>
+<h1 class="page">Depositing funds with StarkGate</h1>
 <div class="paragraph">
-<p>The page you&#8217;re looking for does not exist. It may have been moved. You can return to the <a href="/">start page</a>, or follow one of the links in the navigation to the left.</p>
+<p>Using StarkGate to deposit L1 funds into the L2 Starknet requires StarkGate&#8217;s <code>deposit</code> function. The <code>deposit</code> function does the following:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Transfers the funds from the user&#8217;s Ethereum account to the StarkGate L1 contract.</p>
+</li>
+<li>
+<p>Emits a <code>Deposit</code> event that includes the L1 and L2 addresses of the user, and the amount deposited.</p>
+</li>
+<li>
+<p>Sends a message to the corresponding L2 bridge with the amount deposited, and the recipient&#8217;s address.</p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
-<p>If you arrived on this page by clicking on a link, please notify the owner of the site that the link is broken.
-If you typed the URL of this page manually, please double check that you entered the address correctly.</p>
+<p>Subsequently, the funds should be transferred to Starknet so that you can begin using them.</p>
 </div>
+<div class="paragraph">
+<p>For more information on what happens during the transfer process, see <a href="../overview/#l1l2_transfer_deposit" class="xref page">L1&#8594;L2 transfer (deposit)</a>.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>An Ethereum block explorer, such as <a href="https://etherscan.io">Etherscan</a>.</p>
+</li>
+<li>
+<p>Funds to transfer from L1 to L2, including enough to pay the fees required for the transfer.</p>
+</li>
+<li>
+<p>The L1 address of the StarkGate bridge for the token you want to deposit. To view the token addresses for tokens on Mainnet or Sepolia testnet, see <a href="../../tools/bridged-tokens/" class="xref page">Bridged tokens and addresses</a>.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Using an Ethereum block explorer, go to the StarkGate contract and click <strong>Write as Proxy</strong>. For example, using Etherscan, go to <a href="https://etherscan.io/address/0xae0ee0a63a2ce6baeeffe56e7714fb4efe48d419#writeProxyContract">0xae0ee0a63a2ce6baeeffe56e7714fb4efe48d419</a></p>
+</li>
+<li>
+<p>Click the StarkGate 2.0 <code>deposit</code> function (0x0efe6a8b).</p>
+</li>
+<li>
+<p>Enter the following:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In <strong><code>payableAmount</code></strong>, enter the maximum amount of ETH that you&#8217;re willing to pay for the <code>deposit</code> transaction fee.</p>
+</li>
+<li>
+<p>In <strong><code>token (address)</code></strong>, enter the address of the L1 contract for the token that you want to deposit to L2.</p>
+</li>
+<li>
+<p>In <strong><code>amount (uint256)</code></strong>, enter an integer for the amount of the token that you want to deposit to L2.</p>
+</li>
+<li>
+<p>In <strong><code>l2Recipient (uint256)</code></strong>, enter the address of the recipient on L2.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Write</strong>. The <code>deposit</code> function initiates a deposit.</p>
+</li>
+</ol>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="../architecture/">StarkGate architecture</a></span>
+  <span class="next"><a href="../withdrawing/">Withdrawing funds</a></span>
+</nav>
 </article>
   </div>
 </main>
@@ -157,14 +711,14 @@ If you typed the URL of this page manually, please double check that you entered
     </div>
   </div>
 </footer>
-<script src="/_/js/site.js?new"></script>
-<script async src="/_/js/vendor/highlight.js?new"></script>
-<script async src="/_/js/vendor/tabs-block-behaviour.js?new"></script>
-<script async src="/_/js/vendor/swagger-ui.js?new"></script>
-<script async src="/_/js/vendor/component-versions.js?new"></script>
+<script src="../../_/js/site.js?new"></script>
+<script async src="../../_/js/vendor/highlight.js?new"></script>
+<script async src="../../_/js/vendor/tabs-block-behaviour.js?new"></script>
+<script async src="../../_/js/vendor/swagger-ui.js?new"></script>
+<script async src="../../_/js/vendor/component-versions.js?new"></script>
 <script src="https://chatwith.tools/chatbot/04f9f1da-f9bd-46c1-a74d-b72cec2014ea.js" async=""></script>
-<script src="/_/js/vendor/custom.js?new"></script>
-<script async src="/_/js/vendor/tabs.js"></script>
+<script src="../../_/js/vendor/custom.js?new"></script>
+<script async src="../../_/js/vendor/tabs.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script>
 <script
