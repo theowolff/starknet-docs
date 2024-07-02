@@ -1239,7 +1239,7 @@ This function, which is part of the Starknet Core Contract, verifies the followi
 </td>
 <td class="content">
 <div class="paragraph">
-<p>In a L1 handler transaction, the first element of the calldata is always the Ethereum address of the sender.</p>
+<p>In an L1 handler transaction, the first element of the calldata is always the Ethereum address of the sender.</p>
 </div>
 </td>
 </tr>
@@ -1253,7 +1253,7 @@ This function, which is part of the Starknet Core Contract, verifies the followi
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Since L1 handler transactions are not initiated by an account, invoking <a href="https://github.com/starkware-libs/cairo/blob/2203a47f8a098cd4718d03bd109ca014049419e7/corelib/src/starknet/info.cairo#L49"><code>get_caller_address()</code></a> or similar account-related functions will return the address <code>0x0</code>.</p>
+<p>Since L1 handler transactions are not initiated by an account, invoking <a href="https://github.com/starkware-libs/cairo/blob/2203a47f8a098cd4718d03bd109ca014049419e7/corelib/src/starknet/info.cairo#L49"><code>get_caller_address()</code></a> or similar account-related functions returns the address <code>0x0</code>.</p>
 </div>
 </td>
 </tr>
