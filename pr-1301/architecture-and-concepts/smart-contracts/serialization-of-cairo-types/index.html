@@ -1000,8 +1000,8 @@ let array: Array&lt;u256&gt; = array![10, 20, POW_2_128]</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">enum Week {
-    Sunday: (), // Index=1. The variant type is the unit type.
-    Monday: u256, // Index=2. The variant type is u256.
+    Sunday: (), // Index=0. The variant type is the unit type.
+    Monday: u256, // Index=1. The variant type is u256.
 }</code></pre>
 </div>
 </div>
@@ -1025,13 +1025,13 @@ let array: Array&lt;u256&gt; = array![10, 20, POW_2_128]</code></pre>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Week::Sunday</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Index=<code>1</code>. The variant&#8217;s type is the unit type.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Index=<code>0</code>. The variant&#8217;s type is the unit type.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>[1]</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Week::Monday(5)</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Index=<code>2</code>. The variant&#8217;s type is <code>u256</code>.</p>
+<p>Index=<code>1</code>. The variant&#8217;s type is <code>u256</code>.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>[2,5,0]</code></p></td>
 </tr>
