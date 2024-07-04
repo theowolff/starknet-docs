@@ -805,7 +805,7 @@
 <h2 id="overview"><a class="anchor" href="#overview"></a>Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The functions in the table <a href="#starknet_account_interface_functions">Starknet account interface functions</a> are part of account contracts. Where required, you must include these functions within your contract. The logic of these functions can be mostly arbitrary, with a few limitations. For information on these limitations, see <a href="#invalid_transactions">Invalid transactions</a>.</p>
+<p>The functions in the table <a href="#starknet_account_interface_functions">Starknet account interface functions</a> are part of account contracts. Where required, you must include these functions within your account contract. The logic of these functions can be mostly arbitrary, with a few limitations. For information on these limitations, see <a href="#limitations_of_validation">Limitations on validation</a>.</p>
 </div>
 <table id="starknet_account_interface_functions" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. Starknet account interface functions</caption>
@@ -822,20 +822,52 @@
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>__validate__</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Always required</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Always required</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>__execute__</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Always required</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Always required. The signatures of <code>__validate__</code> and <code>__execute__</code> must be identical.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>At the moment of writing (Starknet 0.13.2), two critical validations must happen in <code>__execute__</code>, and their absence can lead to draining of the account&#8217;s funds:</p>
+</div>
+<div class="paragraph">
+<p>(1) <code>assert!(get_caller_address().is_zero())</code></p>
+</div>
+<div class="paragraph">
+<p>This asserts that the account&#8217;s <code>__execute__</code> is not called from another contract, thus skipping validations (in later versions we may disallow calling <code><em>execute</em></code> from another contract at the protocol level)</p>
+</div>
+<div class="paragraph">
+<p>(2) <code>assert!(get_tx_info().unbox().version.into() &gt;= 1_u32)</code></p>
+</div>
+<div class="paragraph">
+<p>This asserts that the transaction&#8217;s version is at least 1, preventing the account from accepting <code>INVOKE</code> v0 transactions. It is critical to explicitly disallow the deprecated v0 transaction type, as v0 transactions assume that the signature verification happens in <code>__execute__</code>, and are thus skipping <code>__validate__</code> entirely.</p>
+</div>
+</td>
+</tr>
+</table>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>__validate_declare__</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Required for a contract to be able to send a <code>DECLARE</code> transaction.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Required for the account to be able to send a <code>DECLARE</code> transaction. This function must receive exactly one argument, which is the class hash of the declared class.</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>__validate_deploy__</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Required when deploying an instance of an account contract with a <code>DEPLOY_ACCOUNT</code> <em>transaction</em>.</p>
+<p>Required to allow deploying an instance of the account contract with a <code>DEPLOY_ACCOUNT</code> <em>transaction</em>. The arguments of <code>__validate_deploy__</code> must be the class hash of the account to be deployed, the salt used for computing the account&#8217;s contract address, followed by the constructor arguments.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -845,7 +877,8 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>You can only use the <code>__validate_deploy__</code> function in an account contract to validate the <code>DEPLOY_ACCOUNT</code> transaction for that same contract.</p>
+<p>You can only use the <code>__validate_deploy__</code> function in an account contract to validate the <code>DEPLOY_ACCOUNT</code> transaction for that same contract.
+That is, this function runs at most once throughout the lifecycle of the account.</p>
 </div>
 </td>
 </tr>
@@ -854,31 +887,26 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>constructor</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All contracts have a <code>constructor</code> function. It can be explicitly defined in the contract, or if not explicitly defined, the sequencer uses a default <code>constructor</code> function, which is empty.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>All contracts have a <code>constructor</code> function. It can be explicitly defined in the contract, or if not explicitly defined, the sequencer uses a default <code>constructor</code> function, which is empty.</p>
+</div></div></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>When the sequencer receives a transaction request, it calls the corresponding validation function with the fields of the transaction request, as follows:</p>
+<p>When the sequencer receives a transaction, it calls the corresponding validation function with the appropriate input from the transaction&#8217;s data, as follows:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>For an <code>INVOKE</code> transaction, the sequencer calls the <code>__validate__</code> function. After successfully completing validation, the sequencer calls the <code>__execute__</code> function with the fields of the transaction request.</p>
+<p>For an <code>INVOKE</code> transaction, the sequencer calls the <code>__validate__</code> function with the transaction&#8217;s calldata as input. The transaction&#8217;s calldata will be deserialized to the arguments in the <code>__validate__</code> function&#8217;s signature, it is up to the sender to make sure that the calldata is encoded appropriately according to validate&#8217;s signature. After successfully completing validation, the sequencer calls the <code>__execute__</code> function with the same arguments.</p>
 </li>
 <li>
-<p>For a <code>DEPLOY_ACCOUNT</code> transaction, the sequencer calls the <code>constructor</code> function with the fields of the transaction request, then validates the transaction by calling the <code>__validate_deploy__</code> function.</p>
+<p>For a <code>DEPLOY_ACCOUNT</code> transaction, the sequencer calls the <code>constructor</code> function with the transaction&#8217;s <code>constructor_calldata</code> as input (as above, it is expected that the constructor&#8217;s calldata successfully desieralizes to the arguments in the constructor signature). After the successful execution of the constructor, the sequencer validates the transaction by calling the <code>__validate_deploy__</code> function.</p>
 </li>
 <li>
 <p>For a <code>DECLARE</code> transaction, the sequencer validates the transaction by calling the <code>__validate_declare__</code> function.</p>
 </li>
-</ul>
-</div>
-<div class="paragraph">
-<p>After successfully completing validation, the deployment is finalized.</p>
-</div>
-<div class="ulist">
-<ul>
 <li>
 <p>For more information on the available transaction types and their fields, see <a href="../../network-architecture/transactions/" class="xref page">Transaction types</a>.</p>
 </li>
@@ -893,41 +921,49 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="attacks_that_validation_limitations_prevent"><a class="anchor" href="#attacks_that_validation_limitations_prevent"></a>Potential attacks</h2>
+<h2 id="attacks_that_validation_limitations_prevent"><a class="anchor" href="#attacks_that_validation_limitations_prevent"></a>Potential DoS</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The validation functions have limitations, described below, that are designed to prevent the following attacks:</p>
+<p>The validation functions have limitations, described below, that are designed to prevent the following DoS attacks on the sequencer:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Denial of Service (DoS) attacks. Without these limitations, an attack could cause the sequencer to perform a large amount of work before a transaction fails validation, such as by sending multiple <code>DEPLOY_ACCOUNT</code> transactions that are invalid as a result of the constructor or <code>__validate_deploy__</code> failing. This work would not be eligible for fee payment.</p>
+<p>An attacker could cause the sequencer to perform a large amount of work before a transaction fails validation. Two examples of such attacks are:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Spamming <code>INVOKE</code> transactions whose <code>__validate__</code> requires many steps, but eventually fails</p>
 </li>
 <li>
-<p>Even if the validation is simple, the following attack could still be possible:</p>
+<p>Spamming <code>DEPLOY_ACCOUNT</code> transactions that are invalid as a result of the constructor or <code>__validate_deploy__</code> failing.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The above attacks are solved by making sure that the validation step is not resource-intensive, e.g. by keeping the maximal number of steps low. However, even if the validation is simple, the following "mempool pollution" attack could still be possible:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>An attacker fills the mempool with transactions that are valid at the time they are sent.</p>
 </li>
 <li>
-<p>A sequencer starts executing them, thinking that by the time it produces a block, they will still be valid.</p>
+<p>The sequencer is ready to execute them, thinking that by the time it includes them in a block, they will still be valid.</p>
 </li>
 <li>
-<p>However, shortly after the transactions are sent, the attacker sends one transaction that somehow invalidates all the previous ones and makes sure it&#8217;s included in the block, by offering higher fees for this one transaction, before the sequencer can publish the block.</p>
+<p>Shortly after the transactions are sent, the attacker sends one transaction that somehow invalidates all the previous ones and makes sure it&#8217;s included in a block, e.g. by offering higher fees for this one transaction.
+An example of such an attack is having the implementation of <code>__validate__</code> checks that the value of a storage slot is <code>1</code>, and the attacker&#8217;s transaction later sets it to <code>0</code>. Restricting validation functions from calling external contracts prevents this attack.</p>
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p>Consider many validation functions checking that the value of a storage slot is <code>1</code>, and the attacker&#8217;s transaction later sets it to <code>0</code>. Restricting validation functions from calling external contracts prevents this attack.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="limitations_of_validation"><a class="anchor" href="#limitations_of_validation"></a>Limitations on validation that prevent attacks</h2>
+<h2 id="limitations_of_validation"><a class="anchor" href="#limitations_of_validation"></a>Limitations on validation</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The limitations listed here apply to the following validation functions:</p>
@@ -957,10 +993,10 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>This restriction enforces a single storage update being able to invalidate only transactions from a single account. However, be aware that an account can always invalidate its own past transactions by changing its keys.</p>
+<p>This restriction enforces a single storage update being able to invalidate only transactions from a single account. However, be aware that an account can always invalidate its own past transactions by e.g. changing its public key.</p>
 </div>
 <div class="paragraph">
-<p>So the fees you need to pay to invalidate transactions in the mempool are directly proportional to the number of unique accounts. For example, if the fee you need to pay to invalidate a transaction from one account is \(x\), then the price of invalidating ten transactions from ten different accounts is \(10x\).</p>
+<p>This limitation implies that the fees you need to pay to invalidate transactions in the mempool are directly proportional to the number of unique accounts whose transactions you want to invalidate.</p>
 </div>
 </td>
 </tr>
@@ -974,12 +1010,12 @@
 <p>A builtin can be applied a limited number of times. For specific limits for each builtin, see <a href="../../../tools/limits-and-triggers/" class="xref page">Current limits</a>.</p>
 </li>
 <li>
-<p>Access is restricted to <code>sequencer_address</code> in the <code>get_execution_info</code> syscall. The syscall returns zero values for <code>sequencer_address</code>.</p>
-</li>
-<li>
-<p>The values of <code>block_number</code> and <code>block_timestamp</code> in the <code>get_execution_info</code> syscall are modified as follows:</p>
+<p>The <code>get_execution_info</code> syscall behaves differently When raised from one of the <code>validate</code> functions:</p>
 <div class="ulist">
 <ul>
+<li>
+<p><code>sequencer_address</code> is set to zero</p>
+</li>
 <li>
 <p><code>block_timestamp</code> returns the time (in UTC), rounded to the most recent hour.</p>
 </li>
@@ -997,7 +1033,7 @@
 <p><code>get_block_hash</code></p>
 </li>
 <li>
-<p><code>get_sequencer_address</code> <code>get_sequencer_address</code> is only supported for Cairo 0 contracts.</p>
+<p><code>get_sequencer_address</code> (this syscall is only supported for Cairo 0 contracts).</p>
 </li>
 </ul>
 </div>
@@ -1023,298 +1059,12 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="function_reference"><a class="anchor" href="#function_reference"></a>Function reference</h2>
+<h2 id="implementation_reference"><a class="anchor" href="#implementation_reference"></a>Implementation reference</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The functions in this section must be present in account contracts, as noted, with <code>__execute__</code> and <code>__validate__</code> required in all account contracts. However, you define the logic in the these functions as needed, unless noted otherwise, while adhering to the limitations specified in <a href="#limitations_of_validation">Limitations on validation that prevent attacks</a>. As a result, the function descriptions below leave you room to define your own functionality.</p>
-</div>
-<div class="paragraph">
-<p>For examples of account contracts that implement these functions, see <a href="https://book.starknet.io/ch04-01-accounts.html">Account Contracts</a> in the Starknet Book.</p>
-</div>
-<div class="sect2">
-<h3 id="__execute__"><a class="anchor" href="#__execute__"></a><code>__execute__</code></h3>
-<h4 id="description" class="discrete">Description</h4>
-<div class="paragraph">
-<p><em>Always required</em></p>
-</div>
-<div class="paragraph">
-<p>Initiates the execution stage in the sequencer. The sequencer calls this function upon receiving an <code>INVOKE</code> transaction, after the <code>__validate__</code> function successfully completes.</p>
-</div>
-<div class="paragraph">
-<p>In most implementations, <code>__execute__</code> initiates a sequence of calls from the account.</p>
-</div>
-<div class="paragraph">
-<p>The purpose of the <code>__execute__</code> function is to abstract away the remaining actions performed by a transaction.</p>
-</div>
-<div class="paragraph">
-<p>In Ethereum, a transaction is necessarily a call to a specific function in a smart contract. With the <code>__execute__</code> abstraction, the account designer controls the flow of the transaction. For example, you can natively support multicalls in your account, saving the need to send multiple transactions. In practice, however, sending multiple transactions is even harder to manage without multicalls due to nonces.</p>
-</div>
-<h4 id="function_signature" class="discrete">Function signature</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">fn __execute__(
-   self: @ContractState,
-   &lt;__arguments__&gt;
-) -&gt; felt252</code></pre>
-</div>
-</div>
-<h4 id="parameters" class="discrete">Parameters</h4>
-<div class="hdlist stripes-odd">
-<table>
-<colgroup>
-<col style="width: 35%;">
-<col>
-</colgroup>
-<tr>
-<td class="hdlist1">
-<code>self: @ContractState</code>
-</td>
-<td class="hdlist2">
-<p>The contract&#8217;s state. If you reference a component in a separate file, use <code>@ComponentState&lt;TContractState&gt;</code>.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<code>&lt;<em>arguments</em>&gt;</code>
-</td>
-<td class="hdlist2">
-<p>Any arguments that you add.</p>
-</td>
-</tr>
-</table>
-</div>
-<h4 id="returns" class="discrete">Returns</h4>
-<div class="paragraph">
-<p>The list of each call&#8217;s serialized return value.</p>
-</div>
-<hr>
-</div>
-<div class="sect2">
-<h3 id="__validate__"><a class="anchor" href="#__validate__"></a><code>__validate__</code></h3>
-<h4 id="description_2" class="discrete">Description</h4>
-<div class="paragraph">
-<p><em>Always required</em></p>
-</div>
-<div class="paragraph">
-<p>Initiates the validation stage in the sequencer. Validates the sender&#8217;s address. The sequencer calls this function upon receiving an <code>INVOKE</code> transaction.</p>
-</div>
-<div class="paragraph">
-<p>In most implementations, <code>__validate__</code> ensures that only the account owner can initiate transactions.</p>
-</div>
-<div class="paragraph">
-<p>The <code>__validate__</code> function typically ensures that any transaction submitted was indeed initiated by the account owner and therefore does not take up unjustified resources during the execution process.</p>
-</div>
-<div class="paragraph">
-<p>Without this mechanism, a forged transaction could result in the sequencer stealing the user&#8217;s funds. So the <code>__validate__</code> function ensures that the sequencer can only include transactions that were approved by the account owner.</p>
-</div>
-<div class="paragraph">
-<p>The arbitrary logic allowed in the <code>__validate__</code> function gives the account&#8217;s designer the ability to determine what it means for a transaction to be valid, enabling different signature schemes and other <a href="../introduction/#examples" class="xref page">exotic accounts</a>.</p>
-</div>
-<h4 id="function_signature_2" class="discrete">Function signature</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">fn __validate__(
-   self: @ContractState,
-   &lt;__execute_arguments__&gt;
-) -&gt; felt252</code></pre>
-</div>
-</div>
-<h4 id="parameters_2" class="discrete">Parameters</h4>
-<div class="hdlist stripes-odd">
-<table>
-<colgroup>
-<col style="width: 35%;">
-<col>
-</colgroup>
-<tr>
-<td class="hdlist1">
-<code>self: @ContractState</code>
-</td>
-<td class="hdlist2">
-<p>The contract&#8217;s state. If you reference a component in a separate file, use <code>@ComponentState&lt;TContractState&gt;</code>.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<code>&lt;<em>execute_arguments</em>&gt;</code>
-</td>
-<td class="hdlist2">
-<p>The same arguments used in the <code>__execute__</code> function.</p>
-</td>
-</tr>
-</table>
-</div>
-<h4 id="returns_2" class="discrete">Returns</h4>
-<div class="paragraph">
-<p>If the signature is verified, the function should return the string <code>VALID</code> as <code>felt252</code> value. If not, it should return any other value, such as <code>0</code>.</p>
-</div>
-<hr>
-</div>
-<div class="sect2">
-<h3 id="__validate_declare__"><a class="anchor" href="#__validate_declare__"></a><code>__validate_declare__</code></h3>
-<h4 id="description_3" class="discrete">Description</h4>
-<div class="paragraph">
-<p><em>Required for a contract to be able to send a</em> <code>DECLARE</code> <em>transaction.</em></p>
-</div>
-<div class="paragraph">
-<p>The sequencer calls this function upon receiving a <code>DECLARE</code> transaction.</p>
-</div>
-<div class="paragraph">
-<p>If the contract declares other contracts and handles the corresponding gas fees, this function authenticates the contract declaration.</p>
-</div>
-<h4 id="function_signature_3" class="discrete">Function signature</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">fn __validate_declare__(
-    self: @ContractState,
-    class_hash: felt252
-) -&gt; felt252</code></pre>
-</div>
-</div>
-<h4 id="parameters_3" class="discrete">Parameters</h4>
-<div class="hdlist stripes-odd">
-<table>
-<colgroup>
-<col style="width: 35%;">
-<col>
-</colgroup>
-<tr>
-<td class="hdlist1">
-<code>self: @ContractState</code>
-</td>
-<td class="hdlist2">
-<p>The contract&#8217;s state. If you reference a component in a separate file, use <code>@ComponentState&lt;TContractState&gt;</code>.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<code>class_hash: felt252</code>
-</td>
-<td class="hdlist2">
-<p>The class hash.</p>
-</td>
-</tr>
-</table>
-</div>
-<h4 id="returns_3" class="discrete">Returns</h4>
-<div class="paragraph">
-<p>If the signature is verified, the function should return the string <code>VALID</code> as <code>felt252</code> value. If not, it should return any other value, such as <code>0</code>.</p>
-</div>
-<hr>
-</div>
-<div class="sect2">
-<h3 id="__validate_deploy__"><a class="anchor" href="#__validate_deploy__"></a><code>__validate_deploy__</code></h3>
-<h4 id="description_4" class="discrete">Description</h4>
-<div class="paragraph">
-<p><em>Required when deploying an account with a</em> <code>DEPLOY_ACCOUNT</code> <em>transaction</em>.</p>
-</div>
-<div class="paragraph">
-<p>The sequencer calls this function upon receiving a <code>DEPLOY_ACCOUNT</code> transaction. Validates the deployment of the class referred to by the <code>class_hash</code> parameter in the transaction.</p>
-</div>
-<div class="paragraph">
-<p>You can use this function to set up an account contract without linking it to the address that deploys it or depending on another account contract for gas fees. When determining the contract&#8217;s address, use the deployer address <code>0x0</code>.</p>
-</div>
-<h4 id="function_signature_4" class="discrete">Function signature</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">fn __validate_deploy__(
-    self: @ContractState,
-    class_hash: felt252,
-    contract_address_salt: felt252,
-    &lt;__constructor_arguments__&gt;
-) -&gt; felt252</code></pre>
-</div>
-</div>
-<h4 id="parameters_4" class="discrete">Parameters</h4>
-<div class="hdlist stripes-odd">
-<table>
-<colgroup>
-<col style="width: 35%;">
-<col>
-</colgroup>
-<tr>
-<td class="hdlist1">
-<code>self: @ContractState</code>
-</td>
-<td class="hdlist2">
-<p>The contract&#8217;s state. If you reference a component in a separate file, use <code>@ComponentState&lt;TContractState&gt;</code>.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<code>class_hash: felt252</code>
-</td>
-<td class="hdlist2">
-<p>The class hash.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<code>contract_address_salt: felt252</code>
-</td>
-<td class="hdlist2">
-<p>The contract address salt.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<code>&lt;<em>constructor_arguments</em>&gt;</code>
-</td>
-<td class="hdlist2">
-<p>The arguments expected by the contract’s constructor. The inputs to the constructor must be identical to the rest of the inputs for validate_deploy. The compiler enforces this requirement.</p>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>In determining the contract address, the deployer address <code>0x0</code> is used.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<h4 id="returns_4" class="discrete">Returns</h4>
-<div class="paragraph">
-<p>If the signature is verified, the function should return the string <code>VALID</code> as a <code>felt252</code> value. If not, it should return any other value, such as <code>0</code>.</p>
-</div>
-<h4 id="example" class="discrete">Example</h4>
-<div class="paragraph">
-<p>Notice how the signature of <code>__validate_deploy__</code> is structured to consider the signature of the constructor:</p>
-</div>
-<div id="validate_deploy" class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">fn __validate_deploy__(
-    self: @ContractState,
-    class_hash: felt252,
-    salt: felt252,
-    public_key: felt252
-) -&gt; felt252
-
-#[constructor]
-fn constructor(ref self: ContractState, public_key: felt252)</code></pre>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>You can access the transaction hash and value for <code>max_fee</code> by getting transaction information with the <a href="../../smart-contracts/system-calls-cairo1/#get_execution_info" class="xref page"><code>get_execution_info</code></a> system call.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
+<p>Thanks to account abstraction, the logic of <code>__execute__</code> and the different validation functions is up to the party implementing the account.
+To see a concrete implementation, see OpenZeppelin&#8217;s <a href="https://github.com/OpenZeppelin/cairo-contracts/blob/v0.14.0/src/account/account.cairo#L72">account component</a>.
+This implementation adheres to <a href="https://github.com/starknet-io/SNIPs/blob/main/SNIPS/snip-6.md">SNIP6</a>, which defines a standard for account interfaces.</p>
 </div>
 </div>
 </div>
