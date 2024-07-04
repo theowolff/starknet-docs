@@ -840,13 +840,13 @@
 <p>(1) <code>assert!(get_caller_address().is_zero())</code></p>
 </div>
 <div class="paragraph">
-<p>This asserts that the account&#8217;s <code>execute</code> is not called from another contract, thus skipping validations (in later versions we may disallow calling <code><em>execute</em></code> from another contract at the protocol level)</p>
+<p>This asserts that the account&#8217;s <code>__execute__</code> is not called from another contract, thus skipping validations (in later versions we may disallow calling <code><em>execute</em></code> from another contract at the protocol level)</p>
 </div>
 <div class="paragraph">
 <p>(2) <code>assert!(get_tx_info().unbox().version.into() &gt;= 1_u32)</code></p>
 </div>
 <div class="paragraph">
-<p>This asserts that the transaction&#8217;s version is at least 1, preventing your account from accepting v0 transactions. It&#8217;s critical to explicitly disallow the deprecated v0 transaction type, as v0 transactions assume that the signature verification happens in <code>__execute__</code>, and are thus skipping <code>__validate__</code> entirely.</p>
+<p>This asserts that the transaction&#8217;s version is at least 1, preventing the account from accepting <code>INVOKE</code> v0 transactions. It is critical to explicitly disallow the deprecated v0 transaction type, as v0 transactions assume that the signature verification happens in <code>__execute__</code>, and are thus skipping <code>__validate__</code> entirely.</p>
 </div>
 </td>
 </tr>
