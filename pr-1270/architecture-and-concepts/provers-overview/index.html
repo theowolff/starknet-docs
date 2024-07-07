@@ -946,10 +946,10 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Latency in Starknet encompasses the time taken for processing, confirming, and including transactions in a block. It is affected by factors like network congestion, transaction fees, and system efficiency. Minimizing latency ensures faster transaction processing and user feedback.</p>
+<p>Latency in Starknet encompasses the time taken for processing, confirming, and including transactions in a block. Latency is affected by factors like network congestion, transaction fees, and system efficiency. Minimizing latency ensures faster transaction processing and user feedback.</p>
 </div>
 <div class="paragraph">
-<p>Time to proof, however, specifically pertains to the duration required to generate and verify cryptographic proofs for transactions or operations.</p>
+<p>Time to proof, however, specifically pertains to the amount of time required to generate and verify cryptographic proofs for transactions or operations.</p>
 </div>
 </td>
 </tr>
@@ -961,7 +961,7 @@
 <h2 id="sharp-backend-architecture-and-data-pipeline"><a class="anchor" href="#sharp-backend-architecture-and-data-pipeline"></a>SHARP backend architecture and data pipeline</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>SHARP backend architecture consists of several services that work together to process Cairo jobs and generate proofs. These services include:</p>
+<p>SHARP&#8217;s backend architecture consists of several services that work together to process Cairo jobs and generate proofs. These services include:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -969,10 +969,10 @@
 <p><strong>Gateway</strong>: Cairo jobs enter SHARP through the gateway.</p>
 </li>
 <li>
-<p><strong>Job Creator</strong>: It prevents job duplication and ensures that the system operates consistently, regardless of multiple identical requests.</p>
+<p><strong>Job Creator</strong>: This service prevents job duplication and ensures that the system operates consistently, regardless of multiple identical requests.</p>
 </li>
 <li>
-<p><strong>Validator</strong>: This is the first important step. The validator service runs validation checks on each job, ensuring they meet the requirements and can fit within the Prover machines. Invalid jobs are tagged as such and do not proceed to the Prover.</p>
+<p><strong>Validator</strong>: The validator service runs validation checks on each job, ensuring they meet the requirements and can fit within the Prover machines. Invalid jobs are tagged as such and do not proceed to the Prover.</p>
 </li>
 <li>
 <p><strong>Scheduler</strong>: The scheduler service creates <em>trains</em> that aggregate jobs and send them to the Prover. Recursive jobs are paired and sent to the Prover together.</p>
@@ -981,36 +981,36 @@
 <p><strong>Cairo Runner</strong>: This service runs Cairo for the Prover’s needs. The Cairo Runner service runs Cairo programs, executing the necessary computations and generating the execution trace as an intermediate result. The Prover then uses this execution trace.</p>
 </li>
 <li>
-<p><strong>Prover</strong>: The Prover computes the proofs for each train (that contains a few jobs).</p>
+<p><strong>Prover</strong>: The Prover computes the proofs for each train.</p>
 </li>
 <li>
 <p><strong>Dispatcher</strong>: The Dispatcher serves two functions in the SHARP system.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<div class="ulist">
+<ul>
 <li>
-<p>In the case of a recursive proof, the Dispatcher runs the Cairo Verifier program on the proof it has received from the prove, resulting in a new Cairo job that goes back to the Validator.</p>
+<p>In the case of a recursive proof, the Dispatcher runs the Cairo Verifier program on the proof it has received from the Prover, resulting in a new Cairo job that goes back to the Validator.</p>
 </li>
 <li>
-<p>In the case of a proof that needs to go on chain (e.g., to Ethereum), the Dispatcher creates <em>packages</em> from the proof, which can then be sent to the Blockchain Writer.</p>
+<p>In the case of a proof that is to be published onchain, the Dispatcher creates <em>packages</em> from the proof, which can then be sent to the <em>Blockchain Writer</em>.</p>
 </li>
-</ol>
+</ul>
 </div>
 </li>
 <li>
-<p><strong>Blockchain Writer</strong>: Once the packages have been created by the Dispatcher, they are sent to the Blockchain Writer. The Blockchain Writer is responsible for sending the packages to the appropriate blockchain (e.g., Ethereum) for verification. This is an important step in the SHARP system, as it ensures that the proofs are properly verified and that the transactions are securely recorded on the blockchain.</p>
+<p><strong>Blockchain Writer</strong>: Once the packages have been created by the Dispatcher, they are sent to the Blockchain Writer. The Blockchain Writer is responsible for sending the packages to the appropriate blockchain, such as Ethereum, for verification. This step in the SHARP system ensures that the proofs are properly verified and that the transactions are securely recorded on the blockchain.</p>
 </li>
 <li>
-<p><strong>Catcher</strong>: The Catcher monitors blockchain (e.g., Ethereum) transactions to ensure that they have been accepted. While the Catcher is relevant for internal monitoring purposes, it is important to note that if a transaction fails, the fact won’t be registered onchain in the fact registry. As a result, the soundness of the system is still preserved even without the catcher.</p>
+<p><strong>Catcher</strong>: The Catcher monitors onchain transactions to ensure that they have been accepted. While the Catcher is relevant for internal monitoring purposes, be aware that if a transaction fails, the fact won’t be registered onchain in the Fact Registry. As a result, the soundness of the system is still preserved even without the Catcher.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>SHARP is designed to be stateless (each Cairo job is executed in its own context and has no dependency on other jobs), enabling greater flexibility in processing jobs.</p>
+<p>SHARP is designed to be stateless. That is, each Cairo job is executed in its own context and has no dependency on other jobs, enabling greater flexibility in processing jobs.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="current-sharp-users"><a class="anchor" href="#current-sharp-users"></a>Current SHARP Users</h2>
+<h2 id="current-sharp-users"><a class="anchor" href="#current-sharp-users"></a>Current SHARP users</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Currently, the primary users of SHARP include:</p>
@@ -1031,7 +1031,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="challenges-and-optimization"><a class="anchor" href="#challenges-and-optimization"></a>Challenges and Optimization</h2>
+<h2 id="challenges-and-optimization"><a class="anchor" href="#challenges-and-optimization"></a>Challenges and optimization</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Optimizing the prove involves numerous challenges and potential projects on which the Starkware team and the community are currently working:</p>
