@@ -817,7 +817,7 @@
 </table>
 </div>
 <div class="paragraph">
-<p>The only prover in use on Starknet as of this writing is SHARP.</p>
+<p>The only Prover in use on Starknet as of this writing is SHARP.</p>
 </div>
 <div class="paragraph">
 <p>SHARP is like public transportation for proofs on Starknet, aggregating multiple Cairo programs to save costs and boost efficiency. It uses recursive proofs, enabling parallelization and optimization, making it more affordable for all users. Critical services like the gateway, validator, and Prover work together with a stateless design for flexibility. SHARP’s adoption by StarkEx and Starknet highlights its significance and potential for future optimization.</p>
@@ -831,13 +831,13 @@
 <h2 id="what-is-sharp"><a class="anchor" href="#what-is-sharp"></a>What is SHARP?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>SHARP, which stands for <em>Shared Prover</em>, is a mechanism used in Starknet that aggregates multiple Cairo programs from different users, each containing different logic. These Cairo programs are then executed together, generating a single proof common to all the programs. Rather than sending the proof directly to the Solidity Verifier in Ethereum, it is initially sent to a STARK Verifier program written in Cairo. The STARK Verifier generates a new proof to confirm that the initial proofs were verified, which can be sent back into SHARP and the STARK Verifier. Details for this recursive proof process appear below. Ultimately, the last proof in the series is sent to the Solidity Verifier on Ethereum. In other words, there are many proofs generated until we reach Ethereum and the Solidity Verifier.</p>
+<p>SHARP, which stands for <em>Shared Prover</em>, is a mechanism that aggregates multiple Cairo programs from different users, each containing different logic. These Cairo programs are then executed together, generating a single proof common to all the programs. Rather than sending the proof directly to the Solidity Verifier in Ethereum, it is initially sent to a STARK Verifier program written in Cairo. The STARK Verifier generates a new proof to confirm that the initial proofs were verified, which can be sent back into SHARP and the STARK Verifier. Details for this recursive proof process appear below. Ultimately, the last proof in the series is sent to the Solidity Verifier on Ethereum. In other words, there are many proofs generated until we reach Ethereum and the Solidity Verifier.</p>
 </div>
 <div class="paragraph">
-<p>The primary benefit of SHARP system lies in its ability to decrease costs and enhance efficiency within the Starknet network. It achieves this by aggregating multiple Cairo jobs, which are individual sets of computation. This aggregation enables the protocol to leverage the exponential amortization offered by STARK proofs.</p>
+<p>The primary benefit of SHARP lies in its ability to decrease costs and enhance efficiency within the Starknet network. It achieves this by aggregating multiple Cairo jobs, which are individual sets of computation. This aggregation enables the protocol to leverage the exponential amortization offered by STARK proofs.</p>
 </div>
 <div class="paragraph">
-<p>Exponential amortization means that as the computational load of the proofs increases, the cost of verifying those proofs rises at a slower logarithmic rate than the computation increase. In other words, the computation itself grows slower than the verification cost. As a result, the cost of each transaction within the aggregated set is significantly reduced, making the overall process more cost-effective and accessible for users.</p>
+<p>Exponential amortization means that as the computational load of the proofs increases, the cost of verifying those proofs rises at a slower logarithmic rate than the computation increase. As a result, the cost of each transaction within the aggregated set is significantly reduced, making the overall process more cost-effective and accessible for users.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -847,7 +847,7 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>In SHARP and Cairo context, <em>jobs</em> refer to the individual Cairo programs or tasks submitted by different users. These jobs contain specific logic or computations that must be executed on the Starknet network.</p>
+<p>In the context of SHARP and Cairo context, a <em>jobs</em> refer to the individual Cairo programs or tasks submitted by different users. These jobs contain specific logic or computations that must be executed on the Starknet network.</p>
 </div>
 </td>
 </tr>
@@ -859,38 +859,61 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="recursive-proofs-in-sharp"><a class="anchor" href="#recursive-proofs-in-sharp"></a>Recursive Proofs in SHARP</h2>
+<h2 id="recursive-proofs-in-sharp"><a class="anchor" href="#recursive-proofs-in-sharp"></a>Recursive proofs in SHARP</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>One of the most powerful features of SHARP is its use of recursive proofs. Rather than directly sending the generated proofs to the Solidity Verifier, they are first sent to a STARK Verifier program written in Cairo. This Verifier, which is also a Cairo Program, receives the proof and creates a new Cairo job that is sent to the Prover. The Prover then generates a new proof to confirm that the initial proofs were verified. These new proofs can be sent back into SHARP and the STARK Verifier, restarting the process.</p>
+<p>One of the most powerful features of SHARP is its use of recursive proofs. Rather than directly sending the generated proofs to the Solidity Verifier, they are first sent to a STARK Verifier program written in Cairo. This Verifier, which is also a Cairo program, receives the proof and creates a new Cairo job that is sent to the Prover. The Prover then generates a new proof to confirm that the initial proofs were verified. These new proofs can be sent back into SHARP and the STARK Verifier, restarting the process.</p>
 </div>
 <div class="paragraph">
 <p>This process continues recursively, with each new proof being sent to the Cairo Verifier until a trigger is reached. At this point, the last proof in the series is sent to the Solidity Verifier on Ethereum. This approach enables greater parallelization of the computation and reduces the time and cost associated with generating and verifying proofs.</p>
 </div>
-<div class="literalblock">
+<div class="exampleblock text-center">
 <div class="content">
-<pre>     Generated Proofs
-             |
-             V
-STARK Verifier program (in Cairo)
-             |
-             V
-        Cairo Job
-             |
-             V
-            Prover
-             |
-             V
-  New Proof Generated
-             |
-             V
-       Repeat Process
-             |
-             V
- Trigger Reached (last proof)
-             |
-             V
-    Solidity Verifier</pre>
+<div class="paragraph">
+<p><strong>Generated Proofs</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>&#65516;</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>STARK Verifier program (in Cairo)</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>&#65516;</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Cairo Job</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>&#65516;</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Prover</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>&#65516;</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>New Proof Generated</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>&#65516;</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Repeat Process</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>&#65516;</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Trigger Reached (last proof)</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>&#65516;</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Solidity Verifier</strong></p>
+</div>
 </div>
 </div>
 <div class="paragraph">
@@ -899,16 +922,16 @@ STARK Verifier program (in Cairo)
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><strong>Parallelization</strong>: Recursive proofs enable for work parallelization, reducing user latency and improving SHARP efficiency.</p>
+<p><strong>Parallelization</strong>: Recursive proofs enable work parallelization, reducing user latency and improving SHARP efficiency.</p>
 </li>
 <li>
-<p><strong>Cheaper on-chain costs</strong>: Parallelization enables SHARP to create larger proofs, which would have previously been limited by the availability of large cloud machines (which are rare and limited). As a result, on-chain costs are reduced.</p>
+<p><strong>Cheaper onchain costs</strong>: Parallelization enables SHARP to create larger proofs, which were previously dependent on the limited availability of large cloud machines. As a result, onchain costs are reduced.</p>
 </li>
 <li>
 <p><strong>Lower cloud costs</strong>: Since each job is shorter, the required memory for processing is reduced, resulting in lower cloud costs.</p>
 </li>
 <li>
-<p><strong>Optimization</strong>: Recursive proofs enable SHARP to optimize for various factors, including latency, on-chain costs, and time to proof.</p>
+<p><strong>Optimization</strong>: Recursive proofs enable SHARP to optimize for various factors, including latency, onchain costs, and time to proof.</p>
 </li>
 <li>
 <p><strong>Cairo support</strong>: Recursive proofs only require support in Cairo, without the need to add support in the Solidity Verifier.</p>
@@ -935,7 +958,7 @@ STARK Verifier program (in Cairo)
 </div>
 </div>
 <div class="sect1">
-<h2 id="sharp-backend-architecture-and-data-pipeline"><a class="anchor" href="#sharp-backend-architecture-and-data-pipeline"></a>SHARP Backend Architecture and Data Pipeline</h2>
+<h2 id="sharp-backend-architecture-and-data-pipeline"><a class="anchor" href="#sharp-backend-architecture-and-data-pipeline"></a>SHARP backend architecture and data pipeline</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>SHARP backend architecture consists of several services that work together to process Cairo jobs and generate proofs. These services include:</p>
@@ -949,7 +972,7 @@ STARK Verifier program (in Cairo)
 <p><strong>Job Creator</strong>: It prevents job duplication and ensures that the system operates consistently, regardless of multiple identical requests.</p>
 </li>
 <li>
-<p><strong>Validator</strong>: This is the first important step. The validator service runs validation checks on each job, ensuring they meet the requirements and can fit within the prover machines. Invalid jobs are tagged as such and do not proceed to the Prover.</p>
+<p><strong>Validator</strong>: This is the first important step. The validator service runs validation checks on each job, ensuring they meet the requirements and can fit within the Prover machines. Invalid jobs are tagged as such and do not proceed to the Prover.</p>
 </li>
 <li>
 <p><strong>Scheduler</strong>: The scheduler service creates <em>trains</em> that aggregate jobs and send them to the Prover. Recursive jobs are paired and sent to the Prover together.</p>
@@ -965,7 +988,7 @@ STARK Verifier program (in Cairo)
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>In the case of a recursive proof, the Dispatcher runs the Cairo Verifier program on the proof it has received from the Prover, resulting in a new Cairo job that goes back to the Validator.</p>
+<p>In the case of a recursive proof, the Dispatcher runs the Cairo Verifier program on the proof it has received from the prove, resulting in a new Cairo job that goes back to the Validator.</p>
 </li>
 <li>
 <p>In the case of a proof that needs to go on chain (e.g., to Ethereum), the Dispatcher creates <em>packages</em> from the proof, which can then be sent to the Blockchain Writer.</p>
@@ -977,7 +1000,7 @@ STARK Verifier program (in Cairo)
 <p><strong>Blockchain Writer</strong>: Once the packages have been created by the Dispatcher, they are sent to the Blockchain Writer. The Blockchain Writer is responsible for sending the packages to the appropriate blockchain (e.g., Ethereum) for verification. This is an important step in the SHARP system, as it ensures that the proofs are properly verified and that the transactions are securely recorded on the blockchain.</p>
 </li>
 <li>
-<p><strong>Catcher</strong>: The Catcher monitors blockchain (e.g., Ethereum) transactions to ensure that they have been accepted. While the Catcher is relevant for internal monitoring purposes, it is important to note that if a transaction fails, the fact won’t be registered on-chain in the fact registry. As a result, the soundness of the system is still preserved even without the catcher.</p>
+<p><strong>Catcher</strong>: The Catcher monitors blockchain (e.g., Ethereum) transactions to ensure that they have been accepted. While the Catcher is relevant for internal monitoring purposes, it is important to note that if a transaction fails, the fact won’t be registered onchain in the fact registry. As a result, the soundness of the system is still preserved even without the catcher.</p>
 </li>
 </ol>
 </div>
@@ -1011,12 +1034,12 @@ STARK Verifier program (in Cairo)
 <h2 id="challenges-and-optimization"><a class="anchor" href="#challenges-and-optimization"></a>Challenges and Optimization</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Optimizing the Prover involves numerous challenges and potential projects on which the Starkware team and the community are currently working:</p>
+<p>Optimizing the prove involves numerous challenges and potential projects on which the Starkware team and the community are currently working:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Exploring more efficient hash functions: SHARP is constantly exploring more efficient hash functions for Cairo, the Prover, and Solidity.</p>
+<p>Exploring more efficient hash functions: SHARP is constantly exploring more efficient hash functions for Cairo, the prove, and Solidity.</p>
 </li>
 <li>
 <p>Investigating smaller fields: Investigating smaller fields for recursive proof steps could lead to more efficient computations.</p>
@@ -1025,13 +1048,13 @@ STARK Verifier program (in Cairo)
 <p>Adjusting various parameters: SHARP is continually adjusting various parameters of the STARK protocol, such as FRI parameters and block factors.</p>
 </li>
 <li>
-<p>Optimizing the Cairo code: SHARP is optimizing the Cairo code to make it faster, resulting in a faster recursive prover.</p>
+<p>Optimizing the Cairo code: SHARP optimizes the Cairo code to make it faster, resulting in a faster recursive Prover.</p>
 </li>
 <li>
 <p>Developing dynamic layouts: This will enable Cairo programs to scale resources depending on their needs.</p>
 </li>
 <li>
-<p>Improving scheduling algorithm: This is another optimization path that can be taken. It is not within the Prover itself.</p>
+<p>Improving scheduling algorithm: This is another optimization path that can be taken. It is not within the prove itself.</p>
 </li>
 </ul>
 </div>
