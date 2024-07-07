@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Provers :: Starknet documentation</title>
     <link rel="canonical" href="https://docs.starknet.io/architecture-and-concepts/provers-overview/">
-    <link rel="prev" href="../smart-contracts/execution-info/">
-    <link rel="next" href="../cryptography/p-value/">
+    <link rel="prev" href="../network-architecture/starknet-architecture-overview/">
+    <link rel="next" href="../network-architecture/block-structure/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -239,6 +239,11 @@
        class="nav-link"
      href="../network-architecture/starknet-architecture-overview/">Overview</a>
   </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a 
+       class="nav-link"
+     href="./">Provers</a>
+  </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
@@ -392,11 +397,6 @@
      href="../smart-contracts/execution-info/">Execution information for the current block</a>
   </li>
 </ul>
-  </li>
-  <li class="nav-item is-current-page" data-depth="2">
-    <a 
-       class="nav-link"
-     href="./">Provers</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
@@ -867,55 +867,30 @@
 <div class="paragraph">
 <p>This process continues recursively, with each new proof being sent to the Cairo Verifier until a trigger is reached. At this point, the last proof in the series is sent to the Solidity Verifier on Ethereum. This approach enables greater parallelization of the computation and reduces the time and cost associated with generating and verifying proofs.</p>
 </div>
-<div class="exampleblock text-center">
-<div class="content">
-<div class="paragraph">
-<p><strong>Generated Proofs</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>&#65516;</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>STARK Verifier program (in Cairo)</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>&#65516;</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>Cairo Job</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>&#65516;</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>Prover</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>&#65516;</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>New Proof Generated</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>&#65516;</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>Repeat Process</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>&#65516;</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>Trigger Reached (last proof)</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>&#65516;</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>Solidity Verifier</strong></p>
-</div>
-</div>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Generated Proofs</strong></p>
+<p class="tableblock"><strong>&#65516;</strong></p>
+<p class="tableblock"><strong>STARK Verifier program (in Cairo)</strong></p>
+<p class="tableblock"><strong>&#65516;</strong></p>
+<p class="tableblock"><strong>Cairo Job</strong></p>
+<p class="tableblock"><strong>&#65516;</strong></p>
+<p class="tableblock"><strong>Prover</strong></p>
+<p class="tableblock"><strong>&#65516;</strong></p>
+<p class="tableblock"><strong>New Proof Generated</strong></p>
+<p class="tableblock"><strong>&#65516;</strong></p>
+<p class="tableblock"><strong>Repeat Process</strong></p>
+<p class="tableblock"><strong>&#65516;</strong></p>
+<p class="tableblock"><strong>Trigger Reached (last proof)</strong></p>
+<p class="tableblock"><strong>&#65516;</strong></p>
+<p class="tableblock"><strong>Solidity Verifier</strong></p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
 <p>At first glance, recursive proofs may seem more complex and time-consuming. However, there are several benefits to this approach:</p>
 </div>
@@ -1069,8 +1044,8 @@
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../smart-contracts/execution-info/">Execution information for the current block</a></span>
-  <span class="next"><a href="../cryptography/p-value/">The STARK field</a></span>
+  <span class="prev"><a href="../network-architecture/starknet-architecture-overview/">Overview</a></span>
+  <span class="next"><a href="../network-architecture/block-structure/">Block structure</a></span>
 </nav>
 </article>
   </div>
