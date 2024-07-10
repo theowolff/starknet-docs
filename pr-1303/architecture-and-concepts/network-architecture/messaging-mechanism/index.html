@@ -205,6 +205,11 @@
        class="nav-link"
      href="../../../quick-start/interact-with-a-smart-contract/">Interacting with a smart contract</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../../quick-start/deploy-interact-with-a-smart-contract-remix/">Deploying and interacting with a smart contract with Remix</a>
+  </li>
 </ul>
   </li>
 </ul>
@@ -244,6 +249,16 @@
     <a 
        class="nav-link"
      href="../../provers-overview/">Provers</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../solidity-verifier/">Solidity verifier</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../nodes/">Nodes</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
@@ -987,7 +1002,7 @@ This function, which is part of the Starknet Core Contract, verifies the followi
 </div>
 </li>
 <li>
-<p>The message is then decoded into a Starknet transaction that invokes a function annotated with the <code>l1_handler</code> decorator on the target contract. Transactions like this on L2 are called <strong><em>L1 handler transactions</em></strong>.</p>
+<p>The message is then decoded into a Starknet transaction that invokes a function annotated with the <code>l1_handler</code> decorator on the target contract. Transactions like this on L2 are called <a href="#l1_handler_transaction">L1 handler transactions</a>.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -1173,8 +1188,10 @@ This function, which is part of the Starknet Core Contract, verifies the followi
 );</code></pre>
 </div>
 </div>
+</div>
+<div class="sect2">
+<h3 id="l1_handler_transaction"><a class="anchor" href="#l1_handler_transaction"></a>L1 handler transaction</h3>
 <table class="tableblock frame-all grid-all fit-content stretch">
-<caption class="title">Table 2. L1 handler transaction</caption>
 <colgroup>
 <col>
 <col>
@@ -1209,12 +1226,12 @@ This function, which is part of the Starknet Core Contract, verifies the followi
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">l1_handler_tx_hash = ℎ(
+<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">l1_handler_tx_hash = _h_(
     "l1_handler",
-    version, // at the moment only version 0 is supported
+    version,
     contract_address,
     entry_point_selector,
-    ℎ(calldata),
+    _h_(calldata),
     0,
     chain_id,
     nonce
@@ -1230,10 +1247,16 @@ This function, which is part of the Starknet Core Contract, verifies the followi
 <p><code>l1_handler</code> is a constant prefix, encoded in bytes (ASCII), as big-endian.</p>
 </li>
 <li>
+<p><code>version</code> is the transaction version. Only version 0 is currently supported.</p>
+</li>
+<li>
 <p><code>chain_id</code> is a constant value that specifies the network to which this transaction is sent.</p>
 </li>
 <li>
 <p><em>h</em> is the <a href="../../cryptography/hash-functions/#pedersen_hash" class="xref page">Pedersen</a> hash (note that since we&#8217;re hashing an array, the # of inputs needs to be appended to the hash).</p>
+</li>
+<li>
+<p><code>0</code> indicates that L1 to L2 message fees are charged on L1.</p>
 </li>
 </ul>
 </div>
@@ -1245,12 +1268,48 @@ This function, which is part of the Starknet Core Contract, verifies the followi
 </td>
 <td class="content">
 <div class="paragraph">
-<p>In an <code>l1_handler</code> transaction, the first element of the calldata is always the Ethereum address of the sender.</p>
+<p>In an L1 handler transaction, the first element of the calldata is always the sender&#8217;s Ethereum address.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Since L1 handler transactions are not initiated by an account, invoking <a href="https://github.com/starkware-libs/cairo/blob/2203a47f8a098cd4718d03bd109ca014049419e7/corelib/src/starknet/info.cairo#L49"><code>get_caller_address()</code></a> or similar account-related functions returns the address <code>0x0</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Supported versions of the <code>L1HandlerTransaction</code> transaction type</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Current version</th>
+<th class="tableblock halign-left valign-top">Deprecated versions</th>
+<th class="tableblock halign-left valign-top">Unsupported versions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">v0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
