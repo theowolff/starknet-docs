@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Overview :: Starknet documentation</title>
-    <link rel="canonical" href="https://docs.starknet.io/">
-    <link rel="next" href="notational-conventions/">
+    <title>Declare, deploy, and interact with a smart contract using Katana and Starkli :: Starknet documentation</title>
+    <link rel="canonical" href="https://docs.starknet.io/quick-start/katana-devnet/">
+    <link rel="prev" href="../deploy-interact-with-a-smart-contract-remix/">
+    <link rel="next" href="../../starknet-versions/version-notes/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -25,15 +26,15 @@
     <meta property="twitter:url" content="https://docs.starknet.io/">
     <meta property="twitter:title" content="Starknet Documentation">
     <meta property="twitter:description" content="Reference documentation for developers building on Starknet.">
-    <meta property="twitter:image" content="https://www.starknet.io/starknet-docs-card.png">  <link rel="stylesheet" href="./_/css/vendor/tabs.css">
-  <link id="theme" rel="stylesheet" title="Default" href="./_/css/site.css?new">
-  <link rel="stylesheet" title="Dark" href="./_/css/dark-site.css?new">
-  <link rel="stylesheet" href="./_/css/vendor/tabs.css">
-  <link rel="stylesheet" href="./_/css/home.css">
+    <meta property="twitter:image" content="https://www.starknet.io/starknet-docs-card.png">  <link rel="stylesheet" href="../../_/css/vendor/tabs.css">
+  <link id="theme" rel="stylesheet" title="Default" href="../../_/css/site.css?new">
+  <link rel="stylesheet" title="Dark" href="../../_/css/dark-site.css?new">
+  <link rel="stylesheet" href="../../_/css/vendor/tabs.css">
+  <link rel="stylesheet" href="../../_/css/home.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WY42TERK5P"></script>
     <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','G-WY42TERK5P')</script>
-    <script>var uiRootPath = './_'</script>
-    <script src="./_/js/vendor/medium-zoom.js?new"></script>
+    <script>var uiRootPath = '../../_'</script>
+    <script src="../../_/js/vendor/medium-zoom.js?new"></script>
     <script type="text/javascript" id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="e4db29b5-cd94-4bcf-87e4-04f4ca564240" data-blockingmode="manual"></script>
     <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
@@ -47,27 +48,27 @@
         a.appendChild(r);
         })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
-<link rel="icon" href="./_/img/favicon/favicon.ico" type="image/x-icon">
+<link rel="icon" href="../../_/img/favicon/favicon.ico" type="image/x-icon">
 
 <!-- For all browsers -->
-<link rel="icon" type="image/png" sizes="32x32" href="./_/img/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="./_/img/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../_/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../_/img/favicon-16x16.png">
 
 <!-- For Google and Chrome -->
-<link rel="icon" type="image/png" sizes="192x192" href="./_/img/favicon/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../../_/img/favicon/android-chrome-192x192.png">
 
 <!-- For iPad -->
-<link rel="apple-touch-icon" type="image/png" sizes="167x167" href="./_/img/favicon/apple-touch-icon.png">
+<link rel="apple-touch-icon" type="image/png" sizes="167x167" href="../../_/img/favicon/apple-touch-icon.png">
 <!-- For iPhone -->
-<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="./_/img/favicon/apple-touch-icon.png">  </head>
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../../_/img/favicon/apple-touch-icon.png">  </head>
   <body class="article">
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
       <div class="top-logo">
-        <a href="." class="starknet-logo"></a>
+        <a href="../.." class="starknet-logo"></a>
         <div class="vertical-divider desktop-only"></div>
-        <a href="." class="docs-logo desktop-only">Docs</a>
+        <a href="../.." class="docs-logo desktop-only">Docs</a>
       </div>
       <!--<a class="navbar-item" href="https://docs.starknet.io">Starknet documentation</a>-->
       <div id="autocomplete" class="autocomplete-root"></div>
@@ -102,16 +103,17 @@
   </div>
   <span></span>
   <span></span>
-  <a href="./" class="home-link is-current mask-svg-center"></a>
+  <a href="../../" class="home-link mask-svg-center"></a>
   <div id="mobile-autocomplete" class="mobile-only"></div>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="./">Starknet</a></li>
-    <li><a href="./">Overview</a></li>
+    <li><a href="../../">Starknet</a></li>
+    <li>Quick start</li>
+    <li><a href="./">Tutorial: Declare, deploy, and interact with a smart contract using Katana</a></li>
   </ul>
 </nav>
   <div class="edit-this-page">
-    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/ROOT/pages/index.adoc"><img class="pencil">Edit this Page</a>
+    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/quick-start/pages/katana-devnet.adoc"><img class="pencil">Edit this Page</a>
   </div>
 </div>
 <div class="body">
@@ -120,19 +122,19 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="./">Starknet</a></h3>
+    <h3 class="title"><a href="../../">Starknet</a></h3>
 <ul class="nav-list">
   <li class="nav-item parent" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="./">Overview</a>
+     href="../../">Overview</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="notational-conventions/">Notational conventions</a>
+     href="../../notational-conventions/">Notational conventions</a>
   </li>
 </ul>
   </li>
@@ -147,23 +149,23 @@
         <span>
     <a 
        class="nav-link nav-link-with-toggle"
-     href="quick-start/environment-setup/">Setting up your environment</a>
+     href="../environment-setup/">Setting up your environment</a>
         </span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="quick-start/environment-setup/#installing_starkli">Installing Starkli</a>
+     href="../environment-setup/#installing_starkli">Installing Starkli</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="quick-start/environment-setup/#setting_environment_variables_for_starkli">Environment variables</a>
+     href="../environment-setup/#setting_environment_variables_for_starkli">Environment variables</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="quick-start/environment-setup/#installing_scarb">Installing Scarb</a>
+     href="../environment-setup/#installing_scarb">Installing Scarb</a>
   </li>
 </ul>
   </li>
@@ -172,45 +174,45 @@
         <span>
     <a 
        class="nav-link nav-link-with-toggle"
-     href="quick-start/set-up-an-account/">Setting up an account</a>
+     href="../set-up-an-account/">Setting up an account</a>
         </span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="quick-start/set-up-an-account/#creating_an_account">Creating an account</a>
+     href="../set-up-an-account/#creating_an_account">Creating an account</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="quick-start/set-up-an-account/#deploying_an_account">Deploying an account</a>
+     href="../set-up-an-account/#deploying_an_account">Deploying an account</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="quick-start/declare-a-smart-contract/">Declaring a smart contract</a>
+     href="../declare-a-smart-contract/">Declaring a smart contract</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="quick-start/deploy-a-smart-contract/">Deploying a smart contract</a>
+     href="../deploy-a-smart-contract/">Deploying a smart contract</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="quick-start/interact-with-a-smart-contract/">Interacting with a smart contract</a>
+     href="../interact-with-a-smart-contract/">Interacting with a smart contract</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="quick-start/deploy-interact-with-a-smart-contract-remix/">Deploying and interacting with a smart contract with Remix</a>
+     href="../deploy-interact-with-a-smart-contract-remix/">Deploying and interacting with a smart contract with Remix</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a 
        class="nav-link"
-     href="quick-start/katana-devnet/">Tutorial: Declare, deploy, and interact with a smart contract using Katana</a>
+     href="./">Tutorial: Declare, deploy, and interact with a smart contract using Katana</a>
   </li>
 </ul>
   </li>
@@ -225,12 +227,12 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="starknet-versions/version-notes/">Release notes</a>
+     href="../../starknet-versions/version-notes/">Release notes</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="starknet-versions/deprecated/">Deprecated, unsupported, and removed features</a>
+     href="../../starknet-versions/deprecated/">Deprecated, unsupported, and removed features</a>
   </li>
 </ul>
   </li>
@@ -245,42 +247,42 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/starknet-architecture-overview/">Overview</a>
+     href="../../architecture-and-concepts/network-architecture/starknet-architecture-overview/">Overview</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/provers-overview/">Provers</a>
+     href="../../architecture-and-concepts/provers-overview/">Provers</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/solidity-verifier/">Solidity verifier</a>
+     href="../../architecture-and-concepts/solidity-verifier/">Solidity verifier</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/nodes/">Nodes</a>
+     href="../../architecture-and-concepts/nodes/">Nodes</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/block-structure/">Block structure</a>
+     href="../../architecture-and-concepts/network-architecture/block-structure/">Block structure</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/transaction-life-cycle/">Transaction lifecycle</a>
+     href="../../architecture-and-concepts/network-architecture/transaction-life-cycle/">Transaction lifecycle</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/transactions/">Transaction types</a>
+     href="../../architecture-and-concepts/network-architecture/transactions/">Transaction types</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/fee-mechanism/">Gas and transaction fees</a>
+     href="../../architecture-and-concepts/network-architecture/fee-mechanism/">Gas and transaction fees</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
@@ -289,12 +291,12 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/starknet-state/">Starknet state</a>
+     href="../../architecture-and-concepts/network-architecture/starknet-state/">Starknet state</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/data-availability/">Data availability</a>
+     href="../../architecture-and-concepts/network-architecture/data-availability/">Data availability</a>
   </li>
 </ul>
   </li>
@@ -305,12 +307,12 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/messaging-mechanism/">L1-L2 messaging mechanism</a>
+     href="../../architecture-and-concepts/network-architecture/messaging-mechanism/">L1-L2 messaging mechanism</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/messaging-reference/">Messaging reference</a>
+     href="../../architecture-and-concepts/network-architecture/messaging-reference/">Messaging reference</a>
   </li>
 </ul>
   </li>
@@ -321,32 +323,32 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/accounts/introduction/">What is an account?</a>
+     href="../../architecture-and-concepts/accounts/introduction/">What is an account?</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/accounts/approach/">Starknet&#8217;s account interface</a>
+     href="../../architecture-and-concepts/accounts/approach/">Starknet&#8217;s account interface</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/accounts/account-functions/">Account interface function reference</a>
+     href="../../architecture-and-concepts/accounts/account-functions/">Account interface function reference</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/accounts/deploying-new-accounts/">Deploying new accounts</a>
+     href="../../architecture-and-concepts/accounts/deploying-new-accounts/">Deploying new accounts</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/accounts/universal-deployer/">Universal Deployer Contract</a>
+     href="../../architecture-and-concepts/accounts/universal-deployer/">Universal Deployer Contract</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/accounts/simplified-transaction-flow/">Simplified transaction flow</a>
+     href="../../architecture-and-concepts/accounts/simplified-transaction-flow/">Simplified transaction flow</a>
   </li>
 </ul>
   </li>
@@ -357,62 +359,62 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/contract-classes/">Contract classes and instances</a>
+     href="../../architecture-and-concepts/smart-contracts/contract-classes/">Contract classes and instances</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/class-hash/">Class hash</a>
+     href="../../architecture-and-concepts/smart-contracts/class-hash/">Class hash</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/contract-address/">Contract address</a>
+     href="../../architecture-and-concepts/smart-contracts/contract-address/">Contract address</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/contract-storage/">Contract storage</a>
+     href="../../architecture-and-concepts/smart-contracts/contract-storage/">Contract storage</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/contract-abi/">Contract ABI</a>
+     href="../../architecture-and-concepts/smart-contracts/contract-abi/">Contract ABI</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/starknet-events/">Events</a>
+     href="../../architecture-and-concepts/smart-contracts/starknet-events/">Events</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/contract-syntax/">Migrating a contract from Cairo v1 to Cairo v2</a>
+     href="../../architecture-and-concepts/smart-contracts/contract-syntax/">Migrating a contract from Cairo v1 to Cairo v2</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/cairo-and-sierra/">Cairo and Sierra</a>
+     href="../../architecture-and-concepts/smart-contracts/cairo-and-sierra/">Cairo and Sierra</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/cairo-builtins/">Cairo builtins</a>
+     href="../../architecture-and-concepts/smart-contracts/cairo-builtins/">Cairo builtins</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/serialization-of-cairo-types/">Serialization of Cairo types</a>
+     href="../../architecture-and-concepts/smart-contracts/serialization-of-cairo-types/">Serialization of Cairo types</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/system-calls-cairo1/">System calls</a>
+     href="../../architecture-and-concepts/smart-contracts/system-calls-cairo1/">System calls</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/execution-info/">Execution information for the current block</a>
+     href="../../architecture-and-concepts/smart-contracts/execution-info/">Execution information for the current block</a>
   </li>
 </ul>
   </li>
@@ -423,17 +425,17 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/cryptography/p-value/">The STARK field</a>
+     href="../../architecture-and-concepts/cryptography/p-value/">The STARK field</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/cryptography/stark-curve/">The STARK curve</a>
+     href="../../architecture-and-concepts/cryptography/stark-curve/">The STARK curve</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/cryptography/hash-functions/">Hash functions</a>
+     href="../../architecture-and-concepts/cryptography/hash-functions/">Hash functions</a>
   </li>
 </ul>
   </li>
@@ -442,7 +444,7 @@
   <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/economics-of-starknet/">The Economics of Starknet</a>
+     href="../../architecture-and-concepts/economics-of-starknet/">The Economics of Starknet</a>
   </li>
 </ul>
   </li>
@@ -455,12 +457,12 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="tools/starknet-book/">The Starknet Book</a>
+     href="../../tools/starknet-book/">The Starknet Book</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="tools/devtools/">Developer tools</a>
+     href="../../tools/devtools/">Developer tools</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
@@ -469,12 +471,12 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="cli/starkli/">Legacy Starknet CLI reference</a>
+     href="../../cli/starkli/">Legacy Starknet CLI reference</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="cli/starknet-compiler-options/">Legacy compiler CLI reference</a>
+     href="../../cli/starknet-compiler-options/">Legacy compiler CLI reference</a>
   </li>
 </ul>
   </li>
@@ -485,29 +487,29 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="tools/api-services/">Full nodes and API services</a>
+     href="../../tools/api-services/">Full nodes and API services</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starknet-versions/juno-versions/">Juno release notes</a>
+     href="../../starknet-versions/juno-versions/">Juno release notes</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starknet-versions/pathfinder-versions/">Pathfinder release notes</a>
+     href="../../starknet-versions/pathfinder-versions/">Pathfinder release notes</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="tools/ref-block-explorers/">Block explorers</a>
+     href="../../tools/ref-block-explorers/">Block explorers</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="tools/audit/">Audit providers</a>
+     href="../../tools/audit/">Audit providers</a>
   </li>
 </ul>
   </li>
@@ -518,12 +520,12 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="starkgate/overview/">Overview</a>
+     href="../../starkgate/overview/">Overview</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="starkgate/architecture/">StarkGate architecture</a>
+     href="../../starkgate/architecture/">StarkGate architecture</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
@@ -532,44 +534,44 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starkgate/depositing/">Depositing funds</a>
+     href="../../starkgate/depositing/">Depositing funds</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starkgate/withdrawing/">Withdrawing funds</a>
+     href="../../starkgate/withdrawing/">Withdrawing funds</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starkgate/automated-actions-with-bridging/">Performing a Smart Deposit</a>
+     href="../../starkgate/automated-actions-with-bridging/">Performing a Smart Deposit</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starkgate/adding-a-token/">Adding a token</a>
+     href="../../starkgate/adding-a-token/">Adding a token</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starkgate/cancelling-a-deposit/">Cancelling a deposit</a>
+     href="../../starkgate/cancelling-a-deposit/">Cancelling a deposit</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starkgate/estimating-fees/">Estimating StarkGate fees</a>
+     href="../../starkgate/estimating-fees/">Estimating StarkGate fees</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="tools/dai-token-migration/">Migrating DAI v0 to DAI</a>
+     href="../../tools/dai-token-migration/">Migrating DAI v0 to DAI</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="starkgate/function-reference/">StarkGate function and event reference</a>
+     href="../../starkgate/function-reference/">StarkGate function and event reference</a>
   </li>
 </ul>
   </li>
@@ -580,19 +582,19 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="tools/important-addresses/">Starknet contracts and sequencer addresses</a>
+     href="../../tools/important-addresses/">Starknet contracts and sequencer addresses</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="tools/bridged-tokens/">Bridged tokens</a>
+     href="../../tools/bridged-tokens/">Bridged tokens</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="tools/limits-and-triggers/">Current limits</a>
+     href="../../tools/limits-and-triggers/">Current limits</a>
   </li>
 </ul>
   </li>
@@ -601,7 +603,7 @@
   <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="glossary/">Glossary</a>
+     href="../../glossary/">Glossary</a>
   </li>
 </ul>
   </li>
@@ -628,7 +630,7 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Overview</h1>
+<h1 class="page">Declare, deploy, and interact with a smart contract using Katana and Starkli</h1>
 <style>
   .page-meta-container {
     position: relative;
@@ -731,7 +733,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', async function() {
     // Extract repo and path information from editUrl
-    const editUrl = 'https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/ROOT/pages/index.adoc';
+    const editUrl = 'https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/quick-start/pages/katana-devnet.adoc';
     const urlParts = editUrl.split('/');
     const repoOwner = urlParts[3];
     const repoName = urlParts[4];
@@ -821,279 +823,277 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Starknet is a permissionless Validity-Rollup, also known as a zero-knowledge rollup (ZK rollup) for Ethereum. As a Layer 2 (L2) blockchain, Starknet enables any dApp to achieve massive computation scale without compromising on Ethereum’s composability
-and security.</p>
-</div>
-<div class="paragraph">
-<p>Starknet aims to achieve secure, low-cost transactions and high performance by using the STARK cryptographic proof system. Starknet contracts and the Starknet OS are written in <a href="https://github.com/starkware-libs/cairo">Cairo</a>, a custom-built and
-specialized programming language.</p>
+<p>This tutorial guides you through deploying a Cairo smart contract onto a local Katana devnet.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="explore_starknet"><a class="anchor" href="#explore_starknet"></a>Explore Starknet</h2>
-<div class="sectionbody">
-<div class="home-cta-container">
-  <a href="https://docs.starknet.io/documentation/quick_start/environment_setup/" class="home-cta home-cta-first" id="cta1">
-    <div class="image-container">
-      <img src="_images/developers.svg" style="filter: none; border-radius: 0px;" class="cta-image" id="img_1">
-    </div>
-    <h2>Quick start</h2>
-    <p class="chakra-card__body css-jintet" id="text1">Set up your environment and get started with Starknet.</p>
-    <p class="chakra-card__body css-jintet" id="text2"><b>Explore ></b></p>
-  </a>
-
-  <a href="https://docs.starknet.io/documentation/architecture_and_concepts/Network_Architecture/header/" class="home-cta" id="cta2">
-    <div class="image-container">
-      <img src="_images/how_SN_works.svg" style="filter: none; border-radius: 0px;" class="cta-image" id="img_2">
-    </div>
-    <h2>Architecture</h2>
-    <p class="chakra-card__body css-jintet" id="text3">Learn about Starknet's architecture including contracts and accounts.</p>
-    <p class="chakra-card__body css-jintet" id="text4"><b>Explore ></b></p>
-  </a>
-
-  <a href="https://docs.starknet.io/documentation/starknet_versions/version_notes/" class="home-cta" id="cta3">
-    <div class="image-container">
-      <img src="_images/roadmap.svg" style="filter: none; border-radius: 0px;" class="cta-image" id="img_3">
-    </div>
-    <h2>Releases</h2>
-    <p class="chakra-card__body css-jintet" id="text5">Learn more about the current version of Starknet.</p>
-    <p class="chakra-card__body css-jintet" id="text6"><b>Explore ></b></p>
-  </a>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="developer_tools_and_resources"><a class="anchor" href="#developer_tools_and_resources"></a>Developer tools and resources</h2>
-<div class="sectionbody">
-<div class="no-background no-border">
-  <div class="column-container">
-    <div class="column">
-      <p><a href="https://book.starknet.io/">The Starknet Book</a></p>
-      <p><a href="https://docs.cairo-lang.org/">The Cairo docs</a></p>
-      <p><a href="https://docs.starknet.io/documentation/tools/devtools/">Starknet development tools</a></p>
-      <p><a href="https://docs.starknet.io/documentation/tools/api-services/">Full nodes and API services</a></p>
-    </div>
-    <div class="column">
-      <p><a href="https://docs.starknet.io/documentation/tools/limits_and_triggers/">Limits and triggers</a></p>
-      <p><a href="https://docs.starknet.io/documentation/cli/starkli/">Cairo 0 tools</a></p>
-      <p><a href="https://docs.starknet.io/documentation/tools/ref_block_explorers/">Block explorers</a></p>
-      <p><a href="https://docs.starknet.io/documentation/tools/audit/">Audit providers</a></p>
-    </div>
-  </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="contribute_to_the_starknet_docs"><a class="anchor" href="#contribute_to_the_starknet_docs"></a>Contribute to the Starknet docs</h2>
+<h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Want to contribute to Starknet documentation? Get started here:</p>
+<p>The following tools are installed:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>See the <a href="https://github.com/starknet-io/starknet-docs/blob/dev/README.adoc#different_ways_to_contribute">different ways to contribute</a>.</p>
+<p>Starkli</p>
 </li>
 <li>
-<p>Review these <a href="https://github.com/starknet-io/starknet-docs/blob/dev/contributing_to_docs/doc_guidelines.adoc">basic writing guidelines</a> to help you write better and be a more valuable contributor.</p>
+<p>Scarb</p>
 </li>
 <li>
-<p>Use the <a href="https://github.com/starknet-io/starknet-docs/blob/dev/contributing_to_docs/starknet_docs_style_guide.adoc">Starknet documentation supplementary style guide</a> to help you write with the Starknet voice.</p>
+<p>Katana</p>
 </li>
 </ul>
 </div>
-<html>
-<head>
-<style>
-*::before, ::after {
-  border-color: var(--chakra-colors-gray-200);
+</div>
+</div>
+<div class="sect1">
+<h2 id="basics_of_katana_and_starkli"><a class="anchor" href="#basics_of_katana_and_starkli"></a>Basics of Katana and Starkli</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="katana_sequencer"><a class="anchor" href="#katana_sequencer"></a>Katana sequencer</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">katana --disable-fee</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>After starting Katana, a list of accounts is automatically generated and deployed.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="starkli_pre_configured_accounts_and_configuration"><a class="anchor" href="#starkli_pre_configured_accounts_and_configuration"></a>Starkli pre-configured accounts and configuration</h3>
+<div class="paragraph">
+<p>Starkli supports several pre-configured accounts for Katana. These account are reserved for local development.
+For example the address of the <code>katana-0</code> pre-configured account is <code>0x6162896d1d7ab204c7ccac6dd5f8e9e7c25ecd5ae4fcb4ad32e57786bb46e03</code>.</p>
+</div>
+<div class="paragraph">
+<p>For the full list of account addresses, see the constant <a href="https://github.com/xJonathanLEI/starkli/blob/master/src/account.rs#L96"><code>BUILTIN_ACCOUNT</code> in <code>accounts.rs</code></a> in the Starkli GitHub repo.</p>
+</div>
+<div class="paragraph">
+<p>We will need this <code>katana-0</code> pre-configured account later when we define our <code>STARKNET_ACCOUNT</code>.
+For more details about accounts, please refer to the <a href="https://book.starkli.rs/accounts">accounts</a> section on the starkli book.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contract_deployment_and_interaction"><a class="anchor" href="#contract_deployment_and_interaction"></a>Contract deployment and interaction</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="create_a_new_project"><a class="anchor" href="#create_a_new_project"></a>Create a new project</h3>
+<div class="paragraph">
+<p>Create a new project using the <code>scarb</code> command. Let&#8217;s name it <code>simple_storage</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">scarb new simple_storage</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Add contract dependencies to scarb.toml file.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-toml hljs" data-lang="toml">[dependencies]
+starknet = "2.5.4"
+
+[[target.starknet-contract]]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Copy the simple storage contract to lib.cairo file.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">#[starknet::interface]
+trait ISimpleStorage&lt;TContractState&gt; {
+    fn set(ref self: TContractState, x: u128);
+    fn get(self: @TContractState) -&gt; u128;
 }
 
-:where(*, *::before, *::after) {
-  border-width: 0;
-  border-style: solid;
-  box-sizing: border-box;
-  word-wrap: break-word;
-}
+#[starknet::contract]
+mod SimpleStorage {
+    use starknet::get_caller_address;
+    use starknet::ContractAddress;
 
-@media (max-width: 768px) {
-  .home-cta-container {
-    flex-direction: column; /* Switch back to a column layout for mobile */
-  }
-
-  .home-cta-container .home-cta {
-    margin: 8px 8px 0 8px; /* Reset margin for mobile */
-    width: 100%; /* Make each box take up the full width of the screen */
-  }
-}
-
-.home-cta-container {
-  display: flex;
-}
-
-.cta-image-container {
-  background-image: url('_images/developers.svg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 100%;
-  height: 100%;
-}
-
-.image-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center; s
-  align-items: center;
-  height: 8em;
-  margin-bottom: 10px;
-  margin: 8px;
-  border-radius: 20px 20px 0 0;
-  position: relative;
-  background-image: linear-gradient(180.15deg, var(--chakra-colors-chakra-body-text) 0.2%, var(--chakra-colors-chakra-body-bg) 105.43%);
-  overflow: hidden;
-}
-
-.image-container img {
-  z-index: -1;
-}
-
-.cta-image {
-  max-width: 464px;
-  max-height: 100%;
-}
-
-.home-cta {
-  flex: 1;
-  margin: 8px 8px 0 8px;
-  padding: 20px;
-  background-color: var(--chakra-colors-chakra-body-bg);
-  border: 1px solid rgb(226, 232, 240);
-  border-bottom: 1px solid rgb(226, 232, 240);
-  border-radius: 20px;
-  color: var(--chakra-colors-card-link-fg);
-  font-size: 18px;
-  font-weight: var(--chakra-fontWeights-medium);
-  text-decoration: none;
-  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
-  box-sizing: border-box;
-  position: relative;
-  background-image: linear-gradient(180.15deg, var(--chakra-colors-gradient-blue-default-a) 0.2%, var(--chakra-colors-gradient-blue-default-b) 105.43%);
-  overflow: hidden;
-  transition-property: var(--chakra-transition-property-common);
-  transition-duration: var(--chakra-transition-duration-fast);
-  transition-timing-function: var(--chakra-transition-easing-ease-out);
-  cursor: pointer;
-  -webkit-text-decoration: none;
-
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-
-.home-cta-first {
-  margin-left: 0;
-}
-
-.chakra-card__body.css-jintet {
-  font-size: 15px;
-  color: #363636;
-}
-
-.column-container {
-  display: flex;
-}
-
-.column {
-  flex: 1;
-  padding: 10px;
-  margin: 5px;
-  border-radius: 5px;
-}
-
-.home-cta-container .home-cta:hover {
-  text-decoration: none;
-  color: #363636;
-  border-color: #C506E4;
-}
-
-.home-cta a {
-  text-decoration: none;
-  color: #363636;
-}
-</style>
-
-<script>
-
-document.addEventListener('DOMContentLoaded', function() {
-  const themeSwitch = document.querySelector('[data-theme="dark"]');
-  if (!themeSwitch) {
-    console.error('Theme switch element not found');
-    return;
-  }
-
-  const image1 = document.getElementById('img_1');
-  const image2 = document.getElementById('img_2');
-  const image3 = document.getElementById('img_3');
-
-  const text1 = document.getElementById('text1');
-  const text2 = document.getElementById('text2');
-  const text3 = document.getElementById('text3');
-  const text4 = document.getElementById('text4');
-  const text5 = document.getElementById('text5');
-  const text6 = document.getElementById('text6');
-
-  let initialThemeSet = false; // To track if the initial theme has been set
-
-  themeSwitch.addEventListener('click', () => {
-    const currentTheme = themeSwitch.getAttribute('data-theme');
-    // Toggle the theme
-    themeSwitch.setAttribute('data-theme', currentTheme === 'dark' ? 'light' : 'dark');
-    // Toggle the theme
-    toggleTheme(currentTheme);
-  });
-
-  function toggleTheme(currentTheme) {
-    // Handle theme switching and image/text updates
-    if (currentTheme === 'dark' || !initialThemeSet) {
-      image1.src = '_images/developers_dark.svg';
-      image2.src = '_images/how_SN_works_dark.svg';
-      image3.src = '_images/roadmap_dark.svg';
-      text1.style.color = 'white';
-      text2.style.color = 'white';
-      text3.style.color = 'white';
-      text4.style.color = 'white';
-      text5.style.color = 'white';
-      text6.style.color = 'white';
-    } else {
-      image1.src = '_images/developers.svg';
-      image2.src = '_images/how_SN_works.svg';
-      image3.src = '_images/roadmap.svg';
-      text1.style.color = '';
-      text2.style.color = '';
-      text3.style.color = '';
-      text4.style.color = '';
-      text5.style.color = '';
-      text6.style.color = '';
+    #[storage]
+    struct Storage {
+        stored_data: u128
     }
 
-    if (!initialThemeSet) {
-      initialThemeSet = true;
+    #[abi(embed_v0)]
+    impl SimpleStorage of super::ISimpleStorage&lt;ContractState&gt; {
+        fn set(ref self: ContractState, x: u128) {
+            self.stored_data.write(x);
+        }
+        fn get(self: @ContractState) -&gt; u128 {
+            self.stored_data.read()
+        }
     }
-  }
-
-  // Set the initial state based on the themeSwitch value
-  toggleTheme(themeSwitch.getAttribute('data-theme'));
-});
-
-
-</script>
-</head>
-</html>
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="compile_contract_and_add_environment_variables"><a class="anchor" href="#compile_contract_and_add_environment_variables"></a>Compile contract and add environment variables</h3>
+<div class="paragraph">
+<p>Compile your contract using scarb.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">scarb build</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Having compiled the smart contract, it&#8217;s time to declare it with <code>Starkli</code> and <code>Katana</code>.
+For clean environment management, place the following environment variables in a .env file within the <code>src/</code> directory.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">export STARKNET_ACCOUNT=katana-0        #A pre-funded account on the local development network.
+export STARKNET_RPC=http://0.0.0.0:5050 #To specify the network, targeting the local Katana devnet.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then, ensure your project acknowledges the environment variables:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">source .env</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>These settings significantly streamline <code>Starkli</code> command operations, ensuring a smoother and more efficient workflow.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="declare_contract"><a class="anchor" href="#declare_contract"></a>Declare contract</h3>
+<div class="paragraph">
+<p>Make sure Katana is already running in separate terminal. Otherwise launch Katana.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">katana --disable-fee</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To declare your contract, execute:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">starkli declare target/dev/simple_storage_SimpleStorage.contract_class.json</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Upon successful command execution, you&#8217;ll obtain a contract class hash.
+This unique hash serves as the identifier for your contract class within <code>Starknet</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">Sierra compiler version not specified. Attempting to automatically decide version to use...
+Unknown network. Falling back to the default compiler version 2.5.4. Use the --compiler-version flag to choose a different version.
+Declaring Cairo 1 class: 0x07ad2516dd66fb2e274e78d4357837cad689c9fffaa347feb9800b231b37b306
+Compiling Sierra class to CASM with compiler version 2.5.4...
+CASM class hash: 0x016052cc70f7462306aa149bdf0e0df3aecb1876a9b05283d60c493c92aa03f4
+Contract declaration transaction: 0x0555ba421c2aef3113f1a2d3866955b762191280092bb73956147f24a2d66aa6
+Class hash declared: // [!code hl]
+0x07ad2516dd66fb2e274e78d4357837cad689c9fffaa347feb9800b231b37b306 // [!code hl]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deploy_contract"><a class="anchor" href="#deploy_contract"></a>Deploy contract</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">starkli deploy &lt;class_hash_of_the_contract_to_be_deployed&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For this contract we did not specified a <code>constructor</code> function, thus we don&#8217;t need to pass any constructor argument</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">starkli deploy 0x07ad2516dd66fb2e274e78d4357837cad689c9fffaa347feb9800b231b37b306</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>After running, expect an output similar to:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">Deploying class 0x07ad2516dd66fb2e274e78d4357837cad689c9fffaa347feb9800b231b37b306 with salt 0x02c93ad00ce6f894729baeafd1fd0456c5a5c540c1caa053ab5392f27ea8f130...
+The contract will be deployed at address 0x03da69257a94a06a1101c1413d78551e38d91ca180c0fc26004650a427238f4e
+Contract deployment transaction: 0x06817bc837ce4df879fe903ca4700a860ce8165742bd74bdadf379618e89cccd
+Contract deployed:
+0x03da69257a94a06a1101c1413d78551e38d91ca180c0fc26004650a427238f4e</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="call_contract"><a class="anchor" href="#call_contract"></a>Call contract</h3>
+<div class="paragraph">
+<p>The first parameter is the contract address, the second parameter is the function to be called.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">starkli call 0x03da69257a94a06a1101c1413d78551e38d91ca180c0fc26004650a427238f4e get</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>After running, expect an output similar to:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">[
+    "0x0000000000000000000000000000000000000000000000000000000000000000"
+]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It means the value of <code>stored_data</code> is zero.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="invoke_contract"><a class="anchor" href="#invoke_contract"></a>Invoke contract</h3>
+<div class="paragraph">
+<p>The first parameter is the contract address, the second parameter is the function to be invoked, and the third parameter is the function parameter.
+Let&#8217;s set the value of <code>stored_data</code> to 42.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">starkli invoke 0x03da69257a94a06a1101c1413d78551e38d91ca180c0fc26004650a427238f4e set 42</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s retrieve the new vale of <code>stoted_data</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">starkli call 0x03da69257a94a06a1101c1413d78551e38d91ca180c0fc26004650a427238f4e get</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>After running, expect an output similar to:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">[
+    "0x000000000000000000000000000000000000000000000000000000000000002a"
+]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Awesome! You deployed and interacted with a raw Cairo smart contract using Katana and Starkli!
+You can now build more complex smart contracts and interact with them using the same process.</p>
+</div>
+</div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="next"><a href="notational-conventions/">Notational conventions</a></span>
+  <span class="prev"><a href="../deploy-interact-with-a-smart-contract-remix/">Deploying and interacting with a smart contract with Remix</a></span>
+  <span class="next"><a href="../../starknet-versions/version-notes/">Release notes</a></span>
 </nav>
 </article>
   </div>
@@ -1126,13 +1126,13 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </div>
 </footer>
-<script src="./_/js/site.js?new"></script>
-<script async src="./_/js/vendor/highlight.js?new"></script>
-<script async src="./_/js/vendor/tabs-block-behaviour.js?new"></script>
-<script async src="./_/js/vendor/swagger-ui.js?new"></script>
-<script async src="./_/js/vendor/component-versions.js?new"></script>
-<script src="./_/js/vendor/custom.js?new"></script>
-<script async src="./_/js/vendor/tabs.js"></script>
+<script src="../../_/js/site.js?new"></script>
+<script async src="../../_/js/vendor/highlight.js?new"></script>
+<script async src="../../_/js/vendor/tabs-block-behaviour.js?new"></script>
+<script async src="../../_/js/vendor/swagger-ui.js?new"></script>
+<script async src="../../_/js/vendor/component-versions.js?new"></script>
+<script src="../../_/js/vendor/custom.js?new"></script>
+<script async src="../../_/js/vendor/tabs.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script>
 <script

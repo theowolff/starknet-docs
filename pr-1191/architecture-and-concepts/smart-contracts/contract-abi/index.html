@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Overview :: Starknet documentation</title>
-    <link rel="canonical" href="https://docs.starknet.io/">
-    <link rel="next" href="notational-conventions/">
+    <title>Contract ABI :: Starknet documentation</title>
+    <link rel="canonical" href="https://docs.starknet.io/architecture-and-concepts/smart-contracts/contract-abi/">
+    <link rel="prev" href="../contract-storage/">
+    <link rel="next" href="../starknet-events/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -25,15 +26,15 @@
     <meta property="twitter:url" content="https://docs.starknet.io/">
     <meta property="twitter:title" content="Starknet Documentation">
     <meta property="twitter:description" content="Reference documentation for developers building on Starknet.">
-    <meta property="twitter:image" content="https://www.starknet.io/starknet-docs-card.png">  <link rel="stylesheet" href="./_/css/vendor/tabs.css">
-  <link id="theme" rel="stylesheet" title="Default" href="./_/css/site.css?new">
-  <link rel="stylesheet" title="Dark" href="./_/css/dark-site.css?new">
-  <link rel="stylesheet" href="./_/css/vendor/tabs.css">
-  <link rel="stylesheet" href="./_/css/home.css">
+    <meta property="twitter:image" content="https://www.starknet.io/starknet-docs-card.png">  <link rel="stylesheet" href="../../../_/css/vendor/tabs.css">
+  <link id="theme" rel="stylesheet" title="Default" href="../../../_/css/site.css?new">
+  <link rel="stylesheet" title="Dark" href="../../../_/css/dark-site.css?new">
+  <link rel="stylesheet" href="../../../_/css/vendor/tabs.css">
+  <link rel="stylesheet" href="../../../_/css/home.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WY42TERK5P"></script>
     <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','G-WY42TERK5P')</script>
-    <script>var uiRootPath = './_'</script>
-    <script src="./_/js/vendor/medium-zoom.js?new"></script>
+    <script>var uiRootPath = '../../../_'</script>
+    <script src="../../../_/js/vendor/medium-zoom.js?new"></script>
     <script type="text/javascript" id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="e4db29b5-cd94-4bcf-87e4-04f4ca564240" data-blockingmode="manual"></script>
     <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
@@ -47,27 +48,27 @@
         a.appendChild(r);
         })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
-<link rel="icon" href="./_/img/favicon/favicon.ico" type="image/x-icon">
+<link rel="icon" href="../../../_/img/favicon/favicon.ico" type="image/x-icon">
 
 <!-- For all browsers -->
-<link rel="icon" type="image/png" sizes="32x32" href="./_/img/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="./_/img/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../_/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../_/img/favicon-16x16.png">
 
 <!-- For Google and Chrome -->
-<link rel="icon" type="image/png" sizes="192x192" href="./_/img/favicon/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../../../_/img/favicon/android-chrome-192x192.png">
 
 <!-- For iPad -->
-<link rel="apple-touch-icon" type="image/png" sizes="167x167" href="./_/img/favicon/apple-touch-icon.png">
+<link rel="apple-touch-icon" type="image/png" sizes="167x167" href="../../../_/img/favicon/apple-touch-icon.png">
 <!-- For iPhone -->
-<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="./_/img/favicon/apple-touch-icon.png">  </head>
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../../../_/img/favicon/apple-touch-icon.png">  </head>
   <body class="article">
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
       <div class="top-logo">
-        <a href="." class="starknet-logo"></a>
+        <a href="../../.." class="starknet-logo"></a>
         <div class="vertical-divider desktop-only"></div>
-        <a href="." class="docs-logo desktop-only">Docs</a>
+        <a href="../../.." class="docs-logo desktop-only">Docs</a>
       </div>
       <!--<a class="navbar-item" href="https://docs.starknet.io">Starknet documentation</a>-->
       <div id="autocomplete" class="autocomplete-root"></div>
@@ -102,16 +103,18 @@
   </div>
   <span></span>
   <span></span>
-  <a href="./" class="home-link is-current mask-svg-center"></a>
+  <a href="../../../" class="home-link mask-svg-center"></a>
   <div id="mobile-autocomplete" class="mobile-only"></div>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="./">Starknet</a></li>
-    <li><a href="./">Overview</a></li>
+    <li><a href="../../../">Starknet</a></li>
+    <li>Architecture</li>
+    <li>Contracts</li>
+    <li><a href="./">Contract ABI</a></li>
   </ul>
 </nav>
   <div class="edit-this-page">
-    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/ROOT/pages/index.adoc"><img class="pencil">Edit this Page</a>
+    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/architecture-and-concepts/pages/smart-contracts/contract-abi.adoc"><img class="pencil">Edit this Page</a>
   </div>
 </div>
 <div class="body">
@@ -120,19 +123,19 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="./">Starknet</a></h3>
+    <h3 class="title"><a href="../../../">Starknet</a></h3>
 <ul class="nav-list">
   <li class="nav-item parent" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="./">Overview</a>
+     href="../../../">Overview</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="notational-conventions/">Notational conventions</a>
+     href="../../../notational-conventions/">Notational conventions</a>
   </li>
 </ul>
   </li>
@@ -147,23 +150,23 @@
         <span>
     <a 
        class="nav-link nav-link-with-toggle"
-     href="quick-start/environment-setup/">Setting up your environment</a>
+     href="../../../quick-start/environment-setup/">Setting up your environment</a>
         </span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="quick-start/environment-setup/#installing_starkli">Installing Starkli</a>
+     href="../../../quick-start/environment-setup/#installing_starkli">Installing Starkli</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="quick-start/environment-setup/#setting_environment_variables_for_starkli">Environment variables</a>
+     href="../../../quick-start/environment-setup/#setting_environment_variables_for_starkli">Environment variables</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="quick-start/environment-setup/#installing_scarb">Installing Scarb</a>
+     href="../../../quick-start/environment-setup/#installing_scarb">Installing Scarb</a>
   </li>
 </ul>
   </li>
@@ -172,45 +175,45 @@
         <span>
     <a 
        class="nav-link nav-link-with-toggle"
-     href="quick-start/set-up-an-account/">Setting up an account</a>
+     href="../../../quick-start/set-up-an-account/">Setting up an account</a>
         </span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="quick-start/set-up-an-account/#creating_an_account">Creating an account</a>
+     href="../../../quick-start/set-up-an-account/#creating_an_account">Creating an account</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="quick-start/set-up-an-account/#deploying_an_account">Deploying an account</a>
+     href="../../../quick-start/set-up-an-account/#deploying_an_account">Deploying an account</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="quick-start/declare-a-smart-contract/">Declaring a smart contract</a>
+     href="../../../quick-start/declare-a-smart-contract/">Declaring a smart contract</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="quick-start/deploy-a-smart-contract/">Deploying a smart contract</a>
+     href="../../../quick-start/deploy-a-smart-contract/">Deploying a smart contract</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="quick-start/interact-with-a-smart-contract/">Interacting with a smart contract</a>
+     href="../../../quick-start/interact-with-a-smart-contract/">Interacting with a smart contract</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="quick-start/deploy-interact-with-a-smart-contract-remix/">Deploying and interacting with a smart contract with Remix</a>
+     href="../../../quick-start/deploy-interact-with-a-smart-contract-remix/">Deploying and interacting with a smart contract with Remix</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="quick-start/katana-devnet/">Tutorial: Declare, deploy, and interact with a smart contract using Katana</a>
+     href="../../../quick-start/katana-devnet/">Tutorial: Declare, deploy, and interact with a smart contract using Katana</a>
   </li>
 </ul>
   </li>
@@ -225,12 +228,12 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="starknet-versions/version-notes/">Release notes</a>
+     href="../../../starknet-versions/version-notes/">Release notes</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="starknet-versions/deprecated/">Deprecated, unsupported, and removed features</a>
+     href="../../../starknet-versions/deprecated/">Deprecated, unsupported, and removed features</a>
   </li>
 </ul>
   </li>
@@ -245,42 +248,42 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/starknet-architecture-overview/">Overview</a>
+     href="../../network-architecture/starknet-architecture-overview/">Overview</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/provers-overview/">Provers</a>
+     href="../../provers-overview/">Provers</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/solidity-verifier/">Solidity verifier</a>
+     href="../../solidity-verifier/">Solidity verifier</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/nodes/">Nodes</a>
+     href="../../nodes/">Nodes</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/block-structure/">Block structure</a>
+     href="../../network-architecture/block-structure/">Block structure</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/transaction-life-cycle/">Transaction lifecycle</a>
+     href="../../network-architecture/transaction-life-cycle/">Transaction lifecycle</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/transactions/">Transaction types</a>
+     href="../../network-architecture/transactions/">Transaction types</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/fee-mechanism/">Gas and transaction fees</a>
+     href="../../network-architecture/fee-mechanism/">Gas and transaction fees</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
@@ -289,12 +292,12 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/starknet-state/">Starknet state</a>
+     href="../../network-architecture/starknet-state/">Starknet state</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/data-availability/">Data availability</a>
+     href="../../network-architecture/data-availability/">Data availability</a>
   </li>
 </ul>
   </li>
@@ -305,12 +308,12 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/messaging-mechanism/">L1-L2 messaging mechanism</a>
+     href="../../network-architecture/messaging-mechanism/">L1-L2 messaging mechanism</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/messaging-reference/">Messaging reference</a>
+     href="../../network-architecture/messaging-reference/">Messaging reference</a>
   </li>
 </ul>
   </li>
@@ -321,32 +324,32 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/accounts/introduction/">What is an account?</a>
+     href="../../accounts/introduction/">What is an account?</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/accounts/approach/">Starknet&#8217;s account interface</a>
+     href="../../accounts/approach/">Starknet&#8217;s account interface</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/accounts/account-functions/">Account interface function reference</a>
+     href="../../accounts/account-functions/">Account interface function reference</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/accounts/deploying-new-accounts/">Deploying new accounts</a>
+     href="../../accounts/deploying-new-accounts/">Deploying new accounts</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/accounts/universal-deployer/">Universal Deployer Contract</a>
+     href="../../accounts/universal-deployer/">Universal Deployer Contract</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/accounts/simplified-transaction-flow/">Simplified transaction flow</a>
+     href="../../accounts/simplified-transaction-flow/">Simplified transaction flow</a>
   </li>
 </ul>
   </li>
@@ -357,62 +360,62 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/contract-classes/">Contract classes and instances</a>
+     href="../contract-classes/">Contract classes and instances</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/class-hash/">Class hash</a>
+     href="../class-hash/">Class hash</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/contract-address/">Contract address</a>
+     href="../contract-address/">Contract address</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/contract-storage/">Contract storage</a>
+     href="../contract-storage/">Contract storage</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a 
+       class="nav-link"
+     href="./">Contract ABI</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/contract-abi/">Contract ABI</a>
+     href="../starknet-events/">Events</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/starknet-events/">Events</a>
+     href="../contract-syntax/">Migrating a contract from Cairo v1 to Cairo v2</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/contract-syntax/">Migrating a contract from Cairo v1 to Cairo v2</a>
+     href="../cairo-and-sierra/">Cairo and Sierra</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/cairo-and-sierra/">Cairo and Sierra</a>
+     href="../cairo-builtins/">Cairo builtins</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/cairo-builtins/">Cairo builtins</a>
+     href="../serialization-of-cairo-types/">Serialization of Cairo types</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/serialization-of-cairo-types/">Serialization of Cairo types</a>
+     href="../system-calls-cairo1/">System calls</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/system-calls-cairo1/">System calls</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="architecture-and-concepts/smart-contracts/execution-info/">Execution information for the current block</a>
+     href="../execution-info/">Execution information for the current block</a>
   </li>
 </ul>
   </li>
@@ -423,17 +426,17 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/cryptography/p-value/">The STARK field</a>
+     href="../../cryptography/p-value/">The STARK field</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/cryptography/stark-curve/">The STARK curve</a>
+     href="../../cryptography/stark-curve/">The STARK curve</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/cryptography/hash-functions/">Hash functions</a>
+     href="../../cryptography/hash-functions/">Hash functions</a>
   </li>
 </ul>
   </li>
@@ -442,7 +445,7 @@
   <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/economics-of-starknet/">The Economics of Starknet</a>
+     href="../../economics-of-starknet/">The Economics of Starknet</a>
   </li>
 </ul>
   </li>
@@ -455,12 +458,12 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="tools/starknet-book/">The Starknet Book</a>
+     href="../../../tools/starknet-book/">The Starknet Book</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="tools/devtools/">Developer tools</a>
+     href="../../../tools/devtools/">Developer tools</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
@@ -469,12 +472,12 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="cli/starkli/">Legacy Starknet CLI reference</a>
+     href="../../../cli/starkli/">Legacy Starknet CLI reference</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="cli/starknet-compiler-options/">Legacy compiler CLI reference</a>
+     href="../../../cli/starknet-compiler-options/">Legacy compiler CLI reference</a>
   </li>
 </ul>
   </li>
@@ -485,29 +488,29 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="tools/api-services/">Full nodes and API services</a>
+     href="../../../tools/api-services/">Full nodes and API services</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starknet-versions/juno-versions/">Juno release notes</a>
+     href="../../../starknet-versions/juno-versions/">Juno release notes</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starknet-versions/pathfinder-versions/">Pathfinder release notes</a>
+     href="../../../starknet-versions/pathfinder-versions/">Pathfinder release notes</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="tools/ref-block-explorers/">Block explorers</a>
+     href="../../../tools/ref-block-explorers/">Block explorers</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="tools/audit/">Audit providers</a>
+     href="../../../tools/audit/">Audit providers</a>
   </li>
 </ul>
   </li>
@@ -518,12 +521,12 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="starkgate/overview/">Overview</a>
+     href="../../../starkgate/overview/">Overview</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="starkgate/architecture/">StarkGate architecture</a>
+     href="../../../starkgate/architecture/">StarkGate architecture</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
@@ -532,44 +535,44 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starkgate/depositing/">Depositing funds</a>
+     href="../../../starkgate/depositing/">Depositing funds</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starkgate/withdrawing/">Withdrawing funds</a>
+     href="../../../starkgate/withdrawing/">Withdrawing funds</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starkgate/automated-actions-with-bridging/">Performing a Smart Deposit</a>
+     href="../../../starkgate/automated-actions-with-bridging/">Performing a Smart Deposit</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starkgate/adding-a-token/">Adding a token</a>
+     href="../../../starkgate/adding-a-token/">Adding a token</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starkgate/cancelling-a-deposit/">Cancelling a deposit</a>
+     href="../../../starkgate/cancelling-a-deposit/">Cancelling a deposit</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starkgate/estimating-fees/">Estimating StarkGate fees</a>
+     href="../../../starkgate/estimating-fees/">Estimating StarkGate fees</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="tools/dai-token-migration/">Migrating DAI v0 to DAI</a>
+     href="../../../tools/dai-token-migration/">Migrating DAI v0 to DAI</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="starkgate/function-reference/">StarkGate function and event reference</a>
+     href="../../../starkgate/function-reference/">StarkGate function and event reference</a>
   </li>
 </ul>
   </li>
@@ -580,19 +583,19 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="tools/important-addresses/">Starknet contracts and sequencer addresses</a>
+     href="../../../tools/important-addresses/">Starknet contracts and sequencer addresses</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="tools/bridged-tokens/">Bridged tokens</a>
+     href="../../../tools/bridged-tokens/">Bridged tokens</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="tools/limits-and-triggers/">Current limits</a>
+     href="../../../tools/limits-and-triggers/">Current limits</a>
   </li>
 </ul>
   </li>
@@ -601,7 +604,7 @@
   <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="glossary/">Glossary</a>
+     href="../../../glossary/">Glossary</a>
   </li>
 </ul>
   </li>
@@ -628,7 +631,7 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Overview</h1>
+<h1 class="page">Contract ABI</h1>
 <style>
   .page-meta-container {
     position: relative;
@@ -731,7 +734,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', async function() {
     // Extract repo and path information from editUrl
-    const editUrl = 'https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/ROOT/pages/index.adoc';
+    const editUrl = 'https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/architecture-and-concepts/pages/smart-contracts/contract-abi.adoc';
     const urlParts = editUrl.split('/');
     const repoOwner = urlParts[3];
     const repoName = urlParts[4];
@@ -818,282 +821,938 @@
   });
 </script>
 
-<div id="preamble">
+<div class="sect1">
+<h2 id="introduction"><a class="anchor" href="#introduction"></a>Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Starknet is a permissionless Validity-Rollup, also known as a zero-knowledge rollup (ZK rollup) for Ethereum. As a Layer 2 (L2) blockchain, Starknet enables any dApp to achieve massive computation scale without compromising on Ethereum’s composability
-and security.</p>
+<p>A contract ABI is a representation of a Starknet contract interface. It is formatted as JSON and describes the functions, structs and events which are defined in the contract.</p>
 </div>
 <div class="paragraph">
-<p>Starknet aims to achieve secure, low-cost transactions and high performance by using the STARK cryptographic proof system. Starknet contracts and the Starknet OS are written in <a href="https://github.com/starkware-libs/cairo">Cairo</a>, a custom-built and
-specialized programming language.</p>
+<p>You can get the contract&#8217;s ABI by using <code>starknet-compile</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cargo run --bin starknet-compile -- --single-file &lt;/path/to/input.cairo&gt; &lt;/path/to/output.json&gt;</code></pre>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="explore_starknet"><a class="anchor" href="#explore_starknet"></a>Explore Starknet</h2>
-<div class="sectionbody">
-<div class="home-cta-container">
-  <a href="https://docs.starknet.io/documentation/quick_start/environment_setup/" class="home-cta home-cta-first" id="cta1">
-    <div class="image-container">
-      <img src="_images/developers.svg" style="filter: none; border-radius: 0px;" class="cta-image" id="img_1">
-    </div>
-    <h2>Quick start</h2>
-    <p class="chakra-card__body css-jintet" id="text1">Set up your environment and get started with Starknet.</p>
-    <p class="chakra-card__body css-jintet" id="text2"><b>Explore ></b></p>
-  </a>
-
-  <a href="https://docs.starknet.io/documentation/architecture_and_concepts/Network_Architecture/header/" class="home-cta" id="cta2">
-    <div class="image-container">
-      <img src="_images/how_SN_works.svg" style="filter: none; border-radius: 0px;" class="cta-image" id="img_2">
-    </div>
-    <h2>Architecture</h2>
-    <p class="chakra-card__body css-jintet" id="text3">Learn about Starknet's architecture including contracts and accounts.</p>
-    <p class="chakra-card__body css-jintet" id="text4"><b>Explore ></b></p>
-  </a>
-
-  <a href="https://docs.starknet.io/documentation/starknet_versions/version_notes/" class="home-cta" id="cta3">
-    <div class="image-container">
-      <img src="_images/roadmap.svg" style="filter: none; border-radius: 0px;" class="cta-image" id="img_3">
-    </div>
-    <h2>Releases</h2>
-    <p class="chakra-card__body css-jintet" id="text5">Learn more about the current version of Starknet.</p>
-    <p class="chakra-card__body css-jintet" id="text6"><b>Explore ></b></p>
-  </a>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="developer_tools_and_resources"><a class="anchor" href="#developer_tools_and_resources"></a>Developer tools and resources</h2>
-<div class="sectionbody">
-<div class="no-background no-border">
-  <div class="column-container">
-    <div class="column">
-      <p><a href="https://book.starknet.io/">The Starknet Book</a></p>
-      <p><a href="https://docs.cairo-lang.org/">The Cairo docs</a></p>
-      <p><a href="https://docs.starknet.io/documentation/tools/devtools/">Starknet development tools</a></p>
-      <p><a href="https://docs.starknet.io/documentation/tools/api-services/">Full nodes and API services</a></p>
-    </div>
-    <div class="column">
-      <p><a href="https://docs.starknet.io/documentation/tools/limits_and_triggers/">Limits and triggers</a></p>
-      <p><a href="https://docs.starknet.io/documentation/cli/starkli/">Cairo 0 tools</a></p>
-      <p><a href="https://docs.starknet.io/documentation/tools/ref_block_explorers/">Block explorers</a></p>
-      <p><a href="https://docs.starknet.io/documentation/tools/audit/">Audit providers</a></p>
-    </div>
-  </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="contribute_to_the_starknet_docs"><a class="anchor" href="#contribute_to_the_starknet_docs"></a>Contribute to the Starknet docs</h2>
+<h2 id="an_example_contract_abi"><a class="anchor" href="#an_example_contract_abi"></a>An example contract ABI</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Want to contribute to Starknet documentation? Get started here:</p>
+<p>The following is an example contract ABI:</p>
+</div>
+<div id="tabs_1" class="openblock tabs is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="tabs_1_cairo_v2" class="tab">
+<p>Cairo v2</p>
+</li>
+<li id="tabs_1_cairo_v1" class="tab">
+<p>Cairo v1</p>
+</li>
+</ul>
+</div>
+<div id="tabs_1_cairo_v2--panel" class="tabpanel" aria-labelledby="tabs_1_cairo_v2">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">[
+  {
+    "type": "impl",
+    "name": "CounterContract",
+    "interface_name": "new_syntax_test_contract::new_syntax_test_contract::ICounterContract"
+  },
+  {
+    "type": "interface",
+    "name": "new_syntax_test_contract::new_syntax_test_contract::ICounterContract",
+    "items": [
+      {
+        "type": "function",
+        "name": "increase_counter",
+        "inputs": [
+          {
+            "name": "amount",
+            "type": "core::integer::u128"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "decrease_counter",
+        "inputs": [
+          {
+            "name": "amount",
+            "type": "core::integer::u128"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "get_counter",
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "core::integer::u128"
+          }
+        ],
+        "state_mutability": "view"
+      }
+    ]
+  },
+  {
+    "type": "constructor",
+    "name": "constructor",
+    "inputs": [
+      {
+        "name": "initial_counter",
+        "type": "core::integer::u128"
+      },
+      {
+        "name": "other_contract_addr",
+        "type": "core::starknet::contract_address::ContractAddress"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "new_syntax_test_contract::new_syntax_test_contract::counter_contract::CounterIncreased",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "amount",
+        "type": "core::integer::u128",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "new_syntax_test_contract::new_syntax_test_contract::counter_contract::CounterDecreased",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "amount",
+        "type": "core::integer::u128",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "new_syntax_test_contract::new_syntax_test_contract::counter_contract::Event",
+    "kind": "enum",
+    "variants": [
+      {
+        "name": "CounterIncreased",
+        "type": "new_syntax_test_contract::new_syntax_test_contract::counter_contract::CounterIncreased",
+        "kind": "nested"
+      },
+      {
+        "name": "CounterDecreased",
+        "type": "new_syntax_test_contract::new_syntax_test_contract::counter_contract::CounterDecreased",
+        "kind": "nested"
+      }
+    ]
+  }
+]</code></pre>
+</div>
+</div>
+</div>
+<div id="tabs_1_cairo_v1--panel" class="tabpanel" aria-labelledby="tabs_1_cairo_v1">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">[
+  {
+    "type": "function",
+    "name": "constructor",
+    "inputs": [
+      {
+        "name": "name_",
+        "type": "core::felt252"
+      },
+      {
+        "name": "symbol_",
+        "type": "core::felt252"
+      },
+      {
+        "name": "decimals_",
+        "type": "core::integer::u8"
+      },
+      {
+        "name": "initial_supply",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "recipient",
+        "type": "core::starknet::contract_address::ContractAddress"
+      }
+    ],
+    "outputs": [],
+    "state_mutability": "external"
+  },
+  {
+    "type": "function",
+    "name": "get_name",
+    "inputs": [],
+    "outputs": [
+      {
+        "type": "core::felt252"
+      }
+    ],
+    "state_mutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "get_symbol",
+    "inputs": [],
+    "outputs": [
+      {
+        "type": "core::felt252"
+      }
+    ],
+    "state_mutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "get_decimals",
+    "inputs": [],
+    "outputs": [
+      {
+        "type": "core::integer::u8"
+      }
+    ],
+    "state_mutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "get_total_supply",
+    "inputs": [],
+    "outputs": [
+      {
+        "type": "core::integer::u256"
+      }
+    ],
+    "state_mutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "balance_of",
+    "inputs": [
+      {
+        "name": "account",
+        "type": "core::starknet::contract_address::ContractAddress"
+      }
+    ],
+    "outputs": [
+      {
+        "type": "core::integer::u256"
+      }
+    ],
+    "state_mutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "allowance",
+    "inputs": [
+      {
+        "name": "owner",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "spender",
+        "type": "core::starknet::contract_address::ContractAddress"
+      }
+    ],
+    "outputs": [
+      {
+        "type": "core::integer::u256"
+      }
+    ],
+    "state_mutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "transfer",
+    "inputs": [
+      {
+        "name": "recipient",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "amount",
+        "type": "core::integer::u256"
+      }
+    ],
+    "outputs": [],
+    "state_mutability": "external"
+  },
+  {
+    "type": "function",
+    "name": "transfer_from",
+    "inputs": [
+      {
+        "name": "sender",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "recipient",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "amount",
+        "type": "core::integer::u256"
+      }
+    ],
+    "outputs": [],
+    "state_mutability": "external"
+  },
+  {
+    "type": "function",
+    "name": "approve",
+    "inputs": [
+      {
+        "name": "spender",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "amount",
+        "type": "core::integer::u256"
+      }
+    ],
+    "outputs": [],
+    "state_mutability": "external"
+  },
+  {
+    "type": "function",
+    "name": "increase_allowance",
+    "inputs": [
+      {
+        "name": "spender",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "added_value",
+        "type": "core::integer::u256"
+      }
+    ],
+    "outputs": [],
+    "state_mutability": "external"
+  },
+  {
+    "type": "function",
+    "name": "decrease_allowance",
+    "inputs": [
+      {
+        "name": "spender",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "subtracted_value",
+        "type": "core::integer::u256"
+      }
+    ],
+    "outputs": [],
+    "state_mutability": "external"
+  },
+  {
+    "type": "event",
+    "name": "Transfer",
+    "inputs": [
+      {
+        "name": "from",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "to",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "value",
+        "type": "core::integer::u256"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "Approval",
+    "inputs": [
+      {
+        "name": "owner",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "spender",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "value",
+        "type": "core::integer::u256"
+      }
+    ]
+  }
+]</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cairo_v2_3_0_changes"><a class="anchor" href="#cairo_v2_3_0_changes"></a>Cairo v2.3.0 changes</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="nested_events"><a class="anchor" href="#nested_events"></a>Nested events</h3>
+<div class="paragraph">
+<p>With Cairo <code>v2.3.0</code> the limitations on the <code>Event</code> enum have been relaxed, allowing more flexibility on the events that can be emitted from a given contract.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>See the <a href="https://github.com/starknet-io/starknet-docs/blob/dev/README.adoc#different_ways_to_contribute">different ways to contribute</a>.</p>
+<p>It is no longer enforced that the <code>Event</code> enum variants are structs of the same name as the variant, they can now be a struct or an enum of any name.</p>
 </li>
 <li>
-<p>Review these <a href="https://github.com/starknet-io/starknet-docs/blob/dev/contributing_to_docs/doc_guidelines.adoc">basic writing guidelines</a> to help you write better and be a more valuable contributor.</p>
+<p>Enum variants inside event ABI entries (entries in the abi with <code>"type": "event"</code> and <code>"kind": "enum"</code>) now have two possible kinds. Before <code>v2.3.0</code> it was always <code>"kind": "nested"</code>, now <code>"kind: "flat"</code> is also possible.</p>
 </li>
 <li>
-<p>Use the <a href="https://github.com/starknet-io/starknet-docs/blob/dev/contributing_to_docs/starknet_docs_style_guide.adoc">Starknet documentation supplementary style guide</a> to help you write with the Starknet voice.</p>
+<p><code>v2.3.0</code> is backward compatible with version ≥ <code>2.0.0</code> ABI, so the same structure of the ABI is kept, while allowing flexibility.</p>
 </li>
 </ul>
 </div>
-<html>
-<head>
-<style>
-*::before, ::after {
-  border-color: var(--chakra-colors-gray-200);
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Between versions <code>v2.0.0</code> and <code>v2.2.0</code>, to identify all potential serializations of events (what raw <code>keys</code>, <code>data</code> arrays can be emitted given the ABI),
+it was sufficient to iterate over the abi entries with <code>"type": "event"</code> and <code>"kind": "struct"</code>, skipping the encapsulating <code>Event</code> type which has <code>"kind": "enum"</code>.</p>
+</div>
+<div class="paragraph">
+<p>With <code>v2.3.0</code> onwards, doing so may result in losing information.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>To illustrate this, consider the following example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">//high-level code defining the events
+
+#[event]
+#[derive(Drop, starknet::Event)]
+enum Event {
+    ComponentEvent: test_component::Event,
+    TestCounterIncreased: CounterIncreased,
+    TestCounterDecreased: CounterDecreased,
+    TestEnum: MyEnum
 }
 
-:where(*, *::before, *::after) {
-  border-width: 0;
-  border-style: solid;
-  box-sizing: border-box;
-  word-wrap: break-word;
+#[derive(Drop, starknet::Event)]
+struct CounterIncreased {
+    amount: u128
 }
 
-@media (max-width: 768px) {
-  .home-cta-container {
-    flex-direction: column; /* Switch back to a column layout for mobile */
-  }
-
-  .home-cta-container .home-cta {
-    margin: 8px 8px 0 8px; /* Reset margin for mobile */
-    width: 100%; /* Make each box take up the full width of the screen */
-  }
+#[derive(Drop, starknet::Event)]
+struct CounterDecreased {
+    amount: u128
 }
 
-.home-cta-container {
-  display: flex;
+#[derive(Copy, Drop, starknet::Event)]
+enum MyEnum {
+  Var1: MyStruct
 }
 
-.cta-image-container {
-  background-image: url('_images/developers.svg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 100%;
-  height: 100%;
+#[derive(Copy, Drop, Serde, starknet::Event)]
+struct MyStruct {
+	member: u128
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="variant_names_different_from_types"><a class="anchor" href="#variant_names_different_from_types"></a>Variant names different from types</h3>
+<div class="paragraph">
+<p>In <code>v2.3.0</code> enum variant types can now have any name.</p>
+</div>
+<div class="paragraph">
+<p>As an example the <code>TestCounterIncreased</code> variant and the <code>CounterIncreased</code> type, as they appear in the ABI:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "type": "event",
+  "name": "&lt;namespace&gt;::Event",
+  "kind": "enum",
+  "variants": [
+      {
+          "name": "ComponentEvent",
+          "type": "&lt;namespace&gt;::test_component::Event",
+          "kind": "nested"
+      },
+      {
+          "name": "TestCounterIncreased",
+          "type": "&lt;namespace&gt;::CounterIncreased",
+          "kind": "nested"
+      },
+      {
+          "name": "TestCounterDecreased",
+          "type": "&lt;namespace&gt;::CounterDecreased",
+          "kind": "nested"
+      },
+      {
+          "name": "TestEnum",
+          "type": "&lt;namespace&gt;::MyEnum",
+          "kind": "nested"
+      }
+  ]
+},
+{
+	"type": "event",
+	"name": "&lt;namespace&gt;::CounterIncreased",
+	"kind": "struct",
+	"members": [
+		{
+			"name": "amount",
+			"type": "core::integer::u128",
+			"kind": "data"
+		}
+	]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When the contract emits the <code>TestCounterIncreased</code> event, for example by writing <code>self.emit(CounterIncreased { amount }))</code>, the event that is emitted has the following keys and data:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>One key based on the variant name: <code>sn_keccak(TestCounterIncreased)</code>. This information only appears in the <code>&lt;namespace&gt;::Event</code> type entry in the ABI,
+as the name <code>TestCounterIncreased</code> does not appear in the <code>"kind": "struct"</code> ABI entry. This did not matter in previous versions when the variant name and type had to be equal.</p>
+</li>
+<li>
+<p>One data element based on the struct <code>CounterIncreased</code> which is associated with <code>TestCounterIncreased</code> via one of the <code>Event</code> type variants.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enum_variants_inside_event"><a class="anchor" href="#enum_variants_inside_event"></a>Enum variants inside Event</h3>
+<div class="paragraph">
+<p>The introduction of components allows variants of <code>Event</code> to be enums.
+In the following example, we have two such variants: <code>TestEnum</code> (unrelated to components) and <code>ComponentEvent</code>.</p>
+</div>
+<div class="paragraph">
+<p>The serialization to keys and data is the same in both cases, so this example will focus on <code>TestEnum</code>:</p>
+</div>
+<div class="paragraph">
+<p>This example shows the <code>TestEnum</code> variant entry inside Event:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+"name": "TestEnum",
+"type": "&lt;namespace&gt;::MyEnum",
+"kind": "nested"
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This example shows the <code>MyEnum</code> event entry:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+	"type": "event",
+	"name": "&lt;namespace&gt;::MyEnum",
+	"kind": "enum",
+	"variants": [
+		{
+			"name": "Var1",
+			"type": "&lt;namespace&gt;::MyStruct",
+			"kind": "nested"
+		}
+	]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This example shows the <code>MyStruct</code> event entry:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+	"type": "event",
+	"name": "&lt;namespace&gt;::MyStruct",
+	"kind": "struct",
+	"members": [
+		{
+			"name": "member",
+			"type": "core::integer::u128",
+			"kind": "data"
+		}
+	]
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If a <code>TestEnum</code> event is being emitted via <code>self.emit(Event::TestEnum(MyEnum::Var1(MyStruct {member: 5})))</code>, you can implement the trait <code>Into&lt;MyStruct, Event&gt;</code> to avoid having to write it out in full.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>When the event is emitted, the serialization to keys and data happens as follows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Since the <code>TestEnum</code> variant has <code>kind</code> nested, add the first key: <code>sn_keccak(TestEnum)</code>, and the rest of the serialization to keys and data is done recursively via the <code>starknet::event</code> trait implementation of <code>MyEnum</code>.</p>
+</li>
+<li>
+<p>Next, you can handle a <code>"kind": "nested"</code> variant (previously it was <code>TestEnum</code>, now it’s <code>Var1</code>), which means you can add another key depending on the sub-variant: <code>sn_keccak(Var1)</code>, and proceed to serialize according to the <code>starknet::event</code>
+implementation of <code>MyStruct</code>.</p>
+</li>
+<li>
+<p>Finally, proceed to serialize <code>MyStruct</code>, which gives us a single data member.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This results in <code>keys = [sn_keccak(TestEnum), sn_keccak(Var1)]</code> and <code>data=[5]</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Allowing variants that are themselves enums (<code>TestEnum</code> is an enum variant here) means further nesting is possible.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For example, if the high level code is changed to:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">#[event]
+#[derive(Drop, starknet::Event)]
+enum Event {
+    ComponentEvent: test_component::Event,
+    TestCounterIncreased: CounterIncreased,
+    TestCounterDecreased: CounterDecreased,
+    TestEnum: MyEnum
 }
 
-.image-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center; s
-  align-items: center;
-  height: 8em;
-  margin-bottom: 10px;
-  margin: 8px;
-  border-radius: 20px 20px 0 0;
-  position: relative;
-  background-image: linear-gradient(180.15deg, var(--chakra-colors-chakra-body-text) 0.2%, var(--chakra-colors-chakra-body-bg) 105.43%);
-  overflow: hidden;
+#[derive(Copy, Drop, starknet::Event)]
+enum MyEnum {
+    Var1: AnotherEnum
 }
 
-.image-container img {
-  z-index: -1;
+#[derive(Copy, Drop, Serde, starknet::Event)]
+enum AnotherEnum {
+    Var2: MyStruct
 }
 
-.cta-image {
-  max-width: 464px;
-  max-height: 100%;
+#[derive(Copy, Drop, Serde, starknet::Event)]
+struct MyStruct {
+    member: u128,
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>then <code>self.emit(Event::TestEnum(MyEnum::Var1(AnotherEnum::Var2(MyStruct { member: 5 }))))</code>
+(as before, <code>Into</code> implementations can shorten this) will emit an event with <code>keys = [sn_keccak(TestEnum), sn_keccak(Var1), sn_keccak(Var2)]</code> and <code>data=[5]</code>.</p>
+</div>
+<div class="paragraph">
+<p>This will look as follows in the ABI (only the relevant parts are shown):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "type": "event",
+  "name": "&lt;namespace&gt;::Event",
+  "kind": "enum",
+  "variants": [
+    // ignoring all the other variants for brevity
+    {
+      "name": "TestEnum",
+      "type": "&lt;namespace&gt;::MyEnum",
+      "kind": "nested"
+    }
+  ]
+},
+{
+  "type": "event",
+  "name": "&lt;namespace&gt;::MyEnum",
+  "kind": "enum",
+  "variants": [
+    {
+      "name": "Var1",
+      "type": "&lt;namespace&gt;::AnotherEnum",
+      "kind": "nested"
+    }
+  ]
+},
+{
+  "type": "event",
+  "name": "&lt;namespace&gt;::AnotherEnum",
+  "kind": "enum",
+  "variants": [
+    {
+      "name": "Var2",
+      "type": "&lt;namespace&gt;::MyStruct",
+      "kind": "nested"
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As <code>TestEnum</code>, <code>Var1</code> and <code>Var2</code> are of kind <code>nested</code>, a selector should be added to the list of keys, before continuing to recursively serialize.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="flattened_enum_variants"><a class="anchor" href="#flattened_enum_variants"></a>Flattened enum variants</h3>
+<div class="paragraph">
+<p>You might not want to nest enums when serializing the event. For example, if you write an ERC-20 as a component, not a contract, that is pluggable anywhere, you might not want the contract to modify the keys of known events such as <code>Transfer</code>.</p>
+</div>
+<div class="paragraph">
+<p>To avoid nesting, write the following high level code:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">#[event]
+#[derive(Drop, starknet::Event)]
+enum Event {
+	ComponentEvent: test_component::Event,
+	TestCounterIncreased: CounterIncreased,
+	TestCounterDecreased: CounterDecreased,
+	#[flat]
+	TestEnum: MyEnum
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>By writing the above, the <code>TestEnum</code> variant entry in the ABI will change to:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+"name": "TestEnum",
+"type": "&lt;namespace&gt;::MyEnum",
+"kind": "flat"
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This means that <code>self.emit(Event::TestEnum(MyEnum::Var1(MyStruct {member: 5})))</code> will emit an event with <code>keys=[sn_keccak(Var1)]</code> and <code>data=[5]</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cairo_v2_0_0_changes"><a class="anchor" href="#cairo_v2_0_0_changes"></a>Cairo v2.0.0 changes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>With the transition to <code>v2.0.0</code>, the contract ABI underwent some changes.</p>
+</div>
+<div class="paragraph">
+<p>Consider the following high level code that generates the ABI in the following example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">#[starknet::interface]
+trait IOtherContract&lt;TContractState&gt; {
+    fn decrease_allowed(self: @TContractState) -&gt; bool;
 }
 
-.home-cta {
-  flex: 1;
-  margin: 8px 8px 0 8px;
-  padding: 20px;
-  background-color: var(--chakra-colors-chakra-body-bg);
-  border: 1px solid rgb(226, 232, 240);
-  border-bottom: 1px solid rgb(226, 232, 240);
-  border-radius: 20px;
-  color: var(--chakra-colors-card-link-fg);
-  font-size: 18px;
-  font-weight: var(--chakra-fontWeights-medium);
-  text-decoration: none;
-  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
-  box-sizing: border-box;
-  position: relative;
-  background-image: linear-gradient(180.15deg, var(--chakra-colors-gradient-blue-default-a) 0.2%, var(--chakra-colors-gradient-blue-default-b) 105.43%);
-  overflow: hidden;
-  transition-property: var(--chakra-transition-property-common);
-  transition-duration: var(--chakra-transition-duration-fast);
-  transition-timing-function: var(--chakra-transition-easing-ease-out);
-  cursor: pointer;
-  -webkit-text-decoration: none;
-
-  outline: 2px solid transparent;
-  outline-offset: 2px;
+#[starknet::interface]
+trait ICounterContract&lt;TContractState&gt; {
+    fn increase_counter(ref self: TContractState, amount: u128);
+    fn decrease_counter(ref self: TContractState, amount: u128);
+    fn get_counter(self: @TContractState) -&gt; u128;
 }
 
-.home-cta-first {
-  margin-left: 0;
-}
+#[starknet::contract]
+mod counter_contract {
+    use starknet::ContractAddress;
+    use super::{
+        IOtherContractDispatcher, IOtherContractDispatcherTrait, IOtherContractLibraryDispatcher
+    };
 
-.chakra-card__body.css-jintet {
-  font-size: 15px;
-  color: #363636;
-}
-
-.column-container {
-  display: flex;
-}
-
-.column {
-  flex: 1;
-  padding: 10px;
-  margin: 5px;
-  border-radius: 5px;
-}
-
-.home-cta-container .home-cta:hover {
-  text-decoration: none;
-  color: #363636;
-  border-color: #C506E4;
-}
-
-.home-cta a {
-  text-decoration: none;
-  color: #363636;
-}
-</style>
-
-<script>
-
-document.addEventListener('DOMContentLoaded', function() {
-  const themeSwitch = document.querySelector('[data-theme="dark"]');
-  if (!themeSwitch) {
-    console.error('Theme switch element not found');
-    return;
-  }
-
-  const image1 = document.getElementById('img_1');
-  const image2 = document.getElementById('img_2');
-  const image3 = document.getElementById('img_3');
-
-  const text1 = document.getElementById('text1');
-  const text2 = document.getElementById('text2');
-  const text3 = document.getElementById('text3');
-  const text4 = document.getElementById('text4');
-  const text5 = document.getElementById('text5');
-  const text6 = document.getElementById('text6');
-
-  let initialThemeSet = false; // To track if the initial theme has been set
-
-  themeSwitch.addEventListener('click', () => {
-    const currentTheme = themeSwitch.getAttribute('data-theme');
-    // Toggle the theme
-    themeSwitch.setAttribute('data-theme', currentTheme === 'dark' ? 'light' : 'dark');
-    // Toggle the theme
-    toggleTheme(currentTheme);
-  });
-
-  function toggleTheme(currentTheme) {
-    // Handle theme switching and image/text updates
-    if (currentTheme === 'dark' || !initialThemeSet) {
-      image1.src = '_images/developers_dark.svg';
-      image2.src = '_images/how_SN_works_dark.svg';
-      image3.src = '_images/roadmap_dark.svg';
-      text1.style.color = 'white';
-      text2.style.color = 'white';
-      text3.style.color = 'white';
-      text4.style.color = 'white';
-      text5.style.color = 'white';
-      text6.style.color = 'white';
-    } else {
-      image1.src = '_images/developers.svg';
-      image2.src = '_images/how_SN_works.svg';
-      image3.src = '_images/roadmap.svg';
-      text1.style.color = '';
-      text2.style.color = '';
-      text3.style.color = '';
-      text4.style.color = '';
-      text5.style.color = '';
-      text6.style.color = '';
+    #[storage]
+    struct Storage {
+        counter: u128,
+        other_contract: IOtherContractDispatcher
     }
 
-    if (!initialThemeSet) {
-      initialThemeSet = true;
+    #[event]
+    #[derive(Drop, starknet::Event)]
+    enum Event {
+        CounterIncreased: CounterIncreased,
+        CounterDecreased: CounterDecreased
     }
-  }
 
-  // Set the initial state based on the themeSwitch value
-  toggleTheme(themeSwitch.getAttribute('data-theme'));
-});
+    #[derive(Drop, starknet::Event)]
+    struct CounterIncreased {
+        amount: u128
+    }
 
+    #[derive(Drop, starknet::Event)]
+    struct CounterDecreased {
+        amount: u128
+    }
 
-</script>
-</head>
-</html>
+    #[constructor]
+    fn constructor(
+        ref self: ContractState, initial_counter: u128, other_contract_addr: ContractAddress
+    ) {
+        self.counter.write(initial_counter);
+        self
+            .other_contract
+            .write(IOtherContractDispatcher { contract_address: other_contract_addr });
+    }
+
+    #[external(v0)]
+    impl CounterContract of super::ICounterContract&lt;ContractState&gt; {
+        fn get_counter(self: @ContractState) -&gt; u128 {
+            self.counter.read()
+        }
+
+        fn increase_counter(ref self: ContractState, amount: u128) {
+            let current = self.counter.read();
+            self.counter.write(current + amount);
+            self.emit(CounterIncreased { amount });
+        }
+
+        fn decrease_counter(ref self: ContractState, amount: u128) {
+            let allowed = self.other_contract.read().decrease_allowed();
+            if allowed {
+                let current = self.counter.read();
+                self.counter.write(current - amount);
+                self.emit(CounterDecreased { amount });
+            }
+        }
+    }
+}</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="interface_and_impl_abi_entries"><a class="anchor" href="#interface_and_impl_abi_entries"></a>Interface and Impl ABI entries</h3>
+<div class="paragraph">
+<p>Since the <code>CounterContract</code> <code>impl</code> is annotated with the <code>#[external(v0)]</code> attribute, you&#8217;ll find the following <code>impl</code> entry in the ABI:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "type": "impl",
+  "name": "CounterContract",
+  "interface_name": "new_syntax_test_contract::new_syntax_test_contract::ICounterContract"
+}
+----</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This means that every function appearing in the <code>ICounterContract</code> interface
+is a possible entry point of the contract.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Standalone functions in the contract outside an external <code>impl</code> can also be annotated with <code>#[external(v0)]</code> (currently, this is the only way to add L1 handlers). In such cases, a corresponding <code>function</code> (or <code>l1_handler</code>) entry will be found in
+the ABI in the same hierarchy as <code>impls</code> and interfaces.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="events"><a class="anchor" href="#events"></a>Events</h3>
+<div class="paragraph">
+<p>In Cairo v2, a dedicated type for the contract&#8217;s events was introduced. Currently, the contract event type must be an enum named <code>Event</code>, whose variants are structs of the same name as the variant. Types that can be emitted via <code>self.emit(_)</code> must implement the <code>Event</code> <a href="https://github.com/starkware-libs/cairo/blob/7144f2f383961cbca4804a7d056d48973721446c/corelib/src/starknet/event.cairo#L4">trait</a>, which defines how this type should be serialized into two <code>felt252</code> arrays, <code>keys</code> and <code>data</code>.</p>
+</div>
+<div class="paragraph">
+<p>The <code>Event</code> enum variants appear in the ABI under <code>"type" = "event"</code> rather than regular structs.</p>
+</div>
+<div class="paragraph">
+<p>For such entries, each member has an additional <code>kind</code> field that specifies how the serialization into keys and data takes place:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If the kind is <code>key</code>, then this member or variant are serialized into the event&#8217;s keys.</p>
+</li>
+<li>
+<p>If the kind is <code>data</code>, then this member or variant are serialized into the event&#8217;s data.</p>
+</li>
+<li>
+<p>If the kind is <code>nested</code>, then the member or variant are serialized according to the <code>Event</code> attribute, potentially adding to both keys and data.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This feature is not yet supported, so no high level code written in Cairo <code>v2.0.0</code> can generate such an ABI.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="specification"><a class="anchor" href="#specification"></a>Specification</h3>
+<div class="paragraph">
+<p>You can find a <a href="https://github.com/starkware-libs/starknet-specs/blob/master/api/starknet_metadata.json#L20">JSON schema specification</a> of the ABI in the <code>starknet-specs</code> repository.</p>
+</div>
+<div class="paragraph">
+<p>For a UI-friendly version, you can use the <a href="https://playground.open-rpc.org/?schemaUrl=https://raw.githubusercontent.com/starkware-libs/starknet-specs/master/api/starknet_metdata.json">OPEN-RPC playground</a>.</p>
+</div>
+</div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="next"><a href="notational-conventions/">Notational conventions</a></span>
+  <span class="prev"><a href="../contract-storage/">Contract storage</a></span>
+  <span class="next"><a href="../starknet-events/">Events</a></span>
 </nav>
 </article>
   </div>
@@ -1126,13 +1785,13 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </div>
 </footer>
-<script src="./_/js/site.js?new"></script>
-<script async src="./_/js/vendor/highlight.js?new"></script>
-<script async src="./_/js/vendor/tabs-block-behaviour.js?new"></script>
-<script async src="./_/js/vendor/swagger-ui.js?new"></script>
-<script async src="./_/js/vendor/component-versions.js?new"></script>
-<script src="./_/js/vendor/custom.js?new"></script>
-<script async src="./_/js/vendor/tabs.js"></script>
+<script src="../../../_/js/site.js?new"></script>
+<script async src="../../../_/js/vendor/highlight.js?new"></script>
+<script async src="../../../_/js/vendor/tabs-block-behaviour.js?new"></script>
+<script async src="../../../_/js/vendor/swagger-ui.js?new"></script>
+<script async src="../../../_/js/vendor/component-versions.js?new"></script>
+<script src="../../../_/js/vendor/custom.js?new"></script>
+<script async src="../../../_/js/vendor/tabs.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script>
 <script

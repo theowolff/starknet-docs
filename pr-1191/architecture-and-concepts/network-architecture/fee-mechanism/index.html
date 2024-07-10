@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Overview :: Starknet documentation</title>
-    <link rel="canonical" href="https://docs.starknet.io/">
-    <link rel="next" href="notational-conventions/">
+    <title>Gas and transaction fees :: Starknet documentation</title>
+    <link rel="canonical" href="https://docs.starknet.io/architecture-and-concepts/network-architecture/fee-mechanism/">
+    <link rel="prev" href="../transactions/">
+    <link rel="next" href="../starknet-state/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -25,15 +26,15 @@
     <meta property="twitter:url" content="https://docs.starknet.io/">
     <meta property="twitter:title" content="Starknet Documentation">
     <meta property="twitter:description" content="Reference documentation for developers building on Starknet.">
-    <meta property="twitter:image" content="https://www.starknet.io/starknet-docs-card.png">  <link rel="stylesheet" href="./_/css/vendor/tabs.css">
-  <link id="theme" rel="stylesheet" title="Default" href="./_/css/site.css?new">
-  <link rel="stylesheet" title="Dark" href="./_/css/dark-site.css?new">
-  <link rel="stylesheet" href="./_/css/vendor/tabs.css">
-  <link rel="stylesheet" href="./_/css/home.css">
+    <meta property="twitter:image" content="https://www.starknet.io/starknet-docs-card.png">  <link rel="stylesheet" href="../../../_/css/vendor/tabs.css">
+  <link id="theme" rel="stylesheet" title="Default" href="../../../_/css/site.css?new">
+  <link rel="stylesheet" title="Dark" href="../../../_/css/dark-site.css?new">
+  <link rel="stylesheet" href="../../../_/css/vendor/tabs.css">
+  <link rel="stylesheet" href="../../../_/css/home.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WY42TERK5P"></script>
     <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','G-WY42TERK5P')</script>
-    <script>var uiRootPath = './_'</script>
-    <script src="./_/js/vendor/medium-zoom.js?new"></script>
+    <script>var uiRootPath = '../../../_'</script>
+    <script src="../../../_/js/vendor/medium-zoom.js?new"></script>
     <script type="text/javascript" id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="e4db29b5-cd94-4bcf-87e4-04f4ca564240" data-blockingmode="manual"></script>
     <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
@@ -47,27 +48,27 @@
         a.appendChild(r);
         })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
-<link rel="icon" href="./_/img/favicon/favicon.ico" type="image/x-icon">
+<link rel="icon" href="../../../_/img/favicon/favicon.ico" type="image/x-icon">
 
 <!-- For all browsers -->
-<link rel="icon" type="image/png" sizes="32x32" href="./_/img/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="./_/img/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../_/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../_/img/favicon-16x16.png">
 
 <!-- For Google and Chrome -->
-<link rel="icon" type="image/png" sizes="192x192" href="./_/img/favicon/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../../../_/img/favicon/android-chrome-192x192.png">
 
 <!-- For iPad -->
-<link rel="apple-touch-icon" type="image/png" sizes="167x167" href="./_/img/favicon/apple-touch-icon.png">
+<link rel="apple-touch-icon" type="image/png" sizes="167x167" href="../../../_/img/favicon/apple-touch-icon.png">
 <!-- For iPhone -->
-<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="./_/img/favicon/apple-touch-icon.png">  </head>
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../../../_/img/favicon/apple-touch-icon.png">  </head>
   <body class="article">
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
       <div class="top-logo">
-        <a href="." class="starknet-logo"></a>
+        <a href="../../.." class="starknet-logo"></a>
         <div class="vertical-divider desktop-only"></div>
-        <a href="." class="docs-logo desktop-only">Docs</a>
+        <a href="../../.." class="docs-logo desktop-only">Docs</a>
       </div>
       <!--<a class="navbar-item" href="https://docs.starknet.io">Starknet documentation</a>-->
       <div id="autocomplete" class="autocomplete-root"></div>
@@ -102,16 +103,17 @@
   </div>
   <span></span>
   <span></span>
-  <a href="./" class="home-link is-current mask-svg-center"></a>
+  <a href="../../../" class="home-link mask-svg-center"></a>
   <div id="mobile-autocomplete" class="mobile-only"></div>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="./">Starknet</a></li>
-    <li><a href="./">Overview</a></li>
+    <li><a href="../../../">Starknet</a></li>
+    <li>Architecture</li>
+    <li><a href="./">Gas and transaction fees</a></li>
   </ul>
 </nav>
   <div class="edit-this-page">
-    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/ROOT/pages/index.adoc"><img class="pencil">Edit this Page</a>
+    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/architecture-and-concepts/pages/network-architecture/fee-mechanism.adoc"><img class="pencil">Edit this Page</a>
   </div>
 </div>
 <div class="body">
@@ -120,19 +122,19 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="./">Starknet</a></h3>
+    <h3 class="title"><a href="../../../">Starknet</a></h3>
 <ul class="nav-list">
   <li class="nav-item parent" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="./">Overview</a>
+     href="../../../">Overview</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="notational-conventions/">Notational conventions</a>
+     href="../../../notational-conventions/">Notational conventions</a>
   </li>
 </ul>
   </li>
@@ -147,23 +149,23 @@
         <span>
     <a 
        class="nav-link nav-link-with-toggle"
-     href="quick-start/environment-setup/">Setting up your environment</a>
+     href="../../../quick-start/environment-setup/">Setting up your environment</a>
         </span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="quick-start/environment-setup/#installing_starkli">Installing Starkli</a>
+     href="../../../quick-start/environment-setup/#installing_starkli">Installing Starkli</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="quick-start/environment-setup/#setting_environment_variables_for_starkli">Environment variables</a>
+     href="../../../quick-start/environment-setup/#setting_environment_variables_for_starkli">Environment variables</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="quick-start/environment-setup/#installing_scarb">Installing Scarb</a>
+     href="../../../quick-start/environment-setup/#installing_scarb">Installing Scarb</a>
   </li>
 </ul>
   </li>
@@ -172,45 +174,45 @@
         <span>
     <a 
        class="nav-link nav-link-with-toggle"
-     href="quick-start/set-up-an-account/">Setting up an account</a>
+     href="../../../quick-start/set-up-an-account/">Setting up an account</a>
         </span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="quick-start/set-up-an-account/#creating_an_account">Creating an account</a>
+     href="../../../quick-start/set-up-an-account/#creating_an_account">Creating an account</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="quick-start/set-up-an-account/#deploying_an_account">Deploying an account</a>
+     href="../../../quick-start/set-up-an-account/#deploying_an_account">Deploying an account</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="quick-start/declare-a-smart-contract/">Declaring a smart contract</a>
+     href="../../../quick-start/declare-a-smart-contract/">Declaring a smart contract</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="quick-start/deploy-a-smart-contract/">Deploying a smart contract</a>
+     href="../../../quick-start/deploy-a-smart-contract/">Deploying a smart contract</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="quick-start/interact-with-a-smart-contract/">Interacting with a smart contract</a>
+     href="../../../quick-start/interact-with-a-smart-contract/">Interacting with a smart contract</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="quick-start/deploy-interact-with-a-smart-contract-remix/">Deploying and interacting with a smart contract with Remix</a>
+     href="../../../quick-start/deploy-interact-with-a-smart-contract-remix/">Deploying and interacting with a smart contract with Remix</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="quick-start/katana-devnet/">Tutorial: Declare, deploy, and interact with a smart contract using Katana</a>
+     href="../../../quick-start/katana-devnet/">Tutorial: Declare, deploy, and interact with a smart contract using Katana</a>
   </li>
 </ul>
   </li>
@@ -225,12 +227,12 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="starknet-versions/version-notes/">Release notes</a>
+     href="../../../starknet-versions/version-notes/">Release notes</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="starknet-versions/deprecated/">Deprecated, unsupported, and removed features</a>
+     href="../../../starknet-versions/deprecated/">Deprecated, unsupported, and removed features</a>
   </li>
 </ul>
   </li>
@@ -245,42 +247,42 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/starknet-architecture-overview/">Overview</a>
+     href="../starknet-architecture-overview/">Overview</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/provers-overview/">Provers</a>
+     href="../../provers-overview/">Provers</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/solidity-verifier/">Solidity verifier</a>
+     href="../../solidity-verifier/">Solidity verifier</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/nodes/">Nodes</a>
+     href="../../nodes/">Nodes</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/block-structure/">Block structure</a>
+     href="../block-structure/">Block structure</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/transaction-life-cycle/">Transaction lifecycle</a>
+     href="../transaction-life-cycle/">Transaction lifecycle</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/transactions/">Transaction types</a>
+     href="../transactions/">Transaction types</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/fee-mechanism/">Gas and transaction fees</a>
+     href="./">Gas and transaction fees</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
@@ -289,12 +291,12 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/starknet-state/">Starknet state</a>
+     href="../starknet-state/">Starknet state</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/data-availability/">Data availability</a>
+     href="../data-availability/">Data availability</a>
   </li>
 </ul>
   </li>
@@ -305,12 +307,12 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/messaging-mechanism/">L1-L2 messaging mechanism</a>
+     href="../messaging-mechanism/">L1-L2 messaging mechanism</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/messaging-reference/">Messaging reference</a>
+     href="../messaging-reference/">Messaging reference</a>
   </li>
 </ul>
   </li>
@@ -321,32 +323,32 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/accounts/introduction/">What is an account?</a>
+     href="../../accounts/introduction/">What is an account?</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/accounts/approach/">Starknet&#8217;s account interface</a>
+     href="../../accounts/approach/">Starknet&#8217;s account interface</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/accounts/account-functions/">Account interface function reference</a>
+     href="../../accounts/account-functions/">Account interface function reference</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/accounts/deploying-new-accounts/">Deploying new accounts</a>
+     href="../../accounts/deploying-new-accounts/">Deploying new accounts</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/accounts/universal-deployer/">Universal Deployer Contract</a>
+     href="../../accounts/universal-deployer/">Universal Deployer Contract</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/accounts/simplified-transaction-flow/">Simplified transaction flow</a>
+     href="../../accounts/simplified-transaction-flow/">Simplified transaction flow</a>
   </li>
 </ul>
   </li>
@@ -357,62 +359,62 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/contract-classes/">Contract classes and instances</a>
+     href="../../smart-contracts/contract-classes/">Contract classes and instances</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/class-hash/">Class hash</a>
+     href="../../smart-contracts/class-hash/">Class hash</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/contract-address/">Contract address</a>
+     href="../../smart-contracts/contract-address/">Contract address</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/contract-storage/">Contract storage</a>
+     href="../../smart-contracts/contract-storage/">Contract storage</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/contract-abi/">Contract ABI</a>
+     href="../../smart-contracts/contract-abi/">Contract ABI</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/starknet-events/">Events</a>
+     href="../../smart-contracts/starknet-events/">Events</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/contract-syntax/">Migrating a contract from Cairo v1 to Cairo v2</a>
+     href="../../smart-contracts/contract-syntax/">Migrating a contract from Cairo v1 to Cairo v2</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/cairo-and-sierra/">Cairo and Sierra</a>
+     href="../../smart-contracts/cairo-and-sierra/">Cairo and Sierra</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/cairo-builtins/">Cairo builtins</a>
+     href="../../smart-contracts/cairo-builtins/">Cairo builtins</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/serialization-of-cairo-types/">Serialization of Cairo types</a>
+     href="../../smart-contracts/serialization-of-cairo-types/">Serialization of Cairo types</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/system-calls-cairo1/">System calls</a>
+     href="../../smart-contracts/system-calls-cairo1/">System calls</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/execution-info/">Execution information for the current block</a>
+     href="../../smart-contracts/execution-info/">Execution information for the current block</a>
   </li>
 </ul>
   </li>
@@ -423,17 +425,17 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/cryptography/p-value/">The STARK field</a>
+     href="../../cryptography/p-value/">The STARK field</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/cryptography/stark-curve/">The STARK curve</a>
+     href="../../cryptography/stark-curve/">The STARK curve</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/cryptography/hash-functions/">Hash functions</a>
+     href="../../cryptography/hash-functions/">Hash functions</a>
   </li>
 </ul>
   </li>
@@ -442,7 +444,7 @@
   <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/economics-of-starknet/">The Economics of Starknet</a>
+     href="../../economics-of-starknet/">The Economics of Starknet</a>
   </li>
 </ul>
   </li>
@@ -455,12 +457,12 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="tools/starknet-book/">The Starknet Book</a>
+     href="../../../tools/starknet-book/">The Starknet Book</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="tools/devtools/">Developer tools</a>
+     href="../../../tools/devtools/">Developer tools</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
@@ -469,12 +471,12 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="cli/starkli/">Legacy Starknet CLI reference</a>
+     href="../../../cli/starkli/">Legacy Starknet CLI reference</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="cli/starknet-compiler-options/">Legacy compiler CLI reference</a>
+     href="../../../cli/starknet-compiler-options/">Legacy compiler CLI reference</a>
   </li>
 </ul>
   </li>
@@ -485,29 +487,29 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="tools/api-services/">Full nodes and API services</a>
+     href="../../../tools/api-services/">Full nodes and API services</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starknet-versions/juno-versions/">Juno release notes</a>
+     href="../../../starknet-versions/juno-versions/">Juno release notes</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starknet-versions/pathfinder-versions/">Pathfinder release notes</a>
+     href="../../../starknet-versions/pathfinder-versions/">Pathfinder release notes</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="tools/ref-block-explorers/">Block explorers</a>
+     href="../../../tools/ref-block-explorers/">Block explorers</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="tools/audit/">Audit providers</a>
+     href="../../../tools/audit/">Audit providers</a>
   </li>
 </ul>
   </li>
@@ -518,12 +520,12 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="starkgate/overview/">Overview</a>
+     href="../../../starkgate/overview/">Overview</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="starkgate/architecture/">StarkGate architecture</a>
+     href="../../../starkgate/architecture/">StarkGate architecture</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
@@ -532,44 +534,44 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starkgate/depositing/">Depositing funds</a>
+     href="../../../starkgate/depositing/">Depositing funds</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starkgate/withdrawing/">Withdrawing funds</a>
+     href="../../../starkgate/withdrawing/">Withdrawing funds</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starkgate/automated-actions-with-bridging/">Performing a Smart Deposit</a>
+     href="../../../starkgate/automated-actions-with-bridging/">Performing a Smart Deposit</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starkgate/adding-a-token/">Adding a token</a>
+     href="../../../starkgate/adding-a-token/">Adding a token</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starkgate/cancelling-a-deposit/">Cancelling a deposit</a>
+     href="../../../starkgate/cancelling-a-deposit/">Cancelling a deposit</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starkgate/estimating-fees/">Estimating StarkGate fees</a>
+     href="../../../starkgate/estimating-fees/">Estimating StarkGate fees</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="tools/dai-token-migration/">Migrating DAI v0 to DAI</a>
+     href="../../../tools/dai-token-migration/">Migrating DAI v0 to DAI</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="starkgate/function-reference/">StarkGate function and event reference</a>
+     href="../../../starkgate/function-reference/">StarkGate function and event reference</a>
   </li>
 </ul>
   </li>
@@ -580,19 +582,19 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="tools/important-addresses/">Starknet contracts and sequencer addresses</a>
+     href="../../../tools/important-addresses/">Starknet contracts and sequencer addresses</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="tools/bridged-tokens/">Bridged tokens</a>
+     href="../../../tools/bridged-tokens/">Bridged tokens</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="tools/limits-and-triggers/">Current limits</a>
+     href="../../../tools/limits-and-triggers/">Current limits</a>
   </li>
 </ul>
   </li>
@@ -601,7 +603,7 @@
   <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="glossary/">Glossary</a>
+     href="../../../glossary/">Glossary</a>
   </li>
 </ul>
   </li>
@@ -628,7 +630,7 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Overview</h1>
+<h1 class="page">Gas and transaction fees</h1>
 <style>
   .page-meta-container {
     position: relative;
@@ -731,7 +733,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', async function() {
     // Extract repo and path information from editUrl
-    const editUrl = 'https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/ROOT/pages/index.adoc';
+    const editUrl = 'https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/architecture-and-concepts/pages/network-architecture/fee-mechanism.adoc';
     const urlParts = editUrl.split('/');
     const repoOwner = urlParts[3];
     const repoName = urlParts[4];
@@ -821,279 +823,669 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Starknet is a permissionless Validity-Rollup, also known as a zero-knowledge rollup (ZK rollup) for Ethereum. As a Layer 2 (L2) blockchain, Starknet enables any dApp to achieve massive computation scale without compromising on Ethereum’s composability
-and security.</p>
-</div>
-<div class="paragraph">
-<p>Starknet aims to achieve secure, low-cost transactions and high performance by using the STARK cryptographic proof system. Starknet contracts and the Starknet OS are written in <a href="https://github.com/starkware-libs/cairo">Cairo</a>, a custom-built and
-specialized programming language.</p>
+<p>This section describes fees that are paid on L2 starting in Starknet 0.13.0. For information about messaging fees that are paid on L1, see <a href="../messaging-mechanism/#l1-l2-message-fees" class="xref page">L1 → L2 message fees</a>.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="explore_starknet"><a class="anchor" href="#explore_starknet"></a>Explore Starknet</h2>
-<div class="sectionbody">
-<div class="home-cta-container">
-  <a href="https://docs.starknet.io/documentation/quick_start/environment_setup/" class="home-cta home-cta-first" id="cta1">
-    <div class="image-container">
-      <img src="_images/developers.svg" style="filter: none; border-radius: 0px;" class="cta-image" id="img_1">
-    </div>
-    <h2>Quick start</h2>
-    <p class="chakra-card__body css-jintet" id="text1">Set up your environment and get started with Starknet.</p>
-    <p class="chakra-card__body css-jintet" id="text2"><b>Explore ></b></p>
-  </a>
-
-  <a href="https://docs.starknet.io/documentation/architecture_and_concepts/Network_Architecture/header/" class="home-cta" id="cta2">
-    <div class="image-container">
-      <img src="_images/how_SN_works.svg" style="filter: none; border-radius: 0px;" class="cta-image" id="img_2">
-    </div>
-    <h2>Architecture</h2>
-    <p class="chakra-card__body css-jintet" id="text3">Learn about Starknet's architecture including contracts and accounts.</p>
-    <p class="chakra-card__body css-jintet" id="text4"><b>Explore ></b></p>
-  </a>
-
-  <a href="https://docs.starknet.io/documentation/starknet_versions/version_notes/" class="home-cta" id="cta3">
-    <div class="image-container">
-      <img src="_images/roadmap.svg" style="filter: none; border-radius: 0px;" class="cta-image" id="img_3">
-    </div>
-    <h2>Releases</h2>
-    <p class="chakra-card__body css-jintet" id="text5">Learn more about the current version of Starknet.</p>
-    <p class="chakra-card__body css-jintet" id="text6"><b>Explore ></b></p>
-  </a>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="developer_tools_and_resources"><a class="anchor" href="#developer_tools_and_resources"></a>Developer tools and resources</h2>
-<div class="sectionbody">
-<div class="no-background no-border">
-  <div class="column-container">
-    <div class="column">
-      <p><a href="https://book.starknet.io/">The Starknet Book</a></p>
-      <p><a href="https://docs.cairo-lang.org/">The Cairo docs</a></p>
-      <p><a href="https://docs.starknet.io/documentation/tools/devtools/">Starknet development tools</a></p>
-      <p><a href="https://docs.starknet.io/documentation/tools/api-services/">Full nodes and API services</a></p>
-    </div>
-    <div class="column">
-      <p><a href="https://docs.starknet.io/documentation/tools/limits_and_triggers/">Limits and triggers</a></p>
-      <p><a href="https://docs.starknet.io/documentation/cli/starkli/">Cairo 0 tools</a></p>
-      <p><a href="https://docs.starknet.io/documentation/tools/ref_block_explorers/">Block explorers</a></p>
-      <p><a href="https://docs.starknet.io/documentation/tools/audit/">Audit providers</a></p>
-    </div>
-  </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="contribute_to_the_starknet_docs"><a class="anchor" href="#contribute_to_the_starknet_docs"></a>Contribute to the Starknet docs</h2>
+<h2 id="overall_fee"><a class="anchor" href="#overall_fee"></a>Overall transaction fee</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Want to contribute to Starknet documentation? Get started here:</p>
+<p>Starting with Starknet v0.13.1, Starknet distinguishes between blocks whose state diffs are sent to L1 as calldata and blocks whose state diffs are sent to L1 as blobs. The <code>l1_da_mode</code> property in the Starknet block header contains this information. The cost of computation remains the same on both options, but the cost related to data availability differs.</p>
+</div>
+<div class="sect2">
+<h3 id="overall_fee_blob"><a class="anchor" href="#overall_fee_blob"></a>Overall transaction fee with blobs</h3>
+<div class="paragraph">
+<p>This section shows the formula for determining a transaction&#8217;s fee. The following sections describe how this formula was derived.</p>
+</div>
+<div class="paragraph">
+<p>The following formula describes the overall fee, \(F\), for a transaction:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\begin{align}
+F  = \; &amp; gas\_price \cdot \Bigg(\max_k v_k w_k + \\
+&amp; \quad + \; \text{message_calldata_cost}\cdot 3t + (\text{message_calldata_cost} + \text{l1_log_data_cost})\cdot \sum\limits_{i=1}^t q_i \; + \\
+&amp; \quad + \; \left(\text{l1_storage_write_cost}+\text{log_message_to_l1_cost}\right)\cdot t + \; \\
+&amp; \quad + \; \text{l2_payload_costs}\Bigg) + \\
+&amp; data\_gas\_price\cdot\text{felt_size_in_bytes}\cdot\bigg(2(n-1)+2(m-1) + \ell +2D \bigg)
+\end{align}\]
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>See the <a href="https://github.com/starknet-io/starknet-docs/blob/dev/README.adoc#different_ways_to_contribute">different ways to contribute</a>.</p>
+<p>\(v\) is a vector that represents resource usage, where each of its entries, \(v_k\), corresponds to different resource types: Cairo steps and number of applications of each builtin.</p>
+<div class="paragraph">
+<p>For more information see <a href="#calculation_of_computation_costs">Calculation of computation costs</a>.</p>
+</div>
 </li>
 <li>
-<p>Review these <a href="https://github.com/starknet-io/starknet-docs/blob/dev/contributing_to_docs/doc_guidelines.adoc">basic writing guidelines</a> to help you write better and be a more valuable contributor.</p>
+<p>\(w\) is the <a href="#calculation_of_computation_costs"><code>CairoResourceFeeWeights</code></a> vector.</p>
 </li>
 <li>
-<p>Use the <a href="https://github.com/starknet-io/starknet-docs/blob/dev/contributing_to_docs/starknet_docs_style_guide.adoc">Starknet documentation supplementary style guide</a> to help you write with the Starknet voice.</p>
+<p>\(n\) is <a href="#storage_updates">the number of unique contracts updated</a>, which also includes changes to classes of existing contracts and contract deployments, even if the storage of the newly deployed contract is untouched. In other words, \(n\ge\ell\). Notice that \(n\ge 1\) always holds, because the fee token contract is always updated, which does not incur any fee.</p>
+</li>
+<li>
+<p>\(m\) is the number of values updated, not counting multiple updates for the same key. Notice that \(m\ge 1\) always holds, because the sequencer&#8217;s balance is always updated, which does not incur any fee.</p>
+</li>
+<li>
+<p>\(t\) is the number of L2&#8594;L1 messages sent, where the corresponding payload sizes are denoted by \(q_1,...,q_t\).</p>
+</li>
+<li>
+<p>\(\ell\) is the number of contracts whose class was changed, which happens on contract deployment and when applying the <code>replace_class</code> syscall.</p>
+</li>
+<li>
+<p>\(D\) is 1 if the transaction is of type <code>DECLARE</code> and 0 otherwise. Declare transactions need to post on L1 the new class hash and compiled class hash which are added to the state.</p>
+</li>
+<li>
+<p>L2&#8594;L1 messaging constants:</p>
+<div class="openblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>\(\text{message_calldata_cost}\) is 1124 gas per 32-byte word.</p>
+</li>
+<li>
+<p>\(\text{l1_log_data_cost}\) is 256 gas.</p>
+</li>
+<li>
+<p>\(\text{l1_storage_write_cost}\) is the cost of writing to a new storage slot on Ethereum, which is 20,000 gas.</p>
+</li>
+<li>
+<p>\(\text{log_message_to_l1_cost}\) is 1637 gas.</p>
 </li>
 </ul>
 </div>
-<html>
-<head>
-<style>
-*::before, ::after {
-  border-color: var(--chakra-colors-gray-200);
-}
+</div>
+</div>
+<div class="paragraph">
+<p>For more information, see <a href="#l_2-l_1_messages">Onchain data: L2&#8594;L1 messages</a>.</p>
+</div>
+</li>
+<li>
+<p>\(\text{l2_payload_costs}\) is the gas cost of data sent over L2. This includes calldata, code, and event emission. For more details see <a href="#l2_calldata">L2 payloads: calldata, events, and code</a>.</p>
+</li>
+<li>
+<p>\(\text{felt_size_in_bytes}\) is 32, which is the number of bytes required to encode a single STARK field element.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="overall_fee_calldata"><a class="anchor" href="#overall_fee_calldata"></a>Overall transaction fee with calldata</h3>
+<div class="paragraph">
+<p>This section shows the formula for determining a transaction&#8217;s fee. The following sections describe how this formula was derived.</p>
+</div>
+<div class="paragraph">
+<p>The following formula describes the overall fee, \(F\), for a transaction:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\begin{align}
+F  = gas\_price\cdot&amp;\Bigg(\max_k v_k w_k + \\
+&amp; + \; \text{da_calldata_cost}\left(2(n-1)+2(m-1) + \ell + 2D + 3t + \sum\limits_{i=1}^t q_i\right)\\
+&amp; - \; \text{contract_update_discount}\cdot (n-1) - 240 \\
+&amp; + \;  \text{message_calldata_cost}\cdot 3t + (\text{message_calldata_cost} + \text{l1_log_data_cost})\cdot\sum\limits_{i=1}^t q_i \\
+&amp; + \; \left(\text{l1_storage_write_cost}+\text{log_message_to_l1_cost}\right)\cdot t \\
+&amp; + \; \text{l2_payload_costs}\Bigg)
+\end{align}\]
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The following constants are defined in the same manner as in the blob-based formula:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>\(v, w, n, m, t, \ell, D\)</p>
+</li>
+<li>
+<p>\(\text{message_calldata_cost}, \; \text{l1_log_data_cost}, \; \text{log_message_to_l1_cost}, \; \text{l1_storage_write_cost}\)</p>
+</li>
+<li>
+<p>\(\text{l2_payload_costs}\)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>\(\text{da_calldata_cost}\) is 551 gas per 32-byte word. This cost is derived as follows:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>512 gas per 32-byte word for calldata.</p>
+</li>
+<li>
+<p>~100 gas for onchain hashing that happens for every sent word.</p>
+</li>
+<li>
+<p>a 10% discount, because the sequencer does not incur additional costs for repeated updates to the same storage slot within a single block.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>\(240\) is the gas discount for updating the sender&#8217;s balance, for the derivation of this number see <a href="#storage_updates">Onchain data: Storage updates</a>.</p>
+</li>
+<li>
+<p>\(\text{contract_update_discount}\) is 312 gas, for the derivation of this discount see <a href="#storage_updates">Onchain data: Storage updates</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="when_is_the_fee_charged"><a class="anchor" href="#when_is_the_fee_charged"></a>When is the fee charged?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The fee is charged atomically with the transaction execution on L2. The Starknet OS injects a transfer of the fee-related ERC-20, with an amount equal to the fee paid, the sender equal to the transaction submitter, and the sequencer as a receiver.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="fee_limitations"><a class="anchor" href="#fee_limitations"></a>Transaction Fee limits</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="v3_fee_limitations"><a class="anchor" href="#v3_fee_limitations"></a>v3 transactions</h3>
+<div class="paragraph">
+<p>With v3 transactions, users specify the max amount and max price for each resource. At the time of writing, the only available resource is L1 gas. In the future, we will introduce L2 gas which will be used to price L2 work (as opposed to only charging for the proof verification in L1 gas, which is what happens today).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deprecated_fee_limitations"><a class="anchor" href="#deprecated_fee_limitations"></a>Deprecated transactions (version &lt; 3)</h3>
+<div class="paragraph">
+<p>With older transaction versions, users specify the maximum fee that they are willing to pay for a transaction.</p>
+</div>
+<div class="paragraph">
+<p>The only limitation on the sequencer, which is enforced by the Starknet OS, is that the actual fee charged is bounded by <code>max_fee</code>. While not enforced in the proof, the Starknet sequencer usually charges less than <code>max_fee</code>, as it charges in accordance with the above fee formula.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="what_do_we_pay_for"><a class="anchor" href="#what_do_we_pay_for"></a>What do we price</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>At the time of writing, the following components are contributing to the transaction fee:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#computation_without_builtins">Computational complexity</a>: The marginal cost of verifying the transaction on L1, measured in L1 gas.</p>
+</li>
+<li>
+<p><a href="#onchain_data_components">Onchain data</a>: The cost of posting  the state diffs induced by the transaction to L1 (for more details, see <a href="../data-availability/" class="xref page">data availability</a>). This is measured in L1 gas or L1 data gas, depending on whether or not the L2 block in which the transaction was included uses calldata or blobs.</p>
+</li>
+<li>
+<p>L2→L1 messages: Messages sent to L1 are eventually sent to the Starknet core contract as L1 calldata by the sequencer; therefore L2 transaction that send L2&#8594;L1 messages incur an additional L1 gas cost.</p>
+</li>
+<li>
+<p>L2 calldata, events and code: From Starknet 0.13.1 onwards, there is a per-byte (or per felt) price for L2 payloads. For more details, see <a href="#l2_calldata">L2 payloads: calldata, events, and code</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="fee_units"><a class="anchor" href="#fee_units"></a>Fee units</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Each transaction is associated with an estimate of the amount of gas used. Combining this estimate with the price of gas yields the estimated fee.</p>
+</div>
+<div class="paragraph">
+<p>For transactions prior to v3, the fee is denominated in WEI. For transactions v3 and later, the fee is denominated in STRK.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="fee_calculation"><a class="anchor" href="#fee_calculation"></a>Fee calculation</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="calculation_of_gas_costs"><a class="anchor" href="#calculation_of_gas_costs"></a>Calculation of gas prices</h3>
+<div class="paragraph">
+<p>Every 60 seconds, Starknet samples the base price of gas and data gas on L1.</p>
+</div>
+<div class="paragraph">
+<p>The price of gas on Starknet is set to the average of the last 60 gas price samples, plus 1 gwei.</p>
+</div>
+<div class="paragraph">
+<p>The price of data gas on Starknet is set to the average of the last 60 data gas price samples. The data gas price on Ethereum is derived from the value of <code>excess_blob_gas</code>. For more information, see <a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-4844.md">EIP-4844</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="computation_without_builtins"><a class="anchor" href="#computation_without_builtins"></a>Computation without builtins</h3>
+<div class="paragraph">
+<p>Let&#8217;s analyze the correct metric for measuring transaction complexity. For simplicity, we will ignore Cairo&#8217;s builtins, and address them later.</p>
+</div>
+<div class="paragraph">
+<p>A Cairo program execution yields an execution trace. When proving a Starknet block, we aggregate all the transactions appearing in that block to the execution trace.</p>
+</div>
+<div class="paragraph">
+<p>Starknet&#8217;s prover generates proofs for execution traces, up to some maximal length \(L\), derived from the specs of the proving machine and the desired proof latency.</p>
+</div>
+<div class="paragraph">
+<p>Tracking the execution trace length associated with each transaction is simple.
+Each assertion over field elements, such as verifying addition/multiplication over the field, requires the same, constant number of trace cells, which is where our "no-builtins" assumption kicks in: Pedersen occupies more trace cells than addition. Therefore, in a world without builtins, the fee of the transaction \(tx\) is correlated with \(\text{TraceCells}[tx]/L\).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="computation_with_builtins"><a class="anchor" href="#computation_with_builtins"></a>Computation with builtins</h3>
+<div class="paragraph">
+<p>In the Cairo execution trace each builtin has its own slot, which is important to consider when determining the fee.</p>
+</div>
+<div class="paragraph">
+<p>For example, consider that the prover can process a trace with the following limits:</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">up to 500,000,000 Cairo Steps</th>
+<th class="tableblock halign-left valign-top">up to 20,000,000 Pedersen hashes</th>
+<th class="tableblock halign-left valign-top">up to 4,000,000 signature verifications</th>
+<th class="tableblock halign-left valign-top">up to 10,000,000 range checks</th>
+</tr>
+</thead>
+</table>
+<div class="paragraph">
+<p>The proof is closed and sent to L1 when any of these slots is filled.</p>
+</div>
+<div class="paragraph">
+<p>Suppose that a transaction uses 10,000 Cairo steps and 500 Pedersen hashes. At most 40,000 such transactions can fit into the hypothetical trace (20,000,000/500). Therefore, its gas price correlates with 1/40,000 of the cost of submitting proof.</p>
+</div>
+<div class="paragraph">
+<p>Notice that this estimate ignores the number of Cairo steps, as it is not the limiting factor, since 500,000,000/10,000 &gt; 20,000,000/500.</p>
+</div>
+<div class="paragraph">
+<p>With this example in mind, it is possible to formulate the exact fee associated with L2 computation.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The allocation of resources among builtin operations must be predetermined; it is not possible to decide, post-execution, to include only 20,000,001 Pedersen hashes without additional components.</p>
+</div>
+<div class="paragraph">
+<p>This safeguards fairness and prevents manipulation, ensuring integrity in proof generation and fee determination.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="calculation_of_computation_costs"><a class="anchor" href="#calculation_of_computation_costs"></a>Calculation of computation costs</h3>
+<div class="paragraph">
+<p>For each transaction, the sequencer calculates a vector, <code>CairoResourceUsage</code>, that contains the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The number of Cairo steps.</p>
+</li>
+<li>
+<p>The number of applications of each Cairo builtin. For example, five range checks and two Pedersen hashes.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The sequencer crosses this information with the <code>CairoResourceFeeWeights</code> vector. For each resource type, either a Cairo step or a specific builtin application, <code>CairoResourceFeeWeights</code> has an entry that specifies the relative gas cost of that component in the proof.</p>
+</div>
+<div class="paragraph">
+<p>Going back to the above example, if the cost of submitting a proof with 20,000,000 Pedersen hashes is roughly 5m gas, then the weight of the Pedersen builtin is 0.25 gas per application (5,000,000/20,000,000). The sequencer has a predefined weights vector, in accordance with the proof parameters.</p>
+</div>
+<div class="paragraph">
+<p>The sequencer charges only according to the limiting factor. Therefore the fee is correlated with:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\max_k[\text{CairoResourceUsage}_k \cdot \text{CairoResourceFeeWeights}_k]\]
+</div>
+</div>
+<div class="paragraph">
+<p>where \(k\) enumerates the Cairo resource components, that is the number of Cairo steps and builtins used.</p>
+</div>
+<div class="paragraph">
+<p>The weights are listed in the table <a href="#gas_cost_per_cairo_step_or_builtin_step">Amount of gas used per Cairo step or per each time a Cairo builtin is applied</a>.</p>
+</div>
+<table id="gas_cost_per_cairo_step_or_builtin_step" class="tableblock frame-all grid-all stripes-even" style="width: 80%;">
+<caption class="title">Table 1. Amount of gas used per Cairo step or per each time a Cairo builtin is applied</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Step or builtin</th>
+<th class="tableblock halign-left valign-top">Gas cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cairo step</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.0025 gas/step</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pedersen</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.08 gas/application</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Poseidon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.08 gas/application</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Range check</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.04 gas/application</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ECDSA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.12 gas/application</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Keccak</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.12 gas/application</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bitwise</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.16 gas/application</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC_OP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.56 gas/application</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="onchain_data_components"><a class="anchor" href="#onchain_data_components"></a>Onchain data components</h3>
+<div class="paragraph">
+<p>The onchain data associated with a transaction is composed of three parts</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Storage updates</p>
+</li>
+<li>
+<p>L2→L1 messages</p>
+</li>
+<li>
+<p>Deployed contracts</p>
+</li>
+<li>
+<p>Declared classes (only relevant for <code>DECLARE</code> transactions, and adds two additional words)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="storage_updates"><a class="anchor" href="#storage_updates"></a>Onchain data: Storage updates</h3>
+<div class="paragraph">
+<p>Whenever a transaction updates some value in the storage of some contract, the following data is sent to L1:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>two 32-byte words per contract</p>
+</li>
+<li>
+<p>two 32-byte words for every updated storage value</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For information on the exact data and its construction, see <a href="../data-availability/#v0.11.0_format" class="xref page">Data availability</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Only the most recent value reaches L1. So the transaction&#8217;s fee only depends on the number of <em>unique</em> storage updates. If the same storage cell is updated multiple times within the transaction, the fee remains that of a single update.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following formula describes the storage update fee for a transaction:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\underbrace{\textit{gas_price}\left(\text{da_calldata_cost} \cdot 2(n-1) - \text{contract_update_discount}\cdot (n-1)\right)}_{\text{contract addresses +  new nonce and number of storage updates
+}} \\
 
-:where(*, *::before, *::after) {
-  border-width: 0;
-  border-style: solid;
-  box-sizing: border-box;
-  word-wrap: break-word;
-}
++ \\
 
-@media (max-width: 768px) {
-  .home-cta-container {
-    flex-direction: column; /* Switch back to a column layout for mobile */
-  }
-
-  .home-cta-container .home-cta {
-    margin: 8px 8px 0 8px; /* Reset margin for mobile */
-    width: 100%; /* Make each box take up the full width of the screen */
-  }
-}
-
-.home-cta-container {
-  display: flex;
-}
-
-.cta-image-container {
-  background-image: url('_images/developers.svg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 100%;
-  height: 100%;
-}
-
-.image-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center; s
-  align-items: center;
-  height: 8em;
-  margin-bottom: 10px;
-  margin: 8px;
-  border-radius: 20px 20px 0 0;
-  position: relative;
-  background-image: linear-gradient(180.15deg, var(--chakra-colors-chakra-body-text) 0.2%, var(--chakra-colors-chakra-body-bg) 105.43%);
-  overflow: hidden;
-}
-
-.image-container img {
-  z-index: -1;
-}
-
-.cta-image {
-  max-width: 464px;
-  max-height: 100%;
-}
-
-.home-cta {
-  flex: 1;
-  margin: 8px 8px 0 8px;
-  padding: 20px;
-  background-color: var(--chakra-colors-chakra-body-bg);
-  border: 1px solid rgb(226, 232, 240);
-  border-bottom: 1px solid rgb(226, 232, 240);
-  border-radius: 20px;
-  color: var(--chakra-colors-card-link-fg);
-  font-size: 18px;
-  font-weight: var(--chakra-fontWeights-medium);
-  text-decoration: none;
-  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
-  box-sizing: border-box;
-  position: relative;
-  background-image: linear-gradient(180.15deg, var(--chakra-colors-gradient-blue-default-a) 0.2%, var(--chakra-colors-gradient-blue-default-b) 105.43%);
-  overflow: hidden;
-  transition-property: var(--chakra-transition-property-common);
-  transition-duration: var(--chakra-transition-duration-fast);
-  transition-timing-function: var(--chakra-transition-easing-ease-out);
-  cursor: pointer;
-  -webkit-text-decoration: none;
-
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-
-.home-cta-first {
-  margin-left: 0;
-}
-
-.chakra-card__body.css-jintet {
-  font-size: 15px;
-  color: #363636;
-}
-
-.column-container {
-  display: flex;
-}
-
-.column {
-  flex: 1;
-  padding: 10px;
-  margin: 5px;
-  border-radius: 5px;
-}
-
-.home-cta-container .home-cta:hover {
-  text-decoration: none;
-  color: #363636;
-  border-color: #C506E4;
-}
-
-.home-cta a {
-  text-decoration: none;
-  color: #363636;
-}
-</style>
-
-<script>
-
-document.addEventListener('DOMContentLoaded', function() {
-  const themeSwitch = document.querySelector('[data-theme="dark"]');
-  if (!themeSwitch) {
-    console.error('Theme switch element not found');
-    return;
-  }
-
-  const image1 = document.getElementById('img_1');
-  const image2 = document.getElementById('img_2');
-  const image3 = document.getElementById('img_3');
-
-  const text1 = document.getElementById('text1');
-  const text2 = document.getElementById('text2');
-  const text3 = document.getElementById('text3');
-  const text4 = document.getElementById('text4');
-  const text5 = document.getElementById('text5');
-  const text6 = document.getElementById('text6');
-
-  let initialThemeSet = false; // To track if the initial theme has been set
-
-  themeSwitch.addEventListener('click', () => {
-    const currentTheme = themeSwitch.getAttribute('data-theme');
-    // Toggle the theme
-    themeSwitch.setAttribute('data-theme', currentTheme === 'dark' ? 'light' : 'dark');
-    // Toggle the theme
-    toggleTheme(currentTheme);
-  });
-
-  function toggleTheme(currentTheme) {
-    // Handle theme switching and image/text updates
-    if (currentTheme === 'dark' || !initialThemeSet) {
-      image1.src = '_images/developers_dark.svg';
-      image2.src = '_images/how_SN_works_dark.svg';
-      image3.src = '_images/roadmap_dark.svg';
-      text1.style.color = 'white';
-      text2.style.color = 'white';
-      text3.style.color = 'white';
-      text4.style.color = 'white';
-      text5.style.color = 'white';
-      text6.style.color = 'white';
-    } else {
-      image1.src = '_images/developers.svg';
-      image2.src = '_images/how_SN_works.svg';
-      image3.src = '_images/roadmap.svg';
-      text1.style.color = '';
-      text2.style.color = '';
-      text3.style.color = '';
-      text4.style.color = '';
-      text5.style.color = '';
-      text6.style.color = '';
-    }
-
-    if (!initialThemeSet) {
-      initialThemeSet = true;
-    }
-  }
-
-  // Set the initial state based on the themeSwitch value
-  toggleTheme(themeSwitch.getAttribute('data-theme'));
-});
-
-
-</script>
-</head>
-</html>
+\underbrace{\textit{gas_price} \cdot \left(\text{da_calldata_cost}(2(m-1))-240\right)}_{\text{storage updates}}\]
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>\(n\) is <a href="#storage_updates">the number of unique contracts updated</a>, which also includes changes to classes of existing contracts and contract deployments, even if the storage of the newly deployed contract is untouched. In other words, \(n\ge\ell\). Notice that \(n\ge 1\) always holds, because the fee token contract is always updated at the end of each transaction, in order to update the sequencer&#8217;s and the sender&#8217;s balances. The fee token contract update is not taken into account when computing the fee.</p>
+</li>
+<li>
+<p>\(m\) is the number of values updated, not counting multiple updates for the same key. Notice that \(m\ge 1\) always holds, because the sequencer&#8217;s balance is updated at the end of each transaction. The sequencer&#8217;s balance update is not taken into account when computing the fee.</p>
+</li>
+<li>
+<p>\(\text{contract_update_discount}\) is 312 gas, which is discounted for every updated contract. This discount is a result of the fact that out of the \(2n\) words caused by updating contracts, \(n\) words are short, including at most 6 non-zero bytes:</p>
+<div class="openblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>three bytes for the nonce</p>
+</li>
+<li>
+<p>two bytes for the number of storage updates</p>
+</li>
+<li>
+<p>one byte for the class information flag</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Taking into account that zero bytes only cost 4 gas, the cost difference between a full 32-byte word, which does not contain zeros, and a word with only six non-zero bytes is \(32\cdot16-(6\cdot16+26\cdot4)=312\).</p>
+</div>
+</li>
+<li>
+<p>\(240\) is the gas discount for updating the sender&#8217;s balance, and is derived by assuming the balance requires at most 12 non-zero bytes, which is enough for 1.2B ETH or STRK, resulting in the following discount: \(512-(20\cdot4+12\cdot16)=240\).</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Improvements to the above pessimistic estimation might be gradually implemented in future versions of Starknet.</p>
+</div>
+<div class="paragraph">
+<p>For example, if different transactions within the same block update the same storage cell, there is no need to charge for both transactions, because only the last value reaches L1. In the future, Starknet might include a refund mechanism for such cases.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="l_2-l_1_messages"><a class="anchor" href="#l_2-l_1_messages"></a>Onchain data: L2&#8594;L1 messages</h3>
+<div class="paragraph">
+<p>When a transaction that raises the <code>send_message_to_l1</code> syscall is included in a state update, the following data reaches L1:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>L2 sender address</p>
+</li>
+<li>
+<p>L1 destination address</p>
+</li>
+<li>
+<p>Payload size</p>
+</li>
+<li>
+<p>Payload (list of field elements)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Consequently, the gas cost associated with a single L2→L1 message is:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\begin{align}
+\text{MESSAGE_COST} = &amp; \; \text{message_calldata_cost}\cdot\left(3+\text{payload_size}\right) \; + \\
+&amp; + \text{l1_log_data_cost}\cdot\text{payload_size} \; + \\
+&amp; + \text{log_message_to_l1_cost} \; + \\
+&amp; + \text{l1_storage_write_cost}
+\end{align}\]
+</div>
+</div>
+<div class="paragraph">
+<p>Where:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>\(\text{message_calldata_cost}\) is 1124 gas. This is the sum of the 512 gas paid to the core contract on submitting the state update, and 612 gas paid for the submitting of the same word to the verifier contract (which incurs ~100 additional gas for hashing). That is, messages are sent to Ethereum twice.</p>
+</li>
+<li>
+<p>\(\text{log_message_to_l1_cost}\) is 1637 gas. This is the fixed cost involved in emitting a <code>LogMessageToL1</code> event. This event has two topics and a data array, which adds two data words to the event, resulting in a total of \(375+2\cdot 375+2\cdot 256\) gas (log opcode cost, topic cost, and two data words cost).</p>
+</li>
+<li>
+<p>\(\text{l1_log_data_cost}\) is 256 gas, which is paid for every payload element during the emission of the <code>LogMessageToL1</code> event.</p>
+</li>
+<li>
+<p>\(\text{l1_storage_write_cost}\) is 20,000 gas per message which is paid in order to store the message hash on the Starknet core contract. This recording of the message is what later enables the intended L1 contract to consume the message.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deployed_contracts"><a class="anchor" href="#deployed_contracts"></a>Onchain data: Deployed contracts</h3>
+<div class="paragraph">
+<p>When a transaction that raises the <code>deploy</code> syscall is included in a state update, the following data reaches L1:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>contract address</p>
+</li>
+<li>
+<p>number of storage updates and the new nonce</p>
+</li>
+<li>
+<p>class hash</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The first two elements are counted in the number of unique modified contracts, denoted by \(n\) throughout this page. So the only additional word comes from publishing the class hash, which adds 551 gas. For more information, see \(\text{da_calldata_cost}\) in the <a href="#overall_fee">final formula</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="l2_calldata"><a class="anchor" href="#l2_calldata"></a>L2 payloads: calldata, events, and code</h3>
+<div class="paragraph">
+<p>As of Starknet v0.13.1 onwards, L2 data is taken into account during pricing. This includes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>calldata: this includes transaction calldata (in the case of <code>INVOKE</code> transactions or <code>L1_HANDLER</code>), constructor calldata (in the case of <code>DEPLOY_ACCOUNT</code> transactions), and signatures</p>
+</li>
+<li>
+<p>events: data and keys of emitted events</p>
+</li>
+<li>
+<p>ABI: classes abi in <code>DECLARE</code> transactions (relevant only for <code>DECLARE</code> transactions of version ≥ 2)</p>
+</li>
+<li>
+<p>CASM bytecode (for all available <code>DECLARE</code> transactions, where in version ≥ 2 this refers to the compiled class)</p>
+</li>
+<li>
+<p>Sierra bytecode (relevant only for <code>DECLARE</code> transactions of version ≥ 2)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The pricing of the above components in terms of L1 gas is given by the following table:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Resource</th>
+<th class="tableblock halign-left valign-top">Gas cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Event key</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.256 gas/felt</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Event data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.128 gas/felt</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Calldata</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.128 gas/felt</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CASM bytecode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 gas/felt</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sierra bytecode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 gas/felt</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ABI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.032 gas/character</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="next"><a href="notational-conventions/">Notational conventions</a></span>
+  <span class="prev"><a href="../transactions/">Transaction types</a></span>
+  <span class="next"><a href="../starknet-state/">Starknet state</a></span>
 </nav>
 </article>
   </div>
@@ -1126,13 +1518,13 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </div>
 </footer>
-<script src="./_/js/site.js?new"></script>
-<script async src="./_/js/vendor/highlight.js?new"></script>
-<script async src="./_/js/vendor/tabs-block-behaviour.js?new"></script>
-<script async src="./_/js/vendor/swagger-ui.js?new"></script>
-<script async src="./_/js/vendor/component-versions.js?new"></script>
-<script src="./_/js/vendor/custom.js?new"></script>
-<script async src="./_/js/vendor/tabs.js"></script>
+<script src="../../../_/js/site.js?new"></script>
+<script async src="../../../_/js/vendor/highlight.js?new"></script>
+<script async src="../../../_/js/vendor/tabs-block-behaviour.js?new"></script>
+<script async src="../../../_/js/vendor/swagger-ui.js?new"></script>
+<script async src="../../../_/js/vendor/component-versions.js?new"></script>
+<script src="../../../_/js/vendor/custom.js?new"></script>
+<script async src="../../../_/js/vendor/tabs.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script>
 <script
