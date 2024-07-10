@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Notational conventions :: Starknet documentation</title>
-    <link rel="canonical" href="https://docs.starknet.io/notational-conventions/">
-    <link rel="prev" href="../">
-    <link rel="next" href="../quick-start/environment-setup/">
+    <title>Nodes :: Starknet documentation</title>
+    <link rel="canonical" href="https://docs.starknet.io/architecture-and-concepts/nodes/">
+    <link rel="prev" href="../solidity-verifier/">
+    <link rel="next" href="../network-architecture/block-structure/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -26,15 +26,15 @@
     <meta property="twitter:url" content="https://docs.starknet.io/">
     <meta property="twitter:title" content="Starknet Documentation">
     <meta property="twitter:description" content="Reference documentation for developers building on Starknet.">
-    <meta property="twitter:image" content="https://www.starknet.io/starknet-docs-card.png">  <link rel="stylesheet" href="../_/css/vendor/tabs.css">
-  <link id="theme" rel="stylesheet" title="Default" href="../_/css/site.css?new">
-  <link rel="stylesheet" title="Dark" href="../_/css/dark-site.css?new">
-  <link rel="stylesheet" href="../_/css/vendor/tabs.css">
-  <link rel="stylesheet" href="../_/css/home.css">
+    <meta property="twitter:image" content="https://www.starknet.io/starknet-docs-card.png">  <link rel="stylesheet" href="../../_/css/vendor/tabs.css">
+  <link id="theme" rel="stylesheet" title="Default" href="../../_/css/site.css?new">
+  <link rel="stylesheet" title="Dark" href="../../_/css/dark-site.css?new">
+  <link rel="stylesheet" href="../../_/css/vendor/tabs.css">
+  <link rel="stylesheet" href="../../_/css/home.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WY42TERK5P"></script>
     <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','G-WY42TERK5P')</script>
-    <script>var uiRootPath = '../_'</script>
-    <script src="../_/js/vendor/medium-zoom.js?new"></script>
+    <script>var uiRootPath = '../../_'</script>
+    <script src="../../_/js/vendor/medium-zoom.js?new"></script>
     <script type="text/javascript" id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="e4db29b5-cd94-4bcf-87e4-04f4ca564240" data-blockingmode="manual"></script>
     <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
@@ -48,27 +48,27 @@
         a.appendChild(r);
         })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
-<link rel="icon" href="../_/img/favicon/favicon.ico" type="image/x-icon">
+<link rel="icon" href="../../_/img/favicon/favicon.ico" type="image/x-icon">
 
 <!-- For all browsers -->
-<link rel="icon" type="image/png" sizes="32x32" href="../_/img/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../_/img/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../_/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../_/img/favicon-16x16.png">
 
 <!-- For Google and Chrome -->
-<link rel="icon" type="image/png" sizes="192x192" href="../_/img/favicon/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../../_/img/favicon/android-chrome-192x192.png">
 
 <!-- For iPad -->
-<link rel="apple-touch-icon" type="image/png" sizes="167x167" href="../_/img/favicon/apple-touch-icon.png">
+<link rel="apple-touch-icon" type="image/png" sizes="167x167" href="../../_/img/favicon/apple-touch-icon.png">
 <!-- For iPhone -->
-<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../_/img/favicon/apple-touch-icon.png">  </head>
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../../_/img/favicon/apple-touch-icon.png">  </head>
   <body class="article">
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
       <div class="top-logo">
-        <a href=".." class="starknet-logo"></a>
+        <a href="../.." class="starknet-logo"></a>
         <div class="vertical-divider desktop-only"></div>
-        <a href=".." class="docs-logo desktop-only">Docs</a>
+        <a href="../.." class="docs-logo desktop-only">Docs</a>
       </div>
       <!--<a class="navbar-item" href="https://docs.starknet.io">Starknet documentation</a>-->
       <div id="autocomplete" class="autocomplete-root"></div>
@@ -103,16 +103,17 @@
   </div>
   <span></span>
   <span></span>
-  <a href="../" class="home-link mask-svg-center"></a>
+  <a href="../../" class="home-link mask-svg-center"></a>
   <div id="mobile-autocomplete" class="mobile-only"></div>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../">Starknet</a></li>
-    <li><a href="./">Notational conventions</a></li>
+    <li><a href="../../">Starknet</a></li>
+    <li>Architecture</li>
+    <li><a href="./">Nodes</a></li>
   </ul>
 </nav>
   <div class="edit-this-page">
-    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/ROOT/pages/notational-conventions.adoc"><img class="pencil">Edit this Page</a>
+    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/architecture-and-concepts/pages/nodes.adoc"><img class="pencil">Edit this Page</a>
   </div>
 </div>
 <div class="body">
@@ -121,19 +122,19 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../">Starknet</a></h3>
+    <h3 class="title"><a href="../../">Starknet</a></h3>
 <ul class="nav-list">
   <li class="nav-item parent" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="../">Overview</a>
+     href="../../">Overview</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="./">Notational conventions</a>
+     href="../../notational-conventions/">Notational conventions</a>
   </li>
 </ul>
   </li>
@@ -148,23 +149,23 @@
         <span>
     <a 
        class="nav-link nav-link-with-toggle"
-     href="../quick-start/environment-setup/">Setting up your environment</a>
+     href="../../quick-start/environment-setup/">Setting up your environment</a>
         </span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../quick-start/environment-setup/#installing_starkli">Installing Starkli</a>
+     href="../../quick-start/environment-setup/#installing_starkli">Installing Starkli</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../quick-start/environment-setup/#setting_environment_variables_for_starkli">Environment variables</a>
+     href="../../quick-start/environment-setup/#setting_environment_variables_for_starkli">Environment variables</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../quick-start/environment-setup/#installing_scarb">Installing Scarb</a>
+     href="../../quick-start/environment-setup/#installing_scarb">Installing Scarb</a>
   </li>
 </ul>
   </li>
@@ -173,40 +174,40 @@
         <span>
     <a 
        class="nav-link nav-link-with-toggle"
-     href="../quick-start/set-up-an-account/">Setting up an account</a>
+     href="../../quick-start/set-up-an-account/">Setting up an account</a>
         </span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../quick-start/set-up-an-account/#creating_an_account">Creating an account</a>
+     href="../../quick-start/set-up-an-account/#creating_an_account">Creating an account</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../quick-start/set-up-an-account/#deploying_an_account">Deploying an account</a>
+     href="../../quick-start/set-up-an-account/#deploying_an_account">Deploying an account</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../quick-start/declare-a-smart-contract/">Declaring a smart contract</a>
+     href="../../quick-start/declare-a-smart-contract/">Declaring a smart contract</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../quick-start/deploy-a-smart-contract/">Deploying a smart contract</a>
+     href="../../quick-start/deploy-a-smart-contract/">Deploying a smart contract</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../quick-start/interact-with-a-smart-contract/">Interacting with a smart contract</a>
+     href="../../quick-start/interact-with-a-smart-contract/">Interacting with a smart contract</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../quick-start/deploy-interact-with-a-smart-contract-remix/">Deploying and interacting with a smart contract with Remix</a>
+     href="../../quick-start/deploy-interact-with-a-smart-contract-remix/">Deploying and interacting with a smart contract with Remix</a>
   </li>
 </ul>
   </li>
@@ -221,12 +222,12 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../starknet-versions/version-notes/">Release notes</a>
+     href="../../starknet-versions/version-notes/">Release notes</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../starknet-versions/deprecated/">Deprecated, unsupported, and removed features</a>
+     href="../../starknet-versions/deprecated/">Deprecated, unsupported, and removed features</a>
   </li>
 </ul>
   </li>
@@ -241,42 +242,42 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../architecture-and-concepts/network-architecture/starknet-architecture-overview/">Overview</a>
+     href="../network-architecture/starknet-architecture-overview/">Overview</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../architecture-and-concepts/provers-overview/">Provers</a>
+     href="../provers-overview/">Provers</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../architecture-and-concepts/solidity-verifier/">Solidity verifier</a>
+     href="../solidity-verifier/">Solidity verifier</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a 
+       class="nav-link"
+     href="./">Nodes</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../architecture-and-concepts/nodes/">Nodes</a>
+     href="../network-architecture/block-structure/">Block structure</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../architecture-and-concepts/network-architecture/block-structure/">Block structure</a>
+     href="../network-architecture/transaction-life-cycle/">Transaction lifecycle</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../architecture-and-concepts/network-architecture/transaction-life-cycle/">Transaction lifecycle</a>
+     href="../network-architecture/transactions/">Transaction types</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../architecture-and-concepts/network-architecture/transactions/">Transaction types</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../architecture-and-concepts/network-architecture/fee-mechanism/">Gas and transaction fees</a>
+     href="../network-architecture/fee-mechanism/">Gas and transaction fees</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
@@ -285,12 +286,12 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../architecture-and-concepts/network-architecture/starknet-state/">Starknet state</a>
+     href="../network-architecture/starknet-state/">Starknet state</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../architecture-and-concepts/network-architecture/data-availability/">Data availability</a>
+     href="../network-architecture/data-availability/">Data availability</a>
   </li>
 </ul>
   </li>
@@ -301,12 +302,12 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../architecture-and-concepts/network-architecture/messaging-mechanism/">L1-L2 messaging mechanism</a>
+     href="../network-architecture/messaging-mechanism/">L1-L2 messaging mechanism</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../architecture-and-concepts/network-architecture/messaging-reference/">Messaging reference</a>
+     href="../network-architecture/messaging-reference/">Messaging reference</a>
   </li>
 </ul>
   </li>
@@ -317,32 +318,32 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../architecture-and-concepts/accounts/introduction/">What is an account?</a>
+     href="../accounts/introduction/">What is an account?</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../architecture-and-concepts/accounts/approach/">Starknet&#8217;s account interface</a>
+     href="../accounts/approach/">Starknet&#8217;s account interface</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../architecture-and-concepts/accounts/account-functions/">Account interface function reference</a>
+     href="../accounts/account-functions/">Account interface function reference</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../architecture-and-concepts/accounts/deploying-new-accounts/">Deploying new accounts</a>
+     href="../accounts/deploying-new-accounts/">Deploying new accounts</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../architecture-and-concepts/accounts/universal-deployer/">Universal Deployer Contract</a>
+     href="../accounts/universal-deployer/">Universal Deployer Contract</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../architecture-and-concepts/accounts/simplified-transaction-flow/">Simplified transaction flow</a>
+     href="../accounts/simplified-transaction-flow/">Simplified transaction flow</a>
   </li>
 </ul>
   </li>
@@ -353,67 +354,67 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../architecture-and-concepts/smart-contracts/contract-classes/">Contract classes and instances</a>
+     href="../smart-contracts/contract-classes/">Contract classes and instances</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../architecture-and-concepts/smart-contracts/class-hash/">Class hash</a>
+     href="../smart-contracts/class-hash/">Class hash</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../architecture-and-concepts/smart-contracts/compiled_class_hash/">Compiled class hash</a>
+     href="../smart-contracts/compiled_class_hash/">Compiled class hash</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../architecture-and-concepts/smart-contracts/contract-address/">Contract address</a>
+     href="../smart-contracts/contract-address/">Contract address</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../architecture-and-concepts/smart-contracts/contract-storage/">Contract storage</a>
+     href="../smart-contracts/contract-storage/">Contract storage</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../architecture-and-concepts/smart-contracts/contract-abi/">Contract ABI</a>
+     href="../smart-contracts/contract-abi/">Contract ABI</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../architecture-and-concepts/smart-contracts/starknet-events/">Events</a>
+     href="../smart-contracts/starknet-events/">Events</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../architecture-and-concepts/smart-contracts/contract-syntax/">Migrating a contract from Cairo v1 to Cairo v2</a>
+     href="../smart-contracts/contract-syntax/">Migrating a contract from Cairo v1 to Cairo v2</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../architecture-and-concepts/smart-contracts/cairo-and-sierra/">Cairo and Sierra</a>
+     href="../smart-contracts/cairo-and-sierra/">Cairo and Sierra</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../architecture-and-concepts/smart-contracts/cairo-builtins/">Cairo builtins</a>
+     href="../smart-contracts/cairo-builtins/">Cairo builtins</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../architecture-and-concepts/smart-contracts/serialization-of-cairo-types/">Serialization of Cairo types</a>
+     href="../smart-contracts/serialization-of-cairo-types/">Serialization of Cairo types</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../architecture-and-concepts/smart-contracts/system-calls-cairo1/">System calls</a>
+     href="../smart-contracts/system-calls-cairo1/">System calls</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../architecture-and-concepts/smart-contracts/execution-info/">Execution information for the current block</a>
+     href="../smart-contracts/execution-info/">Execution information for the current block</a>
   </li>
 </ul>
   </li>
@@ -424,17 +425,17 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../architecture-and-concepts/cryptography/p-value/">The STARK field</a>
+     href="../cryptography/p-value/">The STARK field</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../architecture-and-concepts/cryptography/stark-curve/">The STARK curve</a>
+     href="../cryptography/stark-curve/">The STARK curve</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../architecture-and-concepts/cryptography/hash-functions/">Hash functions</a>
+     href="../cryptography/hash-functions/">Hash functions</a>
   </li>
 </ul>
   </li>
@@ -443,7 +444,7 @@
   <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="../architecture-and-concepts/economics-of-starknet/">The Economics of Starknet</a>
+     href="../economics-of-starknet/">The Economics of Starknet</a>
   </li>
 </ul>
   </li>
@@ -456,12 +457,12 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../tools/starknet-book/">The Starknet Book</a>
+     href="../../tools/starknet-book/">The Starknet Book</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../tools/devtools/">Developer tools</a>
+     href="../../tools/devtools/">Developer tools</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
@@ -470,12 +471,12 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../cli/starkli/">Legacy Starknet CLI reference</a>
+     href="../../cli/starkli/">Legacy Starknet CLI reference</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../cli/starknet-compiler-options/">Legacy compiler CLI reference</a>
+     href="../../cli/starknet-compiler-options/">Legacy compiler CLI reference</a>
   </li>
 </ul>
   </li>
@@ -486,29 +487,29 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../tools/api-services/">Full nodes and API services</a>
+     href="../../tools/api-services/">Full nodes and API services</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../starknet-versions/juno-versions/">Juno release notes</a>
+     href="../../starknet-versions/juno-versions/">Juno release notes</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../starknet-versions/pathfinder-versions/">Pathfinder release notes</a>
+     href="../../starknet-versions/pathfinder-versions/">Pathfinder release notes</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../tools/ref-block-explorers/">Block explorers</a>
+     href="../../tools/ref-block-explorers/">Block explorers</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../tools/audit/">Audit providers</a>
+     href="../../tools/audit/">Audit providers</a>
   </li>
 </ul>
   </li>
@@ -519,12 +520,12 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../starkgate/overview/">Overview</a>
+     href="../../starkgate/overview/">Overview</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../starkgate/architecture/">StarkGate architecture</a>
+     href="../../starkgate/architecture/">StarkGate architecture</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
@@ -533,44 +534,44 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../starkgate/depositing/">Depositing funds</a>
+     href="../../starkgate/depositing/">Depositing funds</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../starkgate/withdrawing/">Withdrawing funds</a>
+     href="../../starkgate/withdrawing/">Withdrawing funds</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../starkgate/automated-actions-with-bridging/">Performing a Smart Deposit</a>
+     href="../../starkgate/automated-actions-with-bridging/">Performing a Smart Deposit</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../starkgate/adding-a-token/">Adding a token</a>
+     href="../../starkgate/adding-a-token/">Adding a token</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../starkgate/cancelling-a-deposit/">Cancelling a deposit</a>
+     href="../../starkgate/cancelling-a-deposit/">Cancelling a deposit</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../starkgate/estimating-fees/">Estimating StarkGate fees</a>
+     href="../../starkgate/estimating-fees/">Estimating StarkGate fees</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../tools/dai-token-migration/">Migrating DAI v0 to DAI</a>
+     href="../../tools/dai-token-migration/">Migrating DAI v0 to DAI</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../starkgate/function-reference/">StarkGate function and event reference</a>
+     href="../../starkgate/function-reference/">StarkGate function and event reference</a>
   </li>
 </ul>
   </li>
@@ -581,19 +582,19 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../tools/important-addresses/">Starknet contracts and sequencer addresses</a>
+     href="../../tools/important-addresses/">Starknet contracts and sequencer addresses</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../tools/bridged-tokens/">Bridged tokens</a>
+     href="../../tools/bridged-tokens/">Bridged tokens</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="../tools/limits-and-triggers/">Current limits</a>
+     href="../../tools/limits-and-triggers/">Current limits</a>
   </li>
 </ul>
   </li>
@@ -602,7 +603,7 @@
   <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="../glossary/">Glossary</a>
+     href="../../glossary/">Glossary</a>
   </li>
 </ul>
   </li>
@@ -629,7 +630,7 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Notational conventions</h1>
+<h1 class="page">Nodes</h1>
 <style>
   .page-meta-container {
     position: relative;
@@ -732,7 +733,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', async function() {
     // Extract repo and path information from editUrl
-    const editUrl = 'https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/ROOT/pages/notational-conventions.adoc';
+    const editUrl = 'https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/architecture-and-concepts/pages/nodes.adoc';
     const urlParts = editUrl.split('/');
     const repoOwner = urlParts[3];
     const repoName = urlParts[4];
@@ -819,83 +820,187 @@
   });
 </script>
 
-<table class="tableblock frame-all grid-all stripes-even stretch">
+<div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This topic previously appeared in the Starknet Book.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>This topic explores the role and functionality of nodes in the Starknet ecosystem, their interactions with sequencers, and their overall importance.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview-of-nodes-in-the-starknet-ecosystem"><a class="anchor" href="#overview-of-nodes-in-the-starknet-ecosystem"></a>Overview of nodes in the Starknet ecosystem</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A node in the Starknet ecosystem is a computer equipped with Starknet software, contributing significantly to the network&#8217;s operation. Nodes are vital for the Starknet ecosystem&#8217;s functionality, security, and overall health. Without nodes, the Starknet network would not be able to function effectively.</p>
+</div>
+<div class="paragraph">
+<p>Nodes in Starknet are categorized into two types:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Full nodes</strong>: Store the entire Starknet state and validate all transactions, crucial for the network&#8217;s integrity.</p>
+</li>
+<li>
+<p><strong>Light nodes</strong>: Do not store the entire Starknet state but rely on full nodes for information. Light nodes are faster and more efficient but offer less security than full nodes.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="core-functions-of-nodes"><a class="anchor" href="#core-functions-of-nodes"></a>Core functions of nodes</h3>
+<div class="paragraph">
+<p>Nodes are fundamental to the Starknet network, performing a variety of critical functions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Transaction validation</strong>: Nodes ensure transactions comply with Starknet&#8217;s rules, helping prevent fraud and malicious activities.</p>
+</li>
+<li>
+<p><strong>Block Creation and Propagation</strong>: Nodes create and circulate blocks to maintain a consistent blockchain view across the network.</p>
+</li>
+<li>
+<p><strong>State maintenance</strong>: Nodes track the Starknet network&#8217;s current state, including user balances and smart contract code, essential for transaction processing and smart contract execution.</p>
+</li>
+<li>
+<p><strong>API endpoint provision</strong>: Nodes provide API endpoints, aiding developers in creating applications, wallets, and tools for network interaction.</p>
+</li>
+<li>
+<p><strong>Transaction relay</strong>: Nodes relay user transactions to other nodes, improving network performance and reducing congestion.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="interplay-of-nodes-sequencers-clients-and-mempool-in-the-starknet-network"><a class="anchor" href="#interplay-of-nodes-sequencers-clients-and-mempool-in-the-starknet-network"></a>Interplay of nodes, sequencers, clients, and the mempool in Starknet</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="nodes-and-sequencers"><a class="anchor" href="#nodes-and-sequencers"></a>Nodes and sequencers</h3>
+<div class="paragraph">
+<p>Nodes and sequencers are interdependent:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Nodes and block production</strong>: Nodes depend on sequencers to create blocks and update the network state. Sequencers integrate the transactions validated by nodes into blocks, maintaining a consistent and current Starknet state.</p>
+</li>
+<li>
+<p><strong>Sequencers and transaction validation</strong>: Sequencers rely on nodes for transaction validation and network consensus. Prior to executing transactions, sequencers work with nodes to confirm transaction legitimacy, deterring fraudulent activities. Nodes also contribute to the consensus mechanism, ensuring uniformity in the blockchain state.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="nodes-and-clients"><a class="anchor" href="#nodes-and-clients"></a>Nodes and clients</h3>
+<div class="paragraph">
+<p>The relationship between nodes and clients in the Starknet ecosystem is characterized by a client-server model:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Client requests and node responses</strong>: Clients send requests, like transaction submissions or state queries. Nodes process these requests, validating transactions, updating the network state, and providing clients with the requested data.</p>
+</li>
+<li>
+<p><strong>Client experience</strong>: Clients receive node responses, updating their local view with the latest network information. This loop enables user interaction with Starknet DApps, with nodes maintaining network integrity, while clients provide a user-friendly interface.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="nodes-and-the-mempool"><a class="anchor" href="#nodes-and-the-mempool"></a>Nodes and the mempool</h3>
+<div class="paragraph">
+<p>The mempool acts as a holding area for unprocessed transactions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Transaction validation and mempool storage</strong>: Upon receiving a transaction, a node validates it. Valid transactions are added to the mempool and broadcast to other network nodes.</p>
+</li>
+<li>
+<p><strong>Transaction selection and block inclusion</strong>: Nodes select transactions from the mempool for processing, incorporating them into blocks that are added to the blockchain.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="node-implementations-in-starknet"><a class="anchor" href="#node-implementations-in-starknet"></a>Node implementations in Starknet</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Each Starknet node implementation has its own strengths:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/eqlabs/pathfinder"><strong>Pathfinder</strong></a>, by Equilibrium: Pathfinder is a full node written in Rust. Pathfinder excels in high performance, scalability, and aligns with the Starknet Cairo specification.</p>
+</li>
+<li>
+<p><a href="https://github.com/NethermindEth/juno"><strong>Juno</strong></a>, by Nethermind: Juno, is a  full node written in Golang. Juno is known for user-friendliness, ease of deployment, and compatibility with Ethereum tools.</p>
+</li>
+<li>
+<p><a href="https://github.com/starkware-libs/papyrus"><strong>Papyrus</strong></a>, by StarkWare: Papyrus is also a full node written in Rust. Papyrus focuses on security and robustness. It&#8217;s integral to the upcoming Starknet Sequencer, expected to boost network throughput.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These implementations are continuously being improved, with new features and enhancements. The choice of implementation depends on user or developer preferences and requirements.</p>
+</div>
+<div class="paragraph">
+<p>Key characteristics of each node implementation are summarized below:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 33.3333%;">
-<col style="width: 66.6667%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Notation</th>
-<th class="tableblock halign-left valign-top">Explanation</th>
+<th class="tableblock halign-left valign-top">Node Implementation</th>
+<th class="tableblock halign-left valign-top">Language</th>
+<th class="tableblock halign-left valign-top">Strengths</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>bold</strong></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Indicates GUI elements, such as button text or menu names.</p>
-</li>
-<li>
-<p>Highlights text for added importance or to draw attention to it.</p>
-</li>
-</ul>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pathfinder</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rust</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">High performance, scalability, Cairo specification adherence</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>italics</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates the first occurrence of a new term, titles of documents or topics, and user-supplied or variable values.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Papyrus</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rust</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Security, robustness, Starknet Sequencer foundation</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>monospace</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates code, commands, file paths, or other text that should be displayed in a fixed-width font to differentiate it from the surrounding text.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;item&gt;</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates user-supplied or variable values in code, commands, file paths, or other text that should be displayed in a monospace font.</p>
-<p class="tableblock">Can also refer to generic types. For example: <code>List&lt;felt252&gt;</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\(\text{string_in_math_notation}\)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A normal (non-italics) serif typeface indicates a fixed element or constant specified in mathematical notation.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An ellipsis indicates that the preceding element can repeat multiple times.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[item, &#8230;&#8203;]</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Square brackets indicate that the enclosed items are optional. Also can indicate a range of numbers, where the enclosed items are included. For example, in [0,100], 0 and 100 are part of the specified range.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>(item1, item2)</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Parentheses indicate a range of numbers, where the enclosed items are not included. For example, in (0,100), 0 and 100 are <em>not</em> part of the specified range.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">item1 | item2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A vertical bar (|) indicates a choice between <strong>item1</strong> and <strong>item2</strong>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>{item1, item2}</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Curly brackets indicates a list or set of possible values.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">/</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A forward slash indicates a division operator or a path separator in URLs and file paths.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Juno</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Golang</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User-friendliness, ease of deployment, Ethereum compatibility</p></td>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
 <nav class="pagination">
-  <span class="prev"><a href="../">Overview</a></span>
-  <span class="next"><a href="../quick-start/environment-setup/">Setting up your environment</a></span>
+  <span class="prev"><a href="../solidity-verifier/">Solidity verifier</a></span>
+  <span class="next"><a href="../network-architecture/block-structure/">Block structure</a></span>
 </nav>
 </article>
   </div>
@@ -928,13 +1033,13 @@
     </div>
   </div>
 </footer>
-<script src="../_/js/site.js?new"></script>
-<script async src="../_/js/vendor/highlight.js?new"></script>
-<script async src="../_/js/vendor/tabs-block-behaviour.js?new"></script>
-<script async src="../_/js/vendor/swagger-ui.js?new"></script>
-<script async src="../_/js/vendor/component-versions.js?new"></script>
-<script src="../_/js/vendor/custom.js?new"></script>
-<script async src="../_/js/vendor/tabs.js"></script>
+<script src="../../_/js/site.js?new"></script>
+<script async src="../../_/js/vendor/highlight.js?new"></script>
+<script async src="../../_/js/vendor/tabs-block-behaviour.js?new"></script>
+<script async src="../../_/js/vendor/swagger-ui.js?new"></script>
+<script async src="../../_/js/vendor/component-versions.js?new"></script>
+<script src="../../_/js/vendor/custom.js?new"></script>
+<script async src="../../_/js/vendor/tabs.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script>
 <script
