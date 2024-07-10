@@ -628,7 +628,7 @@ scarb --version</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>If either of the above commands fails, see <a href="../environment_setup/" class="xref page">Setting up your environment</a>.</p>
+<p>If either of the above commands fails, see <a href="#environment-setup.adoc" class="xref unresolved">Setting up your environment</a>.</p>
 </div>
 </div>
 </div>
@@ -684,7 +684,7 @@ name = "contracts"
 version = "0.1.0"
 
 [dependencies]
-starknet = "&gt;=2.5.4"
+starknet = "&gt;=2.2.0"
 
 [[target.starknet-contract]]
 sierra = true</code></pre>
@@ -741,7 +741,7 @@ sierra = true</code></pre>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Custom configuration</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Set up your own node and use the RPC provider of your node. More information on this can be found within the <a href="https://book.starknet.io/ch03-04-nodes.html">Starknet Book</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set up your own node and use the RPC provider of your node. More information on this can be found within the <a href="https://book.starknet.io/chapter_4/node.html">Starknet Book</a>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -758,7 +758,7 @@ sierra = true</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">starkli declare target/dev/&lt;NAME&gt;.json --network=sepolia --compiler-version=2.5.4</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">starkli declare target/dev/&lt;NAME&gt;.json --network=sepolia --compiler-version=2.1.0</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -792,11 +792,11 @@ sierra = true</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">--compiler-version &lt;COMPILER_VERSION&gt;
-          Statically-linked Sierra compiler version [possible values: 2.4.0, 2.5.4, 2.6.2]</code></pre>
+          Statically-linked Sierra compiler version [possible values: 2.0.1, 2.1.0]</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>However, because Starkli and Scarb are not always in sync, the Scarb compiler version might be greater than <code>2.5.4</code>. You can check by running the following command:</p>
+<p>However, the Scarb compiler version may be <code>2.2.0</code>, you can find this out by running:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -804,14 +804,17 @@ sierra = true</code></pre>
 </div>
 </div>
 <div class="paragraph">
+<p>This is because Starkli and Scarb are not always in sync.</p>
+</div>
+<div class="paragraph">
 <p>In this case you would need to use the compiler version that Starkli is using by installing a previous version of Scarb. See the <a href="https://github.com/software-mansion/scarb/releases">Scarb github repo</a> for more detail.</p>
 </div>
 <div class="paragraph">
-<p>You can do this by running the following command for installing Scarb version <code>2.5.4</code>:</p>
+<p>You can do this by running the following command for installing Scarb version <code>0.6.1</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl --proto '=https' --tlsv1.2 -sSf https://docs.swmansion.com/scarb/install.sh | sh -s -- -v 2.5.4</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl --proto '=https' --tlsv1.2 -sSf https://docs.swmansion.com/scarb/install.sh | sh -s -- -v 0.6.1</code></pre>
 </div>
 </div>
 <div class="paragraph">
