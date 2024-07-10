@@ -204,11 +204,6 @@
        class="nav-link"
      href="../../../quick-start/interact-with-a-smart-contract/">Interacting with a smart contract</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../../../quick-start/deploy-interact-with-a-smart-contract-remix/">Deploying and interacting with a smart contract with Remix</a>
-  </li>
 </ul>
   </li>
 </ul>
@@ -223,21 +218,6 @@
     <a 
        class="nav-link"
      href="../starknet-architecture-overview/">Overview</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../../provers-overview/">Provers</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../../solidity-verifier/">Solidity verifier</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../../nodes/">Nodes</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
@@ -917,7 +897,7 @@ The mempool performs a preliminary validation on the transaction, such as ensuri
 </td>
 <td class="content">
 <div class="paragraph">
-<p>A rejected transaction is stored in the mempool. You cannot send another transaction with the same transaction hash.</p>
+<p>A <code>REJECTED</code> transaction is stored in the mempool. You cannot send another transaction with the same transaction hash.</p>
 </div>
 </td>
 </tr>
@@ -935,23 +915,7 @@ The mempool performs a preliminary validation on the transaction, such as ensuri
 <tr>
 <td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><strong>Execution</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>REVERTED</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The transaction passed validation but failed during execution in the sequencer. It is included in the block with the status <code>REVERTED</code>.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Since only <code>INVOKE</code> transactions have an execution phase, <code>DEPLOY_ACCOUNT</code> and <code>DECLARE</code> transactions cannot be reverted. If either the <code>__VALIDATE_DEPLOY__</code> or the <code>__VALIDATE_DECLARE__</code> function fails when run in the sequencer, then the transaction is rejected.</p>
-</div>
-</td>
-</tr>
-</table>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The transaction passed validation but failed during execution in the sequencer. It is included in the block with the status <code>REVERTED</code>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>SUCCEEDED</code></p></td>
