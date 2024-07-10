@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Overview :: Starknet documentation</title>
-    <link rel="canonical" href="https://docs.starknet.io/">
-    <link rel="next" href="notational-conventions/">
+    <title>Deploying and interacting with a Starknet smart contract with Remix :: Starknet documentation</title>
+    <link rel="canonical" href="https://docs.starknet.io/quick-start/deploy-interact-with-a-smart-contract-remix/">
+    <link rel="prev" href="../interact-with-a-smart-contract/">
+    <link rel="next" href="../../starknet-versions/version-notes/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -25,15 +26,15 @@
     <meta property="twitter:url" content="https://docs.starknet.io/">
     <meta property="twitter:title" content="Starknet Documentation">
     <meta property="twitter:description" content="Reference documentation for developers building on Starknet.">
-    <meta property="twitter:image" content="https://www.starknet.io/starknet-docs-card.png">  <link rel="stylesheet" href="./_/css/vendor/tabs.css">
-  <link id="theme" rel="stylesheet" title="Default" href="./_/css/site.css?new">
-  <link rel="stylesheet" title="Dark" href="./_/css/dark-site.css?new">
-  <link rel="stylesheet" href="./_/css/vendor/tabs.css">
-  <link rel="stylesheet" href="./_/css/home.css">
+    <meta property="twitter:image" content="https://www.starknet.io/starknet-docs-card.png">  <link rel="stylesheet" href="../../_/css/vendor/tabs.css">
+  <link id="theme" rel="stylesheet" title="Default" href="../../_/css/site.css?new">
+  <link rel="stylesheet" title="Dark" href="../../_/css/dark-site.css?new">
+  <link rel="stylesheet" href="../../_/css/vendor/tabs.css">
+  <link rel="stylesheet" href="../../_/css/home.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WY42TERK5P"></script>
     <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','G-WY42TERK5P')</script>
-    <script>var uiRootPath = './_'</script>
-    <script src="./_/js/vendor/medium-zoom.js?new"></script>
+    <script>var uiRootPath = '../../_'</script>
+    <script src="../../_/js/vendor/medium-zoom.js?new"></script>
     <script type="text/javascript" id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="e4db29b5-cd94-4bcf-87e4-04f4ca564240" data-blockingmode="manual"></script>
     <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
@@ -47,27 +48,27 @@
         a.appendChild(r);
         })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
-<link rel="icon" href="./_/img/favicon/favicon.ico" type="image/x-icon">
+<link rel="icon" href="../../_/img/favicon/favicon.ico" type="image/x-icon">
 
 <!-- For all browsers -->
-<link rel="icon" type="image/png" sizes="32x32" href="./_/img/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="./_/img/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../_/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../_/img/favicon-16x16.png">
 
 <!-- For Google and Chrome -->
-<link rel="icon" type="image/png" sizes="192x192" href="./_/img/favicon/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../../_/img/favicon/android-chrome-192x192.png">
 
 <!-- For iPad -->
-<link rel="apple-touch-icon" type="image/png" sizes="167x167" href="./_/img/favicon/apple-touch-icon.png">
+<link rel="apple-touch-icon" type="image/png" sizes="167x167" href="../../_/img/favicon/apple-touch-icon.png">
 <!-- For iPhone -->
-<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="./_/img/favicon/apple-touch-icon.png">  </head>
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../../_/img/favicon/apple-touch-icon.png">  </head>
   <body class="article">
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
       <div class="top-logo">
-        <a href="." class="starknet-logo"></a>
+        <a href="../.." class="starknet-logo"></a>
         <div class="vertical-divider desktop-only"></div>
-        <a href="." class="docs-logo desktop-only">Docs</a>
+        <a href="../.." class="docs-logo desktop-only">Docs</a>
       </div>
       <!--<a class="navbar-item" href="https://docs.starknet.io">Starknet documentation</a>-->
       <div id="autocomplete" class="autocomplete-root"></div>
@@ -102,16 +103,17 @@
   </div>
   <span></span>
   <span></span>
-  <a href="./" class="home-link is-current mask-svg-center"></a>
+  <a href="../../" class="home-link mask-svg-center"></a>
   <div id="mobile-autocomplete" class="mobile-only"></div>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="./">Starknet</a></li>
-    <li><a href="./">Overview</a></li>
+    <li><a href="../../">Starknet</a></li>
+    <li>Quick start</li>
+    <li><a href="./">Deploying and interacting with a smart contract with Remix</a></li>
   </ul>
 </nav>
   <div class="edit-this-page">
-    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/ROOT/pages/index.adoc"><img class="pencil">Edit this Page</a>
+    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/quick-start/pages/deploy-interact-with-a-smart-contract-remix.adoc"><img class="pencil">Edit this Page</a>
   </div>
 </div>
 <div class="body">
@@ -120,19 +122,19 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="./">Starknet</a></h3>
+    <h3 class="title"><a href="../../">Starknet</a></h3>
 <ul class="nav-list">
   <li class="nav-item parent" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="./">Overview</a>
+     href="../../">Overview</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="notational-conventions/">Notational conventions</a>
+     href="../../notational-conventions/">Notational conventions</a>
   </li>
 </ul>
   </li>
@@ -147,23 +149,23 @@
         <span>
     <a 
        class="nav-link nav-link-with-toggle"
-     href="quick-start/environment-setup/">Setting up your environment</a>
+     href="../environment-setup/">Setting up your environment</a>
         </span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="quick-start/environment-setup/#installing_starkli">Installing Starkli</a>
+     href="../environment-setup/#installing_starkli">Installing Starkli</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="quick-start/environment-setup/#setting_environment_variables_for_starkli">Environment variables</a>
+     href="../environment-setup/#setting_environment_variables_for_starkli">Environment variables</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="quick-start/environment-setup/#installing_scarb">Installing Scarb</a>
+     href="../environment-setup/#installing_scarb">Installing Scarb</a>
   </li>
 </ul>
   </li>
@@ -172,40 +174,40 @@
         <span>
     <a 
        class="nav-link nav-link-with-toggle"
-     href="quick-start/set-up-an-account/">Setting up an account</a>
+     href="../set-up-an-account/">Setting up an account</a>
         </span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="quick-start/set-up-an-account/#creating_an_account">Creating an account</a>
+     href="../set-up-an-account/#creating_an_account">Creating an account</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="quick-start/set-up-an-account/#deploying_an_account">Deploying an account</a>
+     href="../set-up-an-account/#deploying_an_account">Deploying an account</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="quick-start/declare-a-smart-contract/">Declaring a smart contract</a>
+     href="../declare-a-smart-contract/">Declaring a smart contract</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="quick-start/deploy-a-smart-contract/">Deploying a smart contract</a>
+     href="../deploy-a-smart-contract/">Deploying a smart contract</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="quick-start/interact-with-a-smart-contract/">Interacting with a smart contract</a>
+     href="../interact-with-a-smart-contract/">Interacting with a smart contract</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a 
        class="nav-link"
-     href="quick-start/deploy-interact-with-a-smart-contract-remix/">Deploying and interacting with a smart contract with Remix</a>
+     href="./">Deploying and interacting with a smart contract with Remix</a>
   </li>
 </ul>
   </li>
@@ -220,12 +222,12 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="starknet-versions/version-notes/">Release notes</a>
+     href="../../starknet-versions/version-notes/">Release notes</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="starknet-versions/deprecated/">Deprecated, unsupported, and removed features</a>
+     href="../../starknet-versions/deprecated/">Deprecated, unsupported, and removed features</a>
   </li>
 </ul>
   </li>
@@ -240,42 +242,42 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/starknet-architecture-overview/">Overview</a>
+     href="../../architecture-and-concepts/network-architecture/starknet-architecture-overview/">Overview</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/provers-overview/">Provers</a>
+     href="../../architecture-and-concepts/provers-overview/">Provers</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/solidity-verifier/">Solidity verifier</a>
+     href="../../architecture-and-concepts/solidity-verifier/">Solidity verifier</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/nodes/">Nodes</a>
+     href="../../architecture-and-concepts/nodes/">Nodes</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/block-structure/">Block structure</a>
+     href="../../architecture-and-concepts/network-architecture/block-structure/">Block structure</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/transaction-life-cycle/">Transaction lifecycle</a>
+     href="../../architecture-and-concepts/network-architecture/transaction-life-cycle/">Transaction lifecycle</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/transactions/">Transaction types</a>
+     href="../../architecture-and-concepts/network-architecture/transactions/">Transaction types</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/fee-mechanism/">Gas and transaction fees</a>
+     href="../../architecture-and-concepts/network-architecture/fee-mechanism/">Gas and transaction fees</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
@@ -284,12 +286,12 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/starknet-state/">Starknet state</a>
+     href="../../architecture-and-concepts/network-architecture/starknet-state/">Starknet state</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/data-availability/">Data availability</a>
+     href="../../architecture-and-concepts/network-architecture/data-availability/">Data availability</a>
   </li>
 </ul>
   </li>
@@ -300,12 +302,12 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/messaging-mechanism/">L1-L2 messaging mechanism</a>
+     href="../../architecture-and-concepts/network-architecture/messaging-mechanism/">L1-L2 messaging mechanism</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/messaging-reference/">Messaging reference</a>
+     href="../../architecture-and-concepts/network-architecture/messaging-reference/">Messaging reference</a>
   </li>
 </ul>
   </li>
@@ -316,32 +318,32 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/accounts/introduction/">What is an account?</a>
+     href="../../architecture-and-concepts/accounts/introduction/">What is an account?</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/accounts/approach/">Starknet&#8217;s account interface</a>
+     href="../../architecture-and-concepts/accounts/approach/">Starknet&#8217;s account interface</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/accounts/account-functions/">Account interface function reference</a>
+     href="../../architecture-and-concepts/accounts/account-functions/">Account interface function reference</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/accounts/deploying-new-accounts/">Deploying new accounts</a>
+     href="../../architecture-and-concepts/accounts/deploying-new-accounts/">Deploying new accounts</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/accounts/universal-deployer/">Universal Deployer Contract</a>
+     href="../../architecture-and-concepts/accounts/universal-deployer/">Universal Deployer Contract</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/accounts/simplified-transaction-flow/">Simplified transaction flow</a>
+     href="../../architecture-and-concepts/accounts/simplified-transaction-flow/">Simplified transaction flow</a>
   </li>
 </ul>
   </li>
@@ -352,62 +354,62 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/contract-classes/">Contract classes and instances</a>
+     href="../../architecture-and-concepts/smart-contracts/contract-classes/">Contract classes and instances</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/class-hash/">Class hash</a>
+     href="../../architecture-and-concepts/smart-contracts/class-hash/">Class hash</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/contract-address/">Contract address</a>
+     href="../../architecture-and-concepts/smart-contracts/contract-address/">Contract address</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/contract-storage/">Contract storage</a>
+     href="../../architecture-and-concepts/smart-contracts/contract-storage/">Contract storage</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/contract-abi/">Contract ABI</a>
+     href="../../architecture-and-concepts/smart-contracts/contract-abi/">Contract ABI</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/starknet-events/">Events</a>
+     href="../../architecture-and-concepts/smart-contracts/starknet-events/">Events</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/contract-syntax/">Migrating a contract from Cairo v1 to Cairo v2</a>
+     href="../../architecture-and-concepts/smart-contracts/contract-syntax/">Migrating a contract from Cairo v1 to Cairo v2</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/cairo-and-sierra/">Cairo and Sierra</a>
+     href="../../architecture-and-concepts/smart-contracts/cairo-and-sierra/">Cairo and Sierra</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/cairo-builtins/">Cairo builtins</a>
+     href="../../architecture-and-concepts/smart-contracts/cairo-builtins/">Cairo builtins</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/serialization-of-cairo-types/">Serialization of Cairo types</a>
+     href="../../architecture-and-concepts/smart-contracts/serialization-of-cairo-types/">Serialization of Cairo types</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/system-calls-cairo1/">System calls</a>
+     href="../../architecture-and-concepts/smart-contracts/system-calls-cairo1/">System calls</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/execution-info/">Execution information for the current block</a>
+     href="../../architecture-and-concepts/smart-contracts/execution-info/">Execution information for the current block</a>
   </li>
 </ul>
   </li>
@@ -418,17 +420,17 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/cryptography/p-value/">The STARK field</a>
+     href="../../architecture-and-concepts/cryptography/p-value/">The STARK field</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/cryptography/stark-curve/">The STARK curve</a>
+     href="../../architecture-and-concepts/cryptography/stark-curve/">The STARK curve</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/cryptography/hash-functions/">Hash functions</a>
+     href="../../architecture-and-concepts/cryptography/hash-functions/">Hash functions</a>
   </li>
 </ul>
   </li>
@@ -437,7 +439,7 @@
   <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/economics-of-starknet/">The Economics of Starknet</a>
+     href="../../architecture-and-concepts/economics-of-starknet/">The Economics of Starknet</a>
   </li>
 </ul>
   </li>
@@ -450,12 +452,12 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="tools/starknet-book/">The Starknet Book</a>
+     href="../../tools/starknet-book/">The Starknet Book</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="tools/devtools/">Developer tools</a>
+     href="../../tools/devtools/">Developer tools</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
@@ -464,12 +466,12 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="cli/starkli/">Legacy Starknet CLI reference</a>
+     href="../../cli/starkli/">Legacy Starknet CLI reference</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="cli/starknet-compiler-options/">Legacy compiler CLI reference</a>
+     href="../../cli/starknet-compiler-options/">Legacy compiler CLI reference</a>
   </li>
 </ul>
   </li>
@@ -480,29 +482,29 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="tools/api-services/">Full nodes and API services</a>
+     href="../../tools/api-services/">Full nodes and API services</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starknet-versions/juno-versions/">Juno release notes</a>
+     href="../../starknet-versions/juno-versions/">Juno release notes</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starknet-versions/pathfinder-versions/">Pathfinder release notes</a>
+     href="../../starknet-versions/pathfinder-versions/">Pathfinder release notes</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="tools/ref-block-explorers/">Block explorers</a>
+     href="../../tools/ref-block-explorers/">Block explorers</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="tools/audit/">Audit providers</a>
+     href="../../tools/audit/">Audit providers</a>
   </li>
 </ul>
   </li>
@@ -513,12 +515,12 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="starkgate/overview/">Overview</a>
+     href="../../starkgate/overview/">Overview</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="starkgate/architecture/">StarkGate architecture</a>
+     href="../../starkgate/architecture/">StarkGate architecture</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
@@ -527,44 +529,44 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starkgate/depositing/">Depositing funds</a>
+     href="../../starkgate/depositing/">Depositing funds</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starkgate/withdrawing/">Withdrawing funds</a>
+     href="../../starkgate/withdrawing/">Withdrawing funds</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starkgate/automated-actions-with-bridging/">Performing a Smart Deposit</a>
+     href="../../starkgate/automated-actions-with-bridging/">Performing a Smart Deposit</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starkgate/adding-a-token/">Adding a token</a>
+     href="../../starkgate/adding-a-token/">Adding a token</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starkgate/cancelling-a-deposit/">Cancelling a deposit</a>
+     href="../../starkgate/cancelling-a-deposit/">Cancelling a deposit</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starkgate/estimating-fees/">Estimating StarkGate fees</a>
+     href="../../starkgate/estimating-fees/">Estimating StarkGate fees</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="tools/dai-token-migration/">Migrating DAI v0 to DAI</a>
+     href="../../tools/dai-token-migration/">Migrating DAI v0 to DAI</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="starkgate/function-reference/">StarkGate function and event reference</a>
+     href="../../starkgate/function-reference/">StarkGate function and event reference</a>
   </li>
 </ul>
   </li>
@@ -575,19 +577,19 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="tools/important-addresses/">Starknet contracts and sequencer addresses</a>
+     href="../../tools/important-addresses/">Starknet contracts and sequencer addresses</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="tools/bridged-tokens/">Bridged tokens</a>
+     href="../../tools/bridged-tokens/">Bridged tokens</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="tools/limits-and-triggers/">Current limits</a>
+     href="../../tools/limits-and-triggers/">Current limits</a>
   </li>
 </ul>
   </li>
@@ -596,7 +598,7 @@
   <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="glossary/">Glossary</a>
+     href="../../glossary/">Glossary</a>
   </li>
 </ul>
   </li>
@@ -623,7 +625,7 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Overview</h1>
+<h1 class="page">Deploying and interacting with a Starknet smart contract with Remix</h1>
 <style>
   .page-meta-container {
     position: relative;
@@ -726,7 +728,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', async function() {
     // Extract repo and path information from editUrl
-    const editUrl = 'https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/ROOT/pages/index.adoc';
+    const editUrl = 'https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/quick-start/pages/deploy-interact-with-a-smart-contract-remix.adoc';
     const urlParts = editUrl.split('/');
     const repoOwner = urlParts[3];
     const repoName = urlParts[4];
@@ -815,280 +817,533 @@
 
 <div id="preamble">
 <div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 <div class="paragraph">
-<p>Starknet is a permissionless Validity-Rollup, also known as a zero-knowledge rollup (ZK rollup) for Ethereum. As a Layer 2 (L2) blockchain, Starknet enables any dApp to achieve massive computation scale without compromising on Ethereum’s composability
-and security.</p>
+<p>This topic previously appeared in the Starknet Book.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>Starknet aims to achieve secure, low-cost transactions and high performance by using the STARK cryptographic proof system. Starknet contracts and the Starknet OS are written in <a href="https://github.com/starkware-libs/cairo">Cairo</a>, a custom-built and
-specialized programming language.</p>
+<p>To compile, deploy, and interact with our smart contract, use the Starknet Remix plugin. This tool enables you to start to develop for Starknet without the need for any local installations on your machine.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="explore_starknet"><a class="anchor" href="#explore_starknet"></a>Explore Starknet</h2>
+<h2 id="setting_up_your_environment_in_remix"><a class="anchor" href="#setting_up_your_environment_in_remix"></a>Setting up your environment in Remix</h2>
 <div class="sectionbody">
-<div class="home-cta-container">
-  <a href="https://docs.starknet.io/documentation/quick_start/environment_setup/" class="home-cta home-cta-first" id="cta1">
-    <div class="image-container">
-      <img src="_images/developers.svg" style="filter: none; border-radius: 0px;" class="cta-image" id="img_1">
-    </div>
-    <h2>Quick start</h2>
-    <p class="chakra-card__body css-jintet" id="text1">Set up your environment and get started with Starknet.</p>
-    <p class="chakra-card__body css-jintet" id="text2"><b>Explore ></b></p>
-  </a>
-
-  <a href="https://docs.starknet.io/documentation/architecture_and_concepts/Network_Architecture/header/" class="home-cta" id="cta2">
-    <div class="image-container">
-      <img src="_images/how_SN_works.svg" style="filter: none; border-radius: 0px;" class="cta-image" id="img_2">
-    </div>
-    <h2>Architecture</h2>
-    <p class="chakra-card__body css-jintet" id="text3">Learn about Starknet's architecture including contracts and accounts.</p>
-    <p class="chakra-card__body css-jintet" id="text4"><b>Explore ></b></p>
-  </a>
-
-  <a href="https://docs.starknet.io/documentation/starknet_versions/version_notes/" class="home-cta" id="cta3">
-    <div class="image-container">
-      <img src="_images/roadmap.svg" style="filter: none; border-radius: 0px;" class="cta-image" id="img_3">
-    </div>
-    <h2>Releases</h2>
-    <p class="chakra-card__body css-jintet" id="text5">Learn more about the current version of Starknet.</p>
-    <p class="chakra-card__body css-jintet" id="text6"><b>Explore ></b></p>
-  </a>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to the <a href="https://remix.ethereum.org/#activate=Starknet&amp;lang=en&amp;optimize=false&amp;runs=200&amp;evmVersion=null&amp;version=soljson-v0.8.24+commit.e11b9ed9.js">Remix IDE website with the Starknet plugin activated</a>.</p>
+</li>
+<li>
+<p>Click the <strong>File Explorer</strong> <span class="image"><img src="../_images/remix_file_explorer.png" alt="File Explorer" width="24" height="24"></span> tab to review the details of the example project.</p>
+</li>
+<li>
+<p>Click the <strong>Starknet</strong> <span class="image"><img src="../_images/remix-starknet-icon.png" alt="Starknet" width="24" height="24"></span> tab, and click the <strong>Settings</strong>. Select the latest version of Cairo available in Remix.</p>
+</li>
+<li>
+<p>In the File explorer, open the <code>Scarb.toml</code> file to verify the version of your project. Ensure it matches the version specified originally, and correct any discrepancies, if necessary.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="developer_tools_and_resources"><a class="anchor" href="#developer_tools_and_resources"></a>Developer tools and resources</h2>
+<h2 id="customizing_your_environment_for_the_ownable_contract"><a class="anchor" href="#customizing_your_environment_for_the_ownable_contract"></a>Customizing your environment for the <code>Ownable</code> contract</h2>
 <div class="sectionbody">
-<div class="no-background no-border">
-  <div class="column-container">
-    <div class="column">
-      <p><a href="https://book.starknet.io/">The Starknet Book</a></p>
-      <p><a href="https://docs.cairo-lang.org/">The Cairo docs</a></p>
-      <p><a href="https://docs.starknet.io/documentation/tools/devtools/">Starknet development tools</a></p>
-      <p><a href="https://docs.starknet.io/documentation/tools/api-services/">Full nodes and API services</a></p>
-    </div>
-    <div class="column">
-      <p><a href="https://docs.starknet.io/documentation/tools/limits_and_triggers/">Limits and triggers</a></p>
-      <p><a href="https://docs.starknet.io/documentation/cli/starkli/">Cairo 0 tools</a></p>
-      <p><a href="https://docs.starknet.io/documentation/tools/ref_block_explorers/">Block explorers</a></p>
-      <p><a href="https://docs.starknet.io/documentation/tools/audit/">Audit providers</a></p>
-    </div>
-  </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>For this tutorial, a default example project is provided. Modify or remove certain files and directories as needed.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Rename the root directory to <code>ownable</code>. In your <code>Scarb.toml</code>, under the <code>[package]</code> section, set the name to <code>ownable</code>.</p>
+</li>
+<li>
+<p>Under <code>src/</code>, delete the <code>balance.cairo</code> and <code>forty_two.cairo</code> files, if they exist.</p>
+</li>
+<li>
+<p>Open <code>lib.cairo</code> and delete all its contents.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="contribute_to_the_starknet_docs"><a class="anchor" href="#contribute_to_the_starknet_docs"></a>Contribute to the Starknet docs</h2>
+<h2 id="exploring_the_ownable_starknet_smart_contract"><a class="anchor" href="#exploring_the_ownable_starknet_smart_contract"></a>Exploring the <code>ownable</code> Starknet smart contract</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Want to contribute to Starknet documentation? Get started here:</p>
+<p>Explore the <a href="#example-cairo-contract">Example <code>Ownable</code> contract</a>, crafted in Cairo for Starknet. It includes:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>See the <a href="https://github.com/starknet-io/starknet-docs/blob/dev/README.adoc#different_ways_to_contribute">different ways to contribute</a>.</p>
+<p>An ownership system.</p>
 </li>
 <li>
-<p>Review these <a href="https://github.com/starknet-io/starknet-docs/blob/dev/contributing_to_docs/doc_guidelines.adoc">basic writing guidelines</a> to help you write better and be a more valuable contributor.</p>
+<p>A method to transfer ownership.</p>
 </li>
 <li>
-<p>Use the <a href="https://github.com/starknet-io/starknet-docs/blob/dev/contributing_to_docs/starknet_docs_style_guide.adoc">Starknet documentation supplementary style guide</a> to help you write with the Starknet voice.</p>
+<p>A method to check the current owner.</p>
+</li>
+<li>
+<p>An event notification for ownership changes.</p>
 </li>
 </ul>
 </div>
-<html>
-<head>
-<style>
-*::before, ::after {
-  border-color: var(--chakra-colors-gray-200);
+<div class="sect2">
+<h3 id="example-cairo-contract"><a class="anchor" href="#example-cairo-contract"></a>Example: <code>ownable</code> Cairo contract</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">use starknet::ContractAddress; <i class="conum" data-value="1"></i><b>(1)</b>
+
+#[starknet::interface]
+trait OwnableTrait&lt;T&gt; { <i class="conum" data-value="1"></i><b>(1)</b>
+    fn transfer_ownership(ref self: T, new_owner: ContractAddress); <i class="conum" data-value="2"></i><b>(2)</b>
+    fn get_owner(self: @T) -&gt; ContractAddress; <i class="conum" data-value="2"></i><b>(2)</b>
 }
 
-:where(*, *::before, *::after) {
-  border-width: 0;
-  border-style: solid;
-  box-sizing: border-box;
-  word-wrap: break-word;
-}
+#[starknet::contract]
+mod Ownable {
+    use super::ContractAddress;
+    use starknet::get_caller_address;
 
-@media (max-width: 768px) {
-  .home-cta-container {
-    flex-direction: column; /* Switch back to a column layout for mobile */
-  }
-
-  .home-cta-container .home-cta {
-    margin: 8px 8px 0 8px; /* Reset margin for mobile */
-    width: 100%; /* Make each box take up the full width of the screen */
-  }
-}
-
-.home-cta-container {
-  display: flex;
-}
-
-.cta-image-container {
-  background-image: url('_images/developers.svg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 100%;
-  height: 100%;
-}
-
-.image-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center; s
-  align-items: center;
-  height: 8em;
-  margin-bottom: 10px;
-  margin: 8px;
-  border-radius: 20px 20px 0 0;
-  position: relative;
-  background-image: linear-gradient(180.15deg, var(--chakra-colors-chakra-body-text) 0.2%, var(--chakra-colors-chakra-body-bg) 105.43%);
-  overflow: hidden;
-}
-
-.image-container img {
-  z-index: -1;
-}
-
-.cta-image {
-  max-width: 464px;
-  max-height: 100%;
-}
-
-.home-cta {
-  flex: 1;
-  margin: 8px 8px 0 8px;
-  padding: 20px;
-  background-color: var(--chakra-colors-chakra-body-bg);
-  border: 1px solid rgb(226, 232, 240);
-  border-bottom: 1px solid rgb(226, 232, 240);
-  border-radius: 20px;
-  color: var(--chakra-colors-card-link-fg);
-  font-size: 18px;
-  font-weight: var(--chakra-fontWeights-medium);
-  text-decoration: none;
-  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
-  box-sizing: border-box;
-  position: relative;
-  background-image: linear-gradient(180.15deg, var(--chakra-colors-gradient-blue-default-a) 0.2%, var(--chakra-colors-gradient-blue-default-b) 105.43%);
-  overflow: hidden;
-  transition-property: var(--chakra-transition-property-common);
-  transition-duration: var(--chakra-transition-duration-fast);
-  transition-timing-function: var(--chakra-transition-easing-ease-out);
-  cursor: pointer;
-  -webkit-text-decoration: none;
-
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-
-.home-cta-first {
-  margin-left: 0;
-}
-
-.chakra-card__body.css-jintet {
-  font-size: 15px;
-  color: #363636;
-}
-
-.column-container {
-  display: flex;
-}
-
-.column {
-  flex: 1;
-  padding: 10px;
-  margin: 5px;
-  border-radius: 5px;
-}
-
-.home-cta-container .home-cta:hover {
-  text-decoration: none;
-  color: #363636;
-  border-color: #C506E4;
-}
-
-.home-cta a {
-  text-decoration: none;
-  color: #363636;
-}
-</style>
-
-<script>
-
-document.addEventListener('DOMContentLoaded', function() {
-  const themeSwitch = document.querySelector('[data-theme="dark"]');
-  if (!themeSwitch) {
-    console.error('Theme switch element not found');
-    return;
-  }
-
-  const image1 = document.getElementById('img_1');
-  const image2 = document.getElementById('img_2');
-  const image3 = document.getElementById('img_3');
-
-  const text1 = document.getElementById('text1');
-  const text2 = document.getElementById('text2');
-  const text3 = document.getElementById('text3');
-  const text4 = document.getElementById('text4');
-  const text5 = document.getElementById('text5');
-  const text6 = document.getElementById('text6');
-
-  let initialThemeSet = false; // To track if the initial theme has been set
-
-  themeSwitch.addEventListener('click', () => {
-    const currentTheme = themeSwitch.getAttribute('data-theme');
-    // Toggle the theme
-    themeSwitch.setAttribute('data-theme', currentTheme === 'dark' ? 'light' : 'dark');
-    // Toggle the theme
-    toggleTheme(currentTheme);
-  });
-
-  function toggleTheme(currentTheme) {
-    // Handle theme switching and image/text updates
-    if (currentTheme === 'dark' || !initialThemeSet) {
-      image1.src = '_images/developers_dark.svg';
-      image2.src = '_images/how_SN_works_dark.svg';
-      image3.src = '_images/roadmap_dark.svg';
-      text1.style.color = 'white';
-      text2.style.color = 'white';
-      text3.style.color = 'white';
-      text4.style.color = 'white';
-      text5.style.color = 'white';
-      text6.style.color = 'white';
-    } else {
-      image1.src = '_images/developers.svg';
-      image2.src = '_images/how_SN_works.svg';
-      image3.src = '_images/roadmap.svg';
-      text1.style.color = '';
-      text2.style.color = '';
-      text3.style.color = '';
-      text4.style.color = '';
-      text5.style.color = '';
-      text6.style.color = '';
+    #[event]
+    #[derive(Drop, starknet::Event)]
+    enum Event {
+      OwnershipTransferred: OwnershipTransferred, <i class="conum" data-value="3"></i><b>(3)</b>
     }
 
-    if (!initialThemeSet) {
-      initialThemeSet = true;
+    #[derive(Drop, starknet::Event)]
+    struct OwnershipTransferred { <i class="conum" data-value="3"></i><b>(3)</b>
+        #[key]
+        prev_owner: ContractAddress,
+        #[key]
+        new_owner: ContractAddress,
     }
-  }
 
-  // Set the initial state based on the themeSwitch value
-  toggleTheme(themeSwitch.getAttribute('data-theme'));
-});
+    #[storage]
+    struct Storage { <i class="conum" data-value="4"></i><b>(4)</b>
+        owner: ContractAddress,
+    }
 
+    #[constructor]
+    fn constructor(ref self: ContractState, init_owner: ContractAddress) { <i class="conum" data-value="5"></i><b>(5)</b>
+        self.owner.write(init_owner);
+    }
 
-</script>
-</head>
-</html>
+    #[abi(embed_v0)]
+    impl OwnableImpl of super::OwnableTrait&lt;ContractState&gt; {
+        fn transfer_ownership(ref self: ContractState, new_owner: ContractAddress) {
+            self.only_owner();
+            let prev_owner = self.owner.read();
+            self.owner.write(new_owner);
+            self.emit(Event::OwnershipTransferred(OwnershipTransferred {
+                prev_owner: prev_owner,
+                new_owner: new_owner,
+            }));
+        }
+
+        fn get_owner(self: @ContractState) -&gt; ContractAddress {
+            self.owner.read()
+        }
+    }
+
+    #[generate_trait]
+    impl PrivateMethods of PrivateMethodsTrait {
+        fn only_owner(self: @ContractState) { <i class="conum" data-value="6"></i><b>(6)</b>
+            let caller = get_caller_address();
+            assert(caller == self.owner.read(), 'Caller is not the owner');
+        }
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="contract_component_breakdown"><a class="anchor" href="#contract_component_breakdown"></a>Contract component breakdown</h3>
+<div class="colist arabic stripes-odd">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Dependencies and Interface:<br>
+<code>starknet::ContractAddress</code>: Represents a Starknet contract address.
+<code>OwnableTrait</code>: Defines essential functions for transferring and retrieving ownership.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>External Functions: Contains functions for transferring ownership and fetching information about the current owner.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Events: <code>OwnershipTransferred</code> indicates changes in ownership, providing details about the previous and new owners.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Storage: Stores the contract&#8217;s state, including the address of the current owner.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>Constructor: Sets up the contract by assigning an initial owner.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>Private Methods: <code>only_owner</code> validates if the caller is the current owner.</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="compiling_the_contract"><a class="anchor" href="#compiling_the_contract"></a>Compiling the contract</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To compile using Remix:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Click the <strong>File Explorer</strong> <span class="image"><img src="../_images/remix_file_explorer.png" alt="File Explorer" width="24" height="24"></span> tab, open the <code>lib.cairo</code> file and insert the code from <a href="#example-cairo-contract">Example: <code>ownable</code> Cairo contract</a>.</p>
+</li>
+<li>
+<p>Click the <strong>Starknet</strong> <span class="image"><img src="../_images/remix-starknet-icon.png" alt="Starknet" width="24" height="24"></span> tab, then click <strong>Home</strong>.</p>
+</li>
+<li>
+<p>Under <strong>(1) Compile</strong>, click <strong>Compile lib.cairo</strong>.</p>
+</li>
+<li>
+<p>Grant the necessary permissions when prompted. Select <strong>Remember my choice</strong> for a smoother compilation process in the future.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The compilation process creates an <code>artifacts</code> directory containing the compiled contract in two formats: a Sierra file, in JSON format, and a Casm file. For Starknet deployment, Remix uses the Sierra file.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="deploying_your_contract_on_the_development_network_devnet"><a class="anchor" href="#deploying_your_contract_on_the_development_network_devnet"></a>Deploying your contract on the development network (devnet)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Deploying a smart contract in Starknet requires two high-level steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Declare the class of your contract, that is, send your contract’s code to the network.</p>
+<div class="paragraph">
+<p>When you declare the contract class, you establish an initial owner by calling the class&#8217;s <code>constructor</code> function.</p>
+</div>
+</li>
+<li>
+<p>Deploy an instance of the contract class.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>This tutorial uses a development network (devnet) to deploy your smart contract. A devnet is a Starknet instance that you run as a local node. A devnet enables much quicker development than is possible using testnet, as well as providing privacy prior to launching on testnet.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Declaring the contract class</div>
+<ol class="arabic">
+<li>
+<p>Select the network by clicking the <strong>Starknet</strong> tab, and then clicking the <strong>Remote Devnet</strong> menu.</p>
+</li>
+<li>
+<p>Under <strong>Devnet account selection</strong>, open the menu to view a list of accounts specific to the designated devnet.</p>
+</li>
+<li>
+<p>Select a devnet account from the list and note its address for later use.</p>
+</li>
+<li>
+<p>Click the <strong>Declare <code>lib.cairo</code></strong> button.</p>
+<div class="paragraph">
+<p>Remix&#8217;s terminal provides various logs with important details such as:</p>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>transaction_hash</code>: This unique hash identifies the transaction and can be used to track its status.</p>
+</li>
+<li>
+<p><code>class_hash</code>: Similar to an identifier, the class hash contains the definition of the smart contract.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Remix terminal output after declaring the <code>ownable</code> contract</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">------------------------ Declaring contract: lib.cairo ------------------------
+{
+  "transaction_hash": "0x36dabf43f4962c97cf67ba132fb520091f268e7e33477d77d01747eeb0d7b43",
+  "class_hash": "0x540779cd109ad20f46cb36d8de1ce30c75469862b4dc75f2f29d1b4d1454f60"
+}
+---------------------- End Declaring contract: lib.cairo ----------------------</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>After Remix declares the contract class, the <strong>Declare</strong> button says <strong>Declared lib.cairo</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Now you&#8217;re ready to deploy an instance of the contract class.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Deploying a contract instance</div>
+<ol class="arabic">
+<li>
+<p>Paste the Devnet account address you used into the <code>init_owner</code> variable.</p>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/init_owner_field.png" alt="init owner field"></span></p>
+</div>
+</li>
+<li>
+<p>Click <strong>Deploy</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>After deployment, Remix&#8217;s terminal displays various logs, including a transaction receipt, containing important details, such as:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>transaction_hash</code>: This unique hash identifies the transaction and can be used to track its status.</p>
+</li>
+<li>
+<p><code>contract_address</code>: The address of the deployed contract. You can use this address to interact with your contract.</p>
+</li>
+<li>
+<p><code>data</code>: Contains the <code>init_owner</code> address provided to the constructor.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Remix terminal output after deploying an instance of the <code>Ownable</code> class in <code>lib.cairo</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">------------------------ Deploying contract: lib.cairo ------------------------
+
+{
+  "transaction_hash": "0x624f5b9f57e53f6b5b62e588f0f949442172b3ad5d04f0827928b4d12c2fa58",
+  "contract_address": [
+    "0x699952dc736661d0ed573cd2b0956c80a1602169e034fdaa3515bfbc36d6410"
+  ]
+    ...
+  "data": [
+        "0x6b0ee6f418e47408cf56c6f98261c1c5693276943be12db9597b933d363df",
+         ...
+      ]
+    ...
+}
+---------------------- End Deploying contract: lib.cairo ----------------------</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="interacting_with_the_contract"><a class="anchor" href="#interacting_with_the_contract"></a>Interacting with the contract</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now that the contract is operational on the development network, you can start interacting with it on the <strong>Starknet</strong> tab, under
+ <strong>(3) Interact</strong>.</p>
+</div>
+<div class="sect2">
+<h3 id="identifying_the_owner_of_the_contract_instance"><a class="anchor" href="#identifying_the_owner_of_the_contract_instance"></a>Identifying the owner of the contract instance</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Under <strong>Read</strong> you should see the <code>get_owner()</code> function. Click the <strong>Call</strong> button. The function doesn&#8217;t require any arguments so the calldata field remains empty. This function reads data, so its invocation is referred to as a <em>call</em>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The terminal displays the output, showing the owner&#8217;s address, which you provided during the contract&#8217;s deployment within the calldata for the constructor:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">------------------- Calling get_owner ------------------------
+{
+  "resp": {
+    "result": [
+      "0x6b0ee6f418e47408cf56c6f98261c1c5693276943be12db9597b933d363df"
+    ]
+  },
+  "contract": "lib.cairo",
+  "function": "get_owner"
+}
+------------------- End calling get_owner --------------------</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This call doesn&#8217;t consume gas because the function doesn&#8217;t modify the contract&#8217;s state.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="transferring_ownership_of_the_contract_instance"><a class="anchor" href="#transferring_ownership_of_the_contract_instance"></a>Transferring ownership of the contract instance</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Under <strong>(3) Interact</strong>, select <strong>Write</strong>, where functions that alter the contract&#8217;s state are listed.</p>
+</li>
+<li>
+<p>Select the <code>transfer_ownership()</code> function, which requires providing the new owner address as input.</p>
+</li>
+<li>
+<p>Fill in the <code>new_owner</code> field with any Devnet address other than the one you used to deploy the contract.</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Under <strong>Devnet account selection</strong>, open the menu, select a Devnet account from the list, and copy its address.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Click the <strong>Call</strong> button. The terminal displays the transaction hash indicating the change in the contract&#8217;s state. Because this interaction is an <code>INVOKE</code> transaction, and it modifies the contract&#8217;s state. An <code>INVOKE</code> transaction requires the signature of the account executing the function.</p>
+<div class="paragraph">
+<p>For <code>INVOKE</code> transactions, the terminal logs include a <code>finality_status</code> parameter indicating the outcome. A status of <code>ACCEPTED_ON_L2</code> indicates approval by the Sequencer, the entity responsible for receiving and processing transactions, indicating inclusion in an upcoming block. Conversely, a <code>REJECTED</code> status indicates that the Sequencer did not approve the transaction, preventing its inclusion in the next block. Typically, transactions of this nature are approved, resulting in a modification of the contract&#8217;s state.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">---------- Invoke transfer_ownership transaction receipt ----------------
+{
+  "resp": {
+    "transaction_hash": "0x5495d56633745aa3b97bdb89c255d522e98fd2cb481974efe898560839aa472"
+  },
+  "contract": "lib.cairo",
+  "function": "get_owner"
+}
+----------End Invoke transfer_ownership transaction receipt -------------</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="deployment_on_starknet_testnet"><a class="anchor" href="#deployment_on_starknet_testnet"></a>Deployment on Starknet testnet</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After testing your smart contract on a development network, the next step is deploying it onto the Starknet testnet. The Starknet testnet is a public platform accessible to all, providing an excellent environment for testing smart contracts and encouraging collaboration among developers.</p>
+</div>
+<div class="sect2">
+<h3 id="setting_up_a_smart_wallet_and_a_starknet_account_on_testnet"><a class="anchor" href="#setting_up_a_smart_wallet_and_a_starknet_account_on_testnet"></a>Setting up a smart wallet and a Starknet account on testnet</h3>
+<div class="paragraph">
+<p>Before deploying your smart contract on Starknet, it&#8217;s crucial to address transaction costs. While deploying on the Starknet testnet is free, having an operational smart wallet account is essential. You can set up a smart wallet and a Starknet account using either of the following platforms:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.argent.xyz/argent-x/">Argent</a></p>
+</li>
+<li>
+<p><a href="https://braavos.app/">Braavos</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Both options offer robust Starknet wallets with advanced security measures and enhanced accessibility features enabled by the capabilities of the Cairo VM.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Here&#8217;s how to set up your smart wallet:</div>
+<ol class="arabic">
+<li>
+<p>Install the recommended browser extension corresponding to your chosen wallet.</p>
+</li>
+<li>
+<p>Follow the instructions provided by your wallet provider to deploy your account on testnet.</p>
+</li>
+<li>
+<p>Use the <a href="https://starknet-faucet.vercel.app/">Starknet Faucet</a> to fund your account.</p>
+</li>
+<li>
+<p>Execute the deployment of your account onto the network, typically completed within approximately 10 seconds.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Once the setup is complete, you are primed to deploy your smart contracts onto the Starknet testnet.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deployment_and_interaction"><a class="anchor" href="#deployment_and_interaction"></a>Deployment and Interaction</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Proceed as per the aforementioned deployment steps.</p>
+</li>
+<li>
+<p>Within the <strong>Environment selection</strong> tab, Select <strong>Wallet</strong>.</p>
+</li>
+<li>
+<p>Select your Starknet account and proceed with the deployment and interaction processes for your contract.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>You can monitor transaction hashes and addresses by using various Starknet block explorers such as:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://testnet.starkscan.co/">Starkscan</a></p>
+</li>
+<li>
+<p><a href="https://sepolia.voyager.online/">Voyager</a></p>
+</li>
+<li>
+<p><a href="https://viewblock.io/starknet">ViewBlock</a></p>
+</li>
+<li>
+<p><a href="https://www.oklink.com/starknet">Oklink</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These block explorers offer a graphical depiction of transactions and modifications to the contract state. Noteworthy is the visibility provided when altering contract ownership through the <code>transfer_ownership()</code> function, as the emitted event by the contract becomes observable within the block explorer. This mechanism serves as a potent means to monitor contractual events.</p>
+</div>
+</div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="next"><a href="notational-conventions/">Notational conventions</a></span>
+  <span class="prev"><a href="../interact-with-a-smart-contract/">Interacting with a smart contract</a></span>
+  <span class="next"><a href="../../starknet-versions/version-notes/">Release notes</a></span>
 </nav>
 </article>
   </div>
@@ -1121,13 +1376,13 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </div>
 </footer>
-<script src="./_/js/site.js?new"></script>
-<script async src="./_/js/vendor/highlight.js?new"></script>
-<script async src="./_/js/vendor/tabs-block-behaviour.js?new"></script>
-<script async src="./_/js/vendor/swagger-ui.js?new"></script>
-<script async src="./_/js/vendor/component-versions.js?new"></script>
-<script src="./_/js/vendor/custom.js?new"></script>
-<script async src="./_/js/vendor/tabs.js"></script>
+<script src="../../_/js/site.js?new"></script>
+<script async src="../../_/js/vendor/highlight.js?new"></script>
+<script async src="../../_/js/vendor/tabs-block-behaviour.js?new"></script>
+<script async src="../../_/js/vendor/swagger-ui.js?new"></script>
+<script async src="../../_/js/vendor/component-versions.js?new"></script>
+<script src="../../_/js/vendor/custom.js?new"></script>
+<script async src="../../_/js/vendor/tabs.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script>
 <script

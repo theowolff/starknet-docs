@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Overview :: Starknet documentation</title>
-    <link rel="canonical" href="https://docs.starknet.io/">
-    <link rel="next" href="notational-conventions/">
+    <title>System Calls :: Starknet documentation</title>
+    <link rel="canonical" href="https://docs.starknet.io/architecture-and-concepts/smart-contracts/system-calls-cairo1/">
+    <link rel="prev" href="../serialization-of-cairo-types/">
+    <link rel="next" href="../execution-info/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -25,15 +26,15 @@
     <meta property="twitter:url" content="https://docs.starknet.io/">
     <meta property="twitter:title" content="Starknet Documentation">
     <meta property="twitter:description" content="Reference documentation for developers building on Starknet.">
-    <meta property="twitter:image" content="https://www.starknet.io/starknet-docs-card.png">  <link rel="stylesheet" href="./_/css/vendor/tabs.css">
-  <link id="theme" rel="stylesheet" title="Default" href="./_/css/site.css?new">
-  <link rel="stylesheet" title="Dark" href="./_/css/dark-site.css?new">
-  <link rel="stylesheet" href="./_/css/vendor/tabs.css">
-  <link rel="stylesheet" href="./_/css/home.css">
+    <meta property="twitter:image" content="https://www.starknet.io/starknet-docs-card.png">  <link rel="stylesheet" href="../../../_/css/vendor/tabs.css">
+  <link id="theme" rel="stylesheet" title="Default" href="../../../_/css/site.css?new">
+  <link rel="stylesheet" title="Dark" href="../../../_/css/dark-site.css?new">
+  <link rel="stylesheet" href="../../../_/css/vendor/tabs.css">
+  <link rel="stylesheet" href="../../../_/css/home.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WY42TERK5P"></script>
     <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','G-WY42TERK5P')</script>
-    <script>var uiRootPath = './_'</script>
-    <script src="./_/js/vendor/medium-zoom.js?new"></script>
+    <script>var uiRootPath = '../../../_'</script>
+    <script src="../../../_/js/vendor/medium-zoom.js?new"></script>
     <script type="text/javascript" id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="e4db29b5-cd94-4bcf-87e4-04f4ca564240" data-blockingmode="manual"></script>
     <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
@@ -47,27 +48,27 @@
         a.appendChild(r);
         })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
-<link rel="icon" href="./_/img/favicon/favicon.ico" type="image/x-icon">
+<link rel="icon" href="../../../_/img/favicon/favicon.ico" type="image/x-icon">
 
 <!-- For all browsers -->
-<link rel="icon" type="image/png" sizes="32x32" href="./_/img/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="./_/img/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../_/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../_/img/favicon-16x16.png">
 
 <!-- For Google and Chrome -->
-<link rel="icon" type="image/png" sizes="192x192" href="./_/img/favicon/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../../../_/img/favicon/android-chrome-192x192.png">
 
 <!-- For iPad -->
-<link rel="apple-touch-icon" type="image/png" sizes="167x167" href="./_/img/favicon/apple-touch-icon.png">
+<link rel="apple-touch-icon" type="image/png" sizes="167x167" href="../../../_/img/favicon/apple-touch-icon.png">
 <!-- For iPhone -->
-<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="./_/img/favicon/apple-touch-icon.png">  </head>
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../../../_/img/favicon/apple-touch-icon.png">  </head>
   <body class="article">
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
       <div class="top-logo">
-        <a href="." class="starknet-logo"></a>
+        <a href="../../.." class="starknet-logo"></a>
         <div class="vertical-divider desktop-only"></div>
-        <a href="." class="docs-logo desktop-only">Docs</a>
+        <a href="../../.." class="docs-logo desktop-only">Docs</a>
       </div>
       <!--<a class="navbar-item" href="https://docs.starknet.io">Starknet documentation</a>-->
       <div id="autocomplete" class="autocomplete-root"></div>
@@ -102,16 +103,18 @@
   </div>
   <span></span>
   <span></span>
-  <a href="./" class="home-link is-current mask-svg-center"></a>
+  <a href="../../../" class="home-link mask-svg-center"></a>
   <div id="mobile-autocomplete" class="mobile-only"></div>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="./">Starknet</a></li>
-    <li><a href="./">Overview</a></li>
+    <li><a href="../../../">Starknet</a></li>
+    <li>Architecture</li>
+    <li>Contracts</li>
+    <li><a href="./">System calls</a></li>
   </ul>
 </nav>
   <div class="edit-this-page">
-    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/ROOT/pages/index.adoc"><img class="pencil">Edit this Page</a>
+    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/architecture-and-concepts/pages/smart-contracts/system-calls-cairo1.adoc"><img class="pencil">Edit this Page</a>
   </div>
 </div>
 <div class="body">
@@ -120,19 +123,19 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="./">Starknet</a></h3>
+    <h3 class="title"><a href="../../../">Starknet</a></h3>
 <ul class="nav-list">
   <li class="nav-item parent" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="./">Overview</a>
+     href="../../../">Overview</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="notational-conventions/">Notational conventions</a>
+     href="../../../notational-conventions/">Notational conventions</a>
   </li>
 </ul>
   </li>
@@ -147,23 +150,23 @@
         <span>
     <a 
        class="nav-link nav-link-with-toggle"
-     href="quick-start/environment-setup/">Setting up your environment</a>
+     href="../../../quick-start/environment-setup/">Setting up your environment</a>
         </span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="quick-start/environment-setup/#installing_starkli">Installing Starkli</a>
+     href="../../../quick-start/environment-setup/#installing_starkli">Installing Starkli</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="quick-start/environment-setup/#setting_environment_variables_for_starkli">Environment variables</a>
+     href="../../../quick-start/environment-setup/#setting_environment_variables_for_starkli">Environment variables</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="quick-start/environment-setup/#installing_scarb">Installing Scarb</a>
+     href="../../../quick-start/environment-setup/#installing_scarb">Installing Scarb</a>
   </li>
 </ul>
   </li>
@@ -172,40 +175,40 @@
         <span>
     <a 
        class="nav-link nav-link-with-toggle"
-     href="quick-start/set-up-an-account/">Setting up an account</a>
+     href="../../../quick-start/set-up-an-account/">Setting up an account</a>
         </span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="quick-start/set-up-an-account/#creating_an_account">Creating an account</a>
+     href="../../../quick-start/set-up-an-account/#creating_an_account">Creating an account</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="quick-start/set-up-an-account/#deploying_an_account">Deploying an account</a>
+     href="../../../quick-start/set-up-an-account/#deploying_an_account">Deploying an account</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="quick-start/declare-a-smart-contract/">Declaring a smart contract</a>
+     href="../../../quick-start/declare-a-smart-contract/">Declaring a smart contract</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="quick-start/deploy-a-smart-contract/">Deploying a smart contract</a>
+     href="../../../quick-start/deploy-a-smart-contract/">Deploying a smart contract</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="quick-start/interact-with-a-smart-contract/">Interacting with a smart contract</a>
+     href="../../../quick-start/interact-with-a-smart-contract/">Interacting with a smart contract</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="quick-start/deploy-interact-with-a-smart-contract-remix/">Deploying and interacting with a smart contract with Remix</a>
+     href="../../../quick-start/deploy-interact-with-a-smart-contract-remix/">Deploying and interacting with a smart contract with Remix</a>
   </li>
 </ul>
   </li>
@@ -220,12 +223,12 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="starknet-versions/version-notes/">Release notes</a>
+     href="../../../starknet-versions/version-notes/">Release notes</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="starknet-versions/deprecated/">Deprecated, unsupported, and removed features</a>
+     href="../../../starknet-versions/deprecated/">Deprecated, unsupported, and removed features</a>
   </li>
 </ul>
   </li>
@@ -240,42 +243,42 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/starknet-architecture-overview/">Overview</a>
+     href="../../network-architecture/starknet-architecture-overview/">Overview</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/provers-overview/">Provers</a>
+     href="../../provers-overview/">Provers</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/solidity-verifier/">Solidity verifier</a>
+     href="../../solidity-verifier/">Solidity verifier</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/nodes/">Nodes</a>
+     href="../../nodes/">Nodes</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/block-structure/">Block structure</a>
+     href="../../network-architecture/block-structure/">Block structure</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/transaction-life-cycle/">Transaction lifecycle</a>
+     href="../../network-architecture/transaction-life-cycle/">Transaction lifecycle</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/transactions/">Transaction types</a>
+     href="../../network-architecture/transactions/">Transaction types</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/fee-mechanism/">Gas and transaction fees</a>
+     href="../../network-architecture/fee-mechanism/">Gas and transaction fees</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
@@ -284,12 +287,12 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/starknet-state/">Starknet state</a>
+     href="../../network-architecture/starknet-state/">Starknet state</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/data-availability/">Data availability</a>
+     href="../../network-architecture/data-availability/">Data availability</a>
   </li>
 </ul>
   </li>
@@ -300,12 +303,12 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/messaging-mechanism/">L1-L2 messaging mechanism</a>
+     href="../../network-architecture/messaging-mechanism/">L1-L2 messaging mechanism</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/network-architecture/messaging-reference/">Messaging reference</a>
+     href="../../network-architecture/messaging-reference/">Messaging reference</a>
   </li>
 </ul>
   </li>
@@ -316,32 +319,32 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/accounts/introduction/">What is an account?</a>
+     href="../../accounts/introduction/">What is an account?</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/accounts/approach/">Starknet&#8217;s account interface</a>
+     href="../../accounts/approach/">Starknet&#8217;s account interface</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/accounts/account-functions/">Account interface function reference</a>
+     href="../../accounts/account-functions/">Account interface function reference</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/accounts/deploying-new-accounts/">Deploying new accounts</a>
+     href="../../accounts/deploying-new-accounts/">Deploying new accounts</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/accounts/universal-deployer/">Universal Deployer Contract</a>
+     href="../../accounts/universal-deployer/">Universal Deployer Contract</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/accounts/simplified-transaction-flow/">Simplified transaction flow</a>
+     href="../../accounts/simplified-transaction-flow/">Simplified transaction flow</a>
   </li>
 </ul>
   </li>
@@ -352,62 +355,62 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/contract-classes/">Contract classes and instances</a>
+     href="../contract-classes/">Contract classes and instances</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/class-hash/">Class hash</a>
+     href="../class-hash/">Class hash</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/contract-address/">Contract address</a>
+     href="../contract-address/">Contract address</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/contract-storage/">Contract storage</a>
+     href="../contract-storage/">Contract storage</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/contract-abi/">Contract ABI</a>
+     href="../contract-abi/">Contract ABI</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/starknet-events/">Events</a>
+     href="../starknet-events/">Events</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/contract-syntax/">Migrating a contract from Cairo v1 to Cairo v2</a>
+     href="../contract-syntax/">Migrating a contract from Cairo v1 to Cairo v2</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/cairo-and-sierra/">Cairo and Sierra</a>
+     href="../cairo-and-sierra/">Cairo and Sierra</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/cairo-builtins/">Cairo builtins</a>
+     href="../cairo-builtins/">Cairo builtins</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/serialization-of-cairo-types/">Serialization of Cairo types</a>
+     href="../serialization-of-cairo-types/">Serialization of Cairo types</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a 
+       class="nav-link"
+     href="./">System calls</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/smart-contracts/system-calls-cairo1/">System calls</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="architecture-and-concepts/smart-contracts/execution-info/">Execution information for the current block</a>
+     href="../execution-info/">Execution information for the current block</a>
   </li>
 </ul>
   </li>
@@ -418,17 +421,17 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/cryptography/p-value/">The STARK field</a>
+     href="../../cryptography/p-value/">The STARK field</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/cryptography/stark-curve/">The STARK curve</a>
+     href="../../cryptography/stark-curve/">The STARK curve</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/cryptography/hash-functions/">Hash functions</a>
+     href="../../cryptography/hash-functions/">Hash functions</a>
   </li>
 </ul>
   </li>
@@ -437,7 +440,7 @@
   <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="architecture-and-concepts/economics-of-starknet/">The Economics of Starknet</a>
+     href="../../economics-of-starknet/">The Economics of Starknet</a>
   </li>
 </ul>
   </li>
@@ -450,12 +453,12 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="tools/starknet-book/">The Starknet Book</a>
+     href="../../../tools/starknet-book/">The Starknet Book</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="tools/devtools/">Developer tools</a>
+     href="../../../tools/devtools/">Developer tools</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
@@ -464,12 +467,12 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="cli/starkli/">Legacy Starknet CLI reference</a>
+     href="../../../cli/starkli/">Legacy Starknet CLI reference</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="cli/starknet-compiler-options/">Legacy compiler CLI reference</a>
+     href="../../../cli/starknet-compiler-options/">Legacy compiler CLI reference</a>
   </li>
 </ul>
   </li>
@@ -480,29 +483,29 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="tools/api-services/">Full nodes and API services</a>
+     href="../../../tools/api-services/">Full nodes and API services</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starknet-versions/juno-versions/">Juno release notes</a>
+     href="../../../starknet-versions/juno-versions/">Juno release notes</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starknet-versions/pathfinder-versions/">Pathfinder release notes</a>
+     href="../../../starknet-versions/pathfinder-versions/">Pathfinder release notes</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="tools/ref-block-explorers/">Block explorers</a>
+     href="../../../tools/ref-block-explorers/">Block explorers</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="tools/audit/">Audit providers</a>
+     href="../../../tools/audit/">Audit providers</a>
   </li>
 </ul>
   </li>
@@ -513,12 +516,12 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="starkgate/overview/">Overview</a>
+     href="../../../starkgate/overview/">Overview</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="starkgate/architecture/">StarkGate architecture</a>
+     href="../../../starkgate/architecture/">StarkGate architecture</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
@@ -527,44 +530,44 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starkgate/depositing/">Depositing funds</a>
+     href="../../../starkgate/depositing/">Depositing funds</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starkgate/withdrawing/">Withdrawing funds</a>
+     href="../../../starkgate/withdrawing/">Withdrawing funds</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starkgate/automated-actions-with-bridging/">Performing a Smart Deposit</a>
+     href="../../../starkgate/automated-actions-with-bridging/">Performing a Smart Deposit</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starkgate/adding-a-token/">Adding a token</a>
+     href="../../../starkgate/adding-a-token/">Adding a token</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starkgate/cancelling-a-deposit/">Cancelling a deposit</a>
+     href="../../../starkgate/cancelling-a-deposit/">Cancelling a deposit</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="starkgate/estimating-fees/">Estimating StarkGate fees</a>
+     href="../../../starkgate/estimating-fees/">Estimating StarkGate fees</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="tools/dai-token-migration/">Migrating DAI v0 to DAI</a>
+     href="../../../tools/dai-token-migration/">Migrating DAI v0 to DAI</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="starkgate/function-reference/">StarkGate function and event reference</a>
+     href="../../../starkgate/function-reference/">StarkGate function and event reference</a>
   </li>
 </ul>
   </li>
@@ -575,19 +578,19 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="tools/important-addresses/">Starknet contracts and sequencer addresses</a>
+     href="../../../tools/important-addresses/">Starknet contracts and sequencer addresses</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="tools/bridged-tokens/">Bridged tokens</a>
+     href="../../../tools/bridged-tokens/">Bridged tokens</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="tools/limits-and-triggers/">Current limits</a>
+     href="../../../tools/limits-and-triggers/">Current limits</a>
   </li>
 </ul>
   </li>
@@ -596,7 +599,7 @@
   <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="glossary/">Glossary</a>
+     href="../../../glossary/">Glossary</a>
   </li>
 </ul>
   </li>
@@ -623,7 +626,7 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Overview</h1>
+<h1 class="page">System Calls</h1>
 <style>
   .page-meta-container {
     position: relative;
@@ -726,7 +729,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', async function() {
     // Extract repo and path information from editUrl
-    const editUrl = 'https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/ROOT/pages/index.adoc';
+    const editUrl = 'https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/architecture-and-concepts/pages/smart-contracts/system-calls-cairo1.adoc';
     const urlParts = editUrl.split('/');
     const repoOwner = urlParts[3];
     const repoName = urlParts[4];
@@ -816,279 +819,722 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Starknet is a permissionless Validity-Rollup, also known as a zero-knowledge rollup (ZK rollup) for Ethereum. As a Layer 2 (L2) blockchain, Starknet enables any dApp to achieve massive computation scale without compromising on Ethereum’s composability
-and security.</p>
+<p>Writing smart contracts requires various associated operations, such as calling another contract or
+accessing the contract&#8217;s storage, that standalone programs do not require. The Starknet contract language supports these operations by using system calls. System calls enable a contract to require services from the Starknet OS. You can use system calls in a function to get information that depends on the broader state of Starknet, which would otherwise be inaccessible, rather than local variables that appear in the function&#8217;s scope.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="get_block_hash"><a class="anchor" href="#get_block_hash"></a><code>get_block_hash</code></h2>
+<div class="sectionbody">
+<h3 id="function_signature" class="discrete">Function signature</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">extern fn get_block_hash_syscall(
+    block_number: u64
+) -&gt; SyscallResult&lt;felt252&gt; implicits(GasBuiltin, System) nopanic;</code></pre>
+</div>
+</div>
+<h3 id="description" class="discrete">Description</h3>
+<div class="paragraph">
+<p>Gets the hash of a specific Starknet block within the range of <code>[<em>first_v0_12_0_block</em>, <em>current_block</em> - 10]</code>.</p>
+</div>
+<h3 id="arguments" class="discrete">Arguments</h3>
+<div class="hdlist stripes-odd">
+<table>
+<colgroup>
+<col style="width: 25%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+<code><em>block_number</em>: u64</code>
+</td>
+<td class="hdlist2">
+<p>The number of the block whose hash you want to get.</p>
+</td>
+</tr>
+</table>
+</div>
+<h3 id="return_values" class="discrete">Return values</h3>
+<div class="paragraph">
+<p>The hash of the specified block.</p>
+</div>
+<h3 id="common_library" class="discrete">Common library</h3>
+<div class="paragraph">
+<p><a href="https://github.com/starkware-libs/cairo/blob/0c882679fdb24a818cad19f2c18decbf6ef66153/corelib/src/starknet/syscalls.cairo#L37" target="_blank" rel="noopener"><code>syscalls.cairo</code></a></p>
+</div>
+<h3 id="error_messages" class="discrete">Error messages</h3>
+<div class="hdlist stripes-odd">
+<table>
+<colgroup>
+<col style="width: 25%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+<code>Block number out of range</code>
+</td>
+<td class="hdlist2">
+<p><code>block_number</code> is greater than <code><em>current_block</em> - 10</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>0</code>
+</td>
+<td class="hdlist2">
+<p><code>block_number</code> is less than the first block number of v0.12.0.</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="get_execution_info"><a class="anchor" href="#get_execution_info"></a><code>get_execution_info</code></h2>
+<div class="sectionbody">
+<h3 id="function_signature_2" class="discrete">Function signature</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">extern fn get_execution_info_syscall() -&gt; SyscallResult&lt;Box&lt;starknet::info::ExecutionInfo&gt;&gt; implicits(
+    GasBuiltin, System
+) nopanic;</code></pre>
+</div>
+</div>
+<h3 id="description_2" class="discrete">Description</h3>
+<div class="paragraph">
+<p>Gets information about the currently executing block and the transactions in the block. For a complete description of this information, see <a href="../execution-info/" class="xref page">Execution information</a></p>
 </div>
 <div class="paragraph">
-<p>Starknet aims to achieve secure, low-cost transactions and high performance by using the STARK cryptographic proof system. Starknet contracts and the Starknet OS are written in <a href="https://github.com/starkware-libs/cairo">Cairo</a>, a custom-built and
-specialized programming language.</p>
+<p>This single system call contains all information for a block, transaction, and execution context.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="explore_starknet"><a class="anchor" href="#explore_starknet"></a>Explore Starknet</h2>
-<div class="sectionbody">
-<div class="home-cta-container">
-  <a href="https://docs.starknet.io/documentation/quick_start/environment_setup/" class="home-cta home-cta-first" id="cta1">
-    <div class="image-container">
-      <img src="_images/developers.svg" style="filter: none; border-radius: 0px;" class="cta-image" id="img_1">
-    </div>
-    <h2>Quick start</h2>
-    <p class="chakra-card__body css-jintet" id="text1">Set up your environment and get started with Starknet.</p>
-    <p class="chakra-card__body css-jintet" id="text2"><b>Explore ></b></p>
-  </a>
-
-  <a href="https://docs.starknet.io/documentation/architecture_and_concepts/Network_Architecture/header/" class="home-cta" id="cta2">
-    <div class="image-container">
-      <img src="_images/how_SN_works.svg" style="filter: none; border-radius: 0px;" class="cta-image" id="img_2">
-    </div>
-    <h2>Architecture</h2>
-    <p class="chakra-card__body css-jintet" id="text3">Learn about Starknet's architecture including contracts and accounts.</p>
-    <p class="chakra-card__body css-jintet" id="text4"><b>Explore ></b></p>
-  </a>
-
-  <a href="https://docs.starknet.io/documentation/starknet_versions/version_notes/" class="home-cta" id="cta3">
-    <div class="image-container">
-      <img src="_images/roadmap.svg" style="filter: none; border-radius: 0px;" class="cta-image" id="img_3">
-    </div>
-    <h2>Releases</h2>
-    <p class="chakra-card__body css-jintet" id="text5">Learn more about the current version of Starknet.</p>
-    <p class="chakra-card__body css-jintet" id="text6"><b>Explore ></b></p>
-  </a>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="developer_tools_and_resources"><a class="anchor" href="#developer_tools_and_resources"></a>Developer tools and resources</h2>
-<div class="sectionbody">
-<div class="no-background no-border">
-  <div class="column-container">
-    <div class="column">
-      <p><a href="https://book.starknet.io/">The Starknet Book</a></p>
-      <p><a href="https://docs.cairo-lang.org/">The Cairo docs</a></p>
-      <p><a href="https://docs.starknet.io/documentation/tools/devtools/">Starknet development tools</a></p>
-      <p><a href="https://docs.starknet.io/documentation/tools/api-services/">Full nodes and API services</a></p>
-    </div>
-    <div class="column">
-      <p><a href="https://docs.starknet.io/documentation/tools/limits_and_triggers/">Limits and triggers</a></p>
-      <p><a href="https://docs.starknet.io/documentation/cli/starkli/">Cairo 0 tools</a></p>
-      <p><a href="https://docs.starknet.io/documentation/tools/ref_block_explorers/">Block explorers</a></p>
-      <p><a href="https://docs.starknet.io/documentation/tools/audit/">Audit providers</a></p>
-    </div>
-  </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="contribute_to_the_starknet_docs"><a class="anchor" href="#contribute_to_the_starknet_docs"></a>Contribute to the Starknet docs</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>Want to contribute to Starknet documentation? Get started here:</p>
+<p>When an account&#8217;s <code>__validate__</code>, <code>__validate_deploy__</code>, or <code>__validate_declare__</code> function calls <code>get_execution_info</code>, the return values for <code>block_timestamp</code> and <code>block_number</code> are modified as follows:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>See the <a href="https://github.com/starknet-io/starknet-docs/blob/dev/README.adoc#different_ways_to_contribute">different ways to contribute</a>.</p>
+<p><code>block_timestamp</code> returns the hour, rounded down to the nearest hour.</p>
 </li>
 <li>
-<p>Review these <a href="https://github.com/starknet-io/starknet-docs/blob/dev/contributing_to_docs/doc_guidelines.adoc">basic writing guidelines</a> to help you write better and be a more valuable contributor.</p>
-</li>
-<li>
-<p>Use the <a href="https://github.com/starknet-io/starknet-docs/blob/dev/contributing_to_docs/starknet_docs_style_guide.adoc">Starknet documentation supplementary style guide</a> to help you write with the Starknet voice.</p>
+<p><code>block_number</code> returns the block number, rounded down to the nearest multiple of 100.</p>
 </li>
 </ul>
 </div>
-<html>
-<head>
-<style>
-*::before, ::after {
-  border-color: var(--chakra-colors-gray-200);
-}
+<h3 id="arguments_2" class="discrete">Arguments</h3>
+<div class="paragraph">
+<p>None.</p>
+</div>
+<h3 id="return_values_2" class="discrete">Return values</h3>
+<div class="hdlist stripes-odd">
+<table>
+<colgroup>
+<col style="width: 25%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+<a href="https://github.com/starkware-libs/cairo/blob/main/corelib/src/starknet/info.cairo#L8"><code>ExecutionInfo</code></a>
+</td>
+<td class="hdlist2">
+<p>A struct that contains information about the currently executing function, transaction, and block.</p>
+</td>
+</tr>
+</table>
+</div>
+<h3 id="common_library_2" class="discrete">Common library</h3>
+<div class="paragraph">
+<p><a href="https://github.com/starkware-libs/cairo/blob/cca08c898f0eb3e58797674f20994df0ba641983/corelib/src/starknet/syscalls.cairo#L35" target="_blank" rel="noopener"><code>syscalls.cairo</code></a></p>
+</div>
+<h3 id="example" class="discrete">Example</h3>
+<div class="paragraph">
+<p>This example shows how to pull the block number from the <code>ExecutionInfo</code> struct.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">let execution_info = get_execution_info().unbox();
+let block_info = execution_info.block_info.unbox();
+let block number = block_info.block_number;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="call_contract"><a class="anchor" href="#call_contract"></a><code>call_contract</code></h2>
+<div class="sectionbody">
+<h3 id="function_signature_3" class="discrete">Function signature</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">extern fn call_contract_syscall(
+    address: ContractAddress, entry_point_selector: felt252, calldata: Span&lt;felt252&gt;
+) -&gt; SyscallResult&lt;Span&lt;felt252&gt;&gt; implicits(GasBuiltin, System) nopanic;</code></pre>
+</div>
+</div>
+<h3 id="description_3" class="discrete">Description</h3>
+<div class="paragraph">
+<p>Calls a given contract. This system call expects the address of the called contract, a selector for a function within that contract, and call arguments.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>An internal call can&#8217;t return <code>Err(_)</code> as this is not handled by the sequencer and the Starknet OS.</p>
+</div>
+<div class="paragraph">
+<p>If <code>call_contract_syscall</code> fails, this can&#8217;t be caught and will therefore result in the entire transaction being reverted.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<h3 id="arguments_3" class="discrete">Arguments</h3>
+<div class="hdlist">
+<table>
+<colgroup>
+<col style="width: 35%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+<code><em>address</em>: ContractAddress</code>
+</td>
+<td class="hdlist2">
+<p>The address of the contract you want to call.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code><em>entry_point_selector</em>: felt252</code>
+</td>
+<td class="hdlist2">
+<p>A selector for a function within that contract.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code><em>calldata</em>: Span&lt;felt252&gt;</code>
+</td>
+<td class="hdlist2">
+<p>The calldata array.</p>
+</td>
+</tr>
+</table>
+</div>
+<h3 id="return_values_3" class="discrete">Return values</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The call response, of type <code>SyscallResult&lt;Span&lt;felt252&gt;&gt;</code>.</p>
+</li>
+</ul>
+</div>
+<h3 id="common_library_3" class="discrete">Common library</h3>
+<div class="paragraph">
+<p><a href="https://github.com/starkware-libs/cairo/blob/cca08c898f0eb3e58797674f20994df0ba641983/corelib/src/starknet/syscalls.cairo#L10" target="_blank" rel="noopener"><code>syscalls.cairo</code></a></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This is considered a lower-level syntax for calling contracts.</p>
+</div>
+<div class="paragraph">
+<p>If the interface of the called contract is available, then you can use a more straightforward syntax.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="deploy"><a class="anchor" href="#deploy"></a><code>deploy</code></h2>
+<div class="sectionbody">
+<h3 id="function_signature_4" class="discrete">Function signature</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">extern fn deploy_syscall(
+    class_hash: ClassHash,
+    contract_address_salt: felt252,
+    calldata: Span&lt;felt252&gt;,
+    deploy_from_zero: bool,
+) -&gt; SyscallResult&lt;(ContractAddress, Span::&lt;felt252&gt;)&gt; implicits(GasBuiltin, System) nopanic;</code></pre>
+</div>
+</div>
+<h3 id="description_4" class="discrete">Description</h3>
+<div class="paragraph">
+<p>Deploys a new instance of a previously declared class.</p>
+</div>
+<h3 id="arguments_4" class="discrete">Arguments</h3>
+<div class="hdlist">
+<table>
+<colgroup>
+<col style="width: 35%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+<code><em>class_hash</em>: ClassHash</code>
+</td>
+<td class="hdlist2">
+<p>The class hash of the contract to be deployed.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code><em>contract_address_salt</em>: felt252</code>
+</td>
+<td class="hdlist2">
+<p>The salt, an arbitrary value provided by the sender, used in the computation of the <a href="../contract-address/" class="xref page">contract&#8217;s address</a>.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code><em>calldata</em>: Span&lt;felt252&gt;</code>
+</td>
+<td class="hdlist2">
+<p>The constructor&#8217;s calldata. An array of felts.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code><em>deploy_from_zero</em>: bool</code>
+</td>
+<td class="hdlist2">
+<p>A flag that determines whether the deployer’s address affects the computation of the contract address. When not set, or when set to <code>FALSE</code>, the caller address is used as the new contract&#8217;s deployer address. When set to <code>TRUE</code>, 0 is used.</p>
+</td>
+</tr>
+</table>
+</div>
+<h3 id="return_values_4" class="discrete">Return values</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>A tuple wrapped with <code>SyscallResult</code> where:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The first element is the address of the deployed contract, of type <code>ContractAddress</code>.</p>
+</li>
+<li>
+<p>The second element is the response array from the contract&#8217;s constructor, of type <code>Span::&lt;felt252&gt;</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="common_library_4" class="discrete">Common library</h3>
+<div class="paragraph">
+<p><a href="https://github.com/starkware-libs/cairo/blob/main/corelib/src/starknet/syscalls.cairo#L20" target="_blank" rel="noopener"><code>syscalls.cairo</code></a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="emit_event"><a class="anchor" href="#emit_event"></a><code>emit_event</code></h2>
+<div class="sectionbody">
+<h3 id="function_signature_5" class="discrete">Function signature</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">extern fn emit_event_syscall(
+    keys: Span&lt;felt252&gt;, data: Span&lt;felt252&gt;
+) -&gt; SyscallResult&lt;()&gt; implicits(GasBuiltin, System) nopanic;</code></pre>
+</div>
+</div>
+<h3 id="description_5" class="discrete">Description</h3>
+<div class="paragraph">
+<p>Emits an event with a given set of keys and data.</p>
+</div>
+<div class="paragraph">
+<p>For more information, and for a higher-level syntax for emitting events, see <a href="../starknet-events/" class="xref page">Starknet events</a>.</p>
+</div>
+<h3 id="arguments_5" class="discrete">Arguments</h3>
+<div class="hdlist">
+<table>
+<colgroup>
+<col style="width: 35%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+<code><em>keys</em>: Span&lt;felt252&gt;</code>
+</td>
+<td class="hdlist2">
+<p>The event&#8217;s keys. These are analogous to Ethereum&#8217;s event topics, you can use the <a href="https://github.com/starkware-libs/starknet-specs/blob/c270b8170684bb09741672a7a4ae5003670c3f43/api/starknet_api_openrpc.json#L569RPC">starknet_getEvents</a> method to filter by these keys.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code><em>data</em>: Span&lt;felt252&gt;</code>
+</td>
+<td class="hdlist2">
+<p>The event&#8217;s data.</p>
+</td>
+</tr>
+</table>
+</div>
+<h3 id="return_values_5" class="discrete">Return values</h3>
+<div class="paragraph">
+<p>None.</p>
+</div>
+<h3 id="common_library_5" class="discrete">Common library</h3>
+<div class="paragraph">
+<p><a href="https://github.com/starkware-libs/cairo/blob/cca08c898f0eb3e58797674f20994df0ba641983/corelib/src/starknet/syscalls.cairo#L30" target="_blank" rel="noopener"><code>syscalls.cairo</code></a></p>
+</div>
+<h3 id="example_2" class="discrete">Example</h3>
+<div class="paragraph">
+<p>The following example emits an event with two keys, the strings <code>key</code> and <code>deposit</code> and three data elements: <code>1</code>, <code>2</code>, and <code>3</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">let keys = array!['key', 'deposit'];
+let values = array![1, 2, 3];
+emit_event_syscall(keys, values).unwrap_syscall();</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="library_call"><a class="anchor" href="#library_call"></a><code>library_call</code></h2>
+<div class="sectionbody">
+<h3 id="function_signature_6" class="discrete">Function signature</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">extern fn library_call_syscall(
+    class_hash: ClassHash, function_selector: felt252, calldata: Span&lt;felt252&gt;
+) -&gt; SyscallResult&lt;Span&lt;felt252&gt;&gt; implicits(GasBuiltin, System) nopanic;</code></pre>
+</div>
+</div>
+<h3 id="description_6" class="discrete">Description</h3>
+<div class="paragraph">
+<p>Calls the requested function in any previously declared class. The class is only used for its logic.</p>
+</div>
+<div class="paragraph">
+<p>This system call replaces the known delegate call functionality from Ethereum, with the important difference that there is only one contract involved.</p>
+</div>
+<h3 id="arguments_6" class="discrete">Arguments</h3>
+<div class="hdlist">
+<table>
+<colgroup>
+<col style="width: 35%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+<code><em>class_hash</em>: ClassHash</code>
+</td>
+<td class="hdlist2">
+<p>The hash of the class you want to use.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code><em>function_selector</em>: felt252</code>
+</td>
+<td class="hdlist2">
+<p>A selector for a function within that class.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code><em>calldata</em>: Span&lt;felt252&gt;</code>
+</td>
+<td class="hdlist2">
+<p>The calldata.</p>
+</td>
+</tr>
+</table>
+</div>
+<h3 id="return_values_6" class="discrete">Return values</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The call response, of type <code>SyscallResult&lt;Span&lt;felt252&gt;&gt;</code>.</p>
+</li>
+</ul>
+</div>
+<h3 id="common_library_6" class="discrete">Common library</h3>
+<div class="paragraph">
+<p><a href="https://github.com/starkware-libs/cairo/blob/cca08c898f0eb3e58797674f20994df0ba641983/corelib/src/starknet/syscalls.cairo#L43" target="_blank" rel="noopener"><code>syscalls.cairo</code></a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="send_message_to_L1"><a class="anchor" href="#send_message_to_L1"></a><code>send_message_to_L1</code></h2>
+<div class="sectionbody">
+<h3 id="function_signature_7" class="discrete">Function signature</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">extern fn send_message_to_l1_syscall(
+    to_address: felt252, payload: Span&lt;felt252&gt;
+) -&gt; SyscallResult&lt;()&gt; implicits(GasBuiltin, System) nopanic;</code></pre>
+</div>
+</div>
+<h3 id="description_7" class="discrete">Description</h3>
+<div class="paragraph">
+<p>Sends a message to L1.</p>
+</div>
+<div class="paragraph">
+<p>This system call includes the message parameters as part of the proof&#8217;s output and exposes these parameters to the Starknet Core Contract on L1 once the state update, including the transaction, is received.</p>
+</div>
+<div class="paragraph">
+<p>For more information, see Starknet&#8217;s <a href="../../network-architecture/messaging-mechanism/" class="xref page">messaging mechanism</a>.</p>
+</div>
+<h3 id="arguments_7" class="discrete">Arguments</h3>
+<div class="hdlist">
+<table>
+<colgroup>
+<col style="width: 35%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+<code><em>to_address</em>: felt252</code>
+</td>
+<td class="hdlist2">
+<p>The recipient&#8217;s L1 address.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code><em>payload</em>: Span&lt;felt252&gt;</code>
+</td>
+<td class="hdlist2">
+<p>The array containing the message payload</p>
+</td>
+</tr>
+</table>
+</div>
+<h3 id="return_values_7" class="discrete">Return values</h3>
+<div class="paragraph">
+<p>None.</p>
+</div>
+<h3 id="common_library_7" class="discrete">Common library</h3>
+<div class="paragraph">
+<p><a href="https://github.com/starkware-libs/cairo/blob/cca08c898f0eb3e58797674f20994df0ba641983/corelib/src/starknet/syscalls.cairo#L51" target="_blank" rel="noopener"><code>syscalls.cairo</code></a></p>
+</div>
+<h3 id="example_3" class="discrete">Example</h3>
+<div class="paragraph">
+<p>The following example sends a message whose content is <code>(1,2)</code> to the L1 contract whose address is <code>3423542542364363</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">let payload = ArrayTrait::new();
+payload.append(1);
+payload.append(2);
+send_message_to_l1_syscall(payload).unwrap_syscall();</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="replace_class"><a class="anchor" href="#replace_class"></a><code>replace_class</code></h2>
+<div class="sectionbody">
+<h3 id="function_signature_8" class="discrete">Function signature</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">extern fn replace_class_syscall(
+    class_hash: ClassHash
+) -&gt; SyscallResult&lt;()&gt; implicits(GasBuiltin, System) nopanic;</code></pre>
+</div>
+</div>
+<h3 id="description_8" class="discrete">Description</h3>
+<div class="paragraph">
+<p>Once <code>replace_class</code> is called, the class of the calling contract (i.e. the contract whose address is returned by <code>get_contract_address</code> at the time the syscall is called) will be replaced
+by the class whose hash is given by the class_hash argument.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>After calling <code>replace_class</code>, the code currently executing from the old class will finish running.</p>
+</div>
+<div class="paragraph">
+<p>The new class will be used from the next transaction onwards or if the contract is called via
+the <code>call_contract</code> syscall in the same transaction (after the replacement).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<h3 id="arguments_8" class="discrete">Arguments</h3>
+<div class="hdlist">
+<table>
+<colgroup>
+<col style="width: 35%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+<code>class_hash_: ClassHash</code>
+</td>
+<td class="hdlist2">
+<p>The hash of the class you want to use as a replacement.</p>
+</td>
+</tr>
+</table>
+</div>
+<h3 id="return_values_8" class="discrete">Return values</h3>
+<div class="paragraph">
+<p>None.</p>
+</div>
+<h3 id="common_library_8" class="discrete">Common library</h3>
+<div class="paragraph">
+<p><a href="https://github.com/starkware-libs/cairo/blob/cca08c898f0eb3e58797674f20994df0ba641983/corelib/src/starknet/syscalls.cairo#L77" target="_blank" rel="noopener"><code>syscalls.cairo</code></a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="storage_read"><a class="anchor" href="#storage_read"></a><code>storage_read</code></h2>
+<div class="sectionbody">
+<h3 id="function_signature_9" class="discrete">Function signature</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">extern fn storage_read_syscall(
+    address_domain: u32, address: StorageAddress
+) -&gt; SyscallResult&lt;felt252&gt; implicits(GasBuiltin, System) nopanic;</code></pre>
+</div>
+</div>
+<h3 id="description_9" class="discrete">Description</h3>
+<div class="paragraph">
+<p>Gets the value of a key in the storage of the calling contract.</p>
+</div>
+<div class="paragraph">
+<p>This system call provides direct access to any possible key in storage, in contrast with <code>var.read()</code>, which enables you to read storage variables that are defined explicitly in the contract.</p>
+</div>
+<div class="paragraph">
+<p>For information on accessing storage by using the storage variables, see <a href="../contract-storage/#storage_variables" class="xref page">storage variables</a>.</p>
+</div>
+<h3 id="arguments_9" class="discrete">Arguments</h3>
+<div class="hdlist">
+<table>
+<colgroup>
+<col style="width: 35%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+<code><em>address_domain</em>: u32</code>
+</td>
+<td class="hdlist2">
+<p>The domain of the key, used to separate between different data availability modes. This separation is used in Starknet to offer different data availability modes. Currently, only the onchain mode (where all updates go to L1), indicated by domain <code>0</code>, is supported. Other address domains which will be introduced in the future will behave differently in terms of publication (in particular, they will not be posted on L1, creating a tradeoff between cost and security).</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code><em>address</em>: StorageAddress</code>
+</td>
+<td class="hdlist2">
+<p>The requested storage address.</p>
+</td>
+</tr>
+</table>
+</div>
+<h3 id="return_values_9" class="discrete">Return values</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The value of the key, of type <code>SyscallResult&lt;felt252&gt;</code>.</p>
+</li>
+</ul>
+</div>
+<h3 id="common_library_9" class="discrete">Common library</h3>
+<div class="paragraph">
+<p><a href="https://github.com/starkware-libs/cairo/blob/cca08c898f0eb3e58797674f20994df0ba641983/corelib/src/starknet/syscalls.cairo#L60" target="_blank" rel="noopener"><code>syscalls.cairo</code></a></p>
+</div>
+<h3 id="example_4" class="discrete">Example</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">use starknet::storage_access::storage_base_address_from_felt252;
 
-:where(*, *::before, *::after) {
-  border-width: 0;
-  border-style: solid;
-  box-sizing: border-box;
-  word-wrap: break-word;
-}
+...
 
-@media (max-width: 768px) {
-  .home-cta-container {
-    flex-direction: column; /* Switch back to a column layout for mobile */
-  }
-
-  .home-cta-container .home-cta {
-    margin: 8px 8px 0 8px; /* Reset margin for mobile */
-    width: 100%; /* Make each box take up the full width of the screen */
-  }
-}
-
-.home-cta-container {
-  display: flex;
-}
-
-.cta-image-container {
-  background-image: url('_images/developers.svg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 100%;
-  height: 100%;
-}
-
-.image-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center; s
-  align-items: center;
-  height: 8em;
-  margin-bottom: 10px;
-  margin: 8px;
-  border-radius: 20px 20px 0 0;
-  position: relative;
-  background-image: linear-gradient(180.15deg, var(--chakra-colors-chakra-body-text) 0.2%, var(--chakra-colors-chakra-body-bg) 105.43%);
-  overflow: hidden;
-}
-
-.image-container img {
-  z-index: -1;
-}
-
-.cta-image {
-  max-width: 464px;
-  max-height: 100%;
-}
-
-.home-cta {
-  flex: 1;
-  margin: 8px 8px 0 8px;
-  padding: 20px;
-  background-color: var(--chakra-colors-chakra-body-bg);
-  border: 1px solid rgb(226, 232, 240);
-  border-bottom: 1px solid rgb(226, 232, 240);
-  border-radius: 20px;
-  color: var(--chakra-colors-card-link-fg);
-  font-size: 18px;
-  font-weight: var(--chakra-fontWeights-medium);
-  text-decoration: none;
-  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
-  box-sizing: border-box;
-  position: relative;
-  background-image: linear-gradient(180.15deg, var(--chakra-colors-gradient-blue-default-a) 0.2%, var(--chakra-colors-gradient-blue-default-b) 105.43%);
-  overflow: hidden;
-  transition-property: var(--chakra-transition-property-common);
-  transition-duration: var(--chakra-transition-duration-fast);
-  transition-timing-function: var(--chakra-transition-easing-ease-out);
-  cursor: pointer;
-  -webkit-text-decoration: none;
-
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-
-.home-cta-first {
-  margin-left: 0;
-}
-
-.chakra-card__body.css-jintet {
-  font-size: 15px;
-  color: #363636;
-}
-
-.column-container {
-  display: flex;
-}
-
-.column {
-  flex: 1;
-  padding: 10px;
-  margin: 5px;
-  border-radius: 5px;
-}
-
-.home-cta-container .home-cta:hover {
-  text-decoration: none;
-  color: #363636;
-  border-color: #C506E4;
-}
-
-.home-cta a {
-  text-decoration: none;
-  color: #363636;
-}
-</style>
-
-<script>
-
-document.addEventListener('DOMContentLoaded', function() {
-  const themeSwitch = document.querySelector('[data-theme="dark"]');
-  if (!themeSwitch) {
-    console.error('Theme switch element not found');
-    return;
-  }
-
-  const image1 = document.getElementById('img_1');
-  const image2 = document.getElementById('img_2');
-  const image3 = document.getElementById('img_3');
-
-  const text1 = document.getElementById('text1');
-  const text2 = document.getElementById('text2');
-  const text3 = document.getElementById('text3');
-  const text4 = document.getElementById('text4');
-  const text5 = document.getElementById('text5');
-  const text6 = document.getElementById('text6');
-
-  let initialThemeSet = false; // To track if the initial theme has been set
-
-  themeSwitch.addEventListener('click', () => {
-    const currentTheme = themeSwitch.getAttribute('data-theme');
-    // Toggle the theme
-    themeSwitch.setAttribute('data-theme', currentTheme === 'dark' ? 'light' : 'dark');
-    // Toggle the theme
-    toggleTheme(currentTheme);
-  });
-
-  function toggleTheme(currentTheme) {
-    // Handle theme switching and image/text updates
-    if (currentTheme === 'dark' || !initialThemeSet) {
-      image1.src = '_images/developers_dark.svg';
-      image2.src = '_images/how_SN_works_dark.svg';
-      image3.src = '_images/roadmap_dark.svg';
-      text1.style.color = 'white';
-      text2.style.color = 'white';
-      text3.style.color = 'white';
-      text4.style.color = 'white';
-      text5.style.color = 'white';
-      text6.style.color = 'white';
-    } else {
-      image1.src = '_images/developers.svg';
-      image2.src = '_images/how_SN_works.svg';
-      image3.src = '_images/roadmap.svg';
-      text1.style.color = '';
-      text2.style.color = '';
-      text3.style.color = '';
-      text4.style.color = '';
-      text5.style.color = '';
-      text6.style.color = '';
-    }
-
-    if (!initialThemeSet) {
-      initialThemeSet = true;
-    }
-  }
-
-  // Set the initial state based on the themeSwitch value
-  toggleTheme(themeSwitch.getAttribute('data-theme'));
-});
-
-
-</script>
-</head>
-</html>
+let storage_address = storage_base_address_from_felt252(3534535754756246375475423547453)
+storage_read_syscall(0, storage_address).unwrap_syscall()</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="storage_write"><a class="anchor" href="#storage_write"></a><code>storage_write</code></h2>
+<div class="sectionbody">
+<h3 id="function_signature_10" class="discrete">Function signature</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">extern fn storage_write_syscall(
+    address_domain: u32, address: StorageAddress, value: felt252
+) -&gt; SyscallResult&lt;()&gt; implicits(GasBuiltin, System) nopanic;</code></pre>
+</div>
+</div>
+<h3 id="description_10" class="discrete">Description</h3>
+<div class="paragraph">
+<p>Sets the value of a key in the storage of the calling contract.</p>
+</div>
+<div class="paragraph">
+<p>This system call provides direct access to any possible key in storage, in contrast with <code>var.write()</code>, which enables you to write to storage variables that are defined explicitly in the contract.</p>
+</div>
+<div class="paragraph">
+<p>For information on accessing storage by using the storage variables, see <a href="../contract-storage/#storage_variables" class="xref page">storage variables</a>.</p>
+</div>
+<h3 id="arguments_10" class="discrete">Arguments</h3>
+<div class="hdlist">
+<table>
+<colgroup>
+<col style="width: 35%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+<code><em>address_domain</em>: u32</code>
+</td>
+<td class="hdlist2">
+<p>The domain of the key, used to separate between different data availability modes. This separation is used in Starknet to offer different data availability modes. Currently, only the onchain mode (where all updates go to L1), indicated by domain <code>0</code>, is supported. Other address domains which will be introduced in the future will behave differently in terms of publication (in particular, they will not be posted on L1, creating a tradeoff between cost and security).</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code><em>address</em>: StorageAddress</code>
+</td>
+<td class="hdlist2">
+<p>The requested storage address.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code><em>value</em>: felt252</code>
+</td>
+<td class="hdlist2">
+<p>The value to write to the key.</p>
+</td>
+</tr>
+</table>
+</div>
+<h3 id="return_values_10" class="discrete">Return values</h3>
+<div class="paragraph">
+<p>None.</p>
+</div>
+<div class="paragraph">
+<div class="title">Common library</div>
+<p><a href="https://github.com/starkware-libs/cairo/blob/cca08c898f0eb3e58797674f20994df0ba641983/corelib/src/starknet/syscalls.cairo#L70" target="_blank" rel="noopener"><code>syscalls.cairo</code></a></p>
+</div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="next"><a href="notational-conventions/">Notational conventions</a></span>
+  <span class="prev"><a href="../serialization-of-cairo-types/">Serialization of Cairo types</a></span>
+  <span class="next"><a href="../execution-info/">Execution information for the current block</a></span>
 </nav>
 </article>
   </div>
@@ -1121,13 +1567,13 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </div>
 </footer>
-<script src="./_/js/site.js?new"></script>
-<script async src="./_/js/vendor/highlight.js?new"></script>
-<script async src="./_/js/vendor/tabs-block-behaviour.js?new"></script>
-<script async src="./_/js/vendor/swagger-ui.js?new"></script>
-<script async src="./_/js/vendor/component-versions.js?new"></script>
-<script src="./_/js/vendor/custom.js?new"></script>
-<script async src="./_/js/vendor/tabs.js"></script>
+<script src="../../../_/js/site.js?new"></script>
+<script async src="../../../_/js/vendor/highlight.js?new"></script>
+<script async src="../../../_/js/vendor/tabs-block-behaviour.js?new"></script>
+<script async src="../../../_/js/vendor/swagger-ui.js?new"></script>
+<script async src="../../../_/js/vendor/component-versions.js?new"></script>
+<script src="../../../_/js/vendor/custom.js?new"></script>
+<script async src="../../../_/js/vendor/tabs.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script>
 <script
