@@ -204,11 +204,6 @@
        class="nav-link"
      href="../../../quick-start/interact-with-a-smart-contract/">Interacting with a smart contract</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../../../quick-start/deploy-interact-with-a-smart-contract-remix/">Deploying and interacting with a smart contract with Remix</a>
-  </li>
 </ul>
   </li>
 </ul>
@@ -223,21 +218,6 @@
     <a 
        class="nav-link"
      href="../starknet-architecture-overview/">Overview</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../../provers-overview/">Provers</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../../solidity-verifier/">Solidity verifier</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../../nodes/">Nodes</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
@@ -917,9 +897,6 @@
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>Additionally, see information on the <a href="../messaging-mechanism/#l1_handler_transaction" class="xref page">L1 handler transaction type</a>.</p>
-</div>
 <div class="admonitionblock important">
 <table>
 <tr>
@@ -929,21 +906,6 @@
 <td class="content">
 <div class="paragraph">
 <p>Do not submit a transaction that uses an unsupported transaction type, because it cannot be included in a proof, and so cannot become part of a Starknet block.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>While the <code>L1HandlerTransaction</code> type is a valid transaction type within Starknet, be aware that it cannot be broadcast through the Starknet API like the other transaction types listed in the table above. This transaction type is specifically designed for internal Starknet operations, particularly for handling messages from L1 to L2.
-For more details, refer to the <a href="../messaging-mechanism/#l1_handler_transaction" class="xref page">L1 handler transaction page</a>.</p>
 </div>
 </td>
 </tr>
@@ -2155,14 +2117,6 @@ and <code>nonce_data_availability_mode</code>, as follows:</p>
 </div>
 <div class="paragraph">
 <p>\(g_x=874739451078007766457464989774322083649278607533249481151382481072868806602\) \(g_y=152666792071518830868575557812948353041420400780739481342941381225525861407\)</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="v3-fee-estimation"><a class="anchor" href="#v3-fee-estimation"></a>v3 transaction fee estimation</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Estimate the fees of transactions with the <code>starknet_estimateFee</code> API call, which is part of Starknet&#8217;s API v0.7.0 and above. For more information, see the <a href="https://github.com/starkware-libs/starknet-specs/blob/v0.7.1/api/starknet_api_openrpc.json#L612">Starknet JSON RPC specification</a>. For more information on how to construct the appropriate <code>resource_bounds</code> based on the response of <code>starknet_estimateFee</code>, see <a href="https://community.starknet.io/t/starknet-v0-13-1-pre-release-notes/113664#sdkswallets-how-to-use-the-new-fee-estimates-7">How to use the new fee estimates?</a> on the Starknet community forum.</p>
 </div>
 </div>
 </div>
