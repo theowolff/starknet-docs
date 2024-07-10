@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Contract address :: Starknet documentation</title>
-    <link rel="canonical" href="https://docs.starknet.io/architecture-and-concepts/smart-contracts/contract-address/">
-    <link rel="prev" href="../class-hash/">
-    <link rel="next" href="../contract-storage/">
+    <title>Solidity verifier :: Starknet documentation</title>
+    <link rel="canonical" href="https://docs.starknet.io/architecture-and-concepts/solidity-verifier/">
+    <link rel="prev" href="../provers-overview/">
+    <link rel="next" href="../nodes/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -26,15 +26,15 @@
     <meta property="twitter:url" content="https://docs.starknet.io/">
     <meta property="twitter:title" content="Starknet Documentation">
     <meta property="twitter:description" content="Reference documentation for developers building on Starknet.">
-    <meta property="twitter:image" content="https://www.starknet.io/starknet-docs-card.png">  <link rel="stylesheet" href="../../../_/css/vendor/tabs.css">
-  <link id="theme" rel="stylesheet" title="Default" href="../../../_/css/site.css?new">
-  <link rel="stylesheet" title="Dark" href="../../../_/css/dark-site.css?new">
-  <link rel="stylesheet" href="../../../_/css/vendor/tabs.css">
-  <link rel="stylesheet" href="../../../_/css/home.css">
+    <meta property="twitter:image" content="https://www.starknet.io/starknet-docs-card.png">  <link rel="stylesheet" href="../../_/css/vendor/tabs.css">
+  <link id="theme" rel="stylesheet" title="Default" href="../../_/css/site.css?new">
+  <link rel="stylesheet" title="Dark" href="../../_/css/dark-site.css?new">
+  <link rel="stylesheet" href="../../_/css/vendor/tabs.css">
+  <link rel="stylesheet" href="../../_/css/home.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WY42TERK5P"></script>
     <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','G-WY42TERK5P')</script>
-    <script>var uiRootPath = '../../../_'</script>
-    <script src="../../../_/js/vendor/medium-zoom.js?new"></script>
+    <script>var uiRootPath = '../../_'</script>
+    <script src="../../_/js/vendor/medium-zoom.js?new"></script>
     <script type="text/javascript" id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="e4db29b5-cd94-4bcf-87e4-04f4ca564240" data-blockingmode="manual"></script>
     <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
@@ -48,27 +48,27 @@
         a.appendChild(r);
         })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
-<link rel="icon" href="../../../_/img/favicon/favicon.ico" type="image/x-icon">
+<link rel="icon" href="../../_/img/favicon/favicon.ico" type="image/x-icon">
 
 <!-- For all browsers -->
-<link rel="icon" type="image/png" sizes="32x32" href="../../../_/img/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../../../_/img/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../_/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../_/img/favicon-16x16.png">
 
 <!-- For Google and Chrome -->
-<link rel="icon" type="image/png" sizes="192x192" href="../../../_/img/favicon/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../../_/img/favicon/android-chrome-192x192.png">
 
 <!-- For iPad -->
-<link rel="apple-touch-icon" type="image/png" sizes="167x167" href="../../../_/img/favicon/apple-touch-icon.png">
+<link rel="apple-touch-icon" type="image/png" sizes="167x167" href="../../_/img/favicon/apple-touch-icon.png">
 <!-- For iPhone -->
-<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../../../_/img/favicon/apple-touch-icon.png">  </head>
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../../_/img/favicon/apple-touch-icon.png">  </head>
   <body class="article">
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
       <div class="top-logo">
-        <a href="../../.." class="starknet-logo"></a>
+        <a href="../.." class="starknet-logo"></a>
         <div class="vertical-divider desktop-only"></div>
-        <a href="../../.." class="docs-logo desktop-only">Docs</a>
+        <a href="../.." class="docs-logo desktop-only">Docs</a>
       </div>
       <!--<a class="navbar-item" href="https://docs.starknet.io">Starknet documentation</a>-->
       <div id="autocomplete" class="autocomplete-root"></div>
@@ -103,18 +103,17 @@
   </div>
   <span></span>
   <span></span>
-  <a href="../../../" class="home-link mask-svg-center"></a>
+  <a href="../../" class="home-link mask-svg-center"></a>
   <div id="mobile-autocomplete" class="mobile-only"></div>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../../../">Starknet</a></li>
+    <li><a href="../../">Starknet</a></li>
     <li>Architecture</li>
-    <li>Contracts</li>
-    <li><a href="./">Contract address</a></li>
+    <li><a href="./">Solidity verifier</a></li>
   </ul>
 </nav>
   <div class="edit-this-page">
-    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/architecture-and-concepts/pages/smart-contracts/contract-address.adoc"><img class="pencil">Edit this Page</a>
+    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/architecture-and-concepts/pages/solidity-verifier.adoc"><img class="pencil">Edit this Page</a>
   </div>
 </div>
 <div class="body">
@@ -123,19 +122,19 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../../../">Starknet</a></h3>
+    <h3 class="title"><a href="../../">Starknet</a></h3>
 <ul class="nav-list">
   <li class="nav-item parent" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="../../../">Overview</a>
+     href="../../">Overview</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="../../../notational-conventions/">Notational conventions</a>
+     href="../../notational-conventions/">Notational conventions</a>
   </li>
 </ul>
   </li>
@@ -150,23 +149,23 @@
         <span>
     <a 
        class="nav-link nav-link-with-toggle"
-     href="../../../quick-start/environment-setup/">Setting up your environment</a>
+     href="../../quick-start/environment-setup/">Setting up your environment</a>
         </span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../quick-start/environment-setup/#installing_starkli">Installing Starkli</a>
+     href="../../quick-start/environment-setup/#installing_starkli">Installing Starkli</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../quick-start/environment-setup/#setting_environment_variables_for_starkli">Environment variables</a>
+     href="../../quick-start/environment-setup/#setting_environment_variables_for_starkli">Environment variables</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../quick-start/environment-setup/#installing_scarb">Installing Scarb</a>
+     href="../../quick-start/environment-setup/#installing_scarb">Installing Scarb</a>
   </li>
 </ul>
   </li>
@@ -175,40 +174,40 @@
         <span>
     <a 
        class="nav-link nav-link-with-toggle"
-     href="../../../quick-start/set-up-an-account/">Setting up an account</a>
+     href="../../quick-start/set-up-an-account/">Setting up an account</a>
         </span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../quick-start/set-up-an-account/#creating_an_account">Creating an account</a>
+     href="../../quick-start/set-up-an-account/#creating_an_account">Creating an account</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../quick-start/set-up-an-account/#deploying_an_account">Deploying an account</a>
+     href="../../quick-start/set-up-an-account/#deploying_an_account">Deploying an account</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../../quick-start/declare-a-smart-contract/">Declaring a smart contract</a>
+     href="../../quick-start/declare-a-smart-contract/">Declaring a smart contract</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../../quick-start/deploy-a-smart-contract/">Deploying a smart contract</a>
+     href="../../quick-start/deploy-a-smart-contract/">Deploying a smart contract</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../../quick-start/interact-with-a-smart-contract/">Interacting with a smart contract</a>
+     href="../../quick-start/interact-with-a-smart-contract/">Interacting with a smart contract</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../../quick-start/deploy-interact-with-a-smart-contract-remix/">Deploying and interacting with a smart contract with Remix</a>
+     href="../../quick-start/deploy-interact-with-a-smart-contract-remix/">Deploying and interacting with a smart contract with Remix</a>
   </li>
 </ul>
   </li>
@@ -223,12 +222,12 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../../starknet-versions/version-notes/">Release notes</a>
+     href="../../starknet-versions/version-notes/">Release notes</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../../starknet-versions/deprecated/">Deprecated, unsupported, and removed features</a>
+     href="../../starknet-versions/deprecated/">Deprecated, unsupported, and removed features</a>
   </li>
 </ul>
   </li>
@@ -243,42 +242,42 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../network-architecture/starknet-architecture-overview/">Overview</a>
+     href="../network-architecture/starknet-architecture-overview/">Overview</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../provers-overview/">Provers</a>
+     href="../provers-overview/">Provers</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a 
+       class="nav-link"
+     href="./">Solidity verifier</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../solidity-verifier/">Solidity verifier</a>
+     href="../nodes/">Nodes</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../nodes/">Nodes</a>
+     href="../network-architecture/block-structure/">Block structure</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../network-architecture/block-structure/">Block structure</a>
+     href="../network-architecture/transaction-life-cycle/">Transaction lifecycle</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../network-architecture/transaction-life-cycle/">Transaction lifecycle</a>
+     href="../network-architecture/transactions/">Transaction types</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../network-architecture/transactions/">Transaction types</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../../network-architecture/fee-mechanism/">Gas and transaction fees</a>
+     href="../network-architecture/fee-mechanism/">Gas and transaction fees</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
@@ -287,12 +286,12 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../network-architecture/starknet-state/">Starknet state</a>
+     href="../network-architecture/starknet-state/">Starknet state</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../network-architecture/data-availability/">Data availability</a>
+     href="../network-architecture/data-availability/">Data availability</a>
   </li>
 </ul>
   </li>
@@ -303,12 +302,12 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../network-architecture/messaging-mechanism/">L1-L2 messaging mechanism</a>
+     href="../network-architecture/messaging-mechanism/">L1-L2 messaging mechanism</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../network-architecture/messaging-reference/">Messaging reference</a>
+     href="../network-architecture/messaging-reference/">Messaging reference</a>
   </li>
 </ul>
   </li>
@@ -319,32 +318,32 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../accounts/introduction/">What is an account?</a>
+     href="../accounts/introduction/">What is an account?</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../accounts/approach/">Starknet&#8217;s account interface</a>
+     href="../accounts/approach/">Starknet&#8217;s account interface</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../accounts/account-functions/">Account interface function reference</a>
+     href="../accounts/account-functions/">Account interface function reference</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../accounts/deploying-new-accounts/">Deploying new accounts</a>
+     href="../accounts/deploying-new-accounts/">Deploying new accounts</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../accounts/universal-deployer/">Universal Deployer Contract</a>
+     href="../accounts/universal-deployer/">Universal Deployer Contract</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../accounts/simplified-transaction-flow/">Simplified transaction flow</a>
+     href="../accounts/simplified-transaction-flow/">Simplified transaction flow</a>
   </li>
 </ul>
   </li>
@@ -355,62 +354,62 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../contract-classes/">Contract classes and instances</a>
+     href="../smart-contracts/contract-classes/">Contract classes and instances</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../class-hash/">Class hash</a>
-  </li>
-  <li class="nav-item is-current-page" data-depth="3">
-    <a 
-       class="nav-link"
-     href="./">Contract address</a>
+     href="../smart-contracts/class-hash/">Class hash</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../contract-storage/">Contract storage</a>
+     href="../smart-contracts/contract-address/">Contract address</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../contract-abi/">Contract ABI</a>
+     href="../smart-contracts/contract-storage/">Contract storage</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../starknet-events/">Events</a>
+     href="../smart-contracts/contract-abi/">Contract ABI</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../contract-syntax/">Migrating a contract from Cairo v1 to Cairo v2</a>
+     href="../smart-contracts/starknet-events/">Events</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../cairo-and-sierra/">Cairo and Sierra</a>
+     href="../smart-contracts/contract-syntax/">Migrating a contract from Cairo v1 to Cairo v2</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../cairo-builtins/">Cairo builtins</a>
+     href="../smart-contracts/cairo-and-sierra/">Cairo and Sierra</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../serialization-of-cairo-types/">Serialization of Cairo types</a>
+     href="../smart-contracts/cairo-builtins/">Cairo builtins</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../system-calls-cairo1/">System calls</a>
+     href="../smart-contracts/serialization-of-cairo-types/">Serialization of Cairo types</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../execution-info/">Execution information for the current block</a>
+     href="../smart-contracts/system-calls-cairo1/">System calls</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../smart-contracts/execution-info/">Execution information for the current block</a>
   </li>
 </ul>
   </li>
@@ -421,17 +420,17 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../cryptography/p-value/">The STARK field</a>
+     href="../cryptography/p-value/">The STARK field</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../cryptography/stark-curve/">The STARK curve</a>
+     href="../cryptography/stark-curve/">The STARK curve</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../cryptography/hash-functions/">Hash functions</a>
+     href="../cryptography/hash-functions/">Hash functions</a>
   </li>
 </ul>
   </li>
@@ -440,7 +439,7 @@
   <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="../../economics-of-starknet/">The Economics of Starknet</a>
+     href="../economics-of-starknet/">The Economics of Starknet</a>
   </li>
 </ul>
   </li>
@@ -453,12 +452,12 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../../tools/starknet-book/">The Starknet Book</a>
+     href="../../tools/starknet-book/">The Starknet Book</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../../tools/devtools/">Developer tools</a>
+     href="../../tools/devtools/">Developer tools</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
@@ -467,12 +466,12 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../cli/starkli/">Legacy Starknet CLI reference</a>
+     href="../../cli/starkli/">Legacy Starknet CLI reference</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../cli/starknet-compiler-options/">Legacy compiler CLI reference</a>
+     href="../../cli/starknet-compiler-options/">Legacy compiler CLI reference</a>
   </li>
 </ul>
   </li>
@@ -483,29 +482,29 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../tools/api-services/">Full nodes and API services</a>
+     href="../../tools/api-services/">Full nodes and API services</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../starknet-versions/juno-versions/">Juno release notes</a>
+     href="../../starknet-versions/juno-versions/">Juno release notes</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../starknet-versions/pathfinder-versions/">Pathfinder release notes</a>
+     href="../../starknet-versions/pathfinder-versions/">Pathfinder release notes</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../../tools/ref-block-explorers/">Block explorers</a>
+     href="../../tools/ref-block-explorers/">Block explorers</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../../tools/audit/">Audit providers</a>
+     href="../../tools/audit/">Audit providers</a>
   </li>
 </ul>
   </li>
@@ -516,12 +515,12 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../../starkgate/overview/">Overview</a>
+     href="../../starkgate/overview/">Overview</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../../starkgate/architecture/">StarkGate architecture</a>
+     href="../../starkgate/architecture/">StarkGate architecture</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
@@ -530,44 +529,44 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../starkgate/depositing/">Depositing funds</a>
+     href="../../starkgate/depositing/">Depositing funds</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../starkgate/withdrawing/">Withdrawing funds</a>
+     href="../../starkgate/withdrawing/">Withdrawing funds</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../starkgate/automated-actions-with-bridging/">Performing a Smart Deposit</a>
+     href="../../starkgate/automated-actions-with-bridging/">Performing a Smart Deposit</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../starkgate/adding-a-token/">Adding a token</a>
+     href="../../starkgate/adding-a-token/">Adding a token</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../starkgate/cancelling-a-deposit/">Cancelling a deposit</a>
+     href="../../starkgate/cancelling-a-deposit/">Cancelling a deposit</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../starkgate/estimating-fees/">Estimating StarkGate fees</a>
+     href="../../starkgate/estimating-fees/">Estimating StarkGate fees</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../tools/dai-token-migration/">Migrating DAI v0 to DAI</a>
+     href="../../tools/dai-token-migration/">Migrating DAI v0 to DAI</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../../starkgate/function-reference/">StarkGate function and event reference</a>
+     href="../../starkgate/function-reference/">StarkGate function and event reference</a>
   </li>
 </ul>
   </li>
@@ -578,19 +577,19 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../../tools/important-addresses/">Starknet contracts and sequencer addresses</a>
+     href="../../tools/important-addresses/">Starknet contracts and sequencer addresses</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../../tools/bridged-tokens/">Bridged tokens</a>
+     href="../../tools/bridged-tokens/">Bridged tokens</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="../../../tools/limits-and-triggers/">Current limits</a>
+     href="../../tools/limits-and-triggers/">Current limits</a>
   </li>
 </ul>
   </li>
@@ -599,7 +598,7 @@
   <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="../../../glossary/">Glossary</a>
+     href="../../glossary/">Glossary</a>
   </li>
 </ul>
   </li>
@@ -626,83 +625,472 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Contract address</h1>
-<div class="paragraph">
-<p>The contract address is a unique identifier of the contract on Starknet. It is a chain hash of the following information:</p>
-</div>
-<div class="hdlist stripes-odd">
+<h1 class="page">Solidity verifier</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock note">
 <table>
-<colgroup>
-<col style="width: 26%;">
-<col>
-</colgroup>
 <tr>
-<td class="hdlist1">
-<code>prefix</code>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
 </td>
-<td class="hdlist2">
-<p>The ASCII encoding of the constant string <code>STARKNET_CONTRACT_ADDRESS</code>.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<code>deployer_address</code>
-</td>
-<td class="hdlist2">
-<p>One of the following:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>When the contract is deployed via a <code>DEPLOY_ACCOUNT</code> transaction: <code>0</code></p>
-</li>
-<li>
-<p>When the contract is deployed via a <code>deploy</code> system call from another contract, the value of the <code>deploy_from_zero</code> parameter determines this value.</p>
+<td class="content">
 <div class="paragraph">
-<p>For information on the <code>deploy_from_zero</code> parameter, see the <a href="../system-calls-cairo1/#deploy" class="xref page"><code>deploy</code> system call</a></p>
+<p>This topic previously appeared in the Starknet Book.</p>
 </div>
-</li>
-</ul>
-</div>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<code>salt</code>
-</td>
-<td class="hdlist2">
-<p>The salt passed by the contract calling the syscall, provided by the transaction sender.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<code>class_hash</code>
-</td>
-<td class="hdlist2">
-<p>See <a href="../class-hash/#computing_the_cairo_1_class_hash" class="xref page">the class hash documentation</a>.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<code>constructor_calldata_hash</code>
-</td>
-<td class="hdlist2">
-<p><a href="../../cryptography/hash-functions/#pedersen_array_hash" class="xref page">Array hash</a> of the inputs to the constructor.</p>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The address is computed as follows:</p>
+<p>Starknet&#8217;s Solidity verifier ensures the truth of transactions and smart contracts.</p>
 </div>
-<div class="listingblock">
+<div class="paragraph">
+<p>The Solidity verifier is an L1 Solidity smart contract, designed to validate STARK proofs from SHARP.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="current_architecture_multiple_smart_contracts"><a class="anchor" href="#current_architecture_multiple_smart_contracts"></a>Current architecture: Multiple smart contracts</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The current Verifier is a set of multiple smart contracts, rather than being a singular, monolithic structure.</p>
+</div>
+<div class="paragraph">
+<p>Some key smart contracts associated with the Verifier are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://etherscan.io/address/0x47312450b3ac8b5b8e247a6bb6d523e7605bdb60"><code>GpsStatementVerifier</code></a>: This is the primary contract of the SHARP verifier. It verifies a proof and then registers the related facts using <code>verifyProofAndRegister</code>. It acts as an umbrella for various layouts, each named <code>CpuFrilessVerifier</code>. Every layout has a unique combination of built-in resources.</p>
+<div class="imageblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">contract_address = pedersen(
-    “STARKNET_CONTRACT_ADDRESS”,
-    deployer_address,
-    salt,
-    class_hash,
-    constructor_calldata_hash)</code></pre>
+<img src="../_images/verifier-gps-statement-verifier.png" alt="The system routes each proof to its relevant layout">
 </div>
+<div class="title">Figure 1. Verifier layouts</div>
+</div>
+<div class="paragraph">
+<p>The system routes each proof to its relevant layout.</p>
+</div>
+</li>
+<li>
+<p><a href="https://etherscan.io/address/0xfd14567eaf9ba941cb8c8a94eec14831ca7fd1b4"><code>MemoryPageFactRegistry</code></a>: This registry maintains facts for memory pages, primarily used to register outputs for data availability in rollup mode. The Fact Registry is a separate smart contract ensuring the verification and validity of attestations or facts. The verifier function is separated from the main contract to ensure each segment works optimally within its limits. The main proof segment relies on other parts, but these parts operate independently.</p>
+</li>
+<li>
+<p><a href="https://etherscan.io/address/0x5899efea757e0dbd6d114b3375c23d7540f65fa4"><code>MerkleStatementContract</code></a>: This contract verifies Merkle paths.</p>
+</li>
+<li>
+<p><a href="https://etherscan.io/address/0x3e6118da317f7a433031f03bb71ab870d87dd2dd"><code>FriStatementContract</code></a>: It focuses on verifying the FRI layers.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sharp_verifier_contract_map"><a class="anchor" href="#sharp_verifier_contract_map"></a>SHARP Verifier contract map</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The SHARP Verifier Contract Map contains roughly 40 contracts, detailing various components of the Solidity verifier. The images below display the contracts and their Ethereum Mainnet addresses.</p>
+</div>
+<div class="paragraph">
+<div class="title">SHARP verifier contract map</div>
+<p>These are currently the entire stack of contracts that comprise the SHARP verifier, with their Ethereum Mainnet addresses.</p>
+</div>
+<div class="hdlist stripes-odd">
+<table>
+<colgroup>
+<col style="width: 25%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+Proxy
+</td>
+<td class="hdlist2">
+<p>0x47312450B3Ac8b5b8e247a6bB6d523e7605bDb60</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CallProxy
+</td>
+<td class="hdlist2">
+<p>0xD4C4044ACa68ebBcB81B13cC2699e1Bca2d3F458</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+GpsStatementVerifier
+</td>
+<td class="hdlist2">
+<p>0x6cB3EE90C50a38A0e4662bB7e7E6e40B91361BF6</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+MemoryPageFactRegistry
+</td>
+<td class="hdlist2">
+<p>0xFD14567eaf9ba941cB8c8a94eEC14831ca7fD1b4</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+MerkleStatementContract
+</td>
+<td class="hdlist2">
+<p>0x5899Efea757E0Dbd6d114b3375C23D7540f65fa4</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+FriStatementContract
+</td>
+<td class="hdlist2">
+<p>0x3E6118DA317f7A433031F03bB71ab870d87dd2dd</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CairoBootloaderProgram
+</td>
+<td class="hdlist2">
+<p>0x5d07afFAfc8721Ef3dEe4D11A2D1484CBf6A9dDf</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+PedersenHashPointsXColumn
+</td>
+<td class="hdlist2">
+<p>0xc4f21318937017B8aBe5fDc0D48f58dBc1d18940</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+PedersenHashPointsYColumn
+</td>
+<td class="hdlist2">
+<p>0x519DA5F74503dA351EbBED889111377d33096002</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+EcdsaHashPointsXColumn
+</td>
+<td class="hdlist2">
+<p>0x593a71DC43e9B67FE009d7C76B6EfA925FB329B1</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+EcdsaHashPointsYColumn
+</td>
+<td class="hdlist2">
+<p>0xcA59f6FD499ffF50c78Ffb420a9bcd0d273abf29</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CpuFrilessVerifier0
+</td>
+<td class="hdlist2">
+<p>0x217750c27bE9147f9e358D9FF26a8224F8aCC214</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CpuOods0
+</td>
+<td class="hdlist2">
+<p>0x3405F644F9390C3478f42Fd205CE6920CcAF3280</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CpuConstraintPoly0
+</td>
+<td class="hdlist2">
+<p>0x943248dA0FFd5834Da56c5AD5308E2E2991378EB</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CpuFrilessVerifier1
+</td>
+<td class="hdlist2">
+<p>0x630A97901Ac29590DF83f4A64B8D490D54caf239</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CpuOods1
+</td>
+<td class="hdlist2">
+<p>0x8518F459A698038B4CCED66C042c48C6bB5B17fe</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CpuConstraintPoly1
+</td>
+<td class="hdlist2">
+<p>0x4CF5c11321d54b83bDAE84bBbd018c26621d2950</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CpuFrilessVerifier2
+</td>
+<td class="hdlist2">
+<p>0x8488e8f4e26eBa40faE229AB653d98E341cbE57B</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CpuOods2
+</td>
+<td class="hdlist2">
+<p>0x52314e0b25b024c34480Ac3c75cfE98c2Ed6aa4a</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CpuConstraintPoly2
+</td>
+<td class="hdlist2">
+<p>0xBE8bd7a41ba7DC7b995a53368e7fFE30Fd2BC447</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CpuFrilessVerifier3
+</td>
+<td class="hdlist2">
+<p>0x9E614a417f8309575fC11b175A51599661f2Bd21</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CpuOods3
+</td>
+<td class="hdlist2">
+<p>0xED219933b58e9c00E66682356588d42C7932EE8E</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CpuConstraintPoly3
+</td>
+<td class="hdlist2">
+<p>0x297951a67D1BF7795500C3802d21a8C846D9C962</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CpuFrilessVerifier4
+</td>
+<td class="hdlist2">
+<p>0xC879aF7D5eD80e4676C203FD300E640C297F31e3</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CpuOods4
+</td>
+<td class="hdlist2">
+<p>0x4bf82e627D57cB3F455E740bcDA25848cDbd2FF7</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CpuConstraintPoly4
+</td>
+<td class="hdlist2">
+<p>0x0C099caf7a87e4eB28bcd8D0608063f8a69bb434</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CpuFrilessVerifier5
+</td>
+<td class="hdlist2">
+<p>0x78Af2BFB12Db15d35f7dE8DD77f29C299C78c590</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CpuOods5
+</td>
+<td class="hdlist2">
+<p>0x43A1C0bBa540e1C98d4b413F876250bdCFd0b9e0</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CpuConstraintPoly5
+</td>
+<td class="hdlist2">
+<p>0x691ca565B7416B681e4f9Fb56A1283Ae8b34E55e</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CpuFrilessVerifier6
+</td>
+<td class="hdlist2">
+<p>0xe9664D230490d5A515ef7Ef30033d8075a8D0E24</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CpuOods6
+</td>
+<td class="hdlist2">
+<p>0x68293272FEA2D6e74572BC18ffaD11F21344e090</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CpuConstraintPoly6
+</td>
+<td class="hdlist2">
+<p>0xd0aAdECA2d25AEFde0da214d27b04b6ea20D7418</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+PoseidonPoseidonFullRoundKey0Column6
+</td>
+<td class="hdlist2">
+<p>0x37070Fd8051f63E5A6D7E87026e086Cc19db1aBe</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+PoseidonPoseidonFullRoundKey1Column6
+</td>
+<td class="hdlist2">
+<p>0xb4711a4614368516529d6118C97905aB4B28e267</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+PoseidonPoseidonFullRoundKey 2Column6
+</td>
+<td class="hdlist2">
+<p>0x4FB05b7CC348C5a72C59a3f307baf66e3CA1F835</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+PoseidonPoseidonPartialRoundKey0Column6
+</td>
+<td class="hdlist2">
+<p>0x812c2AD2161D099724A99C8114c539b9e5b449cd</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+PoseidonPoseidonPartialRoundKey1Column6
+</td>
+<td class="hdlist2">
+<p>0x4d0E80AB34ee2B19295F2CaC3101d03452D874b8</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CpuFrilessVerifier7
+</td>
+<td class="hdlist2">
+<p>0x03Fa911dfCa026D9C8Edb508851b390accF912e8</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CpuOods7
+</td>
+<td class="hdlist2">
+<p>0xc9E067AF5d00eb4aA2E73843ac36AfF83C5CeeD3</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CpuConstraintPoly7
+</td>
+<td class="hdlist2">
+<p>0x89B7a7276cBc8Cb35Ec11fAE9da83b20Db3edf20</p>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>These contracts function as follows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Proxy</strong>: This contract facilitates upgradability. It interacts with the <code>GpsStatementVerifier</code> contract using the <code>delegate_call</code> method. Notably, the state resides in the <code>GpsStatementVerifier</code> contract, not in the proxy.</p>
+</li>
+<li>
+<p><strong>CallProxy</strong>: Positioned between the <code>Proxy</code> and the <code>GpsStatementVerifier</code> contracts, it functions like a typical proxy. However, it avoids the <code>delegate_call</code> method and calls the function in the implementation contract directly.</p>
+</li>
+<li>
+<p><strong>CairoBootloaderProgram</strong>: Comprising numerical Cairo programs, it validates the Cairo program of a statement. The bootloader manages the logic executing Cairo programs to generate proof and program hash.</p>
+</li>
+<li>
+<p><strong>PedersenHashPoints (X &amp; Y Columns)</strong>: These lookup tables store vast amounts of data. Validation functions consult them to compute the Pedersen hash.</p>
+</li>
+<li>
+<p><strong>EcdsaPoints (X &amp; Y Column)</strong>: Similar to the Pedersen hash, these tables assist in calculating the elliptic curve.</p>
+</li>
+<li>
+<p><strong>CpuFrilessVerifier/CpuOods/CpuConstantPoly (0 - 7)</strong>: These Verifier contracts vary in layout as shown in the GpsStatementVerifier layout image. Each layout encompasses resources, built-ins, constraints, and more, designed for a specific task. Each has unique parameters for its constructor.</p>
+</li>
+<li>
+<p><strong>PoseidonPoseidon</strong>: These contracts back the new Poseidon built-in and contain Poseidon-specific lookup tables.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="constructor_parameters_of_key_contracts"><a class="anchor" href="#constructor_parameters_of_key_contracts"></a>Constructor parameters of key contracts</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When constructing the primary Verifier contracts, specific parameters are employed to facilitate functionality. These parameters reference other auxiliary contracts, decentralizing the logic and ensuring the main contract remains under the 24kb deployment limit.</p>
+</div>
+<div class="paragraph">
+<p>Below is a visual representation of these parameters in relation to key contracts CpuFrilessVerifiers and GpsStatementVerifier:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/verifier-constructor-params.png" alt="Constructor Parameters">
+</div>
+</div>
+<div class="sect2">
+<h3 id="cpufrilessverifier_constructor_parameters"><a class="anchor" href="#cpufrilessverifier_constructor_parameters"></a>CpuFrilessVerifier constructor parameters</h3>
+<div class="paragraph">
+<p>CpuFrilessVerifiers is designed to handle a diverse range of tasks. Its parameters encompass:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Auxiliary Polynomial Contracts:</strong> These include <code>CpuConstraintPoly</code>, <code>PedersenHashPointsxColumn</code>, <code>PedersenHashPointsYColumn</code>, <code>EcdsaPointsXColumn</code>, and <code>EcdsaPointsYColumn</code>.</p>
+</li>
+<li>
+<p><strong>Poseidon-Related Contracts:</strong> Several <code>PoseidonPoseidonFullRoundKey</code> and <code>PoseidonPoseidonPartialRoundKey</code> contracts.</p>
+</li>
+<li>
+<p><strong>Sampling and Memory:</strong> The contract uses <code>CpuOods</code> for out-of-domain sampling and <code>MemoryPageFactRegistry</code> for memory-related tasks.</p>
+</li>
+<li>
+<p><strong>Verification:</strong> It integrates with <code>MerkleStatementContract</code> for Merkle verification and <code>FriStatementContract</code> for Fri-related tasks.</p>
+</li>
+<li>
+<p><strong>Security:</strong> The <code>num_security_bits</code> and <code>min_proof_of_work_bits</code> contracts ensure secure operation.</p>
+</li>
+</ul>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -712,29 +1100,100 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>A random <code>salt</code> ensures unique addresses for smart contract deployments, preventing conflicts when deploying identical contract classes.</p>
-</div>
-<div class="paragraph">
-<p>It also thwarts replay attacks by influencing the transaction hash with a unique sender address.</p>
+<p>For instances like <code>CpuFrilessVerifier0</code>, specific contracts (e.g., <code>CpuConstraintPoly0</code>, <code>PoseidonPoseidonFullRoundKeyColumn0</code>, <code>CpuOods0</code>) become particularly relevant.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
+</div>
+<div class="sect2">
+<h3 id="gpsstatementverifier_constructor_parameters"><a class="anchor" href="#gpsstatementverifier_constructor_parameters"></a>GpsStatementVerifier constructor parameters</h3>
+<div class="paragraph">
+<p>The <code>GpsStatementVerifier</code> functions as the hub of verifier operations, necessitating various parameters for effective functioning:</p>
+</div>
 <div class="ulist">
-<div class="title">Additional resources</div>
 <ul>
 <li>
-<p>For more information on the address computation, see <a href="https://github.com/starkware-libs/cairo/blob/2c96b181a6debe9a564b51dbeaaf48fa75808d53/corelib/src/starknet/contract_address.cairo">contract_address.cairo</a> in the Cairo code repository.</p>
+<p><strong>Bootloader:</strong> It references the <code>CairoBootloaderProgram</code> to initiate the system.</p>
 </li>
 <li>
-<p><a href="../system-calls-cairo1/#deploy" class="xref page"><code>deploy</code> system call</a></p>
+<p><strong>Memory Operations:</strong> This is facilitated by the <code>MemoryPageFactRegistry</code> contract.</p>
+</li>
+<li>
+<p><strong>Sub-Verifiers:</strong> It integrates a series of sub-verifiers (<code>CpuFrilessVerifier0</code> through <code>CpuFrilessVerifier7</code>) to decentralize tasks.</p>
+</li>
+<li>
+<p><strong>Verification:</strong> The hashes, <code>hashed_supported_cairo_verifiers</code> and <code>simple_bootloader_program_hash</code>, are essential for validation processes.</p>
 </li>
 </ul>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="interconnection_of_contracts"><a class="anchor" href="#interconnection_of_contracts"></a>Interconnection of contracts</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>GpsStatementVerifier</code> serves as the primary verifier contract, optimized for minimal logic to fit within deployment size constraints. To function effectively:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>It relies on smaller verifier contracts, which are already deployed and contain varied verification logic.</p>
+</li>
+<li>
+<p>These smaller contracts, in turn, depend on other contracts, established during their construction.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In essence, while the diverse functionalities reside in separate contracts for clarity and size efficiency, they are all interlinked within the <code>GpsStatementVerifier</code>.</p>
+</div>
+<div class="paragraph">
+<p>For future enhancements or adjustments, the proxy and callproxy contracts facilitate upgradability, allowing seamless updates to the <code>GpsStatementVerifier</code> without compromising its foundational logic.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sharp_verification_flow"><a class="anchor" href="#sharp_verification_flow"></a>SHARP verification flow</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="../_images/verifier-sharp-verification-flow.png" alt="SHARP verification flow">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The SHARP dispatcher transmits all essential transactions for verification, including:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>MemoryPages</code> (usually many).</p>
+</li>
+<li>
+<p><code>MerkleStatements</code> (typically between 3 and 5).</p>
+</li>
+<li>
+<p><code>FriStatements</code> (generally ranging from 5 to 15).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The SHARP dispatcher then forwards the proof using <code>verifyProofAndRegister</code>.</p>
+</li>
+<li>
+<p>Applications, such as the Starknet monitor, validate the status. Once verification completes, they send an <code>updateState</code> transaction.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
 <nav class="pagination">
-  <span class="prev"><a href="../class-hash/">Class hash</a></span>
-  <span class="next"><a href="../contract-storage/">Contract storage</a></span>
+  <span class="prev"><a href="../provers-overview/">Provers</a></span>
+  <span class="next"><a href="../nodes/">Nodes</a></span>
 </nav>
 </article>
   </div>
@@ -767,14 +1226,14 @@
     </div>
   </div>
 </footer>
-<script src="../../../_/js/site.js?new"></script>
-<script async src="../../../_/js/vendor/highlight.js?new"></script>
-<script async src="../../../_/js/vendor/tabs-block-behaviour.js?new"></script>
-<script async src="../../../_/js/vendor/swagger-ui.js?new"></script>
-<script async src="../../../_/js/vendor/component-versions.js?new"></script>
+<script src="../../_/js/site.js?new"></script>
+<script async src="../../_/js/vendor/highlight.js?new"></script>
+<script async src="../../_/js/vendor/tabs-block-behaviour.js?new"></script>
+<script async src="../../_/js/vendor/swagger-ui.js?new"></script>
+<script async src="../../_/js/vendor/component-versions.js?new"></script>
 <script src="https://chatwith.tools/chatbot/04f9f1da-f9bd-46c1-a74d-b72cec2014ea.js" async=""></script>
-<script src="../../../_/js/vendor/custom.js?new"></script>
-<script async src="../../../_/js/vendor/tabs.js"></script>
+<script src="../../_/js/vendor/custom.js?new"></script>
+<script async src="../../_/js/vendor/tabs.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script>
 <script
