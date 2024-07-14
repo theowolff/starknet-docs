@@ -3,8 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Upcoming Starknet versions :: Starknet documentation</title>
-    <link rel="canonical" href="https://docs.starknet.io/general/upcoming-versions/">
+    <title>Bridged tokens and addresses :: Starknet documentation</title>
+    <link rel="canonical" href="https://docs.starknet.io/settings/bridged-tokens/">
+    <link rel="prev" href="../important-addresses/">
+    <link rel="next" href="../current-limits/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -106,11 +108,12 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../../">Starknet</a></li>
-    <li><a href="./">Upcoming Starknet versions</a></li>
+    <li>⚙️ Settings</li>
+    <li><a href="./">Bridged tokens</a></li>
   </ul>
 </nav>
   <div class="edit-this-page">
-    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/general/pages/upcoming-versions.adoc"><img class="pencil">Edit this Page</a>
+    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/settings/pages/bridged-tokens.adoc"><img class="pencil">Edit this Page</a>
   </div>
 </div>
 <div class="body">
@@ -505,7 +508,7 @@
 <ul class="nav-list">
   <li class="nav-item parent" data-depth="1">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">⚙️ General</span>
+    <span class="nav-text">⚙️ Settings</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a 
@@ -522,10 +525,10 @@
        class="nav-link"
      href="../important-addresses/">Important addresses</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a 
        class="nav-link"
-     href="../bridged-tokens/">Bridged tokens</a>
+     href="./">Bridged tokens</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
@@ -540,7 +543,7 @@
 <ul class="nav-list">
   <li class="nav-item parent" data-depth="1">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">🍲 Cookbook / 🦮 Guides</span>
+    <span class="nav-text">🥘 Cookbook</span>
 <ul class="nav-list">
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
@@ -658,7 +661,7 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Upcoming Starknet versions</h1>
+<h1 class="page">Bridged tokens and addresses</h1>
 <style>
   .page-meta-container {
     position: relative;
@@ -761,7 +764,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', async function() {
     // Extract repo and path information from editUrl
-    const editUrl = 'https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/general/pages/upcoming-versions.adoc';
+    const editUrl = 'https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/settings/pages/bridged-tokens.adoc';
     const urlParts = editUrl.split('/');
     const repoOwner = urlParts[3];
     const repoName = urlParts[4];
@@ -848,17 +851,104 @@
   });
 </script>
 
-<div class="sect1">
-<h2 id="what_to_expect"><a class="anchor" href="#what_to_expect"></a>Roadmap and version updates</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>You can subscribe to get the latest version updates delivered to your inbox at  <a href="https://www.starknet.io/en/roadmap">Starknet Roadmap &amp; version updates</a>.</p>
+<p>The tokens that are currently bridged to Starknet, including their L1 and L2 addresses, are listed in the following <code>.json</code> files:</p>
+</div>
+<div class="hdlist">
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+<a href="https://github.com/starknet-io/starknet-addresses/blob/master/bridged_tokens/mainnet.json" target="_blank" rel="noopener"><code>mainnet.json</code></a>
+</td>
+<td class="hdlist2">
+<p>The addresses of the tokens currently bridged to Starknet Mainnet.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<a href="https://github.com/starknet-io/starknet-addresses/blob/master/bridged_tokens/sepolia.json" target="_blank" rel="noopener"><code>sepolia.json</code></a>
+</td>
+<td class="hdlist2">
+<p>The addresses of the tokens currently bridged to Starknet Sepolia testnet.</p>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>For information on the current version of Starknet, see the <a href="../release-notes/" class="xref page">Starknet release notes</a>.</p>
+<p>Each token has the following parameters:</p>
 </div>
+<div class="hdlist">
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+<code>name</code>
+</td>
+<td class="hdlist2">
+<p>Token name.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>symbol</code>
+</td>
+<td class="hdlist2">
+<p>Token symbol.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>decimals</code>
+</td>
+<td class="hdlist2">
+<p>Number of decimal places used to get the user representation.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>l1_token_address</code>
+</td>
+<td class="hdlist2">
+<p>Address of the L1 ERC-20 contract.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>l2_token_address</code>
+</td>
+<td class="hdlist2">
+<p>Address of the L2 ERC-20 contract.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>l1_bridge_address</code>
+</td>
+<td class="hdlist2">
+<p>Address of the L1 bridge contract.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>l2_bridge_address</code>
+</td>
+<td class="hdlist2">
+<p>Address of the L2 bridge contract.</p>
+</td>
+</tr>
+</table>
 </div>
-</div>
+<nav class="pagination">
+  <span class="prev"><a href="../important-addresses/">Important addresses</a></span>
+  <span class="next"><a href="../current-limits/">Current limits</a></span>
+</nav>
 </article>
   </div>
 </main>

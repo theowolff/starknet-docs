@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Deprecated, unsupported, and removed features :: Starknet documentation</title>
-    <link rel="canonical" href="https://docs.starknet.io/general/deprecated/">
-    <link rel="prev" href="../release-notes/">
-    <link rel="next" href="../important-addresses/">
+    <title>Current limits :: Starknet documentation</title>
+    <link rel="canonical" href="https://docs.starknet.io/settings/current-limits/">
+    <link rel="prev" href="../bridged-tokens/">
+    <link rel="next" href="../../cookbook/environment-setup/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -108,12 +108,12 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../../">Starknet</a></li>
-    <li>⚙️ General</li>
-    <li><a href="./">Obsolete features</a></li>
+    <li>⚙️ Settings</li>
+    <li><a href="./">Current limits</a></li>
   </ul>
 </nav>
   <div class="edit-this-page">
-    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/general/pages/deprecated.adoc"><img class="pencil">Edit this Page</a>
+    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/settings/pages/current-limits.adoc"><img class="pencil">Edit this Page</a>
   </div>
 </div>
 <div class="body">
@@ -508,17 +508,17 @@
 <ul class="nav-list">
   <li class="nav-item parent" data-depth="1">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">⚙️ General</span>
+    <span class="nav-text">⚙️ Settings</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../release-notes/">Release notes</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="./">Obsolete features</a>
+     href="../deprecated/">Obsolete features</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
@@ -530,10 +530,10 @@
        class="nav-link"
      href="../bridged-tokens/">Bridged tokens</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a 
        class="nav-link"
-     href="../current-limits/">Current limits</a>
+     href="./">Current limits</a>
   </li>
 </ul>
   </li>
@@ -543,7 +543,7 @@
 <ul class="nav-list">
   <li class="nav-item parent" data-depth="1">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">🍲 Cookbook / 🦮 Guides</span>
+    <span class="nav-text">🥘 Cookbook</span>
 <ul class="nav-list">
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
@@ -661,7 +661,7 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Deprecated, unsupported, and removed features</h1>
+<h1 class="page">Current limits</h1>
 <style>
   .page-meta-container {
     position: relative;
@@ -764,7 +764,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', async function() {
     // Extract repo and path information from editUrl
-    const editUrl = 'https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/general/pages/deprecated.adoc';
+    const editUrl = 'https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/settings/pages/current-limits.adoc';
     const urlParts = editUrl.split('/');
     const repoOwner = urlParts[3];
     const repoName = urlParts[4];
@@ -851,99 +851,11 @@
   });
 </script>
 
-<div id="preamble">
-<div class="sectionbody">
 <div class="paragraph">
-<p>The features on this page are deprecated, unsupported, or removed from Starknet.</p>
-</div>
-<div class="hdlist">
-<table>
-<colgroup>
-<col style="width: 15%;">
-<col>
-</colgroup>
-<tr>
-<td class="hdlist1">
-Deprecated
-</td>
-<td class="hdlist2">
-<p>Refers to a feature or capability that is still supported, but support will be removed in a future release of Starknet.
-Future fixes or enhancements are unlikely. If necessary, an alternative is available.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-Unsupported
-</td>
-<td class="hdlist2">
-<p>Refers to a feature or capability that is no longer supported.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-Removed
-</td>
-<td class="hdlist2">
-<p>Refers to a feature or capability that has been entirely removed.</p>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="deprecated_features"><a class="anchor" href="#deprecated_features"></a>Deprecated features</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Starknet CLI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Support for the Starknet CLI has been removed. Instead use <a href="../../tooling/legacy-cli-reference/" class="xref page">Starkli</a>.</p>
-<p class="tableblock">Support for Starknet CLI is removed in Starknet v0.13.0.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cairo 0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../release-notes/#version0.11.0" class="xref page">Starknet v0.11.0</a> introduces Cairo 1.0 smart contracts.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="unsupported_and_removed_features"><a class="anchor" href="#unsupported_and_removed_features"></a>Unsupported and removed features</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Goerli testnet</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Goerli testnet support was removed April 2, 2024. Sepolia testnet replaces Goerli testnet.</p>
+<p>Starknet currently has a number of limits in place in order to keep the network stable and optimized for the best performance.</p>
 </div>
 <div class="paragraph">
-<p>Starknet started migrating to Sepolia testnet on November 15th, 2023.  For more information on the Goerli deprecation, see <a href="https://ethereum.org/nb/developers/docs/networks/#ethereum-testnets">the deprecation announcement on Ethereum&#8217;s site</a>.</p>
-</div>
-<div class="paragraph">
-<p>Full nodes, API services, SDKs, and other Starknet developer tools have migrated to Sepolia as well.</p>
+<p>Blockifier-related constants and limits are defined, starting from Starknet version v0.13.0, in <a href="https://github.com/starkware-libs/blockifier/blob/main/crates/blockifier/resources/versioned_constants.json"><code>versioned_constants.json</code></a>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -953,80 +865,121 @@ Removed
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Sepolia&#8217;s state and history are relatively small. Sepolia <a href="../release-notes/" class="xref page">supports declaring classes of CairoZero and Cairo v2.0.0 and higher</a>.</p>
+<p>These are subject to revisions and change on a regular basis</p>
 </div>
 </td>
 </tr>
 </table>
-</div></div></td>
-</tr>
+</div>
+<div class="admonitionblock important">
+<table>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Starknet feeder gateway</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The Starknet feeder gateway, a temporary solution for querying the sequencer’s state, is being replaced by Starknet full nodes (Pathfinder, Juno, Deoxys, Papyrus) and RPC services. For more information, see <a href="../../ecosystem/full-nodes-and-api-services/" class="xref page">Full nodes and API services</a>.</p>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Sepolia testnet replaces Goerli testnet.</p>
 </div>
 <div class="paragraph">
-<p>Support for the feeder gateway queries that are not required for full nodes to synchronize on the state of Starknet will stop according to the following schedule:</p>
+<p>Goerli testnet support is now removed.</p>
 </div>
-<table class="tableblock frame-all grid-all fit-content stretch">
+<div class="paragraph">
+<p>For more information, including bridge support for Sepolia, see <a href="http://eepurl.com/iK0YTE">Starknet Goerli Deprecation</a> in the Starknet Dev News newsletter.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all stripes-even fit-content stretch">
+<caption class="title">Table 1. Starknet&#8217;s current limits</caption>
 <colgroup>
+<col>
+<col>
 <col>
 <col>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Environment</th>
-<th class="tableblock halign-left valign-top">Date</th>
+<th class="tableblock halign-left valign-top">Entity</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Sepolia</th>
+<th class="tableblock halign-left valign-top">Mainnet</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Integration</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1 November 2023</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Block time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum amount of time within which a pending block is closed, if no other limit is met.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6 minutes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6 minutes</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Testnet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">15 November 2023</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Block limit (Cairo steps)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of Cairo steps that can be completed
+within each block to ensure block production times remain consistent and predictable.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">40,000,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">40,000,000</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mainnet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">19 December 2023</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Block limit (gas)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Certain Starknet operations, such as sending messages between L1 and L2, consume Ethereum gas. The current L1 state update
+mechanism involves an Ethereum transaction for each Starknet block.</p>
+<p class="tableblock">The gas limit for Starknet blocks is therefore inherited from the gas limit for Ethereum blocks.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5,000,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5,000,000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Max transaction size (Cairo steps)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of computational steps, measured in Cairo steps, that a transaction can contain when processed on the Starknet network.
+This limit is important for ensuring the efficient execution of transactions and preventing potential congestion.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4,000,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4,000,000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Max Cairo steps for <code>validate</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of computational steps, measured in Cairo steps, for a <code>validate</code> function.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,000,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,000,000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Max contract bytecode size (Number of felts in the program)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum size of the bytecode or program that a smart contract can have on Starknet.</p>
+<p class="tableblock">Bytecode is the low-level code that comprises smart contracts. Limiting this size helps manage the complexity of contracts and the overall efficiency of the network.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">81,290</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">81,290</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Max contract class size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum size for a contract class within Starknet.</p>
+<p class="tableblock">Contract classes are a fundamental building block for smart contracts, and limiting their size can have implications for the network&#8217;s scalability and security.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4,089,446 bytes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4,089,446 bytes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IP address limits (read/write)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In order to reduce network spam, Starknet limits the amount of contract reads and writes that a single IP
+address can make.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">200 per min per IP address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">200 per min per IP address</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Signature length (felts)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4,000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Calldata length (felts)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4,000</p></td>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>Queries that are required for full nodes to synchronize on the state of Starknet are still supported.</p>
-</div>
-<div class="paragraph">
-<p>For more information, see the Community Forum post <a href="https://community.starknet.io/t/feeder-gateway-deprecation/100233"><em>Feeder Gateway Deprecation</em></a>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Free L1&#8594; L2 messaging</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Previously, sending a message from L1 to L2 had an optional fee associated.</p>
-<p class="tableblock">From <a href="../release-notes/#version0.11.0" class="xref page">Starknet v0.11.0</a>, the fee mechanism is enforced and the ability to send L1&#8594;L2 messages without the corresponding L2 fee has been removed.</p>
-<p class="tableblock">See <a href="#architecture:network-architecture/l1&lt;&gt;l2-messaging.adoc#l1-l2-message-fees" class="xref unresolved">here</a> for more details.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>invoke</code> transaction v0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>invoke</code> transaction v0 has been removed since <a href="../release-notes/#version0.11.0" class="xref page">Starknet v0.11.0</a>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>declare</code> transaction v0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>declare</code> transaction v0 has been removed since <a href="../release-notes/#version0.11.0" class="xref page">Starknet v0.11.0</a>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>deploy</code> transaction</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <code>deploy</code> transaction has been removed since <a href="../release-notes/#version0.10.3" class="xref page">Starknet v0.10.3</a>.</p>
-<p class="tableblock">To deploy new contract instances, you can use the <a href="../../architecture/smart-contracts/system-calls-cairo1/#deploy" class="xref page"><code>deploy</code> system call</a>.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
 <nav class="pagination">
-  <span class="prev"><a href="../release-notes/">Release notes</a></span>
-  <span class="next"><a href="../important-addresses/">Important addresses</a></span>
+  <span class="prev"><a href="../bridged-tokens/">Bridged tokens</a></span>
+  <span class="next"><a href="../../cookbook/environment-setup/">Setting up your environment</a></span>
 </nav>
 </article>
   </div>
