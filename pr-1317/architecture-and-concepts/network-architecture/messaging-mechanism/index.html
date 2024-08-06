@@ -1221,12 +1221,13 @@ This function, which is part of the Starknet Core Contract, verifies the followi
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">l1_handler_tx_hash = ℎ(
+<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">l1_handler_tx_hash = _h_(
     "l1_handler",
     version,
     contract_address,
     entry_point_selector,
-    ℎ(calldata),
+    _h_(calldata),
+    0,
     chain_id,
     nonce
 )</code></pre>
@@ -1241,10 +1242,16 @@ This function, which is part of the Starknet Core Contract, verifies the followi
 <p><code>l1_handler</code> is a constant prefix, encoded in bytes (ASCII), as big-endian.</p>
 </li>
 <li>
+<p><code>version</code> is the transaction version. Only version 0 is currently supported.</p>
+</li>
+<li>
 <p><code>chain_id</code> is a constant value that specifies the network to which this transaction is sent.</p>
 </li>
 <li>
-<p><em>h</em> is the <a href="../../cryptography/hash-functions/#pedersen_hash" class="xref page">Pedersen</a> hash</p>
+<p><em>h</em> is the <a href="../../cryptography/hash-functions/#pedersen_hash" class="xref page">Pedersen</a> hash (note that since we&#8217;re hashing an array, the # of inputs needs to be appended to the hash).</p>
+</li>
+<li>
+<p><code>0</code> indicates that L1 to L2 message fees are charged on L1.</p>
 </li>
 </ul>
 </div>
