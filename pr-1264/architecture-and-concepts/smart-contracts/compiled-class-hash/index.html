@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Transaction lifecycle :: Starknet documentation</title>
-    <link rel="canonical" href="https://docs.starknet.io/architecture-and-concepts/network-architecture/transaction-life-cycle/">
-    <link rel="prev" href="../block-structure/">
-    <link rel="next" href="../transactions/">
+    <title>Compiled class hash :: Starknet documentation</title>
+    <link rel="canonical" href="https://docs.starknet.io/architecture-and-concepts/smart-contracts/compiled-class-hash/">
+    <link rel="prev" href="../class-hash/">
+    <link rel="next" href="../contract-address/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -109,11 +109,12 @@
   <ul>
     <li><a href="../../../">Starknet</a></li>
     <li>Architecture</li>
-    <li><a href="./">Transaction lifecycle</a></li>
+    <li>Contracts</li>
+    <li><a href="./">Compiled class hash</a></li>
   </ul>
 </nav>
   <div class="edit-this-page">
-    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/architecture-and-concepts/pages/network-architecture/transaction-life-cycle.adoc"><img class="pencil">Edit this Page</a>
+    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/architecture-and-concepts/pages/smart-contracts/compiled-class-hash.adoc"><img class="pencil">Edit this Page</a>
   </div>
 </div>
 <div class="body">
@@ -202,7 +203,7 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../starknet-architecture-overview/">Overview</a>
+     href="../../network-architecture/starknet-architecture-overview/">Overview</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
@@ -222,22 +223,22 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../block-structure/">Block structure</a>
-  </li>
-  <li class="nav-item is-current-page" data-depth="2">
-    <a 
-       class="nav-link"
-     href="./">Transaction lifecycle</a>
+     href="../../network-architecture/block-structure/">Block structure</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../transactions/">Transaction types</a>
+     href="../../network-architecture/transaction-life-cycle/">Transaction lifecycle</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../fee-mechanism/">Gas and transaction fees</a>
+     href="../../network-architecture/transactions/">Transaction types</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../network-architecture/fee-mechanism/">Gas and transaction fees</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
@@ -246,12 +247,12 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../starknet-state/">Starknet state</a>
+     href="../../network-architecture/starknet-state/">Starknet state</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../data-availability/">Data availability</a>
+     href="../../network-architecture/data-availability/">Data availability</a>
   </li>
 </ul>
   </li>
@@ -262,12 +263,12 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../messaging-mechanism/">L1-L2 messaging mechanism</a>
+     href="../../network-architecture/messaging-mechanism/">L1-L2 messaging mechanism</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../messaging-reference/">Messaging reference</a>
+     href="../../network-architecture/messaging-reference/">Messaging reference</a>
   </li>
 </ul>
   </li>
@@ -314,67 +315,67 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../smart-contracts/contract-classes/">Contract classes and instances</a>
+     href="../contract-classes/">Contract classes and instances</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../smart-contracts/class-hash/">Class hash</a>
+     href="../class-hash/">Class hash</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a 
+       class="nav-link"
+     href="./">Compiled class hash</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../smart-contracts/compiled-class-hash/">Compiled class hash</a>
+     href="../contract-address/">Contract address</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../smart-contracts/contract-address/">Contract address</a>
+     href="../contract-storage/">Contract storage</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../smart-contracts/contract-storage/">Contract storage</a>
+     href="../contract-abi/">Contract ABI</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../smart-contracts/contract-abi/">Contract ABI</a>
+     href="../starknet-events/">Events</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../smart-contracts/starknet-events/">Events</a>
+     href="../contract-syntax/">Migrating a contract from Cairo v1 to Cairo v2</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../smart-contracts/contract-syntax/">Migrating a contract from Cairo v1 to Cairo v2</a>
+     href="../cairo-and-sierra/">Cairo and Sierra</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../smart-contracts/cairo-and-sierra/">Cairo and Sierra</a>
+     href="../cairo-builtins/">Cairo builtins</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../smart-contracts/cairo-builtins/">Cairo builtins</a>
+     href="../serialization-of-cairo-types/">Serialization of Cairo types</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../smart-contracts/serialization-of-cairo-types/">Serialization of Cairo types</a>
+     href="../system-calls-cairo1/">System calls</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../smart-contracts/system-calls-cairo1/">System calls</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../smart-contracts/execution-info/">Execution information for the current block</a>
+     href="../execution-info/">Execution information for the current block</a>
   </li>
 </ul>
   </li>
@@ -574,389 +575,78 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Transaction lifecycle</h1>
-<div class="sect1">
-<h2 id="transaction_flow"><a class="anchor" href="#transaction_flow"></a>Transaction flow</h2>
+<h1 class="page">Compiled class hash</h1>
+<div id="preamble">
 <div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="../../_images/transaction-flow.png" alt="transaction flow">
-</div>
+<div class="paragraph">
+<p>The compiled class hash is a cryptographic hash that results from the compilation process of a Cairo class</p>
 </div>
 <div class="paragraph">
-<p>The high-level steps in the Starknet transaction lifecycle are as follows:</p>
+<p>from its intermediate representation (Sierra) to Cairo assembly (Casm). This process is managed by the Sierra→Casm compiler.</p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p><strong>Transaction submission:</strong> A transaction is submitted to one of the gateways, which functions as the mempool, and marks the transaction status as <code>RECEIVED</code>.</p>
-</li>
-<li>
-<p><strong>Mempool validation:</strong>
-The mempool performs a preliminary validation on the transaction, such as ensuring that the current account balance exceeds the value of <code>max_fee</code> (prior to v3 transactions) or assuring the transaction&#8217;s calldata length is within the legal limit. If the transaction is invalid, it does not proceed.</p>
 <div class="paragraph">
-<p>Mempool validation in this context is analogous to Ethereum&#8217;s signature checking, including running the account&#8217;s <code>__validate__</code> function on an <code>INVOKE</code> transaction, <code>__validate_declare__</code> on a <code>DECLARE</code> transaction, or <code>__validate_deploy__</code> on a <code>DEPLOY_ACCOUNT</code> transaction, ensuring that the current account balance exceeds the value of <code>max_fee</code> (prior to v3 transactions), and more.</p>
+<p>The compiled class hash is crucial for ensuring the uniqueness and integrity of compiled classes within Starknet. Whether you are a developer deploying contracts or a party interested in the inner workings of Starknet&#8217;s state commitment, understanding the compiled class hash is essential.</p>
 </div>
-</li>
-<li>
-<p><strong>Sequencer validation:</strong> The sequencer performs preliminary validation on the transaction before executing it to ensure that the transaction is still valid. If the transaction is invalid, it does not proceed.</p>
 <div class="paragraph">
-<p>This validation stage repeats the same validation run during the mempool validation.</p>
+<p>For developers, the hash is an important part of the contract declaration process, ensuring that each compiled class is uniquely identifiable and verifiable. For those involved in maintaining the network, it contributes to the efficiency and performance of Starknet by optimizing the state commitment process.</p>
 </div>
-</li>
-<li>
-<p><strong>Execution:</strong> The sequencer operation sequentially applies all transactions that passed the preliminary validation to the state. If a transaction fails during execution, it is included in the block with the status <code>REVERTED</code>.</p>
-</li>
-<li>
-<p><strong>Proof generation and verification:</strong> The Prover executes the operating system on the new block, computes the proof, and transmits it to the L1 verifier, which verifies the proof. At this point, the L1 state is updated to include the transaction.</p>
-</li>
-</ol>
+<div class="paragraph">
+<p>The state commitment uses the Sierra code that results when compiling Cairo classes. Sierra acts as an intermediate representation between Cairo and Casm. Provers, however, operate solely with Casm.</p>
+</div>
+<div class="paragraph">
+<p>In order to avoid recompiling, from Sierra to Casm, each block in which the class is deployed, the state commitment gets the information it needs about the corresponding Casm from the the information contained in the compiled class hash.</p>
+</div>
+<div class="paragraph">
+<p>When declaring a contract, the party administering the contract endorses the compiled class hash, procured using an SDK, as an integral component of the <a href="../../network-architecture/transactions/#declare_v2" class="xref page"><code>DECLARE</code></a> transaction. Following the inclusion of the transaction in a block, the compiled class hash integrates into the state commitment.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="transaction_status"><a class="anchor" href="#transaction_status"></a>Transaction status</h2>
+<h2 id="purpose_and_significance"><a class="anchor" href="#purpose_and_significance"></a>Purpose and Significance</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>The diagram below illustrates how each transaction status fits into the overall transaction flow:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../../_images/txn-flow.png" alt="txn flow">
-</div>
-</div>
-<div class="paragraph">
-<p>The following are the possible statuses of a transaction from the moment a user sends it until the moment it passes the L1 verifier:</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 14.2857%;">
-<col style="width: 28.5714%;">
-<col style="width: 57.1429%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Status type</th>
-<th class="tableblock halign-left valign-top">Status</th>
-<th class="tableblock halign-left valign-top">Explanation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock"><strong>Finality</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>NOT_RECEIVED</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The transaction is not yet known to the sequencer.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>RECEIVED</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The transaction was received by the mempool. The transaction now either executes successfully, is rejected, or reverted.</p>
-</div>
-<div class="paragraph">
-<p>The transaction has no execution status.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>REJECTED</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The transaction was received by the mempool but failed validation in the sequencer. Such transactions are not included in a block.</p>
-</div>
-<div class="paragraph">
-<p>The transaction has no execution status.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>A rejected transaction is stored in the mempool. You cannot send another transaction with the same transaction hash.</p>
-</div>
-</td>
-</tr>
-</table>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ACCEPTED_ON_L2</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The transaction was executed and entered an actual created block on L2.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ACCEPTED_ON_L1</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The transaction was accepted on Ethereum.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><strong>Execution</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>REVERTED</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The transaction passed validation but failed during execution in the sequencer. It is included in the block with the status <code>REVERTED</code>.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Since only <code>INVOKE</code> transactions have an execution phase, <code>DEPLOY_ACCOUNT</code> and <code>DECLARE</code> transactions cannot be reverted. If either the <code>__VALIDATE_DEPLOY__</code> or the <code>__VALIDATE_DECLARE__</code> function fails when run in the sequencer, then the transaction is rejected.</p>
-</div>
-</td>
-</tr>
-</table>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>SUCCEEDED</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The transaction was successfully executed by the sequencer. It is included in the block.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="transaction-state-implications"><a class="anchor" href="#transaction-state-implications"></a>State implications of a reverted transaction</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>When a transaction is marked as <code>REVERTED</code>, the following state implications occur:</p>
-</div>
-<div class="hdlist stripes-odd">
-<table>
-<colgroup>
-<col style="width: 20%;">
-<col>
-</colgroup>
-<tr>
-<td class="hdlist1">
-Nonce increases
-</td>
-<td class="hdlist2">
-<p>The nonce value for the account of the failed transaction iterates despite the failure.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-Fee charge
-</td>
-<td class="hdlist2">
-<p>The sequencer charges a fee for the execution of the transaction up to the point of failure. A <code>Transfer</code> event is emitted.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-Partial reversion
-</td>
-<td class="hdlist2">
-<p>All changes that occurred during the validation stage are not reverted. However, all changes that occurred during the execution stage are reverted, including all messages to L1 or any events that were emitted during this stage.</p>
-<div class="paragraph">
-<p>Events might still be emitted from the validation stage or the fee charge stage.</p>
-</div>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-Fee calculation
-</td>
-<td class="hdlist2">
-<p>The fee charged for <code>REVERTED</code> transactions is the smaller of the following two values:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The maximum fee that the user is willing to pay, either <code>max_fee</code> (pre-v3 transactions) or \(\text{max_amount} \cdot \text{max_price_per_unit}\) (v3 transactions).</p>
+<p>Uniqueness: The compiled class hash ensures the uniqueness of each compiled class. It is essentially a fingerprint for the compiled output, allowing the network to verify the integrity and uniqueness of the class.</p>
 </li>
 <li>
-<p>The total consumed resources.</p>
+<p>State Commitment: In Starknet, state commitment includes various components, including the Cairo classes. These classes are initially defined using Sierra. However, for the prover to function efficiently, it requires Casm.</p>
+</li>
+<li>
+<p>Efficiency: By including the compiled class hash in the state commitment, Starknet avoids the need to recompile from Sierra to Casm in every block where the class is used. This optimization significantly enhances the network’s efficiency and performance.</p>
 </li>
 </ul>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Consumed Resources</dt>
-<dd>
-<p>The resources used for the execution of the transaction up to the point of failure. This includes Cairo steps, builtins, syscalls, L1 messages, events, and state diffs during the validation and execution stages.</p>
-</dd>
-</dl>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="transaction_receipt"><a class="anchor" href="#transaction_receipt"></a>Transaction receipt</h2>
+<h2 id="usage"><a class="anchor" href="#usage"></a>Usage</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To get a receipt, use the JSON RPC method <code>starknet_getTransactionReceipt</code>.</p>
+<p>When a new contract is declared on Starknet, the compiled class hash plays a pivotal role. Here&#8217;s how:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Declaration Process: The party declaring the contract computes the compiled class hash using an SDK provided by Starknet.</p>
+</li>
+<li>
+<p>DECLARE Transaction: This hash is then included as part of the <a href="#Network_Architecture/transactions.adoc#declare_v2" class="xref unresolved"><code>DECLARE</code></a> transaction. The <a href="#Network_Architecture/transactions.adoc#declare_v2" class="xref unresolved"><code>DECLARE</code></a> transaction is a specific type of transaction in Starknet used to register new contracts.</p>
+</li>
+<li>
+<p>Inclusion in State Commitment: Once the <a href="#Network_Architecture/transactions.adoc#declare_v2" class="xref unresolved"><code>DECLARE</code></a> transaction is included in a block, the compiled class hash becomes part of the state commitment. This inclusion ensures that the network recognizes and stores the unique compiled output of the contract.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>The transaction receipt contains the following fields:</p>
-</div>
-<div class="hdlist stripes-odd">
-<table>
-<colgroup>
-<col style="width: 25%;">
-<col>
-</colgroup>
-<tr>
-<td class="hdlist1">
-<code>transaction_hash</code>
-</td>
-<td class="hdlist2">
-<p>The hash of the transaction.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<code>actual_fee</code>
-</td>
-<td class="hdlist2">
-<p>The actual fee paid for the transaction.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<code>finality_status</code>
-</td>
-<td class="hdlist2">
-<p>The finality status of the transaction.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<code>execution_status</code>
-</td>
-<td class="hdlist2">
-<p>The execution status of the transaction.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<code>block_hash</code>
-</td>
-<td class="hdlist2">
-<p>The hash of the block that includes the transaction</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<code>block_number</code>
-</td>
-<td class="hdlist2">
-<p>The sequential number of the block that includes the transaction</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<code>messages_sent</code>
-</td>
-<td class="hdlist2">
-<p>A list of messages sent to L1.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<code>events</code>
-</td>
-<td class="hdlist2">
-<p>The events emitted.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<code>execution_resource</code>
-</td>
-<td class="hdlist2">
-<p>A summary of the execution resources used by the transaction.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<code>type</code>
-</td>
-<td class="hdlist2">
-<p>The type of the transaction.</p>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The following is an example of a receipt:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
-  "jsonrpc": "2.0",
-  "result": {
-    "actual_fee": "0x221db5dbf6db",
-    "block_hash": "0x301fc0d09c5810600af7bb9610be10596ad6f4e6d28a60d397dd148f0962a88",
-    "block_number": 906096,
-    "events": [
-      {
-        "data": [
-          "0x181de8b0cd32999a5cc962c5f724bc0f6a322f02957b80e1d5fef49a87588b7",
-          "0x0",
-          "0x9184e72a000",
-          "0x0"
-        ],
-        "from_address": "0x49d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7",
-        "keys": [
-          "0x99cd8bde557814842a3121e8ddfd433a539b8c9f14bf31ebf108d12e6196e9"
-        ]
-      },
-      {
-        "data": [
-          "0x764da020183e28a48ee38a9474f84e7e5ff13194",
-          "0x9184e72a000",
-          "0x0",
-          "0x181de8b0cd32999a5cc962c5f724bc0f6a322f02957b80e1d5fef49a87588b7"
-        ],
-        "from_address": "0x73314940630fd6dcda0d772d4c972c4e0a9946bef9dabf4ef84eda8ef542b82",
-        "keys": [
-          "0x194fc63c49b0f07c8e7a78476844837255213824bd6cb81e0ccfb949921aad1"
-        ]
-      },
-      {
-        "data": [
-          "0x181de8b0cd32999a5cc962c5f724bc0f6a322f02957b80e1d5fef49a87588b7",
-          "0x1176a1bd84444c89232ec27754698e5d2e7e1a7f1539f12027f28b23ec9f3d8",
-          "0x221db5dbf6db",
-          "0x0"
-        ],
-        "from_address": "0x49d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7",
-        "keys": [
-          "0x99cd8bde557814842a3121e8ddfd433a539b8c9f14bf31ebf108d12e6196e9"
-        ]
-      }
-    ],
-    "execution_status": "SUCCEEDED",
-    "finality_status": "ACCEPTED_ON_L2",
-    "messages_sent": [
-      {
-        "from_address": "0x73314940630fd6dcda0d772d4c972c4e0a9946bef9dabf4ef84eda8ef542b82",
-        "payload": [
-          "0x0",
-          "0x764da020183e28a48ee38a9474f84e7e5ff13194",
-          "0x9184e72a000",
-          "0x0"
-        ],
-        "to_address": "0xc3511006c04ef1d78af4c8e0e74ec18a6e64ff9e"
-      }
-    ],
-    "transaction_hash": "0xdeadbeef",
-    "type": "INVOKE"
-  },
-  "id": 1
-}</code></pre>
-</div>
+<p>Prospectively, as Sierra-to-Casm compilation integrates into the Starknet OS, the value might undergo updates via proof of the Sierra-to-Casm compiler execution. Such verification demonstrates that compiling the same class with an updated compiler version yields a fresh compiled class hash.
+The compiled class hash is a basic element in Starknet’s architecture, enabling efficient state commitment and ensuring the integrity and uniqueness of compiled classes.</p>
 </div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../block-structure/">Block structure</a></span>
-  <span class="next"><a href="../transactions/">Transaction types</a></span>
+  <span class="prev"><a href="../class-hash/">Class hash</a></span>
+  <span class="next"><a href="../contract-address/">Contract address</a></span>
 </nav>
 </article>
   </div>
