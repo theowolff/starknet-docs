@@ -629,53 +629,6 @@
 <div class="paragraph">
 <p>Exiting the staking protocol involves a two-step process: first, signaling your intent to unstake, and then completing the unstaking process after a mandatory waiting period.</p>
 </div>
-<div class="ulist">
-<div class="title">Prerequisites</div>
-<ul>
-<li>
-<p>A Starknet-compatible block explorer or CLI tool.</p>
-</li>
-<li>
-<p>Your staker address and the amount of tokens you wish to unstake.</p>
-</li>
-</ul>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Using a Starknet block explorer, navigate to the staking contract.</p>
-</li>
-<li>
-<p>Locate and select the <code>unstake_intent</code> function.</p>
-</li>
-<li>
-<p>Submit the transaction to signal your intent to exit the staking protocol. This action will set a mandatory waiting period before you can finalize the unstaking.</p>
-</li>
-<li>
-<p>After the waiting period has elapsed, return to the staking contract using your block explorer.</p>
-</li>
-<li>
-<p>Locate and select the <code>unstake_action</code> function.</p>
-</li>
-<li>
-<p>Enter the following parameters:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>In <strong><code>staker_address</code></strong>, enter your staker address.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Submit the transaction to finalize the unstaking process and retrieve your staked tokens.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Upon completion of these steps, your staked tokens will be transferred back to your wallet, and you will have exited the staking protocol.</p>
-</div>
 <nav class="pagination">
   <span class="prev"><a href="../switching-delegation_pools/">Switching Delegation Pools</a></span>
   <span class="next"><a href="../managing-delegation-pools/">Managing Delegation Pools</a></span>
