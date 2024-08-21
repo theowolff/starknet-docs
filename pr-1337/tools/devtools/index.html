@@ -566,10 +566,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>While Starknet is a blockchain, it is different from blockchains built on the model of the Ethereum virtual machine (EVM), and so it requires many of its own developer tools. The tools discussed here are being developed in coordination with StarkWare and, in some cases, have received grants from StarkWare or the Starknet Foundation to make the development process as friendly as possible, with improvements happening constantly.</p>
-</div>
-<div class="paragraph">
-<p>While the stack of Starknet development tools was originally based mostly on Python, tool developers are moving towards building with Rust.</p>
+<p>Cairo is a turing complete language for writing provable programs. It is also the language used for writing smart contracts for Starknet. Starknet uses a different model than the Ethereum Virtual Machine (EVM), and as such, requires specialized tools for development.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -733,7 +730,7 @@ Starkli also includes useful utilities for developers, such as:</p>
 <h2 id="Contract-Development"><a class="anchor" href="#Contract-Development"></a>Smart Contract Development</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Cairo is a turing complete language for writing provable programs. It is also the language used for writing smart contracts for Starknet. Developing Cairo is supported by the following tools.</p>
+<p>The following tools are the recommended tools for developing Starknet smart contracts. These cover compilation, package management, testing and deployment.</p>
 </div>
 <div class="sect2">
 <h3 id="scarb"><a class="anchor" href="#scarb"></a>Scarb: The Cairo package manager</h3>
@@ -1070,7 +1067,7 @@ Some of the features include:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="open_zeppelin_contract_wizard"><a class="anchor" href="#open_zeppelin_contract_wizard"></a>Open Zeppelin Contract Wizard</h3>
+<h3 id="open-zeppelin-contract-wizard"><a class="anchor" href="#open-zeppelin-contract-wizard"></a>Open Zeppelin Contract Wizard</h3>
 <div class="paragraph">
 <p>The Open Zeppelin Contract Wizard is a tool that helps you create smart contracts with Open Zeppelin libraries. Easily toggle on and off features for popular smart contract patterns, and the wizard will generate the code for you.</p>
 </div>
@@ -1106,6 +1103,26 @@ These can be analyzed and displayed to show Flame Graphs, and other useful infor
 <ul>
 <li>
 <p>link: <a href="https://github.com/software-mansion/cairo-profiler">Cairo Profiler on GitHub</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="starknet-devnet-js"><a class="anchor" href="#starknet-devnet-js"></a>Starknet Devnet JS</h3>
+<div class="paragraph">
+<p>A JavaScript package, obfuscating the Starknet Devnet API, making it easier to interact with starknet-devnet-rs.
+This simplifies writing end-to-end tests using Devnet, including tests for L1&lt;&gt;L2 communications.</p>
+</div>
+<div class="paragraph">
+<p>Notable features:
+* Spawn a new Devnet instance without installing it
+* Wrapping RPC calls to Devnet
+* Obfuscating complex L1&lt;&gt;L2 communication setup with a local L1 node (e.g. Anvil)</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/0xSpaceShard/starknet-devnet-js">starknet-devnet-js on GitHub</a></p>
 </li>
 </ul>
 </div>
