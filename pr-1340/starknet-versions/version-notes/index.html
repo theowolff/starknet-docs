@@ -668,7 +668,7 @@
 <p>All objects containing the block hash will use the new block hash computation.</p>
 </li>
 <li>
-<p>Receipts will contain a new property <code>total_gas_consumed</code>, only for transaction after 0.13.2.</p>
+<p>Receipts will contain a new property <code>total_gas_consumed</code>, only for transactions after v0.13.2.</p>
 </li>
 <li>
 <p>Three new builtins can appear in the <code>builtin_instance_counter</code> property of <code>execution_resources</code> in the transaction receipts: <code>add_mod</code>, <code>mul_mod</code> and <code>range_check96</code>.</p>
@@ -682,11 +682,11 @@
 <div class="sect3">
 <h4 id="json_rpc"><a class="anchor" href="#json_rpc"></a>JSON RPC</h4>
 <div class="paragraph">
-<p>No changes in 0.13.2. The new JSON RPC version 0.8.0 will be released alongside Starknet 0.13.3.</p>
+<p>No changes in v0.13.2. The new JSON RPC version v0.8.0 will be released alongside Starknet v0.13.3.</p>
 </div>
 <h3 id="cairo" class="discrete">Cairo</h3>
 <div class="paragraph">
-<p>A new compiler version will be released for 0.13.2, Cairo 2.7.0. This includes a Sierra upgrade to v1.6.0, i.e. contracts compiled with the new compiled will only be accepted on Starknet v0.13.2 onwards.</p>
+<p>A new compiler version will be released for v0.13.2, Cairo v2.7.0. This includes a Sierra upgrade to v1.6.0, i.e. contracts compiled with the new compiler will only be accepted on Starknet v0.13.2 onwards.</p>
 </div>
 <div class="paragraph">
 <p>The Starknet-related features that will be added in this Cairo version include:</p>
@@ -701,7 +701,7 @@
 <p><a href="https://github.com/starkware-libs/cairo/blob/f5ac2d1d24ae0a626e9925db0c564bd0c4fea433/corelib/src/sha256.cairo#L24">High level code</a> for using sha256</p>
 </li>
 <li>
-<p><a href="https://github.com/starkware-libs/blockifier/blob/b22fb076a7db5e0fcdd2048a6fb579b0b1d25561/crates/blockifier/resources/versioned_constants.json#L284">Syscall cost</a> - the dominant part of the syscall is ~1.1k bitwise builtin applications which today costs ~180 L1 gas (the 2k steps are negligible in comparison). The syscall is applied once for ~14 u32.</p>
+<p><a href="https://github.com/starkware-libs/blockifier/blob/b22fb076a7db5e0fcdd2048a6fb579b0b1d25561/crates/blockifier/resources/versioned_constants.json#L284">Syscall cost</a> - the dominant part of the syscall is ~1.1k bitwise builtin applications which today costs ~180 L1 gas (the 2k steps are negligible in comparison). The syscall is applied once for ~14 <code>u32</code>.</p>
 </li>
 </ul>
 </div>
