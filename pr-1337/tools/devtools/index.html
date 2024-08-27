@@ -590,7 +590,7 @@
 <div class="sect2">
 <h3 id="starkli"><a class="anchor" href="#starkli"></a>starkli</h3>
 <div class="paragraph">
-<p>Starkli is a fast command-line interface for interacting with the Starknet network. It supports fetching data from the Starknet network, deploying accounts, and interacting with contracts. Developed by Jonathan Lei.
+<p>Starkli is a fast command-line interface for interacting with the Starknet network. It supports fetching data from the Starknet network, deploying accounts, and interacting with contracts. Developed by <a href="https://x.com/cartridge_gg">Jonathan Lei</a>.
 Starkli also includes useful utilities for developers, such as:</p>
 </div>
 <div class="ulist">
@@ -696,7 +696,7 @@ Starkli also includes useful utilities for developers, such as:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.npmjs.com/package/starknet">starknet.js on NPM</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.starknetjs.com/">starknet.js Book</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">starknet.js channel on <a href="https://discord.gg/starknet-community">Starknet Discord</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SpaceShard</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://x.com/0xSpaceShard">SpaceShard</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Starknet.py</p></td>
@@ -704,7 +704,7 @@ Starkli also includes useful utilities for developers, such as:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://pypi.org/project/starknet-py/">starknet.py on PyPi</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://starknetpy.rtfd.io/">starknet.py Docs</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://t.me/starknetpy">starknet.py on Telegram</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Software Mansion</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://x.com/swmansionxyz">Software Mansion</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Starknet-rs</p></td>
@@ -712,7 +712,7 @@ Starkli also includes useful utilities for developers, such as:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://crates.io/crates/starknet">starknet-rs on Crates</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/xJonathanLEI/starknet-rs">starknet-rs Docs</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://t.me/starknet_rs">starknet-rs on Telegram</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Jonathan Lei</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://x.com/xjonathanlei">Jonathan Lei</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Starknet.go</p></td>
@@ -720,7 +720,7 @@ Starkli also includes useful utilities for developers, such as:</p>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://pkg.go.dev/github.com/NethermindEth/starknet.go">starknet.go Docs</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://t.me/StarknetGo">starknet.go on Telegram</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Nethermind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://x.com/NethermindEth">Nethermind</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -788,22 +788,52 @@ Scarb is developed by Software Mansion.</p>
 <p>Starknet Foundry is the go-to toolchain for developing Starknet smart contracts. Similarly to its EVM counterpart, Starknet Foundry supports a plethora of features focused on testing Cairo smart contracts for Starknet.</p>
 </div>
 <div class="paragraph">
-<p>Starknet Forge, and <code>forge_std</code> allow the use of "cheatcodes" to test various aspects of the contracts.
-For example:
-* Setting caller address
-* Manipulating the timestamp and block number
-* Forking the chain at a specific block and testing with that state
-* Fuzz testing
-* Getting accurate gas and resource reports
-* Profiling</p>
+<p>Starknet Forge, and <code>snforge_std</code> allow the use of "cheatcodes" to test various aspects of the contracts.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Setting caller address</p>
+</li>
+<li>
+<p>Manipulating the timestamp and block number</p>
+</li>
+<li>
+<p>Forking the chain at a specific block and testing with that state</p>
+</li>
+<li>
+<p>Fuzz testing</p>
+</li>
+<li>
+<p>Getting accurate gas and resource reports</p>
+</li>
+<li>
+<p>Profiling</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Starknet Cast is a command line tool for interacting with the Starknet network, with deep integration with Starknet Foundry projects.
-With <code>sncast</code> it is possible to:
-* Declare and deploy contracts
-* Read from Starknet contracts
-* Deploy accounts
-* Interact with contracts</p>
+With <code>sncast</code> it is possible to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Declare and deploy contracts</p>
+</li>
+<li>
+<p>Read from Starknet contracts</p>
+</li>
+<li>
+<p>Deploy accounts</p>
+</li>
+<li>
+<p>Interact with contracts</p>
+</li>
+</ul>
 </div>
 <h4 id="relevant_links_3" class="discrete">Relevant links</h4>
 <div class="ulist">
@@ -959,7 +989,7 @@ Some of the features include:</p>
 <div class="sect2">
 <h3 id="katana"><a class="anchor" href="#katana"></a>Katana</h3>
 <div class="paragraph">
-<p>Katana, developed by the Dojo team, is an extremely fast devnet designed to support local development with Dojo, which is a gaming engine for Starknet. You can use Katana as a general purpose devnet as well.</p>
+<p>Katana, developed by the <a href="https://x.com/cartridge_gg">Dojo team</a>, is an extremely fast devnet designed to support local development with Dojo, which is a gaming engine for Starknet. You can use Katana as a general purpose devnet as well.</p>
 </div>
 <h4 id="relevant_links_7" class="discrete">Relevant links</h4>
 <div class="ulist">
@@ -1045,12 +1075,8 @@ Some of the features include:</p>
 </tr>
 </table>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>GitHub: <a href="https://github.com/software-mansion/universal-sierra-compiler">Universal Sierra Compiler on GitHub</a></p>
-</li>
-</ul>
+<div class="paragraph">
+<p>*<a href="https://github.com/software-mansion/universal-sierra-compiler">Universal Sierra Compiler on GitHub</a></p>
 </div>
 </div>
 <div class="sect2">
@@ -1074,7 +1100,7 @@ Some of the features include:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>link: <a href="https://wizard.openzeppelin.com/cairo">Open Zeppelin Contract Wizard</a></p>
+<p><a href="https://wizard.openzeppelin.com/cairo">Open Zeppelin Contract Wizard</a></p>
 </li>
 </ul>
 </div>
@@ -1102,7 +1128,7 @@ These can be analyzed and displayed to show Flame Graphs, and other useful infor
 <div class="ulist">
 <ul>
 <li>
-<p>link: <a href="https://github.com/software-mansion/cairo-profiler">Cairo Profiler on GitHub</a></p>
+<p><a href="https://github.com/software-mansion/cairo-profiler">Cairo Profiler on GitHub</a></p>
 </li>
 </ul>
 </div>
@@ -1110,14 +1136,14 @@ These can be analyzed and displayed to show Flame Graphs, and other useful infor
 <div class="sect2">
 <h3 id="starknet-devnet-js"><a class="anchor" href="#starknet-devnet-js"></a>Starknet Devnet JS</h3>
 <div class="paragraph">
-<p>A JavaScript package, obfuscating the Starknet Devnet API, making it easier to interact with starknet-devnet-rs.
+<p>A JavaScript package, abstracting the Starknet Devnet API, making it easier to interact with starknet-devnet-rs.
 This simplifies writing end-to-end tests using Devnet, including tests for L1&lt;&gt;L2 communications.</p>
 </div>
 <div class="paragraph">
 <p>Notable features:
 * Spawn a new Devnet instance without installing it
 * Wrapping RPC calls to Devnet
-* Obfuscating complex L1&lt;&gt;L2 communication setup with a local L1 node (e.g. Anvil)</p>
+* Abstracting complex L1&lt;&gt;L2 communication setup with a local L1 node (e.g. Anvil)</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1135,18 +1161,24 @@ This simplifies writing end-to-end tests using Devnet, including tests for L1&lt
 <div class="sect2">
 <h3 id="sierra-analyzer"><a class="anchor" href="#sierra-analyzer"></a>Sierra Analyzer</h3>
 <div class="paragraph">
-<p>Sierra-Analyzer is a security toolkit for analyzing Sierra files, developed by FuzzingLabs.</p>
+<p>Sierra-Analyzer is a security toolkit for analyzing Sierra files, developed by <a href="https://x.com/fuzzinglabs">FuzzingLabs</a>.</p>
 </div>
 <div class="paragraph">
-<p>Supported featrued include:
-* Decompile a Sierra file
-* Print the contracts Control Flow Graph
-* Run Static Analysis detectors</p>
+<p>Supported featrued include:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>link:https://github.com/FuzzingLabs/sierra-analyzer(sierra-analyzer on GitHub)</p>
+<p>Decompile a Sierra file</p>
+</li>
+<li>
+<p>Print the contracts Control Flow Graph</p>
+</li>
+<li>
+<p>Run Static Analysis detectors</p>
+</li>
+<li>
+<p><a href="https://github.com/FuzzingLabs/sierra-analyzer">sierra-analyzer on GitHub</a></p>
 </li>
 </ul>
 </div>
@@ -1166,7 +1198,7 @@ This simplifies writing end-to-end tests using Devnet, including tests for L1&lt
 <div class="ulist">
 <ul>
 <li>
-<p>link: <a href="https://github.com/NethermindEth/entro">Entro on GitHub</a></p>
+<p><a href="https://github.com/NethermindEth/entro">Entro on GitHub</a></p>
 </li>
 </ul>
 </div>
