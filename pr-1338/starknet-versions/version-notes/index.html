@@ -677,18 +677,134 @@
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Mainnet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0.13.1.1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.5.0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.0.0 - 2.6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.13.2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.6.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.0.0 - 2.7.1</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sepolia Testnet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0.13.1.1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.5.0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.0.0 - 2.6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.13.2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.6.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.0.0 - 2.7.1</p></td>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="version0.13.2"><a class="anchor" href="#version0.13.2"></a>Starknet v0.13.2 (August 28, 24)</h2>
+<div class="sectionbody">
+<h3 id="new_features_and_enhancements" class="discrete">New features and enhancements</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Optimistic parallelization in the sequencer.</p>
+</li>
+<li>
+<p>Applicative recursion ("blockpacking"): pack a contiguous sequence of blocks into a single L1 state update, instead of just one block. This change also affects the Starknet core contract on L1 and the structure of data availability:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The contract will store also the hash of the "aggregator" program, alongside the hash of the Starknet OS.</p>
+</li>
+<li>
+<p>The <a href="https://github.com/starkware-libs/cairo-lang/blob/efa9648f57568aad8f8a13fbf027d2de7c63c2c0/src/starkware/starknet/solidity/Starknet.sol#L36">LogStateUpdate</a> event will be emitted once for every sequence of blocks in an applicative tree, rather than for every block.</p>
+</li>
+<li>
+<p>The data posted on L1 is now the output of the aggregator, instead of the OS. The <a href="https://github.com/starkware-libs/cairo-lang/blob/efa9648f57568aad8f8a13fbf027d2de7c63c2c0/src/starkware/starknet/core/os/output.cairo#L25">OsOutputHeader</a> struct will contain four new fields: <code>prev_block_number</code>, <code>prev_block_hash</code>, <code>os_program_hash</code>, <code>full_output</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>New block hash definition: see the reference implementation <a href="https://github.com/starkware-libs/sequencer/blob/b6955bbd59635d37a12f9070a3f0b8a8db74f7c1/crates/starknet_api/src/block_hash/block_hash_calculator.rs#L67">here</a>.</p>
+</li>
+</ul>
+</div>
+<h3 id="api_changes" class="discrete">API changes</h3>
+<div class="sect3">
+<h4 id="feeder_gateway"><a class="anchor" href="#feeder_gateway"></a>Feeder gateway</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>All objects containing the block hash will use the new block hash computation.</p>
+</li>
+<li>
+<p>Receipts will contain a new property <code>total_gas_consumed</code>, only for transactions after v0.13.2.</p>
+</li>
+<li>
+<p>Three new builtins can appear in the <code>builtin_instance_counter</code> property of <code>execution_resources</code> in the transaction receipts: <code>add_mod</code>, <code>mul_mod</code> and <code>range_check96</code>.</p>
+</li>
+<li>
+<p>End support for the endpoints <code>get_block_traces</code> and <code>get_transaction_trace</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="json_rpc"><a class="anchor" href="#json_rpc"></a>JSON RPC</h4>
+<div class="paragraph">
+<p>No changes in v0.13.2. The new JSON RPC version v0.8.0 will be released alongside Starknet v0.13.3.</p>
+</div>
+<h3 id="cairo" class="discrete">Cairo</h3>
+<div class="paragraph">
+<p>A new compiler version will be released for v0.13.2, Cairo v2.7.0. This includes a Sierra upgrade to v1.6.0, i.e. contracts compiled with the new compiler will only be accepted on Starknet v0.13.2 onwards.</p>
+</div>
+<div class="paragraph">
+<p>The Starknet-related features that will be added in this Cairo version include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>sha256 syscall - syscall for computing sha256 on an arbitrary length input:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/starkware-libs/cairo/blob/f5ac2d1d24ae0a626e9925db0c564bd0c4fea433/corelib/src/sha256.cairo#L24">High level code</a> for using sha256/</p>
+</li>
+<li>
+<p><a href="https://github.com/starkware-libs/blockifier/blob/b22fb076a7db5e0fcdd2048a6fb579b0b1d25561/crates/blockifier/resources/versioned_constants.json#L284">Syscall cost</a> - the dominant part of the syscall is ~1.1k bitwise builtin applications which today costs ~180 L1 gas (the 2k steps are negligible in comparison). The syscall is applied once for ~14 <code>u32</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Circuit builtin - the new compiler version will introduce a way to define ad-hoc algebraic circuits in Cairo. Circuits use the new <code>mul_mod</code> and <code>add_mod</code> builtins under the hood.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Example usage can be found in <a href="https://github.com/starkware-libs/cairo/blob/39095a2a717b5bf3a76c813186f0a9cd0e087948/corelib/src/test/circuit_test.cairo#L24">circuit_test.cairo</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="others" class="discrete">Others</h3>
+<div class="paragraph">
+<p>Errors prettifying: execution errors are becoming more <a href="https://github.com/starkware-libs/blockifier/blob/8417325e6990af64e93253b1f76cb70611516cd2/crates/blockifier/src/execution/syscalls/hint_processor.rs#L69">structured</a>, which will be the basis for better error handling in the next JSON RPC version, resulting in nice error displays by wallets.</p>
+</div>
+<h3 id="additional_resources" class="discrete">Additional resources</h3>
+<div class="paragraph">
+<p>Community Forum Posts:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://community.starknet.io/t/starknet-v0-13-2-pre-release-notes/114223">Starknet v0.13.2 pre-release notes</a></p>
+</li>
+<li>
+<p><a href="https://community.starknet.io/t/optimistic-parallelization-revived/114121">Optimistic parallelization revived</a></p>
+</li>
+<li>
+<p><a href="https://community.starknet.io/t/upcoming-feature-starknet-applicative-recursion/113868">Upcoming Feature: Starknet Applicative Recursion</a></p>
+</li>
+<li>
+<p><a href="https://community.starknet.io/t/cairo-v2-7-0-is-coming/114362">Cairo v2.7.0 is coming!</a></p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -754,7 +870,7 @@
 <div class="sect1">
 <h2 id="version0.13.1"><a class="anchor" href="#version0.13.1"></a>Starknet v0.13.1 (March 13, 24)</h2>
 <div class="sectionbody">
-<h3 id="new_features_and_enhancements" class="discrete">New features and enhancements</h3>
+<h3 id="new_features_and_enhancements_2" class="discrete">New features and enhancements</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -931,7 +1047,7 @@
 <div class="paragraph">
 <p>Starknet now supports multiple L1 providers.</p>
 </div>
-<h3 id="additional_resources" class="discrete">Additional resources</h3>
+<h3 id="additional_resources_2" class="discrete">Additional resources</h3>
 <div class="paragraph">
 <p>Community Forum Posts:</p>
 </div>
