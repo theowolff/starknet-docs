@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Exiting the Staking Protocol :: Starknet documentation</title>
+    <title>Exiting the Staking Protocol (WIP) 🚧 :: Starknet documentation</title>
     <link rel="canonical" href="https://docs.starknet.io/staking/exiting-staking/">
-    <link rel="prev" href="../switching-delegation_pools/">
-    <link rel="next" href="../managing-delegation-pools/">
+    <link rel="prev" href="../switching-delegation-pools/">
+    <link rel="next" href="../managing-staking-and-delegation-operations/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -117,9 +117,9 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../../">Starknet</a></li>
-    <li>Staking</li>
-    <li>Procedures</li>
-    <li><a href="./">Exiting the Staking Protocol</a></li>
+    <li>Staking (WIP) 🛠️</li>
+    <li>Procedures (WIP) 🛠️</li>
+    <li><a href="./">Exiting the Staking Protocol (WIP) 🛠️</a></li>
   </ul>
 </nav>
   <div class="edit-this-page">
@@ -510,61 +510,61 @@
   </li>
   <li class="nav-item parent" data-depth="1">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Staking</span>
+    <span class="nav-text">Staking (WIP) 🛠️</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../overview/">Overview</a>
+     href="../overview/">Overview (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../architecture/">Staking architecture</a>
+     href="../architecture/">Staking Architecture (WIP) 🛠️</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Procedures</span>
+    <span class="nav-text">Procedures (WIP) 🛠️</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../entering-staking/">Entering the Staking Protocol</a>
+     href="../entering-staking/">Becoming a Validator (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../increasing-staking/">Increasing Stake</a>
+     href="../increasing-staking/">Increasing Stake (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../claiming-rewards/">Claiming Rewards</a>
+     href="../claiming-rewards/">Claiming Rewards (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../delegating-stake/">Delegating Stake</a>
+     href="../delegating-stake/">Delegating Stake (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../switching-delegation_pools/">Switching Delegation Pools</a>
+     href="../switching-delegation-pools/">Switching Delegation Pools (WIP) 🛠️</a>
   </li>
   <li class="nav-item is-current-page" data-depth="3">
     <a 
        class="nav-link"
-     href="./">Exiting the Staking Protocol</a>
+     href="./">Exiting the Staking Protocol (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../managing-delegation-pools/">Managing Delegation Pools</a>
+     href="../managing-staking-and-delegation-operations/">Managing Delegation Pools (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../handling_staking_events/">Handling Staking Events</a>
+     href="../handling_staking_events/">Handling Staking Events (WIP) 🛠️</a>
   </li>
 </ul>
   </li>
@@ -625,13 +625,229 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Exiting the Staking Protocol</h1>
+<h1 class="page">Exiting the Staking Protocol (WIP) 🚧</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>Exiting the staking protocol involves a two-step process: first, signaling your intent to unstake, and then completing the unstaking process after a mandatory waiting period.</p>
+<p>Exiting the staking protocol involves either unstaking your STRK tokens as a validator or undelegating your stake as a delegator. Both processes require you to first signal your intent to exit, followed by an action to finalize the process after a waiting period.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="unstaking_as_a_validator"><a class="anchor" href="#unstaking_as_a_validator"></a>Unstaking as a Validator</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Validators can unstake their STRK tokens, which involves pausing rewards and exiting the staking contract.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>A Starknet-compatible block explorer or CLI tool.</p>
+</li>
+<li>
+<p>The validator must not currently be in the unstake process.</p>
+</li>
+<li>
+<p>The contract address of the staking contract. <em><strong>(TODO: Check if this really needs to be mentioned.)</strong></em></p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p><strong>Signal Unstake Intent:</strong></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Using a Starknet block explorer, navigate to the staking contract.</p>
+</li>
+<li>
+<p>In the contract interface, locate and select the <code>unstake_intent</code> function.</p>
+</li>
+<li>
+<p>Submit the transaction to initiate the unstake process. This will record the unstake intent, pause rewards collection, and set a waiting period.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong>Finalize Unstake:</strong></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>After the waiting period has passed, return to the staking contract.</p>
+</li>
+<li>
+<p>In the contract interface, locate and select the <code>unstake_action</code> function.</p>
+</li>
+<li>
+<p>Enter the following parameters:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In <strong><code>staker_address</code></strong>, enter the validator&#8217;s address.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Submit the transaction to finalize the unstaking process and transfer the staked STRK tokens back to the validator&#8217;s account.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Any address can initiate the <code>unstake_action</code> function once the waiting period has passed.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Ensure that enough time has passed since signaling your unstake intent. If the waiting period has not expired, the <code>unstake_action</code> function will fail.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="undelegating_as_a_delegator"><a class="anchor" href="#undelegating_as_a_delegator"></a>Undelegating as a Delegator</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Delegators can undelegate their stake from a validator&#8217;s delegation pool by following a similar process.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>A Starknet-compatible block explorer or CLI tool.</p>
+</li>
+<li>
+<p>The delegator must not currently be in the undelegation process.</p>
+</li>
+<li>
+<p>The contract address of the delegation pooling contract. <em><strong>(TODO: Check if this really needs to be mentioned.)</strong></em></p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p><strong>Signal Undelegation Intent:</strong></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Using a Starknet block explorer, navigate to the delegation pooling contract.</p>
+</li>
+<li>
+<p>In the contract interface, locate and select the <code>exit_delegation_pool_intent</code> function.</p>
+</li>
+<li>
+<p>Submit the transaction to initiate the undelegation process. This will record the undelegation intent, pause rewards collection, and set a waiting period.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong>Finalize Undelegation:</strong></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>After the waiting period has passed, return to the delegation pooling contract.</p>
+</li>
+<li>
+<p>In the contract interface, locate and select the <code>exit_delegation_pool_action</code> function.</p>
+</li>
+<li>
+<p>Enter the following parameters:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In <strong><code>pool_member</code></strong>, enter the delegator&#8217;s address.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Submit the transaction to finalize the undelegation process and transfer the undelegated STRK tokens back to the delegator&#8217;s account.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Any address can initiate the <code>exit_delegation_pool_action</code> function once the waiting period has passed.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Ensure that enough time has passed since signaling your undelegation intent. If the waiting period has not expired, the <code>exit_delegation_pool_action</code> function will fail.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="additional_notes"><a class="anchor" href="#additional_notes"></a>Additional Notes</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>When a validator unstakes, any unclaimed rewards are automatically transferred to the reward address before the stake is returned.</p>
+</li>
+<li>
+<p>Similarly, when a delegator undelegates, any unclaimed rewards are automatically transferred to the delegator’s reward address.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For more details on the staking and delegation processes, see <a href="../architecture/#staking-contract" class="xref page">Staking Contract Architecture</a>.</p>
+</div>
+</div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../switching-delegation_pools/">Switching Delegation Pools</a></span>
-  <span class="next"><a href="../managing-delegation-pools/">Managing Delegation Pools</a></span>
+  <span class="prev"><a href="../switching-delegation-pools/">Switching Delegation Pools (WIP) 🛠️</a></span>
+  <span class="next"><a href="../managing-staking-and-delegation-operations/">Managing Delegation Pools (WIP) 🛠️</a></span>
 </nav>
 </article>
   </div>

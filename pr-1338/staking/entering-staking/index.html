@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Entering the Staking Protocol :: Starknet documentation</title>
+    <title>Becoming a Validator (WIP) 🚧 :: Starknet documentation</title>
     <link rel="canonical" href="https://docs.starknet.io/staking/entering-staking/">
     <link rel="prev" href="../architecture/">
     <link rel="next" href="../increasing-staking/">
@@ -117,9 +117,9 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../../">Starknet</a></li>
-    <li>Staking</li>
-    <li>Procedures</li>
-    <li><a href="./">Entering the Staking Protocol</a></li>
+    <li>Staking (WIP) 🛠️</li>
+    <li>Procedures (WIP) 🛠️</li>
+    <li><a href="./">Becoming a Validator (WIP) 🛠️</a></li>
   </ul>
 </nav>
   <div class="edit-this-page">
@@ -510,61 +510,61 @@
   </li>
   <li class="nav-item parent" data-depth="1">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Staking</span>
+    <span class="nav-text">Staking (WIP) 🛠️</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../overview/">Overview</a>
+     href="../overview/">Overview (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../architecture/">Staking architecture</a>
+     href="../architecture/">Staking Architecture (WIP) 🛠️</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Procedures</span>
+    <span class="nav-text">Procedures (WIP) 🛠️</span>
 <ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="3">
     <a 
        class="nav-link"
-     href="./">Entering the Staking Protocol</a>
+     href="./">Becoming a Validator (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../increasing-staking/">Increasing Stake</a>
+     href="../increasing-staking/">Increasing Stake (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../claiming-rewards/">Claiming Rewards</a>
+     href="../claiming-rewards/">Claiming Rewards (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../delegating-stake/">Delegating Stake</a>
+     href="../delegating-stake/">Delegating Stake (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../switching-delegation_pools/">Switching Delegation Pools</a>
+     href="../switching-delegation-pools/">Switching Delegation Pools (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../exiting-staking/">Exiting the Staking Protocol</a>
+     href="../exiting-staking/">Exiting the Staking Protocol (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../managing-delegation-pools/">Managing Delegation Pools</a>
+     href="../managing-staking-and-delegation-operations/">Managing Delegation Pools (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../handling_staking_events/">Handling Staking Events</a>
+     href="../handling_staking_events/">Handling Staking Events (WIP) 🛠️</a>
   </li>
 </ul>
   </li>
@@ -625,25 +625,25 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Entering the Staking Protocol</h1>
+<h1 class="page">Becoming a Validator (WIP) 🚧</h1>
 <div class="paragraph">
 <p>Using the Starknet staking contract to stake STRK tokens requires interacting with the <code>stake</code> function. The <code>stake</code> function does the following:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Locks the specified amount of STRK tokens from the staker’s Starknet account into the staking contract.</p>
+<p>Locks the specified amount of STRK tokens from the validator’s account into the staking contract.</p>
 </li>
 <li>
-<p>Records the staker&#8217;s details, including reward and operational addresses, in the staking contract.</p>
+<p>Records the validator&#8217;s details, including reward and operational addresses, in the staking contract.</p>
 </li>
 <li>
-<p>If pooling is enabled, deploys a new delegation pool contract associated with the staker.</p>
+<p>If pooling is enabled, deploys a new delegation pool contract associated with the validator.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>Subsequently, the staker’s tokens will be locked in the staking contract, and the staker will begin earning rewards based on their stake.</p>
+<p>Subsequently, the validator’s tokens will be locked in the staking contract, and the validator will begin earning rewards based on their stake.</p>
 </div>
 <div class="paragraph">
 <p>For more information on what happens during the staking process, see <a href="../architecture/#staking-contract" class="xref page">Staking Contract Architecture</a>.</p>
@@ -655,13 +655,13 @@
 <p>A Starknet-compatible block explorer or CLI tool.</p>
 </li>
 <li>
-<p>Sufficient STRK token balance in your Starknet wallet.</p>
+<p>Sufficient STRK token balance in your wallet.</p>
 </li>
 <li>
 <p>Pre-approval of the STRK ERC20 contract on Starknet for the transfer of tokens from your address to the staking contract. <em><strong>(TODO: should we elaborate more on how to do that?)</strong></em></p>
 </li>
 <li>
-<p>The contract address of the Starknet staking contract. <em><strong>(TODO: Check if this really needs to be mentioned.)</strong></em></p>
+<p>The contract address of the staking contract. <em><strong>(TODO: Check if this really needs to be mentioned.)</strong></em></p>
 </li>
 <li>
 <p>The required details for staking: reward address, operational address, amount, pooling enabled status, and commission rate.</p>
@@ -694,7 +694,7 @@
 <p>In <strong><code>pooling_enabled</code></strong>, enter <code>true</code> if you wish to enable delegation pooling, otherwise enter <code>false</code>.</p>
 </li>
 <li>
-<p>In <strong><code>commission</code></strong>, enter the commission rate (as a percentage) for any delegated staking, if applicable. <em><strong>TODO: Specify the format (e.g., 10000 for 100%) depending on implementation.</strong></em></p>
+<p>In <strong><code>commission</code></strong>, enter the commission rate for any delegated staking. The rate should be entered as a percentage with precision, where 10000 represents 100%. For example, to set a 5% commission, you would enter 500.</p>
 </li>
 </ul>
 </div>
@@ -708,8 +708,8 @@
 <p>The <code>stake</code> function will lock your STRK tokens in the staking contract, and if pooling is enabled, a new delegation pool contract will be deployed and associated with your stake.</p>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../architecture/">Staking architecture</a></span>
-  <span class="next"><a href="../increasing-staking/">Increasing Stake</a></span>
+  <span class="prev"><a href="../architecture/">Staking Architecture (WIP) 🛠️</a></span>
+  <span class="next"><a href="../increasing-staking/">Increasing Stake (WIP) 🛠️</a></span>
 </nav>
 </article>
   </div>

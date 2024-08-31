@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Delegating Stake :: Starknet documentation</title>
+    <title>Delegating Stake (WIP) 🚧 :: Starknet documentation</title>
     <link rel="canonical" href="https://docs.starknet.io/staking/delegating-stake/">
     <link rel="prev" href="../claiming-rewards/">
-    <link rel="next" href="../switching-delegation_pools/">
+    <link rel="next" href="../switching-delegation-pools/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -117,9 +117,9 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../../">Starknet</a></li>
-    <li>Staking</li>
-    <li>Procedures</li>
-    <li><a href="./">Delegating Stake</a></li>
+    <li>Staking (WIP) 🛠️</li>
+    <li>Procedures (WIP) 🛠️</li>
+    <li><a href="./">Delegating Stake (WIP) 🛠️</a></li>
   </ul>
 </nav>
   <div class="edit-this-page">
@@ -510,61 +510,61 @@
   </li>
   <li class="nav-item parent" data-depth="1">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Staking</span>
+    <span class="nav-text">Staking (WIP) 🛠️</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../overview/">Overview</a>
+     href="../overview/">Overview (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../architecture/">Staking architecture</a>
+     href="../architecture/">Staking Architecture (WIP) 🛠️</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Procedures</span>
+    <span class="nav-text">Procedures (WIP) 🛠️</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../entering-staking/">Entering the Staking Protocol</a>
+     href="../entering-staking/">Becoming a Validator (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../increasing-staking/">Increasing Stake</a>
+     href="../increasing-staking/">Increasing Stake (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../claiming-rewards/">Claiming Rewards</a>
+     href="../claiming-rewards/">Claiming Rewards (WIP) 🛠️</a>
   </li>
   <li class="nav-item is-current-page" data-depth="3">
     <a 
        class="nav-link"
-     href="./">Delegating Stake</a>
+     href="./">Delegating Stake (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../switching-delegation_pools/">Switching Delegation Pools</a>
+     href="../switching-delegation-pools/">Switching Delegation Pools (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../exiting-staking/">Exiting the Staking Protocol</a>
+     href="../exiting-staking/">Exiting the Staking Protocol (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../managing-delegation-pools/">Managing Delegation Pools</a>
+     href="../managing-staking-and-delegation-operations/">Managing Delegation Pools (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../handling_staking_events/">Handling Staking Events</a>
+     href="../handling_staking_events/">Handling Staking Events (WIP) 🛠️</a>
   </li>
 </ul>
   </li>
@@ -625,12 +625,12 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Delegating Stake</h1>
+<h1 class="page">Delegating Stake (WIP) 🚧</h1>
 <div class="paragraph">
-<p>Delegating your stake on Starknet involves adding your stake to a staker&#8217;s delegation pool managed by the staking contract. This approach offers the advantage of lower capital requirements and relieves you of the need to manage the operational aspects of staking, as the staker handles these responsibilities.</p>
+<p>Delegating your stake on Starknet involves adding your stake to a validator&#8217;s delegation pool managed by the staking contract. This approach offers the advantage of lower capital requirements and relieves you of the need to manage the operational aspects of staking, as the validator handles these responsibilities.</p>
 </div>
 <div class="paragraph">
-<p>The delegation process includes joining a staker&#8217;s delegation pool by interacting with the <code>enter_delegation_pool</code> function.</p>
+<p>The delegation process includes joining a validator&#8217;s delegation pool by interacting with the <code>enter_delegation_pool</code> function.</p>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
@@ -639,7 +639,7 @@
 <p>A Starknet-compatible block explorer or CLI tool.</p>
 </li>
 <li>
-<p>The delegation pooling contract address of an active staker to whom you wish to delegate your stake.</p>
+<p>The delegation pooling contract address of an active validator to whom you wish to delegate your stake.</p>
 </li>
 <li>
 <p>Pre-approval of the STRK ERC20 contract on Starknet for the transfer of tokens from your address to the delegation pooling contract. <em><strong>(TODO: should we elaborate more on how to do that?)</strong></em></p>
@@ -650,7 +650,7 @@
 <div class="title">Procedure</div>
 <ol class="arabic">
 <li>
-<p>Using a Starknet block explorer, navigate to the delegation pooling contract associated with the staker you want to delegate to.</p>
+<p>Using a Starknet block explorer, navigate to the delegation pooling contract associated with the validator you want to delegate to.</p>
 </li>
 <li>
 <p>In the contract interface, locate and select the <code>enter_delegation_pool</code> function.</p>
@@ -660,7 +660,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>In <strong><code>amount</code></strong>, enter the number of STRK tokens you want to delegate to the staker.</p>
+<p>In <strong><code>amount</code></strong>, enter the number of STRK tokens you want to delegate to the validator.</p>
 </li>
 <li>
 <p>In <strong><code>reward_address</code></strong>, enter the address where you wish to receive your staking rewards.</p>
@@ -674,11 +674,11 @@
 </ol>
 </div>
 <div class="paragraph">
-<p>Upon successful execution, your STRK tokens will be added to the staker&#8217;s delegation pool, and you will begin earning rewards as part of the pooled staking process.</p>
+<p>Upon successful execution, your STRK tokens will be added to the validator&#8217;s delegation pool, and you will begin earning rewards as part of the pooled staking process.</p>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../claiming-rewards/">Claiming Rewards</a></span>
-  <span class="next"><a href="../switching-delegation_pools/">Switching Delegation Pools</a></span>
+  <span class="prev"><a href="../claiming-rewards/">Claiming Rewards (WIP) 🛠️</a></span>
+  <span class="next"><a href="../switching-delegation-pools/">Switching Delegation Pools (WIP) 🛠️</a></span>
 </nav>
 </article>
   </div>

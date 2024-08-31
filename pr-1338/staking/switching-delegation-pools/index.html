@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Managing Delegation Pools :: Starknet documentation</title>
-    <link rel="canonical" href="https://docs.starknet.io/staking/managing-delegation-pools/">
-    <link rel="prev" href="../exiting-staking/">
-    <link rel="next" href="../handling_staking_events/">
+    <title>Switching Delegation Pools (WIP) 🚧 :: Starknet documentation</title>
+    <link rel="canonical" href="https://docs.starknet.io/staking/switching-delegation-pools/">
+    <link rel="prev" href="../delegating-stake/">
+    <link rel="next" href="../exiting-staking/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -117,13 +117,13 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../../">Starknet</a></li>
-    <li>Staking</li>
-    <li>Procedures</li>
-    <li><a href="./">Managing Delegation Pools</a></li>
+    <li>Staking (WIP) 🛠️</li>
+    <li>Procedures (WIP) 🛠️</li>
+    <li><a href="./">Switching Delegation Pools (WIP) 🛠️</a></li>
   </ul>
 </nav>
   <div class="edit-this-page">
-    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/staking/pages/managing-delegation-pools.adoc"><img class="pencil">Edit this Page</a>
+    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/staking/pages/switching-delegation-pools.adoc"><img class="pencil">Edit this Page</a>
   </div>
 </div>
 <div class="body">
@@ -510,61 +510,61 @@
   </li>
   <li class="nav-item parent" data-depth="1">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Staking</span>
+    <span class="nav-text">Staking (WIP) 🛠️</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../overview/">Overview</a>
+     href="../overview/">Overview (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../architecture/">Staking architecture</a>
+     href="../architecture/">Staking Architecture (WIP) 🛠️</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Procedures</span>
+    <span class="nav-text">Procedures (WIP) 🛠️</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../entering-staking/">Entering the Staking Protocol</a>
+     href="../entering-staking/">Becoming a Validator (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../increasing-staking/">Increasing Stake</a>
+     href="../increasing-staking/">Increasing Stake (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../claiming-rewards/">Claiming Rewards</a>
+     href="../claiming-rewards/">Claiming Rewards (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../delegating-stake/">Delegating Stake</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../switching-delegation_pools/">Switching Delegation Pools</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../exiting-staking/">Exiting the Staking Protocol</a>
+     href="../delegating-stake/">Delegating Stake (WIP) 🛠️</a>
   </li>
   <li class="nav-item is-current-page" data-depth="3">
     <a 
        class="nav-link"
-     href="./">Managing Delegation Pools</a>
+     href="./">Switching Delegation Pools (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../handling_staking_events/">Handling Staking Events</a>
+     href="../exiting-staking/">Exiting the Staking Protocol (WIP) 🛠️</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../managing-staking-and-delegation-operations/">Managing Delegation Pools (WIP) 🛠️</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../handling_staking_events/">Handling Staking Events (WIP) 🛠️</a>
   </li>
 </ul>
   </li>
@@ -625,13 +625,83 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Managing Delegation Pools</h1>
+<h1 class="page">Switching Delegation Pools (WIP) 🚧</h1>
 <div class="paragraph">
-<p>Managing delegation pools in the Starknet staking protocol allows stakers to efficiently handle the distribution and withdrawal of pooled funds. This section covers the necessary steps for both adding to and removing from delegation pools.</p>
+<p>Switching your delegated stake from one validator&#8217;s delegation pool to another allows you to optimize your staking strategy by moving your funds to a different validator. This process involves interacting with the <code>switch_delegation_pool</code> function in the delegation pooling contract, which coordinates with the staking contract to move your stake.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>A Starknet-compatible block explorer or CLI tool.</p>
+</li>
+<li>
+<p>An existing delegation in a validator’s pool with a STRK token balance equal to or greater than the amount you wish to switch.</p>
+</li>
+<li>
+<p>The delegator must have initiated an undelegation process before attempting to switch pools.</p>
+</li>
+<li>
+<p>The contract addresses of both the current and target delegation pools. <em><strong>(TODO: Check if this really needs to be mentioned.)</strong></em></p>
+</li>
+<li>
+<p>The target validator must have an active delegation pool associated with their staking contract.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Using a Starknet block explorer, navigate to the delegation pooling contract associated with the validator from whose pool you wish to switch.</p>
+</li>
+<li>
+<p>In the contract interface, locate and select the <code>switch_delegation_pool</code> function.</p>
+</li>
+<li>
+<p>Enter the following parameters:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In <strong><code>to_staker</code></strong>, enter the address of the validator whose pool you want to switch to.</p>
+</li>
+<li>
+<p>In <strong><code>to_pool</code></strong>, enter the address of the target delegation pooling contract associated with the new validator.</p>
+</li>
+<li>
+<p>In <strong><code>amount</code></strong>, enter the number of STRK tokens you want to move to the new delegation pool.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Submit the transaction to execute the delegation pool switch.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Ensure that you have initiated the undelegation process before attempting to switch pools. If the undelegation intent has not been set, this function will fail.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Upon successfully switching pools, any unclaimed rewards from your previous delegation pool will be transferred to your designated reward address. Your subsequent rewards will be based on the performance of the new validator&#8217;s delegation pool.</p>
+</div>
+<div class="paragraph">
+<p>For more details on the staking architecture and how delegation pools work, see <a href="../architecture/#staking-contract" class="xref page">Staking Contract Architecture</a>.</p>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../exiting-staking/">Exiting the Staking Protocol</a></span>
-  <span class="next"><a href="../handling_staking_events/">Handling Staking Events</a></span>
+  <span class="prev"><a href="../delegating-stake/">Delegating Stake (WIP) 🛠️</a></span>
+  <span class="next"><a href="../exiting-staking/">Exiting the Staking Protocol (WIP) 🛠️</a></span>
 </nav>
 </article>
   </div>

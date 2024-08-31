@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Claiming Rewards :: Starknet documentation</title>
+    <title>Claiming Rewards (WIP) 🚧 :: Starknet documentation</title>
     <link rel="canonical" href="https://docs.starknet.io/staking/claiming-rewards/">
     <link rel="prev" href="../increasing-staking/">
     <link rel="next" href="../delegating-stake/">
@@ -117,9 +117,9 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../../">Starknet</a></li>
-    <li>Staking</li>
-    <li>Procedures</li>
-    <li><a href="./">Claiming Rewards</a></li>
+    <li>Staking (WIP) 🛠️</li>
+    <li>Procedures (WIP) 🛠️</li>
+    <li><a href="./">Claiming Rewards (WIP) 🛠️</a></li>
   </ul>
 </nav>
   <div class="edit-this-page">
@@ -510,61 +510,61 @@
   </li>
   <li class="nav-item parent" data-depth="1">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Staking</span>
+    <span class="nav-text">Staking (WIP) 🛠️</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../overview/">Overview</a>
+     href="../overview/">Overview (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../architecture/">Staking architecture</a>
+     href="../architecture/">Staking Architecture (WIP) 🛠️</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Procedures</span>
+    <span class="nav-text">Procedures (WIP) 🛠️</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../entering-staking/">Entering the Staking Protocol</a>
+     href="../entering-staking/">Becoming a Validator (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../increasing-staking/">Increasing Stake</a>
+     href="../increasing-staking/">Increasing Stake (WIP) 🛠️</a>
   </li>
   <li class="nav-item is-current-page" data-depth="3">
     <a 
        class="nav-link"
-     href="./">Claiming Rewards</a>
+     href="./">Claiming Rewards (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../delegating-stake/">Delegating Stake</a>
+     href="../delegating-stake/">Delegating Stake (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../switching-delegation_pools/">Switching Delegation Pools</a>
+     href="../switching-delegation-pools/">Switching Delegation Pools (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../exiting-staking/">Exiting the Staking Protocol</a>
+     href="../exiting-staking/">Exiting the Staking Protocol (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../managing-delegation-pools/">Managing Delegation Pools</a>
+     href="../managing-staking-and-delegation-operations/">Managing Delegation Pools (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../handling_staking_events/">Handling Staking Events</a>
+     href="../handling_staking_events/">Handling Staking Events (WIP) 🛠️</a>
   </li>
 </ul>
   </li>
@@ -625,9 +625,9 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Claiming Rewards</h1>
+<h1 class="page">Claiming Rewards (WIP) 🚧</h1>
 <div class="paragraph">
-<p>Staking rewards on Starknet accumulate over time as your staked STRK tokens participate in securing the network. To claim these rewards, you must interact with the staking contract and execute the necessary functions.</p>
+<p>Staking rewards on Starknet accumulate over time as your staked STRK tokens contribute to network security. To claim these rewards, you need to interact with the staking contract (if you are a validator) or the specific delegation pooling contract associated with the validator you have staked with (if you are a delegator) and execute the appropriate functions.</p>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
@@ -636,13 +636,13 @@
 <p>A Starknet-compatible block explorer or CLI tool.</p>
 </li>
 <li>
-<p>The address of the staking contract. <em><strong>(TODO: Check if this really needs to be mentioned.)</strong></em></p>
+<p>The contract address of either the staking or delegation pooling contract. <em><strong>(TODO: Check if this really needs to be mentioned.)</strong></em></p>
 </li>
 <li>
-<p>The staker address must be registered in the staking contract with an active stake.</p>
+<p>The validator or delegator address must have an existing stake in the respective contract.</p>
 </li>
 <li>
-<p>The caller must be either the staker or the staker’s reward address.</p>
+<p>The caller must be either the validator/delegator or their respective reward address.</p>
 </li>
 </ul>
 </div>
@@ -650,7 +650,17 @@
 <div class="title">Procedure</div>
 <ol class="arabic">
 <li>
-<p>Using a Starknet block explorer, navigate to the staking contract.</p>
+<p>Using a Starknet block explorer, navigate to the appropriate contract:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For validators: Navigate to the staking contract.</p>
+</li>
+<li>
+<p>For delegators: Navigate to the delegation pooling contract associated with the validator you have staked with.</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>In the contract interface, locate and select the <code>claim_rewards</code> function.</p>
@@ -660,7 +670,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>In <strong><code>staker_address</code></strong>, enter the staker&#8217;s address for which you are claiming the rewards.</p>
+<p>In <strong><code>staker_address</code></strong> or <strong><code>pool_member</code></strong>, enter the address of the validator or delegator for whom you are claiming the rewards.</p>
 </li>
 </ul>
 </div>
@@ -670,41 +680,26 @@
 </li>
 </ol>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 <div class="paragraph">
-<p>Once the transaction is successful, the rewards will be transferred to the designated reward address associated with your staked tokens.</p>
+<p>Ensure that the address entered is either the validator&#8217;s or delegator&#8217;s main address or their respective reward address. If the address is not authorized, the function will fail.</p>
 </div>
-<div class="paragraph">
-<p>For stakers participating in delegation pools, use the <code>claim_delegation_pool_rewards</code> function in the delegation pooling contract to claim rewards accumulated through the pool:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Using a Starknet block explorer, navigate to the delegation pooling contract.</p>
-</li>
-<li>
-<p>Locate and select the <code>claim_delegation_pool_rewards</code> function.</p>
-</li>
-<li>
-<p>Enter the following parameters:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>In <strong><code>staker_address</code></strong>, enter the staker&#8217;s address associated with the pool.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Submit the transaction to claim the pooled rewards.</p>
-</li>
-</ol>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>After successfully claiming rewards, they will be transferred to the respective reward address associated with either your individual stake or pooled stake.</p>
+<p>Once the transaction is successful, the rewards will be transferred to the designated reward address associated with the staked tokens.</p>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../increasing-staking/">Increasing Stake</a></span>
-  <span class="next"><a href="../delegating-stake/">Delegating Stake</a></span>
+  <span class="prev"><a href="../increasing-staking/">Increasing Stake (WIP) 🛠️</a></span>
+  <span class="next"><a href="../delegating-stake/">Delegating Stake (WIP) 🛠️</a></span>
 </nav>
 </article>
   </div>

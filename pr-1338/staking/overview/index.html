@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Staking Overview :: Starknet documentation</title>
+    <title>Staking Overview (WIP) 🚧 :: Starknet documentation</title>
     <link rel="canonical" href="https://docs.starknet.io/staking/overview/">
     <link rel="prev" href="../../starkgate/function-reference/">
     <link rel="next" href="../architecture/">
@@ -117,8 +117,8 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../../">Starknet</a></li>
-    <li>Staking</li>
-    <li><a href="./">Overview</a></li>
+    <li>Staking (WIP) 🛠️</li>
+    <li><a href="./">Overview (WIP) 🛠️</a></li>
   </ul>
 </nav>
   <div class="edit-this-page">
@@ -509,61 +509,61 @@
   </li>
   <li class="nav-item parent" data-depth="1">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Staking</span>
+    <span class="nav-text">Staking (WIP) 🛠️</span>
 <ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="2">
     <a 
        class="nav-link"
-     href="./">Overview</a>
+     href="./">Overview (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../architecture/">Staking architecture</a>
+     href="../architecture/">Staking Architecture (WIP) 🛠️</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Procedures</span>
+    <span class="nav-text">Procedures (WIP) 🛠️</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../entering-staking/">Entering the Staking Protocol</a>
+     href="../entering-staking/">Becoming a Validator (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../increasing-staking/">Increasing Stake</a>
+     href="../increasing-staking/">Increasing Stake (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../claiming-rewards/">Claiming Rewards</a>
+     href="../claiming-rewards/">Claiming Rewards (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../delegating-stake/">Delegating Stake</a>
+     href="../delegating-stake/">Delegating Stake (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../switching-delegation_pools/">Switching Delegation Pools</a>
+     href="../switching-delegation-pools/">Switching Delegation Pools (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../exiting-staking/">Exiting the Staking Protocol</a>
+     href="../exiting-staking/">Exiting the Staking Protocol (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../managing-delegation-pools/">Managing Delegation Pools</a>
+     href="../managing-staking-and-delegation-operations/">Managing Delegation Pools (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../handling_staking_events/">Handling Staking Events</a>
+     href="../handling_staking_events/">Handling Staking Events (WIP) 🛠️</a>
   </li>
 </ul>
   </li>
@@ -624,7 +624,7 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Staking Overview</h1>
+<h1 class="page">Staking Overview (WIP) 🚧</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
@@ -642,7 +642,7 @@
 <p><em>Stake</em>: Locking STRK tokens into the staking protocol.</p>
 </li>
 <li>
-<p><em>Delegate</em>: Assigning STRK tokens to a staker to participate indirectly.</p>
+<p><em>Delegate</em>: Assigning STRK tokens to a validator to participate indirectly.</p>
 </li>
 <li>
 <p><em>Reward</em>: Earnings from participating in staking.</p>
@@ -676,27 +676,27 @@
 <div class="ulist">
 <ul>
 <li>
-<p><em>Direct Staking</em>: Users can stake any amount of STRK, with a minimum threshold set at 20,000 STRK. Stakers must run full nodes and eventually handle additional responsibilities as the protocol evolves.</p>
+<p><em>Staking</em>: Users can stake any amount of STRK, with a minimum threshold set at 20,000 STRK. Validators are expected to run full nodes and eventually handle additional responsibilities as the protocol evolves.</p>
 </li>
 <li>
-<p><em>Stake Delegation</em>: Users can delegate their STRK to stakers without running their own nodes. Delegators share in the rewards earned by the stakers they choose.</p>
+<p><em>Stake Delegation</em>: Users can delegate their STRK to validators without running their own nodes. Delegators share in the rewards earned by the validators they choose.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Stakers and delegators can both unstake their funds, subject to network-defined latencies for security.</p>
+<p>Validators and delegators can both unstake their funds, subject to network-defined latencies for security.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="staking_rewards"><a class="anchor" href="#staking_rewards"></a>Staking Rewards</h3>
 <div class="paragraph">
-<p>Rewards are distributed based on the amount staked and the reward-sharing constant \(R\) set by the staker. The rewards are calculated using the following formulas:</p>
+<p>Rewards are distributed based on the amount staked and the commission policy constant \(CP\) set by the validator. The rewards are calculated using the following formulas:</p>
 </div>
 <div class="stemblock">
 <div class="content">
 \[\begin{align}
-\text{Stakers: } &amp; \; \left[\text{self_stake} + \text{total_stake_delegated} \times (1 - R)\right] \times \text{rewards_constant} \times \text{time_interval} \\
-\text{Stake Delegators: } &amp; \; \text{stake_delegated} \times R \times \text{rewards_constant} \times \text{time_interval}
+\text{Validators: } &amp; \; \left[\text{self_stake} + \text{total_stake_delegated} \times CP\right] \times \text{rewards_constant} \times \text{time_interval} \\
+\text{Stake Delegators: } &amp; \; \text{stake_delegated} \times (1 - CP) \times \text{rewards_constant} \times \text{time_interval}
 \end{align}\]
 </div>
 </div>
@@ -731,7 +731,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>For the first stage, \(C\) is proposed to be between 1.8% and 2.5%.</p>
+<p>For the first stage, \(C\) is proposed to be 1.6%.</p>
 </div>
 </div>
 <div class="sect2">
@@ -754,7 +754,7 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Stake Delegators can switch between stakers without waiting for the full lockup period, promoting a competitive delegation market.</p>
+<p>Stake delegators can switch between validators without waiting for the full lockup period, promoting a competitive delegation market.</p>
 </div>
 </td>
 </tr>
@@ -775,43 +775,22 @@
 <p><strong>Withdrawal Security Lockup:</strong> 21 days</p>
 </li>
 <li>
-<p><strong>Minting Curve Yearly Inflation Cap (\(C\)):</strong> 1.8% - 2.5%</p>
+<p><strong>Minting Curve Yearly Inflation Cap (\(C\)):</strong> 1.6% (see <a href="https://community.starknet.io/t/staking-on-starknet-voting-proposal/114442/">here</a> for the relevant voting proposal)</p>
 </li>
 <li>
-<p><strong>Reward-Sharing Parameter (\(R\)):</strong> Set by the staker (0 - 1)</p>
+<p><strong>Commission Policy Parameter (\(CP\)):</strong> Set by the validator (0 - 1)</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>These parameters are subject to adjustments based on protocol performance and community feedback.</p>
+<p>These values are our proposed starting points for this version of the protocol. As part of the rationale behind this version, they are subject to change and may be adjusted to better suit the protocol’s needs under the proper governance procedures.</p>
 </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="additional_resources"><a class="anchor" href="#additional_resources"></a>Additional Resources</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><em>Staking Developer&#8217;s Reference</em>:</p>
-</li>
-<li>
-<p><a href="#function-reference.adoc#stake" class="xref unresolved"><code>stake</code> function, <code>Stake</code> event</a></p>
-</li>
-<li>
-<p><a href="#function-reference.adoc#unstake" class="xref unresolved"><code>unstake</code> function</a></p>
-</li>
-<li>
-<p><a href="#function-reference.adoc#initiate_unstake" class="xref unresolved"><code>initiate_unstake</code> function</a></p>
-</li>
-</ul>
 </div>
 </div>
 </div>
 <nav class="pagination">
   <span class="prev"><a href="../../starkgate/function-reference/">StarkGate function and event reference</a></span>
-  <span class="next"><a href="../architecture/">Staking architecture</a></span>
+  <span class="next"><a href="../architecture/">Staking Architecture (WIP) 🛠️</a></span>
 </nav>
 </article>
   </div>

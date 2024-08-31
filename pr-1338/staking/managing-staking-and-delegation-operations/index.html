@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Switching Delegation Pools :: Starknet documentation</title>
-    <link rel="canonical" href="https://docs.starknet.io/staking/switching-delegation_pools/">
-    <link rel="prev" href="../delegating-stake/">
-    <link rel="next" href="../exiting-staking/">
+    <title>Managing Staking and Delegation Operations (WIP) 🚧 :: Starknet documentation</title>
+    <link rel="canonical" href="https://docs.starknet.io/staking/managing-staking-and-delegation-operations/">
+    <link rel="prev" href="../exiting-staking/">
+    <link rel="next" href="../handling_staking_events/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -117,13 +117,13 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../../">Starknet</a></li>
-    <li>Staking</li>
-    <li>Procedures</li>
-    <li><a href="./">Switching Delegation Pools</a></li>
+    <li>Staking (WIP) 🛠️</li>
+    <li>Procedures (WIP) 🛠️</li>
+    <li><a href="./">Managing Delegation Pools (WIP) 🛠️</a></li>
   </ul>
 </nav>
   <div class="edit-this-page">
-    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/staking/pages/switching-delegation_pools.adoc"><img class="pencil">Edit this Page</a>
+    <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/staking/pages/managing-staking-and-delegation-operations.adoc"><img class="pencil">Edit this Page</a>
   </div>
 </div>
 <div class="body">
@@ -510,61 +510,61 @@
   </li>
   <li class="nav-item parent" data-depth="1">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Staking</span>
+    <span class="nav-text">Staking (WIP) 🛠️</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../overview/">Overview</a>
+     href="../overview/">Overview (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../architecture/">Staking architecture</a>
+     href="../architecture/">Staking Architecture (WIP) 🛠️</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Procedures</span>
+    <span class="nav-text">Procedures (WIP) 🛠️</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../entering-staking/">Entering the Staking Protocol</a>
+     href="../entering-staking/">Becoming a Validator (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../increasing-staking/">Increasing Stake</a>
+     href="../increasing-staking/">Increasing Stake (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../claiming-rewards/">Claiming Rewards</a>
+     href="../claiming-rewards/">Claiming Rewards (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../delegating-stake/">Delegating Stake</a>
+     href="../delegating-stake/">Delegating Stake (WIP) 🛠️</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../switching-delegation-pools/">Switching Delegation Pools (WIP) 🛠️</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../exiting-staking/">Exiting the Staking Protocol (WIP) 🛠️</a>
   </li>
   <li class="nav-item is-current-page" data-depth="3">
     <a 
        class="nav-link"
-     href="./">Switching Delegation Pools</a>
+     href="./">Managing Delegation Pools (WIP) 🛠️</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../exiting-staking/">Exiting the Staking Protocol</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../managing-delegation-pools/">Managing Delegation Pools</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../handling_staking_events/">Handling Staking Events</a>
+     href="../handling_staking_events/">Handling Staking Events (WIP) 🛠️</a>
   </li>
 </ul>
   </li>
@@ -625,13 +625,216 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Switching Delegation Pools</h1>
+<h1 class="page">Managing Staking and Delegation Operations (WIP) 🚧</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>Switching delegation pools allows you to move your staked tokens from one delegation pool to another. This operation requires interacting with both the staking contract and the delegation pooling contracts.</p>
+<p>This guide outlines how both <strong>validators</strong> and <strong>delegators</strong> can manage various aspects of their staking and delegation activities on Starknet. Validators can perform operations such as opening delegation pools, updating commission rates, and changing operational and reward addresses. Delegators can manage their participation by changing their reward addresses associated with delegation pools.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="managing_staking_operations_as_a_validator"><a class="anchor" href="#managing_staking_operations_as_a_validator"></a>Managing Staking Operations as a Validator</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Validators have several functions available to effectively manage their staking and delegation settings.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>A Starknet-compatible block explorer or CLI tool.</p>
+</li>
+<li>
+<p>An existing stake in the staking contract.</p>
+</li>
+<li>
+<p>An existing delegation pool if updating pool-specific settings.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="opening_a_delegation_pool"><a class="anchor" href="#opening_a_delegation_pool"></a>Opening a Delegation Pool</h3>
+<div class="paragraph">
+<p>If a validator does not yet have a delegation pool, they can open one by calling the <code>set_open_for_delegation</code> function.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Using a Starknet block explorer, navigate to the <strong>staking contract</strong>.</p>
+</li>
+<li>
+<p>In the contract interface, locate and select the <code>set_open_for_delegation</code> function.</p>
+</li>
+<li>
+<p>Enter the following parameter:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><code>commission</code></strong>: Enter the commission rate for the delegation pool, expressed as a percentage with precision (where 10000 represents 100%). For example, to set a 5% commission, enter <code>500</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Submit the transaction to create the delegation pool.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Once created, the delegation pool will be associated with the validator’s staking contract, allowing delegators to delegate their stake to the validator.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="updating_commission_rate"><a class="anchor" href="#updating_commission_rate"></a>Updating Commission Rate</h3>
+<div class="paragraph">
+<p>Validators can update the commission rate of their delegation pool using the <code>update_commission</code> function. <strong>Note:</strong> The commission rate can only be decreased or kept the same; it cannot be increased.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Using a Starknet block explorer, navigate to the <strong>staking contract</strong>.</p>
+</li>
+<li>
+<p>In the contract interface, locate and select the <code>update_commission</code> function.</p>
+</li>
+<li>
+<p>Enter the following parameter:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><code>commission</code></strong>: Enter the new commission rate, which must be equal to or less than the current rate, expressed as a percentage with precision (where 10000 represents 100%). For example, to set a 5% commission, enter <code>500</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Submit the transaction to update the commission rate.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="changing_the_operational_address"><a class="anchor" href="#changing_the_operational_address"></a>Changing the Operational Address</h3>
+<div class="paragraph">
+<p>Validators can change their operational address by interacting with the <code>change_operational_address</code> function.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Using a Starknet block explorer, navigate to the <strong>staking contract</strong>.</p>
+</li>
+<li>
+<p>In the contract interface, locate and select the <code>change_operational_address</code> function.</p>
+</li>
+<li>
+<p>Enter the following parameter:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><code>operational_address</code></strong>: Enter the new operational address.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Submit the transaction to update the operational address.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="changing_the_reward_address"><a class="anchor" href="#changing_the_reward_address"></a>Changing the Reward Address</h3>
+<div class="paragraph">
+<p>Validators can update the reward address associated with their staking contract using the <code>change_reward_address</code> function.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Using a Starknet block explorer, navigate to the <strong>staking contract</strong>.</p>
+</li>
+<li>
+<p>In the contract interface, locate and select the <code>change_reward_address</code> function.</p>
+</li>
+<li>
+<p>Enter the following parameter:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><code>reward_address</code></strong>: Enter the new reward address.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Submit the transaction to change the reward address.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="managing_delegation_settings_as_a_delegator"><a class="anchor" href="#managing_delegation_settings_as_a_delegator"></a>Managing Delegation Settings as a Delegator</h2>
+<div class="sectionbody">
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>A Starknet-compatible block explorer or CLI tool.</p>
+</li>
+<li>
+<p>An existing delegation in a validator’s delegation pool.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="changing_the_reward_address_2"><a class="anchor" href="#changing_the_reward_address_2"></a>Changing the Reward Address</h3>
+<div class="paragraph">
+<p>Delegators can change their reward address by interacting with the <code>change_reward_address</code> function in the delegation pooling contract.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Using a Starknet block explorer, navigate to the delegation pooling contract associated with your delegation.</p>
+</li>
+<li>
+<p>In the contract interface, locate and select the <code>change_reward_address</code> function.</p>
+</li>
+<li>
+<p>Enter the following parameter:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><code>reward_address</code></strong>: Enter the new reward address.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Submit the transaction to update the reward address.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="additional_information"><a class="anchor" href="#additional_information"></a>Additional Information</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For more information on how the staking and delegation pooling systems work, refer to the <a href="../architecture/#staking-contract" class="xref page">Staking Contract Architecture</a>.</p>
+</div>
+</div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../delegating-stake/">Delegating Stake</a></span>
-  <span class="next"><a href="../exiting-staking/">Exiting the Staking Protocol</a></span>
+  <span class="prev"><a href="../exiting-staking/">Exiting the Staking Protocol (WIP) 🛠️</a></span>
+  <span class="next"><a href="../handling_staking_events/">Handling Staking Events (WIP) 🛠️</a></span>
 </nav>
 </article>
   </div>
