@@ -628,7 +628,7 @@
 <p>Starknet currently has a number of limits in place in order to keep the network stable and optimized for the best performance.</p>
 </div>
 <div class="paragraph">
-<p>Blockifier-related constants and limits are defined, starting from Starknet version v0.13.0, in <a href="https://github.com/starkware-libs/blockifier/blob/main/crates/blockifier/resources/versioned_constants.json"><code>versioned_constants.json</code></a>.</p>
+<p>Blockifier-related constants and limits are defined, for each Starknet version starting from v0.13.0, in a JSON file called <code>versioned_constants</code> in this <a href="https://github.com/starkware-libs/sequencer/tree/main/crates/blockifier/resources">directory</a>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -684,8 +684,8 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Block time</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum amount of time within which a pending block is closed, if no other limit is met.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6 minutes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6 minutes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30 seconds</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30 seconds</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Block limit (Cairo steps)</p></td>
@@ -706,8 +706,26 @@ mechanism involves an Ethereum transaction for each Starknet block.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Max transaction size (Cairo steps)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of computational steps, measured in Cairo steps, that a transaction can contain when processed on the Starknet network.
 This limit is important for ensuring the efficient execution of transactions and preventing potential congestion.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4,000,000</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4,000,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10,000,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10,000,000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Max number of events per transaction</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of events that a transaction can emit during its execution.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Max number of data felts per event</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of felts that an event can contain in its <code>data</code> array.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">300</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">300</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Max number of key felts per event</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of felts that an event can contain in its <code>keys</code> array.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">50</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">50</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Max Cairo steps for <code>validate</code></p></td>
