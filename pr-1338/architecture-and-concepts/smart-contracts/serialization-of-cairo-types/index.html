@@ -819,19 +819,22 @@ let array: Array&lt;u256&gt; = array![10, 20, POW_2_128]</code></pre>
 <p><code>&lt;<em>index_of_enum_variant</em>&gt;,&lt;<em>serialized_variant</em>&gt;</code></p>
 </div>
 <div class="paragraph">
+<p>Note that enum variants indices are 0-based, not to confuse with their storage layout, which is 1-based, to distinguish the first variant from an uninitialized storage slot.</p>
+</div>
+<div class="paragraph">
 <div class="title">Enum serialization example 1</div>
 <p>Consider the following definition of an enum named <code>Week</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">enum Week {
-    Sunday: (), // Index=0. The variant type is the unit type.
+    Sunday: (), // Index=0. The variant type is the unit type (0-tuple).
     Monday: u256, // Index=1. The variant type is u256.
 }</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Now consider instantiations of the <code>Week</code> enum&#8217;s variants as shown in the table <a href="#serialization_of_Week">Serialization of <code>Week</code> variants</a>:</p>
+<p>Now consider instantiations of the <code>Week</code> enum&#8217;s variants as shown in the table below:</p>
 </div>
 <table id="serialization_of_Week" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. Serialization of <code>Week</code> variants</caption>
@@ -851,14 +854,14 @@ let array: Array&lt;u256&gt; = array![10, 20, POW_2_128]</code></pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Week::Sunday</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Index=<code>0</code>. The variant&#8217;s type is the unit type.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[1]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[0]</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Week::Monday(5)</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Index=<code>1</code>. The variant&#8217;s type is <code>u256</code>.</p>
+<p>Index=<code>1</code>. The variant&#8217;s type is <code>u256</code>, hence serialized to <code>[5,0]</code>, as shown in <a href="#serialization_in_u256_values">Serialization of <code>u256</code> values</a> .</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[2,5,0]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[1,5,0]</code></p></td>
 </tr>
 </tbody>
 </table>
@@ -877,7 +880,7 @@ let array: Array&lt;u256&gt; = array![10, 20, POW_2_128]</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Now consider instantiations of the <code>MessageType</code> enum&#8217;s variants as shown in the table <a href="#serialization_of_MessageType">Serialization of <code>MessageType</code> variants</a>:</p>
+<p>Now consider instantiations of the <code>MessageType</code> enum&#8217;s variants as shown in the table below:</p>
 </div>
 <table id="serialization_of_MessageType" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 2. Serialization of <code>MessageType</code> variants</caption>
@@ -897,14 +900,14 @@ let array: Array&lt;u256&gt; = array![10, 20, POW_2_128]</code></pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>MessageType::A</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Index=<code>1</code>. The variant&#8217;s type is the unit type.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[1]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[0]</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>MessageType::B(6)</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Index=<code>0</code>. The variant&#8217;s type is <code>u128</code>.</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[0,6]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[1,6]</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>MessageType::C</code></p></td>
@@ -913,6 +916,10 @@ let array: Array&lt;u256&gt; = array![10, 20, POW_2_128]</code></pre>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>As you can see about, the <code>#[default]</code> attribute does not affect serialization. It only affects the storage layout of <code>MessageType</code>, where the default variant
+<code>B</code> will be stored as <code>0</code>.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
