@@ -677,17 +677,17 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>events_count</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>u32</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The number of transactions in the block.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of events in the block.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>state_diff_length</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>u32</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The sum of number of storage diffs, nonce updates, deployed contracts and declared classes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The sum of number of storage diffs, nonce updates, deployed contracts and declared classes.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>state_diff_commitment</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>felt252</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The poseidon hash of the state diff of the block, see below for more details</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The poseidon hash of the state diff of the block, see below for more details.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>transactions_commitment</code></p></td>
@@ -718,7 +718,7 @@ The first <code>u128</code> value is the price in wei. The second is the price i
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>l1_data_gas_price</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>(u128, u128)</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The price of L1 blob gas that was used while constructing the block. If the <code>l1_DA_MODE</code> of the block is set to <code>BLOB</code>, L1 blob gas prices determines the storage update cost.
+<td class="tableblock halign-left valign-top"><p class="tableblock">The price of L1 blob gas that was used while constructing the block. If the <code>l1_da_mode</code> of the block is set to <code>BLOB</code>, L1 blob gas prices determines the storage update cost.
 The first <code>u128</code> value is the price in wei. The second is the price in fri.</p></td>
 </tr>
 <tr>
@@ -840,7 +840,7 @@ h\big( &amp; \text{"STARKNET_STATE_DIFF0"}, \\
 <p>\(h\) is the  Poseidon hash function</p>
 </li>
 <li>
-<p>\(1, 0\) is the hash are placeholders that may be used in the future</p>
+<p>\(1, 0\) in the hash computation are placeholders that may be used in the future</p>
 </li>
 </ul>
 </div>
@@ -956,7 +956,7 @@ h\big( &amp; \text{"STARKNET_STATE_DIFF0"}, \\
 <h2 id="event_hash"><a class="anchor" href="#event_hash"></a>Event hash</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The hash of an event \((\text{keys}, \text{data})\) emitted by a contract who&#8217;s address is <code>emitter_address</code> and a transaction who&#8217;s hash is <code>tx_hash</code> is given by:</p>
+<p>The hash of an event \((\text{keys}, \text{data})\) emitted by a contract whose address is <code>emitter_address</code> and a transaction whose hash is <code>tx_hash</code> is given by:</p>
 </div>
 <div class="stemblock">
 <div class="content">
