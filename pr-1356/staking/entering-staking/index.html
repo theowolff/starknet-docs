@@ -703,13 +703,27 @@
 <div class="title">Prerequisites</div>
 <ul>
 <li>
+<p>Validators are expected to run full nodes in preparation for the following stages of the protocol. You can use any full node implementation you choose:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/NethermindEth/juno">Juno</a> by Nethermind - <a href="https://juno.nethermind.io/hardware-requirements/#recommended-requirements">Spec</a>.</p>
+</li>
+<li>
+<p><a href="https://github.com/eqlabs/pathfinder">Pathfinder</a> by EQLabs - <a href="https://book.starknet.io/ch03-04-01-pathfinder-node.html#:~:text=Hardware%20Recommendations%20for%20Pathfinder%20Node,Storage%3A%201TB%20SSD">Spec</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
 <p>A Starknet-compatible block explorer or CLI tool.</p>
 </li>
 <li>
 <p>Sufficient STRK token balance in your wallet.</p>
 </li>
 <li>
-<p>Pre-approval of the STRK ERC20 contract on Starknet for the transfer of tokens from your address to the staking contract.</p>
+<p>Pre-approval of the STRK ERC20 contract (<a href="https://starkscan.co/token/0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d">Starkscan</a>, <a href="https://voyager.online/contract/0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d">Voyager</a>)
+on Starknet for the transfer of tokens from your address to the staking contract.</p>
 </li>
 </ul>
 </div>
@@ -748,6 +762,12 @@
 <p>Submit the transaction to execute the staking operation.</p>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<div class="title">Secured hardware wallets:</div>
+<p>Ledger hardware wallet is supported through:
+* <a href="https://braavos.app/wallet-features/ledger-on-braavos/">Braavos</a> wallet
+* <a href="https://www.argent.xyz/blog/how-to-use-your-hardware-wallet-with-argent/">Argent</a> wallet</p>
 </div>
 <nav class="pagination">
   <span class="prev"><a href="../architecture/">Staking Architecture (WIP) 🛠️</a></span>
