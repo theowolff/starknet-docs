@@ -724,6 +724,42 @@
 </div>
 </div>
 <div class="sect1">
+<h2 id="declaration_and_deployment"><a class="anchor" href="#declaration_and_deployment"></a>Declaration and deployment</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Starknet separates the process of declaring a contract class from deploying contract instances. This separation offers several advantages:</p>
+</div>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+Gas optimization
+</td>
+<td class="hdlist2">
+<p>The contract code is stored on the network only once, reducing gas costs for subsequent deployments.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Reusability
+</td>
+<td class="hdlist2">
+<p>Multiple instances of the same contract can be deployed without repeatedly sending the full code.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Version control
+</td>
+<td class="hdlist2">
+<p>It allows for better management of contract versions across different deployments.</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="working_with_classes"><a class="anchor" href="#working_with_classes"></a>Working with classes</h2>
 <div class="sectionbody">
 <div class="hdlist stripes-odd">
