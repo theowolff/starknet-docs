@@ -678,16 +678,13 @@
 <article class="doc">
 <h1 class="page">Increasing Stake</h1>
 <div class="paragraph">
-<p>The staking and pooling contracts allow validators and delegators to increase their existing stake. Validators use the <code>increase_stake</code> function, which is called from the staking contract, while delegators use the <code>add_to_delegation_pool</code> function, which is called from the delegation pooling contract. These functions add the specified amount of STRK tokens to the current stake, recalculate rewards before the staked amount is updated, and update the total staked amount.</p>
+<p>The staking and pooling contracts allow validators and delegators to increase their existing stake. Validators use the <code>increase_stake</code> function, which is called from the operator contract, while delegators use the <code>add_to_delegation_pool</code> function, which is called from the delegation pooling contract. These functions add the specified amount of STRK tokens to the current stake, recalculate rewards before the staked amount is updated, and update the total staked amount.</p>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
 <ul>
 <li>
 <p>Sufficient STRK token balance in your Starknet wallet.</p>
-</li>
-<li>
-<p>The validator/delegator must have pre-approved the relevant contract (staking contract for validators, delegation pooling contract for delegators) to transfer the specified STRK amount from their account.</p>
 </li>
 <li>
 <p>The validator/delegator must not be in an unstake/undelegate process.</p>
@@ -701,7 +698,20 @@
 <div class="title">Procedure</div>
 <ol class="arabic">
 <li>
-<p>Using a Starknet block explorer, navigate to the relevant contract (staking contract for validators, delegation pooling contract for delegators).</p>
+<p>Pre-approve the STRK ERC20 contract for the transfer of tokens from your address to the relevant contract:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Validators: Pre-approve the staking contract (and <strong>not</strong> the operator contract) for the transfer of tokens from your address.</p>
+</li>
+<li>
+<p>Delegators: Pre-approve the delegation pooling contract for the transfer of tokens from your address.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Using a Starknet block explorer, navigate to the relevant contract (operator contract for validators, delegation pooling contract for delegators).</p>
 </li>
 <li>
 <p>In the contract interface, locate and select the <code>increase_stake</code> function (for validators) or the <code>add_to_delegation_pool</code> function (for delegators).</p>

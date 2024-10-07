@@ -712,6 +712,9 @@
 <li>
 <p><a href="https://github.com/eqlabs/pathfinder">Pathfinder</a> by EQLabs - <a href="https://github.com/eqlabs/pathfinder?tab=readme-ov-file#hardware-requirements">Spec</a>.</p>
 </li>
+<li>
+<p><a href="https://github.com/madara-alliance/madara">Madara</a> by Madara Alliance - <a href="https://docs.madara.build/get-started/requirements">Spec</a>.</p>
+</li>
 </ul>
 </div>
 </li>
@@ -721,17 +724,26 @@
 <li>
 <p>Sufficient STRK token balance in your wallet.</p>
 </li>
-<li>
-<p>Pre-approval of the STRK ERC20 contract (<a href="https://starkscan.co/token/0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d">Starkscan</a>, <a href="https://voyager.online/contract/0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d">Voyager</a>)
-on Starknet for the transfer of tokens from your address to the staking contract.</p>
-</li>
 </ul>
 </div>
 <div class="olist arabic">
 <div class="title">Procedure</div>
 <ol class="arabic">
 <li>
-<p>Using a Starknet block explorer, navigate to the staking contract.</p>
+<p>Pre-approve the STRK ERC20 contract for the transfer of tokens from your address to the staking contract (and <strong>not</strong> the operator contract):</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Using a Starknet block explorer, navigate to the STRK ERC20 contract (<a href="https://starkscan.co/token/0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d">Starkscan</a>, <a href="https://voyager.online/contract/0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d">Voyager</a>).</p>
+</li>
+<li>
+<p>Approve the staking contract to transfer the specified amount of STRK tokens on your behalf.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Using a Starknet block explorer, navigate to the operator contract.</p>
 </li>
 <li>
 <p>In the contract interface, locate and select the <code>stake</code> function.</p>
