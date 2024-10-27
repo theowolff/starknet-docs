@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: Starknet documentation</title>
+    <title>Oracles :: Starknet documentation</title>
     <link rel="canonical" href="https://docs.starknet.io/tools/oracles/">
     <link rel="prev" href="../ref-block-explorers/">
     <link rel="next" href="../audit/">
@@ -680,17 +680,13 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<hr>
-<div class="paragraph">
-<p>Title: Use Oracles in Your Starknet Applications
----</p>
-</div>
-<div class="paragraph">
-<p>import { Callout, Tabs } from "nextra/components";</p>
-</div>
-<h1 id="oracles" class="sect0"><a class="anchor" href="#oracles"></a>Oracles</h1>
+<h1 class="page">Oracles</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
 <p>This reference guide presents various Oracles that you can utilize while building on Starknet. Oracles supply offchain data to the blockchain, enabling smart contracts to access a diverse range of information.</p>
+</div>
+</div>
 </div>
 <div class="sect1">
 <h2 id="pyth_network"><a class="anchor" href="#pyth_network"></a>Pyth Network</h2>
@@ -719,26 +715,22 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-toml copy hljs" data-lang="toml copy">[dependencies]
+<pre class="highlightjs highlight"><code class="language-toml hljs" data-lang="toml">[dependencies]
 pyth = { git = "https://github.com/pyth-network/pyth-crosschain.git", tag = "pyth-starknet-contract-v0.1.0"}</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>Pyth also provides a javascript SDK to interact with the Pyth contract on Starknet. You can install it using the following command:</p>
 </div>
-<div class="paragraph">
-<p>&lt;Tabs items={["npm", "yarn"]}&gt;
-  &lt;Tabs.Tab&gt;
-    <code><code>sh copy
-    npm install --save @pythnetwork/pyth-starknet-js
-    </code></code>
-  &lt;/Tabs.Tab&gt;
-  &lt;Tabs.Tab&gt;
-  <code><code>sh copy
-  yarn add @pythnetwork/pyth-starknet-js
-  </code></code>
-  &lt;/Tabs.Tab&gt;
-&lt;/Tabs&gt;</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-toml hljs" data-lang="toml">npm install --save @pythnetwork/pyth-starknet-js</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-toml hljs" data-lang="toml">yarn add @pythnetwork/pyth-starknet-js</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -834,17 +826,25 @@ mod example_contract {
 Calling pyth.update_price_feeds with this value updates the on-chain Pyth price and ensures your application has recent price data.
 The pyth_price_update can be fetched from Hermes; Consult <a href="https://docs.pyth.network/price-feeds/fetch-price-updates">Fetch Price Updates</a> for more information on how to fetch the pyth_price_update.</p>
 </div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
 <div class="paragraph">
-<p>&lt;Callout type="info" emoji="ℹ️"&gt;
-  Unlike Ethereum, there is no native token on Starknet. You cannot pass tokens
-  implicitly when calling functions. Moreover, there is no concept of a
-  designated payer account, unlike Solana. In Starknet, all token transfers must
-  be performed explicitly by calling functions on the token&#8217;s ERC20 contract.
-  Regarding the Pyth contract on Starknet, the caller must approve the fee
-  transfer before calling <code>update_price_feeds</code> or using similar methods. You can
-  use <strong>STRK</strong> or <strong>ETH</strong> to pay the fee, but STRK is preferred. The fee is
-  currently set to the minimum possible value (1e-18 STRK, 1 WEI).
-&lt;/Callout&gt;</p>
+<p>Unlike Ethereum, there is no native token on Starknet. You cannot pass tokens
+implicitly when calling functions. Moreover, there is no concept of a
+designated payer account, unlike Solana. In Starknet, all token transfers must
+be performed explicitly by calling functions on the token&#8217;s ERC20 contract.
+Regarding the Pyth contract on Starknet, the caller must approve the feetransfer before
+calling <code>update_price_feeds</code> or using similar methods. You can use <strong>STRK</strong> or <strong>ETH</strong> to pay the fee, but STRK is preferred.
+The fee is currently set to the minimum possible value (1e-18 STRK, 1 WEI).</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>The code snippet above does the following things:</p>
@@ -890,12 +890,21 @@ const currentPrices = await connection.getLatestPriceFeeds([priceId]);
 const pythUpdate = ByteBuffer.fromBase64(currentPrices[0].vaa);</code></pre>
 </div>
 </div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
 <div class="paragraph">
-<p>&lt;Callout type="info" emoji="ℹ️"&gt;
-  Price updates must be converted to <code>ByteBuffer</code> before being passed on to the
-  Pyth contract on Starknet. Use the <code>ByteBuffer</code> type from
-  <code>@pythnetwork/pyth-starknet-js</code> package as shown above.
-&lt;/Callout&gt;</p>
+<p>Price updates must be converted to <code>ByteBuffer</code> before being passed on to the
+Pyth contract on Starknet. Use the <code>ByteBuffer</code> type from
+<code>@pythnetwork/pyth-starknet-js</code> package as shown above.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
