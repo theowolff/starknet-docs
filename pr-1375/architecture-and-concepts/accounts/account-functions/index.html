@@ -493,7 +493,12 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../../tools/oracles/">Oracle providers</a>
+     href="../../../tools/oracles/">Oracles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../../tools/data-indexers/">Data indexers</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
@@ -885,10 +890,7 @@ An example of such an attack is having the implementation of <code>__validate__<
 </div>
 </li>
 <li>
-<p>The maximum number of computational steps, measured in Cairo steps, for a validation function is 1,000,000.</p>
-</li>
-<li>
-<p>A builtin can be applied a limited number of times. For specific limits for each builtin, see <a href="../../../tools/limits-and-triggers/" class="xref page">Current limits</a>.</p>
+<p>The maximum number of Cairo steps in each of the three validation functions is 1,000,000.</p>
 </li>
 <li>
 <p>The <code>get_execution_info</code> syscall behaves differently When raised from one of the <code>validate</code> functions:</p>
