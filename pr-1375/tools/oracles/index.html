@@ -681,258 +681,31 @@
 </aside>
 <article class="doc">
 <h1 class="page">Oracles</h1>
-<div id="preamble">
-<div class="sectionbody">
 <div class="paragraph">
 <p>This reference guide presents various Oracles that you can utilize while building on Starknet. Oracles supply offchain data to the blockchain, enabling smart contracts to access a diverse range of information.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="pyth_network"><a class="anchor" href="#pyth_network"></a>Pyth Network</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The <a href="https://pyth.network/">Pyth Network</a> is one of the largest first-party Oracle network, delivering real-time data across <a href="https://docs.pyth.network/price-feeds/contract-addresses">a vast number of chains</a>.</p>
-</div>
-<div class="paragraph">
-<p>The network comprises some of the world’s <a href="https://pyth.network/publishers">largest exchanges, market makers, and financial services providers</a>. These publish proprietary data on-chain for aggregation and distribution to smart contract applications.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="how_to_use_pyth_real_time_data_in_starknet_contracts"><a class="anchor" href="#how_to_use_pyth_real_time_data_in_starknet_contracts"></a>How to Use Pyth Real-Time Data in Starknet Contracts</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>This guide explains how to use real-time Pyth data in Starknet contracts.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="install_the_pyth_sdk"><a class="anchor" href="#install_the_pyth_sdk"></a>Install the Pyth SDK</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Use the following dependency in your <code>Scarb.toml</code> file to use the latest Pyth Starknet package:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-toml hljs" data-lang="toml">[dependencies]
-pyth = { git = "https://github.com/pyth-network/pyth-crosschain.git", tag = "pyth-starknet-contract-v0.1.0"}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Pyth also provides a javascript SDK to interact with the Pyth contract on Starknet. You can install it using the following command:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-toml hljs" data-lang="toml">npm install --save @pythnetwork/pyth-starknet-js</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-toml hljs" data-lang="toml">yarn add @pythnetwork/pyth-starknet-js</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="write_contract_code"><a class="anchor" href="#write_contract_code"></a>Write Contract Code</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The code snippet below provides an example module fetching the STRK/USD price from Pyth price feeds:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-cairo {2 hljs" data-lang="cairo {2">use starknet::ContractAddress;
-use pyth::ByteBuffer;
-
-#[starknet::interface]
-pub trait IExampleContract&lt;T&gt; {
-    // pyth_price_update is the price update data from Pyth to update the price feeds.
-    // It should be passed as a ByteBuffer.
-    fn example_method(
-        ref self: T, pyth_price_update: ByteBuffer
-    );
-}
-
-#[starknet::contract]
-mod example_contract {
-    use core::panic_with_felt252;
-    use starknet::{ContractAddress, get_caller_address, get_contract_address};
-    use pyth::{ByteBuffer, IPythDispatcher, IPythDispatcherTrait, UnwrapWithFelt252};
-    use openzeppelin::token::erc20::interface::{IERC20CamelDispatcherTrait, IERC20CamelDispatcher};
-
-    const MAX_PRICE_AGE: u64 = 3600; // 1 hour
-    // Storage to store the Pyth contract address, the ERC20 contract address representing ETH, and the ETH/USD price feed ID.
-    #[storage]
-    struct Storage {
-        pyth_address: ContractAddress,
-        strk_erc20_address: ContractAddress,
-    }
-
-    // Constructor to initialize the contract storage.
-    // * @param pyth_address: The address of the Pyth contract on Starknet.
-    // * @param strk_erc20_address: The address of the ERC20 contract representing STRK on Starknet.
-    #[constructor]
-    fn constructor(
-        ref self: ContractState,
-        pyth_address: ContractAddress,
-        strk_erc20_address: ContractAddress,
-    ) {
-        self.pyth_address.write(pyth_address);
-        self.strk_erc20_address.write(strk_erc20_address);
-    }
-
-    #[abi(embed_v0)]
-    impl ExampleContract of super::IExampleContract&lt;ContractState&gt; {
-        fn example_method(
-            ref self: ContractState,
-            pyth_price_update: ByteBuffer
-        ) {
-            let pyth = IPythDispatcher { contract_address: self.pyth_address.read() };
-            let strk_erc20 = IERC20CamelDispatcher {
-                contract_address: self.strk_erc20_address.read()
-            };
-            let caller = get_caller_address();
-            let contract = get_contract_address();
-
-            // Get the fee required to update the Pyth price feeds.
-            let pyth_fee = pyth.get_update_fee(pyth_price_update.clone(), strk_erc20.contract_address);
-            if !strk_erc20.transferFrom(caller, contract, pyth_fee) {
-                panic_with_felt252('insufficient allowance for fee');
-            }
-            if !strk_erc20.approve(pyth.contract_address, pyth_fee) {
-                panic_with_felt252('approve failed');
-            }
-
-            // Submit a pyth_price_update to the Pyth contract to update the on-chain price.
-            pyth.update_price_feeds(pyth_price_update);
-
-            // Read the current price from a price feed.
-            // STRK/USD price feed ID
-            // The complete list of feed IDs is available at https://pyth.network/developers/price-feed-ids
-            let strk_usd_price_id =
-                0x6a182399ff70ccf3e06024898942028204125a819e519a335ffa4579e66cd870;
-            let price = pyth
-                .get_price_no_older_than(strk_usd_price_id, MAX_PRICE_AGE)
-                .unwrap_with_felt252();
-            let _: u64 = price.price.try_into().unwrap(); // Price in u64
-        }
-    }
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The pyth_price_update argument contains verified prices from Pyth.
-Calling pyth.update_price_feeds with this value updates the on-chain Pyth price and ensures your application has recent price data.
-The pyth_price_update can be fetched from Hermes; Consult <a href="https://docs.pyth.network/price-feeds/fetch-price-updates">Fetch Price Updates</a> for more information on how to fetch the pyth_price_update.</p>
-</div>
-<div class="admonitionblock important">
-<table>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<caption class="title">Table 1. Starknet oracle providers, in alphabetical order</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
 <tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Unlike Ethereum, there is no native token on Starknet. You cannot pass tokens
-implicitly when calling functions. Moreover, there is no concept of a
-designated payer account, unlike Solana. In Starknet, all token transfers must
-be performed explicitly by calling functions on the token&#8217;s ERC20 contract.
-Regarding the Pyth contract on Starknet, the caller must approve the feetransfer before
-calling <code>update_price_feeds</code> or using similar methods. You can use <strong>STRK</strong> or <strong>ETH</strong> to pay the fee, but STRK is preferred.
-The fee is currently set to the minimum possible value (1e-18 STRK, 1 WEI).</p>
-</div>
-</td>
+<th class="tableblock halign-left valign-top">Provider</th>
+<th class="tableblock halign-left valign-top">Oracle Model</th>
+<th class="tableblock halign-left valign-top">Oracle Integration Guide</th>
 </tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The code snippet above does the following things:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Call <code>pyth.get_update_fee</code> to get the fee required to update the Pyth price feeds.</p>
-</li>
-<li>
-<p>Call <code>pyth.update_price_feeds</code> and pass <code>pyth_price_update</code> to update the Pyth price feeds.</p>
-</li>
-<li>
-<p>Call <code>pyth.get_price_no_older_than</code> to read the price, providing the <a href="https://pyth.network/developers/price-feed-ids">price feed ID</a> you wish to read.</p>
-</li>
-</ol>
-</div>
-<div class="sect2">
-<h3 id="write_client_code"><a class="anchor" href="#write_client_code"></a>Write Client Code</h3>
-<div class="paragraph">
-<p>The code snippet below provides an example of how to fetch price updates and convert to <code>ByteBuffer</code> for Starknet using the <code>pyth-starknet-js</code> in JavaScript:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-ts {16} copy hljs" data-lang="ts {16} copy">import { PriceServiceConnection } from "@pythnetwork/price-service-client";
-import { ByteBuffer } from "@pythnetwork/pyth-starknet-js";
-// The URL below is a public Hermes instance operated by the Pyth Data Association.
-// Hermes is also available from several third-party providers listed here:
-// https://docs.pyth.network/price-feeds/api-instances-and-providers/hermes
-const connection = new PriceServiceConnection("https://hermes.pyth.network", {
-  priceFeedRequestConfig: {
-    binary: true,
-  },
-});
-
-const priceId =
-  "0x6a182399ff70ccf3e06024898942028204125a819e519a335ffa4579e66cd870"; // STRK/USD
-
-// Get the latest values of the price feeds as json objects.
-const currentPrices = await connection.getLatestPriceFeeds([priceId]);
-
-// Convert the price update to Starknet format.
-const pythUpdate = ByteBuffer.fromBase64(currentPrices[0].vaa);</code></pre>
-</div>
-</div>
-<div class="admonitionblock important">
-<table>
+</thead>
+<tbody>
 <tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Price updates must be converted to <code>ByteBuffer</code> before being passed on to the
-Pyth contract on Starknet. Use the <code>ByteBuffer</code> type from
-<code>@pythnetwork/pyth-starknet-js</code> package as shown above.</p>
-</div>
-</td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.pyth.network/">Pyth Network</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Push, Pull</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.pyth.network/price-feeds/use-real-time-data/starknet">Integrate Pyth Oracle on Starknet</a></p></td>
 </tr>
+</tbody>
 </table>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="additional_resources"><a class="anchor" href="#additional_resources"></a>Additional Resources</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>You may find these additional resources helpful for developing your Starknet application.</p>
-</div>
-<div class="sect2">
-<h3 id="interface"><a class="anchor" href="#interface"></a>Interface</h3>
-<div class="paragraph">
-<p>The <a href="https://github.com/pyth-network/pyth-crosschain/blob/main/target_chains/starknet/contracts/src/pyth/interface.cairo#L9">Starknet Interface</a> provides a list of functions that can be called on the Pyth contract deployed on Starknet.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="example_applications"><a class="anchor" href="#example_applications"></a>Example Applications</h3>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/pyth-network/pyth-examples/tree/main/price_feeds/starknet">Send-USD</a>, which updates and consumes STRK/USD price feeds on Starknet to send USD to a recipient.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
 <nav class="pagination">
   <span class="prev"><a href="../ref-block-explorers/">Block explorers</a></span>
   <span class="next"><a href="../audit/">Audit providers</a></span>
