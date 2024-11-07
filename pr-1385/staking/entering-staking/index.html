@@ -697,7 +697,7 @@
 <div class="title">Prerequisites</div>
 <ul>
 <li>
-<p>Validators are expected to run full nodes in preparation for the following stages of the protocol. You can use any full node implementation you choose:</p>
+<p>Validators are required to run full nodes in preparation for the following stages of the protocol. You can use any full node implementation you choose:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -724,20 +724,36 @@
 <div class="title">Procedure</div>
 <ol class="arabic">
 <li>
-<p>Pre-approve the STRK ERC20 contract for the transfer of tokens from your address to the staking contract (and <strong>not</strong> the operator contract):</p>
-<div class="ulist">
-<ul>
+<p>Pre-approve the STRK ERC20 contract for the transfer of tokens from your address to the staking contract:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
 <li>
 <p>Using a Starknet block explorer, navigate to the STRK ERC20 contract (<a href="https://starkscan.co/token/0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d">Starkscan</a>, <a href="https://voyager.online/contract/0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d">Voyager</a>).</p>
 </li>
 <li>
-<p>Approve the staking contract to transfer the specified amount of STRK tokens on your behalf.</p>
+<p>In the contract interface, locate and select the <code>approve</code> function.</p>
+</li>
+<li>
+<p>Enter the following parameters:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In <strong><code>spender</code></strong>, enter your address.</p>
+</li>
+<li>
+<p>In <strong><code>amount</code></strong>, enter the number of STRK tokens you want to stake. Note: STRK has 18 decimals.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Using a Starknet block explorer, navigate to the operator contract.</p>
+<p>Submit the transaction to execute the pre-approval.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Using a Starknet block explorer, navigate to the Staking contract (The contract addresses can be found <a href="../overview/#contract-addresses" class="xref page">here</a>).</p>
 </li>
 <li>
 <p>In the contract interface, locate and select the <code>stake</code> function.</p>
@@ -753,7 +769,7 @@
 <p>In <strong><code>operational_address</code></strong>, enter the operational address associated with this stake.</p>
 </li>
 <li>
-<p>In <strong><code>amount</code></strong>, enter the number of STRK tokens you want to stake.</p>
+<p>In <strong><code>amount</code></strong>, enter the number of STRK tokens you want to stake. Note: STRK has 18 decimals.</p>
 </li>
 <li>
 <p>In <strong><code>pooling_enabled</code></strong>, enter <code>true</code> if you wish to enable delegation pooling, otherwise enter <code>false</code>.</p>
