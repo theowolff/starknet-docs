@@ -117,7 +117,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../../../">Starknet</a></li>
-    <li>Core topics</li>
+    <li>Architecture</li>
     <li><a href="./">Block structure</a></li>
   </ul>
 </nav>
@@ -216,7 +216,7 @@
 <ul class="nav-list">
   <li class="nav-item parent" data-depth="1">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Core topics</span>
+    <span class="nav-text">Architecture</span>
 <ul class="nav-list">
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
@@ -677,32 +677,32 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>block_number</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>u64</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The number, that is, the height, of this block.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of this block (i.e., its height)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>parent_block_hash</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>felt252</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The hash of the block&#8217;s parent.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <a href="#block_hash">hash of the block&#8217;s parent</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>global_state_root</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>felt252</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <a href="../starknet-state/#state_commitment" class="xref page">state commitment</a> after the block.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <a href="../starknet-state/#state_commitment" class="xref page">commitment to the new state</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>sequencer_address</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ContractAddress</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The Starknet address of the sequencer that created the block.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Starknet address of the sequencer that created the block</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>block_timestamp</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Timestamp</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The time at which the sequencer began building the block, in seconds since the Unix epoch.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The time at which the sequencer began building the block, in seconds since the Unix epoch</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>transaction_count</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>u32</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The number of transactions in the block.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of transactions in the block</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>events_count</code></p></td>
@@ -712,54 +712,47 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>state_diff_length</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>u32</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The sum of number of storage diffs, nonce updates, deployed contracts and declared classes.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The total amount of storage diffs, nonce updates, deployed contracts, and declared classes</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>state_diff_commitment</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>felt252</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The poseidon hash of the state diff of the block, see below for more details.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <a href="#state_diff_hash">commitment to the state diff of the block</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>transactions_commitment</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>felt252</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A commitment to the transactions included in the block.
-The root of a height-64 binary Merkle Patricia trie. The leaf at index \(i\) corresponds to \({h(\text{transaction_hash}, \text{signature})}\).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <a href="#transactions_events_receipts_commitments">commitment to the transactions included in the block</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>events_commitment</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>felt252</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The root of a height-64 binary Merkle Patricia trie.
-The leaf at index \(i\) corresponds to the hash of the \(i'th\) event emitted in the block.
-See below for a description on how event hashes are computed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <a href="#transactions_events_receipts_commitments">commitment to the events included in the block</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>receipts_commitment</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>felt252</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The root of a height-64 Merkle-Patricia trie.
-The leaf at index \(i\) corresponds to the hash of the \(i'th\) transaction receipt.
-See below for a description on how receipt hashes are computed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <a href="#transactions_events_receipts_commitments">commitment to the receipts of the transactions included in the block</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>l1_gas_price</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>(u128, u128)</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The price of L1 gas that was used while constructing the block. L1 gas prices apply to storage updates and L1&#8594;L2 messages. As of March 2023, computation is also priced in terms of L1 gas, but this will change in the future.
-The first <code>u128</code> value is the price in wei. The second is the price in fri.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The price of L1 gas that was used while constructing the block, where the first value is the price in wei and the second is the price in fri (see <a href="../fee-mechanism/" class="xref page">Gas and transaction fees</a> for more details)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>l1_data_gas_price</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>(u128, u128)</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The price of L1 blob gas that was used while constructing the block. If the <code>l1_da_mode</code> of the block is set to <code>BLOB</code>, L1 blob gas prices determines the storage update cost.
-The first <code>u128</code> value is the price in wei. The second is the price in fri.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The price of L1 blob gas that was used while constructing the block, where the first value is the price in wei and the second is the price in fri (see <a href="../fee-mechanism/" class="xref page">Gas and transaction fees</a> for more details)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>l1_da_mode</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CALLDATA</code> or <code>BLOB</code>, depending on how Starknet state diffs are sent to L1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CALLDATA</code> or <code>BLOB</code>, depending on how Starknet state diffs are sent to L1</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>protocol_version</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The version of the Starknet protocol used when creating the block.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The version of the Starknet protocol used when creating the block</p></td>
 </tr>
 </tbody>
 </table>
@@ -769,11 +762,11 @@ The first <code>u128</code> value is the price in wei. The second is the price i
 <h2 id="block_hash"><a class="anchor" href="#block_hash"></a>Block hash</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A block hash is defined as the Poseidon hash of the header&#8217;s fields, as follows:</p>
+<p>A block hash is defined by:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre><em>h</em>(𝐵) = <em>h</em>(
+<pre>h(
     "STARKNET_BLOCK_HASH0",
     block_number,
     global_state_root,
@@ -799,15 +792,26 @@ The first <code>u128</code> value is the price in wei. The second is the price i
 <div class="ulist">
 <ul>
 <li>
-<p><code><em>h</em></code> is the <a href="../../cryptography/hash-functions/#poseidon-hash" class="xref page">Poseidon hash</a>.</p>
+<p><code>h</code> is the <a href="../../cryptography/hash-functions/#poseidon-hash" class="xref page">Poseidon hash function</a></p>
 </li>
 <li>
-<p><code>||</code> denotes concatenation, <code>transaction_count</code>, <code>event_count</code> and <code>state_diff_length</code> are given 64 bits each, and <code>l1_da_mode</code> is one bit where 0 denotes <code>CALLDATA</code> and 1 denotes <code>BLOB</code>.</p>
+<p><code>transaction_count || event_count || state_diff_length || l1_da_mode</code> is the concatenation of the 64-bit representations of <code>transaction_count</code>, <code>event_count</code>, and <code>state_diff_length</code> with 0 if <code>l1_da_mode</code> is <code>CALLDATA</code> and 1 if <code>l1_da_mode</code> is <code>BLOB</code></p>
 </li>
 </ul>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
 <div class="paragraph">
-<p>For a reference implementation, see the <a href="https://github.com/starkware-libs/sequencer/blob/bb361ec67396660d5468fd088171913e11482708/crates/starknet_api/src/block_hash/block_hash_calculator.rs#L68">sequencer repository</a>.</p>
+<p>For a reference implementation, see <a href="https://github.com/starkware-libs/sequencer/blob/bb361ec67396660d5468fd088171913e11482708/crates/starknet_api/src/block_hash/block_hash_calculator.rs#L68"> <code>block_hash_calculator.rs</code></a> in the Starknet sequencer&#8217;s GitHub repository</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -815,50 +819,24 @@ The first <code>u128</code> value is the price in wei. The second is the price i
 <h2 id="state_diff_hash"><a class="anchor" href="#state_diff_hash"></a>State diff commitment</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The state diff commitment is obtained by the chain-hash of the following:</p>
+<p>The state diff commitment is defined by:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>updates to contract addresses \(c_1,...,c_n\), with diffs \((k^1_1, v^1_1),...,(k^1_{m_1}, v^1_{m_1}),...,(k^n_1, v^n_1),...,(k^n_{m_n},v^n_{m_n})\)</p>
-</li>
-<li>
-<p>deployed contracts \((\text{deployed_address}_1, \text{deployed_class_hash}_1),...,(\text{deployed_address}_\ell,\text{deployed_class_hash}_\ell)\)</p>
-</li>
-<li>
-<p>declared classes \((\text{declared_class_hash}_1, \text{declared_compiled_class_hash}_1), ..., (\text{declared_class_hash}_d, \text{declared_compiled_class_hash}_d)\)</p>
-</li>
-<li>
-<p>replaced classes \((\text{replaced_contract_address}_1, \text{new_class_hash}_1),...,(\text{replaced_contract_address}_r, \text{new_class_hash}_r)\)</p>
-</li>
-<li>
-<p>updated nonces \((\text{account}_1, \text{new_nonce}_1),...,(\text{account}_k, \text{new_nonce}_k)\)</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>More formally, the state-diff hash is given by:</p>
-</div>
-<div class="stemblock">
+<div class="listingblock">
 <div class="content">
-\[\begin{align}
-h\big( &amp; \text{"STARKNET_STATE_DIFF0"}, \\
-&amp; \quad \ell + r, \\
-&amp; \quad \text{deployed_address}_1, \text{deployed_class_hash}_1,...,\text{deployed_address}_\ell,\text{deployed_class_hash}_\ell, \\
-&amp; \quad \text{replaced_contract_address}_1, \text{new_class_hash}_1,...,\text{replaced_contract_address}_r, \text{new_class_hash}_r \\
-&amp; \quad d, \\
-&amp; \quad \text{declared_class_hash}_1, \text{declared_compiled_class_hash}_1, ..., \text{declared_class_hash}_d, \text{declared_compiled_class_hash}_d, \\
-&amp; \quad 1, \\
-&amp; \quad 0, \\
-&amp; \quad n, \\
-&amp; \quad c_1 \\
-&amp; \quad k^1_1, v^1_1,...,k^1_{m_1}, v^1_{m_1} \\
-&amp; \quad \vdots \\
-&amp; \quad c_n \\
-&amp; \quad k^n_1, v^n_1,...,k^n_{m_n},v^n_{m_n} \\
-&amp; \quad k \\
-&amp; \quad \text{account}_1, \text{new_nonce}_1,...,\text{account}_k, \text{new_nonce}_k\big)
-\end{align}\]
+<pre>h(
+    "STARKNET_STATE_DIFF0",
+    s + r,
+    deployed_address<sub>1</sub>, deployed_class_hash<sub>1</sub>, ... , deployed_address<sub>s</sub>, deployed_class_hash<sub>s</sub>,
+    replaced_contract_address<sub>1</sub>, new_class_hash<sub>1</sub>, ... , replaced_contract_address<sub>r</sub>, new_class_hash<sub>r</sub>,
+    d,
+    declared_class_hash<sub>1</sub>, declared_compiled_class_hash<sub>1</sub>, ... , declared_class_hash<sub>d</sub>, declared_compiled_class_hash<sub>d</sub>,
+    1,
+    0,
+    n,
+    c<sub>1</sub>, k<sub>1,1</sub>, v<sub>1,1</sub>, ... ,k<sub>1,m<sup>1</sup></sub>, v<sub>1,m<sup>1</sup></sub>, ... ,c<sub>n</sub>, k<sub>n,1</sub>, v<sub>n,1</sub>, ... ,k<sub>n,m<sup>n</sup></sub>, v<sub>n,m<sup>n</sup></sub>,
+    k,
+    account<sub>1</sub>, new_nonce<sub>1</sub>, ... ,account<sub>k</sub>, new_nonce<sub>k</sub>
+)</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -867,83 +845,64 @@ h\big( &amp; \text{"STARKNET_STATE_DIFF0"}, \\
 <div class="ulist">
 <ul>
 <li>
-<p>\(h\) is the  Poseidon hash function</p>
+<p><code>h</code> is the  Poseidon hash function</p>
 </li>
 <li>
-<p>\(1, 0\) in the hash computation are placeholders that may be used in the future</p>
+<p><code>1</code> and <code>0</code> are placeholders that may be used in the future</p>
+</li>
+<li>
+<p><code>c<sub>i</sub>,k<sub>i,1</sub>, v<sub>i,1</sub>, &#8230;&#8203; , k<sub>i,m<sup>i</sup></sub>,v<sub>i,m<sup>i</sup></sub></code> are <code>m<sup>i</sup></code> updates <code>(k<sub>i,1</sub>, v<sub>i,1</sub>), &#8230;&#8203; ,(k<sub>i,m<sup>i</sup></sub>, v<sub>i,m<sup>i</sup></sub>)</code> to contract addresses <code>c<sub>i</sub></code></p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="receipt_hash"><a class="anchor" href="#receipt_hash"></a>Receipt hash</h2>
+<h2 id="transactions_events_receipts_commitments"><a class="anchor" href="#transactions_events_receipts_commitments"></a>Transactions, events, and receipts commitments</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A transaction receipt consists of the following fields:</p>
+<p>The commitment to transactions, the commitment to events and the commitment to receipts are all roots of height-64 binary Merkle Patricia tries where the leaf at index <code>i</code> corresponds to:</p>
 </div>
-<table class="tableblock frame-all grid-all fit-content">
-<colgroup>
-<col>
-<col>
-<col>
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>transaction_hash</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>felt252</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">the hash of the transaction</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>actual_fee</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>u128</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">the fee paid on-chain</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>events</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>List&lt;Event&gt;</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ordered list of the events emitted by the transaction</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>messages</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>List&lt;L2toL1Message&gt;</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ordered list of the l2&#8594;l1 messages sent by the transaction</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>revert_reason</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The revert reason, in case the transaction was reverted</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>l1_gas_consumed</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>u128</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The amount of l1 gas that was consumed</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>l1_data_gas_consumed</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>u128</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The amount of l1 data (blob) gas that was consumed</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>l2_gas_consumed</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>u128</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The amount of l2 gas that was consumed</p></td>
-</tr>
-</tbody>
-</table>
+<div class="ulist">
+<ul>
+<li>
+<p>For transactions: <code>h(transaction_hash, signature)</code> for the <code>i</code>'th transaction included in the block, where <code>h</code> is the <a href="../../cryptography/hash-functions/#poseidon-hash" class="xref page">Poseidon hash function</a></p>
+</li>
+<li>
+<p>For events: The <a href="#event_hash">event hash</a> of the <code>i</code>'th emitted evet included in the block</p>
+</li>
+<li>
+<p>For receipts: The <a href="#receipt_hash">receipt hash</a> of the <code>i</code>'th transaction receipt included in the block</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="event_hash"><a class="anchor" href="#event_hash"></a>Event hash</h3>
 <div class="paragraph">
-<p>The hash of the transaction receipt is given by:</p>
+<p>The hash of an <a href="../../smart-contracts/starknet-events/" class="xref page">event</a> emitted by a contract whose address is <code>emitter_address</code> and a transaction whose hash is <code>tx_hash</code> is defined by:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre><em>h</em>(receipt) = <em>h</em>(
+<pre>h(
+    emitter_address,
+    tx_hash,
+    h(keys),
+    h(data)
+)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where <code>h</code> is the <a href="../../cryptography/hash-functions/#poseidon-hash" class="xref page">Poseidon hash function</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="receipt_hash"><a class="anchor" href="#receipt_hash"></a>Receipt hash</h3>
+<div class="paragraph">
+<p>The hash of a <a href="../transaction-life-cycle/#transaction-receipt" class="xref page">transaction receipt</a> is defined by:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>h(
     transaction_hash,
     actual_fee,
     h(messages),
@@ -958,57 +917,21 @@ h\big( &amp; \text{"STARKNET_STATE_DIFF0"}, \\
 <div class="ulist">
 <ul>
 <li>
-<p>h is the Poseidon hash function</p>
+<p><code>h</code> is the <a href="../../cryptography/hash-functions/#poseidon-hash" class="xref page">Poseidon hash function</a></p>
 </li>
 <li>
-<p>given messages \(m_1=(\text{from}_1, \text{to}_1, \text{payload}_1)...m_n=(\text{from}_n, \text{to}_n, \text{payload}_n)\), their hash is given by:</p>
+<p><code>h(messages)</code> for <code>messages = (from<sub>1</sub>, to<sub>1</sub>, payload<sub>1</sub>), &#8230;&#8203; , (from<sub>n</sub>, to<sub>n</sub>, payload<sub>n</sub>)</code> is defined by:</p>
+<div class="listingblock">
+<div class="content">
+<pre>h(
+    n,
+    from<sub>1</sub>, to<sub>1</sub>, h(len(payload<sub>1</sub>) || payload<sub>1</sub>), ... , from<sub>n</sub>, to<sub>n</sub>, h(len(payload<sub>n</sub>) || payload<sub>n</sub>)
+)</pre>
+</div>
+</div>
 </li>
 </ul>
 </div>
-<div class="stemblock">
-<div class="content">
-\[h(n, \text{from}_1, \text{to}_1, h(\text{payload}_1), ..., \text{from}_n, \text{to}_n, h(\text{payload}_n))\]
-</div>
-</div>
-<div class="paragraph">
-<p>where each message&#8217;s payload is length-prefixed.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>events are omitted from the receipt&#8217;s hash since they are committed separately in the block.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="event_hash"><a class="anchor" href="#event_hash"></a>Event hash</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The hash of an event \((\text{keys}, \text{data})\) emitted by a contract whose address is <code>emitter_address</code> and a transaction whose hash is <code>tx_hash</code> is given by:</p>
-</div>
-<div class="stemblock">
-<div class="content">
-\[h\big(\text{emitter_address}, \text{tx_hash}, h(\text{keys}), h(\text{data}) \big)\]
-</div>
-</div>
-<div class="paragraph">
-<p>Where \(h\) is the Poseidon hash function.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Zeros inside the hash computation of an object are used as placeholders, to be replaced in the future by meaningful fields.</p>
-</div>
-</td>
-</tr>
-</table>
 </div>
 </div>
 </div>
