@@ -935,17 +935,17 @@
 <p><code>h</code> is the <a href="../../cryptography/hash-functions/#poseidon-hash" class="xref page">Poseidon hash function</a></p>
 </li>
 <li>
-<p><code>h(messages)</code> for <code>messages = (from<sub>1</sub>, to<sub>1</sub>, payload<sub>1</sub>), &#8230;&#8203; , (from<sub>n</sub>, to<sub>n</sub>, payload<sub>n</sub>)</code> where each payload is length-prefixed is defined by:</p>
-</li>
-</ul>
-</div>
+<p><code>h(messages)</code> for <code>messages = (from<sub>1</sub>, to<sub>1</sub>, payload<sub>1</sub>), &#8230;&#8203; , (from<sub>n</sub>, to<sub>n</sub>, payload<sub>n</sub>)</code> is defined by:</p>
 <div class="listingblock">
 <div class="content">
 <pre>h(
     n,
-    from<sub>1</sub>, to<sub>1</sub>, h(payload<sub>1</sub>), ... , from<sub>n</sub>, to<sub>n</sub>, h(payload<sub>n</sub>)
+    from<sub>1</sub>, to<sub>1</sub>, h(len(payload<sub>1</sub>) || payload<sub>1</sub>), ... , from<sub>n</sub>, to<sub>n</sub>, h(len(payload<sub>n</sub>) || payload<sub>n</sub>)
 )</pre>
 </div>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
