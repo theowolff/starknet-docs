@@ -695,12 +695,8 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Operator Contract</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Acts as the access point for all interactions with the staking system, wrapping around the staking contract. It enforces access control and whitelisting, ensuring that only authorized users can perform staking operations.</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Staking Contract</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The central contract that manages the staking process. It handles direct staking, rewards distribution, and interactions with delegation pools. Validators interact with this contract through the Operator contract to stake their tokens, claim rewards, and initiate unstaking.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The central contract that manages the staking process, which handles direct staking, rewards distribution, and interactions with delegation pools. Validators interact with this contract to stake their tokens, claim rewards, and initiate unstaking.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Delegation Pooling Contract</p></td>
@@ -746,34 +742,18 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="operator_contract"><a class="anchor" href="#operator_contract"></a>Operator Contract</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The operator contract serves as the first point of interaction for all users. It manages access control, ensuring that only authorized users can stake, claim rewards, and interact with the staking system. The operator contract forwards user requests to the relevant contracts (e.g., staking contract) and includes features such as whitelisting, which restricts access to specific users if activated.</p>
-</div>
-<div class="paragraph">
-<p><strong>Key Functions and Responsibilities</strong>:<br>
-<code>stake</code>: Allows users to stake their STRK tokens, forwarding the request to the staking contract.<br>
-<code>increase_stake</code>: Lets existing stakers add more tokens to their stake.<br>
-<code>claim_rewards</code>: Facilitates the claiming of rewards for stakers and delegators.<br>
-<code>unstake_intent</code>: Initiates the unstaking process by signaling intent, which the staking contract processes.<br>
-<code>unstake_action</code>: Finalizes the unstaking process after the waiting period.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
 <h2 id="staking_contract"><a class="anchor" href="#staking_contract"></a>Staking Contract</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The staking contract is the core of the staking system. It manages the entire lifecycle of staking, from initial staking to claiming rewards and unstaking. The operator contract interacts with the staking contract to execute these functions.</p>
+<p>The staking contract is the core of the staking system. It manages the entire lifecycle of staking, from initial staking to claiming rewards and unstaking.</p>
 </div>
 <div class="paragraph">
-<p><strong>Key Functions and Responsibilities (accessed via the Operator contract)</strong>:<br>
-<code>stake</code>: Allows users to stake their STRK tokens. This is facilitated by the Operator contract and forwarded to the Staking contract.<br>
-<code>increase_stake</code>: Lets existing validators increase their stake, accessed through the Operator.<br>
-<code>unstake_intent</code>: Initiates the unstaking process, managed by the Operator contract, which interacts with the Staking contract to initiate and finalize the unstaking process.<br>
-<code>unstake_action</code>: Finalizes the unstaking process after the waiting period, returning tokens to the user through the Operator.<br>
-<code>claim_rewards</code>: Allows users to claim rewards, facilitated through the Operator contract.</p>
+<p>*Key Functions and Responsibilities *:<br>
+<code>stake</code>: Allows users to stake their STRK tokens.<br>
+<code>increase_stake</code>: Lets existing validators increase their stake.<br>
+<code>unstake_intent</code>: Initiates the unstaking process, which can be finalized using <code>unstake_action</code> if sufficient time has passed.<br>
+<code>unstake_action</code>: Finalizes the unstaking process after the waiting period, returning tokens to the validator address.<br>
+<code>claim_rewards</code>: Allows users to claim rewards.</p>
 </div>
 </div>
 </div>
@@ -781,7 +761,7 @@
 <h2 id="delegation_pooling_contract"><a class="anchor" href="#delegation_pooling_contract"></a>Delegation Pooling Contract</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The delegation pooling contract enables users to delegate their tokens through the Operator contract. All interactions, such as entering or exiting the pool, are forwarded to the appropriate contracts via the Operator. This contract tracks each delegator&#8217;s contribution, calculates their rewards, and manages the delegation lifecycle.</p>
+<p>The delegation pooling contract enables users to delegate their tokens. All interactions, such as entering or exiting the pool, are enabled through this contracts, which tracks each delegator&#8217;s contribution, calculates their rewards, and manages the delegation lifecycle.</p>
 </div>
 <div class="paragraph">
 <p><strong>Key Functions and Responsibilities</strong>:<br>
@@ -824,7 +804,7 @@
 <h2 id="security_and_upgradability"><a class="anchor" href="#security_and_upgradability"></a>Security and Upgradability</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The staking architecture on Starknet is designed with security and upgradability in mind. Each contract is modular, allowing for targeted upgrades and improvements without affecting the entire system. The introduction of the Operator contract adds an extra layer of access control, ensuring only authorized users can interact with the staking system. Access control mechanisms are in place to ensure that only authorized parties can make critical changes, further enhancing the security of the staking process.</p>
+<p>The staking architecture on Starknet is designed with security and upgradability in mind. Each contract is modular, allowing for targeted upgrades and improvements without affecting the entire system. Access control mechanisms are in place to ensure that only authorized parties can make critical changes, further enhancing the security of the staking process.</p>
 </div>
 </div>
 </div>
