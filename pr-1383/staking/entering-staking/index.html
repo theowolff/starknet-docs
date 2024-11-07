@@ -725,19 +725,35 @@
 <ol class="arabic">
 <li>
 <p>Pre-approve the STRK ERC20 contract for the transfer of tokens from your address to the staking contract:</p>
-<div class="ulist">
-<ul>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
 <li>
 <p>Using a Starknet block explorer, navigate to the STRK ERC20 contract (<a href="https://starkscan.co/token/0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d">Starkscan</a>, <a href="https://voyager.online/contract/0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d">Voyager</a>).</p>
 </li>
 <li>
-<p>Send an 'approve' transaction to the staking contract with the specified amount of STRK tokens you wish to stake (note that STRK has 18 decimals).</p>
+<p>In the contract interface, locate and select the <code>approve</code> function.</p>
+</li>
+<li>
+<p>Enter the following parameters:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In <strong><code>spender</code></strong>, enter your address.</p>
+</li>
+<li>
+<p>In <strong><code>amount</code></strong>, enter the number of STRK tokens you want to stake. Note: STRK has 18 decimals.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Using a Starknet block explorer, navigate to the Staking contract (the contract addresses can be found <a href="../overview/#contract-addresses" class="xref page">here</a>).</p>
+<p>Submit the transaction to execute the pre-approval.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Using a Starknet block explorer, navigate to the Staking contract (<a href="https://sepolia.starkscan.co/contract/0x03745ab04a431fc02871a139be6b93d9260b0ff3e779ad9c8b377183b23109f1">Starkscan</a>, <a href="https://sepolia.voyager.online/contract/0x03745ab04a431fc02871a139be6b93d9260b0ff3e779ad9c8b377183b23109f1">Voyager</a>).</p>
 </li>
 <li>
 <p>In the contract interface, locate and select the <code>stake</code> function.</p>
