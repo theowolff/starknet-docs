@@ -830,21 +830,43 @@ export STARKNET_KEYSTORE=~/.starkli-wallets/deployer/keystore.json</code></pre>
 <div class="sect2">
 <h3 id="macos_and_linux_installation"><a class="anchor" href="#macos_and_linux_installation"></a>MacOS and Linux installation</h3>
 <div class="paragraph">
-<p>The steps for installing Scarb and upgrading Scarb are identical.</p>
+<p>It is highly recommended to install Scarb via the <a href="https://asdf-vm.com/"><code>asdf</code></a> version manager.</p>
+</div>
+<div class="paragraph">
+<p>Installing Scarb with <code>asdf</code> seamlessly integrates with the Cairo <a href="../../tools/devtools/vscode/" class="xref page">Cairo VSCode extension</a>, and allows to easily switch between different versions of Scarb, globally or per project.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Procedure</div>
 <ol class="arabic">
 <li>
-<p>Open a terminal and execute the following command:</p>
+<p>Follow the installation steps of <code>asdf</code> on the <a href="https://asdf-vm.com/guide/getting-started.html">official website</a>.</p>
+</li>
+<li>
+<p>Install the Scarb plugin:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl --proto '=https' --tlsv1.2 -sSf https://docs.swmansion.com/scarb/install.sh | sh</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">asdf plugin add scarb</code></pre>
 </div>
 </div>
 </li>
 <li>
-<p>Restart the terminal and run the following command to verify the installation:</p>
+<p>Install the latest version of Scarb</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">asdf install scarb latest</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Set a global version for Scarb</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">asdf global scarb latest</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Check if Scarb is installed correctly</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">scarb --version</code></pre>
@@ -854,7 +876,21 @@ export STARKNET_KEYSTORE=~/.starkli-wallets/deployer/keystore.json</code></pre>
 </ol>
 </div>
 <div class="paragraph">
-<p>Scarb should now be installed.</p>
+<p>You should see the version of Scarb, Cairo and Sierra.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>See additional commands for updating Scarb and switching between versions in the <a href="https://asdf-vm.com/manage/commands.html"><code>asdf</code> documentation</a>, or by running <code>asdf --help</code>.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
