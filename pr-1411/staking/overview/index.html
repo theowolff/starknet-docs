@@ -746,13 +746,13 @@
 <div class="ulist">
 <ul>
 <li>
-<p><em>Gradual implementation</em>: introducing features in small and manageable milestones, ensuring each step is carefully implemented and easily integrated, and allowing to refine the process and address issues as they arise</p>
+<p>Gradual implementation: introducing features in small and manageable milestones, ensuring each step is carefully implemented and easily integrated, and allowing to refine the process and address issues as they arise</p>
 </li>
 <li>
-<p><em>Validators preparation</em>: giving validators time to adapt to their new responsibilities and critical roles, maximizing the network&#8217;s stability during the transition</p>
+<p>Validators preparation: giving validators time to adapt to their new responsibilities and critical roles, maximizing the network&#8217;s stability during the transition</p>
 </li>
 <li>
-<p><em>Proven reliability</em>: having a proven set of sequencers that reliably produce and attest to blocks by the time validators perform their full responsibilities, cementifying the network&#8217;s decentralization</p>
+<p>Proven reliability: having a proven set of sequencers that reliably produce and attest to blocks by the time validators perform their full responsibilities, cementifying the network&#8217;s decentralization</p>
 </li>
 </ul>
 </div>
@@ -815,7 +815,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="minting_curve"><a class="anchor" href="#minting_curve"></a>Minting curve</h3>
+<h3 id="minting-curve"><a class="anchor" href="#minting-curve"></a>Minting curve</h3>
 <div class="paragraph">
 <p>The minting curve balances participation and inflation by adjusting rewards based on the total STRK locked in the protocol. It is defined by the formula:</p>
 </div>
@@ -825,18 +825,18 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Where:</p>
+<p>where:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>\(S\) is the staking rate as a percentage of the total token supply.</p>
+<p>\(S\) is the staking rate as a percentage of the total token supply</p>
 </li>
 <li>
-<p>\(M\) is the annual minting rate as a percentage of the total token supply.</p>
+<p>\(M\) is the annual minting rate as a percentage of the total token supply</p>
 </li>
 <li>
-<p>\(C\) is the maximum theoretical inflation percentage.</p>
+<p>\(C\) is the maximum theoretical inflation percentage</p>
 </li>
 </ul>
 </div>
@@ -858,7 +858,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>M and S are the same as described above in the minting curve section.</p>
+<p>where \(M\) and \(S\) are the same as described in <a href="#minting-curve">the minting curve section</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -866,10 +866,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Current version</strong>: Immediate entry and exit from the staking protocol. However, funds are subject to a 21-day security lockup after signaling unstake intent.</p>
+<p>Current version: Immediate entry and exit from the staking protocol. However, funds are subject to a 21-day security lockup after signaling unstake intent.</p>
 </li>
 <li>
-<p><strong>Future versions</strong>: Introduction of epochs to determine entry/exit latencies and continued 21-day lockup after signaling unstake intent.</p>
+<p>Future versions: Introduction of epochs to determine entry/exit latencies and continued 21-day lockup after signaling unstake intent.</p>
 </li>
 </ul>
 </div>
@@ -900,64 +900,36 @@
 <h3 id="contract_addresses"><a class="anchor" href="#contract_addresses"></a>Contract addresses</h3>
 <div class="sect3">
 <h4 id="l1_addresses"><a class="anchor" href="#l1_addresses"></a>L1 addresses</h4>
-<div class="hdlist">
-<table>
-<colgroup>
-<col style="width: 15%;">
-<col>
-</colgroup>
-<tr>
-<td class="hdlist1">
-Mint manager contract
-</td>
-<td class="hdlist2">
-<p><a href="https://sepolia.etherscan.io/address/0x648D1B35a932F5189e7ff97b2F795E03734DE4ce"><code>0x648D1B35a932F5189e7ff97b2F795E03734DE4ce</code></a></p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-Reward supplier contract
-</td>
-<td class="hdlist2">
-<p><a href="https://sepolia.etherscan.io/address/0xE58d25681B9d290D60e4d7f379a05d5BFD973fFB"><code>0xE58d25681B9d290D60e4d7f379a05d5BFD973fFB</code></a></p>
-</td>
-</tr>
-</table>
+<div class="ulist horizontal">
+<ul class="horizontal">
+<li>
+<p>Reward supplier contract:
+<a href="https://sepolia.etherscan.io/address/0xE58d25681B9d290D60e4d7f379a05d5BFD973fFB"><code>0xE58d25681B9d290D60e4d7f379a05d5BFD973fFB</code></a></p>
+</li>
+<li>
+<p>Mint manager contract:
+<a href="https://sepolia.etherscan.io/address/0x648D1B35a932F5189e7ff97b2F795E03734DE4ce"><code>0x648D1B35a932F5189e7ff97b2F795E03734DE4ce</code></a></p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect3">
 <h4 id="l2_addresses"><a class="anchor" href="#l2_addresses"></a>L2 addresses</h4>
-<div class="hdlist">
-<table>
-<colgroup>
-<col style="width: 15%;">
-<col>
-</colgroup>
-<tr>
-<td class="hdlist1">
-Staking contract
-</td>
-<td class="hdlist2">
-<p><a href="https://sepolia.voyager.online/contract/0x03745ab04a431fc02871a139be6b93d9260b0ff3e779ad9c8b377183b23109f1"><code>0x03745ab04a431fc02871a139be6b93d9260b0ff3e779ad9c8b377183b23109f1</code></a></p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-Minting curve contract
-</td>
-<td class="hdlist2">
-<p><a href="https://sepolia.voyager.online/contract/0x0351c67dc2d4653cbe457be59a035f80ff1e6f6939118dad1b7a94317a51a454"><code>0x0351c67dc2d4653cbe457be59a035f80ff1e6f6939118dad1b7a94317a51a454</code></a></p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-Reward supplier contract
-</td>
-<td class="hdlist2">
-<p><a href="https://sepolia.voyager.online/contract/0x02ebbebb8ceb2e07f30a5088f5849afd4f908f04f3f9c97c694e5d83d2a7cc61"><code>0x02ebbebb8ceb2e07f30a5088f5849afd4f908f04f3f9c97c694e5d83d2a7cc61</code></a></p>
-</td>
-</tr>
-</table>
+<div class="ulist">
+<ul>
+<li>
+<p>Reward supplier contract:
+<a href="https://sepolia.voyager.online/contract/0x02ebbebb8ceb2e07f30a5088f5849afd4f908f04f3f9c97c694e5d83d2a7cc61"><code>0x02ebbebb8ceb2e07f30a5088f5849afd4f908f04f3f9c97c694e5d83d2a7cc61</code></a></p>
+</li>
+<li>
+<p>Minting curve contract:
+<a href="https://sepolia.voyager.online/contract/0x0351c67dc2d4653cbe457be59a035f80ff1e6f6939118dad1b7a94317a51a454"><code>0x0351c67dc2d4653cbe457be59a035f80ff1e6f6939118dad1b7a94317a51a454</code></a></p>
+</li>
+<li>
+<p>Staking contract:
+<a href="https://sepolia.voyager.online/contract/0x03745ab04a431fc02871a139be6b93d9260b0ff3e779ad9c8b377183b23109f1"><code>0x03745ab04a431fc02871a139be6b93d9260b0ff3e779ad9c8b377183b23109f1</code></a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -966,18 +938,29 @@ Reward supplier contract
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Minimum STRK for Staking:</strong> 1 STRK</p>
+<p>Minimum STRK for Staking: 1 STRK</p>
 </li>
 <li>
-<p><strong>Withdrawal Security Lockup:</strong> 5 minutes</p>
+<p>Withdrawal Security Lockup: 5 minutes</p>
 </li>
 <li>
-<p><strong>Minting Curve Yearly Inflation Cap (\(C\)):</strong> 1.6</p>
-</li>
-<li>
-<p><strong>Technical parameter for developers who want to deep dive:</strong> The index update interval is set to a minimum of 1 minute on Sepolia, in contrast to the 24-hour interval used in production.</p>
+<p>Minting Curve Yearly Inflation Cap (\(C\)): 1.6</p>
 </li>
 </ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>For developers who want to deep dive, the index update interval is also set to a minimum of 1 minute instead of a minimum of 24-hours which will be used in production.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
