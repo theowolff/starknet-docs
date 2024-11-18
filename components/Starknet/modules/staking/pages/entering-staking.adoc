@@ -20,7 +20,7 @@ For more information on what happens during the staking process, see xref:archit
 ** link:https://github.com/eqlabs/pathfinder[Pathfinder] by EQLabs - https://github.com/eqlabs/pathfinder?tab=readme-ov-file#hardware-requirements[Spec].
 ** link:https://github.com/madara-alliance/madara[Madara] by Madara Alliance - link:https://docs.madara.build/Installation/requirements[Spec].
 * A Starknet-compatible block explorer or CLI tool.
-* Sufficient STRK token balance in your wallet (Note: Ledger hardware wallet is supported through link:https://www.argent.xyz/blog/how-to-use-your-hardware-wallet-with-argent/[Argent] or link:https://braavos.app/wallet-features/ledger-on-braavos/[Braavos])
+* Sufficient STRK token balance in your wallet. Note: Ledger hardware wallet is supported through link:https://www.argent.xyz/blog/how-to-use-your-hardware-wallet-with-argent/[Argent] or link:https://braavos.app/wallet-features/ledger-on-braavos/[Braavos].
 
 .Procedure
 
