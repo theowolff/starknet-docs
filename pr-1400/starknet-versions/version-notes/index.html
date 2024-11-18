@@ -704,22 +704,16 @@
 <div class="sect1">
 <h2 id="version0.13.3"><a class="anchor" href="#version0.13.3"></a>Starknet v0.13.3 (November 20, 24)</h2>
 <div class="sectionbody">
-<h3 id="new_features_and_enhancements" class="discrete">New features and enhancements</h3>
+<div class="paragraph">
+<p>Blob gas on Starknet is now 5x cheaper (!) using:</p>
+</div>
 <div class="ulist">
 <ul>
-<li>
-<p>State diff compression: Starknet submits compressed state diffs to L1</p>
-</li>
 <li>
 <p>Squashing discount factor: Users pay for the expected marginal contribution of their transaction to the blobs sent to L1</p>
 </li>
-</ul>
-</div>
-<h3 id="da_format" class="discrete">DA format</h3>
-<div class="ulist">
-<ul>
 <li>
-<p>The uncompressed encoding of contract diff headers changes to:</p>
+<p>State diff compression: Starknet submits compressed state diffs to L1. To better lends itself to the new compression scheme as well as allow its construction to be based on the state diff alone, the uncompressed encoding of contract diff headers changes to:</p>
 <div class="stemblock">
 <div class="content">
 \[\underbrace{\text{new_nonce (if changed)}}_{\text{64 bits}} |
@@ -749,13 +743,13 @@
 </ul>
 </div>
 <h3 id="additional_resources" class="discrete">Additional resources</h3>
-<div class="paragraph">
-<p>Community Forum Posts:</p>
-</div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://community.starknet.io/t/fall-roadmap-updates/115001">Fall roadmap updates</a></p>
+<p><a href="https://community.starknet.io/t/starknet-v0-13-3/115053">Starknet v0.13.3 post in the Starknet community forum</a></p>
+</li>
+<li>
+<p><a href="https://community.starknet.io/t/fall-roadmap-updates/115001">Fall roadmap updates post on the Starknet community forum</a></p>
 </li>
 </ul>
 </div>
@@ -764,7 +758,7 @@
 <div class="sect1">
 <h2 id="version0.13.2"><a class="anchor" href="#version0.13.2"></a>Starknet v0.13.2 (August 28, 24)</h2>
 <div class="sectionbody">
-<h3 id="new_features_and_enhancements_2" class="discrete">New features and enhancements</h3>
+<h3 id="new_features_and_enhancements" class="discrete">New features and enhancements</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -940,7 +934,7 @@
 <div class="sect1">
 <h2 id="version0.13.1"><a class="anchor" href="#version0.13.1"></a>Starknet v0.13.1 (March 13, 24)</h2>
 <div class="sectionbody">
-<h3 id="new_features_and_enhancements_3" class="discrete">New features and enhancements</h3>
+<h3 id="new_features_and_enhancements_2" class="discrete">New features and enhancements</h3>
 <div class="ulist">
 <ul>
 <li>
