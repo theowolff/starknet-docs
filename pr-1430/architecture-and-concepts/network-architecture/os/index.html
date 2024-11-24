@@ -734,7 +734,7 @@ In fact, contract calls are done non-deterministically, we guess the contract&#8
 <p>Verifying that the new commitment corresponds to applying the updates accumulated in the previous step to the old commitment. This happens in <a href="https://github.com/starkware-libs/cairo-lang/blob/8e11b8cc65ae1d0959328b1b4a40b92df8b58595/src/starkware/starknet/core/os/state/state.cairo#L40">state.cairo</a>.</p>
 </li>
 <li>
-<p>Encoding the state diff and adding it to the output segment for data availability purposes. For more details, see the <a href="https://github.com/starkware-libs/cairo-lang/blob/8e11b8cc65ae1d0959328b1b4a40b92df8b58595/src/starkware/starknet/core/os/output.cairo#L71">serialize_os_output</a> function.</p>
+<p>Encoding the state diff and adding it to the output segment for <a href="../data-availability/" class="xref page">data availability</a> purposes. For more details, see the <a href="https://github.com/starkware-libs/cairo-lang/blob/8e11b8cc65ae1d0959328b1b4a40b92df8b58595/src/starkware/starknet/core/os/output.cairo#L71">serialize_os_output</a> function.</p>
 </li>
 </ul>
 </div>
@@ -754,10 +754,20 @@ As seen in the link, <code>StarknetOSInput</code> includes the block context, e.
 <div class="sect2">
 <h3 id="the_os_output"><a class="anchor" href="#the_os_output"></a>The OS output</h3>
 <div class="paragraph">
-<p>The <a href="https://github.com/starkware-libs/cairo-lang/blob/8e11b8cc65ae1d0959328b1b4a40b92df8b58595/src/starkware/starknet/core/os/output.cairo#L20">Starknet OS output</a> includes:
-* Boundary information such as previous and new block hash and numbers
-* Encoded state diffs for <a href="../data-availability/" class="xref page">data availability</a> purposes
-* Messages that were sent to and from L1 (for more details, see the <a href="../messaging-mechanism/" class="xref page">messaging mechanism</a> page)</p>
+<p>The <a href="https://github.com/starkware-libs/cairo-lang/blob/8e11b8cc65ae1d0959328b1b4a40b92df8b58595/src/starkware/starknet/core/os/output.cairo#L20">Starknet OS output</a> includes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Boundary information such as previous and new block hash and numbers</p>
+</li>
+<li>
+<p>Encoded state diffs for <a href="../data-availability/" class="xref page">data availability</a> purposes</p>
+</li>
+<li>
+<p>Messages that were sent to and from L1 (for more details, see the <a href="../messaging-mechanism/" class="xref page">messaging mechanism</a> page)</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
