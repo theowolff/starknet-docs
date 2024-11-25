@@ -837,9 +837,6 @@
 <div class="sect1">
 <h2 id="contract-addresses"><a class="anchor" href="#contract-addresses"></a>Contract addresses</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>The following are the relevant contract addresses for interacting with the staking protocol:</p>
-</div>
 <div class="sect2">
 <h3 id="l1_addresses"><a class="anchor" href="#l1_addresses"></a>L1 addresses</h3>
 <div class="sect3">
@@ -986,89 +983,37 @@ Sepolia
 <div class="sect1">
 <h2 id="economic_parameters"><a class="anchor" href="#economic_parameters"></a>Economic parameters</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>The following are the economic parameters used on Starknet Sepolia:</p>
-</div>
-<div class="sect3">
-<h4 id="minimum_stake_for_validators"><a class="anchor" href="#minimum_stake_for_validators"></a>Minimum stake for Validators</h4>
-<div class="hdlist">
-<table>
+<table class="tableblock frame-all grid-all fit-content">
 <colgroup>
-<col style="width: 15%;">
+<col>
+<col>
 <col>
 </colgroup>
+<thead>
 <tr>
-<td class="hdlist1">
-Mainnet
-</td>
-<td class="hdlist2">
-<p>20K STRK</p>
-</td>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Mainnet</th>
+<th class="tableblock halign-left valign-top">Sepolia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum stake for validators</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">20K STRK</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 STRK</p></td>
 </tr>
 <tr>
-<td class="hdlist1">
-Sepolia
-</td>
-<td class="hdlist2">
-<p>1 STRK</p>
-</td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Withdrawal security lockup</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">21 days</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5 minutes</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minting curve yearly inflation cap (\(C\))</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.6</p></td>
+</tr>
+</tbody>
 </table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="withdrawal_security_lockup"><a class="anchor" href="#withdrawal_security_lockup"></a>Withdrawal Security Lockup</h4>
-<div class="hdlist">
-<table>
-<colgroup>
-<col style="width: 15%;">
-<col>
-</colgroup>
-<tr>
-<td class="hdlist1">
-Mainnet
-</td>
-<td class="hdlist2">
-<p>21 days</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-Sepolia
-</td>
-<td class="hdlist2">
-<p>5 minutes</p>
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="minting_curve_yearly_inflation_cap_c"><a class="anchor" href="#minting_curve_yearly_inflation_cap_c"></a>Minting Curve Yearly Inflation Cap (\(C\))</h4>
-<div class="hdlist">
-<table>
-<colgroup>
-<col style="width: 15%;">
-<col>
-</colgroup>
-<tr>
-<td class="hdlist1">
-Mainnet
-</td>
-<td class="hdlist2">
-<p>1.6</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-Sepolia
-</td>
-<td class="hdlist2">
-<p>1.6</p>
-</td>
-</tr>
-</table>
-</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -1077,12 +1022,11 @@ Sepolia
 </td>
 <td class="content">
 <div class="paragraph">
-<p>For developers who wish to do a deep dive, the index update interval parameter is also set to a minimum of 1 minute instead of the minimum of 30 minutes that will be used in production.</p>
+<p>For developers who wish to dive deep, the index update interval parameter is set to a minimum of 1 minute in Starkent Sepolia and 30 minutes in Starknet mainnet.</p>
 </div>
 </td>
 </tr>
 </table>
-</div>
 </div>
 </div>
 </div>
