@@ -710,14 +710,14 @@
 </ul>
 </div>
 <div class="olist arabic">
-<div class="title">Procedure</div>
+<div class="title">Procedure (using a block explorer)</div>
 <ol class="arabic">
 <li>
 <p>Approve the STRK ERC20 contract for the transfer of tokens from your address to the staking contract:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Using a Starknet block explorer or CLI tool, navigate to the STRK contract by searching for <a href="../../tools/important-addresses/#fee_tokens" class="xref page">its address</a>.</p>
+<p>Using a block explorer, navigate to the STRK contract by searching for <a href="../../tools/important-addresses/#fee_tokens" class="xref page">its address</a>.</p>
 </li>
 <li>
 <p>In the contract interface, locate and select the <code>approve</code> function.</p>
@@ -742,7 +742,7 @@
 </div>
 </li>
 <li>
-<p>Using a Starknet block explorer or CLI tool, navigate to the staking contract by searching for <a href="../overview/#staking_contract" class="xref page">its address</a>.</p>
+<p>Using a block explorer, navigate to the staking contract by searching for <a href="../overview/#staking_contract" class="xref page">its address</a>.</p>
 </li>
 <li>
 <p>In the contract interface, locate and select the <code>stake</code> function.</p>
@@ -771,6 +771,92 @@
 </li>
 <li>
 <p>Submit the transaction to execute the staking operation.</p>
+</li>
+<li>
+<p>Register your validator on <a href="https://forms.gle/BUMEZx9dpd3DcdaT8">Karnot&#8217;s</a>, <a href="https://stakingrewards.typeform.com/to/aZdO6pW7">Staking Rewards'</a>, and <a href="https://forms.gle/WJqrRbUwxSyG7M9x7">Voyager&#8217;s</a> dashboards.</p>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure (using a CLI tool)</div>
+<ol class="arabic">
+<li>
+<p>Using either a CLI tool, invoke the <a href="../../tools/important-addresses/#fee_tokens" class="xref page">STRK contract</a>'s <code>approve</code> function with the following parameters:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In <strong><code>spender</code></strong>, enter the <a href="../overview/#staking_contract" class="xref page">staking contract&#8217;s address</a>.</p>
+</li>
+<li>
+<p>In <strong><code>amount</code></strong>, enter the number of STRK tokens you want to stake (note the <a href="../overview/#economic_parameters" class="xref page">minimum stake for validators</a> and that STRK has 18 decimals).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Using a CLI tool, invoke the <a href="../overview/#staking_contract" class="xref page">staking contract</a>'s <code>stake</code> function with the following parameters:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In <strong><code>reward_address</code></strong>, enter the address where the rewards will be sent.</p>
+</li>
+<li>
+<p>In <strong><code>operational_address</code></strong>, enter the operational address associated with this stake.</p>
+</li>
+<li>
+<p>In <strong><code>amount</code></strong>, enter the number of STRK tokens you want to stake (note the <a href="../overview/#economic_parameters" class="xref page">minimum stake for validators</a> and that STRK has 18 decimals).</p>
+</li>
+<li>
+<p>In <strong><code>pool_enabled</code></strong>, enter <code>1</code> (true) if you wish to enable delegation pooling, otherwise enter <code>0</code> (false).</p>
+</li>
+<li>
+<p>In <strong><code>commission</code></strong>, enter the commission rate for any delegated staking. The rate should be entered as a percentage with precision, where 10000 represents 100%. For example, to set a 5% commission, you would enter 500.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Register your validator on <a href="https://forms.gle/BUMEZx9dpd3DcdaT8">Karnot&#8217;s</a>, <a href="https://stakingrewards.typeform.com/to/aZdO6pW7">Staking Rewards'</a>, and <a href="https://forms.gle/WJqrRbUwxSyG7M9x7">Voyager&#8217;s</a> dashboards.</p>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure (generic)</div>
+<ol class="arabic">
+<li>
+<p>Invoke the <a href="../../tools/important-addresses/#fee_tokens" class="xref page">STRK contract</a>'s <code>approve</code> function (using either a CLI tool or a block explorer) with the following parameters:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In <strong><code>spender</code></strong>, enter the <a href="../overview/#staking_contract" class="xref page">staking contract&#8217;s address</a>.</p>
+</li>
+<li>
+<p>In <strong><code>amount</code></strong>, enter the number of STRK tokens you want to stake (note the <a href="../overview/#economic_parameters" class="xref page">minimum stake for validators</a> and that STRK has 18 decimals).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Invoke the <a href="../overview/#staking_contract" class="xref page">staking contract</a>'s <code>stake</code> function (using either a CLI tool or a block explorer) with the following parameters:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In <strong><code>reward_address</code></strong>, enter the address where the rewards will be sent.</p>
+</li>
+<li>
+<p>In <strong><code>operational_address</code></strong>, enter the operational address associated with this stake.</p>
+</li>
+<li>
+<p>In <strong><code>amount</code></strong>, enter the number of STRK tokens you want to stake (note the <a href="../overview/#economic_parameters" class="xref page">minimum stake for validators</a> and that STRK has 18 decimals).</p>
+</li>
+<li>
+<p>In <strong><code>pool_enabled</code></strong>, enter <code>1</code> (true) if you wish to enable delegation pooling, otherwise enter <code>0</code> (false).</p>
+</li>
+<li>
+<p>In <strong><code>commission</code></strong>, enter the commission rate for any delegated staking. The rate should be entered as a percentage with precision, where 10000 represents 100%. For example, to set a 5% commission, you would enter 500.</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>Register your validator on <a href="https://forms.gle/BUMEZx9dpd3DcdaT8">Karnot&#8217;s</a>, <a href="https://stakingrewards.typeform.com/to/aZdO6pW7">Staking Rewards'</a>, and <a href="https://forms.gle/WJqrRbUwxSyG7M9x7">Voyager&#8217;s</a> dashboards.</p>
