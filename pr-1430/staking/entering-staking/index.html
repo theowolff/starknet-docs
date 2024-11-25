@@ -114,7 +114,7 @@
   <div id="mobile-autocomplete" class="mobile-only"></div>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li>Staking</li>
+    <li>Staking guide</li>
     <li>Procedures</li>
     <li><a href="./">Becoming a Validator</a></li>
   </ul>
@@ -507,7 +507,7 @@
   </li>
   <li class="nav-item parent" data-depth="1">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">StarkGate bridge guide</span>
+    <span class="nav-text">StarkGate guide</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a 
@@ -569,7 +569,7 @@
   </li>
   <li class="nav-item parent" data-depth="1">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Staking</span>
+    <span class="nav-text">Staking guide</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a 
@@ -684,7 +684,7 @@
 <p>Subsequently, the validator’s tokens will be locked in the staking contract, and the validator will begin earning rewards based on their stake.</p>
 </div>
 <div class="paragraph">
-<p>For more information on what happens during the staking process, see <a href="../architecture/#staking-contract" class="xref page">Staking Contract Architecture</a>.</p>
+<p>For more information on what happens during the staking process, see <a href="../architecture/#staking-contract" class="xref page">Staking Architecture</a>.</p>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
@@ -694,13 +694,13 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/NethermindEth/juno">Juno</a> by Nethermind - <a href="https://juno.nethermind.io/hardware-requirements/#recommended-requirements">Spec</a>.</p>
+<p><a href="https://github.com/NethermindEth/juno">Juno</a> by Nethermind: <a href="https://juno.nethermind.io/hardware-requirements">juno.nethermind.io/hardware-requirements</a></p>
 </li>
 <li>
-<p><a href="https://github.com/eqlabs/pathfinder">Pathfinder</a> by EQLabs - <a href="https://github.com/eqlabs/pathfinder?tab=readme-ov-file#hardware-requirements">Spec</a>.</p>
+<p><a href="https://github.com/eqlabs/pathfinder">Pathfinder</a> by Equilibrium: <a href="https://github.com/eqlabs/pathfinder?tab=readme-ov-file#hardware-requirements">github.com/eqlabs/pathfinder?tab=readme-ov-file#hardware-requirements</a></p>
 </li>
 <li>
-<p><a href="https://github.com/madara-alliance/madara">Madara</a> by Madara Alliance - <a href="https://docs.madara.build/Installation/requirements">Spec</a>.</p>
+<p><a href="https://github.com/madara-alliance/madara">Madara</a> by Madara Alliance: <a href="https://docs.madara.build/Installation/requirements">docs.madara.build/Installation/requirements</a></p>
 </li>
 </ul>
 </div>
@@ -710,6 +710,20 @@
 </li>
 <li>
 <p>Sufficient STRK token balance in your wallet.</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>For validators who wish to use a secure hardware wallet, the <a href="https://www.ledger.com/">Ledger hardware wallet</a> is supported by both <a href="https://www.argent.xyz/blog/ledger-argent-integration/">Argent</a> and <a href="https://braavos.app/wallet-features/ledger-on-braavos/">Braavos</a> wallets.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </li>
 </ul>
 </div>
@@ -721,7 +735,7 @@
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Using a Starknet block explorer, navigate to the STRK ERC20 contract (On Sepolia: <a href="https://sepolia.starkscan.co/token/0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d">Starkscan</a>, <a href="https://sepolia.voyager.online/contract/0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d">Voyager</a>).</p>
+<p>Using a Starknet block explorer such as <a href="https://starkscan.co">Starkscan</a> or <a href="https://voyager.online">Voyager</a>, navigate to the STRK contract by searching for <a href="../../tools/important-addresses/#fee_tokens" class="xref page">its address</a>.</p>
 </li>
 <li>
 <p>In the contract interface, locate and select the <code>approve</code> function.</p>
@@ -731,10 +745,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p>In <strong><code>spender</code></strong>, enter the Staking contract address (The contract addresses can be found <a href="../overview/#contract-addresses" class="xref page">here</a>).</p>
+<p>In <strong><code>spender</code></strong>, enter the <a href="../overview/#staking_contract" class="xref page">staking contract&#8217;s address</a>.</p>
 </li>
 <li>
-<p>In <strong><code>amount</code></strong>, enter the number of STRK tokens you want to stake. Note: STRK has 18 decimals.</p>
+<p>In <strong><code>amount</code></strong>, enter the number of STRK tokens you want to stake (note that STRK has 18 decimals).</p>
 </li>
 </ul>
 </div>
@@ -746,7 +760,7 @@
 </div>
 </li>
 <li>
-<p>Using a Starknet block explorer, navigate to the Staking contract (The contract addresses can be found <a href="../overview/#contract-addresses" class="xref page">here</a>).</p>
+<p>Using a Starknet block explorer such as <a href="https://starkscan.co">Starkscan</a> or <a href="https://voyager.online">Voyager</a>, navigate to the staking contract by searching for <a href="../overview/#staking_contract" class="xref page">its address</a>.</p>
 </li>
 <li>
 <p>In the contract interface, locate and select the <code>stake</code> function.</p>
@@ -762,7 +776,7 @@
 <p>In <strong><code>operational_address</code></strong>, enter the operational address associated with this stake.</p>
 </li>
 <li>
-<p>In <strong><code>amount</code></strong>, enter the number of STRK tokens you want to stake. Note: STRK has 18 decimals.</p>
+<p>In <strong><code>amount</code></strong>, enter the number of STRK tokens you want to stake (note that STRK has 18 decimals).</p>
 </li>
 <li>
 <p>In <strong><code>pooling_enabled</code></strong>, enter <code>true</code> if you wish to enable delegation pooling, otherwise enter <code>false</code>.</p>
@@ -780,20 +794,6 @@
 <p>Register your validator on <a href="https://forms.gle/BUMEZx9dpd3DcdaT8">Karnot&#8217;s</a>, <a href="https://stakingrewards.typeform.com/to/aZdO6pW7">Staking Rewards'</a>, and <a href="https://forms.gle/WJqrRbUwxSyG7M9x7">Voyager&#8217;s</a> dashboards.</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<div class="title">Secured hardware wallets:</div>
-<p>Ledger hardware wallet is supported through:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://braavos.app/wallet-features/ledger-on-braavos/">Braavos wallet</a></p>
-</li>
-<li>
-<p><a href="https://www.argent.xyz/blog/ledger-argent-integration/">Argent wallet</a></p>
-</li>
-</ul>
 </div>
 <nav class="pagination">
   <span class="prev"><a href="../architecture/">Staking Architecture</a></span>
