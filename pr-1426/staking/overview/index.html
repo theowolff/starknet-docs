@@ -114,7 +114,7 @@
   <div id="mobile-autocomplete" class="mobile-only"></div>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li>Staking</li>
+    <li>Staking guide</li>
     <li><a href="./">Overview</a></li>
   </ul>
 </nav>
@@ -124,19 +124,6 @@
   <div class="edit-this-page">
     <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/staking/pages/overview.adoc" target="_blank"><img class="pencil">Edit content</a>
   </div>
-</div>
-<div class="background">
-<div class="top-announcement-bar d-flex">
-  <p class="announcement-bar-title body-large-strong">📣 The 1st ever Starknet Docs survey is open! 📣</p>
-  <a class="announcement-bar-cta body-xsmall-strong" href="https://forms.reform.app/starkware/starknet-docs-survey/9odpkk" target="_blank"> Click here to make your voice heard 🗳️</a>
-<!--
-  <button class="top-ann-bar-close">
-    <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      <path d="M1.28033 0.219792C0.987437 -0.0731012 0.512563 -0.0731012 0.21967 0.219792C-0.0732233 0.512685 -0.0732233 0.987559 0.21967 1.28045L3.93934 5.00012L0.21967 8.71979C-0.0732233 9.01268 -0.0732233 9.48756 0.21967 9.78045C0.512563 10.0733 0.987437 10.0733 1.28033 9.78045L5 6.06078L8.71967 9.78045C9.01256 10.0733 9.48744 10.0733 9.78033 9.78045C10.0732 9.48756 10.0732 9.01268 9.78033 8.71979L6.06066 5.00012L9.78033 1.28045C10.0732 0.987559 10.0732 0.512685 9.78033 0.219792C9.48744 -0.0731012 9.01256 -0.0731012 8.71967 0.219792L5 3.93946L1.28033 0.219792Z" fill="currentColor"/>
-    </svg>
-  </button>
--->
-</div>
 </div>
 <div class="body">
 <div class="nav-container" data-component="ROOT" data-version="">
@@ -300,16 +287,6 @@
     <a 
        class="nav-link"
      href="../../architecture-and-concepts/smart-contracts/contract-abi/">Contract ABI</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../architecture-and-concepts/smart-contracts/starknet-events/">Events</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../architecture-and-concepts/smart-contracts/contract-syntax/">Migrating a contract from Cairo v1 to Cairo v2</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
@@ -511,7 +488,7 @@
   </li>
   <li class="nav-item parent" data-depth="1">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">StarkGate bridge guide</span>
+    <span class="nav-text">StarkGate guide</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a 
@@ -573,7 +550,7 @@
   </li>
   <li class="nav-item parent" data-depth="1">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Staking</span>
+    <span class="nav-text">Staking guide</span>
 <ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="2">
     <a 
@@ -695,7 +672,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Staking on <code>starknet.io</code> (coming soon)</p>
+<p>Staking on <a href="https://www.starknet.io/">starknet.io</a> (coming soon)</p>
 </li>
 <li>
 <p><a href="https://github.com/starkware-libs/starknet-staking"><code>starknet-staking</code> GitHub repository</a></p>
@@ -858,73 +835,185 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="contract-addresses"><a class="anchor" href="#contract-addresses"></a>Sepolia addresses and parameters</h2>
+<h2 id="contract-addresses"><a class="anchor" href="#contract-addresses"></a>Contract addresses</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Below are the relevant contract addresses and economic parameters for interacting with the staking protocol on Sepolia testnet:</p>
+<div class="sect2">
+<h3 id="l1_addresses"><a class="anchor" href="#l1_addresses"></a>L1 addresses</h3>
+<div class="sect3">
+<h4 id="reward_supplier_contract"><a class="anchor" href="#reward_supplier_contract"></a>Reward supplier contract</h4>
+<div class="hdlist">
+<table>
+<colgroup>
+<col style="width: 15%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+Mainnet
+</td>
+<td class="hdlist2">
+<p>0xCa1406D57eD09947E68DE121316C87113fBE9ff5</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Sepolia
+</td>
+<td class="hdlist2">
+<p>0xE58d25681B9d290D60e4d7f379a05d5BFD973fFB</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="mint_manager_contract"><a class="anchor" href="#mint_manager_contract"></a>Mint manager contract</h4>
+<div class="hdlist">
+<table>
+<colgroup>
+<col style="width: 15%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+Mainnet
+</td>
+<td class="hdlist2">
+<p>0xCa14076A3cec95448BaD179cc19B351A4204B88B</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Sepolia
+</td>
+<td class="hdlist2">
+<p>0x648D1B35a932F5189e7ff97b2F795E03734DE4ce</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="contract_addresses"><a class="anchor" href="#contract_addresses"></a>Contract addresses</h3>
+<h3 id="l2_addresses"><a class="anchor" href="#l2_addresses"></a>L2 addresses</h3>
 <div class="sect3">
-<h4 id="l1_addresses"><a class="anchor" href="#l1_addresses"></a>L1 addresses</h4>
-<div class="ulist horizontal">
-<ul class="horizontal">
-<li>
-<p>Reward supplier contract:</p>
-<div class="paragraph">
-<p><a href="https://sepolia.etherscan.io/address/0xE58d25681B9d290D60e4d7f379a05d5BFD973fFB"><code>0xE58d25681B9d290D60e4d7f379a05d5BFD973fFB</code></a></p>
-</div>
-</li>
-<li>
-<p>Mint manager contract:</p>
-<div class="paragraph">
-<p><a href="https://sepolia.etherscan.io/address/0x648D1B35a932F5189e7ff97b2F795E03734DE4ce"><code>0x648D1B35a932F5189e7ff97b2F795E03734DE4ce</code></a></p>
-</div>
-</li>
-</ul>
+<h4 id="reward_supplier_contract_2"><a class="anchor" href="#reward_supplier_contract_2"></a>Reward supplier contract</h4>
+<div class="hdlist">
+<table>
+<colgroup>
+<col style="width: 15%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+Mainnet
+</td>
+<td class="hdlist2">
+<p>0x009035556d1ee136e7722ae4e78f92828553a45eed3bc9b2aba90788ec2ca112</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Sepolia
+</td>
+<td class="hdlist2">
+<p>0x02ebbebb8ceb2e07f30a5088f5849afd4f908f04f3f9c97c694e5d83d2a7cc61</p>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
-<h4 id="l2_addresses"><a class="anchor" href="#l2_addresses"></a>L2 addresses</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Reward supplier contract:</p>
-<div class="paragraph">
-<p><a href="https://sepolia.voyager.online/contract/0x02ebbebb8ceb2e07f30a5088f5849afd4f908f04f3f9c97c694e5d83d2a7cc61"><code>0x02ebbebb8ceb2e07f30a5088f5849afd4f908f04f3f9c97c694e5d83d2a7cc61</code></a></p>
+<h4 id="minting_curve_contract"><a class="anchor" href="#minting_curve_contract"></a>Minting curve contract</h4>
+<div class="hdlist">
+<table>
+<colgroup>
+<col style="width: 15%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+Mainnet
+</td>
+<td class="hdlist2">
+<p>0x00ca1705e74233131dbcdee7f1b8d2926bf262168c7df339004b3f46015b6984</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Sepolia
+</td>
+<td class="hdlist2">
+<p>0x0351c67dc2d4653cbe457be59a035f80ff1e6f6939118dad1b7a94317a51a454</p>
+</td>
+</tr>
+</table>
 </div>
-</li>
-<li>
-<p>Minting curve contract:</p>
-<div class="paragraph">
-<p><a href="https://sepolia.voyager.online/contract/0x0351c67dc2d4653cbe457be59a035f80ff1e6f6939118dad1b7a94317a51a454"><code>0x0351c67dc2d4653cbe457be59a035f80ff1e6f6939118dad1b7a94317a51a454</code></a></p>
 </div>
-</li>
-<li>
-<p>Staking contract:</p>
-<div class="paragraph">
-<p><a href="https://sepolia.voyager.online/contract/0x03745ab04a431fc02871a139be6b93d9260b0ff3e779ad9c8b377183b23109f1"><code>0x03745ab04a431fc02871a139be6b93d9260b0ff3e779ad9c8b377183b23109f1</code></a></p>
+<div class="sect3">
+<h4 id="staking_contract"><a class="anchor" href="#staking_contract"></a>Staking contract</h4>
+<div class="hdlist">
+<table>
+<colgroup>
+<col style="width: 15%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+Mainnet
+</td>
+<td class="hdlist2">
+<p>0x00ca1702e64c81d9a07b86bd2c540188d92a2c73cf5cc0e508d949015e7e84a7</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Sepolia
+</td>
+<td class="hdlist2">
+<p>0x03745ab04a431fc02871a139be6b93d9260b0ff3e779ad9c8b377183b23109f1</p>
+</td>
+</tr>
+</table>
 </div>
-</li>
-</ul>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="economic_parameters"><a class="anchor" href="#economic_parameters"></a>Economic parameters</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Minimum STRK for Staking: 1 STRK</p>
-</li>
-<li>
-<p>Withdrawal Security Lockup: 5 minutes</p>
-</li>
-<li>
-<p>Minting Curve Yearly Inflation Cap (\(C\)): 1.6</p>
-</li>
-</ul>
 </div>
+<div class="sect1">
+<h2 id="economic_parameters"><a class="anchor" href="#economic_parameters"></a>Economic parameters</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Mainnet</th>
+<th class="tableblock halign-left valign-top">Sepolia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum stake for validators</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">20K STRK</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 STRK</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Withdrawal security lockup</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">21 days</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5 minutes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minting curve yearly inflation cap (\(C\))</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.6</p></td>
+</tr>
+</tbody>
+</table>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -933,12 +1022,11 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>For developers who want to deep dive, the index update interval parameter is also set to a minimum of 1 minute instead of a minimum of 24-hours which will be used in production.</p>
+<p>For developers who wish to dive deep, the index update interval parameter is set to a minimum of 1 minute in Starkent Sepolia and 30 minutes in Starknet mainnet.</p>
 </div>
 </td>
 </tr>
 </table>
-</div>
 </div>
 </div>
 </div>
