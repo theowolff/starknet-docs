@@ -719,10 +719,33 @@
 <li>
 <p>Navigate to the STRK contract by searching for <a href="../../tools/important-addresses/#fee_tokens" class="xref page">its address</a></p>
 </li>
+</ol>
+</div>
+</li>
+<li>
+<p>If you are using a block explorer:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Navigate to the STRK contract by searching for <a href="../../tools/important-addresses/#fee_tokens" class="xref page">its address</a></p>
+</li>
 <li>
 <p>In the contract interface, locate and select the <code>approve</code> function.</p>
 </li>
 </ol>
+</div>
+</li>
+<li>
+<p>Pre-approve the STRK ERC20 contract for the transfer of tokens from your address to the staking contract by invoking its <code>approve</code> function with the following parameters:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In the first parameter (<code>spender</code>), enter the <a href="../overview/#staking_contract" class="xref page">staking contract&#8217;s address</a>.</p>
+</li>
+<li>
+<p>In the second parameter (<code>amount</code>), enter the number of STRK tokens you want to stake (note the <a href="../overview/#economic_parameters" class="xref page">minimum stake for validators</a> and that STRK has 18 decimals).</p>
+</li>
+</ul>
 </div>
 </li>
 <li>
@@ -748,7 +771,7 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>If you are using a CLI tool, the following example, which approves the STRK contract to transfer 1 STRK to the staking contract on Sepolia, can be used as reference:</p>
+<p>If you using Starkli as CLI tool, the following example, which approves the STRK contract to transfer 1 STRK to the staking contract on Sepolia, can be used as reference:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -784,7 +807,7 @@
 <p>In the first parameter (<code>reward_address</code>), enter the address where the rewards will be sent.</p>
 </li>
 <li>
-<p>In the second parameter (<code>operational_address</code>), enter the operational address associated with this stake.</p>
+<p>In the second parameter (<code>operational_address</code>), enter the address that <a href="../overview/#first_stage" class="xref page">in the future</a> will be used for block attestations and sequencing.</p>
 </li>
 <li>
 <p>In the third parameter (<code>amount</code>), enter the number of STRK tokens you want to stake (note the <a href="../overview/#economic_parameters" class="xref page">minimum stake for validators</a> and that STRK has 18 decimals).</p>
@@ -808,7 +831,7 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>If you are using a CLI, the following example, which stakes 1 STRK with delegation pooling enabled and 1% commission on Sepolia, can be used as reference:</p>
+<p>If you are using Starkli as CLI tool, the following example, which stakes 1 STRK with delegation pooling enabled and 1% commission on Sepolia, can be used as reference:</p>
 </div>
 <div class="listingblock">
 <div class="content">
