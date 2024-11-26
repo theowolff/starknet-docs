@@ -697,11 +697,11 @@
 </li>
 <li>
 <p>Sufficient STRK token balance in your wallet.</p>
-<div class="admonitionblock tip">
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 <div class="paragraph">
@@ -715,68 +715,119 @@
 </ul>
 </div>
 <div class="olist arabic">
-<div class="title">Procedure (using a block explorer)</div>
+<div class="title">Procedure</div>
 <ol class="arabic">
 <li>
-<p>Approve the STRK ERC20 contract for the transfer of tokens from your address to the staking contract:</p>
+<p>If you are using a block explorer:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Using a Starknet block explorer, navigate to the STRK contract by searching for <a href="../../tools/important-addresses/#fee_tokens" class="xref page">its address</a>.</p>
+<p>Navigate to the STRK contract by searching for <a href="../../tools/important-addresses/#fee_tokens" class="xref page">its address</a></p>
 </li>
 <li>
 <p>In the contract interface, locate and select the <code>approve</code> function.</p>
-</li>
-<li>
-<p>Enter the following parameters:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>In <strong><code>spender</code></strong>, enter the <a href="../overview/#staking_contract" class="xref page">staking contract&#8217;s address</a>.</p>
-</li>
-<li>
-<p>In <strong><code>amount</code></strong>, enter the number of STRK tokens you want to stake (note the <a href="../overview/#economic_parameters" class="xref page">minimum stake for validators</a> and that STRK has 18 decimals).</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Submit the transaction to execute the approval.</p>
 </li>
 </ol>
 </div>
 </li>
 <li>
-<p>Using a Starknet block explorer, navigate to the staking contract by searching for <a href="../overview/#staking_contract" class="xref page">its address</a>.</p>
-</li>
-<li>
-<p>In the contract interface, locate and select the <code>stake</code> function.</p>
-</li>
-<li>
-<p>Enter the following parameters:</p>
+<p>Pre-approve the STRK ERC20 contract for the transfer of tokens from your address to the staking contract by invoking its <code>approve</code> function with the following parameters:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>In <strong><code>reward_address</code></strong>, enter the address where the rewards will be sent.</p>
+<p>In the first parameter (<code>spender</code>), enter the <a href="../overview/#staking_contract" class="xref page">staking contract&#8217;s address</a>.</p>
 </li>
 <li>
-<p>In <strong><code>operational_address</code></strong>, enter the address that <a href="../overview/#first_stage" class="xref page">in the future</a> will be used for block attestations and sequencing.</p>
-</li>
-<li>
-<p>In <strong><code>amount</code></strong>, enter the number of STRK tokens you want to stake (note the <a href="../overview/#economic_parameters" class="xref page">minimum stake for validators</a> and that STRK has 18 decimals).</p>
-</li>
-<li>
-<p>In <strong><code>pool_enabled</code></strong>, enter <code>1</code> (true) if you wish to enable delegation pooling, otherwise enter <code>0</code> (false).</p>
-</li>
-<li>
-<p>In <strong><code>commission</code></strong>, enter the commission rate for any delegated staking. The rate should be entered as a percentage with precision, where 10000 represents 100%. For example, to set a 5% commission, you would enter 500.</p>
+<p>In the second parameter (<code>amount</code>), enter the number of STRK tokens you want to stake (note the <a href="../overview/#economic_parameters" class="xref page">minimum stake for validators</a> and that STRK has 18 decimals).</p>
 </li>
 </ul>
 </div>
 </li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you using Starkli as CLI tool, the following example, which approves the STRK contract to transfer 1 STRK to the staking contract on Sepolia, can be used as reference:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">starkli invoke 0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d approve \
+0x03745ab04a431fc02871a139be6b93d9260b0ff3e779ad9c8b377183b23109f1 u256:1000000000000000000 \
+--network=sepolia</code></pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="3">
 <li>
-<p>Submit the transaction to execute the staking operation.</p>
+<p>If you are using a block explorer:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Navigate to the staking contract by searching for <a href="../overview/#staking_contract" class="xref page">its address</a>.</p>
 </li>
+<li>
+<p>In the contract interface, locate and select the <code>stake</code> function.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Invoke the staking contract&#8217;s <code>stake</code> function with the following parameters:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In the first parameter (<code>reward_address</code>), enter the address where the rewards will be sent.</p>
+</li>
+<li>
+<p>In the second parameter (<code>operational_address</code>), enter the address that <a href="../overview/#first_stage" class="xref page">in the future</a> will be used for block attestations and sequencing.</p>
+</li>
+<li>
+<p>In the third parameter (<code>amount</code>), enter the number of STRK tokens you want to stake (note the <a href="../overview/#economic_parameters" class="xref page">minimum stake for validators</a> and that STRK has 18 decimals).</p>
+</li>
+<li>
+<p>In the fourth parameter (<code>pool_enabled</code>), enter <code>1</code> (true) if you wish to enable delegation pooling, otherwise enter <code>0</code> (false).</p>
+</li>
+<li>
+<p>In the fifth parameter (<code>commission</code>), enter the commission rate for any delegated staking. The rate should be entered as a percentage with precision, where 10000 represents 100%. For example, to set a 5% commission, you would enter 500.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you are using Starkli as CLI tool, the following example, which stakes 1 STRK with delegation pooling enabled and 1% commission on Sepolia, can be used as reference:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">starkli invoke 0x03745ab04a431fc02871a139be6b93d9260b0ff3e779ad9c8b377183b23109f1 stake \
+&lt;reward_address&gt; &lt;operational_address&gt; 1000000000000000000 1 100 \
+--network=sepolia</code></pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="5">
 <li>
 <p>Register your validator on <a href="https://forms.gle/BUMEZx9dpd3DcdaT8">Karnot&#8217;s</a>, <a href="https://stakingrewards.typeform.com/to/aZdO6pW7">Staking Rewards'</a>, and <a href="https://forms.gle/WJqrRbUwxSyG7M9x7">Voyager&#8217;s</a> dashboards.</p>
 </li>
