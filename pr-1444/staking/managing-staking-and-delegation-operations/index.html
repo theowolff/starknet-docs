@@ -366,6 +366,11 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
+     href="../../architecture-and-concepts/network-architecture/os/">Operating system</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
      href="../../architecture-and-concepts/network-architecture/starknet-state/">State</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -739,7 +744,67 @@
 <h2 id="address_management"><a class="anchor" href="#address_management"></a>Address Management</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Both validators and delegators can update their associated addresses within their staking and delegation contracts. This section outlines how to change the reward address.</p>
+<p>Both validators and delegators can update their associated addresses within their staking and delegation contracts. This section outlines how to change the reward and operational addresses.</p>
+</div>
+<div class="sect2">
+<h3 id="changing_the_operational_address_validators"><a class="anchor" href="#changing_the_operational_address_validators"></a>Changing the Operational address (Validators)</h3>
+<div class="paragraph">
+<p>Validators can update their operational address using the <code>change_operational_address</code> function.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Using a Starknet block explorer, navigate to the Staking contract.</p>
+</li>
+<li>
+<p>Declare the new operational address:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>In the contract interface, locate and select the <code>declare_operational_address</code> function.</p>
+</li>
+<li>
+<p>Enter the following parameter:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>staker_address</code>: Enter the your Staker address.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Submit the transaction <strong>using your new operational address</strong>.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Update the existing operational address:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>In the contract interface, locate and select the <code>change_operational_address</code>.</p>
+</li>
+<li>
+<p>Enter the following parameter:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>operational_address</code>: Enter the new operational address.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Submit the transaction (using your regular staker address).</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
 </div>
 <div class="sect2">
 <h3 id="changing_the_reward_address_validators_and_delegators"><a class="anchor" href="#changing_the_reward_address_validators_and_delegators"></a>Changing the Reward Address (Validators and Delegators)</h3>
@@ -777,52 +842,6 @@
 </li>
 <li>
 <p>Submit the transaction to update the reward address.</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="changing_the_operational_address_validators"><a class="anchor" href="#changing_the_operational_address_validators"></a>Changing the Operational address (Validators)</h3>
-<div class="paragraph">
-<p>Validators and delegators can update their Operational address using the <code>change_operational_address</code> function.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Using a Starknet block explorer, navigate to the Staking contract.</p>
-</li>
-<li>
-<p>In the contract interface, locate and select the <code>declare_operational_address</code> function.</p>
-</li>
-<li>
-<p>Enter the following parameter:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong><code>staker_address</code></strong>: Enter the your Staker address.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>You should send this transaction using you new operational address. Submit the transaction to declare the Operational address.</p>
-</li>
-<li>
-<p>Then, locate and select the <code>change_operational_address</code> function in the contract interface.</p>
-</li>
-<li>
-<p>Enter the following parameter:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong><code>operational_address</code></strong>: Enter the new Operational address.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Submit the transaction using your Staker address to update the Operational address.</p>
 </li>
 </ol>
 </div>
