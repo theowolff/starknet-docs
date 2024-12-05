@@ -1,9 +1,10 @@
 [id="StarkGate_architecture"]
 = StarkGate architecture
 
-While StarkGate is referred to as _a bridge_, technically, each supported token has its own bridge, each of which is defined in a corresponding pair of L1 and L2 contracts, as described in xref:#bridge_explanation_table[].
+While StarkGate is referred to as a bridge, technically, each supported token has its own bridge, each of which is defined in a corresponding pair of L1 and L2 contracts, described as follows:
 
-.Components of a bridge for an individual token
+image::sg-architecture.png[]
+
 [#bridge_explanation_table]
 [cols='1,8']
 |===
