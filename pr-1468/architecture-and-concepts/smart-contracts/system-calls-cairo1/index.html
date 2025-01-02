@@ -1373,6 +1373,76 @@ storage_read_syscall(0, storage_address).unwrap_syscall()</code></pre>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="keccak"><a class="anchor" href="#keccak"></a><code>keccak</code></h2>
+<div class="sectionbody">
+<h3 id="function_signature_11" class="discrete">Function signature</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">extern fn keccak_syscall(
+    data: Span&lt;felt252&gt;
+) -&gt; SyscallResult&lt;u256&gt; implicits(GasBuiltin, System) nopanic;</code></pre>
+</div>
+</div>
+<h3 id="description_11" class="discrete">Description</h3>
+<div class="paragraph">
+<p>Computes the <a href="https://docs.starknet.io/architecture-and-concepts/cryptography/hash-functions/#starknet_keccak">Keccak-256 hash</a> of the input data.</p>
+</div>
+<div class="paragraph">
+<p>This system call is particularly useful when interacting with Ethereum contracts or implementing Ethereum-compatible functionality, as Keccak-256 is widely used in the Ethereum ecosystem.</p>
+</div>
+<div class="paragraph">
+<p>Note that instead of using this syscall directly, it is recommended to use the functions provided in <a href="https://github.com/starkware-libs/cairo/blob/67c6eff9c276d11bd1cc903d7a3981d8d0eb2fa2/corelib/src/keccak.cairo"><code>keccak.cairo</code></a> which provide a more convenient interface and handle the syscall under the hood.</p>
+</div>
+<h3 id="arguments_11" class="discrete">Arguments</h3>
+<div class="hdlist">
+<table>
+<colgroup>
+<col style="width: 35%;">
+<col>
+</colgroup>
+<tr>
+<td class="hdlist1">
+<code><em>data</em>: Span&lt;felt252&gt;</code>
+</td>
+<td class="hdlist2">
+<p>The input data to be hashed, represented as an array of field elements.</p>
+</td>
+</tr>
+</table>
+</div>
+<h3 id="return_values_11" class="discrete">Return values</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The Keccak-256 hash of the input data as a <code>u256</code> value.</p>
+</li>
+</ul>
+</div>
+<h3 id="common_library_10" class="discrete">Common library</h3>
+<div class="paragraph">
+<p><a href="https://github.com/starkware-libs/cairo/blob/67c6eff9c276d11bd1cc903d7a3981d8d0eb2fa2/corelib/src/starknet/syscalls.cairo#L107" target="_blank" rel="noopener"><code>syscalls.cairo</code></a></p>
+</div>
+<h3 id="example_5" class="discrete">Example</h3>
+<div class="paragraph">
+<p>The following example demonstrates how to compute a Keccak-256 hash using the recommended functions from <code>keccak.cairo</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">use array::ArrayTrait;
+use keccak::keccak_u256s_le_inputs;
+
+// Create input data
+let mut data = ArrayTrait::new();
+data.append(1_u256);
+data.append(2_u256);
+
+// Compute Keccak hash using the recommended function
+let hash = keccak_u256s_le_inputs(data.span());</code></pre>
+</div>
+</div>
+</div>
+</div>
 <nav class="pagination">
   <span class="prev"><a href="../serialization-of-cairo-types/">Serialization of Cairo types</a></span>
   <span class="next"><a href="../execution-info/">Execution information for the current block</a></span>
