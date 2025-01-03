@@ -652,47 +652,67 @@
 </aside>
 <article class="doc">
 <h1 class="page">Setting up an account</h1>
-<div id="preamble">
+<div class="sect1">
+<h2 id="introduction"><a class="anchor" href="#introduction"></a>Introduction</h2>
 <div class="sectionbody">
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
 <div class="paragraph">
-<p>This guide shows you how to set up a Starknet account and wallet in the context of a smart contract deployment.</p>
+<p>In the previous tutorial, you installed all the tools necessary to use Starknet, including Starkli. In this tutorial, we will use Starkli to create and deploy a new account on Starknet Sepolia.</p>
 </div>
 <div class="paragraph">
-<p>For information on creating a Starknet wallet as an end user, see <a href="https://www.starknet.io/en/posts/stark-math/getting-started-using-starknet-setting-up-a-starknet-wallet"><em>Getting Started Using Starknet: Setting Up a Starknet Wallet</em></a>.</p>
-</div>
-</td>
-</tr>
-</table>
+<p>To learn more about Starknet accounts, check out the <a href="../../architecture-and-concepts/accounts/introduction/" class="xref page">Accounts section</a>.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Starkli is installed correctly. Ensure that the following command shows the version information for Starkli:</p>
+<div class="paragraph">
+<p>Ensure that the following commands are working properly on your system:</p>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">starkli --version</code></pre>
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli --version</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>If this command fails, see <a href="../environment-setup/" class="xref page">Setting up your environment</a>.</p>
 </div>
-</li>
-<li>
-<p>A Starknet wallet is installed, either Argent X or Braavos. For information on a specific wallet, including installation instructions, see that wallet’s site.</p>
-</li>
-</ul>
+</div>
+</div>
+<div class="sect1">
+<h2 id="creating_a_signer"><a class="anchor" href="#creating_a_signer"></a>Creating a signer</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Creating a Starkli account requires first creating a Starkli signer, which Starkli uses to sign transactions.
+In this tutorial, we will use an encrypted keystores signer.
+Encrypted keystores are JSON files that follow the <a href="https://ethereum.org/en/developers/docs/data-structures-and-encoding/web3-secret-storage/" target="_blank" rel="noopener">Web3 secret storage definition</a>.
+Specifically, a password must be supplied to create a keystore and is required for when using it.
+The main advantage of this approach is that it prevents storing the private key as plain text on your computer.</p>
+</div>
+<div class="paragraph">
+<p>To create a new encrypted keystore signer, run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli signer keystore new keystore.json</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and enter a password that will be used to encrypt your private key. The result should resemble the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">Created new encrypted keystore file: ~/.starkli-accounts/my-first-account/keystore.json
+Public key: 0x03dfdb739fbd3ddab0f851bf1131079e31ca266c7af94f05cef4d9481f837509</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Although not mandory, exporting the keystore path is highly recommended as it prevents specifying <code>--keystore</code> in every command. To export the keystore path, run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">export STARKNET_KEYSTORE=$(pwd)/keystore.json</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -700,181 +720,47 @@
 <h2 id="creating_an_account"><a class="anchor" href="#creating_an_account"></a>Creating an account</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A smart wallet is composed of two parts:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>A Signer: A smart contract that can sign transactions.</p>
-</li>
-<li>
-<p>An Account Descriptor: A json file that contains information about the smart wallet, such as its address and
-public key.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>After creating and funding your smart wallet with ETH you can deploy it to Starknet. For demonstration purposes, this page uses Starknet&#8217;s testnet.</p>
-</div>
-<div class="paragraph">
-<p>For testnet transactions you can fund your wallet using one of the <a href="https://www.starknet.io/en/ecosystem/bridges-and-onramps">Starknet Sepolia faucets</a>.</p>
-</div>
-<div class="sect2">
-<h3 id="creating_a_signer"><a class="anchor" href="#creating_a_signer"></a>Creating a Signer</h3>
-<div class="paragraph">
-<p>A Signer is a smart contract that can sign transactions. It&#8217;s a crucial component of accounts in Starknet. To create a Signer you will need the private key of your smart wallet (the public key can be derived from it).</p>
-</div>
-<div class="paragraph">
-<p>Starkli has the ability to create a keystore file that securely stores the private key of smart wallets each with a password. The accounts in the keystore file can be used to sign transactions using Starkli. The main advantage of this approach
-is that it prevents storing the private key as plain text on your computer. Instead, a password is used to create an encrypted file in a location of choice.</p>
-</div>
-<div class="paragraph">
-<p>Normally, the keystore file is stored in the default location of the Starkli CLI.</p>
-</div>
-<div class="sect3">
-<h4 id="creating_a_keystore_file"><a class="anchor" href="#creating_a_keystore_file"></a>Creating a keystore file</h4>
-<div class="paragraph">
-<p>The following command creates a keystore file for a smart wallet in the default location in <code>~/.starkli-wallets/deployer</code>:</p>
-</div>
-<div class="paragraph">
-<p>Create a new directory:</p>
+<p>Now that you have a Starkli signer, you can create a new account by running:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">mkdir -p ~/.starkli-wallets/deployer</code></pre>
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli account oz init account.json</code></pre>
 </div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><code>oz</code> stand for OpenZeppelin, which, along with Argent and Braavos, are the accounts variants supported by Starkli.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>Create a keystore file within the directory:</p>
+<p>The result should resemble the following:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">starkli signer keystore from-key ~/.starkli-wallets/deployer/keystore.json
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">Created new account config file: ~/.starkli-accounts/my-first-account/account.json
 
-Enter private key:
-Enter password:
-Created new encrypted keystore file: /home/parallels/.starkli-wallets/deployer/keystore.json
-Public key: 0x0550…</code></pre>
+Once deployed, this account will be available at:
+    0x01cf4d57ba01109f018dec3ea079a38fc08b789e03de4df937ddb9e8a0ff853a
+
+Deploy this account by running:
+    starkli account deploy account.json</code></pre>
 </div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>In the private key prompt, paste the private key of your smart wallet.</p>
 </div>
 <div class="paragraph">
-<p>In the password prompt, enter a password of your choice.</p>
-</div>
-<div class="paragraph">
-<p>You will need this password to sign transactions using Starkli.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="export_the_private_key_from_your_wallet"><a class="anchor" href="#export_the_private_key_from_your_wallet"></a>Export the private key from your wallet</h4>
-<div class="paragraph">
-<p>Next export the private key from your Argent X or Braavos wallet:</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="argent_x"><a class="anchor" href="#argent_x"></a>Argent X</h4>
-<div class="paragraph">
-<p>Navigate to: <code>Settings</code> section &#8594; Select your Account &#8594; <code>Export Private Key</code>.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="braavos"><a class="anchor" href="#braavos"></a>Braavos</h4>
-<div class="paragraph">
-<p>Navigate to: <code>Settings</code> section &#8594; <code>Privacy and Security</code> &#8594; <code>Export Private Key</code>.</p>
-</div>
-<div class="paragraph">
-<p>While knowing the private key of a smart wallet is necessary to sign transactions, it&#8217;s not sufficient. We also need to inform Starkli about the signing mechanism employed by our smart wallet created by Argent X or Braavos.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="creating_an_account_descriptor"><a class="anchor" href="#creating_an_account_descriptor"></a>Creating an Account Descriptor</h3>
-<div class="paragraph">
-<p>Starkli offers a command to collect all the required information from a smart wallet by providing its onchain address. Using this data, the CLI generates a json file that can be used to sign transactions:</p>
+<p>Similar to the exporting keystore path, exporting the account path is also highly recommended to prevent specifying <code>--account</code> in every command. To export the account path, run:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">starkli account fetch --help
-Fetch account config from an already deployed account contract</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The <code>fetch</code> command supports both Argent X and Braavos smart wallets. Make sure your wallet address is already deployed and enter the following command to create and save the account descriptor file:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">starkli account fetch &lt;SMART_WALLET_ADDRESS&gt; --output ~/.starkli-wallets/deployer/account.json --rpc &lt;YOUR_RPC_ENDPOINT_HERE&gt;</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>You can obtain access to a JSON-RPC endpoint in one of the following ways:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Host your own node with Pathfinder, Juno, Deoxys, or Papyrus.</p>
-</li>
-<li>
-<p>Use a third-party JSON-RPC API provider. For information on providers, see <a href="../../tools/api-services/" class="xref page">Full nodes and API services</a>.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The following command shows the details of the account descriptor:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">cat ~/.starkli-wallets/deployer/account.json</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The account descriptor should have the following structure:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
-  "version": 1,
-  "variant": {
-        "type": "argent",
-        "version": 1,
-        "implementation": "&lt;ARGENT_CLASS_HASH&gt;",
-        "signer": "&lt;SMART_WALLET_PUBLIC_KEY&gt;",
-        "guardian": "0x0"
-  },
-    "deployment": {
-        "status": "deployed",
-        "class_hash": "&lt;SMART_WALLET_CLASS_HASH&gt;",
-        "address": "&lt;SMART_WALLET_ADDRESS&gt;"
-  }
-}</code></pre>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>If you are working with Braavos wallet, the type is defined as <code>braavos</code> and the account descriptor structure might be slightly different.</p>
-</div>
-</td>
-</tr>
-</table>
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">export STARKNET_ACCOUNT=$(pwd)/account.json</code></pre>
 </div>
 </div>
 </div>
@@ -883,18 +769,17 @@ Fetch account config from an already deployed account contract</code></pre>
 <h2 id="deploying_an_account"><a class="anchor" href="#deploying_an_account"></a>Deploying an account</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Once you have an account file, you can deploy the account contract with the <code>starkli account deploy</code> command.</p>
-</div>
-<div class="paragraph">
-<p>This command sends a <code>DEPLOY_ACCOUNT</code> transaction, which requires the account to contain enough ETH to pay for the transaction fee.</p>
-</div>
-<div class="paragraph">
-<p>To deploy your account, run the following command:</p>
+<p>Finally, to deploy your account run:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">starkli account deploy ~/.starkli-wallets/deployer/account.json</code></pre>
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli account deploy account.json</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>This command sends a <code>DEPLOY_ACCOUNT</code> transaction, which requires the account to contain enough ETH to pay for the transaction fee.
+When run, the command shows instructions on how to fund the account before proceeding.
+You can fund your wallet using one of the <a href="https://starknet-faucet.vercel.app/" target="_blank" rel="noopener">Starknet Sepolia faucet</a>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -904,39 +789,32 @@ Fetch account config from an already deployed account contract</code></pre>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>This command requires a signer. If you receive an error after running this command, ensure you have the <code>STARKNET_KEYSTORE</code> environment variable set as per <a href="../environment-setup/#setting_up_starkli_environment_variables" class="xref page">these instructions</a>.</p>
+<p>To send the <code>DEPLOY_ACCOUNT</code> transaction with STRK as fee token, use:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli account deploy account.json --strk</code></pre>
+</div>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>When run, the command shows:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The address where the contract will be deployed.</p>
-</li>
-<li>
-<p>Instructions for the user to fund the account before proceeding.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Here&#8217;s an example command output:</p>
+<p>The following is an example output for a successful account deployment:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">The estimated account deployment fee is 0.000011483579723913 ETH. However, to avoid failure, fund at least:
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">The estimated account deployment fee is 0.000011483579723913 ETH. However, to avoid failure, fund at least:
     0.000017225369585869 ETH
 to the following address:
     0x01cf4d57ba01109f018dec3ea079a38fc08b789e03de4df937ddb9e8a0ff853a
-Press [ENTER] once you've funded the address.</code></pre>
+Press [ENTER] once you've funded the address.
+Waiting for transaction 0x06a9a08208084ac376f10657c745a3020362fa65e7730b13e08ec03d0cd7e59d to confirm.
+If this process is interrupted, you will need to run `starkli account fetch` to update the account file.
+Transaction not confirmed yet...
+Transaction 0x06a9a08208084ac376f10657c745a3020362fa65e7730b13e08ec03d0cd7e59d confirmed</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>You have now successfully deployed a new account to Starknet.</p>
 </div>
 </div>
 </div>
