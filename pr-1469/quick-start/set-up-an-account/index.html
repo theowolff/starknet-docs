@@ -656,7 +656,8 @@
 <h2 id="introduction"><a class="anchor" href="#introduction"></a>Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Interactions with Starknet such as declaring, deploying, and interacting with Starknet smart contracts require a deployed account. Starkli supports both importing an already deployed account (e.g., created by Argent or Braavos) as well as creating and deploying new account from scratch.</p>
+<p>Interactions with Starknet such as declaring, deploying, and interacting with Starknet smart contracts require a deployed account.
+Starkli supports both importing an already deployed account (e.g., created by Argent or Braavos) as well as creating and deploying new account from scratch.</p>
 </div>
 <div class="paragraph">
 <p>In this tutorial, we will use Starkli to create and deploy a new account on Starknet Sepolia.</p>
@@ -667,11 +668,11 @@
 <h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Ensure that the following command shows the version information for Starkli:</p>
+<p>Ensure that the following commands are working properly on your system:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">starkli --version</code></pre>
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli --version</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -683,13 +684,8 @@
 <h2 id="creating_a_signer"><a class="anchor" href="#creating_a_signer"></a>Creating a signer</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Creating a Starkli account requires first creating a Starkli signer, which Starkli uses to sign transactions.</p>
-</div>
-<div class="paragraph">
-<p>Theoratically, a signer can be anything that can provide valid signatures for transactions.</p>
-</div>
-<div class="paragraph">
-<p>In this tutorial, we will use an encrypted keystores signer.
+<p>Creating a Starkli account requires first creating a Starkli signer, which Starkli uses to sign transactions.
+In this tutorial, we will use an encrypted keystores signer.
 Encrypted keystores are JSON files that follow the Web3 secret storage definition.
 A password must be supplied to create a keystore, and is required for subsequently using the keystore.
 The main advantage of this approach is that it prevents storing the private key as plain text on your computer.</p>
@@ -725,7 +721,7 @@ Public key: 0x03dfdb739fbd3ddab0f851bf1131079e31ca266c7af94f05cef4d9481f837509</
 <h2 id="creating_an_account"><a class="anchor" href="#creating_an_account"></a>Creating an account</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Now that you have a Starkli signer, a new account can be created by running:</p>
+<p>Now that you have a Starkli signer, you can create a new account by running:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -740,7 +736,7 @@ Public key: 0x03dfdb739fbd3ddab0f851bf1131079e31ca266c7af94f05cef4d9481f837509</
 </td>
 <td class="content">
 <div class="paragraph">
-<p><code>oz</code> stand for OpenZeppelin, which, along with Argent and Braavos, are the accounts classes that are already declared on Starknet and supported by Starkli.</p>
+<p><code>oz</code> stand for OpenZeppelin, which, along with Argent and Braavos, are the accounts variants supported by Starkli.</p>
 </div>
 </td>
 </tr>
@@ -760,6 +756,14 @@ Deploy this account by running:
     starkli account deploy account.json</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>Similar to the keystore, exporting the account path is highly recommended as it prevents specifying <code>--account</code> in every command. To export the account path, run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">export STARKNET_ACCOUNT=$(pwd)/account.json</code></pre>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -773,6 +777,11 @@ Deploy this account by running:
 <pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli account deploy account.json</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>This command sends a <code>DEPLOY_ACCOUNT</code> transaction, which requires the account to contain enough ETH to pay for the transaction fee.
+When run, the command shows instructions on how to fund the account before proceeding.
+You can fund your wallet using one of the <a href="https://www.starknet.io/dapps/?type=all&amp;tags=210" target="_blank" rel="noopener">Starknet Sepolia faucets</a>.</p>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -781,16 +790,16 @@ Deploy this account by running:
 </td>
 <td class="content">
 <div class="paragraph">
-<p>This command requires a signer. If you receive an error after running this command, ensure you have the <code>STARKNET_KEYSTORE</code> environment variable set as per <a href="../environment-setup/#setting_up_starkli_environment_variables" class="xref page">these instructions</a>.</p>
+<p>To send the <code>DEPLOY_ACCOUNT</code> transaction with STRK as fee token, use:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli account deploy account.json --strk</code></pre>
+</div>
 </div>
 </td>
 </tr>
 </table>
-</div>
-<div class="paragraph">
-<p>This command sends a <code>DEPLOY_ACCOUNT</code> transaction, which requires the account to contain enough ETH to pay for the transaction fee.
-When run, the command shows instructions on how to fund the account before proceeding.
-You can fund your wallet using one of the <a href="https://www.starknet.io/en/ecosystem/bridges-and-onramps" target="_blank" rel="noopener">Starknet Sepolia faucets</a>.</p>
 </div>
 <div class="paragraph">
 <p>The following is an example output for a successful account deployment:</p>
@@ -801,7 +810,11 @@ You can fund your wallet using one of the <a href="https://www.starknet.io/en/ec
     0.000017225369585869 ETH
 to the following address:
     0x01cf4d57ba01109f018dec3ea079a38fc08b789e03de4df937ddb9e8a0ff853a
-Press [ENTER] once you've funded the address.</code></pre>
+Press [ENTER] once you've funded the address.
+Waiting for transaction 0x06a9a08208084ac376f10657c745a3020362fa65e7730b13e08ec03d0cd7e59d to confirm.
+If this process is interrupted, you will need to run `starkli account fetch` to update the account file.
+Transaction not confirmed yet...
+Transaction 0x06a9a08208084ac376f10657c745a3020362fa65e7730b13e08ec03d0cd7e59d confirmed</code></pre>
 </div>
 </div>
 </div>
