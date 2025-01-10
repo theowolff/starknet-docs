@@ -621,16 +621,9 @@
 </aside>
 <article class="doc">
 <h1 class="page">Cryptography</h1>
-<div id="preamble">
+<div class="sect1">
+<h2 id="stark-field"><a class="anchor" href="#stark-field"></a>The STARK field</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>The STARK field is the finite field \(\mathbb{F}_P\), where \(P\) is a prime number defined by:</p>
-</div>
-<div class="stemblock">
-<div class="content">
-\[P = 2^{251} + 17*2^{192} + 1\]
-</div>
-</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -639,11 +632,19 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The <code>felt252</code> type in Cairo refers to elements of this field.</p>
+<p>The <code>felt252</code> type in Cairo refers to elements of the STARK field.</p>
 </div>
 </td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p>The STARK field is the finite field \(\mathbb{F}_P\), where \(P\) is a prime number defined by:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[P = 2^{251} + 17*2^{192} + 1\]
+</div>
 </div>
 </div>
 </div>
@@ -673,12 +674,24 @@
 </div>
 </div>
 <div class="paragraph">
-<p>where:
-* \(\alpha = 1\)
-* \(\beta = 3141592653589793238462643383279502884197169399375105820974944592307816406665\)
-and the generator point used in the ECDSA scheme is defined by:
-* \(G_x = 874739451078007766457464989774322083649278607533249481151382481072868806602\)
-* \(G_y = 152666792071518830868575557812948353041420400780739481342941381225525861407\)</p>
+<p>where:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>\(\alpha = 1\)</p>
+</li>
+<li>
+<p>\(\beta = 3141592653589793238462643383279502884197169399375105820974944592307816406665\)
+and the generator point used in the ECDSA scheme is defined by:</p>
+</li>
+<li>
+<p>\(G_x = 874739451078007766457464989774322083649278607533249481151382481072868806602\)</p>
+</li>
+<li>
+<p>\(G_y = 152666792071518830868575557812948353041420400780739481342941381225525861407\)</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -705,11 +718,23 @@ and the generator point used in the ECDSA scheme is defined by:
 </div>
 </div>
 <div class="paragraph">
-<p>where:
-* \(a_{low}\) and \(b_{low}\) are the 248 low of \(a\) and \(b\), respectively
-* \(a_{high}\) and \(b_{high}\) are the 4 high bits of \(a\) and \(b\), respectively
-* The values of the constants \(\text{shift_point}, P_0, P_1, P_2, P_3\) can be found in <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/crypto/signature/fast_pedersen_hash.py" target="_blank" rel="noopener">fast_pedersen_hash.py</a>
-* \([P]_x\) denotes the \(x\) coordinate of point \(P\)</p>
+<p>where:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>\(a_{low}\) and \(b_{low}\) are the 248 low of \(a\) and \(b\), respectively</p>
+</li>
+<li>
+<p>\(a_{high}\) and \(b_{high}\) are the 4 high bits of \(a\) and \(b\), respectively</p>
+</li>
+<li>
+<p>The values of the constants \(\text{shift_point}, P_0, P_1, P_2, P_3\) can be found in <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/crypto/signature/fast_pedersen_hash.py" target="_blank" rel="noopener">fast_pedersen_hash.py</a></p>
+</li>
+<li>
+<p>\([P]_x\) denotes the \(x\) coordinate of point \(P\)</p>
+</li>
+</ul>
 </div>
 <div class="sect3">
 <h4 id="pedersen_array_hash"><a class="anchor" href="#pedersen_array_hash"></a>Array hashing</h4>
