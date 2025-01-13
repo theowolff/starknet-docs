@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Starknet devtools reference :: Starknet documentation</title>
+    <title>Starknet devtools :: Starknet documentation</title>
     <link rel="canonical" href="https://docs.starknet.io/tools/devtools/overview/">
-    <link rel="prev" href="../../../starknet-versions/version-notes/">
-    <link rel="next" href="../../../glossary/">
+    <link rel="prev" href="../../../architecture-and-concepts/network-architecture/transactions/">
+    <link rel="next" href="../coding-in-cairo/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -358,6 +358,42 @@
     <button class="nav-item-toggle mask-svg-center"></button>
     <span class="nav-text">Tooling</span>
 <ul class="nav-list">
+  <li class="nav-item parent" data-depth="2">
+    <button class="nav-item-toggle mask-svg-center"></button>
+    <span class="nav-text">Devtools</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="3">
+    <a 
+       class="nav-link"
+     href="./">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../coding-in-cairo/">Coding in Cairo</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../writing-smart-contracts/">Writing smart contracts</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../building-dapps/">Building dApps</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../interacting-with-starknet/">Interacting with Starknet</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../running-a-devnet/">Running a development network</a>
+  </li>
+</ul>
+  </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
@@ -548,11 +584,6 @@
   </li>
 </ul>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
-    <a 
-       class="nav-link"
-     href="./">Devtools reference</a>
-  </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
@@ -594,345 +625,22 @@
       <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/tools/pages/devtools/overview.adoc" target="_blank">✏️&nbsp;&nbsp;Edit page</a>
     </div>
     <div class="edit-this-page">
-      <a href='https://github.com/starknet-io/starknet-docs/issues/new?assignees=landauraz&title=Feedback for "Starknet devtools reference"' target="_blank">❤️&nbsp;&nbsp;Share feedback</a>
+      <a href='https://github.com/starknet-io/starknet-docs/issues/new?assignees=landauraz&title=Feedback for "Starknet devtools"' target="_blank">❤️&nbsp;&nbsp;Share feedback</a>
     </div>
   </div>
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Starknet devtools reference</h1>
-<div id="preamble">
-<div class="sectionbody">
+<h1 class="page">Starknet devtools</h1>
 <div class="paragraph">
 <p>Cairo is a turing complete language for writing provable programs. It is also the language used for writing smart contracts for Starknet. Starknet uses a different model than the Ethereum Virtual Machine (EVM), and as such, requires specialized developer tools (devtools).</p>
 </div>
 <div class="paragraph">
-<p>The following list of devtools is dynamic and continuously updated. If a tool you are using is missing, please consider opening an issue or editing the page by yourself.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="coding_in_cairo"><a class="anchor" href="#coding_in_cairo"></a>Coding in Cairo</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The following tools the recommended tools for writing Cairo in general, but can also be helpful for developing on Starknet.</p>
-</div>
-<div class="sect2">
-<h3 id="vs_code_cairo_extension"><a class="anchor" href="#vs_code_cairo_extension"></a>VS Code Cairo extension</h3>
-<div class="paragraph">
-<p><a href="https://marketplace.visualstudio.com/items?itemName=starkware.cairo1" target="_blank" rel="noopener">VS Code Cairo extension</a> is an extension for the Microsoft Visual Studio (VS) Code IDE that provides assistance when writing Cairo smart contracts, including live diagnostic highlighting for compile errors, quick fixes with suggestions, code formatting and completion, and more. It integrates with Scarb, and works best when Scarb is installed via <code>asdf</code>.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="usc"><a class="anchor" href="#usc"></a>Universal-Sierra-Compiler</h3>
-<div class="paragraph">
-<p><a href="https://github.com/software-mansion/universal-sierra-compiler" target="_blank" rel="noopener">Universal-Sierra-Compiler</a> is a utility tool for compiling single Sierra files (unlike Scarb, which compiles full projects) from any Sierra version into CASM.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Universal-Sierra-Compiler comes bundled with Starknet Foundry and does not need to be installed separately if Starknet Foundry is installed.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="cairo-profiler"><a class="anchor" href="#cairo-profiler"></a>cairo-profiler</h3>
-<div class="paragraph">
-<p><a href="https://github.com/software-mansion/cairo-profiler" target="_blank" rel="noopener">cairo-profiler</a> is a utility tool that can be used to create profiles of Cairo executions from execution traces, which can be analyzed and used to show flame graphs and other useful information.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>cairo-profiler comes bundled with Starknet Foundry and does not need to be installed separately if Starknet Foundry is installed.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="cairo-playground"><a class="anchor" href="#cairo-playground"></a>Cairo Playground</h3>
-<div class="paragraph">
-<p><a href="https://www.cairo-lang.org/cairovm/" target="_blank" rel="noopener">Cairo Playground</a> an online tool that can be used to both experiment with Cairo without deploying a smart contract on Starknet, as well as dive deep into the Cairo virtual machine.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="sierra-analyzer"><a class="anchor" href="#sierra-analyzer"></a>Sierra Analyzer</h3>
-<div class="paragraph">
-<p><a href="https://github.com/FuzzingLabs/sierra-analyzer" target="_blank" rel="noopener">Sierra Analyzer</a>, developed by <a href="https://x.com/fuzzinglabs" target="_blank" rel="noopener">FuzzingLabs</a> is a security toolkit for analyzing Sierra files, including decompiling a Sierra file, printing the contract&#8217;s control flow graph, and running static analysis detectors.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="writing_smart_contracts"><a class="anchor" href="#writing_smart_contracts"></a>Writing smart contracts</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The following tools are the recommended tools for developing Starknet smart contracts, covering compilation, package management, testing, and deployment.</p>
-</div>
-<div class="sect2">
-<h3 id="scarb"><a class="anchor" href="#scarb"></a>Scarb</h3>
-<div class="paragraph">
-<p><a href="https://github.com/software-mansion/scarb" target="_blank" rel="noopener">Scarb</a> is much more than a package manager for Cairo: It is the easiest and most recommended way to build and maintain Cairo code. Developed by Software Mansion and inspired by Cargo for Rust, Scarb includes:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Initiating a new Cairo project.</p>
-</li>
-<li>
-<p>Compiling Cairo projects.</p>
-</li>
-<li>
-<p>Adding and removing Cairo dependencies.</p>
-</li>
-<li>
-<p>Generating Cairo documentation.</p>
-</li>
-<li>
-<p>Fetching and uploading packages <a href="https://scarbs.xyz/">Scarbs.xyz</a>, the Cairo Registry.</p>
-</li>
-<li>
-<p>Integrating with the Cairo language server, as well as other tools in the Cairo ecosystem, such as Starknet Foundry and the Dojo gaming engine.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="starknet_foundry"><a class="anchor" href="#starknet_foundry"></a>Starknet Foundry</h3>
-<div class="paragraph">
-<p><a href="https://github.com/foundry-rs/starknet-foundry" target="_blank" rel="noopener">Starknet Foundry</a> is the go-to toolchain for developing Starknet smart contracts, which includes:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>snforge</code>, a command line interface that enables using of various "cheatcodes" for testing various aspects of the contracts, such as setting caller address, manipulating the timestamp and block number, forking the chain at a specific block, getting accurate gas and resource reports, profiling and more.</p>
-</li>
-<li>
-<p><code>sncast</code>, a command line interface with Starknet Foundry projects that enable to interact with Starknet with deep integration, including declaring, deploying, and interacting with contracts, deploying accounts, and more.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="starknet_remix_plugin"><a class="anchor" href="#starknet_remix_plugin"></a>Starknet Remix plugin</h3>
-<div class="paragraph">
-<p><a href="https://remix-project.org" target="_blank" rel="noopener">Remix</a> is a browser-based integrated development environment (IDE) for Ethereum that you can use for learning, experimenting and finding vulnerabilities in smart contracts, without installing anything. <a href="https://github.com/NethermindEth/starknet-remix-plugin" target="_blank" rel="noopener">Starknet Remix plugin</a> lets you use Remix for testing Starknet smart contracts, so you can focus on learning Cairo and Starknet in the comfort of your browser. The plugin is also integrated with <a href="https://starknet-by-example.voyager.online/" target="_blank" rel="noopener">Starknet By Example</a>, a rich repository of practical learning content.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="open-zeppelin-contract-wizard"><a class="anchor" href="#open-zeppelin-contract-wizard"></a>Open Zeppelin Contract Wizard</h3>
-<div class="paragraph">
-<p><a href="https://wizard.openzeppelin.com/cairo" target="_blank" rel="noopener">Open Zeppelin Contract Wizard</a> is a tool that helps you create smart contracts with Open Zeppelin libraries by easily toggling on and off features for popular smart contract patterns.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="building_dapps"><a class="anchor" href="#building_dapps"></a>Building dApps</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The following tools are the recommended tools for building the heart of Starknet – decentralized applications (dApps).</p>
-</div>
-<div class="sect2">
-<h3 id="scaffold-stark"><a class="anchor" href="#scaffold-stark"></a>Scaffold-Stark</h3>
-<div class="paragraph">
-<p><a href="https://scaffoldstark.com/" target="_blank" rel="noopener">Scaffold-Stark</a> is built using NextJS, Starknet.js, Scarb, Starknet-React, Starknet Foundry and Typescript, and designed to make it easier for developers to create, deploy and interact with smart contracts.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="starknet-scaffold"><a class="anchor" href="#starknet-scaffold"></a>Starknet Scaffold</h3>
-<div class="paragraph">
-<p><a href="https://www.starknetscaffold.xyz/" target="_blank" rel="noopener">Starknet-Scaffold</a> is an open-source, up-to-date toolkit for building decentralized applications on Starknet, that help you move from prototyping to production-grade apps seamlessly.</p>
-</div>
-<div class="paragraph">
-<p>Decentralized applications are at the heart of Starknet. These libraries help developers build Dapps on Starknet and connect to prominent Starknet wallets.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="starknet-react"><a class="anchor" href="#starknet-react"></a>Starknet React</h3>
-<div class="paragraph">
-<p><a href="https://github.com/apibara/starknet-react" target="_blank" rel="noopener">Starknet React</a>, developed by Apibara using starknet.js, is a wagmi-inspired collection of React hooks for Starknet.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="get-starknet"><a class="anchor" href="#get-starknet"></a>Get Starknet</h3>
-<div class="paragraph">
-<p><a href="https://github.com/starknet-io/get-starknet" target="_blank" rel="noopener">Get Starknet</a> is a Starknet wallet&lt;&gt;dApp connection bridge, that enables easy discovery and UI for Starknet wallets, including ArgentX, Braavos, Metamask Snaps, and OKx.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="starknetkit"><a class="anchor" href="#starknetkit"></a>Starknetkit</h3>
-<div class="paragraph">
-<p><a href="https://www.starknetkit.com/">Starknetkit</a> is a Starknet wallet connection kit, built by Argent using Starknet.js and starknet-react.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="interacting-with-starknet"><a class="anchor" href="#interacting-with-starknet"></a>Interacting with Starknet</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The following tools are the recommended tools for interacting with Starknet, including fetching and analyzing the network&#8217;s data, declaring, deploying and interacting with smart contracts, generating RPC queries, and more.</p>
-</div>
-<div class="sect2">
-<h3 id="starkli"><a class="anchor" href="#starkli"></a>Starkli</h3>
-<div class="paragraph">
-<p><a href="https://github.com/xJonathanLEI/starkli/" target="_blank" rel="noopener">Starkli</a>, developed by <a href="https://x.com/xjonathanlei" target="_blank" rel="noopener">Jonathan Lei</a>, is a fast command-line interface for interacting with Starknet. It supports fetching data from the Starknet network, deploying accounts, interacting with contracts, and other useful utilities for developers.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="sncast"><a class="anchor" href="#sncast"></a>sncast</h3>
-<div class="paragraph">
-<p>Part of the Starknet Foundry suite, <a href="https://foundry-rs.github.io/starknet-foundry/starknet/sncast-overview.html" target="_blank" rel="noopener"><code>sncast</code></a> is a command line interface for interacting with Starknet, which includes deep integration with Starknet Foundry projects.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="sdks"><a class="anchor" href="#sdks"></a>Starknet SDKs</h3>
-<div class="paragraph">
-<p>A Software Development Kit (SDK) is a library that abstracts the complexities of Starknet when building transactions and interacting with the blockchain. SDKs implement the Starknet <a href="https://github.com/starkware-libs/starknet-specs" target="_blank" rel="noopener">JSON RPC specification</a>, and are updated to support the latest API changes. There are SDKs for various languages, so you can choose the SDK according to your needs.</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 16.667%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">SDK name</th>
-<th class="tableblock halign-left valign-top">Maintainer</th>
-<th class="tableblock halign-left valign-top">Code</th>
-<th class="tableblock halign-left valign-top">Package</th>
-<th class="tableblock halign-left valign-top">Docs</th>
-<th class="tableblock halign-left valign-top">Support</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Starknet.js</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://x.com/0xSpaceShard" target="_blank" rel="noopener">SpaceShard</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/starknet-io/starknet.js" target="_blank" rel="noopener">starknet.js on GitHub</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.npmjs.com/package/starknet" target="_blank" rel="noopener">starknet.js on NPM</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.starknetjs.com/" target="_blank" rel="noopener">starknet.js Book</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://discord.gg/starknet-community" target="_blank" rel="noopener">starknet.js channel on Starknet Discord</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Starknet.py</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://x.com/swmansionxyz" target="_blank" rel="noopener">Software Mansion</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/software-mansion/starknet.py" target="_blank" rel="noopener">starknet.py on GitHub</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://pypi.org/project/starknet-py/" target="_blank" rel="noopener">starknet.py on PyPi</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://starknetpy.rtfd.io/" target="_blank" rel="noopener">starknet.py Docs</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://t.me/starknetpy" target="_blank" rel="noopener">starknet.py on Telegram</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Starknet-rs</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://x.com/xjonathanlei" target="_blank" rel="noopener">Jonathan Lei</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/xJonathanLEI/starknet-rs" target="_blank" rel="noopener">starknet-rs on GitHub</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://crates.io/crates/starknet" target="_blank" rel="noopener">starknet-rs on Crates</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/xJonathanLEI/starknet-rs" target="_blank" rel="noopener">starknet-rs Docs</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://t.me/starknet_rs" target="_blank" rel="noopener">starknet-rs on Telegram</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Starknet.go</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://x.com/NethermindEth" target="_blank" rel="noopener">Nethermind</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/NethermindEth/starknet.go" target="_blank" rel="noopener">starknet.go on GitHub</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://pkg.go.dev/github.com/NethermindEth/starknet.go" target="_blank" rel="noopener">starknet.go Docs</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://t.me/StarknetGo" target="_blank" rel="noopener">starknet.go on Telegram</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">starknet-jvm</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://x.com/swmansionxyz" target="_blank" rel="noopener">Software Mansion</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/software-mansion/starknet-jvm" target="_blank" rel="noopener">starknet-jvm on GitHub</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://central.sonatype.com/artifact/com.swmansion.starknet/starknet">starknet-jvm on Maven</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.swmansion.com/starknet-jvm/" target="_blank" rel="noopener">starknet-jvm Docs</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">starknet.swift</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://x.com/swmansionxyz">Software Mansion</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/software-mansion/starknet.swift" target="_blank" rel="noopener">starknet.swift on GitHub</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.swmansion.com/starknet.swift/documentation/starknet/" target="_blank" rel="noopener">starknet.swift Docs</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">starknet.dart</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://x.com/focustree_app" target="_blank" rel="noopener">Focustree</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/focustree/starknet.dart" target="_blank" rel="noopener">starknet.dart on GitHub</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://pub.dev/packages/starknet" target="_blank" rel="noopener">starknet.dart on Pub</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://starknetdart.dev/" target="_blank" rel="noopener">starknet.dart Docs</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://t.me/+CWezjfLIRYc0MDY0" target="_blank" rel="noopener">starknet.dart on Telegram</a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="entro"><a class="anchor" href="#entro"></a>Entro</h3>
-<div class="paragraph">
-<p><a href="https://github.com/NethermindEth/entro" target="_blank" rel="noopener">Entro</a> helps decoding and analyzing Starknet transactions and events, including decoding contract ABI and transaction data and getting contract class history,</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="rpc-request-builder"><a class="anchor" href="#rpc-request-builder"></a>Starknet RPC Request Builder</h3>
-<div class="paragraph">
-<p><a href="https://rpc-request-builder.voyager.online/" target="_blank" rel="noopener">Starknet RPC Request Builder</a> is a useful tool for generating RPC queries for Starknet, with support for basic example for JavaScript, Go, and Rust.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="devnets"><a class="anchor" href="#devnets"></a>Running a development network</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The following tools are the recommended tools for running a local Starknet development network (devnet), enabling faster and more private development process.</p>
-</div>
-<div class="sect2">
-<h3 id="starknet-devnet-rs"><a class="anchor" href="#starknet-devnet-rs"></a>Starknet Devnet RS</h3>
-<div class="paragraph">
-<p><a href="https://github.com/0xSpaceShard/starknet-devnet-rs" target="_blank" rel="noopener">Starknet Devnet RS
-</a>, developed by SpaceShard, is a Rust implementation of a local Starknet node that includes many featured tailored for testing and development, which are not present on testnet or mainnet,including
-* Pre-deployed and pre-funded accounts
-* Forking the chain at a specific block.
-* Dumping current state (and loading in future runs)
-* Impersonating account
-* Mock L1&lt;&gt;L2 communication</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="starknet-devnet-js"><a class="anchor" href="#starknet-devnet-js"></a>Starknet Devnet JS</h3>
-<div class="paragraph">
-<p><a href="https://github.com/0xSpaceShard/starknet-devnet-js" target="_blank" rel="noopener">Starknet Devnet JS</a> is a JavaScript package that abstracts the Starknet Devnet API, making it easier to interact with it and write end-to-end tests for L1&lt;&gt;L2 communications.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="katana"><a class="anchor" href="#katana"></a>Katana</h3>
-<div class="paragraph">
-<p><a href="https://book.dojoengine.org/toolchain/katana">Katana</a>, developed by <a href="https://cartridge.gg/" target="_blank" rel="noopener">Cartridge</a>, is an extremely fast devnet designed to support local development with the <a href="https://github.com/dojoengine/dojo">Dojo Starknet gaming engine</a> but can be used as a general purpose devnet as well.</p>
-</div>
-</div>
-</div>
+<p>The list of devtools in this section is dynamic and continuously updated. If a tool you are using is missing, please consider opening an issue or editing the page by yourself.</p>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../../../starknet-versions/version-notes/">Release notes</a></span>
-  <span class="next"><a href="../../../glossary/">Glossary</a></span>
+  <span class="prev"><a href="../../../architecture-and-concepts/network-architecture/transactions/">Transaction types</a></span>
+  <span class="next"><a href="../coding-in-cairo/">Coding in Cairo</a></span>
 </nav>
 </article>
   </div>
