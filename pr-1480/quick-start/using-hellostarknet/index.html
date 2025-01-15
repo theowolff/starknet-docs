@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Estimating StarkGate fees :: Starknet documentation</title>
-    <link rel="canonical" href="https://docs.starknet.io/starkgate/estimating-fees/">
-    <link rel="prev" href="../cancelling-a-deposit/">
-    <link rel="next" href="../../tools/dai-token-migration/">
+    <title>Using the HelloStarknet contract :: Starknet documentation</title>
+    <link rel="canonical" href="https://docs.starknet.io/quick-start/using-hellostarknet/">
+    <link rel="prev" href="../set-up-an-account/">
+    <link rel="next" href="../declare-a-smart-contract/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -136,42 +136,42 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../quick-start/overview/">Overview</a>
+     href="../overview/">Overview</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../quick-start/environment-setup/">Setting up your environment</a>
+     href="../environment-setup/">Setting up your environment</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../quick-start/set-up-an-account/">Setting up an account</a>
+     href="../set-up-an-account/">Setting up an account</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a 
+       class="nav-link"
+     href="./">Using <code>HelloStarknet</code></a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../quick-start/using-hellostarknet/">Using <code>HelloStarknet</code></a>
+     href="../declare-a-smart-contract/">Declaring <code>HelloStarknet</code></a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../quick-start/declare-a-smart-contract/">Declaring <code>HelloStarknet</code></a>
+     href="../deploy-a-smart-contract/">Deploying and interacting with <code>HelloStarknet</code></a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../quick-start/deploy-a-smart-contract/">Deploying and interacting with <code>HelloStarknet</code></a>
+     href="../using_devnet/">Declaring, deploying, and interacting with <code>HelloStarknet</code> locally</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../quick-start/using_devnet/">Declaring, deploying, and interacting with <code>HelloStarknet</code> locally</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../quick-start/next-steps/">Next steps</a>
+     href="../next-steps/">Next steps</a>
   </li>
 </ul>
   </li>
@@ -469,12 +469,12 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../overview/">Overview</a>
+     href="../../starkgate/overview/">Overview</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../architecture/">Architecture</a>
+     href="../../starkgate/architecture/">Architecture</a>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
@@ -483,32 +483,32 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../depositing/">Depositing funds</a>
+     href="../../starkgate/depositing/">Depositing funds</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../withdrawing/">Withdrawing funds</a>
+     href="../../starkgate/withdrawing/">Withdrawing funds</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../automated-actions-with-bridging/">Performing a Smart Deposit</a>
+     href="../../starkgate/automated-actions-with-bridging/">Performing a Smart Deposit</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../adding-a-token/">Adding a token</a>
+     href="../../starkgate/adding-a-token/">Adding a token</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../cancelling-a-deposit/">Cancelling a deposit</a>
+     href="../../starkgate/cancelling-a-deposit/">Cancelling a deposit</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="3">
+  <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="./">Estimating StarkGate fees</a>
+     href="../../starkgate/estimating-fees/">Estimating StarkGate fees</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
@@ -520,7 +520,7 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../function-reference/">Function and event reference</a>
+     href="../../starkgate/function-reference/">Function and event reference</a>
   </li>
 </ul>
   </li>
@@ -654,60 +654,120 @@
 <aside class="toc sidebar" data-title="Table of Contents" data-levels="2">
   <div style="position:sticky;top:7rem;z-index:2;margin-bottom:1rem">
     <div class="edit-this-page">
-      <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/starkgate/pages/estimating-fees.adoc" target="_blank">✏️&nbsp;&nbsp;Edit page</a>
+      <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/quick-start/pages/using-hellostarknet.adoc" target="_blank">✏️&nbsp;&nbsp;Edit page</a>
     </div>
     <div class="edit-this-page">
-      <a href='https://github.com/starknet-io/starknet-docs/issues/new?assignees=landauraz&title=Feedback for "Estimating StarkGate fees"' target="_blank">❤️&nbsp;&nbsp;Share feedback</a>
+      <a href='https://github.com/starknet-io/starknet-docs/issues/new?assignees=landauraz&title=Feedback for "Using the &lt;code&gt;HelloStarknet&lt;/code&gt; contract"' target="_blank">❤️&nbsp;&nbsp;Share feedback</a>
     </div>
   </div>
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Estimating StarkGate fees</h1>
+<h1 class="page">Using the <code>HelloStarknet</code> contract</h1>
+<div class="sect1">
+<h2 id="introduction"><a class="anchor" href="#introduction"></a>Introduction</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>StarkGate enforces a minimum fee for all transactions to account for the L1 &#8594; L2 message costs. For more information, see <a href="../../architecture-and-concepts/network-architecture/messaging-mechanism/#l1-l2-message-fees" class="xref page">L1 &#8594; L2 message fees</a>.</p>
+<p>Welcome to the third installment of the "Hello, Starknet!" quickstart series, the official tutorial for starting your journey as a Starknet developer! 🚀</p>
 </div>
 <div class="paragraph">
-<p>You can estimate the fee using the following L1 functions:</p>
+<p>Starknet smart contracts are a special subset of Cairo programs that, once deployed, can have access to Starknet&#8217;s state. The third installment of the series will therefore walk you though generating and understanding Scarb&#8217;s default <code>HelloStarknet</code> contract.</p>
 </div>
-<div class="hdlist stripes-odd">
+<div class="admonitionblock tip">
 <table>
-<colgroup>
-<col style="width: 25%;">
-<col>
-</colgroup>
 <tr>
-<td class="hdlist1">
-<code>estimateDepositFeeWei</code>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
 </td>
-<td class="hdlist2">
-<p>Estimates the fee for a deposit transaction.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<code>estimateEnrollmentFeeWei</code>
-</td>
-<td class="hdlist2">
-<p>Estimates the fee for an enrollment transaction.</p>
+<td class="content">
+<div class="paragraph">
+<p>For more details on Starknet smart contracts, see the <a href="../../architecture-and-concepts/smart-contracts/contract-classes/" class="xref page">Contracts section</a>.</p>
+</div>
 </td>
 </tr>
 </table>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="generating_hellostarknet"><a class="anchor" href="#generating_hellostarknet"></a>Generating <code>HelloStarknet</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Scarb&#8217;s default <code>HelloStarknet</code> contract can be generated by simply running:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ scarb new hello_starknet</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and select the default Starknet Foundry as a test runner.</p>
+</div>
+<div class="paragraph">
+<p>For the purpose of this tutorial, you can ignore all files in the <code>hello_starknet</code> directory other than <code>hello_starknet/src/lib.cairo</code>, which holds the contract&#8217;s code.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="understanding_hellostarknet"><a class="anchor" href="#understanding_hellostarknet"></a>Understanding <code>HelloStarknet</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Looking at <code>HelloStarknet</code> 's code:</p>
+</div>
+<div id="example-cairo-contract" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">/// Interface representing `HelloContract`.
+/// This interface allows modification and retrieval of the contract balance.
+#[starknet::interface]
+pub trait IHelloStarknet&lt;TContractState&gt; {
+    /// Increase contract balance.
+    fn increase_balance(ref self: TContractState, amount: felt252);
+    /// Retrieve contract balance.
+    fn get_balance(self: @TContractState) -&gt; felt252;
+}
+
+/// Simple contract for managing balance.
+#[starknet::contract]
+mod HelloStarknet {
+    use core::starknet::storage::{StoragePointerReadAccess, StoragePointerWriteAccess};
+
+    #[storage]
+    struct Storage {
+        balance: felt252,
+    }
+
+    #[abi(embed_v0)]
+    impl HelloStarknetImpl of super::IHelloStarknet&lt;ContractState&gt; {
+        fn increase_balance(ref self: ContractState, amount: felt252) {
+            assert(amount != 0, 'Amount cannot be 0');
+            self.balance.write(self.balance.read() + amount);
+        }
+
+        fn get_balance(self: @ContractState) -&gt; felt252 {
+            self.balance.read()
+        }
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>it&#8217;s clear that this is a simple contract with two basic functions:</p>
+</div>
 <div class="ulist">
-<div class="title">Additional resources</div>
 <ul>
 <li>
-<p><a href="../function-reference/#estimateDepositFeeWei" class="xref page"><code>estimateDepositFeeWei</code></a></p>
+<p><code>increase_balance</code>, which get <code>amount</code> as input, increases the contract&#8217;s balance by <code>amount</code>, and write the new balance to its storage.</p>
 </li>
 <li>
-<p><a href="../function-reference/#estimateEnrollmentFeeWei" class="xref page"><code>estimateEnrollmentFeeWei</code></a></p>
+<p><code>get_balance</code>, which read the contract&#8217;s current balance.</p>
 </li>
 </ul>
 </div>
+</div>
+</div>
 <nav class="pagination">
-  <span class="prev"><a href="../cancelling-a-deposit/">Cancelling a deposit</a></span>
-  <span class="next"><a href="../../tools/dai-token-migration/">Migrating DAI v0 to DAI</a></span>
+  <span class="prev"><a href="../set-up-an-account/">Setting up an account</a></span>
+  <span class="next"><a href="../declare-a-smart-contract/">Declaring <code>HelloStarknet</code></a></span>
 </nav>
 </article>
   </div>
