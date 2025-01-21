@@ -122,60 +122,58 @@
 <ul class="nav-list">
   <li class="nav-item parent" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item parent" data-depth="1">
-    <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Introduction</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
      href="../../">Overview</a>
   </li>
-  <li class="nav-item parent" data-depth="2">
+</ul>
+  </li>
+  <li class="nav-item parent" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item parent" data-depth="1">
     <button class="nav-item-toggle mask-svg-center"></button>
     <span class="nav-text">Quickstart</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../overview/">Overview</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../environment-setup/">Setting up your environment</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="3">
+  <li class="nav-item is-current-page" data-depth="2">
     <a 
        class="nav-link"
      href="./">Setting up an account</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../using-hellostarknet/">Using <code>HelloStarknet</code></a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../declare-a-smart-contract/">Declaring <code>HelloStarknet</code></a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../deploy-a-smart-contract/">Deploying and interacting with <code>HelloStarknet</code></a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../using_devnet/">Declaring, deploying, and interacting with <code>HelloStarknet</code> locally</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../next-steps/">Recommended next steps</a>
-  </li>
-</ul>
   </li>
 </ul>
   </li>
@@ -785,40 +783,21 @@ Deploy this account by running:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ starkli account deploy account.json --network=sepolia</code></pre>
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ starkli account deploy account.json --network=sepolia --strk</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>This command sends a <code>DEPLOY_ACCOUNT</code> transaction, which requires the account to contain enough ETH to pay for the transaction fee.
+<p>This command sends a <code>DEPLOY_ACCOUNT</code> transaction, which requires the account to contain enough STRK to pay for the transaction fee.
 When run, the command shows instructions on how to fund the account before proceeding.
 You can fund your wallet using one of the <a href="https://starknet-faucet.vercel.app/" target="_blank" rel="noopener">Starknet Sepolia faucet</a>.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>To send the <code>DEPLOY_ACCOUNT</code> transaction with STRK as fee token, use:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli account deploy account.json --network=sepolia --strk</code></pre>
-</div>
-</div>
-</td>
-</tr>
-</table>
 </div>
 <div class="paragraph">
 <p>If the account was deployed successfully, the <code>deploy</code> command&#8217;s output should resemble the following:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">The estimated account deployment fee is 0.000011483579723913 ETH. However, to avoid failure, fund at least:
-    0.000017225369585869 ETH
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">The estimated account deployment fee is 0.000615910614837578 STRK. However, to avoid failure, fund at least:
+    0.001358626332416775 STRK
 to the following address:
     0x01cf4d57ba01109f018dec3ea079a38fc08b789e03de4df937ddb9e8a0ff853a
 Press [ENTER] once you've funded the address.

@@ -122,60 +122,58 @@
 <ul class="nav-list">
   <li class="nav-item parent" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item parent" data-depth="1">
-    <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Introduction</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
      href="../../">Overview</a>
   </li>
-  <li class="nav-item parent" data-depth="2">
+</ul>
+  </li>
+  <li class="nav-item parent" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item parent" data-depth="1">
     <button class="nav-item-toggle mask-svg-center"></button>
     <span class="nav-text">Quickstart</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../overview/">Overview</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../environment-setup/">Setting up your environment</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../set-up-an-account/">Setting up an account</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../using-hellostarknet/">Using <code>HelloStarknet</code></a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../declare-a-smart-contract/">Declaring <code>HelloStarknet</code></a>
   </li>
-  <li class="nav-item is-current-page" data-depth="3">
+  <li class="nav-item is-current-page" data-depth="2">
     <a 
        class="nav-link"
      href="./">Deploying and interacting with <code>HelloStarknet</code></a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../using_devnet/">Declaring, deploying, and interacting with <code>HelloStarknet</code> locally</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../next-steps/">Recommended next steps</a>
-  </li>
-</ul>
   </li>
 </ul>
   </li>
@@ -689,7 +687,7 @@
     &lt;CONTRACT_CLASS_HASH&gt; \
     4 \
     2 \
-    --network=sepolia</code></pre>
+    --network=sepolia --strk</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -699,7 +697,7 @@
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ starkli deploy \
     0x0785c92bf4aa7a89fb62371802aef2f58e2333d8df7e2aadf938efa83735431c \
-    --network=sepolia</code></pre>
+    --network=sepolia --strk</code></pre>
 </div>
 </div>
 <div class="admonitionblock important">
@@ -805,7 +803,7 @@ Contract deployed: 0x055adcccc3de77a9d23cd8250965b388179e1ebd6d6be32f5bc6a08a348
 <pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ starkli call \
     0x055adcccc3de77a9d23cd8250965b388179e1ebd6d6be32f5bc6a08a34805e5e \
     get_balance \
-    --network=sepolia</code></pre>
+    --network=sepolia --strk</code></pre>
 </div>
 </div>
 <div class="paragraph">

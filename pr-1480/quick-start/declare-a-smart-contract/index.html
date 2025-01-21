@@ -122,60 +122,58 @@
 <ul class="nav-list">
   <li class="nav-item parent" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item parent" data-depth="1">
-    <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Introduction</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
      href="../../">Overview</a>
   </li>
-  <li class="nav-item parent" data-depth="2">
+</ul>
+  </li>
+  <li class="nav-item parent" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item parent" data-depth="1">
     <button class="nav-item-toggle mask-svg-center"></button>
     <span class="nav-text">Quickstart</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../overview/">Overview</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../environment-setup/">Setting up your environment</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../set-up-an-account/">Setting up an account</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../using-hellostarknet/">Using <code>HelloStarknet</code></a>
   </li>
-  <li class="nav-item is-current-page" data-depth="3">
+  <li class="nav-item is-current-page" data-depth="2">
     <a 
        class="nav-link"
      href="./">Declaring <code>HelloStarknet</code></a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../deploy-a-smart-contract/">Deploying and interacting with <code>HelloStarknet</code></a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../using_devnet/">Declaring, deploying, and interacting with <code>HelloStarknet</code> locally</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../next-steps/">Recommended next steps</a>
-  </li>
-</ul>
   </li>
 </ul>
   </li>
@@ -710,18 +708,7 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Building a Starknet Foundry project with Scarb requires <a href="https://www.rust-lang.org/">Rust</a> to be installed. You can verify that Rust is installed and up-to-date by running:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>rustc --version</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>or install the latest Rust version by following the instructions in the <a href="https://doc.rust-lang.org/beta/book/ch01-01-installation.html">Rust documentation</a>.</p>
-</div>
-<div class="paragraph">
-<p>Moreover, the first time a project is built, some components of Scarb are compiled locally with the Rust toolchain. This process may take a few minutes, but will not happen in subsequent builds.</p>
+<p>The first time a project is built, some components of Scarb are compiled locally with the Rust toolchain. This process may take a few minutes, but will not happen in subsequent builds.</p>
 </div>
 </td>
 </tr>
@@ -741,7 +728,7 @@
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ starkli declare target/dev/hello_starknet_HelloStarknet.contract_class.json \
-    --network=sepolia</code></pre>
+    --network=sepolia --strk</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -801,7 +788,7 @@
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ starkli declare target/dev/hello_starknet_HelloStarknet.contract_class.json \
     --compiler-version=&lt;VERSION&gt; \
-    --network=sepolia</code></pre>
+    --network=sepolia --strk</code></pre>
 </div>
 </div>
 </li>
