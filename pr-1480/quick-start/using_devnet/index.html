@@ -664,8 +664,182 @@
 </aside>
 <article class="doc">
 <h1 class="page">Declaring, deploying, and interacting with the <code>HelloStarknet</code> contract locally</h1>
+<div class="sect1">
+<h2 id="introduction"><a class="anchor" href="#introduction"></a>Introduction</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>WIP.</p>
+<p>Welcome to the sixth installment of the "Hello, Starknet!" quickstart series, the official tutorial for starting your journey as a Starknet developer! 🚀</p>
+</div>
+<div class="paragraph">
+<p>For a faster and more private development process, it is often preferable to use a local version of Starknet, also known as a development network (devnet). This installment of the series will therefore guide you through the steps necessary to use Starknet Devnet to declare, deploy, and interact with the <code>HelloStarknet</code> contract locally.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="using_starknet_devnet"><a class="anchor" href="#using_starknet_devnet"></a>Using Starknet Devnet</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="initializing_a_local_node"><a class="anchor" href="#initializing_a_local_node"></a>Initializing a local node</h3>
+<div class="paragraph">
+<p>Initializing a local node using Starknet Devent can be done by simply running:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starknet-devnet --seed 42</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <code>--seed</code> option is used to force consistent addresses of predeployed account (see more details below).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The result should resemble the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">Predeployed FeeToken
+ETH Address: 0x49D36570D4E46F48E99674BD3FCC84644DDD6B96F7C741B1562B82F9E004DC7
+STRK Address: 0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d
+Class Hash: 0x046ded64ae2dead6448e247234bab192a9c483644395b66f2155f2614e5804b0
+
+Predeployed UDC
+Address: 0x41A78E741E5AF2FEC34B695679BC6891742439F7AFB8484ECD7766661AD02BF
+Class Hash: 0x7B3E05F48F0C69E4A65CE5E076A66271A527AFF2C34CE1083EC6E1526997A69
+
+Chain ID: SN_SEPOLIA (0x534e5f5345504f4c4941)
+
+...</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="fetching_a_local_account"><a class="anchor" href="#fetching_a_local_account"></a>Fetching a local account</h3>
+<div class="paragraph">
+<p>The result of initializing a local node using Starknet Devnet should also include a list of predeployed accounts that resemble the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">| Account address |  0x34ba56f92265f0868c57d3fe72ecab144fc96f97954bbbc4252cef8e8a979ba
+| Private key     |  0xb137668388dbe9acdfa3bc734cc2c469
+| Public key      |  0x5a5e37c60e77a0318643b111f88413a76af6233c891a0cfb2804106372006d4
+
+| Account address |  0x02939f2dc3f80cc7d620e8a86f2e69c1e187b7ff44b74056647368b5c49dc370
+| Private key     |  0x00000000000000000000000000000000e8c2801d899646311100a661d32587aa
+| Public key      |  0x05fa8e536561badd3df5f6658300052b2d25019f0840db03be9f71e8bcbbc8a9
+
+...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This allows to avoid creating and deploying new accounts, and instead simply importing them into Starkli. To import your local node&#8217;s first predeployed account, run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli account fetch 0x34ba56f92265f0868c57d3fe72ecab144fc96f97954bbbc4252cef8e8a979ba \
+--output account.json \
+--rpc http://127.0.0.1:5050</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><code><a href="http://127.0.0.1:5050" class="bare">http://127.0.0.1:5050</a></code> are the local node&#8217;s default host and port (which can be configured on initialization using the <code>--host</code> and <code>--port</code> options).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>To finish setting up the account, a corresponding Starkli signer is also required. To create a an encrypted keystore signer, run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli signer keystore from-key keystore.json</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and enter <code>0xb137668388dbe9acdfa3bc734cc2c469</code> as private key, along with a password that will be used to encrypt it. To avoid specifying the account and keystore files in every subsequent Starkli command, export their paths by running:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">export STARKNET_ACCOUNT=$(pwd)/account.json
+export STARKNET_KEYSTORE=$(pwd)/keystore.json</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="declaring_deploying_and_interacting_with_hellostarknet"><a class="anchor" href="#declaring_deploying_and_interacting_with_hellostarknet"></a>Declaring, deploying, and interacting with <code>HelloStarknet</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now that you have an account set up, you can use Starkli to freely interact with your local node. For example, if you&#8217;ve already compiled the <code>HelloStarknet</code> contract, you can declare and deploy it by navigating into the <code>hello_starknet</code> and running:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli declare \
+    target/dev/hello_starknet_HelloStarknet.contract_class.json \
+    --rpc http://127.0.0.1:5050 \
+    --strk
+
+starkli deploy \
+    0x0785c92bf4aa7a89fb62371802aef2f58e2333d8df7e2aadf938efa83735431c \
+    --rpc http://127.0.0.1:5050 \
+    --strk \
+    --salt 42
+
+starkli invoke \
+    0x0613b343277cdd7144852491d07a5ca5d855070473c1e194a6318a7a1c0c4169 \
+    increase_balance 42 \
+    --rpc http://127.0.0.1:5050 \
+    --strk
+
+starkli call \
+    0x0613b343277cdd7144852491d07a5ca5d855070473c1e194a6318a7a1c0c4169 \
+    get_balance \
+    --rpc=http://127.0.0.1:5050</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <code>--salt</code> option in <code>starkli deploy</code> is used to force a consistent address for the deployed contract.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>If all goes well, the result should resemble the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">[
+    "0x000000000000000000000000000000000000000000000000000000000000002a"
+]</code></pre>
+</div>
+</div>
+</div>
 </div>
 <nav class="pagination">
   <span class="prev"><a href="../deploy-a-smart-contract/">Deploying and interacting with <code>HelloStarknet</code></a></span>
