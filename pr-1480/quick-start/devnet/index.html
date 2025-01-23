@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Declaring, deploying, and interacting with the HelloStarknet contract locally :: Starknet documentation</title>
-    <link rel="canonical" href="https://docs.starknet.io/quick-start/using_devnet/">
-    <link rel="prev" href="../deploy-a-smart-contract/">
-    <link rel="next" href="../next-steps/">
+    <link rel="canonical" href="https://docs.starknet.io/quick-start/devnet/">
+    <link rel="prev" href="../compiling-hellostarknet/">
+    <link rel="next" href="../sepolia/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -148,27 +148,17 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../set-up-an-account/">Setting up an account</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../using-hellostarknet/">Using <code>HelloStarknet</code></a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../declare-a-smart-contract/">Declaring <code>HelloStarknet</code></a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../deploy-a-smart-contract/">Deploying and interacting with <code>HelloStarknet</code></a>
+     href="../compiling-hellostarknet/">Compiling <code>HelloStarknet</code></a>
   </li>
   <li class="nav-item is-current-page" data-depth="2">
     <a 
        class="nav-link"
      href="./">Declaring, deploying, and interacting with <code>HelloStarknet</code> locally</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../sepolia/">Deploying and interacting with <code>HelloStarknet</code> on Sepolia</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
@@ -654,7 +644,7 @@
 <aside class="toc sidebar" data-title="Table of Contents" data-levels="2">
   <div style="position:sticky;top:7rem;z-index:2;margin-bottom:1rem">
     <div class="edit-this-page">
-      <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/quick-start/pages/using_devnet.adoc" target="_blank">✏️&nbsp;&nbsp;Edit page</a>
+      <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/quick-start/pages/devnet.adoc" target="_blank">✏️&nbsp;&nbsp;Edit page</a>
     </div>
     <div class="edit-this-page">
       <a href='https://github.com/starknet-io/starknet-docs/issues/new?assignees=landauraz&title=Feedback for "Declaring, deploying, and interacting with the &lt;code&gt;HelloStarknet&lt;/code&gt; contract locally"' target="_blank">❤️&nbsp;&nbsp;Share feedback</a>
@@ -668,24 +658,22 @@
 <h2 id="introduction"><a class="anchor" href="#introduction"></a>Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Welcome to the sixth installment of the "Hello, Starknet!" quickstart series, the official tutorial for starting your journey as a Starknet developer! 🚀</p>
+<p>Welcome to the third installment of the "Hello, Starknet!" quickstart series, the official tutorial for starting your journey as a Starknet developer! 🚀</p>
 </div>
 <div class="paragraph">
-<p>For a faster and more private development process, it is often preferable to use a local version of Starknet, also known as a development network (devnet). This installment of the series will therefore guide you through the steps necessary to use Starknet Devnet to declare, deploy, and interact with the <code>HelloStarknet</code> contract locally.</p>
+<p>Local networks, also known as development networks or <em>devnets</em>, enable a fast and private development process, making them ideal for taking your first Starknet steps. This installment of the series will therefore guide you through the steps necessary to declare, deploy, and interact with the <code>HelloStarknet</code> contract on your very own local instance of Starknet.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="using_starknet_devnet"><a class="anchor" href="#using_starknet_devnet"></a>Using Starknet Devnet</h2>
+<h2 id="initializing_a_local_starknet_instance"><a class="anchor" href="#initializing_a_local_starknet_instance"></a>Initializing a local Starknet instance</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="initializing_a_local_node"><a class="anchor" href="#initializing_a_local_node"></a>Initializing a local node</h3>
 <div class="paragraph">
-<p>Initializing a local node using Starknet Devent can be done by simply running:</p>
+<p>A local Starknet instance can be easily initialized using Starknet Devent by simply running:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starknet-devnet --seed 42</code></pre>
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starknet-devnet --seed=0</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -703,7 +691,7 @@
 </table>
 </div>
 <div class="paragraph">
-<p>The result should resemble the following:</p>
+<p>If successful, the result should resemble the following:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -722,32 +710,49 @@ Chain ID: SN_SEPOLIA (0x534e5f5345504f4c4941)
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="fetching_a_local_account"><a class="anchor" href="#fetching_a_local_account"></a>Fetching a local account</h3>
+</div>
+<div class="sect1">
+<h2 id="fetching_a_predeployed_account"><a class="anchor" href="#fetching_a_predeployed_account"></a>Fetching a predeployed account</h2>
+<div class="sectionbody">
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
 <div class="paragraph">
-<p>The result of initializing a local node using Starknet Devnet should also include a list of predeployed accounts that resemble the following:</p>
+<p>To learn more about Starknet accounts, check out the <a href="../../architecture-and-concepts/accounts/introduction/" class="xref page">Accounts section</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>To interact with your local Starknet instance, you first need an account. Luckily, the result of initializing a local Starknet instance using Starknet Devnet should also include a list of predeployed accounts that resembles the following:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">| Account address |  0x34ba56f92265f0868c57d3fe72ecab144fc96f97954bbbc4252cef8e8a979ba
-| Private key     |  0xb137668388dbe9acdfa3bc734cc2c469
-| Public key      |  0x5a5e37c60e77a0318643b111f88413a76af6233c891a0cfb2804106372006d4
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">| Account address |  0x064b48806902a367c8598f4f95c305e8c1a1acba5f082d294a43793113115691
+| Private key     |  0x0000000000000000000000000000000071d7bb07b9a64f6f78ac4c816aff4da9
+| Public key      |  0x039d9e6ce352ad4530a0ef5d5a18fd3303c3606a7fa6ac5b620020ad681cc33b
 
-| Account address |  0x02939f2dc3f80cc7d620e8a86f2e69c1e187b7ff44b74056647368b5c49dc370
-| Private key     |  0x00000000000000000000000000000000e8c2801d899646311100a661d32587aa
-| Public key      |  0x05fa8e536561badd3df5f6658300052b2d25019f0840db03be9f71e8bcbbc8a9
+| Account address |  0x078662e7352d062084b0010068b99288486c2d8b914f6e2a55ce945f8792c8b1
+| Private key     |  0x000000000000000000000000000000000e1406455b7d66b1690803be066cbe5e
+| Public key      |  0x007a1bb2744a7dd29bffd44341dbd78008adb4bc11733601e7eddff322ada9cb
 
 ...</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>This allows to avoid creating and deploying new accounts, and instead simply importing them into Starkli. To import your local node&#8217;s first predeployed account, run:</p>
+<p>This allows to avoid creating and deploying new accounts, and instead simply fetching them into Starkli. To fetch your local node&#8217;s first predeployed account, run:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli account fetch 0x34ba56f92265f0868c57d3fe72ecab144fc96f97954bbbc4252cef8e8a979ba \
---output account.json \
---rpc http://127.0.0.1:5050</code></pre>
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli account fetch \
+    0x064b48806902a367c8598f4f95c305e8c1a1acba5f082d294a43793113115691 \
+    --output=account.json \
+    --rpc=http://127.0.0.1:5050</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -765,7 +770,17 @@ Chain ID: SN_SEPOLIA (0x534e5f5345504f4c4941)
 </table>
 </div>
 <div class="paragraph">
-<p>To finish setting up the account, a corresponding Starkli signer is also required. To create a an encrypted keystore signer, run:</p>
+<p>If successful, the result should resemble the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">Account contract type identified as: OpenZeppelin
+Description: OpenZeppelin account contract v0.8.1 compiled with cairo v2.4.1
+Downloaded new account config file: account.json</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To finish setting up the account, a corresponding Starkli signer, used by Starkli to sign transactions, is also required.  In this tutorial, we will use an encrypted keystores signer. Encrypted keystores are JSON files that follow the <a href="https://ethereum.org/en/developers/docs/data-structures-and-encoding/web3-secret-storage/">Web3 secret storage definition</a> and require a password when created and used, preventing  your private key from being stored as plain text on your computer. To create an encrypted keystore signer for your fetched account, run:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -773,7 +788,16 @@ Chain ID: SN_SEPOLIA (0x534e5f5345504f4c4941)
 </div>
 </div>
 <div class="paragraph">
-<p>and enter <code>0xb137668388dbe9acdfa3bc734cc2c469</code> as private key, along with a password that will be used to encrypt it. To avoid specifying the account and keystore files in every subsequent Starkli command, export their paths by running:</p>
+<p>and enter <code>0x0000000000000000000000000000000071d7bb07b9a64f6f78ac4c816aff4da9</code> as its private key, along with a password of your choosing that will be used to encrypt it. If successful, the result should resemble the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">Created new encrypted keystore file: keystore.json
+Public key: 0x039d9e6ce352ad4530a0ef5d5a18fd3303c3606a7fa6ac5b620020ad681cc33b</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To avoid specifying the account and keystore files in every subsequent Starkli command, export their paths by running:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -783,36 +807,48 @@ export STARKNET_KEYSTORE=$(pwd)/keystore.json</code></pre>
 </div>
 </div>
 </div>
-</div>
 <div class="sect1">
-<h2 id="declaring_deploying_and_interacting_with_hellostarknet"><a class="anchor" href="#declaring_deploying_and_interacting_with_hellostarknet"></a>Declaring, deploying, and interacting with <code>HelloStarknet</code></h2>
+<h2 id="declaring_hellostarknet_locally"><a class="anchor" href="#declaring_hellostarknet_locally"></a>Declaring <code>HelloStarknet</code> locally</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Now that you have an account set up, you can use Starkli to freely interact with your local node. For example, if you&#8217;ve already compiled the <code>HelloStarknet</code> contract, you can declare and deploy it by navigating into the <code>hello_starknet</code> and running:</p>
+<p>To declare the <code>HelloStarknet</code> contract, navigate into the <code>hello_starknet</code> directory created in <a href="../compiling-hellostarknet/" class="xref page">Compiling the <code>HelloStarknet</code> contract</a>, run:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli declare \
     target/dev/hello_starknet_HelloStarknet.contract_class.json \
-    --rpc http://127.0.0.1:5050 \
-    --strk
+    --rpc=http://127.0.0.1:5050 \</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and enter your password. If successful, the output of the declaration should resemble the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">...
 
-starkli deploy \
+Declaring Cairo 1 class: 0x0785c92bf4aa7a89fb62371802aef2f58e2333d8df7e2aadf938efa83735431c
+Compiling Sierra class to CASM with compiler version 2.9.1...
+CASM class hash: 0x00a3b109389575a420cd0c5ccbd14e9bf2f5b56d50f6085d08202d15ee2b3222
+Contract declaration transaction: 0x0498dd3035e000f91c4f02af54e564a99e87e6a765525d92a4c112b0bc44cfc7
+Class hash declared:
+0x0785c92bf4aa7a89fb62371802aef2f58e2333d8df7e2aadf938efa83735431c</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="deploying_hellostarknet_locally"><a class="anchor" href="#deploying_hellostarknet_locally"></a>Deploying <code>HelloStarknet</code> locally</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>With <code>HelloStarknet</code> declared, you can now deploy an instance of it by running:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli deploy \
     0x0785c92bf4aa7a89fb62371802aef2f58e2333d8df7e2aadf938efa83735431c \
-    --rpc http://127.0.0.1:5050 \
-    --strk \
-    --salt 42
-
-starkli invoke \
-    0x0613b343277cdd7144852491d07a5ca5d855070473c1e194a6318a7a1c0c4169 \
-    increase_balance 42 \
-    --rpc http://127.0.0.1:5050 \
-    --strk
-
-starkli call \
-    0x0613b343277cdd7144852491d07a5ca5d855070473c1e194a6318a7a1c0c4169 \
-    get_balance \
-    --rpc=http://127.0.0.1:5050</code></pre>
+    --rpc=http://127.0.0.1:5050 \
+    --salt=0</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -823,18 +859,89 @@ starkli call \
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The <code>--salt</code> option in <code>starkli deploy</code> is used to force a consistent address for the deployed contract.</p>
+<p>The <code>--salt</code> option is used to force a consistent address for the deployed contract.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>If all goes well, the result should resemble the following:</p>
+<p>and entering your password. If successful, the result should resemble the following:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">[
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">Deploying class 0x0785c92bf4aa7a89fb62371802aef2f58e2333d8df7e2aadf938efa83735431c with salt 0x0000000000000000000000000000000000000000000000000000000000000000...
+The contract will be deployed at address 0x02ceb6da76e2b2b80f2a23ff2910edf1dcc12e1b9d6a27d1da43d7db943e568c
+Contract deployment transaction: 0x068b5b84d03fd725433e93e406abdccc577fb49a7a7fa7c9013493c1d5ad9811
+Contract deployed:
+0x02ceb6da76e2b2b80f2a23ff2910edf1dcc12e1b9d6a27d1da43d7db943e568c</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="interacting_with_hellostarknet_locally"><a class="anchor" href="#interacting_with_hellostarknet_locally"></a>Interacting with <code>HelloStarknet</code> locally</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now that your instance of <code>HelloStarknet</code> is deployed, you can interact with via its functions. Starkli enables interaction with smart contracts via two primary commands, <code>invoke</code> and <code>call</code>.</p>
+</div>
+<div class="paragraph">
+<p>The <code>call</code> command is used for read functions that don&#8217;t modify their contract&#8217;s storage, and allows querying a smart contract function without sending a transaction. For example, you can call <code>HelloStarknet</code>'s <code>get_balance</code> function by running:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli call \
+    0x02ceb6da76e2b2b80f2a23ff2910edf1dcc12e1b9d6a27d1da43d7db943e568c \
+    get_balance \
+    --rpc=http://127.0.0.1:5050</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If successful, the result should resemble the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">[
+    "0x0000000000000000000000000000000000000000000000000000000000000000"
+]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>invoke</code> command is used for write functions that modify their contract&#8217;s storage, and submits a transaction to the network that changes its state. For example, you can invoke <code>HelloStarknet</code>'s <code>increase_balance</code> function by running:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli invoke \
+    0x02ceb6da76e2b2b80f2a23ff2910edf1dcc12e1b9d6a27d1da43d7db943e568c \
+    increase_balance 42 \
+    --rpc=http://127.0.0.1:5050</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and entering your password. If successful, the result should resemble the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">Invoke transaction: 0x05be8823fc9b0c8605374d54f23f38badbd1b8ab4cbb680512cfde3f5662947b</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can verify that the state of your local Starknet instance has indeed changed by calling <code>get_balance</code> again:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli call \
+    0x02ceb6da76e2b2b80f2a23ff2910edf1dcc12e1b9d6a27d1da43d7db943e568c \
+    get_balance \
+    --rpc=http://127.0.0.1:5050</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If all goes well, the result should resemble the following (<code>42<sub>10</sub> = 2a<sub>16</sub></code>):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">[
     "0x000000000000000000000000000000000000000000000000000000000000002a"
 ]</code></pre>
 </div>
@@ -842,8 +949,8 @@ starkli call \
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../deploy-a-smart-contract/">Deploying and interacting with <code>HelloStarknet</code></a></span>
-  <span class="next"><a href="../next-steps/">Recommended next steps</a></span>
+  <span class="prev"><a href="../compiling-hellostarknet/">Compiling <code>HelloStarknet</code></a></span>
+  <span class="next"><a href="../sepolia/">Deploying and interacting with <code>HelloStarknet</code> on Sepolia</a></span>
 </nav>
 </article>
   </div>
