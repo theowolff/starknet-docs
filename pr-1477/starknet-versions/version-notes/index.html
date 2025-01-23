@@ -551,7 +551,7 @@
 <ul class="nav-list">
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Release information</span>
+    <span class="nav-text">Chain information</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a 
@@ -568,12 +568,12 @@
        class="nav-link"
      href="../../tools/important-addresses/">Important addresses</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="3">
+</ul>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
     <a 
        class="nav-link"
      href="./">Release notes</a>
-  </li>
-</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
@@ -642,6 +642,72 @@
 </div>
 </div>
 <div class="sect1">
+<h2 id="version0.13.4"><a class="anchor" href="#version0.13.4"></a>Starknet v0.13.4 (Pre-release)</h2>
+<div class="sectionbody">
+<h3 id="rough_timelines" class="discrete">Rough timelines</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Testnet: Feb 17-24</p>
+</li>
+<li>
+<p>Mainnet: March 10-24</p>
+</li>
+</ul>
+</div>
+<h3 id="rpc_updates" class="discrete">RPC updates</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Termination of RPC versions &lt; 0.6: Starting in Starknet v0.13.4, full nodes will only serve RPC versions v0.6 and above.</p>
+</li>
+<li>
+<p>RPC version 0.8: RPC v0.8 will be released for Starknet v0.13.4, terminating support for the transaction versions 0,1,2. Anyone consuming receipts and/or traces must upgrade to RPC v0.8, and anyone else is highly encouraged to do so in order to benefit from its latest features (such as storage proofs and the introduction of L2 gas).</p>
+</li>
+</ul>
+</div>
+<h3 id="wallet_dapp_api_update" class="discrete">Wallet ⇄ DApp API update</h3>
+<div class="paragraph">
+<p>After an extensive community effort, the Starknet Wallet ⇄ Dapp API is receiving a substantial update. The new API breaks the coupling between wallets, DApps, and starknet.js versions, allowing for faster development. Migration is very simple: instead of initiating an Account object returned by the wallet, Starknet.js does all the work for you and lets you initiate a WalletAccount which abstracts the new API.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>With the termination of RPC versions &lt; 0.7, make sure to use <a href="https://starkware.us12.list-manage.com/track/click?u=b7a3c9f392572e89e8529da3c&amp;id=b17c8309bb&amp;e=58088eda14" target="_blank" rel="noopener">Starknet.js version ≥6.9.0</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<h3 id="upcoming_termination_of_old_transaction_versions" class="discrete">Upcoming termination of old transaction versions</h3>
+<div class="paragraph">
+<p>Starknet v0.14.0, coming later this year, will terminate support for all transaction versions v0, v1, and v2 as part of introducing a mempool and fee market. A detailed account of this termination will be sent soon.</p>
+</div>
+<h3 id="additional_resources" class="discrete">Additional resources</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://community.starknet.io/t/fall-roadmap-updates/115001" target="_blank" rel="noopener">Fall Roadmap Updates forum post</a></p>
+</li>
+<li>
+<p><a href="https://community.starknet.io/t/starknet-v0-13-4-pre-release-notes/115257" target="_blank" rel="noopener">Starknet v0.13.4 Pre-release Notes forum post</a></p>
+</li>
+<li>
+<p><a href="https://community.starknet.io/t/new-starknet-wallet-dapp-api/114295" target="_blank" rel="noopener">New Starknet Wallet&lt;&gt;Dapp API forum post</a></p>
+</li>
+<li>
+<p><a href="https://github.com/starknet-io/SNIPs/blob/main/SNIPS/snip-16.md" target="_blank" rel="noopener">SNIP-16</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="version0.13.3"><a class="anchor" href="#version0.13.3"></a>Starknet v0.13.3 (November 20, 24)</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -682,7 +748,7 @@
 </li>
 </ul>
 </div>
-<h3 id="additional_resources" class="discrete">Additional resources</h3>
+<h3 id="additional_resources_2" class="discrete">Additional resources</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -788,7 +854,7 @@
 <div class="paragraph">
 <p>Errors prettifying: execution errors are becoming more <a href="https://github.com/starkware-libs/blockifier/blob/8417325e6990af64e93253b1f76cb70611516cd2/crates/blockifier/src/execution/syscalls/hint_processor.rs#L69">structured</a>, which will be the basis for better error handling in the next JSON RPC version, resulting in nice error displays by wallets.</p>
 </div>
-<h3 id="additional_resources_2" class="discrete">Additional resources</h3>
+<h3 id="additional_resources_3" class="discrete">Additional resources</h3>
 <div class="paragraph">
 <p>Community Forum Posts:</p>
 </div>
@@ -1051,7 +1117,7 @@
 <div class="paragraph">
 <p>Starknet now supports multiple L1 providers.</p>
 </div>
-<h3 id="additional_resources_3" class="discrete">Additional resources</h3>
+<h3 id="additional_resources_4" class="discrete">Additional resources</h3>
 <div class="paragraph">
 <p>Community Forum Posts:</p>
 </div>
