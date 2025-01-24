@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Local Development nodes :: Starknet documentation</title>
-    <link rel="canonical" href="https://docs.starknet.io/tools/devtools/devnets/">
-    <link rel="prev" href="../vscode/">
-    <link rel="next" href="../libs-for-dapps/">
+    <title>Devtools for writing Starknet smart contracts :: Starknet documentation</title>
+    <link rel="canonical" href="https://docs.starknet.io/tools/devtools/writing-smart-contracts/">
+    <link rel="prev" href="../coding-in-cairo/">
+    <link rel="next" href="../building-dapps/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -362,7 +362,7 @@
 <ul class="nav-list">
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Developer Tools</span>
+    <span class="nav-text">Devtools</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a 
@@ -372,47 +372,27 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../clis/">Command Line Tools</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../sdks/">Software Development Kits</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../smart-contract-tools/">Smart Contract Development</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../vscode/">Visual Studio Code Extension</a>
+     href="../coding-in-cairo/">Coding in Cairo</a>
   </li>
   <li class="nav-item is-current-page" data-depth="3">
     <a 
        class="nav-link"
-     href="./">Local Development Nodes</a>
+     href="./">Writing smart contracts</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../libs-for-dapps/">Libraries for Dapps</a>
+     href="../building-dapps/">Building dApps</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../dapp-frameworks/">Dapp Frameworks</a>
+     href="../interacting-with-starknet/">Interacting with Starknet</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../utilities/">Utilities</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../security/">Security Tools</a>
+     href="../running-devnets/">Running devnets</a>
   </li>
 </ul>
   </li>
@@ -629,93 +609,53 @@
 <aside class="toc sidebar" data-title="Table of Contents" data-levels="2">
   <div style="position:sticky;top:7rem;z-index:2;margin-bottom:1rem">
     <div class="edit-this-page">
-      <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/tools/pages/devtools/devnets.adoc" target="_blank">✏️&nbsp;&nbsp;Edit page</a>
+      <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/tools/pages/devtools/writing-smart-contracts.adoc" target="_blank">✏️&nbsp;&nbsp;Edit page</a>
     </div>
     <div class="edit-this-page">
-      <a href='https://github.com/starknet-io/starknet-docs/issues/new?assignees=landauraz&title=Feedback for "Local Development nodes"' target="_blank">❤️&nbsp;&nbsp;Share feedback</a>
+      <a href='https://github.com/starknet-io/starknet-docs/issues/new?assignees=landauraz&title=Feedback for "Devtools for writing Starknet smart contracts"' target="_blank">❤️&nbsp;&nbsp;Share feedback</a>
     </div>
   </div>
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Local Development nodes</h1>
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>A Starknet devnet is a local Starknet node implementations, aimed for testing and development. A devnet behaves just like a real Starknet node, but everything is executed locally. This enables much faster and more private development of Starknet applications.</p>
-</div>
-</div>
-</div>
+<h1 class="page">Devtools for writing Starknet smart contracts</h1>
 <div class="sect1">
-<h2 id="starknet-devnet-rs"><a class="anchor" href="#starknet-devnet-rs"></a>starknet-devnet-rs</h2>
+<h2 id="starknet-foundry"><a class="anchor" href="#starknet-foundry"></a>Starknet Foundry</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>starknet-devnet-rs can is a Rust implementation of a local Starknet node. Developed by SpaceShard.</p>
-</div>
-<div class="paragraph">
-<p>With starknet-devnet-rs includes many featured tailored for testing and development, which are not present on testnet/mainnet.
-Some of the features include:</p>
+<p><a href="https://github.com/foundry-rs/starknet-foundry" target="_blank" rel="noopener">Starknet Foundry</a> is the go-to toolchain for developing Starknet smart contracts, which includes:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Pre-deployed and pre-funded accounts</p>
+<p><code>snforge</code>, a command line interface that enables using of various "cheatcodes" for testing various aspects of the contracts, such as setting caller address, manipulating the timestamp and block number, forking the chain at a specific block, getting accurate gas and resource reports, profiling and more.</p>
 </li>
 <li>
-<p>Forking the chain at a specific block.</p>
-</li>
-<li>
-<p>Dumping current state (and loading in future runs)</p>
-</li>
-<li>
-<p>Impersonating account</p>
-</li>
-<li>
-<p>Mock L1&lt;&gt;L2 communication</p>
-</li>
-</ul>
-</div>
-<h3 id="relevant_links" class="discrete">Relevant links</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>GitHub: <a href="https://github.com/0xSpaceShard/starknet-devnet-rs">starknet-devnet-rs on GitHub</a></p>
-</li>
-<li>
-<p>Crates: <a href="https://crates.io/crates/starknet-devnet">starknet-devnet-rs on Crates</a></p>
-</li>
-<li>
-<p>Documentation: <a href="https://0xspaceshard.github.io/starknet-devnet-rs/">starknet-devnet-rs Docs</a></p>
-</li>
-<li>
-<p>Support: devnet channel on <a href="https://discord.gg/starknet-community">Starknet Discord</a></p>
+<p><code>sncast</code>, a command line interface with Starknet Foundry projects that enable to interact with Starknet with deep integration, including declaring, deploying, and interacting with contracts, deploying accounts, and more.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="katana"><a class="anchor" href="#katana"></a>Katana</h2>
+<h2 id="starknet-remix-plugin"><a class="anchor" href="#starknet-remix-plugin"></a>Starknet Remix plugin</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Katana, developed by the <a href="https://x.com/cartridge_gg">Dojo team</a>, is an extremely fast devnet designed to support local development with Dojo, which is a gaming engine for Starknet. You can use Katana as a general purpose devnet as well.</p>
+<p><a href="https://remix-project.org" target="_blank" rel="noopener">Remix</a> is a browser-based integrated development environment (IDE) for Ethereum that you can use for learning, experimenting and finding vulnerabilities in smart contracts, without installing anything. <a href="https://github.com/NethermindEth/starknet-remix-plugin" target="_blank" rel="noopener">Starknet Remix plugin</a> lets you use Remix for testing Starknet smart contracts, so you can focus on learning Cairo and Starknet in the comfort of your browser. The plugin is also integrated with <a href="https://starknet-by-example.voyager.online/" target="_blank" rel="noopener">Starknet By Example</a>, a rich repository of practical learning content.</p>
 </div>
-<h3 id="relevant_links_2" class="discrete">Relevant links</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>GitHub: <a href="https://github.com/dojoengine/dojo">Dojo Engine on GitHub</a></p>
-</li>
-<li>
-<p>Documentation: <a href="https://book.dojoengine.org/toolchain/katana">Katana Docs</a></p>
-</li>
-</ul>
+</div>
+</div>
+<div class="sect1">
+<h2 id="open-zeppelin-contract-wizard"><a class="anchor" href="#open-zeppelin-contract-wizard"></a>Open Zeppelin Contract Wizard</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://wizard.openzeppelin.com/cairo" target="_blank" rel="noopener">Open Zeppelin Contract Wizard</a> is a tool that helps you create smart contracts with Open Zeppelin libraries by easily toggling on and off features for popular smart contract patterns.</p>
 </div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../vscode/">Visual Studio Code Extension</a></span>
-  <span class="next"><a href="../libs-for-dapps/">Libraries for Dapps</a></span>
+  <span class="prev"><a href="../coding-in-cairo/">Coding in Cairo</a></span>
+  <span class="next"><a href="../building-dapps/">Building dApps</a></span>
 </nav>
 </article>
   </div>

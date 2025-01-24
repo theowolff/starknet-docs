@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Starknet developer tools :: Starknet documentation</title>
+    <title>Starknet devtools :: Starknet documentation</title>
     <link rel="canonical" href="https://docs.starknet.io/tools/devtools/overview/">
     <link rel="prev" href="../../../architecture-and-concepts/network-architecture/transactions/">
-    <link rel="next" href="../clis/">
+    <link rel="next" href="../coding-in-cairo/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -362,7 +362,7 @@
 <ul class="nav-list">
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Developer Tools</span>
+    <span class="nav-text">Devtools</span>
 <ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="3">
     <a 
@@ -372,47 +372,27 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../clis/">Command Line Tools</a>
+     href="../coding-in-cairo/">Coding in Cairo</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../sdks/">Software Development Kits</a>
+     href="../writing-smart-contracts/">Writing smart contracts</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../smart-contract-tools/">Smart Contract Development</a>
+     href="../building-dapps/">Building dApps</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../vscode/">Visual Studio Code Extension</a>
+     href="../interacting-with-starknet/">Interacting with Starknet</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../devnets/">Local Development Nodes</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../libs-for-dapps/">Libraries for Dapps</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../dapp-frameworks/">Dapp Frameworks</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../utilities/">Utilities</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../security/">Security Tools</a>
+     href="../running-devnets/">Running devnets</a>
   </li>
 </ul>
   </li>
@@ -632,38 +612,154 @@
       <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/tools/pages/devtools/overview.adoc" target="_blank">✏️&nbsp;&nbsp;Edit page</a>
     </div>
     <div class="edit-this-page">
-      <a href='https://github.com/starknet-io/starknet-docs/issues/new?assignees=landauraz&title=Feedback for "Starknet developer tools"' target="_blank">❤️&nbsp;&nbsp;Share feedback</a>
+      <a href='https://github.com/starknet-io/starknet-docs/issues/new?assignees=landauraz&title=Feedback for "Starknet devtools"' target="_blank">❤️&nbsp;&nbsp;Share feedback</a>
     </div>
   </div>
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Starknet developer tools</h1>
+<h1 class="page">Starknet devtools</h1>
+<div class="sect1">
+<h2 id="introduction"><a class="anchor" href="#introduction"></a>Introduction</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Cairo is a turing complete language for writing provable programs. It is also the language used for writing smart contracts for Starknet. Starknet uses a different model than the Ethereum Virtual Machine (EVM), and as such, requires specialized tools for development.</p>
+<p>To support its unique architecture, Starknet boasts its own suite of developer tools (devtools) that aim to streamline the development process for Starknet developers. While sometimes developed in coordination with StarkWare, the majority of these tools are community-driven projects, showcasing the collaborative and innovative spirit of the Starknet ecosystem.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="../../_images/devtools_flow.svg" alt="Devtools Flow">
-</div>
-</div>
-<div class="admonitionblock note">
+<div class="admonitionblock important">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>This list of tools is dynamic and is being updated as more tools are added. If a tool you are using is missing, please consider editing this page and creating a Pull Request.</p>
+<p>The list of devtools in this section is dynamic and continuously updated. If a tool you are using is missing, please consider opening an issue or editing the page by yourself.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="list_of_devtools"><a class="anchor" href="#list_of_devtools"></a>List of devtools</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../coding-in-cairo/" class="xref page">Devtools for coding in Cairo</a>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Scarb</p>
+</li>
+<li>
+<p>VS Code Cairo extension</p>
+</li>
+<li>
+<p>Universal-Sierra-Compiler</p>
+</li>
+<li>
+<p>cairo-profiler</p>
+</li>
+<li>
+<p>Cairo Playground</p>
+</li>
+<li>
+<p>Sierra Analyzer</p>
+</li>
+<li>
+<p>Cairo lint</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="../writing-smart-contracts/" class="xref page">Devtools for writing Starknet smart contracts</a>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Starknet Foundry</p>
+</li>
+<li>
+<p>Starknet Remix plugin</p>
+</li>
+<li>
+<p>Open Zeppelin Contract Wizard</p>
+</li>
+<li>
+<p>Walnut</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="../interacting-with-starknet/" class="xref page">Devtools for interacting with Starknet</a>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Starkli</p>
+</li>
+<li>
+<p>sncast</p>
+</li>
+<li>
+<p>Starknet SDKs</p>
+</li>
+<li>
+<p>Entro</p>
+</li>
+<li>
+<p>Starknet RPC Request Builder</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="../building-dapps/" class="xref page">Devtools for building Starknet decentralized apps (dApps)</a>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Scaffold-Stark</p>
+</li>
+<li>
+<p>Starknet Scaffold</p>
+</li>
+<li>
+<p>Starknet React</p>
+</li>
+<li>
+<p>Get Starknet</p>
+</li>
+<li>
+<p>Starknetkit</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="../running-devnets/" class="xref page">Devtools for using Starknet developer networks (devnets)</a>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Starknet Devnet RS</p>
+</li>
+<li>
+<p>Starknet Devnet JS</p>
+</li>
+<li>
+<p>Katana</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
 <nav class="pagination">
   <span class="prev"><a href="../../../architecture-and-concepts/network-architecture/transactions/">Transaction types</a></span>
-  <span class="next"><a href="../clis/">Command Line Tools</a></span>
+  <span class="next"><a href="../coding-in-cairo/">Coding in Cairo</a></span>
 </nav>
 </article>
   </div>
