@@ -912,6 +912,12 @@ This limit is important for ensuring the efficient execution of transactions and
 <td class="tableblock halign-left valign-top"><p class="tableblock">10,000,000</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Max state updates per transaction</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of storage updates that a single transaction can generate. This limit helps maintain network stability and predictable performance.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2,000</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Max number of events per transaction</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of events that a transaction can emit during its execution.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1,000</p></td>
@@ -936,7 +942,7 @@ This limit is important for ensuring the efficient execution of transactions and
 <td class="tableblock halign-left valign-top"><p class="tableblock">1,000,000</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Max contract bytecode size (Number of felts in the program)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Max contract bytecode size</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum size of the bytecode or program that a smart contract can have on Starknet.</p>
 <p class="tableblock">Bytecode is the low-level code that comprises smart contracts. Limiting this size helps manage the complexity of contracts and the overall efficiency of the network.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">81,290</p></td>
@@ -950,7 +956,7 @@ This limit is important for ensuring the efficient execution of transactions and
 <td class="tableblock halign-left valign-top"><p class="tableblock">4,089,446 bytes</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">IP address limits (read/write)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IP address limits</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">In order to reduce network spam, Starknet limits the amount of contract reads and writes that a single IP
 address can make.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">200 per min per IP address</p></td>
@@ -958,13 +964,13 @@ address can make.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Signature length (felts)</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum length of a signature</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">4,000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">4,000</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Calldata length (felts)</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum length of a transaction calldata</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">4,000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">4,000</p></td>
 </tr>
