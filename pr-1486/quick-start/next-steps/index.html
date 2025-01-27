@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Declaring a smart contract :: Starknet documentation</title>
-    <link rel="canonical" href="https://docs.starknet.io/quick-start/declare-a-smart-contract/">
-    <link rel="prev" href="../set-up-an-account/">
-    <link rel="next" href="../deploy-a-smart-contract/">
+    <title>Recommended next steps on your Starknet journey :: Starknet documentation</title>
+    <link rel="canonical" href="https://docs.starknet.io/quick-start/next-steps/">
+    <link rel="prev" href="../sepolia/">
+    <link rel="next" href="../troubleshooting/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -138,32 +138,37 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
+     href="../overview/">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
      href="../environment-setup/">Setting up your environment</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../set-up-an-account/">Setting up an account</a>
+     href="../compiling-hellostarknet/">Compiling <code>HelloStarknet</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../devnet/">Declaring, deploying, and interacting with <code>HelloStarknet</code> locally</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../sepolia/">Deploying and interacting with <code>HelloStarknet</code> on Sepolia</a>
   </li>
   <li class="nav-item is-current-page" data-depth="2">
     <a 
        class="nav-link"
-     href="./">Declaring a smart contract</a>
+     href="./">Recommended next steps</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../deploy-a-smart-contract/">Deploying a smart contract</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../interact-with-a-smart-contract/">Interacting with a smart contract</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../using_devnet/">Using a development network</a>
+     href="../troubleshooting/">Troubleshooting</a>
   </li>
 </ul>
   </li>
@@ -584,252 +589,44 @@
 <aside class="toc sidebar" data-title="Table of Contents" data-levels="2">
   <div style="position:sticky;top:7rem;z-index:2;margin-bottom:1rem">
     <div class="edit-this-page">
-      <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/quick-start/pages/declare-a-smart-contract.adoc" target="_blank">✏️&nbsp;&nbsp;Edit page</a>
+      <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/quick-start/pages/next-steps.adoc" target="_blank">✏️&nbsp;&nbsp;Edit page</a>
     </div>
     <div class="edit-this-page">
-      <a href='https://github.com/starknet-io/starknet-docs/issues/new?assignees=landauraz&title=Feedback for "Declaring a smart contract"' target="_blank">❤️&nbsp;&nbsp;Share feedback</a>
+      <a href='https://github.com/starknet-io/starknet-docs/issues/new?assignees=landauraz&title=Feedback for "Recommended next steps on your Starknet journey"' target="_blank">❤️&nbsp;&nbsp;Share feedback</a>
     </div>
   </div>
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Declaring a smart contract</h1>
-<div class="sect1">
-<h2 id="overview"><a class="anchor" href="#overview"></a>Overview</h2>
-<div class="sectionbody">
+<h1 class="page">Recommended next steps on your Starknet journey</h1>
 <div class="paragraph">
-<p>Before a contract is deployed on Starknet it first needs to be <em>declared</em>. Declaration is the process of submitting a contract&#8217;s code to Starknet and making it available for future deployments, analogous to registering its blueprint.</p>
+<p>Welcome to the fifth and final installment of the "Hello, Starknet!" quickstart series, the official tutorial for starting your journey as a Starknet developer! 🚀</p>
 </div>
 <div class="paragraph">
-<p>This page will guide you through the steps necessary to declare a smart contract on Starknet. For more details on declaration and its benefits, see <a href="../../architecture-and-concepts/smart-contracts/contract-classes/" class="xref page">Contract classes and instances</a>.</p>
+<p>By now you&#8217;ve successfully declared, deployed, and interacted with the <code>HelloStarknet</code>, both on Starknet Sepolia and locally (way to go!). This last installment of the series will therefore list the various next steps you can take on your Starknet journey:</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Ensure that the following commands are working properly on your system:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">starkli --version
-scarb --version
-snforge --version
-sncast --version
-asdf --version</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>If either of the above commands fails, see <a href="../environment-setup/" class="xref page">Setting up your environment</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="compiling_a_smart_contract"><a class="anchor" href="#compiling_a_smart_contract"></a>Compiling a smart contract</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Before a smart contract can be declared, it first needs to be compiled. To compile an existing smart contract project, simply navigate into the project&#8217;s directory and run:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">scarb build</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The compiled contract should be saved in the <code>target/dev/</code> directory.</p>
-</div>
-<div class="paragraph">
-<p>If you require a new smart contract project, run either:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">scarb init --name &lt;PROJECT_NAME&gt;</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>in an empty folder with the same name as the project or:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">scarb new &lt;PROJECT_NAME&gt;</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>anywhere, and select the default Starknet Foundry as a test runner.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Building a Starknet Foundry project with Scarb requires <a href="https://www.rust-lang.org/">Rust</a> to be installed. You can verify that Rust is installed and up-to-date by running:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>rustc --version</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>or install the latest Rust version by following the instructions in the <a href="https://doc.rust-lang.org/beta/book/ch01-01-installation.html">Rust documentation</a>.</p>
-</div>
-<div class="paragraph">
-<p>Moreover, the first time a project is built, some components of Scarb are compiled locally with the Rust toolchain. This process may take a few minutes, but will not happen in subsequent builds.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>In any case, the <code>Scarb.toml</code> file in the project&#8217;s directory should resemble the following (up to versions number):</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-toml hljs" data-lang="toml">[package]
-name = &lt;PROJECT_NAME&gt;
-version = "0.1.0"
-edition = "2023_11"
-
-[dependencies]
-starknet = "2.8.4"
-
-[dev-dependencies]
-snforge_std = { git = "https://github.com/foundry-rs/starknet-foundry", tag = "v0.32.0" }
-assert_macros = "2.8.4"
-
-[[target.starknet-contract]]
-sierra = true</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="setting_an_rpc_provider"><a class="anchor" href="#setting_an_rpc_provider"></a>Setting an RPC provider</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>In order to interact with Starknet, Starkli requires an RPC endpoint to be configured. For interactions with Starknet Sepolia and Starknet mainnet, Starkli supports default (and limited) RPC endpoints when using the <code>--network</code> flag. Configuring a custom RPC endpoint can be done by either using Starkli&#8217;s <code>--rpc</code> flag or setting up Starkli&#8217;s <code>STARKNET_RPC</code> environment variable (see more details in the <a href="https://book.starkli.rs/providers#using-an-rpc-url-directly">Starkli documentation</a>). To review all Starknet RPC providers, see <a href="../../tools/api-services/" class="xref page">API providers</a>.</p>
-</div>
-<div class="paragraph">
-<p>For demonstration purposes, this tutorial uses Starkli&#8217;s default Starknet Sepolia RPC endpoint by setting <code>--network=sepolia</code>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="declaring_a_smart_contract"><a class="anchor" href="#declaring_a_smart_contract"></a>Declaring a smart contract</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>A contract can be declared on Starknet using Starkli by running following command:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">starkli declare target/dev/&lt;CONTRACT_NAME&gt;.contract_class.json --network=sepolia</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>When using <code>starkli declare</code>, Starkli will do its best to identify the compiler version of the declared class. In case it fails, the <code>--compiler-version</code> flag can be used to specify the version of the compiler as follows:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="ulist">
+<ul>
 <li>
-<p>Find the compiler versions supported by Starkli by running:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">starkli declare --help</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>and looking for the possible values of the <code>--compiler-version</code> flag.</p>
-</div>
+<p>If you&#8217;re interested in following more hands-on tutorials for Starknet, go to <a href="https://starknet-by-example.voyager.online/" target="_blank" rel="noopener">Starknet by Example</a></p>
 </li>
 <li>
-<p>Find the current Scarb version in use:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">scarb --version</code></pre>
-</div>
-</div>
+<p>If you&#8217;re interested in diving deep into Starknet&#8217;s inner workings, go to <a href="../../architecture-and-concepts/accounts/introduction/" class="xref page">Architecture</a></p>
 </li>
 <li>
-<p>In case a different compiler version is required, switch to a different Scarb version using <code>asdf</code>:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Install the desired Scarb version:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">asdf install scarb &lt;VERSION&gt;</code></pre>
-</div>
-</div>
+<p>If you&#8217;re interested in exploring Starknet&#8217;s toolchain, go to <a href="../../tools/devtools/overview/" class="xref page">Tooling</a></p>
 </li>
 <li>
-<p>Select the desired Scarb version as the local version for the project:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">asdf local scarb &lt;VERSION&gt;</code></pre>
-</div>
-</div>
+<p>If you&#8217;re interested in reviewing Starknet&#8217;s specifications, go to <a href="#tools:limits-and-triggers.adoc" class="xref unresolved">Release information</a></p>
 </li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The following is an example of declaring a contract with both a a custom RPC endpoint (provided by <a href="https://www.infura.io/">Infura</a>) and a specific compiler version:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">starkli declare target/dev/&lt;CONTRACT_NAME&gt;.contract_class.json \
-    --rpc=https://starknet-sepolia.infura.io/v3/&lt;API_KEY&gt; \
-    --compiler-version=2.6.0 \</code></pre>
-</div>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="expected_result"><a class="anchor" href="#expected_result"></a>Expected result</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The output of a successful contract declaration using Starkli should resemble the following:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">Class hash declared: &lt;CLASS_HASH&gt;</code></pre>
-</div>
+</ul>
 </div>
 <div class="paragraph">
-<p>On the other hand, if the contract you are declaring has previously been declared, the output should resemble the following:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">Not declaring class as its already declared. Class hash: &lt;CLASS_HASH&gt;</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>This is because declaration is a one-time process for each unique contract code, and a contract&#8217;s class hash is its unique identifier (for more details, see <a href="../../architecture-and-concepts/smart-contracts/class-hash/" class="xref page">Class hash</a>).</p>
-</div>
-<div class="paragraph">
-<p>In both cases, however, you should be able to see the declared contract on a block explorer like <a href="https://sepolia.starkscan.co/">StarkScan</a> or <a href="https://sepolia.voyager.online/">Voyager</a> by searching for its class hash.</p>
-</div>
-</div>
+<p>Good luck! We can&#8217;t wait to see the new and innovative things you&#8217;ll bring to Starknet 🌟</p>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../set-up-an-account/">Setting up an account</a></span>
-  <span class="next"><a href="../deploy-a-smart-contract/">Deploying a smart contract</a></span>
+  <span class="prev"><a href="../sepolia/">Deploying and interacting with <code>HelloStarknet</code> on Sepolia</a></span>
+  <span class="next"><a href="../troubleshooting/">Troubleshooting</a></span>
 </nav>
 </article>
   </div>

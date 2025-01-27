@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Interacting with a smart contract :: Starknet documentation</title>
-    <link rel="canonical" href="https://docs.starknet.io/quick-start/interact-with-a-smart-contract/">
-    <link rel="prev" href="../deploy-a-smart-contract/">
-    <link rel="next" href="../using_devnet/">
+    <title>Deploying and interacting with the HelloStarknet contract on Starknet Sepolia :: Starknet documentation</title>
+    <link rel="canonical" href="https://docs.starknet.io/quick-start/sepolia/">
+    <link rel="prev" href="../devnet/">
+    <link rel="next" href="../next-steps/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -138,32 +138,37 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
+     href="../overview/">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
      href="../environment-setup/">Setting up your environment</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../set-up-an-account/">Setting up an account</a>
+     href="../compiling-hellostarknet/">Compiling <code>HelloStarknet</code></a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../declare-a-smart-contract/">Declaring a smart contract</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../deploy-a-smart-contract/">Deploying a smart contract</a>
+     href="../devnet/">Declaring, deploying, and interacting with <code>HelloStarknet</code> locally</a>
   </li>
   <li class="nav-item is-current-page" data-depth="2">
     <a 
        class="nav-link"
-     href="./">Interacting with a smart contract</a>
+     href="./">Deploying and interacting with <code>HelloStarknet</code> on Sepolia</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../using_devnet/">Using a development network</a>
+     href="../next-steps/">Recommended next steps</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../troubleshooting/">Troubleshooting</a>
   </li>
 </ul>
   </li>
@@ -584,119 +589,279 @@
 <aside class="toc sidebar" data-title="Table of Contents" data-levels="2">
   <div style="position:sticky;top:7rem;z-index:2;margin-bottom:1rem">
     <div class="edit-this-page">
-      <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/quick-start/pages/interact-with-a-smart-contract.adoc" target="_blank">✏️&nbsp;&nbsp;Edit page</a>
+      <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/quick-start/pages/sepolia.adoc" target="_blank">✏️&nbsp;&nbsp;Edit page</a>
     </div>
     <div class="edit-this-page">
-      <a href='https://github.com/starknet-io/starknet-docs/issues/new?assignees=landauraz&title=Feedback for "Interacting with a smart contract"' target="_blank">❤️&nbsp;&nbsp;Share feedback</a>
+      <a href='https://github.com/starknet-io/starknet-docs/issues/new?assignees=landauraz&title=Feedback for "Deploying and interacting with the &lt;code&gt;HelloStarknet&lt;/code&gt; contract on Starknet Sepolia"' target="_blank">❤️&nbsp;&nbsp;Share feedback</a>
     </div>
   </div>
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Interacting with a smart contract</h1>
-<div class="sect1">
-<h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="ensure_starkli_and_scarb_are_installed_correctly"><a class="anchor" href="#ensure_starkli_and_scarb_are_installed_correctly"></a>Ensure Starkli and Scarb are installed correctly</h3>
-<div class="paragraph">
-<p>Ensure that the below commands are working properly on your system.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">starkli --version
-scarb --version</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>If either of the above commands fail, see <a href="../environment-setup/" class="xref page">Setting up your environment</a>.</p>
-</div>
-</div>
-</div>
-</div>
+<h1 class="page">Deploying and interacting with the <code>HelloStarknet</code> contract on Starknet Sepolia</h1>
 <div class="sect1">
 <h2 id="introduction"><a class="anchor" href="#introduction"></a>Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Starkli enables interaction with smart contracts via two primary methods:</p>
+<p>Welcome to the fourth installment of the "Hello, Starknet!" quickstart series, the official tutorial for starting your journey as a Starknet developer! 🚀</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>call</code> for read-only functions.</p>
-</li>
-<li>
-<p><code>invoke</code> for write functions that modify the state.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>Starknet Sepolia is Starknet&#8217;s testnet environment designed to provide developers with a testing ground that mirrors the behavior of the Starknet Mainnet while being connected to the Ethereum Sepolia testnet, making it ideal for debugging and optimizing your code before deploying it to production. This installment of the series will therefore guide you through the steps necessary to deploy and interact with the <code>HelloStarknet</code> contract on Starknet Sepolia.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="calling_a_function"><a class="anchor" href="#calling_a_function"></a>Calling a function</h2>
+<h2 id="deploying_up_a_new_sepolia_account"><a class="anchor" href="#deploying_up_a_new_sepolia_account"></a>Deploying up a new Sepolia account</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <code>call</code> command allows querying a smart contract function without sending a transaction.</p>
+<p>Similar to interacting with a Starknet Devnet instance, to interact with Starknet Sepolia you first need an account. However, instead fetching a predeployed Sepolia account, we will create a <em>new</em> account and deploy a new Starkli ourselves.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>To learn how to fetch a predeployed Sepolia account, check out <a href="../troubleshooting/" class="xref page">Troubleshooting</a>.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>As an example you can use the <code>get_owner</code> function which doesn&#8217;t expect any arguments and returns the address of the current owner:</p>
+<p>Creating a new Starkli account requires first creating a Starkli signer, which will again be an encrypted keystore signer. To create a new encrypted keystore signer, run:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">starkli call \
-    0x014825acb37c36563d3b96c450afe363d2fdfa3cfbd618b323f95b68b55ebf7e \
-    get_owner --network=sepolia</code></pre>
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli signer keystore new keystore.json</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>This will return the address that we passed to the constructor during deployment:</p>
+<p>and enter a password that will be used to encrypt your private key. If successful, the result should resemble the following:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">[
-    "0x02cdab749380950e7a7c0deff5ea8edd716feb3a2952add4e5659655077b8510"
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">Created new encrypted keystore file: keystore.json
+Public key: 0x03dfdb739fbd3ddab0f851bf1131079e31ca266c7af94f05cef4d9481f837509</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To avoid specifying the keystore file in every subsequent Starkli command, export the keystore path by running:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">export STARKNET_KEYSTORE=$(pwd)/keystore.json</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now that you have a Starkli signer, you can create a new account by running:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli account oz init account.json</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><code>oz</code> stand for OpenZeppelin, which, along with Argent and Braavos, are the accounts variants supported by Starkli.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The result should resemble the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">Created new account config file: account.json
+
+Once deployed, this account will be available at:
+    0x01cf4d57ba01109f018dec3ea079a38fc08b789e03de4df937ddb9e8a0ff853a
+
+Deploy this account by running:
+    starkli account deploy account.json</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To avoid specifying the account file in every subsequent Starkli command, export the account path by running:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">export STARKNET_ACCOUNT=$(pwd)/account.json</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Finally, to deploy your account run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli account deploy account.json \
+    --network=sepolia \
+    --strk</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This command sends a <code>DEPLOY_ACCOUNT</code> transaction, which requires the account to contain enough STRK to pay for the transaction fee.
+When run, the command shows instructions on how to fund the account before proceeding, which can easily be done using the <a href="https://starknet-faucet.vercel.app/" target="_blank" rel="noopener">Starknet Sepolia faucet</a>. If the account was funded and deployed successfully, the output of the deployment should resemble the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">The estimated account deployment fee is 0.000615910614837578 STRK. However, to avoid failure, fund at least:
+    0.001358626332416775 STRK
+to the following address:
+    0x01cf4d57ba01109f018dec3ea079a38fc08b789e03de4df937ddb9e8a0ff853a
+Press [ENTER] once you've funded the address.
+Waiting for transaction 0x06a9a08208084ac376f10657c745a3020362fa65e7730b13e08ec03d0cd7e59d to confirm.
+If this process is interrupted, you will need to run `starkli account fetch` to update the account file.
+Transaction not confirmed yet...
+Transaction 0x06a9a08208084ac376f10657c745a3020362fa65e7730b13e08ec03d0cd7e59d confirmed</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and you should be able to see the deployed account on one of <a href="../../tools/ref-block-explorers/" class="xref page">Starknet Sepolia&#8217;s block explorers</a> by searching for its address.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="deploying_hellostarknet_on_sepolia"><a class="anchor" href="#deploying_hellostarknet_on_sepolia"></a>Deploying <code>HelloStarknet</code> on Sepolia</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Unlike when using a Starknet Devnet instance, there&#8217;s no need for us to declare <code>HelloStarknet</code> on Sepolia as it has already been declared before (remember: declaration is a one-time process for each unique contract code). To verify that, you can try declaring it by navigating into the <code>hello_starknet</code> directory created in <a href="../compiling-hellostarknet/" class="xref page">Compiling the <code>HelloStarknet</code> contract</a>, running:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli declare \
+    target/dev/hello_starknet_HelloStarknet.contract_class.json \
+    --network=sepolia
+    --strk</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and entering your password. The result should resemble to the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">Not declaring class as it's already declared. Class hash:
+0x0785c92bf4aa7a89fb62371802aef2f58e2333d8df7e2aadf938efa83735431c</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>With <code>HelloStarknet</code> already declared, you can deploy an instance of it by running:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli deploy \
+    0x0785c92bf4aa7a89fb62371802aef2f58e2333d8df7e2aadf938efa83735431c \
+    --network=sepolia \
+    --strk</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and entering your password. If successful, the result should resemble the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">Deploying class 0x0785c92bf4aa7a89fb62371802aef2f58e2333d8df7e2aadf938efa83735431c with salt 0x07154f9d7e9602d3d3dd0034168be00f044ba15caf80b6fe09f6fef8f2568f57...
+The contract will be deployed at address 0x00ed474ec67f690901bcc56ee69491163c4203ededf473198e08c24fe2ab0a29
+Contract deployment transaction: 0x066ccbbbdd2c3967620a039d7579bf5e03a5c15c77819d53a8b21dbdee705f8d
+Contract deployed:
+0x00ed474ec67f690901bcc56ee69491163c4203ededf473198e08c24fe2ab0a29</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and you should be able to see your deployed contract on one of <a href="../../tools/ref-block-explorers/" class="xref page">Starknet Sepolia&#8217;s block explorers</a> by searching for its contract address.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Your deployed contract&#8217;s address will be different the than one listed above. Make sure to use the address of your own deployed contract when searching for it in a block explorer and interacting with it.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="interacting_with_hellostarknet_on_sepolia"><a class="anchor" href="#interacting_with_hellostarknet_on_sepolia"></a>Interacting with <code>HelloStarknet</code> on Sepolia</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now that your instance of <code>HelloStarknet</code> is deployed, you can invoke its <code>increase_balance</code> function by running:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli invoke \
+    0x00ed474ec67f690901bcc56ee69491163c4203ededf473198e08c24fe2ab0a29 \
+    increase_balance 66 \
+    --network=sepolia \
+    --strk</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and entering your password. If successful, the result should resemble the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">Invoke transaction: 0x063b85d93491e678fe051952c39575c80ea397fa1be4076fe28616356d673595</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and you should be able to see the <code>INVOKE</code> transaction on one of <a href="../../tools/ref-block-explorers/" class="xref page">Starknet Sepolia&#8217;s block explorers</a> by searching for its hash.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Your transaction&#8217;s hash will be different the than one listed above. Make sure to use the hash of your own invoke transaction when searching for it in a block explorer.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>After the transaction&#8217;s status is changed to <code>Accepted on L2</code>, you can confirm that the state of Starknet Sepolia has indeed changed by calling your deployed contract&#8217;s <code>get_balance</code> function by running:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli call \
+    0x00ed474ec67f690901bcc56ee69491163c4203ededf473198e08c24fe2ab0a29 \
+    get_balance \
+    --network=sepolia</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and entering your password. If all goes well, the result should resemble the following (<code>66<sub>10</sub> = 42<sub>16</sub></code>):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">[
+    "0x0000000000000000000000000000000000000000000000000000000000000042"
 ]</code></pre>
 </div>
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="invoking_a_function"><a class="anchor" href="#invoking_a_function"></a>Invoking a function</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>To modify the state of the smart contract, use the <code>invoke</code> command. Unlike the <code>call</code> command, <code>invoke</code> submits a transaction to the network.</p>
-</div>
-<div class="paragraph">
-<p>In this example, we&#8217;ll invoke the <code>transfer_ownership</code> function to transfer the ownership from our deployer address to a different smart wallet address:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">starkli invoke \
-    0x014825acb37c36563d3b96c450afe363d2fdfa3cfbd618b323f95b68b55ebf7e \
-    transfer_ownership \
-    0x011088d3cbe4289bc6750ee3a9cf35e52f4fa4e0ac9f42fb0b62e983139e135a \
-    --network=sepolia</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>After the transaction is accepted on L2, you can confirm the state transition by calling the <code>get_owner</code> function again:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">starkli call \
-    0x014825acb37c36563d3b96c450afe363d2fdfa3cfbd618b323f95b68b55ebf7e \
-    get_owner \
-    --network=sepolia</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The <code>get_owner</code> function now returns the new owner address, confirming the successful ownership transfer.</p>
-</div>
-</div>
-</div>
 <nav class="pagination">
-  <span class="prev"><a href="../deploy-a-smart-contract/">Deploying a smart contract</a></span>
-  <span class="next"><a href="../using_devnet/">Using a development network</a></span>
+  <span class="prev"><a href="../devnet/">Declaring, deploying, and interacting with <code>HelloStarknet</code> locally</a></span>
+  <span class="next"><a href="../next-steps/">Recommended next steps</a></span>
 </nav>
 </article>
   </div>
