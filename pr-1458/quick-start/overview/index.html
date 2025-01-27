@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Setting up an account :: Starknet documentation</title>
-    <link rel="canonical" href="https://docs.starknet.io/quick-start/set-up-an-account/">
-    <link rel="prev" href="../environment-setup/">
-    <link rel="next" href="../declare-a-smart-contract/">
+    <title>"Hello, Starknet!" quickstart series overview :: Starknet documentation</title>
+    <link rel="canonical" href="https://docs.starknet.io/quick-start/overview/">
+    <link rel="prev" href="../../">
+    <link rel="next" href="../environment-setup/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -135,35 +135,40 @@
     <button class="nav-item-toggle mask-svg-center"></button>
     <span class="nav-text">Quickstart</span>
 <ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a 
+       class="nav-link"
+     href="./">Overview</a>
+  </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../environment-setup/">Setting up your environment</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="./">Setting up an account</a>
+     href="../compiling-hellostarknet/">Compiling <code>HelloStarknet</code></a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../declare-a-smart-contract/">Declaring a smart contract</a>
+     href="../devnet/">Declaring, deploying, and interacting with <code>HelloStarknet</code> locally</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../deploy-a-smart-contract/">Deploying a smart contract</a>
+     href="../sepolia/">Deploying and interacting with <code>HelloStarknet</code> on Sepolia</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../interact-with-a-smart-contract/">Interacting with a smart contract</a>
+     href="../next-steps/">Recommended next steps</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../using_devnet/">Using a development network</a>
+     href="../troubleshooting/">Troubleshooting</a>
   </li>
 </ul>
   </li>
@@ -609,185 +614,47 @@
 <aside class="toc sidebar" data-title="Table of Contents" data-levels="2">
   <div style="position:sticky;top:7rem;z-index:2;margin-bottom:1rem">
     <div class="edit-this-page">
-      <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/quick-start/pages/set-up-an-account.adoc" target="_blank">✏️&nbsp;&nbsp;Edit page</a>
+      <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/quick-start/pages/overview.adoc" target="_blank">✏️&nbsp;&nbsp;Edit page</a>
     </div>
     <div class="edit-this-page">
-      <a href='https://github.com/starknet-io/starknet-docs/issues/new?assignees=landauraz&title=Feedback for "Setting up an account"' target="_blank">❤️&nbsp;&nbsp;Share feedback</a>
+      <a href='https://github.com/starknet-io/starknet-docs/issues/new?assignees=landauraz&title=Feedback for "&quot;Hello, Starknet!&quot; quickstart series overview"' target="_blank">❤️&nbsp;&nbsp;Share feedback</a>
     </div>
   </div>
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Setting up an account</h1>
-<div class="sect1">
-<h2 id="introduction"><a class="anchor" href="#introduction"></a>Introduction</h2>
-<div class="sectionbody">
+<h1 class="page">"Hello, Starknet!" quickstart series overview</h1>
 <div class="paragraph">
-<p>In the previous tutorial, you installed all the tools necessary to use Starknet, including Starkli. In this tutorial, we will use Starkli to create and deploy a new account on Starknet Sepolia.</p>
+<p>Welcome to the "Hello, Starknet!" quickstart series, the official tutorial for starting your journey as a Starknet developer! 🚀</p>
 </div>
 <div class="paragraph">
-<p>To learn more about Starknet accounts, check out the <a href="../../architecture-and-concepts/accounts/introduction/" class="xref page">Accounts section</a>.</p>
+<p>This series will walk you though all the steps necessary to deploy your very own <code>HelloStarknet</code> contract, including:</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Ensure that the following commands are working properly on your system:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli --version</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>If this command fails, see <a href="../environment-setup/" class="xref page">Setting up your environment</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="creating_a_signer"><a class="anchor" href="#creating_a_signer"></a>Creating a signer</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Creating a Starkli account requires first creating a Starkli signer, which Starkli uses to sign transactions.
-In this tutorial, we will use an encrypted keystores signer.
-Encrypted keystores are JSON files that follow the <a href="https://ethereum.org/en/developers/docs/data-structures-and-encoding/web3-secret-storage/" target="_blank" rel="noopener">Web3 secret storage definition</a>.
-Specifically, a password must be supplied to create a keystore and is required for when using it.
-The main advantage of this approach is that it prevents storing the private key as plain text on your computer.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../environment-setup/" class="xref page">Setting up your Starknet development environment</a></p>
+</li>
+<li>
+<p><a href="../compiling-hellostarknet/" class="xref page">Compiling the <code>HelloStarknet</code> contract</a></p>
+</li>
+<li>
+<p><a href="../devnet/" class="xref page">Declaring, deploying, and interacting with the <code>HelloStarknet</code> contract locally</a></p>
+</li>
+<li>
+<p><a href="../sepolia/" class="xref page">Deploying and interacting with the <code>HelloStarknet</code> contract on Starknet Sepolia</a></p>
+</li>
+<li>
+<p><a href="../next-steps/" class="xref page">Recommended next steps for your Starknet journey</a></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>To create a new encrypted keystore signer, run:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli signer keystore new keystore.json</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>and enter a password that will be used to encrypt your private key. The result should resemble the following:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">Created new encrypted keystore file: ~/.starkli-accounts/my-first-account/keystore.json
-Public key: 0x03dfdb739fbd3ddab0f851bf1131079e31ca266c7af94f05cef4d9481f837509</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Although not mandory, exporting the keystore path is highly recommended as it prevents specifying <code>--keystore</code> in every command. To export the keystore path, run:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">export STARKNET_KEYSTORE=$(pwd)/keystore.json</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="creating_an_account"><a class="anchor" href="#creating_an_account"></a>Creating an account</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Now that you have a Starkli signer, you can create a new account by running:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli account oz init account.json</code></pre>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p><code>oz</code> stand for OpenZeppelin, which, along with Argent and Braavos, are the accounts variants supported by Starkli.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The result should resemble the following:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">Created new account config file: ~/.starkli-accounts/my-first-account/account.json
-
-Once deployed, this account will be available at:
-    0x01cf4d57ba01109f018dec3ea079a38fc08b789e03de4df937ddb9e8a0ff853a
-
-Deploy this account by running:
-    starkli account deploy account.json</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Similar to the exporting keystore path, exporting the account path is also highly recommended to prevent specifying <code>--account</code> in every command. To export the account path, run:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">export STARKNET_ACCOUNT=$(pwd)/account.json</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="deploying_an_account"><a class="anchor" href="#deploying_an_account"></a>Deploying an account</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Finally, to deploy your account run:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli account deploy account.json</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>This command sends a <code>DEPLOY_ACCOUNT</code> transaction, which requires the account to contain enough ETH to pay for the transaction fee.
-When run, the command shows instructions on how to fund the account before proceeding.
-You can fund your wallet using one of the <a href="https://starknet-faucet.vercel.app/" target="_blank" rel="noopener">Starknet Sepolia faucet</a>.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>To send the <code>DEPLOY_ACCOUNT</code> transaction with STRK as fee token, use:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli account deploy account.json --strk</code></pre>
-</div>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The following is an example output for a successful account deployment:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">The estimated account deployment fee is 0.000011483579723913 ETH. However, to avoid failure, fund at least:
-    0.000017225369585869 ETH
-to the following address:
-    0x01cf4d57ba01109f018dec3ea079a38fc08b789e03de4df937ddb9e8a0ff853a
-Press [ENTER] once you've funded the address.
-Waiting for transaction 0x06a9a08208084ac376f10657c745a3020362fa65e7730b13e08ec03d0cd7e59d to confirm.
-If this process is interrupted, you will need to run `starkli account fetch` to update the account file.
-Transaction not confirmed yet...
-Transaction 0x06a9a08208084ac376f10657c745a3020362fa65e7730b13e08ec03d0cd7e59d confirmed</code></pre>
-</div>
-</div>
-</div>
+<p>Good luck! We can already feel this this is the beginning of a beautiful friendship 🤜🤛</p>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../environment-setup/">Setting up your environment</a></span>
-  <span class="next"><a href="../declare-a-smart-contract/">Declaring a smart contract</a></span>
+  <span class="prev"><a href="../../">Overview</a></span>
+  <span class="next"><a href="../environment-setup/">Setting up your environment</a></span>
 </nav>
 </article>
   </div>

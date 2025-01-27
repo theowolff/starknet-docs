@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Setting up your environment :: Starknet documentation</title>
+    <title>Setting up your Starknet development environment :: Starknet documentation</title>
     <link rel="canonical" href="https://docs.starknet.io/quick-start/environment-setup/">
-    <link rel="prev" href="../../">
-    <link rel="next" href="../set-up-an-account/">
+    <link rel="prev" href="../overview/">
+    <link rel="next" href="../compiling-hellostarknet/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -135,6 +135,11 @@
     <button class="nav-item-toggle mask-svg-center"></button>
     <span class="nav-text">Quickstart</span>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../overview/">Overview</a>
+  </li>
   <li class="nav-item is-current-page" data-depth="2">
     <a 
        class="nav-link"
@@ -143,27 +148,27 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../set-up-an-account/">Setting up an account</a>
+     href="../compiling-hellostarknet/">Compiling <code>HelloStarknet</code></a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../declare-a-smart-contract/">Declaring a smart contract</a>
+     href="../devnet/">Declaring, deploying, and interacting with <code>HelloStarknet</code> locally</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../deploy-a-smart-contract/">Deploying a smart contract</a>
+     href="../sepolia/">Deploying and interacting with <code>HelloStarknet</code> on Sepolia</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../interact-with-a-smart-contract/">Interacting with a smart contract</a>
+     href="../next-steps/">Recommended next steps</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../using_devnet/">Using a development network</a>
+     href="../troubleshooting/">Troubleshooting</a>
   </li>
 </ul>
   </li>
@@ -612,42 +617,166 @@
       <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/quick-start/pages/environment-setup.adoc" target="_blank">✏️&nbsp;&nbsp;Edit page</a>
     </div>
     <div class="edit-this-page">
-      <a href='https://github.com/starknet-io/starknet-docs/issues/new?assignees=landauraz&title=Feedback for "Setting up your environment"' target="_blank">❤️&nbsp;&nbsp;Share feedback</a>
+      <a href='https://github.com/starknet-io/starknet-docs/issues/new?assignees=landauraz&title=Feedback for "Setting up your Starknet development environment"' target="_blank">❤️&nbsp;&nbsp;Share feedback</a>
     </div>
   </div>
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Setting up your environment</h1>
+<h1 class="page">Setting up your Starknet development environment</h1>
 <div class="sect1">
-<h2 id="overview"><a class="anchor" href="#overview"></a>Overview</h2>
+<h2 id="introduction"><a class="anchor" href="#introduction"></a>Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In order to use Starknet, you need to install several tools. This section will walk you through installing the three most recommended tools to begin developing on Starknet:</p>
+<p>Welcome to the first installment of the "Hello, Starknet!" quistart series, the official tutorial for starting your journey as a Starknet developer! 🚀</p>
+</div>
+<div class="paragraph">
+<p>As a popular phrase (often attributed to Abraham Lincoln) says, "Give me six hours to chop down a tree, and I will spend the first four sharpening the axe". The first installment of the series will therefore guide you through setting up your development environment, which will include the four most recommended tools to begin developing on Starknet:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#tools:devtools/clis.adoc#starkli" class="xref unresolved">Starkli</a>, a command-line interface that allows you to interact with Starknet.</p>
+<p><em>Scarb</em>, a build toolchain and package manager for Cairo and Starknet ecosystems</p>
 </li>
 <li>
-<p><a href="#tools:devtools/smart-contract-tools.adoc#scarb" class="xref unresolved">Scarb</a>, a build toolchain and package manager for Cairo and Starknet ecosystems.</p>
+<p><em>Starknet Foundry</em>, the go-to framework for building and testing Starknet Smart Contracts</p>
 </li>
 <li>
-<p><a href="#tools:devtools/smart-contract-tools.adoc#starknet_foundry" class="xref unresolved">Starknet Foundry</a>, the go-to framework for building and testing Starknet Smart Contracts</p>
+<p><em>Starknet Devnet</em>, a Rust implementation of a local Starknet node</p>
+</li>
+<li>
+<p><em>Starkli</em>, a command-line interface that allows you to interact with Starknet</p>
 </li>
 </ul>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
 <div class="paragraph">
-<p>To review all Starknet developer tools, check out the <a href="../../tools/devtools/overview/" class="xref page">tools and resources section</a>.</p>
+<p>To review these tools in more detail, as well as all other Starknet developer tools, check out the <a href="../../tools/devtools/overview/" class="xref page">Tooling section</a>.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="installing_starkli"><a class="anchor" href="#installing_starkli"></a>Setting up Starkli</h2>
+<h2 id="installing-rust"><a class="anchor" href="#installing-rust"></a>Installing Rust</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Installing Scarb, Starknet Foundry, Starkent Devnet, and Starkli require <a href="https://www.rust-lang.org/">Rust</a> to be installed. You can verify that Rust is installed and up-to-date by running:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>rustc --version</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or install the latest Rust version by following the instructions in the <a href="https://doc.rust-lang.org/beta/book/ch01-01-installation.html">Rust documentation</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installing-scarb-and-snfoundry"><a class="anchor" href="#installing-scarb-and-snfoundry"></a>Installing Scarb, Starknet Foundry, and Starknet Devnet</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="macos_and_linux_installation"><a class="anchor" href="#macos_and_linux_installation"></a>MacOS and Linux installation</h3>
+<h3 id="macos_and_linux"><a class="anchor" href="#macos_and_linux"></a>MacOS and Linux</h3>
+<div class="paragraph">
+<p>It is highly recommended to install Scarb, Starknet Foundry, and Starknet Devnet on MacOS and Linux via the <a href="https://asdf-vm.com/"><code>asdf</code> version manager</a>, as it allows to easily switch between their different versions, both globally and per project (see full details in the <a href="https://asdf-vm.com/manage/commands.html"><code>asdf</code> documentation</a> or by running <code>asdf --help</code>).</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Verify that <code>asdf</code> is installed:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">asdf --version</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or install it by following the instructions in the <a href="https://asdf-vm.com/guide/getting-started.html"><code>asdf</code> documentation</a>.</p>
+</div>
+</li>
+<li>
+<p>Install the <code>asdf</code> Scarb, Starknet Foundry, and Starknet Devnet plugins:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">asdf plugin add scarb
+asdf plugin add starknet-foundry
+asdf plugin add starknet-devnet</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Install the latest versions of Scarb, Starknet Foundry, and Starknet Devnet:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">asdf install scarb latest
+asdf install starknet-foundry latest
+asdf install starknet-devnet latest</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Set global versions for Scarb, Starknet Foundry, and Starknet Devnet:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">asdf global scarb latest
+asdf global starknet-foundry latest
+asdf global starknet-devnet latest</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Restart the terminal and verify that Scarb, Starknet Foundry, and Starknet Devnet are installed correctly:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">scarb --version
+snforge --version &amp;&amp; sncast --version
+starknet-devnet --version</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="windows"><a class="anchor" href="#windows"></a>Windows</h3>
+<div class="paragraph">
+<p>Both Scarb&#8217;s, Starknet Foundry&#8217;s, and Starknet Devnet&#8217;s installations on Windows requires manual setup.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Follow the instructions in the <a href="https://docs.swmansion.com/scarb/download.html#windows" target="_blank" rel="noopener">Scarb documentation</a>, <a href="https://foundry-rs.github.io/starknet-foundry/getting-started/installation.html#installation-on-windows" target="_blank" rel="noopener">Starknet Foundry documentation</a>, and <a href="https://0xspaceshard.github.io/starknet-devnet/docs/intro/#windows-installation" target="_blank" rel="noopener">Starknet Devnet documentation</a>.</p>
+</li>
+<li>
+<p>Restart the terminal and verify that Scarb, Starknet Foundry, and Starknet Devnet are installed correctly:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">scarb --version
+snforge --version &amp;&amp; sncast --version
+starknet-devnet --version</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installing-starkli"><a class="anchor" href="#installing-starkli"></a>Installing Starkli</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="macos_and_linux_2"><a class="anchor" href="#macos_and_linux_2"></a>MacOS and Linux</h3>
 <div class="paragraph">
 <p>It is highly recommended to install Starkli on MacOS and Linux using the <a href="https://get.starkli.sh"><code>starkliup</code> portable script</a>. <code>starkliup</code> manages shell configuration for you, and using any other installation method requires to <a href="https://book.starkli.rs/shell-completions">manually set up shell completions</a>.</p>
 </div>
@@ -658,7 +787,7 @@
 <p>Download <code>starkliup</code>:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">curl https://get.starkli.sh | sh</code></pre>
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">curl https://get.starkli.sh | sh</code></pre>
 </div>
 </div>
 </li>
@@ -666,7 +795,7 @@
 <p>Restart the terminal and install Starkli:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">starkliup</code></pre>
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkliup</code></pre>
 </div>
 </div>
 </li>
@@ -674,7 +803,7 @@
 <p>Restart the terminal and verify that Starkli is installed correctly:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">starkli --version</code></pre>
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli --version</code></pre>
 </div>
 </div>
 </li>
@@ -682,7 +811,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="windows_installation"><a class="anchor" href="#windows_installation"></a>Windows installation</h3>
+<h3 id="windows_2"><a class="anchor" href="#windows_2"></a>Windows</h3>
 <div class="paragraph">
 <p>Starknet Foundry&#8217;s installation on Windows requires manually setting up shell completions.</p>
 </div>
@@ -693,7 +822,7 @@
 <p>Install Starkli:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">cargo install --locked --git https://github.com/xJonathanLEI/starkli</code></pre>
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">cargo install --locked --git https://github.com/xJonathanLEI/starkli</code></pre>
 </div>
 </div>
 </li>
@@ -701,7 +830,7 @@
 <p>Restart the terminal and verify that Starkli is installed correctly:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">starkli --version</code></pre>
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli --version</code></pre>
 </div>
 </div>
 </li>
@@ -713,165 +842,9 @@
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="installing_scarb"><a class="anchor" href="#installing_scarb"></a>Setting up Scarb</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="macos_and_linux_installation_2"><a class="anchor" href="#macos_and_linux_installation_2"></a>MacOS and Linux installation</h3>
-<div class="paragraph">
-<p>It is highly recommended to install Scarb on MacOS and Linux via the <a href="https://asdf-vm.com/"><code>asdf</code> version manager</a>. Installing Scarb with <code>asdf</code> seamlessly integrates with the Cairo <a href="#tools:devtools/vscode.adoc" class="xref unresolved">Cairo VSCode extension</a>, and allows to easily switch between different versions of Scarb, both globally and per project (see full details in the <a href="https://asdf-vm.com/manage/commands.html"><code>asdf</code> documentation</a> or by running <code>asdf --help</code>).</p>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Verify that <code>asdf</code> is installed:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">asdf --version</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>or install it by following the instructions in the <a href="https://asdf-vm.com/guide/getting-started.html"><code>asdf</code> documentation</a>.</p>
-</div>
-</li>
-<li>
-<p>Install the <code>asdf</code> Scarb plugin:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">asdf plugin add scarb</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Install the latest version of Scarb:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">asdf install scarb latest</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Set a global version for Scarb (need for using <code>scarb init</code>):</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">asdf global scarb latest</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Restart the terminal and verify that Scarb is installed correctly:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">scarb --version</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="windows_installation_2"><a class="anchor" href="#windows_installation_2"></a>Windows installation</h3>
-<div class="paragraph">
-<p>Scarb&#8217;s installation on Windows requires manual setup.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Follow the instructions in the <a href="https://docs.swmansion.com/scarb/download.html#windows">Scarb documentation</a>.</p>
-</li>
-<li>
-<p>Restart the terminal and verify that Scarb is installed correctly:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">scarb --version</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="starknet_foundry_setup"><a class="anchor" href="#starknet_foundry_setup"></a>Setting up Starknet Foundry</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="macos_and_linux_installation_3"><a class="anchor" href="#macos_and_linux_installation_3"></a>MacOS and Linux installation</h3>
-<div class="paragraph">
-<p>It is highly recommended to install Starknet Foundry on MacOS and Linux using the <a href="https://asdf-vm.com/"><code>asdf</code> version manager</a>. Installing Starknet Foundry with <code>asdf</code> allows to easily switch between different versions of Starknet Foundry, both globally and per project (see full details in the <a href="https://asdf-vm.com/manage/commands.html"><code>asdf</code> documentation</a> or by running <code>asdf --help</code>).</p>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Verify that <code>asdf</code> is installed, or install it by following the instructions on the <a href="https://asdf-vm.com/guide/getting-started.html"><code>asdf</code> documentation</a>.</p>
-</li>
-<li>
-<p>Install the <code>asdf</code> Starknet Foundry plugin:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">asdf plugin add starknet-foundry</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Install the latest version of Starknet Foundry:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">asdf install starknet-foundry latest</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Set a global version for Starknet Foundry using <code>asdf</code> (need for using <code>scarb init</code>):</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">asdf global starknet-foundry latest</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Restart the terminal and verify that Starknet Foundry is installed correctly:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">snforge --version
-sncast --version</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="windows_installation_3"><a class="anchor" href="#windows_installation_3"></a>Windows installation</h3>
-<div class="paragraph">
-<p>Starknet Foundry&#8217;s installation on Windows requires manual setup.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Follow the instructions in the <a href="https://foundry-rs.github.io/starknet-foundry/getting-started/installation.html#installation-on-windows">Starknet Foundry documentation</a>.</p>
-</li>
-<li>
-<p>Restart the terminal and verify that Starknet Foundry is installed correctly:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">snforge --version
-sncast --version</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
 <nav class="pagination">
-  <span class="prev"><a href="../../">Overview</a></span>
-  <span class="next"><a href="../set-up-an-account/">Setting up an account</a></span>
+  <span class="prev"><a href="../overview/">Overview</a></span>
+  <span class="next"><a href="../compiling-hellostarknet/">Compiling <code>HelloStarknet</code></a></span>
 </nav>
 </article>
   </div>

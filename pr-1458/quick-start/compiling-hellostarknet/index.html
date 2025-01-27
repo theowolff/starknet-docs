@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Using a development network :: Starknet documentation</title>
-    <link rel="canonical" href="https://docs.starknet.io/quick-start/using_devnet/">
-    <link rel="prev" href="../interact-with-a-smart-contract/">
-    <link rel="next" href="../../architecture-and-concepts/accounts/introduction/">
+    <title>Compiling the HelloStarknet contract :: Starknet documentation</title>
+    <link rel="canonical" href="https://docs.starknet.io/quick-start/compiling-hellostarknet/">
+    <link rel="prev" href="../environment-setup/">
+    <link rel="next" href="../devnet/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -138,32 +138,37 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
+     href="../overview/">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
      href="../environment-setup/">Setting up your environment</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../set-up-an-account/">Setting up an account</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../declare-a-smart-contract/">Declaring a smart contract</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../deploy-a-smart-contract/">Deploying a smart contract</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../interact-with-a-smart-contract/">Interacting with a smart contract</a>
   </li>
   <li class="nav-item is-current-page" data-depth="2">
     <a 
        class="nav-link"
-     href="./">Using a development network</a>
+     href="./">Compiling <code>HelloStarknet</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../devnet/">Declaring, deploying, and interacting with <code>HelloStarknet</code> locally</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../sepolia/">Deploying and interacting with <code>HelloStarknet</code> on Sepolia</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../next-steps/">Recommended next steps</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../troubleshooting/">Troubleshooting</a>
   </li>
 </ul>
   </li>
@@ -609,57 +614,118 @@
 <aside class="toc sidebar" data-title="Table of Contents" data-levels="2">
   <div style="position:sticky;top:7rem;z-index:2;margin-bottom:1rem">
     <div class="edit-this-page">
-      <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/quick-start/pages/using_devnet.adoc" target="_blank">✏️&nbsp;&nbsp;Edit page</a>
+      <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/quick-start/pages/compiling-hellostarknet.adoc" target="_blank">✏️&nbsp;&nbsp;Edit page</a>
     </div>
     <div class="edit-this-page">
-      <a href='https://github.com/starknet-io/starknet-docs/issues/new?assignees=landauraz&title=Feedback for "Using a development network"' target="_blank">❤️&nbsp;&nbsp;Share feedback</a>
+      <a href='https://github.com/starknet-io/starknet-docs/issues/new?assignees=landauraz&title=Feedback for "Compiling the &lt;code&gt;HelloStarknet&lt;/code&gt; contract"' target="_blank">❤️&nbsp;&nbsp;Share feedback</a>
     </div>
   </div>
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Using a development network</h1>
-<div id="preamble">
+<h1 class="page">Compiling the <code>HelloStarknet</code> contract</h1>
+<div class="sect1">
+<h2 id="introduction"><a class="anchor" href="#introduction"></a>Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>For a faster and more private development process, it is often preferable to use a local version of Starknet – also known as a development network (devnet) – which can be easily set up by either <a href="https://0xspaceshard.github.io/starknet-devnet-rs/">Starknet Devnet</a> or <a href="https://book.dojoengine.org/toolchain/katana">Katana</a>.</p>
+<p>Welcome to the second installment of the "Hello, Starknet!" quickstart series, the official tutorial for starting your journey as a Starknet developer! 🚀</p>
+</div>
+<div class="paragraph">
+<p>Before a contract can be deployed on Starknet, its compiled code needs to be submitted to the network (also known as <em>declaring</em> it). This installment of the series will therefore walk you though compiling Scarb&#8217;s default <code>HelloStarknet</code> contract, which will be used throughout the following installments.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>To learn more about Starknet smart contracts, see the <a href="../../architecture-and-concepts/smart-contracts/contract-classes/" class="xref page">Contracts section</a>.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2>
+<h2 id="generating_hellostarknet"><a class="anchor" href="#generating_hellostarknet"></a>Generating <code>HelloStarknet</code></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Starkli is installed correctly. Ensure that the following command shows the version information for Starkli:</p>
+<p>Scarb&#8217;s default <code>HelloStarknet</code> contract can be generated by simply running:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">starkli --version</code></pre>
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">scarb new hello_starknet</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>If this command fails, see <a href="../environment-setup/" class="xref page">Setting up your environment</a>.</p>
+<p>and selecting to set up the <code>Starknet Foundry (default)</code> test runner.</p>
+</div>
+<div class="paragraph">
+<p>For the purpose of this tutorial, you can ignore all files in the <code>hello_starknet</code> directory other than <code>hello_starknet/src/lib.cairo</code>, which holds the contract&#8217;s code:</p>
+</div>
+<div id="example-cairo-contract" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">/// Interface representing `HelloContract`.
+/// This interface allows modification and retrieval of the contract balance.
+#[starknet::interface]
+pub trait IHelloStarknet&lt;TContractState&gt; {
+    /// Increase contract balance.
+    fn increase_balance(ref self: TContractState, amount: felt252);
+    /// Retrieve contract balance.
+    fn get_balance(self: @TContractState) -&gt; felt252;
+}
+
+/// Simple contract for managing balance.
+#[starknet::contract]
+mod HelloStarknet {
+    use core::starknet::storage::{StoragePointerReadAccess, StoragePointerWriteAccess};
+
+    #[storage]
+    struct Storage {
+        balance: felt252,
+    }
+
+    #[abi(embed_v0)]
+    impl HelloStarknetImpl of super::IHelloStarknet&lt;ContractState&gt; {
+        fn increase_balance(ref self: ContractState, amount: felt252) {
+            assert(amount != 0, 'Amount cannot be 0');
+            self.balance.write(self.balance.read() + amount);
+        }
+
+        fn get_balance(self: @ContractState) -&gt; felt252 {
+            self.balance.read()
+        }
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As its comments read, this is a simple contract with two basic functions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>get_balance</code>, which reads the contract&#8217;s current balance from storage.</p>
+</li>
+<li>
+<p><code>increase_balance</code>, which reads the contract&#8217;s current balance from storage, increases it by <code>amount</code> and writes the new balance to storage.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="using_starknet_devnet_devnet"><a class="anchor" href="#using_starknet_devnet_devnet"></a>Using Starknet Devnet (Devnet)</h2>
+<h2 id="compiling_hellostarknet"><a class="anchor" href="#compiling_hellostarknet"></a>Compiling <code>HelloStarknet</code></h2>
 <div class="sectionbody">
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Install Devnet:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">cargo install starknet-devnet</code></pre>
-</div>
-</div>
 <div class="paragraph">
-<p>and start it using:</p>
+<p>To compile the <code>HelloStarknet</code> contract, navigate into the newly created <code>hello_starknet</code> directory and run:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">starknet-devnet --seed 42</code></pre>
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">scarb build</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -670,175 +736,20 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Upon initialization, Devnet predeploys a fee token, universal deployer, and a set of funded accounts. By default, the set of predeployed accounts changes on each initialization, but specifying the same <code>--seed</code> value ensures consistent account addresses between executions.</p>
+<p>The first time a project is built, some components of Scarb are compiled locally with the Rust toolchain. This process may take a few minutes, but will not happen in subsequent builds.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The result should be similar to the following:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">Predeployed FeeToken
-ETH Address: 0x49D36570D4E46F48E99674BD3FCC84644DDD6B96F7C741B1562B82F9E004DC7
-STRK Address: 0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d
-Class Hash: 0x046ded64ae2dead6448e247234bab192a9c483644395b66f2155f2614e5804b0
-
-Predeployed UDC
-Address: 0x41A78E741E5AF2FEC34B695679BC6891742439F7AFB8484ECD7766661AD02BF
-Class Hash: 0x7B3E05F48F0C69E4A65CE5E076A66271A527AFF2C34CE1083EC6E1526997A69
-
-Chain ID: SN_SEPOLIA (0x534e5f5345504f4c4941)
-
-| Account address |  0x34ba56f92265f0868c57d3fe72ecab144fc96f97954bbbc4252cef8e8a979ba
-| Private key     |  0xb137668388dbe9acdfa3bc734cc2c469
-| Public key      |  0x5a5e37c60e77a0318643b111f88413a76af6233c891a0cfb2804106372006d4
-...</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p><a href="../set-up-an-account/" class="xref page">As previously described</a>, import Devnet&#8217;s first predeployed accounts to an account file (notice that the address of the fetched account is the same as the one printed out by Devnet):</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">starkli account fetch --rpc http://127.0.0.1:5050 0x34ba56f92265f0868c57d3fe72ecab144fc96f97954bbbc4252cef8e8a979ba --output ~/.starkli-wallets/devnet/account.json</code></pre>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p><code><a href="http://127.0.0.1:5050" class="bare">http://127.0.0.1:5050</a></code> are Devnet&#8217;s default host and port, which can be configured upon initialization using the <code>--host</code> and <code>--port</code> options</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>and create the corresponding keystore file by executing:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">starkli signer keystore from-key ~/.starkli-wallets/devnet/keystore.json</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>and entering <code>0xb137668388dbe9acdfa3bc734cc2c469</code> as private key (the same one as the one printed out by Devnet)</p>
-</div>
-</li>
-<li>
-<p>Now that you have an account set up, you can use Starkli to freely interact with Devnet. For example, you can redeploy Devnet&#8217;s predeployed universal deployer using the following command:</p>
-</li>
-</ol>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">starkli deploy --rpc http://127.0.0.1:5050 --account ~/.starkli-wallets/devnet/account.json --keystore ~/.starkli-wallets/devnet/keystore.json 0x7B3E05F48F0C69E4A65CE5E076A66271A527AFF2C34CE1083EC6E1526997A69</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="using_katana"><a class="anchor" href="#using_katana"></a>Using Katana</h2>
-<div class="sectionbody">
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Install Katana:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git clone https://github.com/dojoengine/dojo
-cd dojo
-cargo install --path ./bin/katana --locked --force</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>and start it using:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">katana</code></pre>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Upon initialization, Katana predeploys a fee token, universal deployer contract (UDC), and a set of funded accounts. By default, Katana predeploys the same set of accounts.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The result should be similar to the following:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">PREDEPLOYED CONTRACTS
-==================
-
-| Contract        | Fee Token
-| Address         | 0x49d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7
-| Class Hash      | 0x02a8846878b6ad1f54f6ba46f5f40e11cee755c677f130b2c4b60566c9003f1f
-
-| Contract        | Universal Deployer
-| Address         | 0x41a78e741e5af2fec34b695679bc6891742439f7afb8484ecd7766661ad02bf
-| Class Hash      | 0x07b3e05f48f0c69e4a65ce5e076a66271a527aff2c34ce1083ec6e1526997a69
-
-| Contract        | Account Contract
-| Class Hash      | 0x05400e90f7e0ae78bd02c77cd75527280470e2fe19c54970dd79dc37a9d3645c
-
-
-PREFUNDED ACCOUNTS
-==================
-
-| Account address |  0xb3ff441a68610b30fd5e2abbf3a1548eb6ba6f3559f2862bf2dc757e5828ca
-| Private key     |  0x2bbf4f9fd0bbb2e60b0316c1fe0b76cf7a4d0198bd493ced9b8df2a3a24d68a
-| Public key      |  0x640466ebd2ce505209d3e5c4494b4276ed8f1cde764d757eb48831961f7cdea
-...</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Starkli comes with several built-in accounts for Katana&#8217;s default initialization, which can be used to freely interact with Katana without any setup (for the full list of account addresses, see <code>BUILTIN_ACCOUNT</code> in <a href="https://github.com/xJonathanLEI/starkli/blob/master/src/account.rs">Starkli&#8217;s accounts.rs file</a>). For example, you can redeploy Katana&#8217;s predeployed universal deployer using the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">starkli deploy --rpc http://0.0.0.0:5050 --account katana 0x07b3e05f48f0c69e4a65ce5e076a66271a527aff2c34ce1083ec6e1526997a69</code></pre>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p><code><a href="http://0.0.0.0:5050" class="bare">http://0.0.0.0:5050</a></code> are Katana&#8217;s default host and port, which can be configured upon initialization using the <code>--host</code> and <code>--port</code> options</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</li>
-</ol>
+<p>The compiled contract should now be saved inside the <code>hello_starknet/target/dev/</code> directory as <code>hello_starknet_HelloStarknet.contract_class.json</code>.</p>
 </div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../interact-with-a-smart-contract/">Interacting with a smart contract</a></span>
-  <span class="next"><a href="../../architecture-and-concepts/accounts/introduction/">What is an account?</a></span>
+  <span class="prev"><a href="../environment-setup/">Setting up your environment</a></span>
+  <span class="next"><a href="../devnet/">Declaring, deploying, and interacting with <code>HelloStarknet</code> locally</a></span>
 </nav>
 </article>
   </div>
