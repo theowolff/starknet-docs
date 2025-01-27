@@ -165,6 +165,11 @@
        class="nav-link"
      href="../next-steps/">Recommended next steps</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../troubleshooting/">Troubleshooting</a>
+  </li>
 </ul>
   </li>
 </ul>
@@ -634,7 +639,24 @@
 <h2 id="deploying_up_a_new_sepolia_account"><a class="anchor" href="#deploying_up_a_new_sepolia_account"></a>Deploying up a new Sepolia account</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Similar to interacting with a Starknet Devnet instance, to interact with Starknet Sepolia you first need an account. However, on Sepolia it is often simpler to create and deploy a new Starkli account rather than fetching a predeployed one. Creating a new Starkli account requires first creating a Starkli signer, which will again be an encrypted keystore signer. To create a new encrypted keystore signer, run:</p>
+<p>Similar to interacting with a Starknet Devnet instance, to interact with Starknet Sepolia you first need an account. However, instead fetching a predeployed Sepolia account, we will create a <em>new</em> account and deploy a new Starkli ourselves.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>To learn how to fetch a predeployed Sepolia account, check out <a href="../troubleshooting/" class="xref page">Troubleshooting</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Creating a new Starkli account requires first creating a Starkli signer, which will again be an encrypted keystore signer. To create a new encrypted keystore signer, run:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -738,7 +760,7 @@ Transaction 0x06a9a08208084ac376f10657c745a3020362fa65e7730b13e08ec03d0cd7e59d c
 <h2 id="deploying_hellostarknet_on_sepolia"><a class="anchor" href="#deploying_hellostarknet_on_sepolia"></a>Deploying <code>HelloStarknet</code> on Sepolia</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Unlike when using a Starknet Devnet instance, there&#8217;s no need for us to declare <code>HelloStarknet</code> on Sepolia as it has already been declared before (remember: declaration is a one-time process for each unique contract code). To verify that, navigate into the <code>hello_starknet</code> directory created in <a href="../compiling-hellostarknet/" class="xref page">Compiling the <code>HelloStarknet</code> contract</a>, run:</p>
+<p>Unlike when using a Starknet Devnet instance, there&#8217;s no need for us to declare <code>HelloStarknet</code> on Sepolia as it has already been declared before (remember: declaration is a one-time process for each unique contract code). To verify that, you can try declaring it by navigating into the <code>hello_starknet</code> directory created in <a href="../compiling-hellostarknet/" class="xref page">Compiling the <code>HelloStarknet</code> contract</a>, running:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -749,7 +771,7 @@ Transaction 0x06a9a08208084ac376f10657c745a3020362fa65e7730b13e08ec03d0cd7e59d c
 </div>
 </div>
 <div class="paragraph">
-<p>and enter your password. The result should resemble to the following:</p>
+<p>and entering your password. The result should resemble to the following:</p>
 </div>
 <div class="listingblock">
 <div class="content">
