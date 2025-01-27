@@ -3,8 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Deploying and interacting with a Starknet smart contract with Remix :: Starknet documentation</title>
-    <link rel="canonical" href="https://docs.starknet.io/quick-start/deploy-interact-with-a-smart-contract-remix/">
+    <title>Deploying and interacting with the HelloStarknet contract on Starknet Sepolia :: Starknet documentation</title>
+    <link rel="canonical" href="https://docs.starknet.io/quick-start/sepolia/">
+    <link rel="prev" href="../devnet/">
+    <link rel="next" href="../next-steps/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -136,32 +138,37 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
+     href="../overview/">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
      href="../environment-setup/">Setting up your environment</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../set-up-an-account/">Setting up an account</a>
+     href="../compiling-hellostarknet/">Compiling <code>HelloStarknet</code></a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../declare-a-smart-contract/">Declaring a smart contract</a>
+     href="../devnet/">Declaring, deploying, and interacting with <code>HelloStarknet</code> locally</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a 
+       class="nav-link"
+     href="./">Deploying and interacting with <code>HelloStarknet</code> on Sepolia</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../deploy-a-smart-contract/">Deploying a smart contract</a>
+     href="../next-steps/">Recommended next steps</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../interact-with-a-smart-contract/">Interacting with a smart contract</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../using_devnet/">Using a development network</a>
+     href="../troubleshooting/">Troubleshooting</a>
   </li>
 </ul>
   </li>
@@ -607,18 +614,33 @@
 <aside class="toc sidebar" data-title="Table of Contents" data-levels="2">
   <div style="position:sticky;top:7rem;z-index:2;margin-bottom:1rem">
     <div class="edit-this-page">
-      <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/quick-start/pages/deploy-interact-with-a-smart-contract-remix.adoc" target="_blank">✏️&nbsp;&nbsp;Edit page</a>
+      <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/quick-start/pages/sepolia.adoc" target="_blank">✏️&nbsp;&nbsp;Edit page</a>
     </div>
     <div class="edit-this-page">
-      <a href='https://github.com/starknet-io/starknet-docs/issues/new?assignees=landauraz&title=Feedback for "Deploying and interacting with a Starknet smart contract with Remix"' target="_blank">❤️&nbsp;&nbsp;Share feedback</a>
+      <a href='https://github.com/starknet-io/starknet-docs/issues/new?assignees=landauraz&title=Feedback for "Deploying and interacting with the &lt;code&gt;HelloStarknet&lt;/code&gt; contract on Starknet Sepolia"' target="_blank">❤️&nbsp;&nbsp;Share feedback</a>
     </div>
   </div>
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Deploying and interacting with a Starknet smart contract with Remix</h1>
-<div id="preamble">
+<h1 class="page">Deploying and interacting with the <code>HelloStarknet</code> contract on Starknet Sepolia</h1>
+<div class="sect1">
+<h2 id="introduction"><a class="anchor" href="#introduction"></a>Introduction</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Welcome to the fourth installment of the "Hello, Starknet!" quickstart series, the official tutorial for starting your journey as a Starknet developer! 🚀</p>
+</div>
+<div class="paragraph">
+<p>Starknet Sepolia is Starknet&#8217;s testnet environment designed to provide developers with a testing ground that mirrors the behavior of the Starknet Mainnet while being connected to the Ethereum Sepolia testnet, making it ideal for debugging and optimizing your code before deploying it to production. This installment of the series will therefore guide you through the steps necessary to deploy and interact with the <code>HelloStarknet</code> contract on Starknet Sepolia.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="deploying_up_a_new_sepolia_account"><a class="anchor" href="#deploying_up_a_new_sepolia_account"></a>Deploying up a new Sepolia account</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Similar to interacting with a Starknet Devnet instance, to interact with Starknet Sepolia you first need an account. However, instead fetching a predeployed Sepolia account, we will create a <em>new</em> account and deploy a new Starkli ourselves.</p>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -627,41 +649,45 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>This topic previously appeared in the Starknet Book.</p>
+<p>To learn how to fetch a predeployed Sepolia account, check out <a href="../troubleshooting/" class="xref page">Troubleshooting</a>.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>To compile, deploy, and interact with our smart contract, use the Starknet Remix plugin. This tool enables you to start to develop for Starknet without the need for any local installations on your machine.</p>
+<p>Creating a new Starkli account requires first creating a Starkli signer, which will again be an encrypted keystore signer. To create a new encrypted keystore signer, run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli signer keystore new keystore.json</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>and enter a password that will be used to encrypt your private key. If successful, the result should resemble the following:</p>
 </div>
-<div class="sect1">
-<h2 id="setting_up_your_environment_in_remix"><a class="anchor" href="#setting_up_your_environment_in_remix"></a>Setting up your environment in Remix</h2>
-<div class="sectionbody">
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Go to the <a href="https://remix.ethereum.org/#activate=Starknet&amp;lang=en&amp;optimize=false&amp;runs=200&amp;evmVersion=null&amp;version=soljson-v0.8.24+commit.e11b9ed9.js">Remix IDE website with the Starknet plugin activated</a>.</p>
-</li>
-<li>
-<p>Click the <strong>File Explorer</strong> <span class="image"><img src="../_images/remix_file_explorer.png" alt="File Explorer" width="24" height="24"></span> tab to review the details of the example project.</p>
-</li>
-<li>
-<p>Click the <strong>Starknet</strong> <span class="image"><img src="../_images/remix-starknet-icon.png" alt="Starknet" width="24" height="24"></span> tab, and click the <strong>Settings</strong>. Select the latest version of Cairo available in Remix.</p>
-</li>
-<li>
-<p>In the File explorer, open the <code>Scarb.toml</code> file to verify the version of your project. Ensure it matches the version specified originally, and correct any discrepancies, if necessary.</p>
-</li>
-</ol>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">Created new encrypted keystore file: keystore.json
+Public key: 0x03dfdb739fbd3ddab0f851bf1131079e31ca266c7af94f05cef4d9481f837509</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>To avoid specifying the keystore file in every subsequent Starkli command, export the keystore path by running:</p>
 </div>
-<div class="sect1">
-<h2 id="customizing_your_environment_for_the_ownable_contract"><a class="anchor" href="#customizing_your_environment_for_the_ownable_contract"></a>Customizing your environment for the <code>Ownable</code> contract</h2>
-<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">export STARKNET_KEYSTORE=$(pwd)/keystore.json</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now that you have a Starkli signer, you can create a new account by running:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli account oz init account.json</code></pre>
+</div>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -670,479 +696,198 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>For this tutorial, a default example project is provided. Modify or remove certain files and directories as needed.</p>
+<p><code>oz</code> stand for OpenZeppelin, which, along with Argent and Braavos, are the accounts variants supported by Starkli.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Rename the root directory to <code>ownable</code>. In your <code>Scarb.toml</code>, under the <code>[package]</code> section, set the name to <code>ownable</code>.</p>
-</li>
-<li>
-<p>Under <code>src/</code>, delete the <code>balance.cairo</code> and <code>forty_two.cairo</code> files, if they exist.</p>
-</li>
-<li>
-<p>Open <code>lib.cairo</code> and delete all its contents.</p>
-</li>
-</ol>
+<div class="paragraph">
+<p>The result should resemble the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">Created new account config file: account.json
+
+Once deployed, this account will be available at:
+    0x01cf4d57ba01109f018dec3ea079a38fc08b789e03de4df937ddb9e8a0ff853a
+
+Deploy this account by running:
+    starkli account deploy account.json</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To avoid specifying the account file in every subsequent Starkli command, export the account path by running:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">export STARKNET_ACCOUNT=$(pwd)/account.json</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Finally, to deploy your account run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli account deploy account.json \
+    --network=sepolia \
+    --strk</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This command sends a <code>DEPLOY_ACCOUNT</code> transaction, which requires the account to contain enough STRK to pay for the transaction fee.
+When run, the command shows instructions on how to fund the account before proceeding, which can easily be done using the <a href="https://starknet-faucet.vercel.app/" target="_blank" rel="noopener">Starknet Sepolia faucet</a>. If the account was funded and deployed successfully, the output of the deployment should resemble the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">The estimated account deployment fee is 0.000615910614837578 STRK. However, to avoid failure, fund at least:
+    0.001358626332416775 STRK
+to the following address:
+    0x01cf4d57ba01109f018dec3ea079a38fc08b789e03de4df937ddb9e8a0ff853a
+Press [ENTER] once you've funded the address.
+Waiting for transaction 0x06a9a08208084ac376f10657c745a3020362fa65e7730b13e08ec03d0cd7e59d to confirm.
+If this process is interrupted, you will need to run `starkli account fetch` to update the account file.
+Transaction not confirmed yet...
+Transaction 0x06a9a08208084ac376f10657c745a3020362fa65e7730b13e08ec03d0cd7e59d confirmed</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and you should be able to see the deployed account on one of <a href="../../tools/ref-block-explorers/" class="xref page">Starknet Sepolia&#8217;s block explorers</a> by searching for its address.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="exploring_the_ownable_starknet_smart_contract"><a class="anchor" href="#exploring_the_ownable_starknet_smart_contract"></a>Exploring the <code>ownable</code> Starknet smart contract</h2>
+<h2 id="deploying_hellostarknet_on_sepolia"><a class="anchor" href="#deploying_hellostarknet_on_sepolia"></a>Deploying <code>HelloStarknet</code> on Sepolia</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Explore the <a href="#example-cairo-contract">Example <code>Ownable</code> contract</a>, crafted in Cairo for Starknet. It includes:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>An ownership system.</p>
-</li>
-<li>
-<p>A method to transfer ownership.</p>
-</li>
-<li>
-<p>A method to check the current owner.</p>
-</li>
-<li>
-<p>An event notification for ownership changes.</p>
-</li>
-</ul>
-</div>
-<div class="sect2">
-<h3 id="example-cairo-contract"><a class="anchor" href="#example-cairo-contract"></a>Example: <code>ownable</code> Cairo contract</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">use starknet::ContractAddress; <i class="conum" data-value="1"></i><b>(1)</b>
-
-#[starknet::interface]
-trait OwnableTrait&lt;T&gt; { <i class="conum" data-value="1"></i><b>(1)</b>
-    fn transfer_ownership(ref self: T, new_owner: ContractAddress); <i class="conum" data-value="2"></i><b>(2)</b>
-    fn get_owner(self: @T) -&gt; ContractAddress; <i class="conum" data-value="2"></i><b>(2)</b>
-}
-
-#[starknet::contract]
-mod Ownable {
-    use super::ContractAddress;
-    use starknet::get_caller_address;
-
-    #[event]
-    #[derive(Drop, starknet::Event)]
-    enum Event {
-      OwnershipTransferred: OwnershipTransferred, <i class="conum" data-value="3"></i><b>(3)</b>
-    }
-
-    #[derive(Drop, starknet::Event)]
-    struct OwnershipTransferred { <i class="conum" data-value="3"></i><b>(3)</b>
-        #[key]
-        prev_owner: ContractAddress,
-        #[key]
-        new_owner: ContractAddress,
-    }
-
-    #[storage]
-    struct Storage { <i class="conum" data-value="4"></i><b>(4)</b>
-        owner: ContractAddress,
-    }
-
-    #[constructor]
-    fn constructor(ref self: ContractState, init_owner: ContractAddress) { <i class="conum" data-value="5"></i><b>(5)</b>
-        self.owner.write(init_owner);
-    }
-
-    #[abi(embed_v0)]
-    impl OwnableImpl of super::OwnableTrait&lt;ContractState&gt; {
-        fn transfer_ownership(ref self: ContractState, new_owner: ContractAddress) {
-            self.only_owner();
-            let prev_owner = self.owner.read();
-            self.owner.write(new_owner);
-            self.emit(Event::OwnershipTransferred(OwnershipTransferred {
-                prev_owner: prev_owner,
-                new_owner: new_owner,
-            }));
-        }
-
-        fn get_owner(self: @ContractState) -&gt; ContractAddress {
-            self.owner.read()
-        }
-    }
-
-    #[generate_trait]
-    impl PrivateMethods of PrivateMethodsTrait {
-        fn only_owner(self: @ContractState) { <i class="conum" data-value="6"></i><b>(6)</b>
-            let caller = get_caller_address();
-            assert(caller == self.owner.read(), 'Caller is not the owner');
-        }
-    }
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="contract_component_breakdown"><a class="anchor" href="#contract_component_breakdown"></a>Contract component breakdown</h3>
-<div class="colist arabic stripes-odd">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Dependencies and Interface:<br>
-<code>starknet::ContractAddress</code>: Represents a Starknet contract address.
-<code>OwnableTrait</code>: Defines essential functions for transferring and retrieving ownership.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>External Functions: Contains functions for transferring ownership and fetching information about the current owner.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Events: <code>OwnershipTransferred</code> indicates changes in ownership, providing details about the previous and new owners.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>Storage: Stores the contract&#8217;s state, including the address of the current owner.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="5"></i><b>5</b></td>
-<td>Constructor: Sets up the contract by assigning an initial owner.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="6"></i><b>6</b></td>
-<td>Private Methods: <code>only_owner</code> validates if the caller is the current owner.</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="compiling_the_contract"><a class="anchor" href="#compiling_the_contract"></a>Compiling the contract</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>To compile using Remix:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Click the <strong>File Explorer</strong> <span class="image"><img src="../_images/remix_file_explorer.png" alt="File Explorer" width="24" height="24"></span> tab, open the <code>lib.cairo</code> file and insert the code from <a href="#example-cairo-contract">Example: <code>ownable</code> Cairo contract</a>.</p>
-</li>
-<li>
-<p>Click the <strong>Starknet</strong> <span class="image"><img src="../_images/remix-starknet-icon.png" alt="Starknet" width="24" height="24"></span> tab, then click <strong>Home</strong>.</p>
-</li>
-<li>
-<p>Under <strong>(1) Compile</strong>, click <strong>Compile lib.cairo</strong>.</p>
-</li>
-<li>
-<p>Grant the necessary permissions when prompted. Select <strong>Remember my choice</strong> for a smoother compilation process in the future.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>The compilation process creates an <code>artifacts</code> directory containing the compiled contract in two formats: a Sierra file, in JSON format, and a Casm file. For Starknet deployment, Remix uses the Sierra file.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="deploying_your_contract_on_the_development_network_devnet"><a class="anchor" href="#deploying_your_contract_on_the_development_network_devnet"></a>Deploying your contract on the development network (devnet)</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Deploying a smart contract in Starknet requires two high-level steps:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Declare the class of your contract, that is, send your contract’s code to the network.</p>
-<div class="paragraph">
-<p>When you declare the contract class, you establish an initial owner by calling the class&#8217;s <code>constructor</code> function.</p>
-</div>
-</li>
-<li>
-<p>Deploy an instance of the contract class.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>This tutorial uses a development network (devnet) to deploy your smart contract. A devnet is a Starknet instance that you run as a local node. A devnet enables much quicker development than is possible using testnet, as well as providing privacy prior to launching on testnet.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Declaring the contract class</div>
-<ol class="arabic">
-<li>
-<p>Select the network by clicking the <strong>Starknet</strong> tab, and then clicking the <strong>Remote Devnet</strong> menu.</p>
-</li>
-<li>
-<p>Under <strong>Devnet account selection</strong>, open the menu to view a list of accounts specific to the designated devnet.</p>
-</li>
-<li>
-<p>Select a devnet account from the list and note its address for later use.</p>
-</li>
-<li>
-<p>Click the <strong>Declare <code>lib.cairo</code></strong> button.</p>
-<div class="paragraph">
-<p>Remix&#8217;s terminal provides various logs with important details such as:</p>
-</div>
-<div class="openblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p><code>transaction_hash</code>: This unique hash identifies the transaction and can be used to track its status.</p>
-</li>
-<li>
-<p><code>class_hash</code>: Similar to an identifier, the class hash contains the definition of the smart contract.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Remix terminal output after declaring the <code>ownable</code> contract</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">------------------------ Declaring contract: lib.cairo ------------------------
-{
-  "transaction_hash": "0x36dabf43f4962c97cf67ba132fb520091f268e7e33477d77d01747eeb0d7b43",
-  "class_hash": "0x540779cd109ad20f46cb36d8de1ce30c75469862b4dc75f2f29d1b4d1454f60"
-}
----------------------- End Declaring contract: lib.cairo ----------------------</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>After Remix declares the contract class, the <strong>Declare</strong> button says <strong>Declared lib.cairo</strong>.</p>
-</div>
-<div class="paragraph">
-<p>Now you&#8217;re ready to deploy an instance of the contract class.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Deploying a contract instance</div>
-<ol class="arabic">
-<li>
-<p>Paste the Devnet account address you used into the <code>init_owner</code> variable.</p>
-<div class="paragraph">
-<p><span class="image"><img src="../_images/init_owner_field.png" alt="init owner field"></span></p>
-</div>
-</li>
-<li>
-<p>Click <strong>Deploy</strong>.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>After deployment, Remix&#8217;s terminal displays various logs, including a transaction receipt, containing important details, such as:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>transaction_hash</code>: This unique hash identifies the transaction and can be used to track its status.</p>
-</li>
-<li>
-<p><code>contract_address</code>: The address of the deployed contract. You can use this address to interact with your contract.</p>
-</li>
-<li>
-<p><code>data</code>: Contains the <code>init_owner</code> address provided to the constructor.</p>
-</li>
-</ul>
-</div>
-<div class="listingblock">
-<div class="title">Remix terminal output after deploying an instance of the <code>Ownable</code> class in <code>lib.cairo</code></div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">------------------------ Deploying contract: lib.cairo ------------------------
-
-{
-  "transaction_hash": "0x624f5b9f57e53f6b5b62e588f0f949442172b3ad5d04f0827928b4d12c2fa58",
-  "contract_address": [
-    "0x699952dc736661d0ed573cd2b0956c80a1602169e034fdaa3515bfbc36d6410"
-  ]
-    ...
-  "data": [
-        "0x6b0ee6f418e47408cf56c6f98261c1c5693276943be12db9597b933d363df",
-         ...
-      ]
-    ...
-}
----------------------- End Deploying contract: lib.cairo ----------------------</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="interacting_with_the_contract"><a class="anchor" href="#interacting_with_the_contract"></a>Interacting with the contract</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Now that the contract is operational on the development network, you can start interacting with it on the <strong>Starknet</strong> tab, under
- <strong>(3) Interact</strong>.</p>
-</div>
-<div class="sect2">
-<h3 id="identifying_the_owner_of_the_contract_instance"><a class="anchor" href="#identifying_the_owner_of_the_contract_instance"></a>Identifying the owner of the contract instance</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Under <strong>Read</strong> you should see the <code>get_owner()</code> function. Click the <strong>Call</strong> button. The function doesn&#8217;t require any arguments so the calldata field remains empty. This function reads data, so its invocation is referred to as a <em>call</em>.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The terminal displays the output, showing the owner&#8217;s address, which you provided during the contract&#8217;s deployment within the calldata for the constructor:</p>
+<p>Unlike when using a Starknet Devnet instance, there&#8217;s no need for us to declare <code>HelloStarknet</code> on Sepolia as it has already been declared before (remember: declaration is a one-time process for each unique contract code). To verify that, you can try declaring it by navigating into the <code>hello_starknet</code> directory created in <a href="../compiling-hellostarknet/" class="xref page">Compiling the <code>HelloStarknet</code> contract</a>, running:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">------------------- Calling get_owner ------------------------
-{
-  "resp": {
-    "result": [
-      "0x6b0ee6f418e47408cf56c6f98261c1c5693276943be12db9597b933d363df"
-    ]
-  },
-  "contract": "lib.cairo",
-  "function": "get_owner"
-}
-------------------- End calling get_owner --------------------</code></pre>
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli declare \
+    target/dev/hello_starknet_HelloStarknet.contract_class.json \
+    --network=sepolia
+    --strk</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>This call doesn&#8217;t consume gas because the function doesn&#8217;t modify the contract&#8217;s state.</p>
+<p>and entering your password. The result should resemble to the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">Not declaring class as it's already declared. Class hash:
+0x0785c92bf4aa7a89fb62371802aef2f58e2333d8df7e2aadf938efa83735431c</code></pre>
 </div>
 </div>
-<div class="sect2">
-<h3 id="transferring_ownership_of_the_contract_instance"><a class="anchor" href="#transferring_ownership_of_the_contract_instance"></a>Transferring ownership of the contract instance</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Under <strong>(3) Interact</strong>, select <strong>Write</strong>, where functions that alter the contract&#8217;s state are listed.</p>
-</li>
-<li>
-<p>Select the <code>transfer_ownership()</code> function, which requires providing the new owner address as input.</p>
-</li>
-<li>
-<p>Fill in the <code>new_owner</code> field with any Devnet address other than the one you used to deploy the contract.</p>
-<div class="admonitionblock tip">
+<div class="paragraph">
+<p>With <code>HelloStarknet</code> already declared, you can deploy an instance of it by running:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli deploy \
+    0x0785c92bf4aa7a89fb62371802aef2f58e2333d8df7e2aadf938efa83735431c \
+    --network=sepolia \
+    --strk</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and entering your password. If successful, the result should resemble the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">Deploying class 0x0785c92bf4aa7a89fb62371802aef2f58e2333d8df7e2aadf938efa83735431c with salt 0x07154f9d7e9602d3d3dd0034168be00f044ba15caf80b6fe09f6fef8f2568f57...
+The contract will be deployed at address 0x00ed474ec67f690901bcc56ee69491163c4203ededf473198e08c24fe2ab0a29
+Contract deployment transaction: 0x066ccbbbdd2c3967620a039d7579bf5e03a5c15c77819d53a8b21dbdee705f8d
+Contract deployed:
+0x00ed474ec67f690901bcc56ee69491163c4203ededf473198e08c24fe2ab0a29</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and you should be able to see your deployed contract on one of <a href="../../tools/ref-block-explorers/" class="xref page">Starknet Sepolia&#8217;s block explorers</a> by searching for its contract address.</p>
+</div>
+<div class="admonitionblock important">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
+<i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Under <strong>Devnet account selection</strong>, open the menu, select a Devnet account from the list, and copy its address.</p>
+<p>Your deployed contract&#8217;s address will be different the than one listed above. Make sure to use the address of your own deployed contract when searching for it in a block explorer and interacting with it.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
-</li>
-<li>
-<p>Click the <strong>Call</strong> button. The terminal displays the transaction hash indicating the change in the contract&#8217;s state. Because this interaction is an <code>INVOKE</code> transaction, and it modifies the contract&#8217;s state. An <code>INVOKE</code> transaction requires the signature of the account executing the function.</p>
-<div class="paragraph">
-<p>For <code>INVOKE</code> transactions, the terminal logs include a <code>finality_status</code> parameter indicating the outcome. A status of <code>ACCEPTED_ON_L2</code> indicates approval by the Sequencer, the entity responsible for receiving and processing transactions, indicating inclusion in an upcoming block. Conversely, a <code>REJECTED</code> status indicates that the Sequencer did not approve the transaction, preventing its inclusion in the next block. Typically, transactions of this nature are approved, resulting in a modification of the contract&#8217;s state.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">---------- Invoke transfer_ownership transaction receipt ----------------
-{
-  "resp": {
-    "transaction_hash": "0x5495d56633745aa3b97bdb89c255d522e98fd2cb481974efe898560839aa472"
-  },
-  "contract": "lib.cairo",
-  "function": "get_owner"
-}
-----------End Invoke transfer_ownership transaction receipt -------------</code></pre>
-</div>
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="deployment_on_starknet_testnet"><a class="anchor" href="#deployment_on_starknet_testnet"></a>Deployment on Starknet testnet</h2>
+<h2 id="interacting_with_hellostarknet_on_sepolia"><a class="anchor" href="#interacting_with_hellostarknet_on_sepolia"></a>Interacting with <code>HelloStarknet</code> on Sepolia</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>After testing your smart contract on a development network, the next step is deploying it onto the Starknet testnet. The Starknet testnet is a public platform accessible to all, providing an excellent environment for testing smart contracts and encouraging collaboration among developers.</p>
+<p>Now that your instance of <code>HelloStarknet</code> is deployed, you can invoke its <code>increase_balance</code> function by running:</p>
 </div>
-<div class="sect2">
-<h3 id="setting_up_a_smart_wallet_and_a_starknet_account_on_testnet"><a class="anchor" href="#setting_up_a_smart_wallet_and_a_starknet_account_on_testnet"></a>Setting up a smart wallet and a Starknet account on testnet</h3>
-<div class="paragraph">
-<p>Before deploying your smart contract on Starknet, it&#8217;s crucial to address transaction costs. While deploying on the Starknet testnet is free, having an operational smart wallet account is essential. You can set up a smart wallet and a Starknet account using either of the following platforms:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli invoke \
+    0x00ed474ec67f690901bcc56ee69491163c4203ededf473198e08c24fe2ab0a29 \
+    increase_balance 66 \
+    --network=sepolia \
+    --strk</code></pre>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://www.argent.xyz/argent-x/">Argent</a></p>
-</li>
-<li>
-<p><a href="https://braavos.app/">Braavos</a></p>
-</li>
-</ul>
 </div>
 <div class="paragraph">
-<p>Both options offer robust Starknet wallets with advanced security measures and enhanced accessibility features enabled by the capabilities of the Cairo VM.</p>
+<p>and entering your password. If successful, the result should resemble the following:</p>
 </div>
-<div class="olist arabic">
-<div class="title">Here&#8217;s how to set up your smart wallet:</div>
-<ol class="arabic">
-<li>
-<p>Install the recommended browser extension corresponding to your chosen wallet.</p>
-</li>
-<li>
-<p>Follow the instructions provided by your wallet provider to deploy your account on testnet.</p>
-</li>
-<li>
-<p>Use the <a href="https://starknet-faucet.vercel.app/">Starknet Faucet</a> to fund your account.</p>
-</li>
-<li>
-<p>Execute the deployment of your account onto the network, typically completed within approximately 10 seconds.</p>
-</li>
-</ol>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">Invoke transaction: 0x063b85d93491e678fe051952c39575c80ea397fa1be4076fe28616356d673595</code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p>Once the setup is complete, you are primed to deploy your smart contracts onto the Starknet testnet.</p>
+<p>and you should be able to see the <code>INVOKE</code> transaction on one of <a href="../../tools/ref-block-explorers/" class="xref page">Starknet Sepolia&#8217;s block explorers</a> by searching for its hash.</p>
 </div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Your transaction&#8217;s hash will be different the than one listed above. Make sure to use the hash of your own invoke transaction when searching for it in a block explorer.</p>
 </div>
-<div class="sect2">
-<h3 id="deployment_and_interaction"><a class="anchor" href="#deployment_and_interaction"></a>Deployment and Interaction</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Proceed as per the aforementioned deployment steps.</p>
-</li>
-<li>
-<p>Within the <strong>Environment selection</strong> tab, Select <strong>Wallet</strong>.</p>
-</li>
-<li>
-<p>Select your Starknet account and proceed with the deployment and interaction processes for your contract.</p>
-</li>
-</ol>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>You can monitor transaction hashes and addresses by using various Starknet block explorers such as:</p>
+<p>After the transaction&#8217;s status is changed to <code>Accepted on L2</code>, you can confirm that the state of Starknet Sepolia has indeed changed by calling your deployed contract&#8217;s <code>get_balance</code> function by running:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://testnet.starkscan.co/">Starkscan</a></p>
-</li>
-<li>
-<p><a href="https://sepolia.voyager.online/">Voyager</a></p>
-</li>
-<li>
-<p><a href="https://viewblock.io/starknet">ViewBlock</a></p>
-</li>
-<li>
-<p><a href="https://www.oklink.com/starknet">Oklink</a></p>
-</li>
-</ul>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli call \
+    0x00ed474ec67f690901bcc56ee69491163c4203ededf473198e08c24fe2ab0a29 \
+    get_balance \
+    --network=sepolia</code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p>These block explorers offer a graphical depiction of transactions and modifications to the contract state. Noteworthy is the visibility provided when altering contract ownership through the <code>transfer_ownership()</code> function, as the emitted event by the contract becomes observable within the block explorer. This mechanism serves as a potent means to monitor contractual events.</p>
+<p>and entering your password. If all goes well, the result should resemble the following (<code>66<sub>10</sub> = 42<sub>16</sub></code>):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">[
+    "0x0000000000000000000000000000000000000000000000000000000000000042"
+]</code></pre>
 </div>
 </div>
 </div>
 </div>
+<nav class="pagination">
+  <span class="prev"><a href="../devnet/">Declaring, deploying, and interacting with <code>HelloStarknet</code> locally</a></span>
+  <span class="next"><a href="../next-steps/">Recommended next steps</a></span>
+</nav>
 </article>
   </div>
 </main>
