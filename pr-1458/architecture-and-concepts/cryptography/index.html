@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Devtools for coding in Cairo :: Starknet documentation</title>
-    <link rel="canonical" href="https://docs.starknet.io/tools/devtools/coding-in-cairo/">
-    <link rel="prev" href="../overview/">
-    <link rel="next" href="../writing-smart-contracts/">
+    <title>Cryptography :: Starknet documentation</title>
+    <link rel="canonical" href="https://docs.starknet.io/architecture-and-concepts/cryptography/">
+    <link rel="prev" href="../network-architecture/fee-mechanism/">
+    <link rel="next" href="../network-architecture/messaging-mechanism/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -26,15 +26,15 @@
     <meta property="twitter:url" content="https://docs.starknet.io/">
     <meta property="twitter:title" content="Starknet Documentation">
     <meta property="twitter:description" content="Reference documentation for developers building on Starknet.">
-    <meta property="twitter:image" content="https://www.starknet.io/starknet-docs-card.png">  <link rel="stylesheet" href="../../../_/css/vendor/tabs.css">
-  <link id="theme" rel="stylesheet" title="Default" href="../../../_/css/site.css?new">
-  <link rel="stylesheet" title="Dark" href="../../../_/css/dark-site.css?new">
-  <link rel="stylesheet" href="../../../_/css/vendor/tabs.css">
-  <link rel="stylesheet" href="../../../_/css/home.css">
+    <meta property="twitter:image" content="https://www.starknet.io/starknet-docs-card.png">  <link rel="stylesheet" href="../../_/css/vendor/tabs.css">
+  <link id="theme" rel="stylesheet" title="Default" href="../../_/css/site.css?new">
+  <link rel="stylesheet" title="Dark" href="../../_/css/dark-site.css?new">
+  <link rel="stylesheet" href="../../_/css/vendor/tabs.css">
+  <link rel="stylesheet" href="../../_/css/home.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WY42TERK5P"></script>
     <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','G-WY42TERK5P')</script>
-    <script>var uiRootPath = '../../../_'</script>
-    <script src="../../../_/js/vendor/medium-zoom.js?new"></script>
+    <script>var uiRootPath = '../../_'</script>
+    <script src="../../_/js/vendor/medium-zoom.js?new"></script>
     <script type="text/javascript" id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="e4db29b5-cd94-4bcf-87e4-04f4ca564240" data-blockingmode="manual"></script>
     <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
@@ -49,28 +49,28 @@
         })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
 
-    <script src="../../../_/js/vendor/fullstory.min.js?new"></script>
-<link rel="icon" href="../../../_/img/favicon/favicon.ico" type="image/x-icon">
+    <script src="../../_/js/vendor/fullstory.min.js?new"></script>
+<link rel="icon" href="../../_/img/favicon/favicon.ico" type="image/x-icon">
 
 <!-- For all browsers -->
-<link rel="icon" type="image/png" sizes="32x32" href="../../../_/img/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../../../_/img/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../_/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../_/img/favicon-16x16.png">
 
 <!-- For Google and Chrome -->
-<link rel="icon" type="image/png" sizes="192x192" href="../../../_/img/favicon/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../../_/img/favicon/android-chrome-192x192.png">
 
 <!-- For iPad -->
-<link rel="apple-touch-icon" type="image/png" sizes="167x167" href="../../../_/img/favicon/apple-touch-icon.png">
+<link rel="apple-touch-icon" type="image/png" sizes="167x167" href="../../_/img/favicon/apple-touch-icon.png">
 <!-- For iPhone -->
-<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../../../_/img/favicon/apple-touch-icon.png">  </head>
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../../_/img/favicon/apple-touch-icon.png">  </head>
   <body class="article">
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
       <div class="top-logo">
-        <a href="../../.." class="starknet-logo"></a>
+        <a href="../.." class="starknet-logo"></a>
         <div class="vertical-divider desktop-only"></div>
-        <a href="../../.." class="docs-logo desktop-only">Docs</a>
+        <a href="../.." class="docs-logo desktop-only">Docs</a>
       </div>
       <!--<a class="navbar-item" href="https://docs.starknet.io">Starknet documentation</a>-->
       <div id="autocomplete" class="autocomplete-root"></div>
@@ -118,14 +118,14 @@
     <div class="panels">
     <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../../../">Starknet</a></h3>
+    <h3 class="title"><a href="../../">Starknet</a></h3>
 <ul class="nav-list">
   <li class="nav-item parent" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <a 
        class="nav-link"
-     href="../../../">Overview</a>
+     href="../../">Overview</a>
   </li>
 </ul>
   </li>
@@ -142,37 +142,37 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../quick-start/overview/">Overview</a>
+     href="../../quick-start/overview/">Overview</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../quick-start/environment-setup/">Setting up your environment</a>
+     href="../../quick-start/environment-setup/">Setting up your environment</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../quick-start/compiling-hellostarknet/">Compiling <code>HelloStarknet</code></a>
+     href="../../quick-start/compiling-hellostarknet/">Compiling <code>HelloStarknet</code></a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../quick-start/devnet/">Declaring, deploying, and interacting with <code>HelloStarknet</code> locally</a>
+     href="../../quick-start/devnet/">Declaring, deploying, and interacting with <code>HelloStarknet</code> locally</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../quick-start/sepolia/">Deploying and interacting with <code>HelloStarknet</code> on Sepolia</a>
+     href="../../quick-start/sepolia/">Deploying and interacting with <code>HelloStarknet</code> on Sepolia</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../quick-start/next-steps/">Recommended next steps</a>
+     href="../../quick-start/next-steps/">Recommended next steps</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../quick-start/troubleshooting/">Troubleshooting</a>
+     href="../../quick-start/troubleshooting/">Troubleshooting</a>
   </li>
 </ul>
   </li>
@@ -183,47 +183,47 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../staking/overview/">Overview</a>
+     href="../../staking/overview/">Overview</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../staking/entering-staking/">Becoming a validator</a>
+     href="../../staking/entering-staking/">Becoming a validator</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../staking/increasing-staking/">Increasing stake</a>
+     href="../../staking/increasing-staking/">Increasing stake</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../staking/claiming-rewards/">Claiming rewards</a>
+     href="../../staking/claiming-rewards/">Claiming rewards</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../staking/delegating-stake/">Delegating stake</a>
+     href="../../staking/delegating-stake/">Delegating stake</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../staking/switching-delegation-pools/">Switching delegation pools</a>
+     href="../../staking/switching-delegation-pools/">Switching delegation pools</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../staking/exiting-staking/">Exiting the staking protocol</a>
+     href="../../staking/exiting-staking/">Exiting the staking protocol</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../staking/managing-staking-and-delegation-operations/">Managing staking and delegation operations</a>
+     href="../../staking/managing-staking-and-delegation-operations/">Managing staking and delegation operations</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../staking/staking-events-and-read-functions/">Using staking events and read functions</a>
+     href="../../staking/staking-events-and-read-functions/">Using staking events and read functions</a>
   </li>
 </ul>
   </li>
@@ -234,42 +234,42 @@
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../starkgate/overview/">Overview</a>
+     href="../../starkgate/overview/">Overview</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../starkgate/depositing/">Depositing funds</a>
+     href="../../starkgate/depositing/">Depositing funds</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../starkgate/withdrawing/">Withdrawing funds</a>
+     href="../../starkgate/withdrawing/">Withdrawing funds</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../starkgate/automated-actions-with-bridging/">Performing a Smart Deposit</a>
+     href="../../starkgate/automated-actions-with-bridging/">Performing a Smart Deposit</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../starkgate/adding-a-token/">Adding a token</a>
+     href="../../starkgate/adding-a-token/">Adding a token</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../starkgate/cancelling-a-deposit/">Cancelling a deposit</a>
+     href="../../starkgate/cancelling-a-deposit/">Cancelling a deposit</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../starkgate/estimating-fees/">Estimating StarkGate fees</a>
+     href="../../starkgate/estimating-fees/">Estimating StarkGate fees</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../dai-token-migration/">Migrating DAI v0 to DAI</a>
+     href="../../tools/dai-token-migration/">Migrating DAI v0 to DAI</a>
   </li>
 </ul>
   </li>
@@ -294,27 +294,27 @@
   <li class="nav-item" data-depth="4">
     <a 
        class="nav-link"
-     href="../../../architecture-and-concepts/accounts/introduction/">What is an account?</a>
+     href="../accounts/introduction/">What is an account?</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a 
        class="nav-link"
-     href="../../../architecture-and-concepts/accounts/approach/">Starknet&#8217;s account interface</a>
+     href="../accounts/approach/">Starknet&#8217;s account interface</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a 
        class="nav-link"
-     href="../../../architecture-and-concepts/accounts/account-functions/">Account interface function reference</a>
+     href="../accounts/account-functions/">Account interface function reference</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a 
        class="nav-link"
-     href="../../../architecture-and-concepts/accounts/deploying-new-accounts/">Deploying new accounts</a>
+     href="../accounts/deploying-new-accounts/">Deploying new accounts</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a 
        class="nav-link"
-     href="../../../architecture-and-concepts/accounts/universal-deployer/">Universal Deployer Contract</a>
+     href="../accounts/universal-deployer/">Universal Deployer Contract</a>
   </li>
 </ul>
   </li>
@@ -325,57 +325,57 @@
   <li class="nav-item" data-depth="4">
     <a 
        class="nav-link"
-     href="../../../architecture-and-concepts/smart-contracts/contract-classes/">Contract classes and instances</a>
+     href="../smart-contracts/contract-classes/">Contract classes and instances</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a 
        class="nav-link"
-     href="../../../architecture-and-concepts/smart-contracts/class-hash/">Class hash</a>
+     href="../smart-contracts/class-hash/">Class hash</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a 
        class="nav-link"
-     href="../../../architecture-and-concepts/smart-contracts/compiled-class-hash/">Compiled class hash</a>
+     href="../smart-contracts/compiled-class-hash/">Compiled class hash</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a 
        class="nav-link"
-     href="../../../architecture-and-concepts/smart-contracts/contract-address/">Contract address</a>
+     href="../smart-contracts/contract-address/">Contract address</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a 
        class="nav-link"
-     href="../../../architecture-and-concepts/smart-contracts/contract-storage/">Contract storage</a>
+     href="../smart-contracts/contract-storage/">Contract storage</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a 
        class="nav-link"
-     href="../../../architecture-and-concepts/smart-contracts/contract-abi/">Contract ABI</a>
+     href="../smart-contracts/contract-abi/">Contract ABI</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a 
        class="nav-link"
-     href="../../../architecture-and-concepts/smart-contracts/cairo-and-sierra/">Cairo and Sierra</a>
+     href="../smart-contracts/cairo-and-sierra/">Cairo and Sierra</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a 
        class="nav-link"
-     href="../../../architecture-and-concepts/smart-contracts/cairo-builtins/">Cairo builtins</a>
+     href="../smart-contracts/cairo-builtins/">Cairo builtins</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a 
        class="nav-link"
-     href="../../../architecture-and-concepts/smart-contracts/serialization-of-cairo-types/">Serialization of Cairo types</a>
+     href="../smart-contracts/serialization-of-cairo-types/">Serialization of Cairo types</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a 
        class="nav-link"
-     href="../../../architecture-and-concepts/smart-contracts/system-calls-cairo1/">System calls</a>
+     href="../smart-contracts/system-calls-cairo1/">System calls</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a 
        class="nav-link"
-     href="../../../architecture-and-concepts/smart-contracts/execution-info/">Execution information for the current block</a>
+     href="../smart-contracts/execution-info/">Execution information for the current block</a>
   </li>
 </ul>
   </li>
@@ -386,22 +386,22 @@
   <li class="nav-item" data-depth="4">
     <a 
        class="nav-link"
-     href="../../../architecture-and-concepts/network-architecture/transaction-life-cycle/">Transaction lifecycle</a>
+     href="../network-architecture/transaction-life-cycle/">Transaction lifecycle</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a 
        class="nav-link"
-     href="../../../architecture-and-concepts/network-architecture/transactions/">Transaction types</a>
+     href="../network-architecture/transactions/">Transaction types</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a 
        class="nav-link"
-     href="../../../architecture-and-concepts/network-architecture/block-structure/">Block structure</a>
+     href="../network-architecture/block-structure/">Block structure</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a 
        class="nav-link"
-     href="../../../architecture-and-concepts/network-architecture/fee-mechanism/">Fee mechanism</a>
+     href="../network-architecture/fee-mechanism/">Fee mechanism</a>
   </li>
 </ul>
   </li>
@@ -411,45 +411,45 @@
     <button class="nav-item-toggle mask-svg-center"></button>
     <span class="nav-text">Advanced topics</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item is-current-page" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../architecture-and-concepts/cryptography/">Cryptography</a>
+     href="./">Cryptography</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../architecture-and-concepts/network-architecture/messaging-mechanism/">L1-L2 messaging</a>
+     href="../network-architecture/messaging-mechanism/">L1-L2 messaging</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../architecture-and-concepts/network-architecture/data-availability/">Data availability</a>
+     href="../network-architecture/data-availability/">Data availability</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../architecture-and-concepts/network-architecture/os/">SNOS</a>
+     href="../network-architecture/os/">SNOS</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../staking/architecture/">Staking</a>
+     href="../../staking/architecture/">Staking</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../architecture-and-concepts/network-architecture/starknet-state/">State</a>
+     href="../network-architecture/starknet-state/">State</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../starkgate/architecture/">StarkGate</a>
+     href="../../starkgate/architecture/">StarkGate</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../../architecture-and-concepts/economics-of-starknet/">Tokenomics</a>
+     href="../economics-of-starknet/">Tokenomics</a>
   </li>
 </ul>
   </li>
@@ -466,32 +466,32 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../overview/">Overview</a>
-  </li>
-  <li class="nav-item is-current-page" data-depth="2">
-    <a 
-       class="nav-link"
-     href="./">Coding in Cairo</a>
+     href="../../tools/devtools/overview/">Overview</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../writing-smart-contracts/">Writing smart contracts</a>
+     href="../../tools/devtools/coding-in-cairo/">Coding in Cairo</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../building-dapps/">Building dApps</a>
+     href="../../tools/devtools/writing-smart-contracts/">Writing smart contracts</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../interacting-with-starknet/">Interacting with Starknet</a>
+     href="../../tools/devtools/building-dapps/">Building dApps</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../running-devnets/">Running devnets</a>
+     href="../../tools/devtools/interacting-with-starknet/">Interacting with Starknet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../tools/devtools/running-devnets/">Running devnets</a>
   </li>
 </ul>
   </li>
@@ -502,27 +502,27 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../api-services/">Full nodes and API services</a>
+     href="../../tools/api-services/">Full nodes and API services</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../ref-block-explorers/">Block explorers</a>
+     href="../../tools/ref-block-explorers/">Block explorers</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../oracles/">Oracles</a>
+     href="../../tools/oracles/">Oracles</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../data-indexers/">Data indexers</a>
+     href="../../tools/data-indexers/">Data indexers</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../audit/">Audit providers</a>
+     href="../../tools/audit/">Audit providers</a>
   </li>
 </ul>
   </li>
@@ -537,22 +537,22 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../../glossary/">Glossary</a>
+     href="../../glossary/">Glossary</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../../chain-info/">Chain info</a>
+     href="../../chain-info/">Chain info</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../compatibility/">Compatibility tables</a>
+     href="../../tools/compatibility/">Compatibility tables</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../../starknet-versions/version-notes/">Release notes</a>
+     href="../../starknet-versions/version-notes/">Release notes</a>
   </li>
 </ul>
   </li>
@@ -587,146 +587,238 @@
 <aside class="toc sidebar" data-title="Table of Contents" data-levels="2">
   <div style="position:sticky;top:7rem;z-index:2;margin-bottom:1rem">
     <div class="edit-this-page">
-      <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/tools/pages/devtools/coding-in-cairo.adoc" target="_blank">✏️&nbsp;&nbsp;Edit page</a>
+      <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/architecture-and-concepts/pages/cryptography.adoc" target="_blank">✏️&nbsp;&nbsp;Edit page</a>
     </div>
     <div class="edit-this-page">
-      <a href='https://github.com/starknet-io/starknet-docs/issues/new?assignees=landauraz&title=Feedback for "Devtools for coding in Cairo"' target="_blank">❤️&nbsp;&nbsp;Share feedback</a>
+      <a href='https://github.com/starknet-io/starknet-docs/issues/new?assignees=landauraz&title=Feedback for "Cryptography"' target="_blank">❤️&nbsp;&nbsp;Share feedback</a>
     </div>
   </div>
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Devtools for coding in Cairo</h1>
+<h1 class="page">Cryptography</h1>
 <div class="sect1">
-<h2 id="scarb"><a class="anchor" href="#scarb"></a>Scarb</h2>
+<h2 id="stark-field"><a class="anchor" href="#stark-field"></a>The STARK field</h2>
 <div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 <div class="paragraph">
-<p><a href="https://github.com/software-mansion/scarb" target="_blank" rel="noopener">Scarb</a> is much more than a package manager for Cairo: It is the easiest and most recommended way to build and maintain Cairo code. Developed by Software Mansion and inspired by Cargo for Rust, Scarb includes:</p>
+<p>The <code>felt252</code> type in Cairo refers to elements of the STARK field.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The STARK field is the finite field \(\mathbb{F}_P\), where \(P\) is a prime number defined by:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[P = 2^{251} + 17*2^{192} + 1\]
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="stark-curve"><a class="anchor" href="#stark-curve"></a>The STARK curve</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The STARK curve is commonly used in smart contracts but not distinguished by the Starknet protocol.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The STARK curve is an elliptic curve defined over the <a href="#stark-field">STARK field</a> by:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[y^2 \equiv x^3 + \alpha \cdot x + \beta \pmod{P}\]
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Initiating a new Cairo project.</p>
+<p>\(\alpha = 1\)</p>
 </li>
 <li>
-<p>Compiling Cairo projects.</p>
+<p>\(\beta = 3141592653589793238462643383279502884197169399375105820974944592307816406665\)
+and the generator point used in the ECDSA scheme is defined by:</p>
 </li>
 <li>
-<p>Adding and removing Cairo dependencies.</p>
+<p>\(G_x = 874739451078007766457464989774322083649278607533249481151382481072868806602\)</p>
 </li>
 <li>
-<p>Generating Cairo documentation.</p>
-</li>
-<li>
-<p>Fetching and uploading packages <a href="https://scarbs.xyz/">Scarbs.xyz</a>, the Cairo Registry.</p>
-</li>
-<li>
-<p>Integrating with the Cairo language server, as well as other tools in the Cairo ecosystem, such as Starknet Foundry and the Dojo gaming engine.</p>
+<p>\(G_y = 152666792071518830868575557812948353041420400780739481342941381225525861407\)</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="vs-code-cairo-extension"><a class="anchor" href="#vs-code-cairo-extension"></a>VS Code Cairo extension</h2>
+<h2 id="hash_functions"><a class="anchor" href="#hash_functions"></a>Hash functions</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://marketplace.visualstudio.com/items?itemName=starkware.cairo1" target="_blank" rel="noopener">VS Code Cairo extension</a> is an extension for the Microsoft Visual Studio (VS) Code IDE that provides assistance when writing Cairo smart contracts, including live diagnostic highlighting for compile errors, quick fixes with suggestions, code formatting and completion, and more. It integrates with Scarb, and works best when Scarb is installed via <code>asdf</code>.</p>
+<p>There are three hash functions used throughout Starknet&#8217;s specifications that map inputs to elements in the <a href="#stark-field">STARK field</a>.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="usc"><a class="anchor" href="#usc"></a>Universal-Sierra-Compiler</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="starknet_keccak"><a class="anchor" href="#starknet_keccak"></a>Starknet Keccak</h3>
 <div class="paragraph">
-<p><a href="https://github.com/software-mansion/universal-sierra-compiler" target="_blank" rel="noopener">Universal-Sierra-Compiler</a> is a utility tool for compiling single Sierra files (unlike Scarb, which compiles full projects) from any Sierra version into CASM.</p>
+<p>Starknet Keccak, commonly denoted by \(\text{sn_keccak}\), is defined as the first 250 bits of Ethereum&#8217;s <a href="https://github.com/ethereum/eth-hash">keccak256</a>.</p>
 </div>
-<div class="admonitionblock note">
+</div>
+<div class="sect2">
+<h3 id="pedersen_hash"><a class="anchor" href="#pedersen_hash"></a>Pedersen hash</h3>
+<div class="paragraph">
+<p>Pedersen hash is then defined by:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[h(a,b) = \left[\text{shift_point} + a_{low} \cdot P_0 + a_{high} \cdot P1 + b_{low} \cdot P2  + b_{high} \cdot P3\right]_x\]
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>\(a_{low}\) and \(b_{low}\) are the 248 low of \(a\) and \(b\), respectively</p>
+</li>
+<li>
+<p>\(a_{high}\) and \(b_{high}\) are the 4 high bits of \(a\) and \(b\), respectively</p>
+</li>
+<li>
+<p>The values of the constants \(\text{shift_point}, P_0, P_1, P_2, P_3\) can be found in <a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/crypto/signature/fast_pedersen_hash.py" target="_blank" rel="noopener">fast_pedersen_hash.py</a></p>
+</li>
+<li>
+<p>\([P]_x\) denotes the \(x\) coordinate of point \(P\)</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="pedersen_array_hash"><a class="anchor" href="#pedersen_array_hash"></a>Array hashing</h4>
+<div class="paragraph">
+<p>Let \(h\) denote the pedersen hash function, then given an array \(a_1,...,a_n\) of \(n\) field elements
+we define \(h(a_1,...,a_n)\) to be:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[h(...h(h(0, a_1),a_2),...,a_n),n)\]
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="poseidon_hash"><a class="anchor" href="#poseidon_hash"></a>Poseidon hash</h3>
+<div class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Universal-Sierra-Compiler comes bundled with Starknet Foundry and does not need to be installed separately if Starknet Foundry is installed.</p>
+<p>Poseidon is a family of hash functions designed to be very efficient as algebraic circuits. As such, they can be very useful in ZK-proving systems such as STARKs.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Starknet&#8217;s version of Poseidon is based on a three-element state Hades permutation and defined of up to 2 elements by:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\text{poseidon}(x) := \left[\text{hades_permutation}(x,0,1)\right]_0\]
+</div>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\text{poseidon}(x,y) := \left[\text{hades_permutation}(x,y,2)\right]_0\]
+</div>
+</div>
+<div class="paragraph">
+<p>Where \([\cdot]_j\) denotes taking the \(j\)'th coordinate of a tuple.</p>
+</div>
+<div class="sect3">
+<h4 id="poseidon_array_hash"><a class="anchor" href="#poseidon_array_hash"></a>Array hashing</h4>
+<div class="paragraph">
+<p>Let \(\text{hades}:\mathbb{F}_P^3\rightarrow\mathbb{F}_P^3\) denote the Hades permutation with Starknet&#8217;s parameters, then given an array \(a_1,...,a_n\) of \(n\) field elements
+we define \(\text{poseidon}(a_1,...,a_n)\) to be the first coordinate of \(H(a_1,...,a_n;0,0,0)\), where:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[H(a_1,...,a_n;s_1,s_2,s_3)=\begin{cases}
+H\big(a_3,...,a_n;\text{hades}(s_1+a_1, s_2+a_2, s_3)\big), &amp; \text{if  } n\ge 2 \\
+\text{hades}(s_1+a_1,s_2+1,s_3), &amp; \text{if  } n=1 \\
+\text{hades}(s_1+1,s_2,s_3), &amp; \text{if  } n=0 \\
+\end{cases}\]
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>For reference implementations of the above see <a href="https://github.com/starkware-libs/cairo-lang/blob/12ca9e91bbdc8a423c63280949c7e34382792067/src/starkware/cairo/common/poseidon_hash.py#L46">poseidon_hash.py</a> and <a href="https://github.com/starkware-libs/cairo-lang/blob/12ca9e91bbdc8a423c63280949c7e34382792067/src/starkware/cairo/common/builtin_poseidon/poseidon.cairo#L28">poseidon.cairo</a> in the cairo-lang GitHub repository.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="cairo-profiler"><a class="anchor" href="#cairo-profiler"></a>cairo-profiler</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="https://github.com/software-mansion/cairo-profiler" target="_blank" rel="noopener">cairo-profiler</a> is a utility tool that can be used to create profiles of Cairo executions from execution traces, which can be analyzed and used to show flame graphs and other useful information.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>cairo-profiler comes bundled with Starknet Foundry and does not need to be installed separately if Starknet Foundry is installed.</p>
-</div>
-</td>
-</tr>
-</table>
+<div class="sect3">
+<h4 id="additional_resources"><a class="anchor" href="#additional_resources"></a>Additional resources</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/starkware-industries/poseidon/blob/main/poseidon3.txt">Parameters for defining the Poseidon permutation used in Starknet</a></p>
+</li>
+<li>
+<p><a href="https://github.com/CryptoExperts/poseidon">Implementation in C and assembly by CryptoExperts</a></p>
+</li>
+</ul>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="cairo-playground"><a class="anchor" href="#cairo-playground"></a>Cairo Playground</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="https://www.cairo-lang.org/cairovm/" target="_blank" rel="noopener">Cairo Playground</a> an online tool that can be used to both experiment with Cairo without deploying a smart contract on Starknet, as well as dive deep into the Cairo virtual machine.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="sierra-analyzer"><a class="anchor" href="#sierra-analyzer"></a>Sierra Analyzer</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="https://github.com/FuzzingLabs/sierra-analyzer" target="_blank" rel="noopener">Sierra Analyzer</a>, developed by <a href="https://x.com/fuzzinglabs" target="_blank" rel="noopener">FuzzingLabs</a> is a security toolkit for analyzing Sierra files, including decompiling a Sierra file, printing the contract&#8217;s control flow graph, and running static analysis detectors.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cairo_lint"><a class="anchor" href="#cairo_lint"></a>Cairo lint</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="https://github.com/software-mansion/cairo-lint" target="_blank" rel="noopener">Cairo lint</a> is a collection of lints that can either be used as either a library or as a standalone binary to help both detect and fix common mistakes and improve your Cairo code.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="stark_utils"><a class="anchor" href="#stark_utils"></a>Stark-utils</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="https://www.stark-utils.xyz/converter" target="_blank" rel="noopener">Stark-utils</a> is a simple web application that aims to be a toolbox for Cairo developers, allowing you to convert any input to a felt, string, hexadecimal value, etc.</p>
 </div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../overview/">Overview</a></span>
-  <span class="next"><a href="../writing-smart-contracts/">Writing smart contracts</a></span>
+  <span class="prev"><a href="../network-architecture/fee-mechanism/">Fee mechanism</a></span>
+  <span class="next"><a href="../network-architecture/messaging-mechanism/">L1-L2 messaging</a></span>
 </nav>
 </article>
   </div>
 </main>
 </div>
-<script src="../../../_/js/site.js?new"></script>
-<script async src="../../../_/js/vendor/highlight.js?new"></script>
-<script async src="../../../_/js/vendor/tabs-block-behaviour.js?new"></script>
-<script async src="../../../_/js/vendor/swagger-ui.js?new"></script>
-<script async src="../../../_/js/vendor/component-versions.js?new"></script>
+<script src="../../_/js/site.js?new"></script>
+<script async src="../../_/js/vendor/highlight.js?new"></script>
+<script async src="../../_/js/vendor/tabs-block-behaviour.js?new"></script>
+<script async src="../../_/js/vendor/swagger-ui.js?new"></script>
+<script async src="../../_/js/vendor/component-versions.js?new"></script>
 <script src="https://chatwith.tools/chatbot/04f9f1da-f9bd-46c1-a74d-b72cec2014ea.js" async=""></script>
-<script src="../../../_/js/vendor/custom.js?new"></script>
-<script async src="../../../_/js/vendor/tabs.js"></script>
+<script src="../../_/js/vendor/custom.js?new"></script>
+<script async src="../../_/js/vendor/tabs.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script>
 <script
