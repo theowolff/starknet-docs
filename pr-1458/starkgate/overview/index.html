@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>StarkGate bridge overview :: Starknet documentation</title>
+    <title>The StarkGate bridge guide overview :: Starknet documentation</title>
     <link rel="canonical" href="https://docs.starknet.io/starkgate/overview/">
     <link rel="prev" href="../../staking/staking-events-and-read-functions/">
     <link rel="next" href="../depositing/">
@@ -605,47 +605,29 @@
       <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/starkgate/pages/overview.adoc" target="_blank">✏️&nbsp;&nbsp;Edit page</a>
     </div>
     <div class="edit-this-page">
-      <a href='https://github.com/starknet-io/starknet-docs/issues/new?assignees=landauraz&title=Bug in "StarkGate bridge overview"' target="_blank">🪲&nbsp;&nbsp;Report bug</a>
+      <a href='https://github.com/starknet-io/starknet-docs/issues/new?assignees=landauraz&title=Bug in "The StarkGate bridge guide overview"' target="_blank">🪲&nbsp;&nbsp;Report bug</a>
     </div>
   </div>
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">StarkGate bridge overview</h1>
-<div id="preamble">
-<div class="sectionbody">
+<h1 class="page">The StarkGate bridge guide overview</h1>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
 <div class="paragraph">
-<p>StarkGate, developed by StarkWare, bridges ETH and ERC-20 tokens between Ethereum and Starknet. Each supported token is associated with a pair of L1 and L2 bridge contracts that communicates via Starknet&#8217;s messaging mechanism.</p>
+<p>This guide is a hands-on tutorial for using StarkGate. To learn about the different components of StarkGate, go to <a href="../architecture/" class="xref page"><em>Architecture</em></a>.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>For some tokens, a pair of bridges consist of a single StarkGate instance on L1 and a single StarkGate instance on L2. For most tokens, the pair of bridges is a multi-bridge, which has an instance on L1 and an instance on L2, serving multiple tokens.</p>
-</div>
-<div class="paragraph">
-<p>To use the StarkGate web app, go to <a href="https://starkgate.starknet.io" class="bare">https://starkgate.starknet.io</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="starkgate_transactions"><a class="anchor" href="#starkgate_transactions"></a>StarkGate transactions</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The StarkGate bridge enables the following transactions:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Deposit</strong>: Deposit ETH and ERC-20 tokens from your L1 wallet on Ethereum to your L2 wallet on Starknet. This procedure is done through a Lock and Mint mechanism. For more information go to the <a href="https://docs.starknet.io/starkgate/depositing/">Deposit</a> flow.</p>
-</li>
-<li>
-<p><strong>Deposit with a message</strong>:  A deposit that has an option to add subsequent actions, such as, deposit funds and transfer those funds to another recipient within the same transaction. For more information go to the <a href="https://docs.starknet.io/starkgate/automated-actions-with-bridging/">Deposit with message</a> flow.</p>
-</li>
-<li>
-<p><strong>Withdrawal</strong>: Withdraw ETH and ERC-20 tokens from your L2 wallet on Starknet to your L1 wallet on Ethereum. This procedure is done through a Burn and Unlock mechanism. For more information go to the <a href="https://docs.starknet.io/starkgate/withdrawing/">Withdrawal</a> flow.</p>
-</li>
-<li>
-<p><strong>Cancel deposit</strong>: To ensure self-custody, StarkGate enables you to cancel a Deposit and a Deposit with message if, after depositing funds, you don’t see your funds appear on L2 within a reasonable amount of time. For more information go to the <a href="https://docs.starknet.io/starkgate/cancelling-a-deposit/">Cancel deposit</a> flow.</p>
-</li>
-</ul>
+<p><a href="https://starkgate.starknet.io" target="_blank" rel="noopener">StarkGate</a>, developed by StarkWare, bridges ETH and ERC-20 tokens between Ethereum and Starknet. StarkGate supports many tokens, each by its own L1 and L2 contracts. For a comprehensive list of tokens that StarkGate supports, including their L1 and L2 addresses, see the JSON files shown in the following table:</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -655,33 +637,24 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>StarkGate 2.0 provides a contract that enables seamless backward compatibility with the previous version of StarkGate.</p>
+<p>You can also check if a token is currently supported using the <a href="../function-reference/#getBridge" class="xref page"><code>getBridge</code> function</a>.</p>
 </div>
 <div class="paragraph">
-<p>When you update the code in your contract, make sure that you use the most up-to-date versions of all StarkGate contracts.</p>
+<p>To permissionlessly add support for more ERC-20 tokens, check out <a href="https://research.lazer1.xyz/blog/making-sense-of-starknet-architecture-and-l1-l2-messaging/#enroll-a-token-bridge">Lazer 1 Research&#8217;s community guide</a>.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="starkgate_addresses"><a class="anchor" href="#starkgate_addresses"></a>StarkGate addresses</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>L1 and L2 addresses for StarkGate bridges and supported tokens are listed in the JSON files shown in the table <a href="#table_StarkGate_token_addresses">StarkGate bridged tokens and their addresses</a>.</p>
-</div>
-<table id="table_StarkGate_token_addresses" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. StarkGate bridged tokens and their addresses</caption>
+<table id="table_StarkGate_token_addresses" class="tableblock frame-all grid-all fit-content">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col>
+<col>
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Network</th>
-<th class="tableblock halign-left valign-top">StarkGate bridged tokens JSON file</th>
+<th class="tableblock halign-left valign-top">JSON file</th>
 </tr>
 </thead>
 <tbody>
@@ -695,50 +668,24 @@
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="starkgate_supported_tokens"><a class="anchor" href="#starkgate_supported_tokens"></a>Supported tokens in StarkGate</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>StarkGate supports many tokens, including ETH, WBTC, USDC, DAI, and many more.</p>
+<p>This guide will walk you through the various procedures enabled by StarkGate, including:</p>
 </div>
-<div class="paragraph">
-<p>For a comprehensive list of tokens that StarkGate supports, including their L1 and L2 addresses, see the JSON files shown in the table <a href="#table_StarkGate_token_addresses">StarkGate bridged tokens and their addresses</a>.</p>
-</div>
-<div class="paragraph">
-<p>You can check if a token is currently supported with the L1 function <code>getBridge</code>.</p>
-</div>
-<div class="paragraph">
-<p>You can permissionlessly add support for ERC-20 tokens via the multi-bridge using the <code>enrollTokenBridge</code> function. For more information go to <a href="https://docs.starknet.io/starkgate/adding-a-token/">Adding a token</a>.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Previously, StarkGate placed limitations for each supported token on the amount that could be deposited and the total value locked in the L1 bridge contract on Mainnet. These limits have been removed as of December 2023.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="additional_resources"><a class="anchor" href="#additional_resources"></a>Additional resources</h2>
-<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://docs.starknet.io/architecture-and-concepts/network-architecture/messaging-mechanism/">L1-L2 messaging</a></p>
+<p><a href="https://docs.starknet.io/starkgate/depositing/">Depositing funds</a>: Depositing ETH and ERC-20 tokens from your L1 wallet on Ethereum to your L2 wallet on Starknet, using a lock-and-mint mechanism.</p>
+</li>
+<li>
+<p><a href="https://docs.starknet.io/starkgate/automated-actions-with-bridging/">Depositing funds with a message</a>:  Depositing ETH and ERC-20 tokens from your L1 wallet on Ethereum to your L2 wallet on Starknet, with an option to add subsequent actions (e.g., depositing funds and transferring those funds to another recipient within the same transaction).</p>
+</li>
+<li>
+<p><a href="https://docs.starknet.io/starkgate/cancelling-a-deposit/">Canceling a deposit</a>: Canceling a previous deposit or deposit with message, if you don&#8217;t see your deposited funds appear on L2 within a reasonable amount of time.</p>
+</li>
+<li>
+<p><a href="https://docs.starknet.io/starkgate/withdrawing/">Withdrawaling funds</a>: Withdraw ETH and ERC-20 tokens from your L2 wallet on Starknet to your L1 wallet on Ethereum, using a burn-and-unlock mechanism.</p>
 </li>
 </ul>
-</div>
-</div>
 </div>
 <nav class="pagination">
   <span class="prev"><a href="../../staking/staking-events-and-read-functions/">Using staking events and read functions</a></span>
