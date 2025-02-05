@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Setting up your environment :: Starknet documentation</title>
+    <title>Setting up your Starknet development environment :: Starknet documentation</title>
     <link rel="canonical" href="https://docs.starknet.io/quick-start/environment-setup/">
-    <link rel="prev" href="../../">
-    <link rel="next" href="../set-up-an-account/">
+    <link rel="prev" href="../overview/">
+    <link rel="next" href="../compiling-hellostarknet/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -48,6 +48,8 @@
         a.appendChild(r);
         })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
+
+    <script src="../../_/js/vendor/fullstory.min.js?new"></script>
 <link rel="icon" href="../../_/img/favicon/favicon.ico" type="image/x-icon">
 
 <!-- For all browsers -->
@@ -131,405 +133,58 @@
 <ul class="nav-list">
   <li class="nav-item parent" data-depth="1">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Quickstart</span>
+    <span class="nav-text">Guides</span>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item parent" data-depth="2">
+    <button class="nav-item-toggle mask-svg-center"></button>
+    <span class="nav-text">"Hello, Starknet!" quickstart</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../overview/">Overview</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
     <a 
        class="nav-link"
      href="./">Setting up your environment</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../set-up-an-account/">Setting up an account</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../declare-a-smart-contract/">Declaring a smart contract</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../deploy-a-smart-contract/">Deploying a smart contract</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../interact-with-a-smart-contract/">Interacting with a smart contract</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../using_devnet/">Using a development network</a>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item parent" data-depth="0">
-<ul class="nav-list">
-  <li class="nav-item parent" data-depth="1">
-    <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Architecture</span>
-<ul class="nav-list">
-  <li class="nav-item parent" data-depth="2">
-    <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Accounts</span>
-<ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture-and-concepts/accounts/introduction/">What is an account?</a>
+     href="../compiling-hellostarknet/">Compiling <code>HelloStarknet</code></a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture-and-concepts/accounts/approach/">Starknet&#8217;s account interface</a>
+     href="../devnet/">Declaring, deploying, and interacting with <code>HelloStarknet</code> locally</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture-and-concepts/accounts/account-functions/">Account interface function reference</a>
+     href="../sepolia/">Deploying and interacting with <code>HelloStarknet</code> on Sepolia</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture-and-concepts/accounts/deploying-new-accounts/">Deploying new accounts</a>
+     href="../next-steps/">Recommended next steps</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../architecture-and-concepts/accounts/universal-deployer/">Universal Deployer Contract</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../../architecture-and-concepts/network-architecture/block-structure/">Block structure</a>
-  </li>
-  <li class="nav-item parent" data-depth="2">
-    <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Contracts</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../architecture-and-concepts/smart-contracts/contract-classes/">Contract classes and instances</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../architecture-and-concepts/smart-contracts/class-hash/">Class hash</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../architecture-and-concepts/smart-contracts/compiled-class-hash/">Compiled class hash</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../architecture-and-concepts/smart-contracts/contract-address/">Contract address</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../architecture-and-concepts/smart-contracts/contract-storage/">Contract storage</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../architecture-and-concepts/smart-contracts/contract-abi/">Contract ABI</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../architecture-and-concepts/smart-contracts/cairo-and-sierra/">Cairo and Sierra</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../architecture-and-concepts/smart-contracts/cairo-builtins/">Cairo builtins</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../architecture-and-concepts/smart-contracts/serialization-of-cairo-types/">Serialization of Cairo types</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../architecture-and-concepts/smart-contracts/system-calls-cairo1/">System calls</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../architecture-and-concepts/smart-contracts/execution-info/">Execution information for the current block</a>
+     href="../troubleshooting/">Troubleshooting</a>
   </li>
 </ul>
   </li>
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Cryptography</span>
+    <span class="nav-text">Staking on Starknet</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../architecture-and-concepts/cryptography/p-value/">The STARK field</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../architecture-and-concepts/cryptography/stark-curve/">The STARK curve</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../architecture-and-concepts/cryptography/hash-functions/">Hash functions</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../../architecture-and-concepts/network-architecture/data-availability/">Data availability</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../../architecture-and-concepts/network-architecture/fee-mechanism/">Fee mechanism</a>
-  </li>
-  <li class="nav-item parent" data-depth="2">
-    <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">L1-L2 messaging</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../architecture-and-concepts/network-architecture/messaging-mechanism/">L1-L2 messaging mechanism</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../architecture-and-concepts/network-architecture/messaging-reference/">L1-L2 Messaging reference</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../../architecture-and-concepts/network-architecture/os/">Operating system</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../../architecture-and-concepts/network-architecture/starknet-state/">State</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../../architecture-and-concepts/economics-of-starknet/">Tokenomics</a>
-  </li>
-  <li class="nav-item parent" data-depth="2">
-    <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Transactions</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../architecture-and-concepts/network-architecture/transaction-life-cycle/">Transaction lifecycle</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../architecture-and-concepts/network-architecture/transactions/">Transaction types</a>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item parent" data-depth="0">
-<ul class="nav-list">
-  <li class="nav-item parent" data-depth="1">
-    <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Tooling</span>
-<ul class="nav-list">
-  <li class="nav-item parent" data-depth="2">
-    <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Developer Tools</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../tools/devtools/overview/">Overview</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../tools/devtools/clis/">Command Line Tools</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../tools/devtools/sdks/">Software Development Kits</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../tools/devtools/smart-contract-tools/">Smart Contract Development</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../tools/devtools/vscode/">Visual Studio Code Extension</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../tools/devtools/devnets/">Local Development Nodes</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../tools/devtools/libs-for-dapps/">Libraries for Dapps</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../tools/devtools/dapp-frameworks/">Dapp Frameworks</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../tools/devtools/utilities/">Utilities</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../tools/devtools/security/">Security Tools</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../../tools/api-services/">Full nodes and API services</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../../tools/ref-block-explorers/">Block explorers</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../../tools/oracles/">Oracles</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../../tools/data-indexers/">Data indexers</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../../tools/audit/">Audit providers</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../../tools/compatibility/">Compatibility tables</a>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item parent" data-depth="0">
-<ul class="nav-list">
-  <li class="nav-item parent" data-depth="1">
-    <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">StarkGate guide</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../../starkgate/overview/">Overview</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../../starkgate/architecture/">Architecture</a>
-  </li>
-  <li class="nav-item parent" data-depth="2">
-    <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Procedures</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../starkgate/depositing/">Depositing funds</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../starkgate/withdrawing/">Withdrawing funds</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../starkgate/automated-actions-with-bridging/">Performing a Smart Deposit</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../starkgate/adding-a-token/">Adding a token</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../starkgate/cancelling-a-deposit/">Cancelling a deposit</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../starkgate/estimating-fees/">Estimating StarkGate fees</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a 
-       class="nav-link"
-     href="../../tools/dai-token-migration/">Migrating DAI v0 to DAI</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../../starkgate/function-reference/">Function and event reference</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item parent" data-depth="1">
-    <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Staking guide</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
      href="../../staking/overview/">Overview</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a 
-       class="nav-link"
-     href="../../staking/architecture/">Architecture</a>
-  </li>
-  <li class="nav-item parent" data-depth="2">
-    <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Procedures</span>
-<ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
@@ -572,42 +227,337 @@
   </li>
 </ul>
   </li>
+  <li class="nav-item parent" data-depth="2">
+    <button class="nav-item-toggle mask-svg-center"></button>
+    <span class="nav-text">The StarkGate bridge</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../starkgate/overview/">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../starkgate/depositing/">Depositing funds</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../starkgate/automated-actions-with-bridging/">Performing a Smart Deposit</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../starkgate/cancelling-a-deposit/">Cancelling a deposit</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../starkgate/withdrawing/">Withdrawing funds</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../starkgate/function-reference/">Functions and events reference</a>
+  </li>
 </ul>
   </li>
+  <li class="nav-item parent" data-depth="2">
+    <button class="nav-item-toggle mask-svg-center"></button>
+    <span class="nav-text">Commuinty guides</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://starknet-by-example.voyager.online/" target="_blank" rel="noopener">Starknet By Example ↗</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://speedrunstark.com/" target="_blank" rel="noopener">SpeedRun Stark ↗</a></span>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item parent" data-depth="0">
+<ul class="nav-list">
   <li class="nav-item parent" data-depth="1">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Resources</span>
+    <span class="nav-text">Architecture</span>
 <ul class="nav-list">
   <li class="nav-item parent" data-depth="2">
     <button class="nav-item-toggle mask-svg-center"></button>
-    <span class="nav-text">Release information</span>
+    <span class="nav-text">Core topics</span>
+<ul class="nav-list">
+  <li class="nav-item parent" data-depth="3">
+    <button class="nav-item-toggle mask-svg-center"></button>
+    <span class="nav-text">Accounts</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/accounts/introduction/">What is an account?</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/accounts/approach/">Starknet&#8217;s account interface</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/accounts/account-functions/">Account interface function reference</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/accounts/deploying-new-accounts/">Deploying new accounts</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/accounts/universal-deployer/">Universal Deployer Contract</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item parent" data-depth="3">
+    <button class="nav-item-toggle mask-svg-center"></button>
+    <span class="nav-text">Contracts</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/smart-contracts/contract-classes/">Contract classes and instances</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/smart-contracts/class-hash/">Class hash</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/smart-contracts/compiled-class-hash/">Compiled class hash</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/smart-contracts/contract-address/">Contract address</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/smart-contracts/contract-storage/">Contract storage</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/smart-contracts/contract-abi/">Contract ABI</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/smart-contracts/cairo-and-sierra/">Cairo and Sierra</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/smart-contracts/cairo-builtins/">Cairo builtins</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/smart-contracts/serialization-of-cairo-types/">Serialization of Cairo types</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/smart-contracts/system-calls-cairo1/">System calls</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/smart-contracts/execution-info/">Execution information for the current block</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item parent" data-depth="3">
+    <button class="nav-item-toggle mask-svg-center"></button>
+    <span class="nav-text">Transactions</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/network-architecture/transaction-life-cycle/">Transaction lifecycle</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/network-architecture/transactions/">Transaction types</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/network-architecture/block-structure/">Block structure</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/network-architecture/fee-mechanism/">Fee mechanism</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item parent" data-depth="2">
+    <button class="nav-item-toggle mask-svg-center"></button>
+    <span class="nav-text">Advanced topics</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../tools/limits-and-triggers/">Current versions and limits</a>
+     href="../../architecture-and-concepts/cryptography/">Cryptography</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../starknet-versions/deprecated/">Deprecated, unsupported, and removed features</a>
+     href="../../architecture-and-concepts/network-architecture/messaging-mechanism/">L1-L2 messaging</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../tools/important-addresses/">Important addresses</a>
+     href="../../architecture-and-concepts/network-architecture/data-availability/">Data availability</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a 
        class="nav-link"
-     href="../../starknet-versions/version-notes/">Release notes</a>
+     href="../../architecture-and-concepts/network-architecture/os/">SNOS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../staking/architecture/">Staking</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/network-architecture/starknet-state/">State</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../starkgate/architecture/">StarkGate</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a 
+       class="nav-link"
+     href="../../architecture-and-concepts/economics-of-starknet/">Tokenomics</a>
   </li>
 </ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item parent" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item parent" data-depth="1">
+    <button class="nav-item-toggle mask-svg-center"></button>
+    <span class="nav-text">Tooling</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../tools/devtools/overview/">Overview</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
+     href="../../tools/devtools/coding-in-cairo/">Coding in Cairo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../tools/devtools/writing-smart-contracts/">Writing smart contracts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../tools/devtools/building-dapps/">Building dApps</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../tools/devtools/interacting-with-starknet/">Interacting with Starknet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../tools/devtools/running-devnets/">Running devnets</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item parent" data-depth="1">
+    <button class="nav-item-toggle mask-svg-center"></button>
+    <span class="nav-text">Ecosystem</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../tools/api-services/">Full nodes and API services</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../tools/ref-block-explorers/">Block explorers</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../tools/oracles/">Oracles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../tools/data-indexers/">Data indexers</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../tools/audit/">Auditors and security platforms</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <span class="nav-text"><a href="https://immunefi.com/bug-bounty/starknet/information/" target="_blank" rel="noopener">Bug bounty program ↗</a></span>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item parent" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item parent" data-depth="1">
+    <button class="nav-item-toggle mask-svg-center"></button>
+    <span class="nav-text">Resources</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
      href="../../glossary/">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../chain-info/">Chain info</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../tools/compatibility/">Compatibility tables</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a 
+       class="nav-link"
+     href="../../starknet-versions/version-notes/">Release notes</a>
   </li>
 </ul>
   </li>
@@ -617,12 +567,12 @@
     <div class="navbar-end mobile-only">
       <div class="hr-divider"></div>
       <div class="navbar-item-flex">
-        <a class="navbar-link" href="https://starknet.io/" target="_blank">Starknet Home</a>
+        <a class="navbar-link" href="https://starknet.io/" target="_blank">Starknet home</a>
         <a class="link-icon" href="https://starknet.io/" target="_blank"></a>
       </div>
       <div class="navbar-item-flex">
-        <a class="navbar-link" href="https://starknet.io/building-on-starknet/tutorials/" target="_blank">Tutorials</a>
-        <a class="link-icon" href="https://starknet.io/building-on-starknet/tutorials/" target="_blank"></a>
+        <a class="navbar-link" href="https://github.com/starknet-io/starknet-docs" target="_blank">GitHub repository</a>
+        <a class="link-icon" href="https://github.com/starknet-io/starknet-docs" target="_blank"></a>
       </div>
     </div>
   </nav>
@@ -630,7 +580,7 @@
     </div>
     <footer class="footer">
   <div class="footerdiv">
-    <div class="footer-left">
+    <div class="footer-left desktop-only">
       <p>Built with ✨<br>By the Starknet Community</p>
     </div>
   </div>
@@ -639,48 +589,172 @@
 </div>
 <main class="article">
   <div class="content">
-<aside class="toc sidebar" data-title="Table of Contents" data-levels="2">
+<aside class="toc sidebar" data-title="On this page" data-levels="2">
   <div style="position:sticky;top:7rem;z-index:2;margin-bottom:1rem">
     <div class="edit-this-page">
-      <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/quick-start/pages/environment-setup.adoc" target="_blank">✏️&nbsp;&nbsp;Edit page</a>
+      <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/quick-start/pages/environment-setup.adoc" target="_blank">✏️&nbsp;&nbsp;Edit content</a>
     </div>
     <div class="edit-this-page">
-      <a href='https://github.com/starknet-io/starknet-docs/issues/new?assignees=landauraz&title=Feedback for "Setting up your environment"' target="_blank">❤️&nbsp;&nbsp;Share feedback</a>
+      <a href='https://github.com/starknet-io/starknet-docs/issues/new?assignees=landauraz&title=Bug in "Setting up your Starknet development environment"' target="_blank">🪲&nbsp;&nbsp;Report bug</a>
     </div>
   </div>
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Setting up your environment</h1>
+<h1 class="page">Setting up your Starknet development environment</h1>
 <div class="sect1">
-<h2 id="overview"><a class="anchor" href="#overview"></a>Overview</h2>
+<h2 id="introduction"><a class="anchor" href="#introduction"></a>Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In order to use Starknet, you need to install several tools. This section will walk you through installing the three most recommended tools to begin developing on Starknet:</p>
+<p>Welcome to the first installment of the "Hello, Starknet!" quickstart series, the official tutorial for starting your journey as a Starknet developer! 🚀</p>
+</div>
+<div class="paragraph">
+<p>As a popular phrase (often attributed to Abraham Lincoln) says, "Give me six hours to chop down a tree, and I will spend the first four sharpening the axe". The first installment of the series will therefore guide you through setting up your development environment, which will include the four most recommended tools to begin developing on Starknet:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="../../tools/devtools/clis/#starkli" class="xref page">Starkli</a>, a command-line interface that allows you to interact with Starknet.</p>
+<p><em>Scarb</em>, a build toolchain and package manager for Cairo and Starknet ecosystems</p>
 </li>
 <li>
-<p><a href="../../tools/devtools/smart-contract-tools/#scarb" class="xref page">Scarb</a>, a build toolchain and package manager for Cairo and Starknet ecosystems.</p>
+<p><em>Starknet Foundry</em>, the go-to framework for building and testing Starknet Smart Contracts</p>
 </li>
 <li>
-<p><a href="../../tools/devtools/smart-contract-tools/#starknet_foundry" class="xref page">Starknet Foundry</a>, the go-to framework for building and testing Starknet Smart Contracts</p>
+<p><em>Starknet Devnet</em>, a Rust implementation of a local Starknet node</p>
+</li>
+<li>
+<p><em>Starkli</em>, a command-line interface that allows you to interact with Starknet</p>
 </li>
 </ul>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
 <div class="paragraph">
-<p>To review all Starknet developer tools, check out the <a href="../../tools/devtools/overview/" class="xref page">tools and resources section</a>.</p>
+<p>To review these tools in more detail, as well as all other Starknet developer tools, check out the <a href="../../tools/devtools/overview/" class="xref page">Tooling section</a>.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="installing_starkli"><a class="anchor" href="#installing_starkli"></a>Setting up Starkli</h2>
+<h2 id="installing-rust"><a class="anchor" href="#installing-rust"></a>Installing Rust</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Installing Scarb, Starknet Foundry, Starkent Devnet, and Starkli require <a href="https://www.rust-lang.org/">Rust</a> to be installed. You can verify that Rust is installed and up-to-date by running:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>rustc --version</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or install the latest Rust version by following the instructions in the <a href="https://doc.rust-lang.org/beta/book/ch01-01-installation.html">Rust documentation</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installing-scarb-and-snfoundry"><a class="anchor" href="#installing-scarb-and-snfoundry"></a>Installing Scarb, Starknet Foundry, and Starknet Devnet</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="macos_and_linux_installation"><a class="anchor" href="#macos_and_linux_installation"></a>MacOS and Linux installation</h3>
+<h3 id="macos_and_linux"><a class="anchor" href="#macos_and_linux"></a>MacOS and Linux</h3>
+<div class="paragraph">
+<p>It is highly recommended to install Scarb, Starknet Foundry, and Starknet Devnet on MacOS and Linux via the <a href="https://asdf-vm.com/"><code>asdf</code> version manager</a>, as it allows to easily switch between their different versions, both globally and per project (see full details in the <a href="https://asdf-vm.com/manage/commands.html"><code>asdf</code> documentation</a> or by running <code>asdf --help</code>).</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Verify that <code>asdf</code> is installed:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">asdf --version</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or install it by following the instructions in the <a href="https://asdf-vm.com/guide/getting-started.html"><code>asdf</code> documentation</a>.</p>
+</div>
+</li>
+<li>
+<p>Install the <code>asdf</code> Scarb, Starknet Foundry, and Starknet Devnet plugins:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">asdf plugin add scarb
+asdf plugin add starknet-foundry
+asdf plugin add starknet-devnet</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Install the latest versions of Scarb, Starknet Foundry, and Starknet Devnet:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">asdf install scarb latest
+asdf install starknet-foundry latest
+asdf install starknet-devnet latest</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Set global versions for Scarb, Starknet Foundry, and Starknet Devnet:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">asdf global scarb latest
+asdf global starknet-foundry latest
+asdf global starknet-devnet latest</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Restart the terminal and verify that Scarb, Starknet Foundry, and Starknet Devnet are installed correctly:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">scarb --version
+snforge --version &amp;&amp; sncast --version
+starknet-devnet --version</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="windows"><a class="anchor" href="#windows"></a>Windows</h3>
+<div class="paragraph">
+<p>Both Scarb&#8217;s, Starknet Foundry&#8217;s, and Starknet Devnet&#8217;s installations on Windows requires manual setup.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Follow the instructions in the <a href="https://docs.swmansion.com/scarb/download.html#windows" target="_blank" rel="noopener">Scarb documentation</a>, <a href="https://foundry-rs.github.io/starknet-foundry/getting-started/installation.html#installation-on-windows" target="_blank" rel="noopener">Starknet Foundry documentation</a>, and <a href="https://0xspaceshard.github.io/starknet-devnet/docs/intro/#windows-installation" target="_blank" rel="noopener">Starknet Devnet documentation</a>.</p>
+</li>
+<li>
+<p>Restart the terminal and verify that Scarb, Starknet Foundry, and Starknet Devnet are installed correctly:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">scarb --version
+snforge --version &amp;&amp; sncast --version
+starknet-devnet --version</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installing-starkli"><a class="anchor" href="#installing-starkli"></a>Installing Starkli</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="macos_and_linux_2"><a class="anchor" href="#macos_and_linux_2"></a>MacOS and Linux</h3>
 <div class="paragraph">
 <p>It is highly recommended to install Starkli on MacOS and Linux using the <a href="https://get.starkli.sh"><code>starkliup</code> portable script</a>. <code>starkliup</code> manages shell configuration for you, and using any other installation method requires to <a href="https://book.starkli.rs/shell-completions">manually set up shell completions</a>.</p>
 </div>
@@ -691,7 +765,7 @@
 <p>Download <code>starkliup</code>:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">curl https://get.starkli.sh | sh</code></pre>
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">curl https://get.starkli.sh | sh</code></pre>
 </div>
 </div>
 </li>
@@ -699,7 +773,7 @@
 <p>Restart the terminal and install Starkli:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">starkliup</code></pre>
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkliup</code></pre>
 </div>
 </div>
 </li>
@@ -707,7 +781,7 @@
 <p>Restart the terminal and verify that Starkli is installed correctly:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">starkli --version</code></pre>
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli --version</code></pre>
 </div>
 </div>
 </li>
@@ -715,7 +789,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="windows_installation"><a class="anchor" href="#windows_installation"></a>Windows installation</h3>
+<h3 id="windows_2"><a class="anchor" href="#windows_2"></a>Windows</h3>
 <div class="paragraph">
 <p>Starknet Foundry&#8217;s installation on Windows requires manually setting up shell completions.</p>
 </div>
@@ -726,7 +800,7 @@
 <p>Install Starkli:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">cargo install --locked --git https://github.com/xJonathanLEI/starkli</code></pre>
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">cargo install --locked --git https://github.com/xJonathanLEI/starkli</code></pre>
 </div>
 </div>
 </li>
@@ -734,7 +808,7 @@
 <p>Restart the terminal and verify that Starkli is installed correctly:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">starkli --version</code></pre>
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">starkli --version</code></pre>
 </div>
 </div>
 </li>
@@ -746,165 +820,9 @@
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="installing_scarb"><a class="anchor" href="#installing_scarb"></a>Setting up Scarb</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="macos_and_linux_installation_2"><a class="anchor" href="#macos_and_linux_installation_2"></a>MacOS and Linux installation</h3>
-<div class="paragraph">
-<p>It is highly recommended to install Scarb on MacOS and Linux via the <a href="https://asdf-vm.com/"><code>asdf</code> version manager</a>. Installing Scarb with <code>asdf</code> seamlessly integrates with the Cairo <a href="../../tools/devtools/vscode/" class="xref page">Cairo VSCode extension</a>, and allows to easily switch between different versions of Scarb, both globally and per project (see full details in the <a href="https://asdf-vm.com/manage/commands.html"><code>asdf</code> documentation</a> or by running <code>asdf --help</code>).</p>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Verify that <code>asdf</code> is installed:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">asdf --version</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>or install it by following the instructions in the <a href="https://asdf-vm.com/guide/getting-started.html"><code>asdf</code> documentation</a>.</p>
-</div>
-</li>
-<li>
-<p>Install the <code>asdf</code> Scarb plugin:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">asdf plugin add scarb</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Install the latest version of Scarb:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">asdf install scarb latest</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Set a global version for Scarb (need for using <code>scarb init</code>):</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">asdf global scarb latest</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Restart the terminal and verify that Scarb is installed correctly:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">scarb --version</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="windows_installation_2"><a class="anchor" href="#windows_installation_2"></a>Windows installation</h3>
-<div class="paragraph">
-<p>Scarb&#8217;s installation on Windows requires manual setup.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Follow the instructions in the <a href="https://docs.swmansion.com/scarb/download.html#windows">Scarb documentation</a>.</p>
-</li>
-<li>
-<p>Restart the terminal and verify that Scarb is installed correctly:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">scarb --version</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="starknet_foundry_setup"><a class="anchor" href="#starknet_foundry_setup"></a>Setting up Starknet Foundry</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="macos_and_linux_installation_3"><a class="anchor" href="#macos_and_linux_installation_3"></a>MacOS and Linux installation</h3>
-<div class="paragraph">
-<p>It is highly recommended to install Starknet Foundry on MacOS and Linux using the <a href="https://asdf-vm.com/"><code>asdf</code> version manager</a>. Installing Starknet Foundry with <code>asdf</code> allows to easily switch between different versions of Starknet Foundry, both globally and per project (see full details in the <a href="https://asdf-vm.com/manage/commands.html"><code>asdf</code> documentation</a> or by running <code>asdf --help</code>).</p>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Verify that <code>asdf</code> is installed, or install it by following the instructions on the <a href="https://asdf-vm.com/guide/getting-started.html"><code>asdf</code> documentation</a>.</p>
-</li>
-<li>
-<p>Install the <code>asdf</code> Starknet Foundry plugin:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">asdf plugin add starknet-foundry</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Install the latest version of Starknet Foundry:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">asdf install starknet-foundry latest</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Set a global version for Starknet Foundry using <code>asdf</code> (need for using <code>scarb init</code>):</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">asdf global starknet-foundry latest</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Restart the terminal and verify that Starknet Foundry is installed correctly:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">snforge --version
-sncast --version</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="windows_installation_3"><a class="anchor" href="#windows_installation_3"></a>Windows installation</h3>
-<div class="paragraph">
-<p>Starknet Foundry&#8217;s installation on Windows requires manual setup.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Follow the instructions in the <a href="https://foundry-rs.github.io/starknet-foundry/getting-started/installation.html#installation-on-windows">Starknet Foundry documentation</a>.</p>
-</li>
-<li>
-<p>Restart the terminal and verify that Starknet Foundry is installed correctly:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">snforge --version
-sncast --version</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
 <nav class="pagination">
-  <span class="prev"><a href="../../">Overview</a></span>
-  <span class="next"><a href="../set-up-an-account/">Setting up an account</a></span>
+  <span class="prev"><a href="../overview/">Overview</a></span>
+  <span class="next"><a href="../compiling-hellostarknet/">Compiling <code>HelloStarknet</code></a></span>
 </nav>
 </article>
   </div>
