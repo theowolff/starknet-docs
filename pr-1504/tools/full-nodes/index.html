@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Starknet Compatibility Tables :: Starknet documentation</title>
-    <link rel="canonical" href="https://docs.starknet.io/tools/compatibility/">
-    <link rel="prev" href="../../chain-info/">
-    <link rel="next" href="../../starknet-versions/version-notes/">
+    <title>Full nodes :: Starknet documentation</title>
+    <link rel="canonical" href="https://docs.starknet.io/tools/full-nodes/">
+    <link rel="prev" href="../devtools/running-devnets/">
+    <link rel="next" href="../api-services/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -500,6 +500,11 @@
     <button class="nav-item-toggle mask-svg-center"></button>
     <span class="nav-text">Ecosystem</span>
 <ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a 
+       class="nav-link"
+     href="./">Full nodes</a>
+  </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
@@ -548,15 +553,15 @@
        class="nav-link"
      href="../../chain-info/">Chain info</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="./">Compatibility tables</a>
+     href="../../compatibility/">Compatibility tables</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../../starknet-versions/version-notes/">Release notes</a>
+     href="../../version-notes/">Release notes</a>
   </li>
 </ul>
   </li>
@@ -591,50 +596,31 @@
 <aside class="toc sidebar" data-title="On this page" data-levels="2">
   <div style="position:sticky;top:7rem;z-index:2;margin-bottom:1rem">
     <div class="edit-this-page">
-      <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/tools/pages/compatibility.adoc" target="_blank">✏️&nbsp;&nbsp;Edit content</a>
+      <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/tools/pages/full-nodes.adoc" target="_blank">✏️&nbsp;&nbsp;Edit content</a>
     </div>
     <div class="edit-this-page">
-      <a href='https://github.com/starknet-io/starknet-docs/issues/new?assignees=landauraz&title=Bug in "Starknet Compatibility Tables"' target="_blank">🪲&nbsp;&nbsp;Report bug</a>
+      <a href='https://github.com/starknet-io/starknet-docs/issues/new?assignees=landauraz&title=Bug in "Full nodes"' target="_blank">🪲&nbsp;&nbsp;Report bug</a>
     </div>
   </div>
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Starknet Compatibility Tables</h1>
+<h1 class="page">Full nodes</h1>
 <div class="sect1">
-<h2 id="overview"><a class="anchor" href="#overview"></a>Overview</h2>
+<h2 id="juno"><a class="anchor" href="#juno"></a>Juno</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Starknet development ecosystem consists of tools built to work and support the latest version of Starknet. As Starknet evolves, these tools are updated to support its latest features.</p>
+<p><a href="https://github.com/NethermindEth/juno" target="_blank" rel="noopener">Juno</a> is a Go implementation of a Starknet full-node client created by <a href="https://nethermind.io/" target="_blank" rel="noopener">Nethermind</a> to allow node operators to easily and reliably support the network and advance its decentralisation goals</p>
 </div>
-<div class="paragraph">
-<p>Each version of Starknet is usually coupled with an update of all or some of:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Starknet API</p>
-</li>
-<li>
-<p>Cairo</p>
-</li>
-<li>
-<p>Sierra</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The following tables provide an overview of the compatibility between Starknet updates and the tools in the ecosystem.</p>
-</div>
-<div class="admonitionblock note">
+<div class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Currently this page is being manually updated. Contributions with more up-to-date information are more than welcome.</p>
+<p>See <a href="https://aws-samples.github.io/aws-blockchain-node-runners/docs/Blueprints/Starknet" target="_blank" rel="noopener"><em>Sample AWS Blockchain Node Runner app for Starknet Nodes</em></a> for deploying Juno nodes on AWS.</p>
 </div>
 </td>
 </tr>
@@ -643,243 +629,32 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="starknet_versions"><a class="anchor" href="#starknet_versions"></a>Starknet versions</h2>
+<h2 id="madara"><a class="anchor" href="#madara"></a>Madara</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The following tables specifies the latest version of Starknet API, Cairo and Sierra supported by each Starknet version. The Pathfinder and Juno versions represent the recommended versions for running a full node with the relevant Starknet version.</p>
+<p><a href="https://github.com/madara-alliance/madara" target="_blank" rel="noopener">Madara</a> is an open-source framework written that makes it simple for you to deploy your own Cairo-powered chain, including an easy-to-use, blazing-fast and powerful Starknet full node client, written in Rust and powered by Substrate.</p>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col>
-<col>
-<col>
-<col>
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-center valign-top">Starknet 0.13.2</th>
-<th class="tableblock halign-center valign-top">Starknet 0.13.1</th>
-<th class="tableblock halign-center valign-top">Starknet 0.13.0</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">RPC Version</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">0.7</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">0.7</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">0.6</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cairo Version</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">2.8.0</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">2.6.0</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">2.4.0</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sierra Version</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">1.6.0</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">1.5.0</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">1.4.0</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Pathfinder</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">0.14.1</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">0.11.0</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">0.10.0</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Juno</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">0.12.0</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">0.11.0</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">0.8</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 <div class="sect1">
-<h2 id="starknet_api"><a class="anchor" href="#starknet_api"></a>Starknet API</h2>
+<h2 id="papyrus"><a class="anchor" href="#papyrus"></a>Papyrus</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The following table specifies:</p>
+<p><a href="https://github.com/starkware-libs/papyrus" target="_blank" rel="noopener">Papyrus</a> is StarkWare&#8217;s own Rust implementation of a Starknet full-node, integrated in <a href="https://github.com/starkware-libs/sequencer" target="_blank" rel="noopener">StarkWare&#8217;s next-gen Starknet sequencer</a>.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>For the latest API version: the recommended version for working with the respective API version. If a newer version exist, the newest version should be used instead.</p>
-</li>
-<li>
-<p>For older API versions: the last recommended version of the tool that worked with the respective API version.</p>
-</li>
-</ul>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col>
-<col>
-<col>
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-center valign-top">RPC 0.7</th>
-<th class="tableblock halign-center valign-top">RPC 0.6</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">starknet.js</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">≥ 6.11.0</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">5.14.0</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">starknet.py</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">≥ 0.21.0</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">0.20.0</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">starknet-rs</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">≥ 0.11.0</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">0.10.0</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">starknet.go</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">≥ 0.7.0</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">0.6.1</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">starknet-jvm</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">≥ 0.11.0</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">0.10.0</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">starknet.swift</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">≥ 0.9.0</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">0.8.0</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Starkli</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">≥ 0.3.0</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">0.2.0</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Pathfinder</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">≥ 0.11.0</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">0.10.2</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Juno</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">≥ 0.11.0</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">0.8.0</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Starknet Foundry</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">≥ 0.27.0</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">0.20.0</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Starknet Devnet RS</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">≥ 0.1.2</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">0.0.2</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 <div class="sect1">
-<h2 id="cairo"><a class="anchor" href="#cairo"></a>Cairo</h2>
+<h2 id="pathfinder"><a class="anchor" href="#pathfinder"></a>Pathfinder</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The following tables specifies:</p>
+<p><a href="https://github.com/eqlabs/pathfinder" target="_blank" rel="noopener">Pathfinder</a> is a Rust implementation of a Starknet full node created by <a href="https://equilibrium.co/" target="_blank" rel="noopener">Equilibrium</a>, that provides a secure view into the Starknet blockchain, giving access to Starknet&#8217;s entire state history and allowing users to query contract code, storage, and transactions.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>For SDKs: the version that support the respective Cairo version types and can declare and deploy contracts written in that version.</p>
-</li>
-<li>
-<p>For Starknet Foundry and Scarb: the version that can compile, declare, and deploy contracts written in the respective Cairo version.</p>
-</li>
-<li>
-<p>For Starknet Devnet: the version that contracts written in the respective Cairo version can be declared and deployed on.</p>
-</li>
-<li>
-<p>For Starkli: the version that can declare and deploy contracts written in the respective Cairo version.</p>
-</li>
-</ul>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col>
-<col>
-<col>
-<col>
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-center valign-top">Cairo 2.8.0</th>
-<th class="tableblock halign-center valign-top">Cairo 2.7.0</th>
-<th class="tableblock halign-center valign-top">Cairo 2.6.0</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">starknet.js</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">6.11.0</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">-</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">-</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">starknet.py</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">≥ 0.24.1</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">≥ 0.24.1</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">0.19.0</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">starknet-jvm</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">≥ 0.11.1</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">≥ 0.11.1</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">≥ 0.11.1</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">starknet.swift</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">≥ 0.9.0</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">≥ 0.9.0</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">≥ 0.9.0</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">starkli</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">0.3.4</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">0.3.4</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">0.3.3</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Scarb</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">2.8.1</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">2.7.1</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">2.6.5</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Starknet Foundry</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">≥ 0.28.0</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">≥ 0.28.0</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">0.27.0</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Starknet Devnet RS</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">0.2.0-rc.3</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">0.2.0-rc.3</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">0.1.2</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../../chain-info/">Chain info</a></span>
-  <span class="next"><a href="../../starknet-versions/version-notes/">Release notes</a></span>
+  <span class="prev"><a href="../devtools/running-devnets/">Running devnets</a></span>
+  <span class="next"><a href="../api-services/">API services</a></span>
 </nav>
 </article>
   </div>
