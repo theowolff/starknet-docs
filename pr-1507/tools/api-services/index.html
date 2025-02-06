@@ -604,142 +604,192 @@
 <div class="sect1">
 <h2 id="full_nodes"><a class="anchor" href="#full_nodes"></a>Full nodes</h2>
 <div class="sectionbody">
-<h3 id="juno" class="discrete">Juno</h3>
-<div class="paragraph">
-<p><a href="https://github.com/NethermindEth/juno" target="_blank" rel="noopener">Juno</a> is a Go implementation of a Starknet full-node client created by <a href="https://nethermind.io/" target="_blank" rel="noopener">Nethermind</a> to allow node operators to easily and reliably support the network and advance its decentralisation goals</p>
-</div>
-<div class="admonitionblock tip">
-<table>
+<table class="tableblock frame-all grid-all fit-content stretch">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
 <tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>See <a href="https://aws-samples.github.io/aws-blockchain-node-runners/docs/Blueprints/Starknet" target="_blank" rel="noopener"><em>Sample AWS Blockchain Node Runner app for Starknet Nodes</em></a> for deploying Juno nodes on AWS.</p>
-</div>
-</td>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">URL</th>
+<th class="tableblock halign-left valign-top">More information</th>
 </tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Juno</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/NethermindEth/juno" target="_blank" rel="noopener">github.com/NethermindEth/juno</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.nethermind.io/juno">nethermind.io/juno</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Madara</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/madara-alliance/madara" target="_blank" rel="noopener">github.com/madara-alliance/madara</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.madara.build/" target="_blank" rel="noopener">madara.build</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pathfinder</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/eqlabs/pathfinder" target="_blank" rel="noopener">github.com/eqlabs/pathfinder</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://equilibrium.co/projects/pathfinder" target="_blank" rel="noopener">equilibrium.co/projects/pathfinder</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Papyrus</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/starkware-libs/sequencer" target="_blank" rel="noopener">github.com/starkware-libs/sequencer</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.starknet.io/blog/papyrus-an-open-source-starknet-full-node/">starknet.io/blog/papyrus-an-open-source-starknet-full-node</a></p></td>
+</tr>
+</tbody>
 </table>
-</div>
-<h3 id="madara" class="discrete">Madara</h3>
-<div class="paragraph">
-<p><a href="https://github.com/madara-alliance/madara" target="_blank" rel="noopener">Madara</a> is an open-source framework written that makes it simple for you to deploy your own Cairo-powered chain, including an easy-to-use, blazing-fast and powerful Starknet full node client, written in Rust and powered by Substrate.</p>
-</div>
-<h3 id="papyrus" class="discrete">Papyrus</h3>
-<div class="paragraph">
-<p><a href="https://github.com/starkware-libs/papyrus" target="_blank" rel="noopener">Papyrus</a> is StarkWare&#8217;s own Rust implementation of a Starknet full-node, integrated in <a href="https://github.com/starkware-libs/sequencer" target="_blank" rel="noopener">StarkWare&#8217;s next-gen Starknet sequencer</a>.</p>
-</div>
-<h3 id="pathfinder" class="discrete">Pathfinder</h3>
-<div class="paragraph">
-<p><a href="https://github.com/eqlabs/pathfinder" target="_blank" rel="noopener">Pathfinder</a> is a Rust implementation of a Starknet full node created by <a href="https://equilibrium.co/" target="_blank" rel="noopener">Equilibrium</a>, that provides a secure view into the Starknet blockchain, giving access to Starknet&#8217;s entire state history and allowing users to query contract code, storage, and transactions.</p>
-</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="rpc_providers"><a class="anchor" href="#rpc_providers"></a>RPC providers</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
+<table class="tableblock frame-all grid-all fit-content stretch">
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 40%;">
-<col style="width: 40%;">
+<col>
+<col>
+<col>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Provider</th>
-<th class="tableblock halign-left valign-top">Open endpoints</th>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">URL</th>
 <th class="tableblock halign-left valign-top">Version support</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.alchemy.com/starknet" target="_blank" rel="noopener">Alchemy</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alchemy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.alchemy.com/starknet" target="_blank" rel="noopener">alchemy.com/starknet</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">See <a href="https://docs.alchemy.com/reference/starknet-api-faq#what-versions-of-starknet-api-are-supported" target="_blank" rel="noopener">docs.alchemy.com/reference/starknet-api-faq</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.allthatnode.com/starknet.dsrv" target="_blank" rel="noopener">All That Node</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All That Node</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.allthatnode.com/starknet.dsrv" target="_blank" rel="noopener">allthatnode.com/starknet.dsrv</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://blastapi.io/public-api/starknet" target="_blank" rel="noopener">Blast</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Blast</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://blastapi.io/public-api/starknet" target="_blank" rel="noopener">blastapi.io/public-api/starknet</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">See <a href="https://blastapi.io/public-api/starknet" target="_blank" rel="noopener">blastapi.io/public-api/starknet</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">See <a href="https://blastapi.io/public-api/starknet" target="_blank" rel="noopener">blastapi.io/public-api/starknet</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://blockpi.io/starknet" target="_blank" rel="noopener">BlockPI</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://chainbase.com/chainNetwork/Starknet" target="_blank" rel="noopener">Chainbase</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BlockPI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://blockpi.io/starknet" target="_blank" rel="noopener">blockpi.io/starknet</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://chainstack.com/build-better-with-starknet/" target="_blank" rel="noopener">Chainstack</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Chainbase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://chainbase.com/chainNetwork/Starknet" target="_blank" rel="noopener">chainbase.com/chainNetwork/Starknet</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Chainstack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://chainstack.com/build-better-with-starknet/" target="_blank" rel="noopener">chainstack.com/build-better-with-starknet</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">See <a href="https://docs.chainstack.com/reference/getting-started-starknet#starknet-json-rpc-version-endpoints" target="_blank" rel="noopener">docs.chainstack.com/reference/getting-started-starknet</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://drpc.org/chainlist/starknet" target="_blank" rel="noopener">dRPC</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">See <a href="https://drpc.org/chainlist/starknet" target="_blank" rel="noopener">drpc.org/chainlist/starknet</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dRPC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://drpc.org/chainlist/starknet" target="_blank" rel="noopener">drpc.org/chainlist/starknet</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.dwellir.com/" target="_blank" rel="noopener">Dwellir</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">See <a href="https://www.dwellir.com/networks/starknet" target="_blank" rel="noopener">dwellir.com/networks/starknet</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dwellir</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.dwellir.com/" target="_blank" rel="noopener">dwellir.com</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://getblock.io/nodes/strk/" target="_blank" rel="noopener">GetBlock</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GetBlock</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://getblock.io/nodes/strk/" target="_blank" rel="noopener">getblock.io/nodes/strk</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Use the <code>/rpc/vX_Y</code> suffix, as explained in <a href="https://github.com/eqlabs/pathfinder?tab=readme-ov-file#json-rpc-api" target="_blank" rel="noopener">Pathfinder&#8217;s README</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.infura.io/networks/ethereum/starknet" target="_blank" rel="noopener">Infura</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Infura</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.infura.io/networks/ethereum/starknet" target="_blank" rel="noopener">infura.io/networks/ethereum/starknet</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.lavanet.xyz/" target="_blank" rel="noopener">Lava</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">See <a href="https://www.lavanet.xyz/get-started/starknet" target="_blank" rel="noopener">lavanet.xyz/get-started/starknet</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lava</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.lavanet.xyz/" target="_blank" rel="noopener">lavanet.xyz</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Use the <code>/rpc/vX_Y</code> suffix, as explained in <a href="https://github.com/eqlabs/pathfinder?tab=readme-ov-file#json-rpc-api" target="_blank" rel="noopener">Pathfinder&#8217;s README</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://data.voyager.online/" target="_blank" rel="noopener">Nethermind</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">See <a href="https://data.voyager.online/" target="_blank" rel="noopener">data.voyager.online</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">See <a href="https://docs.data.voyager.online/spec" target="_blank" rel="noopener">RPC spec versions</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nethermind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://data.voyager.online/" target="_blank" rel="noopener">data.voyager.online</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See <a href="https://docs.data.voyager.online/spec" target="_blank" rel="noopener">docs.data.voyager.online/spec</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://nownodes.io/starknet" target="_blank" rel="noopener">NOWNodes</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://omniatech.io/" target="_blank" rel="noopener">OMNIA</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NOWNodes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://nownodes.io/starknet" target="_blank" rel="noopener">nownodes.io/starknet</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.quicknode.com/chains/strk" target="_blank" rel="noopener">QuickNode</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OMNIA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://omniatech.io/" target="_blank" rel="noopener">omniatech.io</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">QuickNode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.quicknode.com/chains/strk" target="_blank" rel="noopener">quicknode.com/chains/strk</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">See <a href="https://www.quicknode.com/docs/starknet#supporting-multiple-versions" target="_blank" rel="noopener">quicknode.com/docs/starknet</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.reddio.com/node" target="_blank" rel="noopener">Reddio</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reddio</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.reddio.com/node" target="_blank" rel="noopener">reddio.com/node</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://zan.top/home/node-service" target="_blank" rel="noopener">Zan</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">See <a href="https://zan.top/service/public-rpc/starknet" target="_blank" rel="noopener">zan.top/service/public-rpc/starknet</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zan</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://zan.top/home/node-service" target="_blank" rel="noopener">zan.top/home/node-service</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Use the <code>/rpc/vX_Y</code> suffix, as explained in <a href="https://github.com/eqlabs/pathfinder?tab=readme-ov-file#json-rpc-api" target="_blank" rel="noopener">Pathfinder&#8217;s README</a></p></td>
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="open_endpoints"><a class="anchor" href="#open_endpoints"></a>Open endpoints</h3>
+<table class="tableblock frame-all grid-all fit-content stretch">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Provider</th>
+<th class="tableblock halign-left valign-top">Mainnet</th>
+<th class="tableblock halign-left valign-top">Sepolia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Blast</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">https://starknet-mainnet.public.blastapi.io</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">https://starknet-sepolia.public.blastapi.io</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dRPC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">https://starknet.drpc.org</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">https://starknet-sepolia.drpc.org</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lava</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">https://rpc.starknet.lava.build:443</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">https://rpc.starknet-testnet.lava.build:443</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nethermind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">https://free-rpc.nethermind.io/mainnet-juno</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">https://free-rpc.nethermind.io/sepolia-juno</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zan</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">https://api.zan.top/public/starknet-mainnet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 <nav class="pagination">
