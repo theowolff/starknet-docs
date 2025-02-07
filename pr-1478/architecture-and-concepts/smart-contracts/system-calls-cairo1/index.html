@@ -1388,7 +1388,7 @@ let hash = keccak_u256s_le_inputs(data.span());</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="secp256k1"><a class="anchor" href="#secp256k1"></a><code>Secp256k1 System Calls</code></h2>
+<h2 id="secp256k1"><a class="anchor" href="#secp256k1"></a>Secp256k1 system calls</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The secp256k1 curve is commonly used in cryptographic applications such as Bitcoin and Ethereum.</p>
@@ -1409,12 +1409,9 @@ Base Field:    p = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFF
 Scalar Field: n = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141</code></pre>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="secp256k1_new_syscall"><a class="anchor" href="#secp256k1_new_syscall"></a><code>secp256k1_new_syscall</code></h2>
-<div class="sectionbody">
-<h3 id="function_signature_12" class="discrete">Function signature</h3>
+<div class="sect2">
+<h3 id="secp256k1_new_syscall"><a class="anchor" href="#secp256k1_new_syscall"></a><code>secp256k1_new_syscall</code></h3>
+<h4 id="function_signature_12" class="discrete">Function signature</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">extern fn secp256k1_new_syscall(
@@ -1422,11 +1419,11 @@ Scalar Field: n = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD036
 ) -&gt; SyscallResult&lt;Option&lt;Secp256k1Point&gt;&gt; implicits(GasBuiltin, System) nopanic;</code></pre>
 </div>
 </div>
-<h3 id="description_12" class="discrete">Description</h3>
+<h4 id="description_12" class="discrete">Description</h4>
 <div class="paragraph">
 <p>Creates a new point on the secp256k1 curve from its x and y coordinates.</p>
 </div>
-<h3 id="arguments_12" class="discrete">Arguments</h3>
+<h4 id="arguments_12" class="discrete">Arguments</h4>
 <div class="hdlist">
 <table>
 <colgroup>
@@ -1451,15 +1448,15 @@ Scalar Field: n = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD036
 </tr>
 </table>
 </div>
-<h3 id="return_values_12" class="discrete">Return values</h3>
+<h4 id="return_values_12" class="discrete">Return values</h4>
 <div class="paragraph">
 <p>Returns <code>Some(point)</code> if the coordinates represent a valid point on the curve, <code>None</code> otherwise.</p>
 </div>
-<h3 id="common_library_11" class="discrete">Common library</h3>
+<h4 id="common_library_11" class="discrete">Common library</h4>
 <div class="paragraph">
 <p><a href="https://github.com/starkware-libs/cairo/blob/main/corelib/src/starknet/secp256k1.cairo#74"><code>secp256k1_new_syscall</code></a></p>
 </div>
-<h3 id="example_for_secp256k1_new_syscall" class="discrete">Example for <code>secp256k1_new_syscall</code></h3>
+<h4 id="example_for_secp256k1_new_syscall" class="discrete">Example for <code>secp256k1_new_syscall</code></h4>
 <div class="paragraph">
 <p>The following example demonstrates how to create a new point on the secp256k1 curve:</p>
 </div>
@@ -1488,11 +1485,9 @@ match point {
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="secp256k1_add_syscall"><a class="anchor" href="#secp256k1_add_syscall"></a><code>secp256k1_add_syscall</code></h2>
-<div class="sectionbody">
-<h3 id="function_signature_13" class="discrete">Function signature</h3>
+<div class="sect2">
+<h3 id="secp256k1_add_syscall"><a class="anchor" href="#secp256k1_add_syscall"></a><code>secp256k1_add_syscall</code></h3>
+<h4 id="function_signature_13" class="discrete">Function signature</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">extern fn secp256k1_add_syscall(
@@ -1500,11 +1495,11 @@ match point {
 ) -&gt; SyscallResult&lt;Secp256k1Point&gt; implicits(GasBuiltin, System) nopanic;</code></pre>
 </div>
 </div>
-<h3 id="description_13" class="discrete">Description</h3>
+<h4 id="description_13" class="discrete">Description</h4>
 <div class="paragraph">
 <p>Adds two points on the secp256k1 curve.</p>
 </div>
-<h3 id="arguments_13" class="discrete">Arguments</h3>
+<h4 id="arguments_13" class="discrete">Arguments</h4>
 <div class="hdlist">
 <table>
 <colgroup>
@@ -1529,15 +1524,15 @@ match point {
 </tr>
 </table>
 </div>
-<h3 id="return_values_13" class="discrete">Return values</h3>
+<h4 id="return_values_13" class="discrete">Return values</h4>
 <div class="paragraph">
 <p>The resulting point from adding <code>p0</code> and <code>p1</code>.</p>
 </div>
-<h3 id="common_library_12" class="discrete">Common library</h3>
+<h4 id="common_library_12" class="discrete">Common library</h4>
 <div class="paragraph">
 <p><a href="https://github.com/starkware-libs/cairo/blob/main/corelib/src/starknet/secp256k1.cairo#L79"><code>secp256k1_add_syscall</code></a></p>
 </div>
-<h3 id="example_for_secp256k1_add_syscall" class="discrete">Example for <code>secp256k1_add_syscall</code></h3>
+<h4 id="example_for_secp256k1_add_syscall" class="discrete">Example for <code>secp256k1_add_syscall</code></h4>
 <div class="paragraph">
 <p>The following example demonstrates how to add two points on the secp256k1 curve:</p>
 </div>
@@ -1562,11 +1557,9 @@ let (sum_x, sum_y) = secp256k1_get_xy_syscall(sum).unwrap_syscall();</code></pre
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="secp256k1_mul_syscall"><a class="anchor" href="#secp256k1_mul_syscall"></a><code>secp256k1_mul_syscall</code></h2>
-<div class="sectionbody">
-<h3 id="function_signature_14" class="discrete">Function signature</h3>
+<div class="sect2">
+<h3 id="secp256k1_mul_syscall"><a class="anchor" href="#secp256k1_mul_syscall"></a><code>secp256k1_mul_syscall</code></h3>
+<h4 id="function_signature_14" class="discrete">Function signature</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">extern fn secp256k1_mul_syscall(
@@ -1574,11 +1567,11 @@ let (sum_x, sum_y) = secp256k1_get_xy_syscall(sum).unwrap_syscall();</code></pre
 ) -&gt; SyscallResult&lt;Secp256k1Point&gt; implicits(GasBuiltin, System) nopanic;</code></pre>
 </div>
 </div>
-<h3 id="description_14" class="discrete">Description</h3>
+<h4 id="description_14" class="discrete">Description</h4>
 <div class="paragraph">
 <p>Multiplies a point on the secp256k1 curve by a <code>scalar</code> value.</p>
 </div>
-<h3 id="arguments_14" class="discrete">Arguments</h3>
+<h4 id="arguments_14" class="discrete">Arguments</h4>
 <div class="hdlist">
 <table>
 <colgroup>
@@ -1603,15 +1596,15 @@ let (sum_x, sum_y) = secp256k1_get_xy_syscall(sum).unwrap_syscall();</code></pre
 </tr>
 </table>
 </div>
-<h3 id="return_values_14" class="discrete">Return values</h3>
+<h4 id="return_values_14" class="discrete">Return values</h4>
 <div class="paragraph">
 <p>The resulting point from the <code>scalar</code> multiplication.</p>
 </div>
-<h3 id="common_library_13" class="discrete">Common library</h3>
+<h4 id="common_library_13" class="discrete">Common library</h4>
 <div class="paragraph">
 <p><a href="https://github.com/starkware-libs/cairo/blob/main/corelib/src/starknet/secp256k1.cairo#L84"><code>secp256k1_mul_syscall</code></a></p>
 </div>
-<h3 id="example_for_secp256k1_mul_syscall" class="discrete">Example for <code>secp256k1_mul_syscall</code></h3>
+<h4 id="example_for_secp256k1_mul_syscall" class="discrete">Example for <code>secp256k1_mul_syscall</code></h4>
 <div class="paragraph">
 <p>The following example demonstrates how to multiply a point by a scalar on the secp256k1 curve:</p>
 </div>
@@ -1633,11 +1626,9 @@ let (product_x, product_y) = secp256k1_get_xy_syscall(product).unwrap_syscall();
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="secp256k1_get_point_from_x_syscall"><a class="anchor" href="#secp256k1_get_point_from_x_syscall"></a><code>secp256k1_get_point_from_x_syscall</code></h2>
-<div class="sectionbody">
-<h3 id="function_signature_15" class="discrete">Function signature</h3>
+<div class="sect2">
+<h3 id="secp256k1_get_point_from_x_syscall"><a class="anchor" href="#secp256k1_get_point_from_x_syscall"></a><code>secp256k1_get_point_from_x_syscall</code></h3>
+<h4 id="function_signature_15" class="discrete">Function signature</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">extern fn secp256k1_get_point_from_x_syscall(
@@ -1645,11 +1636,11 @@ let (product_x, product_y) = secp256k1_get_xy_syscall(product).unwrap_syscall();
 ) -&gt; SyscallResult&lt;Option&lt;Secp256k1Point&gt;&gt; implicits(GasBuiltin, System) nopanic;</code></pre>
 </div>
 </div>
-<h3 id="description_15" class="discrete">Description</h3>
+<h4 id="description_15" class="discrete">Description</h4>
 <div class="paragraph">
 <p>Recovers a point on the curve given its x-coordinate and y-parity. Since the curve equation y² = x³ + 7 has two solutions for y given x, the y_parity parameter determines which y value to use.</p>
 </div>
-<h3 id="arguments_15" class="discrete">Arguments</h3>
+<h4 id="arguments_15" class="discrete">Arguments</h4>
 <div class="hdlist">
 <table>
 <colgroup>
@@ -1674,15 +1665,15 @@ let (product_x, product_y) = secp256k1_get_xy_syscall(product).unwrap_syscall();
 </tr>
 </table>
 </div>
-<h3 id="return_values_15" class="discrete">Return values</h3>
+<h4 id="return_values_15" class="discrete">Return values</h4>
 <div class="paragraph">
 <p>Returns <code>Some(point)</code> if a point exists with the given <code>x</code> coordinate, <code>None</code> otherwise.</p>
 </div>
-<h3 id="common_library_14" class="discrete">Common library</h3>
+<h4 id="common_library_14" class="discrete">Common library</h4>
 <div class="paragraph">
 <p><a href="https://github.com/starkware-libs/cairo/blob/main/corelib/src/starknet/secp256k1.cairo#L102"><code>secp256k1_get_point_from_x_syscall</code></a></p>
 </div>
-<h3 id="example_for_secp256k1_get_point_from_x_syscall" class="discrete">Example for <code>secp256k1_get_point_from_x_syscall</code></h3>
+<h4 id="example_for_secp256k1_get_point_from_x_syscall" class="discrete">Example for <code>secp256k1_get_point_from_x_syscall</code></h4>
 <div class="paragraph">
 <p>The following example demonstrates how to recover a point from its x-coordinate and y-parity:</p>
 </div>
@@ -1710,11 +1701,9 @@ match point {
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="secp256k1_get_xy_syscall"><a class="anchor" href="#secp256k1_get_xy_syscall"></a><code>secp256k1_get_xy_syscall</code></h2>
-<div class="sectionbody">
-<h3 id="function_signature_16" class="discrete">Function signature</h3>
+<div class="sect2">
+<h3 id="secp256k1_get_xy_syscall"><a class="anchor" href="#secp256k1_get_xy_syscall"></a><code>secp256k1_get_xy_syscall</code></h3>
+<h4 id="function_signature_16" class="discrete">Function signature</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-cairo hljs" data-lang="cairo">extern fn secp256k1_get_xy_syscall(
@@ -1722,11 +1711,11 @@ match point {
 ) -&gt; SyscallResult&lt;(u256, u256)&gt; implicits(GasBuiltin, System) nopanic;</code></pre>
 </div>
 </div>
-<h3 id="description_16" class="discrete">Description</h3>
+<h4 id="description_16" class="discrete">Description</h4>
 <div class="paragraph">
 <p>Returns the coordinates of a point on the secp256k1 curve.</p>
 </div>
-<h3 id="arguments_16" class="discrete">Arguments</h3>
+<h4 id="arguments_16" class="discrete">Arguments</h4>
 <div class="hdlist">
 <table>
 <colgroup>
@@ -1743,15 +1732,15 @@ match point {
 </tr>
 </table>
 </div>
-<h3 id="return_values_16" class="discrete">Return values</h3>
+<h4 id="return_values_16" class="discrete">Return values</h4>
 <div class="paragraph">
 <p>A tuple containing the <code>x</code> and <code>y</code> coordinates of the point.</p>
 </div>
-<h3 id="common_library_15" class="discrete">Common library</h3>
+<h4 id="common_library_15" class="discrete">Common library</h4>
 <div class="paragraph">
 <p><a href="https://github.com/starkware-libs/cairo/blob/main/corelib/src/starknet/secp256k1.cairo#L107"><code>secp256k1_get_xy_syscall</code></a></p>
 </div>
-<h3 id="example_for_secp256k1_get_xy_syscall" class="discrete">Example for <code>secp256k1_get_xy_syscall</code></h3>
+<h4 id="example_for_secp256k1_get_xy_syscall" class="discrete">Example for <code>secp256k1_get_xy_syscall</code></h4>
 <div class="paragraph">
 <p>The following example demonstrates how to get the coordinates of a point on the secp256k1 curve:</p>
 </div>
@@ -1770,6 +1759,7 @@ let (point_x, point_y) = secp256k1_get_xy_syscall(point).unwrap_syscall();
 // Verify the coordinates match the original values
 assert(point_x == x, 'x coordinate mismatch');
 assert(point_y == y, 'y coordinate mismatch');</code></pre>
+</div>
 </div>
 </div>
 </div>
