@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Oracles :: Starknet documentation</title>
-    <link rel="canonical" href="https://docs.starknet.io/tools/oracles/">
-    <link rel="prev" href="../ref-block-explorers/">
-    <link rel="next" href="../data-indexers/">
+    <title>Oracles and faucets :: Starknet documentation</title>
+    <link rel="canonical" href="https://docs.starknet.io/tools/oracles-faucets/">
+    <link rel="prev" href="../indexers-enhanced-apis/">
+    <link rel="next" href="../audit/">
     <meta name="generator" content="Antora 3.1.1">
 
 
@@ -508,17 +508,17 @@
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../ref-block-explorers/">Block explorers</a>
-  </li>
-  <li class="nav-item is-current-page" data-depth="2">
-    <a 
-       class="nav-link"
-     href="./">Oracles</a>
+     href="../block-explorers-monitoring-tools/">Block explorers and monitoring tools</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
        class="nav-link"
-     href="../data-indexers/">Data indexers</a>
+     href="../indexers-enhanced-apis/">Indexers and enhanced APIs</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a 
+       class="nav-link"
+     href="./">Oracles and faucets</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a 
@@ -591,47 +591,86 @@
 <aside class="toc sidebar" data-title="On this page" data-levels="2">
   <div style="position:sticky;top:7rem;z-index:2;margin-bottom:1rem">
     <div class="edit-this-page">
-      <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/tools/pages/oracles.adoc" target="_blank">✏️&nbsp;&nbsp;Edit content</a>
+      <a href="https://github.com/starknet-io/starknet-docs/edit/main/components/Starknet/modules/tools/pages/oracles-faucets.adoc" target="_blank">✏️&nbsp;&nbsp;Edit content</a>
     </div>
     <div class="edit-this-page">
-      <a href='https://github.com/starknet-io/starknet-docs/issues/new?assignees=landauraz&title=Bug in "Oracles"' target="_blank">🪲&nbsp;&nbsp;Report bug</a>
+      <a href='https://github.com/starknet-io/starknet-docs/issues/new?assignees=landauraz&title=Bug in "Oracles and faucets"' target="_blank">🪲&nbsp;&nbsp;Report bug</a>
     </div>
   </div>
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Oracles</h1>
-<div class="paragraph">
-<p>This reference guide presents various Oracles that you can utilize while building on Starknet. Oracles supply offchain data to the blockchain, enabling smart contracts to access a diverse range of information.</p>
-</div>
-<table class="tableblock frame-all grid-all stripes-even stretch">
-<caption class="title">Table 1. Starknet oracles, in alphabetical order</caption>
+<h1 class="page">Oracles and faucets</h1>
+<div class="sect1">
+<h2 id="oracles"><a class="anchor" href="#oracles"></a>Oracles</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 66.6667%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
 </colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">URL</th>
+<th class="tableblock halign-left valign-top">Integration guide</th>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Oracle</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Integration guide</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Chainlink</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://chain.link/" target="_blank" rel="noopener">chain.link</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.chain.link/data-feeds/starknet/" target="_blank" rel="noopener">docs.chain.link/data-feeds/starknet</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://chain.link/">Chainlink</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.chain.link/data-feeds/starknet/">docs.chain.link/data-feeds/starknet</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pragma</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.pragma.build/" target="_blank" rel="noopener">pragma.build</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.pragma.build/v1/Resources/Consuming%20Data%20Feed/" target="_blank" rel="noopener">docs.pragma.build/v1/Resources/ConsumingDataFeed</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.pragma.build/">Pragma</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.pragma.build/v1/Resources/Consuming%20Data%20Feed/">docs.pragma.build/v1/Resources/ConsumingDataFeed</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.pyth.network/">Pyth Network</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.pyth.network/price-feeds/use-real-time-data/starknet/">docs.pyth.network/price-feeds/use-real-time-data/starknet</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pyth</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.pyth.network/" target="_blank" rel="noopener">pyth.network</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.pyth.network/price-feeds/use-real-time-data/starknet/" target="_blank" rel="noopener">docs.pyth.network/price-feeds/use-real-time-data/starknet</a></p></td>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="faucets"><a class="anchor" href="#faucets"></a>Faucets</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all fit-content stretch">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Provider</th>
+<th class="tableblock halign-left valign-top">URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alchemy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.alchemy.com/faucets/starknet-sepolia" target="_blank" rel="noopener">alchemy.com/faucets/starknet-sepolia</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Blast</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://blastapi.io/faucets/starknet-sepolia-strk" target="_blank" rel="noopener">blastapi.io/faucets/starknet-sepolia-strk</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Starknet Foundation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://starknet-faucet.vercel.app/" target="_blank" rel="noopener">starknet-faucet.vercel.app</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <nav class="pagination">
-  <span class="prev"><a href="../ref-block-explorers/">Block explorers</a></span>
-  <span class="next"><a href="../data-indexers/">Data indexers</a></span>
+  <span class="prev"><a href="../indexers-enhanced-apis/">Indexers and enhanced APIs</a></span>
+  <span class="next"><a href="../audit/">Auditors and security platforms</a></span>
 </nav>
 </article>
   </div>
