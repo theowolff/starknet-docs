@@ -601,7 +601,8 @@
 </aside>
 <article class="doc">
 <h1 class="page">Block structure</h1>
-<div id="preamble">
+<div class="sect1">
+<h2 id="introduction"><a class="anchor" href="#introduction"></a>Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>A Starknet block is a list of transactions and a block header that contains the following fields:</p>
@@ -745,6 +746,25 @@
 <li>
 <p><code>transaction_count || event_count || state_diff_length || l1_da_mode</code> is the concatenation of the 64-bit representations of <code>transaction_count</code>, <code>event_count</code>, and <code>state_diff_length</code> with 0 if <code>l1_da_mode</code> is <code>CALLDATA</code> and 1 if <code>l1_da_mode</code> is <code>BLOB</code></p>
 </li>
+<li>
+<p><code>gas_prices_hash</code> is defined by:</p>
+<div class="listingblock">
+<div class="content">
+<pre>h(
+    "STARKNET_GAS_PRICES0",
+    l1_gas_price_wei,
+    l1_gas_price_fri,
+    l1_data_gas_price_wei,
+    l1_data_gas_price_fri,
+    l2_gas_price_wei,
+    l2_gas_price_fri
+)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where <code>h</code> is the <a href="../../cryptography/hash-functions/#poseidon-hash" class="xref page">Poseidon hash function</a> and <code>l1_gas_price_wei</code>, <code>l1_gas_price_fri</code>, <code>l1_data_gas_price_wei</code>, <code>l1_data_gas_price_fri</code>, <code>l2_gas_price_wei</code>, and <code>l2_gas_price_fri</code> are the wei and fri denominated prices for the three resource types.</p>
+</div>
+</li>
 </ul>
 </div>
 <div class="admonitionblock tip">
@@ -825,8 +845,7 @@ Note that the signature is itself a (possibly empty) array of field elements.</p
 </li>
 </ul>
 </div>
-<div class="sect2">
-<h3 id="event_hash"><a class="anchor" href="#event_hash"></a>Event hash</h3>
+<h3 id="event_hash" class="discrete">Event hash</h3>
 <div class="paragraph">
 <p>The hash of an <a href="../../smart-contracts/starknet-events/" class="xref page">event</a> emitted by a contract whose address is <code>emitter_address</code> and a transaction whose hash is <code>tx_hash</code> is defined by:</p>
 </div>
@@ -843,9 +862,7 @@ Note that the signature is itself a (possibly empty) array of field elements.</p
 <div class="paragraph">
 <p>Where <code>h</code> is the <a href="../../cryptography/hash-functions/#poseidon-hash" class="xref page">Poseidon hash function</a>.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="receipt_hash"><a class="anchor" href="#receipt_hash"></a>Receipt hash</h3>
+<h3 id="receipt_hash" class="discrete">Receipt hash</h3>
 <div class="paragraph">
 <p>The hash of a <a href="../transaction-life-cycle/#transaction-receipt" class="xref page">transaction receipt</a> is defined by:</p>
 </div>
@@ -880,35 +897,6 @@ Note that the signature is itself a (possibly empty) array of field elements.</p
 </div>
 </li>
 </ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="gas_prices"><a class="anchor" href="#gas_prices"></a>gas prices hash</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The <code>gas_prices_hash</code> field in the block hash is given by a chain hash of the Wei and Fri denominated prices for
-all three resource types: L1 gas, L1 data gas, and L2 gas.</p>
-</div>
-<div class="paragraph">
-<p>The exact computation is described below:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>h(
-    "STARKNET_GAS_PRICES0",
-    l1_gas_price_wei,
-    l1_gas_price_fri,
-    l1_data_gas_price_wei,
-    l1_data_gas_price_fri,
-    l2_gas_price_wei,
-    l2_gas_price_fri
-)</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Where \(h\) is the <a href="../../cryptography/hash-functions/#poseidon-hash" class="xref page">Poseidon hash function</a>.</p>
 </div>
 </div>
 </div>
