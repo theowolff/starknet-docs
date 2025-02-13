@@ -1576,9 +1576,10 @@ let sum = secp256k1_add_syscall(point1, point2).unwrap_syscall();
 let (sum_x, sum_y) = secp256k1_get_xy_syscall(sum).unwrap_syscall();</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p><code>secp256k1_mul_syscall</code></p>
 </div>
-<div class="sect2">
-<h3 id="secp256k1_mul_syscall"><a class="anchor" href="#secp256k1_mul_syscall"></a><code>secp256k1_mul_syscall</code></h3>
+</div>
 <div class="sect3">
 <h4 id="function_signature_14"><a class="anchor" href="#function_signature_14"></a>Function signature</h4>
 <div class="listingblock">
@@ -1814,7 +1815,6 @@ let (point_x, point_y) = secp256k1_get_xy_syscall(point).unwrap_syscall();
 // Verify the coordinates match the original values
 assert(point_x == x, 'x coordinate mismatch');
 assert(point_y == y, 'y coordinate mismatch');</code></pre>
-</div>
 </div>
 </div>
 </div>
