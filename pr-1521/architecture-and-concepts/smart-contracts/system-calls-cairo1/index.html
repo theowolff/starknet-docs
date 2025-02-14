@@ -1399,10 +1399,13 @@ let hash = keccak_u256s_le_inputs(data.span());</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="secp256r1"><a class="anchor" href="#secp256r1"></a>secp256r1</h2>
+<h2 id="secp256r1"><a class="anchor" href="#secp256r1"></a><code>secp256r1</code></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The secp256r1 curve (also known as NIST P-256) is commonly used in traditional PKI and secure communications.</p>
+<p>Various systems calls for computations over the secp256r1 curve (also known as NIST P-256).</p>
+</div>
+<div class="paragraph">
+<p>These system calls are particularly useful when implementing traditional PKI or secure communication functionality, as secp256r1 is widely used in TLS, secure messaging, and government standards.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -1411,14 +1414,13 @@ let hash = keccak_u256s_le_inputs(data.span());</code></pre>
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-Note that instead of using these syscalls directly, it is recommended to use the traits and implementations provided in the <a href="https://docs.swmansion.com/scarb/corelib/core-starknet-secp256r1.html" target="_blank" rel="noopener"><code>secp256_module</code></a> which provide a more convenient interface and handle the syscalls under the hood.
+Instead of using these syscalls directly, it is recommended to use the traits and implementations of the <a href="https://docs.swmansion.com/scarb/corelib/core-starknet-secp256r1.html" target="_blank" rel="noopener">corelib&#8217;s <code>secp256r1</code> module</a> which provides a more convenient interface and handles them for you.
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p><code>secp256r1_new_syscall</code></p>
-</div>
+<div class="sect2">
+<h3 id="secp256r1_new"><a class="anchor" href="#secp256r1_new"></a><code>secp256r1_new</code></h3>
 <div class="sect3">
 <h4 id="function_signature_12"><a class="anchor" href="#function_signature_12"></a>Function signature</h4>
 <div class="listingblock">
@@ -1432,7 +1434,7 @@ Note that instead of using these syscalls directly, it is recommended to use the
 <div class="sect3">
 <h4 id="description_12"><a class="anchor" href="#description_12"></a>Description</h4>
 <div class="paragraph">
-<p>Creates a new point on the secp256r1 curve (also known as NIST P-256) from its x and y coordinates.</p>
+<p>Creates a new point on the secp256r1 curve from its x and y coordinates.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1501,10 +1503,10 @@ match point {
 }</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p><code>secp256r1_add_syscall</code></p>
 </div>
 </div>
+<div class="sect2">
+<h3 id="secp256r1_add"><a class="anchor" href="#secp256r1_add"></a><code>secp256r1_add</code></h3>
 <div class="sect3">
 <h4 id="function_signature_13"><a class="anchor" href="#function_signature_13"></a>Function signature</h4>
 <div class="listingblock">
@@ -1585,10 +1587,10 @@ let sum = secp256r1_add_syscall(point1, point2).unwrap_syscall();
 let (sum_x, sum_y) = secp256r1_get_xy_syscall(sum).unwrap_syscall();</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p><code>secp256r1_mul_syscall</code></p>
 </div>
 </div>
+<div class="sect2">
+<h3 id="secp256r1_mul"><a class="anchor" href="#secp256r1_mul"></a><code>secp256r1_mul</code></h3>
 <div class="sect3">
 <h4 id="function_signature_14"><a class="anchor" href="#function_signature_14"></a>Function signature</h4>
 <div class="listingblock">
@@ -1668,10 +1670,10 @@ let product = secp256r1_mul_syscall(point, scalar).unwrap_syscall();
 let (product_x, product_y) = secp256r1_get_xy_syscall(product).unwrap_syscall();</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p><code>secp256r1_get_point_from_x_syscall</code></p>
 </div>
 </div>
+<div class="sect2">
+<h3 id="secp256r1_get_point_from_x"><a class="anchor" href="#secp256r1_get_point_from_x"></a><code>secp256r1_get_point_from_x</code></h3>
 <div class="sect3">
 <h4 id="function_signature_15"><a class="anchor" href="#function_signature_15"></a>Function signature</h4>
 <div class="listingblock">
@@ -1755,10 +1757,10 @@ match point {
 }</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p><code>secp256r1_get_xy_syscall</code></p>
 </div>
 </div>
+<div class="sect2">
+<h3 id="secp256r1_get_xy"><a class="anchor" href="#secp256r1_get_xy"></a><code>secp256r1_get_xy</code></h3>
 <div class="sect3">
 <h4 id="function_signature_16"><a class="anchor" href="#function_signature_16"></a>Function signature</h4>
 <div class="listingblock">
@@ -1813,6 +1815,7 @@ let (point_x, point_y) = secp256r1_get_xy_syscall(point).unwrap_syscall();
 // Verify the coordinates match the original values
 assert(point_x == x, 'x coordinate mismatch');
 assert(point_y == y, 'y coordinate mismatch');</code></pre>
+</div>
 </div>
 </div>
 </div>
