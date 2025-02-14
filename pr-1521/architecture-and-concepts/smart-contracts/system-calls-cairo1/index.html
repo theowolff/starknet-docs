@@ -1335,8 +1335,19 @@ storage_read_syscall(0, storage_address).unwrap_syscall()</code></pre>
 <div class="paragraph">
 <p>This system call is particularly useful when interacting with Ethereum contracts or implementing Ethereum-compatible functionality, as Keccak-256 is widely used in the Ethereum ecosystem.</p>
 </div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
 <div class="paragraph">
-<p>Note that instead of using this syscall directly, it is recommended to use the functions provided in <a href="https://github.com/starkware-libs/cairo/blob/67c6eff9c276d11bd1cc903d7a3981d8d0eb2fa2/corelib/src/keccak.cairo"><code>keccak.cairo</code></a> which provide a more convenient interface and handle the syscall under the hood.</p>
+<p>Instead of using this syscall directly, it is recommended to use the functions provided in <a href="https://github.com/starkware-libs/cairo/blob/67c6eff9c276d11bd1cc903d7a3981d8d0eb2fa2/corelib/src/keccak.cairo" target="_blank" rel="noopener"><code>keccak.cairo</code></a> which provide a more convenient interface and handle the syscall under the hood.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <h3 id="arguments_11" class="discrete">Arguments</h3>
 <div class="hdlist">
