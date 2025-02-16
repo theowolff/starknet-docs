@@ -751,7 +751,7 @@ of Starknet v0.13.1.</p>
 F  &amp; = \text{l1_gas_price} \cdot\Bigg(\text{message_calldata_cost}\cdot 3t \; + \\
 &amp; \qquad + \; (\text{message_calldata_cost} + \text{l1_log_data_cost})\cdot \sum\limits_{i=1}^t q_i \; + \\
 &amp; \qquad + \; \left(\text{l1_storage_write_cost}+\text{log_message_to_l1_cost}\right)\cdot t\Bigg) + \; \\
-&amp; + \; \text{l2_gas_price}(\text{sierra_gas_consumed} + \max_k v_k w_k + \text{l2_payload_costs}) + \; \\
+&amp; + \; \text{l2_gas_price}\cdot(\text{sierra_gas_consumed} + \max_k v_k w_k + \text{l2_payload_costs}) + \; \\
 &amp; +  \; \text{l1_data_gas_price}\cdot\text{felt_size_in_bytes}\cdot\bigg(2(n-1)+2(m-1) + \ell +2D \bigg)
 \end{align}\]
 </div>
