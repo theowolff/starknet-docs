@@ -692,7 +692,7 @@ is mostly arbitrary at this point due to our use of dynamic layouts (for more in
 </div>
 <div class="paragraph">
 <p>For transactions prior to v3, an overall <code>max_fee</code> was provided in WEI.
-For transactions v3 and later, a max price for each of these resources is denominated in STRK.</p>
+For transactions v3 and later, a max price per unit for each of these resources is denominated in STRK.</p>
 </div>
 <div class="paragraph">
 <p>At the time of writing, the only limitation on the sequencer, which is enforced by the Starknet OS,
@@ -748,7 +748,7 @@ of Starknet v0.13.1.</p>
 <div class="stemblock">
 <div class="content">
 \[\begin{align}
-F  &amp; = l1\_gas\_price \cdot\Bigg(\text{message_calldata_cost}\cdot 3t \; + \\
+F  &amp; = \text{l1_gas_price} \cdot\Bigg(\text{message_calldata_cost}\cdot 3t \; + \\
 &amp; \qquad + \; (\text{message_calldata_cost} + \text{l1_log_data_cost})\cdot \sum\limits_{i=1}^t q_i \; + \\
 &amp; \qquad + \; \left(\text{l1_storage_write_cost}+\text{log_message_to_l1_cost}\right)\cdot t\Bigg) + \; \\
 &amp; + \; \text{l2_gas_price}(\text{sierra_gas_consumed} + \max_k v_k w_k + \text{l2_payload_costs}) + \; \\
@@ -780,7 +780,7 @@ The units of \(w_k\) and \(\text{l2_payload_costs}\) should correspond to the re
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The same transaction can track both raw vm resources (reflected by \(v_k\)) and Sierra gas, depending on what classes it goes through.
+<p>The same transaction can track both raw VM resources (reflected by \(v_k\)) and Sierra gas, depending on what classes it goes through.
 For more details see the <a href="#computation">computation section</a>.</p>
 </div>
 </td>
@@ -800,6 +800,9 @@ For more details see the <a href="#computation">computation section</a>.</p>
 </li>
 <li>
 <p>\(w\) is the <a href="#calculation_of_computation_costs"><code>CairoResourceFeeWeights</code></a> vector.</p>
+</li>
+<li>
+<p>stem[$\text{sierra_gas_consumed}$] is the amount of <a href="#sierra_gas">Sierra gas</a> charged for computation,</p>
 </li>
 <li>
 <p>\(n\) is the number of unique contracts updated, which also includes changes to classes of existing contracts and contract deployments, even if the storage of the newly deployed contract is untouched. In other words, \(n\ge\ell\). Notice that \(n\ge 1\) always holds, because the fee token contract is always updated, which does not incur any fee.</p>
@@ -859,11 +862,11 @@ For more details see the <a href="#computation">computation section</a>.</p>
 <div class="stemblock">
 <div class="content">
 \[\begin{align}
-F  &amp; = l1\_gas\_price \cdot\Bigg(\text{message_calldata_cost}\cdot 3t \; + \\
+F  &amp; = \text{l1_gas_price} \cdot\Bigg(\text{message_calldata_cost}\cdot 3t \; + \\
 &amp; \qquad + \; (\text{message_calldata_cost} + \text{l1_log_data_cost})\cdot \sum\limits_{i=1}^t q_i \; + \\
 &amp; \qquad + \; \left(\text{l1_storage_write_cost}+\text{log_message_to_l1_cost}\right)\cdot t + \; \\
 &amp; \qquad + \; \text{da_calldata_cost}\left(2(n-1)+2(m-1) + \ell + 2D\right) - \text{contract_update_discount}\cdot (n-1) - 240 \Bigg) + \; \\
-&amp; + \; \text{l2_gas_price}(\text{sierra_gas_consumed} + \max_k v_k w_k + \text{l2_payload_costs}) \; \\
+&amp; + \; \text{l2_gas_price}\cdot(\text{sierra_gas_consumed} + \max_k v_k w_k + \text{l2_payload_costs}) \; \\
 \end{align}\]
 </div>
 </div>
@@ -891,7 +894,7 @@ The units of \(w_k\) and \(\text{l2_payload_costs}\) should correspond to the re
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The same transaction can track both raw vm resources (reflected by \(v_k\)) and Sierra gas, depending on what classes it goes through.
+<p>The same transaction can track both raw VM resources (reflected by \(v_k\)) and Sierra gas, depending on what classes it goes through.
 For more details see the <a href="#computation">computation section</a>.</p>
 </div>
 </td>
@@ -993,7 +996,8 @@ This condition may be relaxed in the future.</p>
 </div>
 <div class="paragraph">
 <p>Tracking the execution trace length associated with each transaction is simple.
-Each assertion over field elements, such as verifying addition/multiplication over the field, requires the same, constant number of trace cells.
+Each Cairo step, requires the same, constant number of trace cells
+(this is no longer true with Stwo, which handles some opcodes more efficiently than others, but we neglect such intricacies for the purposes of this discussion).
 Therefore, in a world without builtins, the fee of the transaction \(tx\) is correlated with \(\text{TraceCells}[tx]/L\).</p>
 </div>
 <div class="paragraph">
@@ -1236,7 +1240,7 @@ The above solution greatly reduces the overhead compared to the naive mechanism.
 </tbody>
 </table>
 <div class="paragraph">
-<p>Note that EC_OP and Keccak pricing is missing from the above table since they can not be accessed directly from Cairo contracts
+<p>Note that EC_OP and Keccak pricing is missing from the above table since they cannot be accessed directly from Cairo contracts
 (as opposed to CairoZero contracts, which are no longer declarable).
 These operations are called from syscalls, whose price is determined by the underlying trace cell consumption of the builtins involved.
 To see the pricing for various syscalls in different Starknet versions,
@@ -1306,7 +1310,7 @@ For information on the exact data and its construction, see <a href="../data-ava
 </div>
 <div class="stemblock">
 <div class="content">
-\[data\_gas\_price\cdot\text{felt_size_in_bytes}\cdot\bigg(2(n-1)+2(m-1) + \ell +2D \bigg)\]
+\[\text{data_gas_price}\cdot\text{felt_size_in_bytes}\cdot\bigg(2(n-1)+2(m-1) + \ell +2D \bigg)\]
 </div>
 </div>
 <div class="paragraph">
@@ -1431,7 +1435,7 @@ For information on the exact data and its construction, see <a href="../data-ava
 </ul>
 </div>
 <div class="paragraph">
-<p>The pricing of the above components in terms of L1 gas is given by the following table:</p>
+<p>The pricing of the above components in terms of L2 gas is given by the following table:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1441,33 +1445,33 @@ For information on the exact data and its construction, see <a href="../data-ava
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Resource</th>
-<th class="tableblock halign-left valign-top">L1 Gas cost</th>
+<th class="tableblock halign-left valign-top">L2 Gas cost</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Event key</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0.256 gas/felt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10,240 gas/felt</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Event data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0.128 gas/felt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5,120 gas/felt</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Calldata</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0.128 gas/felt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5,120 gas/felt</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CASM bytecode</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1 gas/felt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">40,000 gas/felt</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sierra bytecode</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1 gas/felt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">40,000 gas/felt</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ABI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0.032 gas/character</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,280 gas/character</p></td>
 </tr>
 </tbody>
 </table>
@@ -1479,7 +1483,7 @@ For information on the exact data and its construction, see <a href="../data-ava
 </td>
 <td class="content">
 <div class="paragraph">
-<p>When the transaction&#8217;s L2 cost is paid for by L2 gas, the above numbers are translated via the standard conversion rate of: 1 L1 gas = 40,000 L2_gas</p>
+<p>When the transaction&#8217;s L2 cost is paid for by L1 gas, the above numbers are translated via the standard conversion rate of: 1 L1 gas = 40,000 L2_gas</p>
 </div>
 </td>
 </tr>
