@@ -821,13 +821,13 @@ For more details, refer to the <a href="../messaging-mechanism/#l1_handler_trans
 <p>Used for enabling the fee market.</p>
 </div>
 <div class="paragraph">
-<p>A dictionary that maps resource type to resource bounds. The <em>resource</em> is the amount of L1 or L2 gas used to pay for the transaction.</p>
+<p>A dictionary that maps resource type to resource bounds. The existing resources are L1 gas, L1 data gas, and L2 gas.</p>
 </div>
 <div class="dlist">
 <dl>
 <dt class="hdlist1"><code>Resource</code></dt>
 <dd>
-<p>A felt. Possible values are the felt representation of the strings <code>L1_GAS</code> or <code>L2_GAS</code>.</p>
+<p>A felt. Possible values are the felt representation of the strings <code>L1_GAS</code>, <code>L1_DATA</code>, or <code>L2_GAS</code>.</p>
 </dd>
 <dt class="hdlist1"><code>ResourceBounds</code></dt>
 <dd>
@@ -839,7 +839,7 @@ For more details, refer to the <a href="../messaging-mechanism/#l1_handler_trans
 </li>
 <li>
 <p><code>max_price_per_unit</code>: The maximum price the user is willing to pay for the resource.<br>
-<code>L1_GAS</code> and <code>L2_GAS</code> are specified in units of fri, where 1 fri = 10<sup>-18</sup> STRK.</p>
+Prices are denominated in fri, where 1 fri = 10<sup>-18</sup> STRK.</p>
 </li>
 </ul>
 </div>
@@ -854,7 +854,7 @@ For more details, refer to the <a href="../messaging-mechanism/#l1_handler_trans
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>signature</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>List&lt;`FieldElement</code>&gt;`</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>List&lt;FieldElement&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Additional information given by the sender, used to validate the transaction.</p></td>
 </tr>
 <tr>
@@ -904,7 +904,7 @@ specifically:</p>
     "invoke",
     version,
     sender_address,
-    <em>h</em>(tip, l1_gas_bounds, l2_gas_bounds),
+    <em>h</em>(tip, l1_gas_bounds, l2_gas_bounds, l1_data_gas_bounds),
     <em>h</em>(paymaster_data),
     chain_id,
     nonce,
@@ -939,6 +939,15 @@ specifically:</p>
 <div class="stemblock">
 <div class="content">
 \[\underbrace{\text{L2_GAS}}_{\text{60 bits}} | \underbrace{\text{max_amount}}_{\text{64 bits}} |
+\underbrace{\text{max_price_per_unit}}_{\text{128 bits}}\]
+</div>
+</div>
+</li>
+<li>
+<p><code>l1_gas_bounds</code> is constructed as follows:</p>
+<div class="stemblock">
+<div class="content">
+\[\underbrace{\text{L1_DATA}}_{\text{60 bits}} | \underbrace{\text{max_amount}}_{\text{64 bits}} |
 \underbrace{\text{max_price_per_unit}}_{\text{128 bits}}\]
 </div>
 </div>
@@ -1164,13 +1173,13 @@ specifically:</p>
 <p>Used for enabling the fee market.</p>
 </div>
 <div class="paragraph">
-<p>A dictionary that maps resource type to resource bounds. The <em>resource</em> is the amount of L1 or L2 gas used to pay for the transaction.</p>
+<p>A dictionary that maps resource type to resource bounds. The existing resources are L1 gas, L1 data gas, and L2 gas.</p>
 </div>
 <div class="dlist">
 <dl>
 <dt class="hdlist1"><code>Resource</code></dt>
 <dd>
-<p>A felt. Possible values are the felt representation of the strings <code>L1_GAS</code> or <code>L2_GAS</code>.</p>
+<p>A felt. Possible values are the felt representation of the strings <code>L1_GAS</code>, <code>L1_DATA</code>, or <code>L2_GAS</code>.</p>
 </dd>
 <dt class="hdlist1"><code>ResourceBounds</code></dt>
 <dd>
@@ -1182,7 +1191,7 @@ specifically:</p>
 </li>
 <li>
 <p><code>max_price_per_unit</code>: The maximum price the user is willing to pay for the resource.<br>
-<code>L1_GAS</code> and <code>L2_GAS</code> are specified in units of fri, where 1 fri = 10<sup>-18</sup> STRK.</p>
+Prices are denominated in fri, where 1 fri = 10<sup>-18</sup> STRK.</p>
 </li>
 </ul>
 </div>
@@ -1197,7 +1206,7 @@ specifically:</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>signature</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>List&lt;`FieldElement</code>&gt;`</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>List&lt;FieldElement&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Additional information given by the sender, used to validate the transaction.</p></td>
 </tr>
 <tr>
@@ -1246,7 +1255,7 @@ When the fields that comprise a transaction change, either with the addition of 
     "declare",
     version,
     sender_address,
-    <em>h</em>(tip, l1_gas_bounds, l2_gas_bounds),
+    <em>h</em>(tip, l1_gas_bounds, l2_gas_bounds, l1_data_gas_bounds),
     <em>h</em>(paymaster_data),
     chain_id,
     nonce,
@@ -1282,6 +1291,15 @@ When the fields that comprise a transaction change, either with the addition of 
 <div class="stemblock">
 <div class="content">
 \[\underbrace{\text{L2_GAS}}_{\text{60 bits}} | \underbrace{\text{max_amount}}_{\text{64 bits}} |
+\underbrace{\text{max_price_per_unit}}_{\text{128 bits}}\]
+</div>
+</div>
+</li>
+<li>
+<p><code>l1_gas_bounds</code> is constructed as follows:</p>
+<div class="stemblock">
+<div class="content">
+\[\underbrace{\text{L1_DATA}}_{\text{60 bits}} | \underbrace{\text{max_amount}}_{\text{64 bits}} |
 \underbrace{\text{max_price_per_unit}}_{\text{128 bits}}\]
 </div>
 </div>
@@ -1637,13 +1655,13 @@ transaction fee. You can then send the <code>DEPLOY_ACCOUNT</code> transaction.<
 <p>Used for enabling the fee market.</p>
 </div>
 <div class="paragraph">
-<p>A dictionary that maps resource type to resource bounds. The <em>resource</em> is the amount of L1 or L2 gas used to pay for the transaction.</p>
+<p>A dictionary that maps resource type to resource bounds. The existing resources are L1 gas, L1 data gas, and L2 gas.</p>
 </div>
 <div class="dlist">
 <dl>
 <dt class="hdlist1"><code>Resource</code></dt>
 <dd>
-<p>A felt. Possible values are the felt representation of the strings <code>L1_GAS</code> or <code>L2_GAS</code>.</p>
+<p>A felt. Possible values are the felt representation of the strings <code>L1_GAS</code>, <code>L1_DATA</code>, or <code>L2_GAS</code>.</p>
 </dd>
 <dt class="hdlist1"><code>ResourceBounds</code></dt>
 <dd>
@@ -1655,7 +1673,7 @@ transaction fee. You can then send the <code>DEPLOY_ACCOUNT</code> transaction.<
 </li>
 <li>
 <p><code>max_price_per_unit</code>: The maximum price the user is willing to pay for the resource.<br>
-<code>L1_GAS</code> and <code>L2_GAS</code> are specified in units of fri, where 1 fri = 10<sup>-18</sup> STRK.</p>
+Prices are denominated in fri, where 1 fri = 10<sup>-18</sup> STRK.</p>
 </li>
 </ul>
 </div>
@@ -1665,7 +1683,7 @@ transaction fee. You can then send the <code>DEPLOY_ACCOUNT</code> transaction.<
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>signature</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>List&lt;`FieldElement</code>&gt;`</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>List&lt;FieldElement&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Additional information given by the sender, used to validate the transaction.</p></td>
 </tr>
 <tr>
@@ -1714,7 +1732,7 @@ When the fields that comprise a transaction change, either with the addition of 
     "deploy_account",
     version,
     contract_address,
-    <em>h</em>(tip, l1_gas_bounds, l2_gas_bounds),
+    <em>h</em>(tip, l1_gas_bounds, l2_gas_bounds, l1_data_gas_bounds),
     <em>h</em>(paymaster_data),
     chain_id,
     nonce,
@@ -1750,6 +1768,15 @@ When the fields that comprise a transaction change, either with the addition of 
 <div class="stemblock">
 <div class="content">
 \[\underbrace{\text{L2_GAS}}_{\text{60 bits}} | \underbrace{\text{max_amount}}_{\text{64 bits}} |
+\underbrace{\text{max_price_per_unit}}_{\text{128 bits}}\]
+</div>
+</div>
+</li>
+<li>
+<p><code>l1_gas_bounds</code> is constructed as follows:</p>
+<div class="stemblock">
+<div class="content">
+\[\underbrace{\text{L1_DATA}}_{\text{60 bits}} | \underbrace{\text{max_amount}}_{\text{64 bits}} |
 \underbrace{\text{max_price_per_unit}}_{\text{128 bits}}\]
 </div>
 </div>
