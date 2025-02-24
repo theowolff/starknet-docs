@@ -671,7 +671,67 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>See <a href="#pre_v0_11_0_example">Pre-v0.11.0 example</a> to review an example of this format.</p>
+<p>This format is demonstrated by the following example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">[
+  2, <i class="conum" data-value="1"></i><b>(1)</b>
+  2472939307328371039455977650994226407024607754063562993856224077254594995194, <i class="conum" data-value="2"></i><b>(2)</b>
+  1336043477925910602175429627555369551262229712266217887481529642650907574765, <i class="conum" data-value="3"></i><b>(3)</b>
+  1, <i class="conum" data-value="4"></i><b>(4)</b>
+  2019172390095051323869047481075102003731246132997057518965927979101413600827, <i class="conum" data-value="5"></i><b>(5)</b>
+  18446744073709551617, <i class="conum" data-value="6"></i><b>(6)</b>
+  5, <i class="conum" data-value="7"></i><b>(7)</b>
+  102, <i class="conum" data-value="8"></i><b>(8)</b>
+]</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The number of deployed contracts</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>The address of the first, and only, contract whose state changed</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>The class hash of the first, and only, contract whose state changed</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>The number of contracts whose storage was updated</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>The address of the first, and only, contract whose storage was updated</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>The <code>uint256</code> value that encodes the number of storage updates and updated nonce of the first, and only, contract whose storage was updated, which equals \(2^{64}+1 = 0^{128}|0^{63}1|0^{63}1\) and therefore:
+<div class="ulist">
+<ul>
+<li>
+<p>One storage cell was updated</p>
+</li>
+<li>
+<p>The updated nonce is <code>1</code></p>
+</li>
+</ul>
+</div></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="7"></i><b>7</b></td>
+<td>The key of the first, and only, storage update of the first, and only, contract whose storage was updated</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="8"></i><b>8</b></td>
+<td>The new value of the first, and only, storage update of the first, and only, contract whose storage was updated</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -720,7 +780,71 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>See <a href="#v0_11_0_example">v0.11.0 example</a> to review an example of this format.</p>
+<p>This format is demonstrated by the following example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">[
+  1, <i class="conum" data-value="1"></i><b>(1)</b>
+  2019172390095051323869047481075102003731246132997057518965927979101413600827, <i class="conum" data-value="2"></i><b>(2)</b>
+  18446744073709551617, <i class="conum" data-value="3"></i><b>(3)</b>
+  100, <i class="conum" data-value="4"></i><b>(4)</b>
+  200, <i class="conum" data-value="5"></i><b>(5)</b>
+  1, <i class="conum" data-value="6"></i><b>(6)</b>
+  1351148242645005540004162531550805076995747746087542030095186557536641755046, <i class="conum" data-value="7"></i><b>(7)</b>
+  558404273560404778508455254030458021013656352466216690688595011803280448032 <i class="conum" data-value="8"></i><b>(8)</b>
+]</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The number of contracts whose storage was updated</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>The address of the first, and only, contract whose storage changed</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>The 32-byte word that encodes the updated nonce and meta information about the storage updates of the first, and only, contract whose storage was updated, which equals \(2^{64}+1 = 0^{127}|0|0^{63}1|0^{63}1\) and therefore:
+<div class="ulist">
+<ul>
+<li>
+<p>One storage cell was update</p>
+</li>
+<li>
+<p>The new nonce is <code>1</code></p>
+</li>
+<li>
+<p>The class information flag is <code>0</code>, which means that the contract was not deployed or replaced and therefore the next word shouldn&#8217;t be treated as the class hash</p>
+</li>
+</ul>
+</div></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>The key of the first, and only, storage update of the first, and only, contract whose storage was updated</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>The new value of the first, and only, storage update of the first, and only, contract whose storage was updated
+These two elements, <code>100</code> and <code>200</code>, encode the storage update, where the value of key <code>100</code> is set to <code>200</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>The number of classes that were declared</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="7"></i><b>7</b></td>
+<td>The class hash of the first, and only, declared class</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="8"></i><b>8</b></td>
+<td>The compiled class hash of the first, and only, declared class</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -923,139 +1047,6 @@
 </td>
 </tr>
 </table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="examples"><a class="anchor" href="#examples"></a>Examples</h3>
-<div class="sect3">
-<h4 id="pre_v0_11_0_example"><a class="anchor" href="#pre_v0_11_0_example"></a>Pre-v0.11.0 example</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">[
-  2, <i class="conum" data-value="1"></i><b>(1)</b>
-  2472939307328371039455977650994226407024607754063562993856224077254594995194, <i class="conum" data-value="2"></i><b>(2)</b>
-  1336043477925910602175429627555369551262229712266217887481529642650907574765, <i class="conum" data-value="3"></i><b>(3)</b>
-  1, <i class="conum" data-value="4"></i><b>(4)</b>
-  2019172390095051323869047481075102003731246132997057518965927979101413600827, <i class="conum" data-value="5"></i><b>(5)</b>
-  18446744073709551617, <i class="conum" data-value="6"></i><b>(6)</b>
-  5, <i class="conum" data-value="7"></i><b>(7)</b>
-  102, <i class="conum" data-value="8"></i><b>(8)</b>
-]</code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>The number of deployed contracts</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>The address of the first, and only, contract whose state changed</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>The class hash of the first, and only, contract whose state changed</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>The number of contracts whose storage was updated</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="5"></i><b>5</b></td>
-<td>The address of the first, and only, contract whose storage was updated</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="6"></i><b>6</b></td>
-<td>The <code>uint256</code> value that encodes the number of storage updates and updated nonce of the first, and only, contract whose storage was updated, which equals \(2^{64}+1 = 0^{128}|0^{63}1|0^{63}1\) and therefore:
-<div class="ulist">
-<ul>
-<li>
-<p>One storage cell was updated</p>
-</li>
-<li>
-<p>The updated nonce is <code>1</code></p>
-</li>
-</ul>
-</div></td>
-</tr>
-<tr>
-<td><i class="conum" data-value="7"></i><b>7</b></td>
-<td>The key of the first, and only, storage update of the first, and only, contract whose storage was updated</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="8"></i><b>8</b></td>
-<td>The new value of the first, and only, storage update of the first, and only, contract whose storage was updated</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="v0_11_0_example"><a class="anchor" href="#v0_11_0_example"></a>v0.11.0 example</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">[
-  1, <i class="conum" data-value="1"></i><b>(1)</b>
-  2019172390095051323869047481075102003731246132997057518965927979101413600827, <i class="conum" data-value="2"></i><b>(2)</b>
-  18446744073709551617, <i class="conum" data-value="3"></i><b>(3)</b>
-  100, <i class="conum" data-value="4"></i><b>(4)</b>
-  200, <i class="conum" data-value="5"></i><b>(5)</b>
-  1, <i class="conum" data-value="6"></i><b>(6)</b>
-  1351148242645005540004162531550805076995747746087542030095186557536641755046, <i class="conum" data-value="7"></i><b>(7)</b>
-  558404273560404778508455254030458021013656352466216690688595011803280448032 <i class="conum" data-value="8"></i><b>(8)</b>
-]</code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>The number of contracts whose storage was updated</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>The address of the first, and only, contract whose storage changed</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>The 32-byte word that encodes the updated nonce and meta information about the storage updates of the first, and only, contract whose storage was updated, which equals \(2^{64}+1 = 0^{127}|0|0^{63}1|0^{63}1\) and therefore:
-<div class="ulist">
-<ul>
-<li>
-<p>One storage cell was update</p>
-</li>
-<li>
-<p>The new nonce is <code>1</code></p>
-</li>
-<li>
-<p>The class information flag is <code>0</code>, which means that the contract was not deployed or replaced and therefore the next word shouldn&#8217;t be treated as the class hash</p>
-</li>
-</ul>
-</div></td>
-</tr>
-<tr>
-<td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>The key of the first, and only, storage update of the first, and only, contract whose storage was updated</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="5"></i><b>5</b></td>
-<td>The new value of the first, and only, storage update of the first, and only, contract whose storage was updated
-These two elements, <code>100</code> and <code>200</code>, encode the storage update, where the value of key <code>100</code> is set to <code>200</code>.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="6"></i><b>6</b></td>
-<td>The number of classes that were declared</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="7"></i><b>7</b></td>
-<td>The class hash of the first, and only, declared class</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="8"></i><b>8</b></td>
-<td>The compiled class hash of the first, and only, declared class</td>
-</tr>
-</table>
-</div>
 </div>
 </div>
 </div>
